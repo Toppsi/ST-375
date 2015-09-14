@@ -1,0 +1,28 @@
+\section{Figure Sample}
+
+\begin{figure}[H]
+	\caption{CAPTION\fxnote{Remember source}}
+	\label{LABEL}
+	\centering
+	\includegraphics[scale=.8]{figures/filename}
+	\flushleft
+	\textit{SOURCE}
+\end{figure}
+
+%--------- NOTES ------------------------------------------------------
+%Fxnotes wont compile properly inside the figure, only in the caption.
+%Filetype can be specified but isn't needed.
+
+\noindent
+\figref{LABEL}\\
+
+\noindent
+\Figref{LABEL}
+
+\vspace{.5cm}
+%Do not use \vspace{length} or \hspace{length} unless exceedingly necessary.
+
+%--------- BIBLIOGRAPHY REF EKSAMPLE -----------------------------------
+This reference only represents this line since it is before the punctuation mark\cite{YDing}. This next reference however represents the entire section. That is all of the preceding sentences in the entire section. This is due to the fact that it is now after the punctuation mark in the end of the section (this is not used in the middle of a section!).\cite{YDing}
+%>>>>>>>>>>>>>>>PLEASE ALSO READ THE NOTE IN myBib.bib<<<<<<<<<<<<<<<<<<
+\pagebreak
