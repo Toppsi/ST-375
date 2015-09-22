@@ -2,19 +2,6 @@
 % Encoding: Cp1252
 
 
-@Electronic{Academic2015,
-  Title                    = {Stroke},
-  Author                   = {Britannica Academic},
-  Language                 = {Engelsk},
-  Month                    = {September},
-  Organization             = {Encyclopaedia Britannica},
-  Url                      = {http://academic.eb.com.zorac.aub.aau.dk/EBchecked/topic/569347/stroke},
-  Year                     = {2015},
-
-  Owner                    = {sofiehelenebjrsrudjensen},
-  Timestamp                = {2015.09.22}
-}
-
 @Article{Christensen&Zielke2008,
   Title                    = {Klinisk retningslinie for akut indlagte, voksne patienter med apopleksia cerebri},
   Author                   = {Christensen, Doris; Zielke, Susanne S.},
@@ -70,18 +57,6 @@ Finn Klamer, speciallæge i almen medicin, tidl. prakt. læge, lægefaglig rådgiver
   Year                     = {2015},
 
   Owner                    = {Nikolineeeee},
-  Timestamp                = {2015.09.22}
-}
-
-@Electronic{Hjaelpemiddelbasen2015,
-  Title                    = {Biofeedback udstyr til bevægelses-, styrke- og balancetræning},
-  Author                   = {Hjælpemiddelbasen},
-  Month                    = {September},
-  Organization             = {Socialstyrelsen},
-  Url                      = {http://www.hmi-basen.dk/r11x.asp?linkinfo=46309},
-  Year                     = {2015},
-
-  Owner                    = {sofiehelenebjrsrudjensen},
   Timestamp                = {2015.09.22}
 }
 
