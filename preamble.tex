@@ -4,6 +4,7 @@
 
 
 %%%%%%%%%%%%%%%%% noget til jabref
+%\usepackage{cite}
 
 %setting the header and footer in that order:
 \setheadfoot{28pt}{28pt} %if any problems are encountered, try changing the latter 28pt with 1cm.
@@ -90,7 +91,7 @@ escapeinside={\%*}{*)}          % if you want to add a comment within your code
 \usepackage{url}
 \usepackage{csquotes}
 \usepackage[backend=biber,url=true,doi=true,style=numeric, sorting=none]{biblatex}
-\bibliography{myBib.bib}
+\addbibresource{myBib.bib}
 
 %this package makes it possible include pdf pages in fx appendix;
 %using  following syntax: \includepdf[pages={1}]{myfile.pdf}
