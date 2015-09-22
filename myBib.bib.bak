@@ -36,30 +36,6 @@ Finn Klamer, speciallæge i almen medicin, tidl. prakt. læge, lægefaglig rådgiver
   Timestamp                = {2015.09.15}
 }
 
-@Electronic{Hjernesagen2015,
-  Title                    = {Tal og fakta om hjerneskader},
-  Author                   = {Hjernesagen},
-  Language                 = {Dansk},
-  Month                    = {April},
-  Url                      = {http://www.hjernesagen.dk/om-hjerneskader/tal-og-fakta-om-hjerneskader},
-  Year                     = {2015},
-
-  Owner                    = {Nikolineeeee},
-  Timestamp                = {2015.09.22}
-}
-
-@Electronic{Hjernesagen2015a,
-  Title                    = {Fakta om Apopleksi},
-  Author                   = {Hjernesagen},
-  Language                 = {Dansk},
-  Month                    = {April},
-  Url                      = {http://www.hjernesagen.dk/om-hjerneskader/bloedning-eller-blodprop-i-hjernen/fakta-om-apopleksi},
-  Year                     = {2015},
-
-  Owner                    = {Nikolineeeee},
-  Timestamp                = {2015.09.22}
-}
-
 @Article{Karnath2003,
   Title                    = {Understanding and Treating “Pusher Syndrome”},
   Author                   = {Karnath, Hans-Otto; Broetz, Doris},
@@ -68,18 +44,6 @@ Finn Klamer, speciallæge i almen medicin, tidl. prakt. læge, lægefaglig rådgiver
 
   Owner                    = {Mads},
   Timestamp                = {2015.09.15}
-}
-
-@Electronic{Kruuse2014,
-  Title                    = {Apopleksi - blodprop eller blødning i hjernen},
-  Author                   = {Christina Rostrup Kruuse},
-  Language                 = {Dansk},
-  Month                    = {August},
-  Url                      = {https://www.sundhed.dk/borger/sygdomme-a-aa/hjerte-og-blodkar/sygdomme/apopleksi/apopleksi-blodprop-eller-bloedning-i-hjernen/},
-  Year                     = {2014},
-
-  Owner                    = {Nikolineeeee},
-  Timestamp                = {2015.09.22}
 }
 
 @Book{Michael-Titus2010,
@@ -111,25 +75,5 @@ Finn Klamer, speciallæge i almen medicin, tidl. prakt. læge, lægefaglig rådgiver
 
   Owner                    = {Mads},
   Timestamp                = {2015.09.15}
-}
-
-@Article{Sundhedsstyrelsen2011,
-  Title                    = {Bilag til Forløbsprogram for rehabilitering af voksne med erhvervet hjerneskade - apopleksi og TCI},
-  Author                   = {Sundhedsstyrelsen},
-  Journal                  = {Sundhedsstyrelsen},
-  Year                     = {2011},
-
-  Owner                    = {Nikolineeeee},
-  Timestamp                = {2015.09.22}
-}
-
-@Article{Sundhedsstyrelsen2010,
-  Title                    = {Hjerneskaderehabilitering - en medicinsk teknologivurdering},
-  Author                   = {Sundhedsstyrelsen},
-  Journal                  = {Sundhedsstyrelsen},
-  Year                     = {2010},
-
-  Owner                    = {Nikolineeeee},
-  Timestamp                = {2015.09.22}
 }
 
