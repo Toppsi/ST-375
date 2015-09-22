@@ -90,8 +90,11 @@ escapeinside={\%*}{*)}          % if you want to add a comment within your code
 \usepackage{ifthen}
 \usepackage{url}
 \usepackage{csquotes}
-\usepackage[backend=biber,url=true,doi=true,style=numeric, sorting=none]{biblatex}
-\addbibresource{VoresKilder.bib}
+\usepackage[numbers]{natbib}
+\bibliographystyle{plain}
+\newcommand{\btx}{Bib\TeX}
+%\usepackage[backend=biber,url=true,doi=true,style=numeric, sorting=none]{biblatex}
+%\addbibresource{VoresKilder.bib}
 
 %this package makes it possible include pdf pages in fx appendix;
 %using  following syntax: \includepdf[pages={1}]{myfile.pdf}
