@@ -3,8 +3,10 @@
 \documentclass[fleqn,a4paper,12pt,twoside,openany]{memoir}
 
 
-%%%%%%%%%%%%%%%%% noget til jabref
-%\usepackage{cite}
+%%%%%%%%%%%%%%%%% Prøver mig lidt frem
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%5
+
 
 %setting the header and footer in that order:
 \setheadfoot{28pt}{28pt} %if any problems are encountered, try changing the latter 28pt with 1cm.
@@ -12,7 +14,7 @@
 %general package syntax: \usepackage[options]{package}
 
 %setting language:
-\usepackage[danish, english]{babel}
+\usepackage[danish]{babel}
 
 %this package makes it possible to treat any element as a float,
 %figures and tables are by default treated as floats.
@@ -53,9 +55,9 @@
 \hypersetup{
 	bookmarks = true,  % Show 'bookmark'-frame in pdf.
 	colorlinks = true, % True = colored links, False = framed links.
-	citecolor = blue,  % Link color for references.
-	linkcolor = blue,  % Link color in table of contents.
-	urlcolor = blue,   % Link color for extern URLs.
+	citecolor = black,  % Link color for references.
+	linkcolor = black,  % Link color in table of contents.
+	urlcolor = black,   % Link color for extern URLs.
 }
 
 %makes it possible to refer to the name of a chapter rather than just the number.
@@ -150,7 +152,7 @@ escapeinside={\%*}{*)}          % if you want to add a comment within your code
 \setsecnumdepth{none}
 \maxsecnumdepth{none}
 %depth of the table of contents:
-\settocdepth{section}
+\settocdepth{subsection}
 
 % Makes sure LaTeX does not stretch the text at page break:
 \raggedbottom
