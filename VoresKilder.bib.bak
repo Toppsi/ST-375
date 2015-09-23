@@ -15,6 +15,17 @@
   Timestamp                = {2015.09.22}
 }
 
+@Electronic{Academic2015a,
+  Title                    = {Nervous System disease},
+  Author                   = {Academic, Britannica},
+  Month                    = {September},
+  Url                      = {http://academic.eb.com/EBchecked/topic/1800831/nervous-system-disease/75792/Stroke?anchor=ref606262},
+  Year                     = {2015},
+
+  Owner                    = {Maria},
+  Timestamp                = {2015.09.23}
+}
+
 @Article{Christensen&Zielke2008,
   Title                    = {Klinisk retningslinie for akut indlagte, voksne patienter med apopleksia cerebri},
   Author                   = {Christensen, Doris; Zielke, Susanne S.},
@@ -47,6 +58,16 @@ Finn Klamer, speciallæge i almen medicin, tidl. prakt. læge, lægefaglig rådgiver
 
   Owner                    = {Mads},
   Timestamp                = {2015.09.15}
+}
+
+@Electronic{Giraldo2015,
+  Title                    = {Overview of Stroke},
+  Author                   = {Giraldo, Elias A.},
+  Url                      = {http://www.merckmanuals.com/home/brain-spinal-cord-and-nerve-disorders/stroke-cva/overview-of-stroke},
+  Year                     = {2015},
+
+  Owner                    = {Maria},
+  Timestamp                = {2015.09.23}
 }
 
 @Electronic{Hjernesagen2015,
@@ -178,6 +199,37 @@ Finn Klamer, speciallæge i almen medicin, tidl. prakt. læge, lægefaglig rådgiver
   Timestamp                = {2015.09.15}
 }
 
+@Electronic{Ritter2015,
+  Title                    = {Lowering the Risks of Storke in Women (and Men)},
+  Author                   = {Ritter, Leslie and Coull, Bruce},
+  Url                      = {http://heart.arizona.edu/heart-health/preventing-stroke/lowering-risks-stroke},
+  Year                     = {2015},
+
+  Owner                    = {Maria},
+  Timestamp                = {2015.09.23}
+}
+
+@Book{Schulze2011,
+  Title                    = {Basisbog i Sygdomslære},
+  Author                   = {Schulze, Svend and Schroeder, Torben V.},
+  Publisher                = {Munksgaard Danmark},
+  Year                     = {2011},
+
+  Owner                    = {Maria},
+  Timestamp                = {2015.09.23}
+}
+
+@Electronic{Sundhed.dk2014,
+  Title                    = {Apopleksi og TCI(=TIA)},
+  Author                   = {Sundhed.dk},
+  Month                    = {September},
+  Url                      = {https://www.sundhed.dk/sundhedsfaglig/laegehaandbogen/hjerte-kar/tilstande-og-sygdomme/apopleksi-og-tia/apopleksi-og-tia-tci/#1},
+  Year                     = {2014},
+
+  Owner                    = {Maria},
+  Timestamp                = {2015.09.23}
+}
+
 @Article{Sundhedsstyrelsen2011,
   Title                    = {Bilag til Forløbsprogram for rehabilitering af voksne med erhvervet hjerneskade - apopleksi og TCI},
   Author                   = {Sundhedsstyrelsen},
@@ -196,5 +248,15 @@ Finn Klamer, speciallæge i almen medicin, tidl. prakt. læge, lægefaglig rådgiver
 
   Owner                    = {Nikolineeeee},
   Timestamp                = {2015.09.22}
+}
+
+@Article{Sundhedsstyrelsen2009,
+  Title                    = {Referenceprogram for behandling af patienter med apopleksi},
+  Author                   = {Sundhedsstyrelsen},
+  Journal                  = {Sundhedsstyrelsen},
+  Year                     = {2009},
+
+  Owner                    = {Maria},
+  Timestamp                = {2015.09.23}
 }
 
