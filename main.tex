@@ -17,11 +17,22 @@
 
 %---------------------------INPUTS-------------------------------
 
-\input{rapportAfsnit/aIntroduktion/Forside}
+\input{rapportAfsnit/xFormaliteter/Forside}
+\cleardoublepage
 
-\tableofcontents
-\clearpage
+%numbers the pages with Roman numeral - starts from "i":
+\frontmatter
 
+%implementing title sheet:
+\input{rapportAfsnit/xFormaliteter/Titelblad.tex} \cleardoublepage
+
+%\input{rapportAfsnit/xFormaliteter/Forord.tex} \cleardoublepage
+
+%the '*' allows the tableofcontents be excepted from the actual table of contents.
+\tableofcontents*
+
+%numbers the pages with Arabic numeral - starts from 1.
+\mainmatter
 \chapter{Problemanalyse}
 \input{rapportAfsnit/cProblemanalyse/Apopleksi}
 \input{rapportAfsnit/cProblemanalyse/diagnosticering}

@@ -14,7 +14,8 @@
 %general package syntax: \usepackage[options]{package}
 
 %setting language:
-\usepackage[danish]{babel}
+%\usepackage[danish]{babel}  -- Gamle
+\RequirePackage[danish]{babel}
 
 %this package makes it possible to treat any element as a float,
 %figures and tables are by default treated as floats.
@@ -22,6 +23,8 @@
 \usepackage{float}
 \usepackage{wrapfig}
 \usepackage{placeins}
+
+\usepackage{multirow}
 
 %this package makes it possible to make theorems and examples:
 \usepackage{amsthm}
@@ -149,8 +152,8 @@ escapeinside={\%*}{*)}          % if you want to add a comment within your code
 
 
 %depth of numbered headlines (part/chapter/section/subsection):
-\setsecnumdepth{none}
-\maxsecnumdepth{none}
+\setsecnumdepth{subsection}
+\maxsecnumdepth{subsection}
 %depth of the table of contents:
 \settocdepth{subsection}
 

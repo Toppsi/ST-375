@@ -1,0 +1,93 @@
+% Dette er LaTeX-versionen af titelbladet for tek-nat-basis-rapporter 2004 efterår
+% Filen kræver:
+% Universitetets logo:  aau-logo.png (for LaTeX) eller aau-logo.ps (for LaTeX)
+% Synopsis: En fil ved navn synopsis.tex
+
+% Udarbejdet af: Hans Håttel (hans@cs.auc.dk) 21. maj 2003
+% Rettet af Morten Christophersen (mortench@tnb.aau.dk) 30. nov 2004(ændret til nyt design 2004 efterår)
+
+%\documentclass[11pt]{article}
+%\ifx\pdfoutput\undefined 
+%\usepackage[dvips]{graphicx}
+%\else
+%\usepackage[pdftex]{graphicx} 
+%\usepackage{type1cm} \fi
+%    \usepackage[ansinew]{inputenc}
+%    \usepackage{a4}
+
+%\begin{document} 
+\thispagestyle{empty}
+%\begin{titlepage}
+\begin{nopagebreak}
+{\samepage 
+
+\begin{tabular}{r}
+\parbox{\textwidth}{  \raisebox{11mm}{\includegraphics[height=1.5cm]{figures/aaulogo-da.png}}
+\hfill \hspace{2cm} \parbox{8cm}{\begin{tabular}{l} %4.90
+{\small \textbf{\textcolor{MidnightBlue}{Sundhedsteknologi 3. semester}}}\\ 
+{\small \textcolor{NavyBlue}{Fredrik Bajers Vej 7}} \\
+{\small \textcolor{NavyBlue}{9220 Aalborg}} \\
+{\small \textcolor{NavyBlue}{\emph{http://smh.aau.dk}}}
+\end{tabular}}}
+\end{tabular}
+
+\begin{tabular}{cc}
+\parbox{7cm}{
+\begin{description}
+
+\item \textbf{Titel}: \\
+System til detektering af kropsbalance \\
+\item \textbf{Tema}: \\ 
+Instrumentering til opsamling af fysiologiske signaler\\
+\item \textbf{Projekt periode}:\\
+   P3, efterår 2015\\
+   D. 02/09/2015 - 16/12/2015
+  \hspace{4cm}
+\item \textbf{Projektgruppe}:\\
+  375
+  \hspace{4cm}
+\item \textbf{Medvirkende}:\\
+\underline{\hspace{4cm}}\\
+Cecilie Sophie Rosenkrantz Topp  \\
+\underline{\hspace{4cm}}\\
+Mads Jozwiak Pedersen \\
+\underline{\hspace{4cm}}\\
+Maria Kaalund Kroustrup \\
+\underline{\hspace{4cm}}\\
+Mathias Vassard Olsen \\
+\underline{\hspace{4cm}}\\
+Nikoline Suhr Kristensen \\
+\underline{\hspace{4cm}}\\
+Sofie Helene Bjørsrud Jensen \\
+\hspace{2cm}
+\item \textbf{Vejleder}:\\
+Erika G. Spaich  \\
+
+  
+\end{description}
+
+\begin{description}
+\item {\textbf{Oplagstal}: ??}
+\item \textbf{Sider}: ?? 
+\item \textbf{Bilag}: ??
+\item {Afsluttet d. 16/12/2015} 
+\end{description}
+\vfill } &
+\parbox{7cm}{
+  \vspace{.15cm}
+  \hfill 
+  \begin{tabular}{l}
+  \textbf{Synopsis}\bigskip \\
+  \fbox{
+    \parbox{6.5cm}{\bigskip
+     {\vfill{\small \input{rapportAfsnit/xFormaliteter/synopsis.tex}
+     \bigskip}}
+     }}
+   \end{tabular}}
+\end{tabular}} \vspace{1.3cm}
+\centering
+\textit{\tiny Offentliggørelse af rapportens indhold (med kildeangivelse) må kun ske efter aftale med forfatterne.}
+\\
+\end{nopagebreak}
+%\end{titlepage}
+%\end{document}
