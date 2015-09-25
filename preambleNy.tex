@@ -1,8 +1,40 @@
-\documentclass[a4paper,11pt,fleqn,dvipsnames,oneside,openright]{memoir} 	% Openright aabner kapitler paa hoejresider (openany begge)
+\documentclass[a4paper,11pt,fleqn,dvipsnames,oneside,openright,oldfontcommands]{memoir} 	% Openright aabner kapitler paa hoejresider (openany begge)
+
 
 %%%%%%%%% Indsat random
 %makes it possible to refer to the name of a chapter rather than just the number.
 \usepackage{nameref}
+
+
+
+
+
+% ¤¤ Litteraturlisten ¤¤ %
+%setting references (using numbers) and supporting i.a. Chicargo-style:
+\usepackage{etex}
+\usepackage{etoolbox}
+\usepackage{keyval}
+\usepackage{ifthen}
+\usepackage{url}
+\usepackage{csquotes}
+\usepackage[numbers]{natbib}
+%\newcommand{\btx}{Bib\TeX}
+%\usepackage[backend=biber,url=true,doi=true,style=numeric, sorting=none]{biblatex}
+%\addbibresource{VoresKilder.bib}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 %package for writing program code in latex
 \usepackage{listings}
@@ -13,7 +45,10 @@
 \usepackage[danish]{babel}					% Dokumentets sprog
 \usepackage[T1]{fontenc}					% Output-indkodning af tegnsaet (T1)
 \usepackage{ragged2e,anyfontsize}			% Justering af elementer
-\usepackage{fixltx2e}						% Retter forskellige fejl i LaTeX-kernen
+\usepackage{fixltx2e}						% Retter forskellige fejl i LaTeX-kernen							
+								
+								
+								
 																			
 % ¤¤ Figurer og tabeller (floats) ¤¤ %
 \usepackage{graphicx} 						% Haandtering af eksterne billeder (JPG, PNG, EPS, PDF)
@@ -44,7 +79,7 @@
 
 % ¤¤ Referencer og kilder ¤¤ %
 \usepackage[danish]{varioref}				% Muliggoer bl.a. krydshenvisninger med sidetal (\vref)
-\usepackage[numbers]{natbib}							% Udvidelse med naturvidenskabelige citationsmodeller
+\usepackage[numbers]{natbib}				% Udvidelse med naturvidenskabelige citationsmodeller
 %\usepackage{xr}							% Referencer til eksternt dokument med \externaldocument{<NAVN>}
 %\usepackage{glossaries}					% Terminologi- eller symbolliste (se mere i Daleifs Latex-bog)
 \usepackage{lastpage}					% Gør det mulig at refere til sidste side 
@@ -73,18 +108,6 @@
 \setlength{\parindent}{6mm}           		% Stoerrelse af indryk
 \setlength{\parskip}{0mm}          			% Afstand mellem afsnit ved brug af double Enter
 \linespread{1,1}							% Linie afstand
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -223,7 +246,7 @@
 	\createplainmark{toc}{both}{\contentsname}
 	\createplainmark{lof}{both}{\listfigurename}
 	\createplainmark{lot}{both}{\listtablename}
-	\createplainmark{bib}{both}{\bibname}
+	%\createplainmark{bib}{both}{\bibname}
 	\createplainmark{index}{both}{\indexname}
 	\createplainmark{glossary}{both}{\glossaryname}
 }
