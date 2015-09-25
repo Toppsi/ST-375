@@ -1,5 +1,5 @@
 %implementing document formatting:
-\input{preamble.tex}
+\input{preambleNy.tex}
 \input{macros.tex}
 \begin{document}
 
@@ -46,12 +46,18 @@
 
 \clearpage
 %\addcontentsline{toc}{chapter}{Bibliography}
-\bibliography{VoresKilder}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%\bibliography{VoresKilder}
 %\printbibheading
 %\printbibliography
 %\begingroup
 %\raggedright
 %\bibliography{VoresKilder}					% Litteraturlisten inkluderes
 %\endgroup
+
+\begingroup
+\raggedright
+\bibliographystyle{siam}
+\bibliography{VoresKilder}
+\endgroup
 
 \end{document}
