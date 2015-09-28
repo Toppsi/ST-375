@@ -16,15 +16,16 @@
 
 
 %---------------------------INPUTS-------------------------------
-
-\input{rapportAfsnit/xFormaliteter/Forside1}
-\clearpage
-
 %numbers the pages with Roman numeral - starts from "i":
 \frontmatter
 
+\input{rapportAfsnit/xFormaliteter/Forside1}
+\cleardoublepage
+
 %implementing title sheet:
-\input{rapportAfsnit/xFormaliteter/Titelblad.tex} \clearpage
+%\input{rapportAfsnit/xFormaliteter/Titelblad.tex} \clearpage
+\includepdf[pages={1}]{rapportAfsnit/xFormaliteter/synopsis.pdf} 
+\cleardoublepage
 
 %\input{rapportAfsnit/xFormaliteter/Forord.tex} \cleardoublepage
 
@@ -46,13 +47,13 @@
 \input{rapportAfsnit/cProblemanalyse/Rehabilitering_og_biofeedback}
 \input{rapportAfsnit/cProblemanalyse/teknologier_til_rehabilitering}
 \section{Her skal biofeedback komme ind} 
-Dokumentet "rehabilitering$_$og$_$biofeedback skal deles op, så rehabilitering kommer efter apopleksi som en section med teknologier$_$til$_$rehabilitering som en subsection, og biofeedback kommer her som en section med patientsikkerhed som subsection.
+Dokumentet "rehabilitering og biofeedback skal deles op, så rehabilitering kommer efter apopleksi som en section med teknologier til rehabilitering som en subsection, og biofeedback kommer her som en section med patientsikkerhed som subsection.
 \input{rapportAfsnit/cProblemanalyse/Patientsikkerhed}
 
 
 \clearpage
 \bibliographystyle{plain}
-\bibliography{myBib}
+\bibliography{myBib.tex}
 
 
 
