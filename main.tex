@@ -1,5 +1,6 @@
 %implementing document formatting:
 \input{preambleNy.tex}
+\usepackage{marvosym}
 \input{macros.tex}
 \begin{document}
 
@@ -52,10 +53,16 @@ Dokumentet "rehabilitering og biofeedback skal deles op, så rehabilitering komm
 \input{rapportAfsnit/cProblemanalyse/Omkostninger_og_organisatorisk}
 
 
-\clearpage
+%\clearpage
 %\bibliographystyle{plain}
-%\bibliography{myBib.tex}
+%\bibliography{VoresKilder}
 %\printbibliography
+
+\begingroup
+	\raggedright
+		\bibliographystyle{unsrtnat}
+		\bibliography{VoresKilder}
+\endgroup
 
 
 \end{document}
