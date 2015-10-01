@@ -26,6 +26,17 @@
   Timestamp                = {2015.09.23}
 }
 
+@Electronic{Ammundsen2015,
+  Author                   = {Ammundsen, Ida Nymand  and Kjems, Elisabeth},
+  Month                    = {Marts},
+  Organization             = {Kræftens Bekæmpelse},
+  Url                      = {https://www.cancer.dk/hjaelp-viden/undersoegelser-for-kraeft/scanninger-billedundersoegelser/mr-scanning/},
+  Year                     = {2015},
+
+  Owner                    = {Cecilie},
+  Timestamp                = {2015.10.01}
+}
+
 @Article{Apopleksi2009,
   Title                    = {Referenceprogram for Behandling af patienter med apopleksi},
   Author                   = {Dansk Selskab for Apopleksi},
@@ -165,6 +176,18 @@ Finn Klamer, speciallæge i almen medicin, tidl. prakt. læge, lægefaglig rådg
 
   Owner                    = {Mathias},
   Timestamp                = {2015.09.29}
+}
+
+@Electronic{Hansen2015,
+  Title                    = {CT-scanning},
+  Author                   = {Hansen, Nina Kanstrup  and Kjems, Elisabeth},
+  Month                    = {Juni},
+  Organization             = {Kræftens Bekæmpelse},
+  Url                      = {https://www.cancer.dk/hjaelp-viden/undersoegelser-for-kraeft/scanninger-billedundersoegelser/ct-scanning/},
+  Year                     = {2015},
+
+  Owner                    = {Cecilie},
+  Timestamp                = {2015.10.01}
 }
 
 @Electronic{Hjernesagen2015,
