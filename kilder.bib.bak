@@ -27,7 +27,7 @@
 }
 
 @Electronic{Ammundsen2015,
-  Author                   = {Ammundsen, Ida Nymand  and Kjems, Elisabeth},
+  Author                   = {Ammundsen, Ida Nymand and Kjems, Elisabeth},
   Month                    = {Marts},
   Organization             = {Kræftens Bekæmpelse},
   Url                      = {https://www.cancer.dk/hjaelp-viden/undersoegelser-for-kraeft/scanninger-billedundersoegelser/mr-scanning/},
@@ -55,6 +55,16 @@
 
   Owner                    = {Mathias},
   Timestamp                = {2015.09.29}
+}
+
+@Article{Boss2010,
+  Title                    = {Pathopsysiology: The biologic basic for disease in adults and children.},
+  Author                   = {B. J. Boss},
+  Journal                  = {Mosby Elsevier},
+  Year                     = {2010},
+
+  Owner                    = {Cecilie},
+  Timestamp                = {2015.10.01}
 }
 
 @Article{Bradt2010,
@@ -148,6 +158,18 @@ Finn Klamer, speciallæge i almen medicin, tidl. prakt. læge, lægefaglig rådg
   Timestamp                = {2015.09.15}
 }
 
+@Electronic{Gade2004,
+  Title                    = {Neuropsykologiske opslag og temaer til "Gads psykologileksikon"},
+  Author                   = {Gade, Anders; Smed, Annelise; Pedersen, Palle Møller},
+  HowPublished             = {Bog},
+  Organization             = {Gads Forlag},
+  Url                      = {http://gade.psy.ku.dk/Undervis/a.htm},
+  Year                     = {2004},
+
+  Owner                    = {Cecilie},
+  Timestamp                = {2015.10.01}
+}
+
 @Article{Giggins2013,
   Title                    = {Biofeedback in Rehabilitation},
   Author                   = {Giggins, Oonagh M and Persson, Ulrik McCarthy and others},
@@ -180,7 +202,7 @@ Finn Klamer, speciallæge i almen medicin, tidl. prakt. læge, lægefaglig rådg
 
 @Electronic{Hansen2015,
   Title                    = {CT-scanning},
-  Author                   = {Hansen, Nina Kanstrup  and Kjems, Elisabeth},
+  Author                   = {Hansen, Nina Kanstrup and Kjems, Elisabeth},
   Month                    = {Juni},
   Organization             = {Kræftens Bekæmpelse},
   Url                      = {https://www.cancer.dk/hjaelp-viden/undersoegelser-for-kraeft/scanninger-billedundersoegelser/ct-scanning/},
@@ -410,6 +432,16 @@ Finn Klamer, speciallæge i almen medicin, tidl. prakt. læge, lægefaglig rådg
   Timestamp                = {2015.09.23}
 }
 
+@Book{Stanfield2014,
+  Title                    = {Principles of Human Physiology},
+  Author                   = {Stanfield, Cindy L.},
+  Publisher                = {Pearson Education},
+  Year                     = {2014},
+
+  Owner                    = {Cecilie},
+  Timestamp                = {2015.10.01}
+}
+
 @Electronic{Sundhed.dk2014,
   Title                    = {Apopleksi og TCI(=TIA)},
   Author                   = {Sundhed.dk},
@@ -468,5 +500,15 @@ Finn Klamer, speciallæge i almen medicin, tidl. prakt. læge, lægefaglig rådg
 
   Owner                    = {Mathias},
   Timestamp                = {2015.09.24}
+}
+
+@Book{Webster2009,
+  Title                    = {Medical Instrumentation: Application and Design},
+  Author                   = {Webster, John G},
+  Publisher                = {John Wiley And Sons Ltd},
+  Year                     = {2009},
+
+  Owner                    = {Cecilie},
+  Timestamp                = {2015.10.01}
 }
 
