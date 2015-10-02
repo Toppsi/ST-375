@@ -513,6 +513,16 @@ Finn Klamer, speciallæge i almen medicin, tidl. prakt. læge, lægefaglig rådg
   Timestamp                = {2015.09.24}
 }
 
+@Article{Thieme2012,
+  Title                    = {Mirror therapy for improving motor function after stroke},
+  Author                   = {Thieme, Holm and Mehrholz, Jan and others},
+  Journal                  = {Cochrane Library},
+  Year                     = {2012},
+
+  Owner                    = {Nikolineeeee},
+  Timestamp                = {2015.10.01}
+}
+
 @Book{Webster2009,
   Title                    = {Medical Instrumentation: Application and Design},
   Author                   = {Webster, John G},
