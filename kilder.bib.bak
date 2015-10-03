@@ -134,20 +134,6 @@
   Url                      = {http://www.dsfa.dk/Dokumenter/Fagligt/Klinisk-retningslinie-dysfagi-februar-2008.pdf}
 }
 
-@Electronic{Sundhed.dk,
-  Title                    = {Apopleksi, kognitive symptomer},
-  Author                   = {Christina Rostrup Kruuse, overlæge, ph.d., klinisk lektor, Neurologisk afdeling, Herlev Hospital
-John Sahl Andersen, alm. prakt. læge, lektor, ph.d.,
-Nanna Witting, afdelingslæge, ph.d., Neurologisk Klinik, Rigshospitalet
-Finn Klamer, speciallæge i almen medicin, tidl. prakt. læge, lægefaglig rådgiver i Den fælles offentlige sundhedsportal - sundhed.dk,},
-  Organization             = {Sundhed.dk},
-  Url                      = {https://www.sundhed.dk/sundhedsfaglig/laegehaandbogen/hjerte-kar/tilstande-og-sygdomme/apopleksi-og-tia/apopleksi-kognitive-symptomer/},
-  Year                     = {2015},
-
-  Owner                    = {Mads},
-  Timestamp                = {2015.09.15}
-}
-
 @Article{DSfA2009,
   Title                    = {Referenceprogram for behandling af patienter med apopleksi},
   Author                   = {DSfA},
@@ -330,6 +316,17 @@ Finn Klamer, speciallæge i almen medicin, tidl. prakt. læge, lægefaglig rådg
   Timestamp                = {2015.09.23}
 }
 
+@Electronic{Sundhed.dk,
+  Title                    = {Apopleksi, kognitive symptomer},
+  Author                   = {Kruuse, Christina Rostrup and Andersen, John Sahl and Witting, Nanna and Klamer, Finn},
+  Organization             = {Sundhed.dk},
+  Url                      = {https://www.sundhed.dk/sundhedsfaglig/laegehaandbogen/hjerte-kar/tilstande-og-sygdomme/apopleksi-og-tia/apopleksi-kognitive-symptomer/},
+  Year                     = {2015},
+
+  Owner                    = {Mads},
+  Timestamp                = {2015.09.15}
+}
+
 @Article{Lamontagne2006,
   Title                    = {Physiological evaluation of gait disturbances post stroke},
   Author                   = {Anouk Lamontagne and Jennifer L. Stephenson and others},
@@ -452,6 +449,18 @@ Finn Klamer, speciallæge i almen medicin, tidl. prakt. læge, lægefaglig rådg
 
   Owner                    = {Maria},
   Timestamp                = {2015.09.23}
+}
+
+@Electronic{Rugnett2015,
+  Title                    = {Neuroplasticity},
+  Author                   = {Michael Rugnetta},
+  Month                    = {Oktober},
+  Organization             = {Britannica academic},
+  Url                      = {http://academic.eb.com.zorac.aub.aau.dk/EBchecked/topic/410552/neuroplasticity},
+  Year                     = {2015},
+
+  Owner                    = {Cecilie},
+  Timestamp                = {2015.10.03}
 }
 
 @Article{Sagen2014,
