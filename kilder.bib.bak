@@ -69,6 +69,16 @@
   Timestamp                = {2015.09.29}
 }
 
+@Book{Bojsen-Moeller2012,
+  Title                    = {Bevægeapparatets Anatomi},
+  Author                   = {Bojsen-Møller, Finn and Simonsen, Erik B. and Tranum-Jensen,  Jørgen},
+  Publisher                = {Gyldendal Akademisk},
+  Year                     = {2012},
+
+  Owner                    = {Cecilie},
+  Timestamp                = {2015.10.04}
+}
+
 @Article{Boss2010,
   Title                    = {Pathopsysiology: The biologic basic for disease in adults and children.},
   Author                   = {B. J. Boss},
