@@ -615,17 +615,6 @@
   Timestamp                = {2015.10.01}
 }
 
-@Book{Webster2010,
-  Title                    = {Medical Instrumentation Application and design},
-  Author                   = {Webster, John G. and others},
-  Editor                   = {Webster, John G.},
-  Publisher                = {John Wiley And Sons},
-  Year                     = {2010},
-
-  Owner                    = {Mathias},
-  Timestamp                = {2015.10.05}
-}
-
 @Electronic{2015,
   Title                    = {Neurons \& the Nervous System - Part 2},
   Month                    = {Okbtober},
