@@ -295,6 +295,16 @@
   Timestamp                = {2015.09.22}
 }
 
+@Article{Joergensen2004,
+  Title                    = {Vestibulær rehabilitering},
+  Author                   = {Jørgensen, Tom},
+  Year                     = {2004},
+
+  Owner                    = {Cecilie},
+  Timestamp                = {2015.10.08},
+  Url                      = {https://fysio.dk/Upload/Graphics/PDF/Artikeltillaeg/vestibulaer_rehabilitering.pdf}
+}
+
 @Article{Karnath2003,
   Title                    = {Understanding and Treating “Pusher Syndrome”},
   Author                   = {Karnath, Hans-Otto; Broetz, Doris},
