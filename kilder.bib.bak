@@ -2,6 +2,16 @@
 % Encoding: UTF8
 
 
+@Electronic{2015a,
+  Title                    = {Agnosi},
+  Author                   = {Den store danske},
+  Url                      = {http://www.denstoredanske.dk/Krop,_psyke_og_sundhed/Psykologi/Psykologiske_termer/agnosi},
+  Year                     = {2015},
+
+  Owner                    = {Maria},
+  Timestamp                = {2015.10.08}
+}
+
 @Electronic{Academic2015,
   Title                    = {Stroke},
   Author                   = {Britannica Academic},
@@ -164,6 +174,17 @@
   Owner                    = {Mads},
   Timestamp                = {2015.09.15},
   Url                      = {http://www.dsfa.dk/Dokumenter/Fagligt/Klinisk-retningslinie-dysfagi-februar-2008.pdf}
+}
+
+@Electronic{Christensen2015,
+  Title                    = {Forebyggelse},
+  Author                   = {Christensen, Hanne},
+  Organization             = {Hjernesagen},
+  Url                      = {http://www.hjernesagen.dk/forebyggelse},
+  Year                     = {2015},
+
+  Owner                    = {Nikolineeeee},
+  Timestamp                = {2015.10.08}
 }
 
 @Article{DSfA2009,
@@ -480,6 +501,16 @@
 
   Owner                    = {Mads},
   Timestamp                = {2015.09.15}
+}
+
+@Article{Pedersen1999,
+  Title                    = {Kognitive forstyrrelser ved apopleksi - hyppighed, betydning og genoptræning},
+  Author                   = {Pedersen, P. M. og Olsen, S. T.},
+  Journal                  = {Munksgaard},
+  Year                     = {1999},
+
+  Owner                    = {Maria},
+  Timestamp                = {2015.10.08}
 }
 
 @Book{Raine2009,
