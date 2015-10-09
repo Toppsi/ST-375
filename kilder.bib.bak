@@ -69,6 +69,16 @@
   Timestamp                = {2015.09.24}
 }
 
+@Article{Association2006,
+  Title                    = {Recovery after Stroke: Movement and Balance},
+  Author                   = {National Stroke Association},
+  Journal                  = {National Stroke Association},
+  Year                     = {2006},
+
+  Owner                    = {Nikolineeeee},
+  Timestamp                = {2015.10.09}
+}
+
 @Article{Badke2009,
   Title                    = {Tongue-Based Biofeedback for Balance in Stroke: Results of an 8-Week Pilot Study},
   Author                   = {Badke, Mary Beth and others},
@@ -490,6 +500,16 @@
 
   Owner                    = {Mathias},
   Timestamp                = {2015.09.24}
+}
+
+@Book{Moos2010,
+  Title                    = {Basal neuroanatomi},
+  Author                   = {Moos, Torben and Møller, Morten},
+  Publisher                = {FADL's forlag},
+  Year                     = {2010},
+
+  Owner                    = {Mathias},
+  Timestamp                = {2015.10.09}
 }
 
 @PhdThesis{Muus2008,
