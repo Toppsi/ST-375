@@ -229,10 +229,11 @@
   Timestamp                = {2015.09.15}
 }
 
-@Electronic{EEtech,
+@Electronic{EEtech2003,
   Title                    = {Rectifier Circuits},
   Author                   = {EEtech},
   Url                      = {http://www.allaboutcircuits.com/textbook/semiconductors/chpt-3/rectifier-circuits/},
+  Year                     = {2003},
 
   Owner                    = {Maria},
   Timestamp                = {2015.10.12}
