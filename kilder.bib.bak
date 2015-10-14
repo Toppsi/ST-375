@@ -454,6 +454,7 @@
 @Electronic{Kruuse2015,
   Title                    = {Apopleksi, Rehabilitering},
   Author                   = {Kruuse, Christina Rostrup},
+  Language                 = {Dansk},
   Month                    = {April},
   Url                      = {https://www.sundhed.dk/borger/sygdomme-a-aa/hjerte-og-blodkar/sygdomme/apopleksi/apopleksi-rehabilitering/},
   Year                     = {2015},
@@ -484,7 +485,7 @@
   Timestamp                = {2015.09.23}
 }
 
-@Electronic{Sundhed.dk,
+@Electronic{Kruuse2015a,
   Title                    = {Apopleksi, kognitive symptomer},
   Author                   = {Kruuse, Christina Rostrup and Andersen, John Sahl and Witting, Nanna and Klamer, Finn},
   Organization             = {Sundhed.dk},
