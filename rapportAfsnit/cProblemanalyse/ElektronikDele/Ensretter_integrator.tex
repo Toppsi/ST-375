@@ -1,15 +1,14 @@
 % !TeX spellcheck = da_DK
 \subsection{Ensretter}
 En ensretter anvender til konventering af vekselstørm til jævnstrøm. Dette involverer, at der kun tillades ensrettes strømning af elektroner. Der kan benyttes enten en halvbølge- eller helbølgeensretter. En halvbølgeensretter tillader kun den ene halvdel af vekselstrømsbølgen passere igennem belastningen, herefter omdannes enten til positive eller negative værdier og herefter omdannes værdierne til nul.
-For at kunne få fuld udnyttelse af halve sinus bølger, anvendes helbøgeensretter. Signalet omvendes her til positive eller negative værdier, for at en integrator kan behandle signalet, dette gøres for at undgå at positive eller negative signaler ikke bliver subtraheret fra hinanden. \cite{EEtech2003}
+For at kunne få fuld udnyttelse af halve sinus bølger, anvendes helbøgeensretter. Signalet omvendes her til positive eller negative værdier, for at en integrator kan behandle signalet, dette gøres for at undgå at positive eller negative signaler ikke bliver subtraheret fra hinanden. \cite{EEtech2003} Dette gøres for at signalet er muligt at udføre bestemte beregninger på f.eks. integration og derved er nemmere at databehandle.  
 
 \subsection{Integrator}
 En integrator (er det omvendte af en differentiator) subtrahere enten positive eller negative værdier fra hinanden. Dette gøres ved at generere en konstant indgangssignal til en vis ændring i udgangsspænding. Hvis indgangsspændingen er konstant og negativ, vil operationsforstærkeren sikre, at det inverterede input forbliver 0 volt, hvis dette er tilfældet vil udgangsspændingen vise en lineært stigning. Hvis der modsat anvendes en konstant positiv spænding til indgangen vil operation ampifier udgangsspænding falde lineært. \cite{EEtech2003}
 
-En inverteret integrator anvendes til at beskrive en kurves areal. Dette gøres ved at sammenligne to værdier og deres arealer, derved kan forskellen beskrives. Denne metode benyttes for at gøre signalet brugbart ift. en komparator.
+En inverteret integrator anvendes til at beskrive en kurves areal. Dette gøres ved at sammenligne to værdier og deres arealer, derved kan forskellen beskrives. Denne metode benyttes for at gøre signalet brugbart ift. en komparator. Dette kan gøre at det analoge system kan sammenligne værdier uden de skal conveteres til digitale signaler. Sammenligning af to signaler kan f.eks. bruges til at vurdere om en målt signal er højere end en bestemt tærskelværdi, og derved om biofeedbacken skal gives. 
 
 %\begin{equation}
 %\bar{x}(t) = \dfrac{1}{T} \int\limits_<T> y(t) d(t)
 %\end{equation}
 
-%KOBLE AFSNITTET LIDT BEDRE TIL VORES PROJEKT GENERELT(DET STÅR MEGET UAFHÆNGIGT AF RESTEN LIGE NU)
