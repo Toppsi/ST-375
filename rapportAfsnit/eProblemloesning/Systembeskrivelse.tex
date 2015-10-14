@@ -1,14 +1,24 @@
 % !TeX spellcheck = da_DK
 \section{Systembeskrivelse}
-For at gøre det muligt, at anvende det samme system på 4. Semester skal arbejdsområdet kunne benyttes sammen med et USB-baseret trådløst udviklingsværktøj eZ430-RF2500 fra Texas Instruments. Det er derfor nødvendigt, at designet stemmer overens med udviklingsværktøjet for at kunne sende og modtage data til og fra computeren. Udviklingsværktøjet indeholder hardware og software som evaluerer mikrokontrolleren MSP430F2274. For at systemet kan anvendes med udviklingsværktøjet skal outputsignalet være 3V, eftersom mikrokontrolleren opererer med spændingsforsyning mellem 1,8 V og 3,6 V.  
+For at gøre det muligt, at anvende det samme system på 4. Semester skal arbejdsområdet kunne benyttes sammen med et USB-baseret trådløst udviklingsværktøj eZ430-RF2500 fra Texas Instruments. Det er derfor nødvendigt, at designet stemmer overens med udviklingsværktøjet for at kunne sende og modtage data til og fra computeren. Udviklingsværktøjet indeholder hardware og software som evaluerer mikrokontrolleren MSP430F2274. For at hele vores system kan anvendes med udviklingsværktøjet skal outputsignalet være 3V, eftersom mikrokontrolleren opererer med spændingsforsyning mellem 1,8V og 3,6V.  
 
 \subsection{Formål og anvendelse}
-Ud fra problemanalysen fremgår det, at apopleksipatienter ofte er ældre over 65 år og en af de hyppigste følger de oplever er balanceproblemer. For apopleksipatienter er behovet for at være selvstændige og uafhængige af hjælp vigtigt.\ref{til problemafgrænsningen eller problemanalysen}  
-Derfor er et system som opfanger, hvis patienten er ude af balance at foretrække, det skal kunne anvendes selvstændigt i hjemmet dvs. uden nogen form for hjælp fra plejepersonale. Dette vil sige, at systemet skal implementeres i fase 4 \ref{rehabilitering faseafsnittet}. Dette kræver at selve systemet er brugervenligt dvs. at det skal være let at påsætte, ikke veje for meget samt signalerne skal være let forståelig. Dette kræves, da størstedelen af apopleksipatienter som nævnt er ældre og kan opleve kognitive problemer \ref{...}. Dette giver også begrænsninger i forhold til feedback, da både hørelsen, synet eller kroppens følelser kan være svækket i forbindelse med, at patienterne bliver ældre\ref{findnykilde}. Derudover skal systemet kunne give et analogt og digitalt output, som er muligt at behandle.
+Ud fra problemanalysen fremgår det, at apopleksipatienter ofte er ældre over 65 år og en af de hyppigste følger de oplever er balanceproblemer. Derudover har apopleksipatienter ofte kognitive problemer. For apopleksipatienter er behovet for at være selvstændige og uafhængige af hjælp vigtigt.\ref{til problemafgrænsningen eller problemanalysen}  
+Systemet skal kunne opfange, hvis patienten er ude af balance. Selve systemet skal kunne anvendes selvstændigt, til rehabilitering af balancefunktionen, i hjemmet dvs. uden nogen form for hjælp fra plejepersonale. Hvilket vil sige, at systemet implementeres i fase 4 \ref{rehabilitering faseafsnittet}. For at systemet kan anvendes af målgruppen skal det være brugervenligt dvs. at det skal være let at påsætte, ikke veje for meget samt signalerne skal være let forståelige. Målgruppen giver yderligere begrænsninger i forhold til feedback, da både hørelsen, synet eller kroppens følelser kan være svækket i forbindelse med. ældre. Derudover skal systemet kunne give et analogt og digitalt output, som er muligt at behandle.
 
 
 \subsection{Beskrivelse af test}
-Patienten skal være stående og have fødderne på linje, dette fremgår som udgangsposition\fxnote{måske et billede vi tager som vil illustrere dette}. Netop denne position anvendes for at udfordre patienten ved at fordele kropsvægten anderledes i forhold til den normale kropsstilling.\ref{balanceafsnittet} Patienten påsætter systemet og udfører herefter en prøvetest for at kende til den feedback der gives. Prøvetesten går ud på at hælde langsomt fra side til side. Hvis patienten hælder lidt, hvor det er usikkert, vil en lampe lyse gult og patienten vil kunne mærke vibration. Hvis patienten ikke retter sig op og ender i en riskozone vil en anden lampe lyse rødt. Vibrationen vil stige i takt med at lyset ændre sig fra gult til rødt. Selve øvelsen udføres herefter ved at holde balancen i udgangspositionen, hvorefter øjenene lukkes. Dette gøres for at udelukke en af sanserne, hvilket gør det svære for patienten at opretholde balancen \ref{balanceafsnittet}. Selve forsøget gentages efter behov.
+Patienten skal være stående og have fødderne på linje, dette fremgår som udgangsposition\fxnote{måske et billede vi tager som vil illustrere dette}. Netop denne position anvendes for at udfordre patienten ved at fordele kropsvægten anderledes i forhold til den normale kropsstilling.\ref{balanceafsnittet} Patienten påsætter systemet og udfører herefter en prøvetest for at kende til den feedback der gives. Prøvetesten går ud på at hælde langsomt fra side til side. Hvis patienten hælder lidt, hvor det er usikkert, vil en lampe lyse gult og patienten vil kunne mærke vibration. Hvis patienten ikke retter sig op og ender i en riskozone vil en anden lampe lyse rødt. Vibrationen vil stige i takt med at lyset ændrer sig fra gult til rødt. Selve øvelsen udføres herefter ved at holde balancen i udgangspositionen, hvorefter øjenene lukkes. Dette gøres for at udelukke den visuelle sans, hvilket gør det svære for patienten at opretholde balancen \ref{balanceafsnittet}. Selve forsøget gentages efter behov. 
+Ved at tage målinger over tid i rehabiliteringsforløbet vil det forventes at der sker en fremgang mellem målingerne. 
+
+\subsection{Optagelse af signal fra accelerometer}
+Acceleorometeret skal give et elektrisk signal ud fra den position som anvendes i forsøget \fxnote{Vi skal vurdere hvor signalet kommer fra om det x,y,z aksen.}. Accelerometeret opfanger de signaler som udsendes fra sensoren som er placeret anteriort på patientens brystkasse. Signalet afhænger af, hvor langt patienten har flyttet sig. 
+
+............ HER MANGLER NOGET INFORMATION..........................
+
+Ledningerne snoes for at kontrollere samt mindske støjen. Derudover sættes ledninger fast med tape på patienten, så vidt det er muligt. For at undgå unødvendigt støj foretages forsøget væk fra andet elektronik.  \ref{reference til støj afsnittet}
+
+
 
 \subsection{Analogt output}
 Det analoge output skal kunne henvende sig til patienten, dette sker ved lysdioder og vibration. Lysdioderne skal lyse gult ved 'usikkerhed' og slukke hvis patienten enten er rettet op igen eller bevæger sig ud i riskozonen, hvorefter en ny diode skal lyse rødt. Vibrationerne igangsættes ved 'usikkerhed' og skal stoppe hvis patienten retter sig op eller stige i styrke, hvis patienten kommer ud i risikozonen. 
@@ -18,7 +28,7 @@ Det digitale skal kunne anvendes af sundhedspersonale til at vurdere om patiente
 
 
 \subsection{Systemets opbygning}
-Systemets opbygning fremgår af \figref{krav_blok}. Når signalet er opsamlet ved et accelerometer, sendes signalet osv....
+Systemets opbygning fremgår af \figref{krav_blok}. Sensoren som sidder på patienten udsender signaler som accelerometeret opfanger.
 
 \begin{figure}[H]
 	\centering
@@ -27,13 +37,132 @@ Systemets opbygning fremgår af \figref{krav_blok}. Når signalet er opsamlet ve
 	\label{krav_blok}
 \end{figure}
 
+Signalerne fra accelerometeret skal forstrækes, herefter støj skal filteres fra for at dæmpe uønskede frekvenser. Herefter forstærkes signalet med en variabel forstærkningen, da signalet kun er forstærket lidt. Signalet forstærkes til maksimalt 3V \ref{til det første afsnit i systembeskrivelse}. Dette gøres ved en operationsforstærker \fxnote{inverteret eller ikke-inverteret} Det analoge signal ensrettet via. \fxnote{helbølgeensretter eller halvbølgeensretter}, hvor efter der benyttes en integrator til at lave en lineær linje. Ud fra denne linje gives en advarsel via feedback. Det digitale signal skal konverteres fra analogt til digitalt, hvilket gøres ved en ADC.  Herefter anvendes en USB-isolator for patientsikkerhed. Computeren skal fremvise en graf når NIDAQ er tilsluttet. 
+
 \subsection{Kravspecifikationer}
+Til vurdering af tolerance er der udført et pilotforsøg, dette er udført med henblik på at kunne beregne forstærkning, filtrering og integrering af signalet. 
+
+\subsubsection{Det samlede system}
+Det analoge output sammenligninger inputtet som kommer fra accelerometeret og outputtet i form af 2 dioder og stigning i vibration. Aktivering af bestemte dioder skal afspejle inputsignalet således at et lille input aktiverer en gul diode og vibration, mens et større input aktiverer en rød diode og stigningen i vibration. 
+
+\textbf{Krav:}
 \begin{itemize}
-\item Systemet skal anvendes visuel og sensorisk feedback 
-\item Systemet skal være non-invasiv - dvs. systemet må ikke påføre patienten smerte eller varig skade
-\item Systemet skal være brugervenlig
-\item Systemet skal forsynes med spænding fra et batteri
+\item Den gule diode skal lyse når patienten har bevæget sig XX og slukke hvis patienten retter sig op eller hælder yderligere.
+\item Den røde diode skal lyse når patienten har bevæget sig XX og slukke, hvis patienten retter sig op.
+\item Vibration skal igangsættes når patienten har bevæget sig XX og skal slukke, hvis patienten retter sig op eller stige, hvis patienten hælder yderligere.
+\item Der skal være en sammenhæng mellem inputsignalets størrelse og antallet af dioder der lyser???
+\item Signalet i systemet må ikke forstærkes til en værdi over 3V \ref{det første afsnit}
 \end{itemize}
+
+\textbf{Tolerance:}
+\begin{itemize}
+\end{itemize}
+
+\subsubsection{Accelerometer}
+\textbf{Krav:}
+\begin{itemize}
+
+\end{itemize}
+
+\textbf{Tolerance:}
+\begin{itemize}
+\end{itemize}
+
+\subsubsection{Instrumentering forstærker}
+\textbf{Krav:}
+\begin{itemize}
+
+\end{itemize}
+
+\textbf{Tolerance:}
+\begin{itemize}
+\end{itemize}
+
+\subsubsection{Filtre - opdeling i høj og lavpass?}
+\textbf{Krav:}
+\begin{itemize}
+
+\end{itemize}¨
+
+\textbf{Tolerance:}
+\begin{itemize}
+\end{itemize}
+\subsubsection{Forstærker med variabel forstærkning}
+\textbf{Krav:}
+\begin{itemize}
+
+\end{itemize}
+
+\textbf{Tolerance:}
+\begin{itemize}
+\end{itemize}
+
+\subsubsection{Ensretter}
+\textbf{Krav:}
+\begin{itemize}
+
+\end{itemize}
+
+\textbf{Tolerance:}
+\begin{itemize}
+\end{itemize}
+
+\subsubsection{Integrator}
+\textbf{Krav:}
+\begin{itemize}
+
+\end{itemize}
+
+\textbf{Tolerance:}
+\begin{itemize}
+\end{itemize}
+
+\subsubsection{Advarsel}
+\textbf{Krav:}
+\begin{itemize}
+
+\end{itemize}
+
+\textbf{Tolerance:}
+\begin{itemize}
+\end{itemize}
+
+\subsubsection{ADC}
+\textbf{Krav:}
+\begin{itemize}
+
+\end{itemize}
+
+\textbf{Tolerance:}
+\begin{itemize}
+\end{itemize}
+
+\subsubsection{USB-isolator}
+\textbf{Krav:}
+\begin{itemize}
+
+\end{itemize}
+
+\textbf{Tolerance:}
+\begin{itemize}
+\end{itemize}
+
+\subsubsection{Computer}
+\textbf{Krav:}
+\begin{itemize}
+
+\end{itemize}
+
+\textbf{Tolerance:}
+\begin{itemize}
+\end{itemize}
+
+%\begin{itemize}
+%\item Systemet skal ved fald få dioder til at lyse samt give feedback i form af stigende vibration. 
+%\item Systemet skal være non-invasiv - dvs. systemet ikke må påføre patienten smerte eller varig skade
+%\item Systemet skal være brugervenligt
+%\item Systemet skal forsynes med spænding fra 9V batteri
+%\end{itemize}
 
 %\subsubsection{Accelerometer}
 %Accelerometeret skal detektere patientens kropshældning.
