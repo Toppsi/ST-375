@@ -110,6 +110,15 @@
   Timestamp                = {2015.09.29}
 }
 
+@Article{Blanchard1972,
+  Title                    = {The Relative Efficacy of Visual and Auditory Feedback for Self-Control of Heart Rate},
+  Author                   = {Blanchard, Edward B. and  Young, Larry D.},
+  Year                     = {1972},
+
+  Owner                    = {Mads},
+  Timestamp                = {2015.10.14}
+}
+
 @Book{Bojsen-Moeller2012,
   Title                    = {Bevægeapparatets Anatomi},
   Author                   = {Bojsen-Møller, Finn and Simonsen, Erik B. and Tranum-Jensen, Jørgen},
