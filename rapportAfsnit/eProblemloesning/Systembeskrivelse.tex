@@ -17,7 +17,7 @@ Acceleorometeret skal give et elektrisk signal ud fra den position som anvendes 
 
 ............ HER MANGLER NOGET INFORMATION..........................
 
-Ledningerne snoes for at kontrollere samt mindske støjen. Derudover sættes ledninger fast med tape på patienten, så vidt det er muligt. For at undgå unødvendigt støj foretages forsøget væk fra andet elektronik.  \ref{reference til støj afsnittet}
+Ledningerne snoes for at kontrollere samt mindske støjen. Derudover sættes ledninger fast med tape på patienten, så vidt det er muligt. For at undgå unødvendigt støj foretages forsøget væk fra andet elektronik.  %\ref{reference til støj afsnittet}
 
 
 
@@ -29,14 +29,14 @@ Det digitale skal kunne anvendes af sundhedspersonale til at vurdere om patiente
 
 
 \subsection{Systemets opbygning}
-Systemets opbygning fremgår af \figref{krav_blok}. Sensoren som sidder på patienten udsender signaler som accelerometeret opfanger.
+%Systemets opbygning fremgår af \figref{krav_blok}. Sensoren som sidder på patienten udsender signaler som accelerometeret opfanger.
 
-\begin{figure}[H]
-	\centering
-	\includegraphics[scale=0.8]{figures/cProblemløsning/blokdiagram.png}
-	\caption{Figuren viser de blokke/elementer som systemet skal indeholde}
-	\label{krav_blok}
-\end{figure}
+%\begin{figure}[H]
+%	\centering
+%	\includegraphics[scale=0.8]{figures/cProblemløsning/blokdiagram.png}
+%	\caption{Figuren viser de blokke/elementer som systemet skal indeholde}
+%	\label{krav_blok}
+%\end{figure}
 
 Signalerne fra accelerometeret skal forstrækes, herefter støj skal filteres fra for at dæmpe uønskede frekvenser. Herefter forstærkes signalet med en variabel forstærkningen, da signalet kun er forstærket lidt. Signalet forstærkes til maksimalt 3V. Dette gøres ved en operationsforstærker \fxnote{inverteret eller ikke-inverteret} Det analoge signal ensrettet via. \fxnote{helbølgeensretter eller halvbølgeensretter}, hvor efter der benyttes en integrator til at lave en lineær linje. Ud fra denne linje gives en advarsel via feedback. Det digitale signal skal konverteres fra analogt til digitalt, hvilket gøres ved en ADC.  Herefter anvendes en USB-isolator for patientsikkerhed. Computeren skal fremvise en graf når NIDAQ er tilsluttet. 
 
@@ -51,113 +51,105 @@ Det analoge output sammenligninger inputtet som kommer fra accelerometeret og ou
 \item Den gule diode skal lyse når patienten har bevæget sig XX og slukke hvis patienten retter sig op eller hælder yderligere.
 \item Den røde diode skal lyse når patienten har bevæget sig XX og slukke, hvis patienten retter sig op.
 \item Vibration skal igangsættes når patienten har bevæget sig XX og skal slukke, hvis patienten retter sig op eller stige, hvis patienten hælder yderligere.
-\item Der skal være en sammenhæng mellem inputsignalets størrelse og antallet af dioder der lyser???
-\item Signalet i systemet må ikke forstærkes til en værdi over 3V \ref{det første afsnit}
+\item Der skal være en sammenhæng mellem inputsignalets størrelse og antallet af dioder der lyser?
+\item Signalet i systemet må ikke forstærkes til en værdi over 3V.
 \end{itemize}
 
-\textbf{Tolerance:}
-\begin{itemize}
-\end{itemize}
+%\textbf{Tolerance:}
+%\begin{itemize}
+%\end{itemize}
+%
+%\subsubsection{Accelerometer}
+%\textbf{Krav:}
+%\begin{itemize}
+%\end{itemize}
+%
+%\textbf{Tolerance:}
+%\begin{itemize}
+%end{itemize}
+%
+%\subsubsection{Instrumentering forstærker}
+%\textbf{Krav:}
+%\begin{itemize}
+%\end{itemize}
+%
+%\textbf{Tolerance:}
+%\begin{itemize}
+%\end{itemize}
+%
+%\subsubsection{Filtre - opdeling i høj og lavpass?}
+%\textbf{Krav:}
+%\begin{itemize}
+%\end{itemize}
+%
+%\textbf{Tolerance:}
+%\begin{itemize}
+%\end{itemize}
 
-\subsubsection{Accelerometer}
-\textbf{Krav:}
-\begin{itemize}
+%\subsubsection{Forstærker med variabel forstærkning}
 
-\end{itemize}
+%\textbf{Krav:}
+%\begin{itemize}
+%\end{itemize}
+%
+%\textbf{Tolerance:}
+%\begin{itemize}
+%\end{itemize}
+%
+%\subsubsection{Ensretter}
 
-\textbf{Tolerance:}
-\begin{itemize}
-\end{itemize}
-
-\subsubsection{Instrumentering forstærker}
-\textbf{Krav:}
-\begin{itemize}
-
-\end{itemize}
-
-\textbf{Tolerance:}
-\begin{itemize}
-\end{itemize}
-
-\subsubsection{Filtre - opdeling i høj og lavpass?}
-\textbf{Krav:}
-\begin{itemize}
-
-\end{itemize}¨
-
-\textbf{Tolerance:}
-\begin{itemize}
-\end{itemize}
-\subsubsection{Forstærker med variabel forstærkning}
-\textbf{Krav:}
-\begin{itemize}
-
-\end{itemize}
-
-\textbf{Tolerance:}
-\begin{itemize}
-\end{itemize}
-
-\subsubsection{Ensretter}
-\textbf{Krav:}
-\begin{itemize}
-
-\end{itemize}
-
-\textbf{Tolerance:}
-\begin{itemize}
-\end{itemize}
-
-\subsubsection{Integrator}
-\textbf{Krav:}
-\begin{itemize}
-
-\end{itemize}
-
-\textbf{Tolerance:}
-\begin{itemize}
-\end{itemize}
-
-\subsubsection{Advarsel}
-\textbf{Krav:}
-\begin{itemize}
-
-\end{itemize}
-
-\textbf{Tolerance:}
-\begin{itemize}
-\end{itemize}
-
-\subsubsection{ADC}
-\textbf{Krav:}
-\begin{itemize}
-
-\end{itemize}
-
-\textbf{Tolerance:}
-\begin{itemize}
-\end{itemize}
-
-\subsubsection{USB-isolator}
-\textbf{Krav:}
-\begin{itemize}
-
-\end{itemize}
-
-\textbf{Tolerance:}
-\begin{itemize}
-\end{itemize}
-
-\subsubsection{Computer}
-\textbf{Krav:}
-\begin{itemize}
-
-\end{itemize}
-
-\textbf{Tolerance:}
-\begin{itemize}
-\end{itemize}
-
+%\textbf{Krav:}
+%\begin{itemize}
+%\end{itemize}
+%
+%\textbf{Tolerance:}
+%begin{itemize}
+%end{itemize}
+%
+%\subsubsection{Integrator}
+%\textbf{Krav:}
+%\begin{itemize}
+%\end{itemize}
+%
+%\textbf{Tolerance:}
+%\begin{itemize}
+%\end{itemize}
+%
+%\subsubsection{Advarsel}
+%\textbf{Krav:}
+%\begin{itemize}
+%\end{itemize}
+%
+%\textbf{Tolerance:}
+%\begin{itemize}
+%\end{itemize}
+%
+%\subsubsection{ADC}
+%\textbf{Krav:}
+%\begin{itemize}
+%\end{itemize}
+%
+%\textbf{Tolerance:}
+%\begin{itemize}
+%\end{itemize}
+%
+%\subsubsection{USB-isolator}
+%\textbf{Krav:}
+%\begin{itemize}
+%\end{itemize}
+%
+%\textbf{Tolerance:}
+%\begin{itemize}
+%\end{itemize}
+%
+%\subsubsection{Computer}
+%\textbf{Krav:}
+%\begin{itemize}
+%\end{itemize}
+%
+%\textbf{Tolerance:}
+%\begin{itemize}
+%\end{itemize}
 %\begin{itemize}
 %\item Systemet skal ved fald få dioder til at lyse samt give feedback i form af stigende vibration. 
 %\item Systemet skal være non-invasiv - dvs. systemet ikke må påføre patienten smerte eller varig skade
