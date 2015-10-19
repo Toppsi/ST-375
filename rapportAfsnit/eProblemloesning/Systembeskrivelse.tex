@@ -9,7 +9,7 @@ Systemet skal opfange, hvis patienten er ude af balance og være nemt anvendelig
 
 
 \subsection{Beskrivelse af test}
-Patienten skal være stående på en tegnet linje med den ene fods tæer mod den anden fods tå\fxnote{måske et billede vi tager som vil illustrere dette}. Netop denne position anvendes for at udfordre patientens balance ved at fordele kropsvægten anderledes ift. den normale kropsstilling som bliver omtalt på side \pageref{BalanceAfsnit}. Patienten påsætter systemet og udfører herefter en prøvetest for at kende til den givne feedback. Prøvetesten indebærer, at patienten svajer langsomt fra side til side. Hvis patienten hælder xx, vil en lampe lyse gult og patienten vil kunne mærke vibration. Hvis patienten ikke retter sig op og ender i en riskozone vil en anden lampe lyse rødt. Vibrationen vil stige i takt med at lyset ændrer sig fra gult til rødt. Selve øvelsen udføres herefter ved at holde balancen i udgangspositionen, hvorefter øjenene lukkes. Dette gøres for at udelukke den visuelle sans, hvilket gør det svære for patienten at opretholde balancen. Selve forsøget gentages efter behov. \\
+Patienten skal være stående på en tegnet linje med den ene fods tæer mod den anden fods hæl\fxnote{måske et billede vi tager som vil illustrere dette}. Netop denne position anvendes for at udfordre patientens balance ved at fordele kropsvægten anderledes ift. den normale kropsstilling som bliver omtalt på side \pageref{BalanceAfsnit}. Patienten påsætter systemet og udfører herefter en prøvetest for at kende til den givne feedback. Prøvetesten indebærer, at patienten svajer langsomt fra side til side. Hvis patienten hælder xx, vil en lampe lyse gult og patienten vil kunne mærke vibration. Hvis patienten ikke retter sig op og ender i en riskozone vil en anden lampe lyse rødt. Vibrationen vil stige i takt med at lyset ændrer sig fra gult til rødt. Selve øvelsen udføres herefter ved at holde balancen i udgangspositionen, hvorefter øjenene lukkes. Dette gøres for at udelukke den visuelle sans, hvilket gør det svære for patienten at opretholde balancen. Selve forsøget gentages efter behov. \\
 Ved at tage målinger over tid i rehabiliteringsforløbet vil det forventes at der sker en fremgang mellem målingerne. 
 
 \subsection{Optagelse af signal fra accelerometer}
@@ -29,14 +29,14 @@ Det digitale skal kunne anvendes af sundhedspersonale til at vurdere om patiente
 
 
 \subsection{Systemets opbygning}
-%Systemets opbygning fremgår af \figref{krav_blok}. Sensoren som sidder på patienten udsender signaler som accelerometeret opfanger.
+Systemets opbygning fremgår af \figref{kravblok}.
 
-%\begin{figure}[H]
-%	\centering
-%	\includegraphics[scale=0.8]{figures/cProblemløsning/blokdiagram.png}
-%	\caption{Figuren viser de blokke/elementer som systemet skal indeholde}
-%	\label{krav_blok}
-%\end{figure}
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=0.62]{figures/cProblemloesning/blokdiagram1.png}
+	\caption{Figuren viser de blokke/elementer som systemet skal indeholde}
+	\label{kravblok}
+\end{figure}
 
 Signalerne fra accelerometeret skal forstrækes, herefter støj skal filteres fra for at dæmpe uønskede frekvenser. Herefter forstærkes signalet med en variabel forstærkningen, da signalet kun er forstærket lidt. Signalet forstærkes til maksimalt 3V. Dette gøres ved en operationsforstærker \fxnote{inverteret eller ikke-inverteret} Det analoge signal ensrettet via. \fxnote{helbølgeensretter eller halvbølgeensretter}, hvor efter der benyttes en integrator til at lave en lineær linje. Ud fra denne linje gives en advarsel via feedback. Det digitale signal skal konverteres fra analogt til digitalt, hvilket gøres ved en ADC.  Herefter anvendes en USB-isolator for patientsikkerhed. Computeren skal fremvise en graf når NIDAQ er tilsluttet. 
 
