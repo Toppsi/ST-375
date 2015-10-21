@@ -1,35 +1,30 @@
 % !TeX spellcheck = da_DK
 \section{Systembeskrivelse}  
 
-\subsection{Formål og anvendelse}
+\subsection{Formål}
 Systemet har til formål at gøre apopleksipatienter opmærksomme på, hvornår de mister balancen \fxnote{reference til problemafgrænsningen}. Systemet skal derfor kunne registrere, hvis patienten er i risiko for at falde og derved udsende et signal så patienterne har mulighed for at rette sig op igen. Selve systemet skal anvendes så patienterne er mere selvstændige i rehabiliteringsprocessen med henblik på at opnå en bedre balance. 
 
-Det er på baggrund af afsnit.. valgt at hældningen på patienten skal opfanges via en sensor som er placeret på patienten. Systemet skal give visuelt feedback i form af to dioder, når patienten hælder til enten højre eller venstre. Når patienten hælder XX til den ene side indikeres det af en gul diode, hvis patienten hælder yderligere, hvilket svarer til en hældning på XX lyser en rød diode. Derudover anvendes sensorisk feedback via vibration som advarer patienten ved den gule diode og stiger i takt med at patienten hælder mere og mere.  
-%Ud fra problemanalysen fremgår det, at ældre over 65 år i højere grad får apopleksi, hvortil balanceproblemer er en hyppig gene. Derudover har apopleksipatienter ofte kognitive problemer. Apopleksipatienter har et ønske om at være selvstændige og uafhængige. 
+Det er på baggrund af afsnit.. valgt at hældningen på patienten skal opfanges via en sensor som er placeret på patienten. Systemet skal give visuelt feedback i form af to dioder, når patienten hælder til enten højre eller venstre. Når patienten hælder 5$^{\circ}$ til den ene side indikeres det af en gul diode, hvis patienten hælder yderligere, hvilket svarer til en hældning på 10$^{\circ}$ lyser en rød diode. Derudover anvendes sensorisk feedback via vibration som advarer patienten ved den gule diode og stiger i takt med at patienten hælder mere og mere.  
 
-%Systemet skal opfange, hvis patienten er ude af balance og være nemt anvendeligt, da det skal bruges til selvtræning af balancen i hjemmet - altså implementeres i fase 4, som bliver omtalt på side \pageref{Faser}. For at systemet kan anvendes af målgruppen, skal det være brugervenligt - dvs. let at påsætte, ikke veje for meget samt signalerne skal være let forståelige. Målgruppen giver yderligere begrænsninger ift. feedback, da både hørelsen, synet eller kroppens følelser kan være svækket. Derudover skal systemet kunne give et digitalt output, som er muligt at behandle.
-
-\subsection{Systemets brugere}
+\subsection{Systemets bruger}
 Systemet udvikles med henblik på selvtræning af balance i rehabiliteringsfasen. Derfor er systemets primære bruger patienten selv. Jævnfør afsnit (med apopleksipatienters alder) ses det at majoriteten af apopleksipatienter er over 65 år. Systemet skal være let anvendeligt så det kan anvendes af denne ældre demografi. Fagkyndigt personale, såsom fysioterapeuter og læger, skal kunne følge med i udviklingen som patienten gennemgår. Det skal derfor være muligt for disse også at benytte systemet. Dette gøres ved at systemet både har et analogt og digitalt output. Hvor det digitale henvender sig mere til et fagkyndigt personale.
 
 \subsection{Anvendelse}
-Systemet designes til at patienten under anvendelsen skal være stående på en tegnet linje med den ene fods tæer mod den anden fods hæl\fxnote{måske et billede vi tager som vil illustrere dette}. Denne position er valgt for at udfordre patientens balance ved at fordele kropsvægten anderledes ift. den normale kropsstilling omtalt på side \pageref{BalanceAfsnit}. Patienten påsætter selv systemet øverst på sternum og udfører herefter en kort prøvetest for at kende til de givne feedbackparametre. Under prøvetesten svajer patienten langsomt fra side til side. Hvis vedkommende hælder over xx grader, vil en gul diode lyse og vibrationen vil begynde. Hvis patienten svajer yderligere og hælder med over xx grader vil en rød diode lyse. Vibrationen vil styrkes i takt med overgangen fra den gule til den røde diode. Efter testøvelsen udføres selve træningsøvelsen. Her indtages udgangspositionen på linjen og øjnene lukkes. Dette gøres for at udelukke den visuelle sans, hvilket gør det sværere for patienten at opretholde balancen. Patienten skal forsøge at holde balancen så længe som muligt uden at bevæge sig ud i risikozonerne, der vil blive markeret ved vibration. Træningsøvelsen gentages efter behov. \\
-Ved at tage flere målinger igennem rehabiliteringsforløbet vil det forventes at der sker en fremgang ift. tiden hvori balancen kan opretholdes uden at patienten bevæge sig ud i risikozonerne. 
+Systemet designes til at patienten under anvendelsen skal være stående på en tegnet linje med den ene fods tæer mod den anden fods hæl\fxnote{måske et billede vi tager som vil illustrere dette}. Denne position er valgt for at udfordre patientens balance ved at fordele kropsvægten anderledes ift. den normale kropsstilling omtalt på side \pageref{BalanceAfsnit}. Patienten påsætter selv systemet øverst på sternum og udfører herefter en kort prøvetest for at kende til de givne feedbackparametre. Under prøvetesten svajer patienten langsomt fra side til side. Hvis vedkommende hælder over 5$^{\circ}$, vil en gul diode lyse og vibrationen vil begynde. Hvis patienten svajer yderligere og hælder med over 10$^{\circ}$ vil en rød diode lyse. Vibrationen vil styrkes i takt med overgangen fra den gule til den røde diode. Efter testøvelsen udføres selve træningsøvelsen. Her indtages udgangspositionen på linjen og øjnene lukkes. Dette gøres for at udelukke den visuelle sans, hvilket gør det sværere for patienten at opretholde balancen. Patienten skal forsøge at holde balancen så længe som muligt uden at bevæge sig ud i risikozonerne, der vil blive markeret ved vibration. Træningsøvelsen gentages efter behov. \\
+Ved at tage flere målinger igennem rehabiliteringsforløbet vil det forventes at der sker en fremgang ift. tiden hvori balancen kan opretholdes uden at patienten bevæger sig ud i risikozonerne. 
 
-\subsection{Optagelse af signal fra accelerometer}
-Acceleorometeret skal give et elektrisk signal ud fra den position som anvendes i forsøget \fxnote{Vi skal vurdere hvor signalet kommer fra om det x,y,z aksen.}. Accelerometeret opfanger de signaler som udsendes fra sensoren som er placeret anteriort på patientens brystkasse. Signalet afhænger af, hvor langt patienten har flyttet sig. 
+%\subsection{Optagelse af signal fra accelerometer}
+%Acceleorometeret skal give et elektrisk signal ud fra den position som anvendes i forsøget \fxnote{Vi skal vurdere hvor signalet kommer fra om det x,y,z aksen.}. Accelerometeret opfanger de signaler som udsendes fra sensoren som er placeret anteriort på patientens brystkasse. Signalet afhænger af, hvor langt patienten har flyttet sig. 
 
-............ HER MANGLER NOGET INFORMATION..........................
+%............ HER MANGLER NOGET INFORMATION..........................
 
-Ledningerne snoes for at kontrollere samt mindske støjen. Derudover sættes ledninger fast med tape på patienten, så vidt det er muligt. For at undgå unødvendigt støj foretages forsøget væk fra andet elektronik.  %\ref{reference til støj afsnittet}
+%Ledningerne snoes for at kontrollere samt mindske støjen. Derudover sættes ledninger fast med tape på patienten, så vidt det er muligt. For at undgå unødvendigt støj foretages forsøget væk fra andet elektronik.  %\ref{reference til støj afsnittet}
 
+%\subsection{Analogt output}
+%Det analoge output skal kunne henvende sig til patienten, dette sker ved lysdioder og vibration. Lysdioderne skal lyse gult ved 'usikkerhed' og slukke hvis patienten enten er rettet op igen eller bevæger sig ud i riskozonen, hvorefter en ny diode skal lyse rødt. Vibrationerne igangsættes ved 'usikkerhed' og skal stoppe hvis patienten retter sig op eller stige i styrke, hvis patienten kommer ud i risikozonen. 
 
-
-\subsection{Analogt output}
-Det analoge output skal kunne henvende sig til patienten, dette sker ved lysdioder og vibration. Lysdioderne skal lyse gult ved 'usikkerhed' og slukke hvis patienten enten er rettet op igen eller bevæger sig ud i riskozonen, hvorefter en ny diode skal lyse rødt. Vibrationerne igangsættes ved 'usikkerhed' og skal stoppe hvis patienten retter sig op eller stige i styrke, hvis patienten kommer ud i risikozonen. 
-
-\subsection{Digitalt output}
-Det digitale skal kunne anvendes af sundhedspersonale til at vurdere om patienten gør fremskridt, dette indebærer at informationerne for patienten kan gemmes og sammenlignes på en computer. 
+%\subsection{Digitalt output}
+%Det digitale skal kunne anvendes af sundhedspersonale til at vurdere om patienten gør fremskridt, dette indebærer at informationerne for patienten kan gemmes og sammenlignes på en computer. 
 
 
 \subsection{Systemets opbygning}
@@ -52,9 +47,9 @@ Det analoge output sammenligninger inputtet som kommer fra accelerometeret og ou
 
 \textbf{Krav:}
 \begin{itemize}
-\item Den gule diode skal lyse når patienten har bevæget sig XX og slukke hvis patienten retter sig op eller hælder yderligere.
-\item Den røde diode skal lyse når patienten har bevæget sig XX og slukke, hvis patienten retter sig op.
-\item Vibration skal igangsættes når patienten har bevæget sig XX og skal slukke, hvis patienten retter sig op eller stige, hvis patienten hælder yderligere.
+\item Den gule diode skal lyse når patienten har bevæget sig 5$^{\circ}$ og slukke hvis patienten retter sig op eller hælder yderligere.
+\item Den røde diode skal lyse når patienten har bevæget sig 10$^{\circ}$ og slukke, hvis patienten retter sig op.
+\item Vibration skal igangsættes når patienten har bevæget sig 5$^{\circ}$ og skal slukke, hvis patienten retter sig op eller stige, hvis patienten hælder yderligere.
 \item Der skal være en sammenhæng mellem inputsignalets størrelse og antallet af dioder der lyser?
 \item Signalet i systemet må ikke forstærkes til en værdi over 3V.
 \end{itemize}
