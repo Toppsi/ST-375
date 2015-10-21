@@ -1,12 +1,16 @@
 % !TeX spellcheck = da_DK
-\section{Systembeskrivelse}
-For at gøre anvendelse af samme system muligt til 4. Semester skal arbejdsområdet kunne benyttes sammen med et USB-baseret trådløst udviklingsværktøj eZ430-RF2500 fra Texas Instruments. Det er derfor nødvendigt, at designet stemmer overens med udviklingsværktøjet for at kunne sende og modtage data til og fra computeren. Udviklingsværktøjet indeholder hardware og software som evaluerer mikrokontrolleren MSP430F2274. For at hele vores system kan anvendes med udviklingsværktøjet, skal outputsignalet være 3V, eftersom mikrokontrolleren opererer med spændingsforsyning mellem 1,8V og 3,6V.  
+\section{Systembeskrivelse}  
 
 \subsection{Formål og anvendelse}
-Ud fra problemanalysen fremgår det, at ældre over 65 år i højere grad får apopleksi, hvortil balanceproblemer er en hyppig gene. Derudover har apopleksipatienter ofte kognitive problemer. Apopleksipatienter har et ønske om at være selvstændige og uafhængige. 
+Systemet har til formål at gøre apopleksipatienter opmærksomme på, hvornår de mister balancen. Som beskrevet i afsnit .. lider apopleksipatienter ofte af balanceproblemer, hvilket kan give øget risiko for fald. Systemet skal derfor kunne registrere, hvis patienten er i risiko for at falde og derved udsende et signal så patienterne har mulighed for at rette sig op igen. Selve systemet skal anvendes så patienterne er mere selvstændige i rehabiliteringsprocessen med henblik på at opnå en bedre balance. 
 
-Systemet skal opfange, hvis patienten er ude af balance og være nemt anvendeligt, da det skal bruges til selvtræning af balancen i hjemmet - altså implementeres i fase 4, som bliver omtalt på side \pageref{Faser}. For at systemet kan anvendes af målgruppen, skal det være brugervenligt - dvs. let at påsætte, ikke veje for meget samt signalerne skal være let forståelige. Målgruppen giver yderligere begrænsninger ift. feedback, da både hørelsen, synet eller kroppens følelser kan være svækket. Derudover skal systemet kunne give et digitalt output, som er muligt at behandle.
+Det er på baggrund af afsnit.. valgt at hældningen på patienten skal opfanges via en sensor som er placeret på patienten. Systemet skal give både visuelt feedback i form af to dioder, når patienten hælder til enten højre eller venstre. Når patienten hælder til den ene side indikeres det af en gul diode, hvis patienten hælder yderligere og balancen bliver kritisk lyser en rød diode. Derudover anvendes auditivfeedback via vibration som alamere patienten ved den gule diode og stige i takt med at patienten hælder mere og mere.  
+%Ud fra problemanalysen fremgår det, at ældre over 65 år i højere grad får apopleksi, hvortil balanceproblemer er en hyppig gene. Derudover har apopleksipatienter ofte kognitive problemer. Apopleksipatienter har et ønske om at være selvstændige og uafhængige. 
 
+%Systemet skal opfange, hvis patienten er ude af balance og være nemt anvendeligt, da det skal bruges til selvtræning af balancen i hjemmet - altså implementeres i fase 4, som bliver omtalt på side \pageref{Faser}. For at systemet kan anvendes af målgruppen, skal det være brugervenligt - dvs. let at påsætte, ikke veje for meget samt signalerne skal være let forståelige. Målgruppen giver yderligere begrænsninger ift. feedback, da både hørelsen, synet eller kroppens følelser kan være svækket. Derudover skal systemet kunne give et digitalt output, som er muligt at behandle.
+
+\subsection{Systemets brugere}
+Systemet udvikles med henblik på selvtræning i rehabiliteringsfasen. Derfor er systemets primære brugere patienten selv. Jævnfør afsnit (med apopleksipatienters alder) ses det at majoriteten af apopleksipatienter er over 65 år. Systemet skal være let anvendeligt så det kan anvendes af denne ældre demografi. Fagpersonale, såsom fysioterapeuter og læger, skal kunne følge med i udviklingen som patienten gennemgår. Det skal derfor være muligt for disse også at benytte systemet. Dette gøres ved at systemet både har et analogt og digitalt output. Hvor det digitale henvender sig mere til fagpersonalet.
 
 \subsection{Beskrivelse af test}
 For at teste det udviklede system vil der blive udført et forsøg der har til formål at simulere den balancetræning som systemet er tiltænkt at skulle bidrage til.
@@ -57,6 +61,9 @@ Det analoge output sammenligninger inputtet som kommer fra accelerometeret og ou
 \item Der skal være en sammenhæng mellem inputsignalets størrelse og antallet af dioder der lyser?
 \item Signalet i systemet må ikke forstærkes til en værdi over 3V.
 \end{itemize}
+
+\subsection{Krav}
+For at gøre anvendelse af samme system muligt til 4. Semester skal arbejdsområdet kunne benyttes sammen med et USB-baseret trådløst udviklingsværktøj eZ430-RF2500 fra Texas Instruments. Det er derfor nødvendigt, at designet stemmer overens med udviklingsværktøjet for at kunne sende og modtage data til og fra computeren. Udviklingsværktøjet indeholder hardware og software som evaluerer mikrokontrolleren MSP430F2274. For at hele vores system kan anvendes med udviklingsværktøjet, skal outputsignalet være 3V, eftersom mikrokontrolleren opererer med spændingsforsyning mellem 1,8V og 3,6V.
 
 %\textbf{Tolerance:}
 %\begin{itemize}
