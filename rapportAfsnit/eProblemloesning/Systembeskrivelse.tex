@@ -13,10 +13,8 @@ Systemet udvikles med henblik på selvtræning af balance i rehabiliteringsfasen
 Systemet designes til at patienten under anvendelsen skal være stående på en tegnet linje med den ene fods tæer mod den anden fods hæl\fxnote{måske et billede vi tager som vil illustrere dette}. Denne position er valgt for at udfordre patientens balance ved at fordele kropsvægten anderledes ift. den normale kropsstilling omtalt på side \pageref{BalanceAfsnit}. Patienten påsætter selv systemet øverst på sternum og udfører herefter en kort prøvetest for at kende til de givne feedbackparametre. Under prøvetesten svajer patienten langsomt fra side til side. Hvis vedkommende hælder over 5$^{\circ}$, vil en gul diode lyse og vibrationen vil begynde. Hvis patienten svajer yderligere og hælder med over 10$^{\circ}$ vil en rød diode lyse. Vibrationen vil styrkes i takt med overgangen fra den gule til den røde diode. Efter testøvelsen udføres selve træningsøvelsen. Her indtages udgangspositionen på linjen og øjnene lukkes. Dette gøres for at udelukke den visuelle sans, hvilket gør det sværere for patienten at opretholde balancen. Patienten skal forsøge at holde balancen så længe som muligt uden at bevæge sig ud i risikozonerne, der vil blive markeret ved vibration. Træningsøvelsen gentages efter behov. \\
 Ved at tage flere målinger igennem rehabiliteringsforløbet vil det forventes at der sker en fremgang ift. tiden hvori balancen kan opretholdes uden at patienten bevæger sig ud i risikozonerne. 
 
-%\subsection{Optagelse af signal fra accelerometer}
-%Acceleorometeret skal give et elektrisk signal ud fra den position som anvendes i forsøget \fxnote{Vi skal vurdere hvor signalet kommer fra om det x,y,z aksen.}. Accelerometeret opfanger de signaler som udsendes fra sensoren som er placeret anteriort på patientens brystkasse. Signalet afhænger af, hvor langt patienten har flyttet sig. 
-
-%............ HER MANGLER NOGET INFORMATION..........................
+%\subsection{Accelerometer}
+%I forsøget anvendes ADXL327 som er et tre-akset accelerometer ift. forsøget gives det elektriske signal ud fra X og Z-aksen. Produktet måler accelerationen med minimum fuldskala på \pm 2g. Sensitiviteten afhænger af forsyningsspændingen og ved 3V er sentivitivten 420mv/g. 
 
 %Ledningerne snoes for at kontrollere samt mindske støjen. Derudover sættes ledninger fast med tape på patienten, så vidt det er muligt. For at undgå unødvendigt støj foretages forsøget væk fra andet elektronik.  %\ref{reference til støj afsnittet}
 
@@ -32,7 +30,7 @@ Systemets opbygning fremgår af \figref{kravblok}.
 
 \begin{figure}[H]
 	\centering
-	\includegraphics[scale=0.62]{figures/cProblemloesning/blokdiagram1.png}
+	\includegraphics[scale=0.62]{figures/cProblemloesning/Systemopbygning.PNG}
 	\caption{Figuren viser de blokke/elementer som systemet skal indeholde}
 	\label{kravblok}
 \end{figure}
