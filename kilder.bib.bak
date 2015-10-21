@@ -112,7 +112,7 @@
 
 @Article{Blanchard1972,
   Title                    = {The Relative Efficacy of Visual and Auditory Feedback for Self-Control of Heart Rate},
-  Author                   = {Blanchard, Edward B. and  Young, Larry D.},
+  Author                   = {Blanchard, Edward B. and Young, Larry D.},
   Year                     = {1972},
 
   Owner                    = {Mads},
@@ -318,6 +318,19 @@
 
   Owner                    = {Cecilie},
   Timestamp                = {2015.10.04}
+}
+
+@Electronic{Hampton2015,
+  Title                    = {Your Plastic Brain: The Good, The Bad, and The Ugly},
+  Author                   = {Hampton, Debbie},
+  Language                 = {Engelsk},
+  Month                    = {Oktober},
+  Organization             = {The Best Brain Possible},
+  Url                      = {http://www.thebestbrainpossible.com/the-good-the-bad-and-the-ugly-2/},
+  Year                     = {2015},
+
+  Owner                    = {Cecilie},
+  Timestamp                = {2015.10.15}
 }
 
 @Electronic{Hansen2015,
