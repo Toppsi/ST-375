@@ -21,20 +21,20 @@ Før systemet kan designes, er det nødvendigt at vide hvilke frekvenser af sign
 \end{itemize}
 
 \subsection{Forsøgspersoner}
-Forsøget benytter to drenge og to piger, der er studerende på ST3. Forsøgspersonerne er raske og er ikke balancehæmmet. På baggrund af dette simuleres balanceproblemerne. 
+Forsøget benytter to drenge og to piger, der er studerende på ST3. Forsøgspersonerne er raske og er ikke balancehæmmede. På baggrund af dette simuleres balanceproblemerne. 
 
 \subsection{Metode}
-I pilotforsøget skal forsøgspersonerne simulere den øvelse, som apopleksipatienterne skal udføre ud fra det færdige system. Dette vil sige at forsøgspersonerne skal stå med fødderne på linje og herefter hælde til højre og venstre. Hældningen skal ske med et interval på fem grader, så det bliver muligt at identificere de optimale hældningsgrader, hvor advarslen skal komme. Inden forsøgspersonerne begynder at hælde, skal der måles en baseline hvor accelerometeret, bliver holdt helt lige. Dette gøres for at identificere den baggrundsstøj der vil forekomme. \\
+I pilotforsøget skal forsøgspersonerne simulere den øvelse, som apopleksipatienterne skal udføre ud fra det færdige system. Dette vil sige at forsøgspersonerne skal stå med fødderne på linje og herefter hælde til højre og venstre. Hældningen skal ske med et interval på fem grader, så det bliver muligt at identificere de optimale hældningsgrader, hvor advarslen skal komme. Inden forsøgspersonerne begynder at hælde, skal der måles en baseline, hvor accelerometeret bliver holdt helt lige. Dette gøres for at identificere den baggrundsstøj der vil forekomme. \\
 Ud fra forsøget vil det være muligt at bestemme minimum og maksimum output af accelerometeret, ud fra de definerede hældningsgrader. \\
-Accelerometeret tapes på forsøgspersonen øverst på sternum, jævnfør afsnit \fxnote{Der skal label på biomekanisk biofeedback}. Dette gøres for at opnå mindst mulig støj, samtidig med det giver de bedste målinger. Der kræves en kondensator for at accelerometeret fungere. Kondensatoren bestemmer båndbredden af accelerometeret. For at finde den mest optimale båndbredde testes tre forskellige kondensatorer. Disse vælges efter en båndbredde på 50 Hz, 100 Hz og 500 Hz.\fxnote{Ved ikke om vi skal benyttes os af disse tre, eller vi bare vælger en} \\
+Accelerometeret tapes på forsøgspersonen øverst på sternum, jævnfør afsnit \fxnote{Der skal label på biomekanisk biofeedback}. Dette gøres for at opnå mindst mulig støj, samtidig med det giver de bedste målinger. Der kræves en kondensator for at accelerometeret fungerer. Kondensatoren bestemmer båndbredden af accelerometeret. For at finde den mest optimale båndbredde testes tre forskellige kondensatorer. Disse vælges efter en båndbredde på 50 Hz, 100 Hz og 500 Hz.\fxnote{Ved ikke om vi skal benyttes os af disse tre, eller vi bare vælger en} \\
 Samplingsfrekvensen sættes efter Nyquists sætning, derfor samples der med det dobbelte af accelerometerets båndbredde.
 
 
 \subsection{Fremgangsmåde}
 \subsubsection{Opsætning}
 \begin{itemize}
-\item ADXL327 accelerometer tapes på forsøgspersonen øverst på sternum.
-\item Til accelerometeret knyttes en forsyningsspænding på 3V. 
+\item ADXL327 accelerometer tapes på forsøgspersonen øverst på sternum
+\item Til accelerometeret knyttes en forsyningsspænding på 3V 
 \item Kondensator tilkobles et breadboard
 \item Accelerometerets output kobles til kondensatoren på breadboardet
 \item Outputtet fra kondensatoren sendes igennem USB isolator USI-01 
@@ -45,7 +45,7 @@ Samplingsfrekvensen sættes efter Nyquists sætning, derfor samples der med det 
 \subsubsection{Forsøget}
 \begin{itemize}
 \item Forsøgspersonen står i en opret position med fødderne på linje
-\item Der foretages en måling for at se om accelerometeret er sat korrekt. Dvs. at outputtet skal være 0 mV
+\item Der foretages en måling for at se om accelerometeret er sat korrekt - dvs. at outputtet skal være 0 mV
 \item Der foretages en baseline måling på fem sekunder, hvor forsøgspersonen står oprejst uden bevægelse, dette opnåes ved at forsøgspersonen støtter sig til noget stationært
 \item Forsøgspersonen svajer 5${^\circ}$ til højre, og holder positionen i fem sekunder
 \item Ovenstående punkt gentages i et interval af fem fra 5-45${^\circ}$ til højre. Hver position skal holdes i fem sekunder
