@@ -3,26 +3,12 @@
 \input{macros.tex}
 \begin{document}
 
-%||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
-%|||||||				Example Inputs					 ||||||||
-%||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
-%|||||||												 ||||||||
-%	\input{rapportAfsnit/zExamples/aFigureSample.tex}	%||||||||
-%	\input{rapportAfsnit/zExamples/bTableSample.tex}	%||||||||
-%	\input{rapportAfsnit/zExamples/cEquationSample.tex}	%||||||||
-%|||||||												 ||||||||
-%||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
-%||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
-
-
 %---------------------------INPUTS-------------------------------
 %numbers the pages with Roman numeral - starts from "i":
 \frontmatter
 
 \input{rapportAfsnit/xFormaliteter/Forside1}
 \cleardoublepage
-%implementing title sheet:
-%\input{rapportAfsnit/xFormaliteter/Titelblad.tex} \clearpage
 
 \includepdf[pages={1}]{rapportAfsnit/xFormaliteter/synopsis.pdf} 
 
@@ -40,23 +26,20 @@
 \chapter{Problemanalyse}
 \input{rapportAfsnit/cProblemanalyse/Apopleksi}
 \input{rapportAfsnit/cProblemanalyse/Hjerne}
-%\input{rapportAfsnit/cProblemanalyse/KompenserendeBevaegelser}
 \input{rapportAfsnit/cProblemanalyse/behandling}
 \input{rapportAfsnit/cProblemanalyse/Foelger}
 \input{rapportAfsnit/cProblemanalyse/Rehabilitering}
 \input{rapportAfsnit/cProblemanalyse/teknologier_til_rehabilitering}
 \input{rapportAfsnit/cProblemanalyse/biofeedback}
-%\input{rapportAfsnit/cProblemanalyse/Patientsikkerhed}
-%\input{rapportAfsnit/cProblemanalyse/ElektronikDele/Ensretter_integrator}
 \input{rapportAfsnit/cProblemanalyse/ElektronikDele/Forstaerker}
 \input{rapportAfsnit/cProblemanalyse/ElektronikDele/Filtrering_stoej}
+\input{rapportAfsnit/cProblemanalyse/ElektronikDele/Komparator}
 \input{rapportAfsnit/cProblemanalyse/ElektronikDele/ADC}
 \clearpage
 \input{rapportAfsnit/dProblemformulering/Problemafgraensning}
 
 \chapter{Problemløsning}
 \input{rapportAfsnit/eProblemloesning/Systembeskrivelse}
-%\input{rapportAfsnit/eProblemloesning/Kravspecifikation}
 \input{rapportAfsnit/eProblemloesning/Pilotforsoeg}
 \begingroup
 	\raggedright
