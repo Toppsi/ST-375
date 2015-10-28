@@ -1,0 +1,11 @@
+\subsection{Accelerometer}
+Accelerometeret ADXL335 er en treakset sensor som kan anvendes til måling af statisk balance. Arbejdsområdet ligger mellem 1.8 V og 3.6 V. Båndbredden for X og Y-akserne ligger i mellem 0.5 til 1600 Hz og for Z-aksen mellem 0.5 til 550 Hz. Støjen fra Xout og Yout ligger normalt på 150 $\mu g/\sqrt{Hz * rms}$, mens det for Zout ligger på 300 $\mu g/\sqrt{Hz * rms}$. Offsettet varierer efter spændingsforsyningen, men ligger ved 3 V forsyning på 1500 mV. Sensitiviteten afhænger ligeledes af spændingsforsyningen og ligger ved 3 V forsyning mellem 270 og 330 mV/g. Output signalet er en analog spænding som er proportionel med accelerationen. Outputtet ligger normalt ved -1.08g i X-aksen og  1.08g Y-aksen og 1.83 g ved Z-aksen. 
+
+Når accelerometeret hældes til siden, vil der ske en acceleration, og dermed et udslag fra offset-værdien. Sammenhængen mellem de enkelte parametre kan udtrykkes ved følgende ligning:\\ 
+\begin{equation}
+Vout=Voffset+sensitiviteten*tyngdekraften*sin(vinklen)
+Vout=Voffset+(\frac{\frac{\delta V}{\delta g} * g * \sin(\Theta))
+\end{equation}
+\\
+Herudfra er det muligt at isolere og udregne de ukendte parametre. 
+
