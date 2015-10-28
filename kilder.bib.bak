@@ -280,6 +280,16 @@
   Timestamp                = {2015.09.23}
 }
 
+@Article{Gjoreski2011,
+  Title                    = {Accelerometer Placement for Posture Recognition and Fall Detection},
+  Author                   = {Gjoreski, Hristijan and others},
+  Journal                  = {Intelligent Enviroments},
+  Year                     = {2011},
+
+  Owner                    = {Mathias},
+  Timestamp                = {2015.10.21}
+}
+
 @Article{Glanz1997,
   Title                    = {Biofeedback therapy in stroke rehabilitation: a review},
   Author                   = {Glanz, Morton and others},
