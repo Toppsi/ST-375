@@ -1,2 +1,22 @@
 % !TeX spellcheck = da_DK
 \subsection{Kravspecifikation}
+I dette afsnit er der beskrevet, hvilke kravspecifikationer de enkelte komponenter i blokdiagrammet skal have for at kunne implementeres. De forskellige tolerance krav er bestemt på baggrund af pilotforsøg som ses under \fxnote{reference til pilotforsøg}
+
+\subsubsection{Opsamling}
+Blokken opsamling omfatter systemets sensor dvs. accelerometer samt forstærker. Det er nødvendigt at kunne måle udover de angivne grader således at feedbacken ikke stoppes, hvis patienten bevæger sig ud over den maksimale grænse på 13 grader.
+
+\textbf{Accelerometer}
+\textbf{Krav}
+\begin{itemize}
+\item Skal kunne detektere en hældning fra 0 grader til \pm 90 grader i forhold til tyngdekraften
+\item Skal kunne detektere en spænding målt i volt ud fra accelerationen som finder sted i X-aksen
+\end{itemize}
+
+\textbf{Tolerance}
+\begin{itemize}
+Tolerance krav vil blive beskrevet på baggrund af pilotforsøg.
+\item Hældningen skal have en lille tolerance for ikke at risikere at patienten ikke vil falde og sikre at man ikke bevæger sig ud i den næste risikozone uden at der sker noget.
+\end{itemize}
+
+\sub
+\textbf{Forstæker}
