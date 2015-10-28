@@ -1,60 +1,91 @@
 % !TeX spellcheck = da_DK
 \section{Pilotforsøg}
-Før systemet kan designes, er det nødvendigt at vide hvilke frekvenser af signalet der er støj, samt hvilket outputsignal accelerometeret giver ift. den valgte hældningsgrad. Derudover er det relevant at undersøge, hvornår det er optimalt at advare patienten ift. hældningsgrad. Ud fra disse oplysninger er det muligt at designe de enkelte blokke i systemet.% Oplysningerne findes på baggrund af et pilotforsøg. 
+Før systemet kan designes, er det nødvendigt at vide hvilke frekvenser af signalet der er støj. Grunden til dette er at det signa,l der optages gerne skal være af den bedste kvalitet, derfor skal støjsignaler frasorteres. Derudover er det nødvendigt at vide hvilket outputsignal accelerometeret giver ift. den valgte hældningsgrad. Ud fra disse oplysninger er det muligt at designe de enkelte blokke i systemet.% Oplysningerne findes på baggrund af et pilotforsøg. 
 
 \subsection{Formål}
 \begin{enumerate}
-\item Identificere hældningsgrad, hvor patienten skal advares.
 \item Identificere de frekvenser, der udgør støj i outputsignalet fra accelerometeret.
 \item Identificere maksimum og minimum outputsignal af accelerometeret.
 \end{enumerate}
 
 \subsection{Materialer}
 \begin{itemize}
-\item ADXL327 accelerometer.
+\item ADXL335 accelerometer.
 \item Kondensator.
 \item Breadboard.
 \item Spændingsforsyning.
-\item Tape.
+%\item Tape.
+\item Tavle.
+\item Vinkelmåler
+\item Hæftemasse (Elefantsnot).
+\item Kridt
 \item NI USB-6009.
 \item USB isolator USI-01.
 \item Computer med Scopelogger og MatLab.
 \item Diverse ledninger og modstandere\fxnote{Specificer yderligere efter forsøg}.
 \end{itemize}
 
-\subsection{Forsøgspersoner}
-Forsøget benytter to drenge og to piger, der er studerende på ST3. Forsøgspersonerne er raske, ikke balancehæmmede og ikke påvirket af alkohol. Find undersøgelser, der siger, at dette har en påvirkning på balancen. På baggrund af disse kriterier simuleres balanceproblemerne. 
-
 \subsection{Metode}
-I pilotforsøget skal forsøgspersonerne simulere den øvelse, som apopleksipatienterne skal udføre med det færdige system. Altså skal forsøgspersonerne stå med fødderne på en tegnet linje, så den ene fods tæer er mod den anden fods hæl. Hældningen skal ske med et interval på fem grader\fxnote{Kræver evt. et billede af føddernes stilling samt illustrering af hældningsgrad}, så det bliver muligt at identificere de optimale hældningsgrader, hvor advarslen skal komme. Inden forsøgspersonerne begynder at hælde, skal der måles en baseline, hvor accelerometeret bliver holdt helt lige. Dette gøres for at identificere den støj der vil forekomme. \\
-Ud fra forsøget vil det være muligt at bestemme minimum og maksimum output af accelerometeret, ud fra de definerede hældningsgrader. \\
-Accelerometeret fastgøres på forsøgspersonen øverst på sternum, jævnfør afsnit \fxnote{Der skal label på biomekanisk biofeedback}. Dette gøres for at opnå mindst mulig støj, samtidig med det giver de bedste målinger.\fxnote{Hvorfor giver dette mindst muligt støj og bedst resultat? Der skal skrives et argument} Der kræves en kondensator for at accelerometeret fungerer, og denne bestemmer båndbredden af accelerometeret. For at finde den mest optimale båndbredde testes tre forskellige kondensatorer. Disse vælges efter en båndbredde på 50 Hz, 100 Hz og 500 Hz.\fxnote{Ved ikke om vi skal benyttes os af disse tre, eller vi bare vælger en}\fxnote{Argument for, hvorfor man vælger den båndbredte, som vi muligvis gør. Ellers hvis alle 3 skal benyttes - hvorfor så lige dem?} \\
-Samplingsfrekvensen sættes efter Nyquists sætning, derfor samples der med det dobbelte af accelerometerets båndbredde.
-
+Måden der identificeres støj frekvenserne i outputsignalet er ved først at måle en baseline, hvor der ikke er nogen hældning på accelerometeret. Dette gør at signalet kan analyseres, hvor der ikke burde være nogen påvirkning på outputsignalet. Dernæst måles der hvor accelerometeret er hældt 90$^{\circ}$, både til højre og venstre. Derved kan det sammenlignes om der er en anden form for støj i forhold til baselinen. Det samme gøres for de specificerede hældningsgrader. For at simulere den påvirkning accelerometeret udsættes for, og identificere den mulige støj, der kan forekomme ved en rotation af accelerometeret, skal der ske en langsom rotation ned til 90$^{\circ}$, både til venstre og højre. Denne metode vil også identificere minimum og maksimum outputsignalet, som accelerometeret vil afgive. 
 
 \subsection{Fremgangsmåde}
-\subsubsection{Opsætning}
+\textbf{Opsætning}
 \begin{itemize}
-\item ADXL327 accelerometer fastgøres på forsøgspersonen øverst på sternum.
-\item Til accelerometeret knyttes en forsyningsspænding på 3V .
-\item Kondensator tilkobles et breadboard.
-\item Accelerometerets output kobles til kondensatoren på breadboardet.
-\item Outputtet fra kondensatoren sendes igennem USB isolator USI-01.
-\item Signalet fra USB isolator USI-01 sendes igennem NI USB-6009.
-\item Outputsignalet sendes ind i computeren hvor det optages med Scopelogger.
+\item ADXL335 tiljnyttes en forsyningsspænding på 5.6V
+\item ADXL335 tilkobles breadboardet
+\item En kondensator på 0.10 μF (Giver en båndbredde på 50 Hz.)
+\item Outputtet fra kondensatoren sendes igennem NI USB-6009
+\item Signalet fra NI USB-6009 sendes igennem USI-01
+\item Outputsignalet sendes ind i computeren hvor det optages med Scopelogger
 \end{itemize}
 
-\subsubsection{Forsøget}
+\textbf{Forsøget}
 \begin{itemize}
-\item Forsøgspersonen står i en opret position med fødderne på linje.
-\item Der foretages en måling for at se om accelerometeret er sat korrekt - dvs. at outputværdien skal være 0 mV. %være konstant.
-\item Der foretages en baseline måling på ti sekunder, hvor forsøgspersonen står oprejst uden bevægelse, dette opnåes ved at forsøgspersonen støtter sig til noget stationært.
-\item Forsøgspersonen svajer 5${^\circ}$ til højre, og holder positionen i ti sekunder.\fxnote{Vi skal have en eller anden måde, så personen ved, hvor meget 5 grader er}
-\item Ovenstående punkt gentages i et interval af fem fra 5-45${^\circ}$ til højre. Hver position skal holdes i fem sekunder.
-\item Dette gentages for venstre side.
-\item Hele forsøget gentages tre gange pr. forsøgsperson med de tre forskellige kondensatorer.
+\item Acclerometeret sættes fast på en tavle ved 0$^{\circ}$ ift. tyngdekraften. 
+\item Herefter måles der i 30 sekunder .
+\item Det samme gentages for \pm 90$^{\circ}$ og de valgte hældningsvinkler.
+\item Derefter måles accelerometeret under rotation fra 0$^{\circ}$ til \pm 90$^{\circ}$. Rotationen foretages langsomt og kontrolleret. Her måles 5 sekunder inden rotationen, under selve rotationen og 5 sekunder efter rotationen.
+\item Dataen fra forsøgene gemmes på computeren.
 \end{itemize}
 
-\subsection{Resultater}
 
-\subsection{Diskussion og konklusion}
+
+
+
+
+
+
+
+%%%%%Gammelt forsøg%%%%%%%
+%\subsection{Forsøgspersoner}
+%Forsøget benytter to drenge og to piger, der er studerende på ST3. Forsøgspersonerne er raske, ikke balancehæmmede og ikke påvirket af alkohol. Find undersøgelser, der siger, at dette har en påvirkning på balancen. På baggrund af disse kriterier simuleres balanceproblemerne. 
+
+%\subsection{Metode}
+%I pilotforsøget skal forsøgspersonerne simulere den øvelse, som apopleksipatienterne skal udføre med det færdige system. Altså skal forsøgspersonerne stå med fødderne på en tegnet linje, så den ene fods tæer er mod den anden fods hæl. Hældningen skal ske med et interval på fem grader\fxnote{Kræver evt. et billede af føddernes stilling samt illustrering af hældningsgrad}, så det bliver muligt at identificere de optimale hældningsgrader, hvor advarslen skal komme. Inden forsøgspersonerne begynder at hælde, skal der måles en baseline, hvor accelerometeret bliver holdt helt lige. Dette gøres for at identificere den støj der vil forekomme. \\
+%Ud fra forsøget vil det være muligt at bestemme minimum og maksimum output af accelerometeret, ud fra de definerede hældningsgrader. \\
+%Accelerometeret fastgøres på forsøgspersonen øverst på sternum, jævnfør afsnit \fxnote{Der skal label på biomekanisk biofeedback}. Dette gøres for at opnå mindst mulig støj, samtidig med det giver de bedste målinger.\fxnote{Hvorfor giver dette mindst muligt støj og bedst resultat? Der skal skrives et argument} Der kræves en kondensator for at accelerometeret fungerer, og denne bestemmer båndbredden af accelerometeret. For at finde den mest optimale båndbredde testes tre forskellige kondensatorer. Disse vælges efter en båndbredde på 50 Hz, 100 Hz og 500 Hz.\fxnote{Ved ikke om vi skal benyttes os af disse tre, eller vi bare vælger en}\fxnote{Argument for, hvorfor man vælger den båndbredte, som vi muligvis gør. Ellers hvis alle 3 skal benyttes - hvorfor så lige dem?} \\
+%Samplingsfrekvensen sættes efter Nyquists sætning, derfor samples der med det dobbelte af accelerometerets båndbredde.
+
+
+%\subsection{Fremgangsmåde}
+%\subsubsection{Opsætning}
+%\begin{itemize}
+%\item ADXL327 accelerometer fastgøres på forsøgspersonen øverst på sternum.
+%\item Til accelerometeret knyttes en forsyningsspænding på 3V .
+%\item Kondensator tilkobles et breadboard.
+%\item Accelerometerets output kobles til kondensatoren på breadboardet.
+%\item Outputtet fra kondensatoren sendes igennem USB isolator USI-01.
+%\item Signalet fra USB isolator USI-01 sendes igennem NI USB-6009.
+%\item Outputsignalet sendes ind i computeren hvor det optages med Scopelogger.
+%\end{itemize}
+%
+%\subsubsection{Forsøget}
+%\begin{itemize}
+%\item Forsøgspersonen står i en opret position med fødderne på linje.
+%\item Der foretages en måling for at se om accelerometeret er sat korrekt - dvs. at outputværdien skal være 0 mV. %være konstant.
+%\item Der foretages en baseline måling på ti sekunder, hvor forsøgspersonen står oprejst uden bevægelse, dette opnåes ved at forsøgspersonen støtter sig til noget stationært.
+%\item Forsøgspersonen svajer 5${^\circ}$ til højre, og holder positionen i ti sekunder.\fxnote{Vi skal have en eller anden måde, så personen ved, hvor meget 5 grader er}
+%\item Ovenstående punkt gentages i et interval af fem fra 5-45${^\circ}$ til højre. Hver position skal holdes i fem sekunder.
+%\item Dette gentages for venstre side.
+%\item Hele forsøget gentages tre gange pr. forsøgsperson med de tre forskellige kondensatorer.
+%\end{itemize}
