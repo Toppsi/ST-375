@@ -40,18 +40,17 @@ Herefter benyttes der et højpas filter for at frasortere den støj der kommer f
 
 \subsection{Kravspecifikationer}
 For at gøre anvendelse af samme system muligt til 4. Semester skal arbejdsområdet kunne benyttes sammen med et USB-baseret trådløst udviklingsværktøj eZ430-RF2500 fra Texas Instruments. Det er derfor nødvendigt, at designet stemmer overens med udviklingsværktøjet for at kunne sende og modtage data til og fra computeren. Udviklingsværktøjet indeholder hardware og software som evaluerer mikrokontrolleren MSP430F2274. For at hele vores system kan anvendes med udviklingsværktøjet, skal outputsignalet være 0-3V, eftersom mikrokontrolleren opererer med spændingsforsyning mellem 1,8V og 3,6V. \\
-I praksis er det ikke muligt at have ideelle komponenter. Der vurderes derfor ud fra et pilotforsøg den tolerance, der accepteres ift. de enkelte blokke i systemet. Dette er udført mhp. at kunne beregne forstærkning, filtrering og integrering af signalet.\fxnote{Husk at opdatere her, når der kommer flere blokke}
+I praksis er det ikke muligt at have ideelle komponenter \fxnote{husk kilde}. Der vurderes derfor ud fra et pilotforsøg den tolerance, der accepteres ift. de enkelte blokke i systemet. Dette er udført mhp. at kunne beregne forstærkning, filtrering og integrering af signalet.\fxnote{Husk at opdatere her, når der kommer flere blokke}
 
 \subsubsection{Det samlede system}
-Systemet skal ved sammenligning af inputtet fra accelerometeret og output fra dioder samt vibration give et analogt output. På denne måde vil aktivering af bestemte dioder afspejle inputsignalet, således at et input svarede til 5$^{\circ}$ aktiverer en gul diode og vibration, mens et input svarende til 10$^{\circ}$ vil aktivere af en rød diode og stigningen i vibration. Derimod vil et input hvor opretholdelsen af balancen er korrekt svare til < 5$^{\circ}$, hvilket gør at den grønne diode vil lyse. 
+Systemet skal ved sammenligning af inputtet fra accelerometeret og output fra dioder samt vibration give et analogt output. På denne måde vil aktivering af bestemte dioder afspejle inputsignalet, således at et input svarede til 8$^{\circ}$ aktiverer en gul diode og vibration, mens et input svarende til 13$^{\circ}$ vil aktivere af en rød diode og stigningen i vibration. Derimod vil et input hvor opretholdelsen af balancen er korrekt svare til < 8$^{\circ}$, hvilket gør at den grønne diode vil lyse. 
 
 \textbf{Overordnede krav til systemet:}
 \begin{itemize}
 \item Grøn diode: Skal lyse, når patienten ikke er ude i risikozonerne.  
-\item Gul diode: Skal lyse, når patienten hælder 5$^{\circ}$ og slukke, hvis patienten retter sig op eller hælder yderligere.
-\item Rød diode: Skal lyse, når patienten hælder 10$^{\circ}$ eller mere og slukke, hvis patienten retter sig op.
-\item Vibration: Skal aktiveres, hvis patienten hælder 5$^{\circ}$ og skal slukke, hvis patienten retter sig op. Hvis patienten hælder yderligere, skal vibrationen stige.
-\item Der skal være en sammenhæng mellem inputsignalets størrelse og antallet af dioder der lyser.
+\item Gul diode: Skal lyse, når patienten hælder 8$^{\circ}$ og slukke, hvis patienten retter sig op eller hælder yderligere.
+\item Rød diode: Skal lyse, når patienten hælder 13$^{\circ}$ eller mere og slukke, hvis patienten retter sig op.
+\item Vibration: Skal aktiveres, hvis patienten hælder 8$^{\circ}$ og skal slukke, hvis patienten retter sig op. Hvis patienten hælder yderligere, skal vibrationen stige.
 \item Signalet i systemet må ikke forstærkes til en værdi over 3V.
 \end{itemize}
 
