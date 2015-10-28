@@ -6,17 +6,56 @@ I dette afsnit er der beskrevet, hvilke kravspecifikationer de enkelte komponent
 Blokken opsamling omfatter systemets sensor dvs. accelerometer samt forstærker. Det er nødvendigt at kunne måle udover de angivne grader således at feedbacken ikke stoppes, hvis patienten bevæger sig ud over den maksimale grænse på 13 grader.
 
 \textbf{Accelerometer}
-\textbf{Krav}
+\textbf{Krav:}
 \begin{itemize}
 \item Skal kunne detektere en hældning fra 0 grader til \pm 90 grader i forhold til tyngdekraften
 \item Skal kunne detektere en spænding målt i volt ud fra accelerationen som finder sted i X-aksen
 \end{itemize}
 
-\textbf{Tolerance}
+\textbf{Tolerance:}
 \begin{itemize}
 Tolerance krav vil blive beskrevet på baggrund af pilotforsøg.
 \item Hældningen skal have en lille tolerance for ikke at risikere at patienten ikke vil falde og sikre at man ikke bevæger sig ud i den næste risikozone uden at der sker noget.
 \end{itemize}
 
-\sub
-\textbf{Forstæker}
+\textbf{Forstærker}
+For at kunne adskille det ønskede signal fra diverse støjkomponenter skal signalet forstærkes således at der kan skelnes mellem disse når signalet filtres. Da signalet allerede ligger inden for arbejdsområdet, er det ikke nødvendigt at forstærke. Det kan dog alligevel forstærkes en smule, for at skabe en form for buffer der sikre at signalet kan filtreres optimalt. 
+\textbf{Krav:}
+\begin{itemize}
+\item Forstærkeren skal forstærke signalet med et gain på 1
+\item 
+\end{itemize}
+
+\textbf{Tolerance:}
+\begin{itemize}
+Tolerance krav vil blive beskrevet på baggrund af pilotforsøg.
+\item Der skal være en lille tolerance, da filtreringen kun er en buffer. 
+\end{itemize}
+
+\subsubsection{Filter}
+Der skal anvendes et filter til at filtrere uønsket støj. Signalet ligger fra 0-20Hz derfor ønskes det at alt signal over dette frafiltreres. 
+
+\textbf{Krav:}
+\begin{itemize}
+\item Der skal anvendes et filter som filtrerer signaler over 20 Hz
+\end{itemize}
+
+\textbf{Tolerance:}
+\begin{itemize}
+Tolerance krav vil blive beskrevet på baggrund af pilotforsøg.
+\end{itemize}
+
+\subsubsection{Forstærker}
+\textbf{Krav:}
+\begin{itemize}
+
+\end{itemize}
+
+\textbf{Tolerance:}
+\begin{itemize}
+Tolerance krav vil blive beskrevet på baggrund af pilotforsøg.
+\end{itemize}
+
+
+
+
