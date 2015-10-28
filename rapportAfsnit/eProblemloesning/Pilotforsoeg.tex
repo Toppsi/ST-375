@@ -1,6 +1,6 @@
 % !TeX spellcheck = da_DK
 \section{Pilotforsøg}
-Før systemet kan designes, er det nødvendigt at vide hvilke frekvenser af signalet der er støj. Grunden til dette er at det signa,l der optages gerne skal være af den bedste kvalitet, derfor skal støjsignaler frasorteres. Derudover er det nødvendigt at vide hvilket outputsignal accelerometeret giver ift. den valgte hældningsgrad. Ud fra disse oplysninger er det muligt at designe de enkelte blokke i systemet.% Oplysningerne findes på baggrund af et pilotforsøg. 
+Før systemet kan designes, er det nødvendigt at vide hvilke frekvenser af signalet der er støj. Grunden til dette er at det signal, der optages gerne skal være af den bedste kvalitet og derfor skal støjsignaler frasorteres. Derudover er det nødvendigt at vide hvilket outputsignal accelerometeret giver ift. den valgte hældningsgrad. Ud fra disse oplysninger er det muligt at designe de enkelte blokke i systemet.% Oplysningerne findes på baggrund af et pilotforsøg. 
 
 \subsection{Formål}
 \begin{enumerate}
@@ -26,25 +26,25 @@ Før systemet kan designes, er det nødvendigt at vide hvilke frekvenser af sign
 \end{itemize}
 
 \subsection{Metode}
-Måden der identificeres støj frekvenserne i outputsignalet er ved først at måle en baseline, hvor der ikke er nogen hældning på accelerometeret. Dette gør at signalet kan analyseres, hvor der ikke burde være nogen påvirkning på outputsignalet. Dernæst måles der hvor accelerometeret er hældt 90$^{\circ}$, både til højre og venstre. Derved kan det sammenlignes om der er en anden form for støj i forhold til baselinen. Det samme gøres for de specificerede hældningsgrader. For at simulere den påvirkning accelerometeret udsættes for, og identificere den mulige støj, der kan forekomme ved en rotation af accelerometeret, skal der ske en langsom rotation ned til 90$^{\circ}$, både til venstre og højre. Denne metode vil også identificere minimum og maksimum outputsignalet, som accelerometeret vil afgive. 
+Måden hvorpå støjfrekvenserne i outputsignalet identificeres er ved først at måle en baseline uden hældning, dvs. ved 0$^{\circ}$. Dette medfører at signalet kan analyseres, uden nogen påvirkning på outputsignalet. Dernæst måles der ved en hældning på 90$^{\circ}$, til både højre og venstre. Derved kan det sammenlignes om der er støj i forhold til baseline. Det samme gøres for de specificerede hældningsgrader. For at simulere den påvirkning accelerometeret udsættes for, og identificere den mulige støj ved en rotation, skal der ske en langsom rotation ned til 90$^{\circ}$, både til venstre og højre. Denne metode vil også identificere minimum og maksimum outputsignalet, som accelerometeret vil afgive.
 
 \subsection{Fremgangsmåde}
 \textbf{Opsætning}
 \begin{itemize}
-\item ADXL335 tiljnyttes en forsyningsspænding på 5.6V
-\item ADXL335 tilkobles breadboardet
-\item En kondensator på 0.10 μF (Giver en båndbredde på 50 Hz.)
-\item Outputtet fra kondensatoren sendes igennem NI USB-6009
-\item Signalet fra NI USB-6009 sendes igennem USI-01
-\item Outputsignalet sendes ind i computeren hvor det optages med Scopelogger
+\item Accelerometeret tilnyttes en forsyningsspænding på 5.6V.
+\item Accelerometeret tilkobles breadboardet.
+\item En kondensator på 0.10 μF (Giver en båndbredde på 50 Hz.).
+\item Outputtet fra kondensatoren sendes igennem NI USB-6009.
+\item Signalet fra NI USB-6009 sendes igennem USI-01.
+\item Outputsignalet sendes ind i computeren hvor det optages med Scopelogger.
 \end{itemize}
 
 \textbf{Forsøget}
 \begin{itemize}
-\item Acclerometeret sættes fast på en tavle ved 0$^{\circ}$ ift. tyngdekraften. 
+\item Accelerometeret sættes fast på en tavle ved 0$^{\circ}$ ift. tyngdekraften. 
 \item Herefter måles der i 30 sekunder .
-\item Det samme gentages for \pm 90$^{\circ}$ og de valgte hældningsvinkler.
-\item Derefter måles accelerometeret under rotation fra 0$^{\circ}$ til \pm 90$^{\circ}$. Rotationen foretages langsomt og kontrolleret. Her måles 5 sekunder inden rotationen, under selve rotationen og 5 sekunder efter rotationen.
+\item Det samme gentages for \pm 90$^{\circ}$ samt de valgte hældningsgrader på 8$^{\circ}$ og 13$^{\circ}$.
+\item Derefter måles accelerometeret under rotation fra 0$^{\circ}$ til \pm 90$^{\circ}$. Rotationen foretages langsomt og kontrolleret. Her måles 5 sekunder inden, under og efter rotationen.
 \item Dataen fra forsøgene gemmes på computeren.
 \end{itemize}
 
