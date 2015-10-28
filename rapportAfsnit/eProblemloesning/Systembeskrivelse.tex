@@ -126,33 +126,45 @@ Systemet skal ved sammenligning af inputtet fra accelerometeret og output fra di
 %\begin{itemize}
 %\end{itemize}
 %
-%\subsubsection{ADC}
-%\textbf{Krav:}
-%\begin{itemize}
-%\end{itemize}
-%
-%\textbf{Tolerance:}
-%\begin{itemize}
-%\end{itemize}
-%
-%\subsubsection{USB-isolator}
-%\textbf{Krav:}
-%\begin{itemize}
-%\end{itemize}
-%
-%\textbf{Tolerance:}
-%\begin{itemize}
-%\end{itemize}
-%
-%\subsubsection{Computer}
-%\textbf{Krav:}
-%\begin{itemize}
-%\end{itemize}
-%
-%\textbf{Tolerance:}
-%\begin{itemize}
-%\end{itemize}
-%\begin{itemize}
+\subsubsection{ADC}
+Der anvendes en ADC i systemet, for at konvertere det analoge signal til digitalt. Den skal kunne sample det forstærkede signal. ADCens inputssignal vil ligge fra 0 til 3V. 
+\textbf{Krav:}
+\begin{itemize}
+\item Skal kunne modtage et inputssignal i intervallet 0 til 3 V.
+\item Skal have en samplingsfrekvens på minimum 100 Hz. 
+\end{itemize}
+
+\textbf{Tolerance:}
+\begin{itemize}
+\item Der accepteres ingen afvigelse ift. ADCen.
+\end{itemize}
+
+\subsubsection{USB-isolator}
+Systemet skal være sikkert for patienten at benytte, hvilket USB-isolatoren har til formål at sikre.
+\textbf{Krav:}
+\begin{itemize}
+\ Skal have den samme outputspænding som inputspænding. 
+\end{itemize}
+
+\textbf{Tolerance:}
+\begin{itemize}
+\item Der accepteres ingen afvigelse ift. USB-isolatoren. 
+\end{itemize}
+
+\subsubsection{Computer}
+Computeren er systemets digitale out. Det er brugerfladen for det fagkyndige personale og skal derfor kunne fremvise information omkring patienternes balance i form af grafer. Det fagkyndige personale skal vha. af programmet kunne følge med i patienternes udvikling ift. balancen og programmet hvori graferne vises skal derfor have følgende krav.
+\textbf{Krav:}
+\begin{itemize}
+\item Skal kunne fremvise en graf med information om patientens hældning i de enkelte øvelser. Herunder i hvor høj grad patienten har bevæget sig ud i risikozonerne. 
+\item Skal kunne gemme data, så fagkyndigt personale kan følge med i patienternes udvikling ift. balancen.
+\item Skal være brugervenligt for det fagkyndige personale, dvs. designet af programmet skal være enkelt. 
+\end{itemize}
+
+\textbf{Tolerance:}
+\begin{itemize}
+\item Der accepteres ingen afvigelse ift. computeren og det program det fagkyndige personale skal anvende. 
+\end{itemize}
+
 %\item Systemet skal ved fald få dioder til at lyse samt give feedback i form af stigende vibration. 
 %\item Systemet skal være non-invasiv - dvs. systemet ikke må påføre patienten smerte eller varig skade
 %\item Systemet skal være brugervenligt
