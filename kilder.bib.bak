@@ -420,6 +420,16 @@
   Timestamp                = {2015.09.22}
 }
 
+@MastersThesis{Huo1999,
+  Title                    = {LIMITS OF STABILITY AND POSTURAL SWAY IN YOUNG AND OLDER PEOPLE},
+  Author                   = {Feng Huo},
+  School                   = {Queen's University, Kingston, Ontario, Canada},
+  Year                     = {1999},
+
+  Owner                    = {Mads},
+  Timestamp                = {2015.11.03}
+}
+
 @Electronic{Inc.2015,
   Title                    = {A beginner’s guide to accelerometers},
   Author                   = {Dimension Engineering Inc.},
