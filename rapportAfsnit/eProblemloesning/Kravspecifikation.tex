@@ -1,6 +1,6 @@
 % !TeX spellcheck = da_DK
-\subsection{Kravspecifikation}
-I dette afsnit vil der blive beskrevet, hvilke kravspecifikationer de enkelte komponenter i blokdiagrammet skal have for at kunne implementeres. De forskellige tolerance krav er bestemt på baggrund af pilotforsøg som ses under \fxnote{reference til pilotforsøg}
+%\subsection{Kravspecifikation}
+%I dette afsnit vil der blive beskrevet, hvilke kravspecifikationer de enkelte komponenter i blokdiagrammet skal have for at kunne implementeres. De forskellige tolerance krav er bestemt på baggrund af pilotforsøg som ses under \fxnote{reference til pilotforsøg}
 
 \subsection{Opsamling}
 Blokken opsamling omfatter systemets sensor dvs. accelerometer samt en forstærker. Accelerometeret skal have en sådan størrelse, at det kan påsættes en patient uden at give fysiske begrænsninger. Desuden skal det være flerakset, så det bliver muligt at påsætte det i en optimal position, der giver mindst støj samt kunne måle accelerationen i både negativ og positiv retning \fxnote{Det behøver ikke at være flerakset for at kunne det}. Derudover skal det kunne detektere hældningsgraden af patienten. Dette gøres ud fra tyngdekraften, hvor accelerometeret giver et output i mV alt efter påvirkningen fra tyngdekraften, også kaldet statisk acceleration. Dette output vil kunne omregnes til grader. Accelerometeret skal kunne detektere en hældningsgrad på $\pm$ 90$^{\circ}$ \fxnote{180grader range, men en tærskel på 6grader - kan det blive problematisk (vi kommer til at arbejde med meget små værdier for de 6 grader)}, så det er muligt at detektere om patienten er faldet. \\
