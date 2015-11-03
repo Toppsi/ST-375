@@ -886,6 +886,15 @@
   Timestamp                = {2015.10.08}
 }
 
+@Article{Wang2010,
+  Title                    = {Body Sway Measurement for Fall Risk Assessment Using Inexpensive Webcams},
+  Author                   = {Fang Wang AND Marjorie Skubic and others},
+  Year                     = {2010},
+
+  Owner                    = {sofiehelenebjrsrudjensen},
+  Timestamp                = {2015.10.28}
+}
+
 @Electronic{Watson2015,
   Author                   = {Watson, Mary Ann and Black, F. Owen},
   Organization             = {The Vestibular Disorders Association},
