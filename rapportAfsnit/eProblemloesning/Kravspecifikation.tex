@@ -3,18 +3,17 @@
 %I dette afsnit vil der blive beskrevet, hvilke kravspecifikationer de enkelte komponenter i blokdiagrammet skal have for at kunne implementeres. De forskellige tolerance krav er bestemt på baggrund af pilotforsøg som ses under \fxnote{reference til pilotforsøg}
 
 \subsection{Opsamling}
-Blokken opsamling omfatter systemets sensor dvs. accelerometer samt en forstærker. Accelerometeret skal have en sådan størrelse, at det kan påsættes en patient uden at give fysiske begrænsninger. Desuden skal det være flerakset, så det bliver muligt at påsætte det i en optimal position, der giver mindst støj samt kunne måle accelerationen i både negativ og positiv retning \fxnote{Det behøver ikke at være flerakset for at kunne det}. Derudover skal det kunne detektere hældningsgraden af patienten. Dette gøres ud fra tyngdekraften, hvor accelerometeret giver et output i mV alt efter påvirkningen fra tyngdekraften, også kaldet statisk acceleration. Dette output vil kunne omregnes til grader. Accelerometeret skal kunne detektere en hældningsgrad på $\pm$ 90$^{\circ}$ \fxnote{180grader range, men en tærskel på 6grader - kan det blive problematisk (vi kommer til at arbejde med meget små værdier for de 6 grader)}, så det er muligt at detektere om patienten er faldet. \\
+Blokken opsamling omfatter systemets sensor dvs. accelerometeret. Accelerometeret skal have en sådan størrelse, at det kan påsættes en patient uden at give fysiske begrænsninger. Desuden skal det være flerakset, så det bliver muligt at påsætte i en optimal position, der giver mindst støj. Accelerometeret skal kunne måle en statisk acceleration i både positiv og negativ retning, så det kan bestemme, hvilken retning patienterne hælder mod i stående position.  %Derudover skal det kunne detektere hældningsgraden af patienten. Dette gøres ud fra tyngdekraften, hvor accelerometeret giver et output i mV alt efter påvirkningen fra tyngdekraften, også kaldet statisk acceleration. Dette output vil kunne omregnes til grader. 
+Det skal kunne detektere en hældningsgrad op til $\pm$ 90$^{\circ}$ \fxnote{180 grader range, men en tærskel på 8 grader - kan det blive problematisk (vi kommer til at arbejde med meget små værdier for de 6 grader)}, så det er muligt at detektere om patienten er faldet. \\
 %For at kunne adskille det ønskede signal fra diverse støjkomponenter skal signalet forstærkes således at der kan skelnes mellem disse når signalet filtres. Da signalet allerede ligger inden for arbejdsområdet, er det ikke nødvendigt at forstærke amplituden af signalet. En forstærkning af signalet med et gain på 1, vil gøre at noget af den støj der indgår i signalet vil blive frasorteret, da de to kredsløb vil blive adskilt.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsubsection{Accelerometer}
 \textbf{Krav:}
 \begin{itemize}
 \item Skal mindst have to output akser \fxnote{Hvorfor? Ikke klar i funktionelle krav for systemet (er rettet - skrevet int i systemets overordende funktionelle krav?)}.
-\item Skal være under $10x10$ cm i dimensionerne.
-\item Skal kunne måle statisk acceleration \fxnote{Hvorfor?(er rettet - skrevet int i systemets overordende funktionelle krav?}.
-\item Skal kunne måle acceleration i positiv og negativ retning.
-\item Skal kunne detektere en hældning fra 0 grader til $\pm 90^{\circ}$ i forhold til tyngdekraften.
-\item Skal give et outputsignal  i form af elektrisk spænding målt i volt \fxnote{I hvilken range?}.
+\item Skal være under $5x5$ cm i dimensionerne.
+\item Skal kunne måle statisk acceleration i positiv og negatig retning. \fxnote{Hvorfor?(er rettet - skrevet int i systemets overordende funktionelle krav?}.
+\item Skal kunne detektere en hældning fra $\pm 0^{\circ}$ til $\pm 90^{\circ}$.
+\item Skal give et outputsignal i elektrisk spænding målt i volt \fxnote{I hvilken range?}.
 \end{itemize}
 \textbf{Tolerance:}
 \begin{itemize}
@@ -35,21 +34,24 @@ Blokken opsamling omfatter systemets sensor dvs. accelerometer samt en forstærk
 %\end{itemize}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Filter}
-Der skal anvendes et filter til at frafiltrere uønsket signaler. De ønskede biologiske signaler ligger i området $0 - 20$ Hz. Det ønskes derfor at frafiltrere alle signaler der ligger udenfor dette spektrum. Dette gøres ved at benytte et lavpasfilter, der har en knækfrekvens ved 20 Hz. \\
-Der findes forskellige støjkilder der kan påvirke biologiske signaler, bl.a. støj fra elnettet og støj fra ledninger. Støj fra elnettet findes ved 50 Hz, derfor er det et krav at filteret har en stopbåndsfrekvens inden 50 Hz. Støj fra ledninger er lavfrekvent, og ligger i det ønskede spektrum. Derfor kan det være svært at identificere og frafiltrere. \\
+Blokken indeholdende et filter anvendes til at frasortere uønskede signaler, der kan forekomme under målinger med accelerometeret. Hvis disse signaler ikke frafiltreres vil det forvrænge det ønskede biologiske signal, som ligger i området $0 - 20$ Hz \fxnote{skal opdateres - litteratur} og opleves som støj. Alle signaler der ligger undenfor dette spektrum ønskes derfor fjernet... NOGET OM PILOTFORSØGET IFT. FILTER..... Dette gøres ved at benytte et lavpasfilter, der har en knækfrekvens ved 20 Hz \fxnote{hvad fandt vi ud af ift. pilotforsøget - er dette stadigvæk vores knækfrekvens}. \\
+Der findes forskellige støjkilder der kan påvirke biologiske signaler, bl.a. støj fra elnettet og støj fra ledninger. Støj fra elnettet findes ved 50 Hz, derfor er det et krav at filteret har en stopbåndsfrekvens inden 50 Hz. Støj fra ledninger er lavfrekvent, og ligger i det ønskede spektrum og kan derfor være svært at identificere og frafiltrere.
+SKRIV NOGET OM DÆMPNING OG UDREGNE A_MIN HER, HVIS DET SKAL MED HER.
+\\
 \textbf{Krav:}
 \begin{itemize}
-\item Skal have en knækfrekvens på 20 Hz, så alle signaler over bliver dæmpet.
-\item Skal have en stopbåndsfrekvens på 45 Hz, så støj fra elnettet ikke påvirker signalet.
+\item Skal have en knækfrekvens på 20 Hz.
+\item Skal have en stopbåndsfrekvens på 45 Hz.
+\item DÆMPNING!
 \end{itemize}
 \textbf{Tolerance:}
 \begin{itemize}
-\item På knækfrekvensen er der en tolerance på $\pm$ 2 Hz.
-\item På stopbåndsfrekvensen er der en tolerance på $\pm$ 2 Hz.
+\item Der accepteres en afvigelse fra knækfrekvensen på $\pm$ 2 Hz.
+\item Der accepteres en afvigelse fra stopbåndsfrekvensen på $\pm$ 2 Hz.
 \end{itemize}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Tilpasning} \fxnote{implementering af noget offset}
-For at tilpasse signalet til ADC'en, som har et arbejdsområde fra 0 - 3V, skal der benyttes en variabel forstærker \fxnote{Hvad skal den variable forstærkning være?}. Denne skal sørge for at signalet ikke kommer udenfor arbejdsområdet.
+\subsection{Tilpasning} \fxnote{implementering af noget offset, hvis vi overhovedet skal have det med}
+Blokken tilpasning har til formål at tilpasse det filtrerede signal fra accelerometeret til ADC'en, der har et arbejdsområde fra 0 til 3V og komparatoren. Dette gøres med en variabel forstærker, som sørge for at signalet ikke kommer udenfor arbejdsområdet. \fxnote{Hvad skal den variable forstærkning være?}.
 \textbf{Krav:}
 \begin{itemize}
 \item Skal kunne dæmpe amplituden af signalet, hvis det ligger over 3V.
@@ -62,35 +64,69 @@ For at tilpasse signalet til ADC'en, som har et arbejdsområde fra 0 - 3V, skal 
 \end{itemize}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Komparator} \fxnote{det at vi har et range på 180 grader gør, at vi skal regulere meget fint i tærskelværdierne. Kan dette påvirke designet af systemet?}
-Komparatoren skal kunne sammenligne inputsignalet med en referencespænding. Komparatoren skal kunne bestemme i hvilken grad og i hvilken retning patienten hælder. Der skal være flere tærskelværdier, så feedbacken kan gives i flere niveauer. Derudover skal der benyttes en switch, så det bliver muligt at ændre tærskelværdierne. Derved gøres systemet mere fleksibelt, og kan benyttes af patienter på forskellige balanceniveauer. Komparatoren skal kunne tænde for en diode og en vibrator, som afhænger af hældningsgraden hos patienten. \\
+Blokken indeholdende en komparator skal kunne sammenligne inputsignalet fra accelerometeret med en referencespænding og kunne modtange et signal mellem 0 til 3V. Komparatoren skal vha. definerede tærskelværdier bestemme hvilken hældningsgrad patienten har og i hvilken retning vedkommende hælder mod. Der skal være flere tærskelværdier, så feedbacken kan gives i flere niveauer og forskellige sværhedsgrader. Dette gør systemet fleksibelt, så det kan benyttes af patienter på forskellige balanceniveauer.
+SKRIV NOGET OM DE ENKELTE TRIN/TÆRSKELVÆRDIER KOMPARATOREN SKAL HAVE PÅ BAGGRUND AF PILOTFORSØGET.
+%Komparatoren skal kunne tænde for en diode og en vibrator, som afhænger af hældningsgraden hos patienten. \\
 \textbf{Krav:}
 \begin{itemize}
-\item Skal have en switch, så tærskelværdierne kan ændres.
-\item Skal have en forsyningsspænding på 9 V.
-\item Skal ved en bestemt spænding \fxnote{Hvilken spænding?} tænde for en diode \fxnote{Hvor mange? Skal det stå her? Vi har vel skrevet det et andet sted?} og vibrator.
+\item Skal kunne skifte mellem sværhedgrad ved at ændre tærskelværdierne.
+\item Skal have en forsyningsspænding på minimum 3V og maksimalt 9 V \fxnote{er dette korrekt}.
+\item Skal kunne modtage et inputsignal på 0 til 3V.
+\item Skal ved en bestemt spænding \fxnote{Hvilken spænding? - pilotforsøg} tænde for en diode og vibrator \fxnote{Hvor mange? Her skal der beskrive antal og tærskelværdierne til de enkelte niveauer}.
 \end{itemize}
 \textbf{Tolerance:}
 \begin{itemize}
-\item Der accepteres en afvigelse i tærskelværdien på $\pm$ 2\%.
+\item Der accepteres en afvigelse i tærskelværdien på $\pm$ 1\%.
 \end{itemize}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Feedback} \fxnote{del feedback op i dioder og vibratorer}
-Der skal være både visuel og sensorisk feedback i form af LED-dioder og vibratorer. Der skal være fem LED-dioder, en grøn, der indikerer midtpunkt, en gul diode på hver side af den grønne diode, en rød diode på hver side af den gule diode. Den gule diode skal begynde at lyse ved en bestemt hældningsgrad, der indikerer at patienten skal være opmærksom på sin balance. Den røde diode skal begynde at lyse ved en bestemt hældningsgrad, der indikerer at patienten er i fare for at falde. Dioderne til højre for den grønne diode, skal indikere at patienten falder til højre. Det samme gør sig gældende for fald til venstre. Den sensoriske feedback skal vibrere ved en bestemt hældningsgrad, samtidig med de enkelte dioder lyser. Hvis den gule diode lyser, skal vibrationen være let og hvis den røde diode lyser skal vibrationen være moderat. Der skal placeres en vibrator på højre side og venstre side af patienten, der skal indikere i hvilken retning patienten falder. Spændingsforsyningen til feedbacksystem skal udgøres af 9 V batterier. \\
+\subsection{Visuel feedback}
+Blokken med visuel feedback omfatter den del af systemet, der giver feedback til patienten vha. LED-dioder. Der skal i alt være fem LED-dioder: En grøn, der palceres i midten, en gul på hver side af den grønne diode og en rød diode på hver side af de gule dioder. Den gule LED-diode aktiveres, når patienten skal være opmærksom på sin kropshældning, da vedkommende har bevæget sig ud i intervallet $8^{\circ}$-$13^{\circ}$. Den røde LED-diode aktiveres, når patienten er over $13^{\circ}$ og derfor er i fare for at falde. Retningen af patientens kropshældning bestemmes vha. placeringen af LED-dioderne. LED-dioderne til højre for den grønne LED-diode indikerer at patienten er ved at falde til højre. Det samme gør sig gældende for fald til venstre. Spændingsforsyningen til LED-dioderne skal udgøres af 9V batterier.   
+\\
 \textbf{Krav:}
 \begin{itemize}
-\item Skal have en spændingsforsyning på 9 V.
-\item Vibratorerne skal have mindst to vibrationshastigheder.
-\item LED-dioderne og vibratorerne skal informere patienten om hvilken retning hældningen sker.
-\item LED-dioderne og vibratorerne skal informere patienten om risikoen for fald.
-\item LED-dioderne skal kunne lyse kraftigt nok til at kunne ses på fem meters afstand.
+\item Skal have en spændingsforsyning på 9V.
+\item LED-dioderne skal informere patienten om hvilken retning kropshældningen sker i.
+\item LED-dioderne skal informere patienten om risikoen for fald.
+\item LED-dioderne skal kunne give et tydeligt lys.
 \end{itemize}
 \textbf{Tolerance:}
 \begin{itemize}
-\item Der accepteres en afvigelse i tærskelværdien på $\pm$ 2 \% af feedbacken.
+\item Der accepteres en afvigelse i tærskelværdien på $\pm$ 1\% af LED-dioderne.
 \end{itemize}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsection{Sensorisk feedback} 
+Blokken med sensorisk feedback omfatter også den del af systemet, der giver feedback til patienten. Her vha. vibratorer. Der skal i alt være to vibratorer, der er placeret i hver side \fxnote{hvor skal de placeres?}. Vibrationen skal ske i modsatte side af hældning, så patienterne kan rette sig mod siden, hvor vibrationen gives. Vibratorerne skal give en bestemt vibrationshastighed ved bestemte hældningsgrader hhv. den gule og røde LED-diode. Hvis den gule LED-diode lyser, skal vibrationen være let og hvis den røde LED-diode lyser skal vibrationen være moderat. Spændingsforsyningen til vibratorerne skal udgøres af 9 V batterier.
+\\
+\textbf{Krav:}
+\begin{itemize}
+\item Skal have en spændingsforsyning på 9V.
+\item Vibratorerne skal have to vibrationshastigheder.
+\end{itemize}
+\textbf{Tolerance:}
+\begin{itemize}
+\item Der accepteres en afvigelse i tærskelværdien på $\pm$ 1\% af vibratorerne.
+\end{itemize}
+
+%\subsection{feedback}
+%Der skal være både visuel og sensorisk feedback i form af LED-dioder og vibratorer. Der skal være fem LED-dioder, en grøn, der indikerer midtpunkt, en gul diode på hver side af den grønne diode, en rød diode på hver side af den gule diode. Den gule diode skal begynde at lyse ved en bestemt hældningsgrad, der indikerer at patienten skal være opmærksom på sin balance. Den røde diode skal begynde at lyse ved en bestemt hældningsgrad, der indikerer at patienten er i fare for at falde. Dioderne til højre for den grønne diode, skal indikere at patienten falder til højre. Det samme gør sig gældende for fald til venstre. Den sensoriske feedback skal vibrere ved en bestemt hældningsgrad, samtidig med de enkelte dioder lyser. Hvis den gule diode lyser, skal vibrationen være let og hvis den røde diode lyser skal vibrationen være moderat. Der skal placeres en vibrator på højre side og venstre side af patienten, der skal indikere i hvilken retning patienten falder. Spændingsforsyningen til feedbacksystem skal udgøres af 9 V batterier. \\
+%\textbf{Krav:}
+%\begin{itemize}
+%\item Skal have en spændingsforsyning på 9 V.
+%\item Vibratorerne skal have mindst to vibrationshastigheder.
+%\item LED-dioderne og vibratorerne skal informere patienten om hvilken retning hældningen sker.
+%\item LED-dioderne og vibratorerne skal informere patienten om risikoen for fald.
+%\item LED-dioderne skal kunne lyse kraftigt nok til at kunne ses på fem meters afstand.
+%\end{itemize}
+%\textbf{Tolerance:}
+%\begin{itemize}
+%\item Der accepteres en afvigelse i tærskelværdien på $\pm$ 2 \% af feedbacken.
+%\end{itemize}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{ADC}
-Der anvendes en ADC i systemet, for at konvertere det analoge signal til digitalt. Den skal kunne sample det forstærkede signal. ADC'ens inputsignal skal ligge fra 0 til 3V, da systemet skal kunne benyttes fjerde semester, hvor der benyttes en mikrokontroller med dette arbejdsområde. Det anbefales, at en ADC der skal opsamle et signal fra en variabel forstærkning har en opløsning på 12-bit \cite{Zouridakis2003}. Båndbredden på accelerometeret bestemmer hvilken samplingsfrekvens, der skal benyttes. I følge Nyquists sætning skal der samples med minimun det dobbelte af det biologiske signal. I praksis samples der med minimum det tidobbelte. \\
+Blokken med en ADC anvendes i systemet, for at konvertere det analoge signal til digitalt. %Den skal kunne sample det forstærkede signal. 
+ADC'ens inputsignal skal ligge fra 0 til 3V, da systemet skal kunne benyttes på fjerde semester. %Det anbefales, at en ADC der skal opsamle et signal fra en variabel forstærkning har en opløsning på 12-bit \cite{Zouridakis2003}.
+SKRIV NOGET OM SAMPLINGSFREKVENS IFT. VORES PILOTFORSØG. HVAD ER VORES BÅNDBREDDE. Båndbredden på accelerometeret bestemmer hvilken samplingsfrekvens, der skal benyttes. I følge Nyquists sætning skal der samples med minimun det dobbelte af det biologiske signal. I praksis samples der med minimum det tidobbelte. \\
 \textbf{Krav:}
 \begin{itemize}
 \item Skal kunne modtage et inputssignal i intervallet 0 til 3 V.
@@ -102,7 +138,7 @@ Der anvendes en ADC i systemet, for at konvertere det analoge signal til digital
 \end{itemize}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{USB-isolator}
-Systemet skal være sikkert for patienten at benytte. USB-isolatoren øger patienternes sikkerhed ved at sørge for, at der ikke løber lækstrømme fra computeren ind i systemets kredsløb.\\
+Blokken med USB-isolatoren anvendes i systemet for at øge patientens sikkerhed. USB-isolatoren isolerer patienten fra kredsløbet og sørger, at der ikke løber lækstrømme fra computeren ind i systemet.\\
 \textbf{Krav:}
 \begin{itemize}
 \item Skal have den samme outputspænding som inputspænding. 
@@ -112,73 +148,15 @@ Systemet skal være sikkert for patienten at benytte. USB-isolatoren øger patie
 \item Der accepteres ingen afvigelse ift. USB-isolatoren. 
 \end{itemize}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%55
-\subsection{Software / program}
-Computeren er systemets digitale output. Det er brugerfladen for det fagkyndige personale og skal derfor kunne fremvise information omkring patienternes balance i form af grafer eller lignende. Det fagkyndige personale skal vha. af programmet kunne følge med i patienternes udvikling ift. balancen og programmet hvori graferne vises skal derfor have følgende krav. \\
+\subsection{Software}
+Blokken indenholdende softwaren implementeres i systemet for at kunne beahndle og gemme patienternes øvelsesresultater. Denne del af systemet er brugerfladen for det fagkyndige personale og skal derfor kunne fremvise information omkring patienternes balance i form af grafer eller lignende. Det fagkyndige personale skal vha. af softwaren kunne følge med i patienternes udvikling ift. balancen. \\
 \textbf{Krav:}
 \begin{itemize}
-\item Skal kunne fremvise en graf med information om patientens hældning i de enkelte øvelser. Herunder i hvor høj grad patienten har bevæget sig ud i risikozonerne. 
-\item Skal kunne gemme data, så fagkyndigt personale kan følge med i patienternes udvikling ift. rehabiliteringen af balancefunktionen.
-\item Skal være brugervenligt for det fagkyndige personale, dvs. designet af programmet skal være enkelt. 
+\item Skal kunne fremvise information om patientens hældning i de enkelte øvelser, herunder hvor ofte patienten har bevæget sig ud i risikozonerne. 
+\item Skal kunne gemme data.
+%\item Skal være brugervenligt for det fagkyndige personale, dvs. designet af programmet skal være enkelt. 
 \end{itemize}
 \textbf{Tolerance:}
 \begin{itemize}
-\item Der accepteres ingen afvigelse ift. computeren og det program det fagkyndige personale skal anvende. 
+\item Der accepteres ingen afvigelse ift. software. 
 \end{itemize}
-
-%\subsubsection{Opsamling}
-%Blokken opsamling omfatter systemets sensor dvs. accelerometer samt forstærker. Det er nødvendigt at kunne måle udover de angivne grader således at feedbacken ikke stoppes, hvis patienten bevæger sig ud over den maksimale grænse på 13 grader.
-
-%\textbf{Accelerometer}
-%\textbf{Krav:}
-%\begin{itemize}
-%\item Skal kunne detektere en hældning fra 0 grader til \pm 90 grader i forhold til tyngdekraften
-%\item Skal kunne detektere en spænding målt i volt ud fra accelerationen som finder sted i X-aksen
-%\end{itemize}
-
-%\textbf{Tolerance:}
-%\begin{itemize}
-%Tolerance krav vil blive beskrevet på baggrund af pilotforsøg.
-%\item Hældningen skal have en lille tolerance for ikke at risikere at patienten ikke vil falde og sikre at man ikke bevæger sig ud i den næste risikozone uden at der sker noget.
-%\end{itemize}
-
-%\textbf{Forstærker}
-%For at kunne adskille det ønskede signal fra diverse støjkomponenter skal signalet forstærkes således at der kan skelnes mellem disse når signalet filtres. Da signalet allerede ligger inden for arbejdsområdet, er det ikke nødvendigt at forstærke. Det kan dog alligevel forstærkes en smule, for at skabe en form for buffer der sikre at signalet kan filtreres optimalt. 
-%\textbf{Krav:}
-%\begin{itemize}
-%\item Forstærkeren skal forstærke signalet med et gain på 1
-%\item 
-%\end{itemize}
-
-%\textbf{Tolerance:}
-%\begin{itemize}
-%Tolerance krav vil blive beskrevet på baggrund af pilotforsøg.
-%\item Der skal være en lille tolerance, da filtreringen kun er en buffer. 
-%\end{itemize}
-
-%\subsubsection{Filter}
-%Der skal anvendes et filter til at filtrere uønsket støj. Signalet ligger fra 0-20Hz derfor ønskes det at alt signal over dette frafiltreres. 
-
-%\textbf{Krav:}
-%\begin{itemize}
-%\item Der skal anvendes et filter som filtrerer signaler over 20 Hz
-%\end{itemize}
-
-%\textbf{Tolerance:}
-%\begin{itemize}
-%Tolerance krav vil blive beskrevet på baggrund af pilotforsøg.
-%\end{itemize}
-
-%\subsubsection{Forstærker}
-%\textbf{Krav:}
-%\begin{itemize}
-
-%\end{itemize}
-
-%\textbf{Tolerance:}
-%\begin{itemize}
-%Tolerance krav vil blive beskrevet på baggrund af pilotforsøg.
-%\end{itemize}
-
-
-
-
