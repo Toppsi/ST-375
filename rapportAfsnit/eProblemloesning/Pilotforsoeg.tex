@@ -1,91 +1,63 @@
 % !TeX spellcheck = da_DK
 \section{Pilotforsøg}
-Før systemet kan designes, er det nødvendigt at vide hvilke frekvenser af signalet der er støj. Grunden til dette er at det signal, der optages gerne skal være af den bedste kvalitet og derfor skal støjsignaler frasorteres. Derudover er det nødvendigt at vide hvilket outputsignal accelerometeret giver ift. den valgte hældningsgrad. Ud fra disse oplysninger er det muligt at designe de enkelte blokke i systemet.% Oplysningerne findes på baggrund af et pilotforsøg. 
+Det er nødvendigt at vide hvilke frekvenser af signalet der er støj, før systemet kan designes. Grunden til dette er, at signalet skal aktivere komponenter senere i systemet og skal derfor være uden støjsignaler for ikke at påvirke outputtet. For at undgå dette frafiltreres støjsignaler. Derudover er det nødvendigt at vide, hvilket outputsignal accelerometeret giver ift. den valgte hældningsgrad. Ud fra disse oplysninger er det muligt at designe de enkelte blokke i systemet.% Oplysningerne findes på baggrund af et pilotforsøg. 
 
-\subsection{Formål}
+\subsection{Formål med pilotforsøg}
 \begin{enumerate}
 \item Identificere de frekvenser, der udgør støj i outputsignalet fra accelerometeret.
+\item Identificere accelerometerets g påvirkning ved $8^{\circ}$ og $13^{\circ}$.
 \item Identificere maksimum og minimum outputsignal af accelerometeret.
+\item Kontrollere om information fra databladet på accelerometeret stemmer overens med målt data.
 \end{enumerate}
 
 \subsection{Materialer}
 \begin{itemize}
 \item ADXL335 accelerometer.
-\item Kondensator.
+\item To stk. 0,1 $\mu$ F kondensatorer.
+\item Ledninger.
 \item Breadboard.
-\item Spændingsforsyning.
-%\item Tape.
-\item Tavle.
-\item Vinkelmåler
-\item Hæftemasse (Elefantsnot).
-\item Kridt
+\item 5V strøm fra spændingsforsyning.
 \item NI USB-6009.
 \item USB isolator USI-01.
-\item Computer med Scopelogger og MatLab.
-\item Diverse ledninger og modstandere\fxnote{Specificer yderligere efter forsøg}.
+\item Computer med ScopeLogger og MATLAB R2015a.
+\item Hæftemasse.
+\item Vinkelmåler
+\item Lineal.
+\item Tush.
 \end{itemize}
 
 \subsection{Metode}
-Måden hvorpå støjfrekvenserne i outputsignalet identificeres er ved først at måle en baseline uden hældning, dvs. ved 0$^{\circ}$. Dette medfører at signalet kan analyseres, uden nogen påvirkning på outputsignalet. Dernæst måles der ved en hældning på 90$^{\circ}$, til både højre og venstre. Derved kan det sammenlignes om der er støj i forhold til baseline. Det samme gøres for de specificerede hældningsgrader. For at simulere den påvirkning accelerometeret udsættes for, og identificere den mulige støj ved en rotation, skal der ske en langsom rotation ned til 90$^{\circ}$, både til venstre og højre. Denne metode vil også identificere minimum og maksimum outputsignalet, som accelerometeret vil afgive.
+Støjfrekvenserne i outputsignalet identificeres ved først at måle en baseline ved $0$g dvs. uden hældning. Dette medfører at signalet kan analyseres uden nogen påvirkning på outputsignalet. Dernæst måles en påvirkningen ved $1$g, hvilket svarer til en hældning på 90$^{\circ}$. Dette måles både til højre og venstre. Derved kan det sammenlignes, om der er støj ift. baseline. Det samme gøres for de specificerede hældningsgrader, som er $8^{\circ}$ og $13^{\circ}$. For at simulere den påvirkning accelerometeret udsættes for og identificere den mulige støj ved en rotation. Dette gøres ved en langsom rotation fra $0^{\circ}$ til $90^{\circ}$ til både højre og venstre. Denne metode vil også identificere minimum og maksimum outputsignal, som accelerometeret kan afgive, samt kontrollere om informationerne fra accelerometerets datablad stemmer overens med det målte data.
 
-\subsection{Fremgangsmåde}
-\textbf{Opsætning}
+\subsection{Forsøget}
+\textbf{Opsætning}\\
+Der ses et billede af den samlede opsætningen på \figref{pforsoeg1}.
 \begin{itemize}
-\item Accelerometeret tilnyttes en forsyningsspænding på 5.6V.
 \item Accelerometeret tilkobles breadboardet.
-\item En kondensator på $0.10 \mu F$ (Giver en båndbredde på 50 Hz.).
-\item Outputtet fra kondensatoren sendes igennem NI USB-6009.
-\item Signalet fra NI USB-6009 sendes igennem USI-01.
-\item Outputsignalet sendes ind i computeren hvor det optages med Scopelogger.
+\item To kondensator på $0.10 \mu F$ tilkobles breadboardet. \fxnote{Den som sidder på pin 1 og 2 i accelerometeret fjerner støj fra strømforsygningen, mens kondensatoren fra pin 3 giver en båndbredde på 50 Hz.}
+\item Accelerometeret tilnyttes en forsyningsspænding på 5V.
+\item Outputtet fra systemet sendes igennem NI USB-6009.
+\item Signalet fra NI USB-6009 sendes igennem USI-01. \fxnote{USB isolator}
+\item Outputsignalet fra USI-01 sendes ind i computeren, hvor det optages med ScopeLogger og behandles i MATLAB R2015a.
 \end{itemize}
 
-\textbf{Forsøget}
-\begin{itemize}
-\item Accelerometeret sættes fast på en tavle ved 0$^{\circ}$ ift. tyngdekraften. 
-\item Herefter måles der i 30 sekunder .
-\item Det samme gentages for $\pm$ 90$^{\circ}$ samt de valgte hældningsgrader på $8^{\circ}$ og $13^{\circ}$.
-\item Derefter måles accelerometeret under rotation fra $0^{\circ}$ til $\pm$ $90^{\circ}$. Rotationen foretages langsomt og kontrolleret. Her måles 5 sekunder inden, under og efter rotationen.
-\item Dataen fra forsøgene gemmes på computeren.
-\end{itemize}
+\begin{figure}[H]
+	\centering
+	\label{pforsoeg1}
+	\includegraphics[scale=0.15]{figures/cProblemloesning/Pilotforsoeg2.jpg}
+	\caption{På billedet ses opsætningen på breadboardet. De røde ledninger symboliserer inputtet fra den 5V strømforsyning. De sorte ledninger fungerer som ground. Den gule ledning fungerer som en leder for outputtet fra accelerometerets pågældende akse (kan skiftes imellem række 15, 16 og 17 alt efter hvilken akse, der skal måles på). Den grønne ledning symboliserer outputtet fra breadboardet, som sendes til NI USB-6009.}
+\end{figure}
 
+\noindent\textbf{Fremgangsmåde}\\
+Hele systemets opsætning ses på \figref{pforsoeg2}. \\
+Accelerometeret sættes fast med hæftemasse på en lineal så der måles på x-aksen, når der sker en rotation til højre og venstre. Vinkelmåleren sættes fast i en lodret position, så linealen kan følge graderne. Herved bliver $90^{\circ}$ på vinkelmåleren accelerometerets nulpunkt. \\
+Først måles baseline for 0g og 1g i 30 sekunder. Dette gøres ved, at linealen med accelerometeret holdes i 30 sekunder ved nulpunktet samt $90^{\circ}$ til henholdsvis højre og venstre. Dette giver 3 baselines, som optages og gemmes i ScopeLogger. Herudover måles en baseline for g påvirkningen af accelerometeret ved $8^{\circ}$ og $13^{\circ}$. Dette gøres ved at holde accelerometeret i 30 sekunder på $8^{\circ}$ og $13^{\circ}$ henholdsvis til højre og venstre. Herved fås 4 baselines, som optages og gemmes i ScopeLogger.
+Til sidst måles g påvirkningen af accelerometeret under rotation fra $0^{\circ}$ til $\pm$ $90^{\circ}$ for både højre og venstre. Her måles 10 sekunders baseline inden og efter rotationen, som varer 10 sekunder og foretages langsomt og kontrolleret. Disse to målinger optages og gemmes ligeså i ScopeLogger. \\
+Alt data vil efterfølgende blive behandlet i MATLAB R2015a, hvor der beregnes en gennemsnitsværdi for de syv baselines samt foretages en Fast Fourier Transformation (FFT) på samtlige målinger.
 
-
-
-
-
-
-
-
-%%%%%Gammelt forsøg%%%%%%%
-%\subsection{Forsøgspersoner}
-%Forsøget benytter to drenge og to piger, der er studerende på ST3. Forsøgspersonerne er raske, ikke balancehæmmede og ikke påvirket af alkohol. Find undersøgelser, der siger, at dette har en påvirkning på balancen. På baggrund af disse kriterier simuleres balanceproblemerne. 
-
-%\subsection{Metode}
-%I pilotforsøget skal forsøgspersonerne simulere den øvelse, som apopleksipatienterne skal udføre med det færdige system. Altså skal forsøgspersonerne stå med fødderne på en tegnet linje, så den ene fods tæer er mod den anden fods hæl. Hældningen skal ske med et interval på fem grader\fxnote{Kræver evt. et billede af føddernes stilling samt illustrering af hældningsgrad}, så det bliver muligt at identificere de optimale hældningsgrader, hvor advarslen skal komme. Inden forsøgspersonerne begynder at hælde, skal der måles en baseline, hvor accelerometeret bliver holdt helt lige. Dette gøres for at identificere den støj der vil forekomme. \\
-%Ud fra forsøget vil det være muligt at bestemme minimum og maksimum output af accelerometeret, ud fra de definerede hældningsgrader. \\
-%Accelerometeret fastgøres på forsøgspersonen øverst på sternum, jævnfør afsnit \fxnote{Der skal label på biomekanisk biofeedback}. Dette gøres for at opnå mindst mulig støj, samtidig med det giver de bedste målinger.\fxnote{Hvorfor giver dette mindst muligt støj og bedst resultat? Der skal skrives et argument} Der kræves en kondensator for at accelerometeret fungerer, og denne bestemmer båndbredden af accelerometeret. For at finde den mest optimale båndbredde testes tre forskellige kondensatorer. Disse vælges efter en båndbredde på 50 Hz, 100 Hz og 500 Hz.\fxnote{Ved ikke om vi skal benyttes os af disse tre, eller vi bare vælger en}\fxnote{Argument for, hvorfor man vælger den båndbredte, som vi muligvis gør. Ellers hvis alle 3 skal benyttes - hvorfor så lige dem?} \\
-%Samplingsfrekvensen sættes efter Nyquists sætning, derfor samples der med det dobbelte af accelerometerets båndbredde.
-
-
-%\subsection{Fremgangsmåde}
-%\subsubsection{Opsætning}
-%\begin{itemize}
-%\item ADXL327 accelerometer fastgøres på forsøgspersonen øverst på sternum.
-%\item Til accelerometeret knyttes en forsyningsspænding på 3V .
-%\item Kondensator tilkobles et breadboard.
-%\item Accelerometerets output kobles til kondensatoren på breadboardet.
-%\item Outputtet fra kondensatoren sendes igennem USB isolator USI-01.
-%\item Signalet fra USB isolator USI-01 sendes igennem NI USB-6009.
-%\item Outputsignalet sendes ind i computeren hvor det optages med Scopelogger.
-%\end{itemize}
-%
-%\subsubsection{Forsøget}
-%\begin{itemize}
-%\item Forsøgspersonen står i en opret position med fødderne på linje.
-%\item Der foretages en måling for at se om accelerometeret er sat korrekt - dvs. at outputværdien skal være 0 mV. %være konstant.
-%\item Der foretages en baseline måling på ti sekunder, hvor forsøgspersonen står oprejst uden bevægelse, dette opnåes ved at forsøgspersonen støtter sig til noget stationært.
-%\item Forsøgspersonen svajer 5${^\circ}$ til højre, og holder positionen i ti sekunder.\fxnote{Vi skal have en eller anden måde, så personen ved, hvor meget 5 grader er}
-%\item Ovenstående punkt gentages i et interval af fem fra 5-45${^\circ}$ til højre. Hver position skal holdes i fem sekunder.
-%\item Dette gentages for venstre side.
-%\item Hele forsøget gentages tre gange pr. forsøgsperson med de tre forskellige kondensatorer.
-%\end{itemize}
+\begin{figure}[H]
+	\centering
+	\label{pforsoeg2}
+	\includegraphics[scale=0.14]{figures/cProblemloesning/Pilotforsoeg1.jpg}
+	\caption{På billedet ses (fra venstre til højre) opsætningen af accelerometeret på linealen, der kan aflæse grader på vinkelmåleren. Øverst i midten på billedet ses den 5V spændingsforsyning, som leder strømmen til- og ground fra breadboardet. Nederst i midten ses breadboardet, der sender sit output videre til NI USB-6009. Herefter ledes signalet igennem USI-01 og til sidst ind i computeren, hvor det optages i ScopeLogger.}
+\end{figure}
