@@ -5,7 +5,7 @@ Det er nødvendigt at vide hvilke frekvenser af signalet der er støj, før syst
 \subsection{Formål med pilotforsøg}
 \begin{enumerate}
 \item Identificere de frekvenser, der udgør støj i outputsignalet fra accelerometeret.
-\item Identificere accelerometerets g påvirkning ved $8^{\circ}$ og $13^{\circ}$.
+\item Identificere accelerometerets g-påvirkning ved $8^{\circ}$ og $13^{\circ}$.
 \item Identificere maksimum og minimum outputsignal af accelerometeret.
 \item Kontrollere om information fra databladet på accelerometeret stemmer overens med målt data.
 \end{enumerate}
@@ -34,7 +34,7 @@ Støjfrekvenserne i outputsignalet identificeres ved først at måle en baseline
 Der ses et billede af den samlede opsætningen på \figref{pforsoeg1}.
 \begin{itemize}
 \item Accelerometeret tilkobles breadboardet.
-\item To kondensator på $0.10 \mu F$ tilkobles breadboardet. \fxnote{Den som sidder på pin 1 og 2 i accelerometeret fjerner støj fra strømforsygningen, mens kondensatoren fra pin 3 giver en båndbredde på 50 Hz.}
+\item To kondensatorer på $0.10 \mu F$ tilkobles breadboardet. \fxnote{Den som sidder på pin 1 og 2 i accelerometeret fjerner støj fra strømforsygningen, mens kondensatoren fra pin 3 giver en båndbredde på 50 Hz.}
 \item Accelerometeret tilnyttes en forsyningsspænding på 5V.
 \item Outputtet fra systemet sendes igennem NI USB-6009.
 \item Signalet fra NI USB-6009 sendes igennem USI-01. \fxnote{USB isolator}
