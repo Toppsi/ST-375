@@ -30,9 +30,9 @@ Det skal kunne detektere en hældningsgrad op til $\pm$ 90$^{\circ}$ \fxnote{180
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \textbf{Krav:}
 \begin{itemize}
-\item Skal mindst have to output akser .
-\item Skal være under $5x5$ cm i dimensionerne.
-\item Skal kunne måle statisk acceleration i positiv og negatig retning. \fxnote{Hvorfor? er rettet - skrevet int i systemets overordende funktionelle krav?}.
+\item Skal mindst have en output akse, da der udelukkende måles i det frontale plan.
+\item Skal være under $5x5$ cm i dimensionerne, da dette gør implementeringen på patienten nemmere.
+\item Skal kunne måle statisk acceleration uanset hvilken g påvirkning. %i positiv og negativ retning.
 \item Skal kunne detektere en hældning fra $\pm 0^{\circ}$ til $\pm 90^{\circ}$.
 \item Skal give et outputsignal i elektrisk spænding målt i volt \fxnote{I hvilken range?}.
 \end{itemize}
@@ -55,8 +55,8 @@ Det skal kunne detektere en hældningsgrad op til $\pm$ 90$^{\circ}$ \fxnote{180
 %\end{itemize}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Filter}
-Blokken indeholdende et filter anvendes til at frasortere uønskede signaler, der kan forekomme under målinger med accelerometeret. Hvis disse signaler ikke frafiltreres vil det forvrænge det ønskede biologiske signal og opleves som støj. Frekvensområdet for kropshældning er ikke generel defineret, men studier anvender et frekvensområde liggende mellem 0.02 til 10 Hz \cite{Martinez-Mendez2011}. Alle signaler der ligger undenfor dette spektrum ønskes derfor fjernet... NOGET OM PILOTFORSØGET IFT. FILTER..... Dette gøres ved at benytte et lavpasfilter, der har en knækfrekvens ved 20 Hz \fxnote{hvad fandt vi ud af ift. pilotforsøget - er dette stadigvæk vores knækfrekvens}. \\
-Der findes forskellige støjkilder der kan påvirke biologiske signaler, bl.a. støj fra elnettet og støj fra ledninger. Støj fra elnettet findes ved 50 Hz, derfor er det et krav at filteret har en stopbåndsfrekvens inden 50 Hz. Støj fra ledninger er lavfrekvent, og ligger i det ønskede spektrum og kan derfor være svært at identificere og frafiltrere. \\
+Blokken indeholdende et filter anvendes til at frasortere uønskede signaler, der kan forekomme under målinger med accelerometeret. Hvis disse signaler ikke frafiltreres vil det forvrænge det ønskede biologiske signal og opleves som støj. Frekvensområdet for kropshældning er ikke defineret, men studier anvender et frekvensområde liggende mellem 0.02 til 10 Hz \cite{Martinez-Mendez2011}. Alle signaler, der ligger udenfor dette spektrum, ønskes derfor fjernet. I pilotforsøget kan det påvises, hvor meget støj der er over 10 Hz og skal frafiltreres. Dette gøres ved at benytte et lavpasfilter, der har en knækfrekvens ved 20 Hz \fxnote{hvad fandt vi ud af ift. pilotforsøget - er dette stadigvæk vores knækfrekvens?}. \\
+Som beskrevet i \ref{StoejAfsnit} på side \pageref{StoejAfsnit} findes der forskellige støjkilder, som kan påvirke biologiske signaler. \\
 SKRIV NOGET OM DÆMPNING OG UDREGNE A-MIN HER, HVIS DET SKAL MED HER.\\
 \textbf{Krav:}
 \begin{itemize}
@@ -71,7 +71,7 @@ SKRIV NOGET OM DÆMPNING OG UDREGNE A-MIN HER, HVIS DET SKAL MED HER.\\
 \end{itemize}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Tilpasning} \fxnote{implementering af noget offset, hvis vi overhovedet skal have det med}
-Blokken tilpasning har til formål at tilpasse det filtrerede signal fra accelerometeret til ADC'en, der har et arbejdsområde fra 0 til 3V og komparatoren. Dette gøres med en variabel forstærker, som sørge for at signalet ikke kommer udenfor arbejdsområdet. \fxnote{Hvad skal den variable forstærkning være?}. \\
+Blokken tilpasning har til formål at tilpasse det filtrerede signal fra accelerometeret til ADC'en, der har et arbejdsområde fra 0 til 3V, og komparatoren. Dette gøres med en variabel forstærker, som sørger for, at signalet ikke kommer udenfor arbejdsområdet. \fxnote{Hvad skal den variable forstærkning være?}. \\
 \textbf{Krav:}
 \begin{itemize}
 \item Skal kunne dæmpe amplituden af signalet, hvis det ligger over 3V.
@@ -79,7 +79,6 @@ Blokken tilpasning har til formål at tilpasse det filtrerede signal fra acceler
 \end{itemize}
 \textbf{Tolerance:}
 \begin{itemize}
-\item Kravene skal opfyldes.
 \item Der accepteres ingen afvigelse.
 \end{itemize}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -115,7 +114,7 @@ Blokken med visuel feedback omfatter den del af systemet, der giver feedback til
 \end{itemize}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Somatosensorisk feedback} 
-Blokken med somatosensorisk feedback omfatter også den del af systemet, der giver feedback til patienten. Her vha. vibratorer. Der skal i alt være to vibratorer, der er placeret i hver side \fxnote{hvor skal de placeres?}. Vibrationen skal ske i modsatte side af hældning, så patienterne kan rette sig mod siden, hvor vibrationen gives. Vibratorerne skal give en bestemt vibrationshastighed ved bestemte hældningsgrader hhv. den gule og røde LED-diode. Hvis den gule LED-diode lyser, skal vibrationen være let og hvis den røde LED-diode lyser skal vibrationen være moderat. Spændingsforsyningen til vibratorerne skal udgøres af 9 V batterier.
+Blokken med somatosensorisk feedback omfatter også den del af systemet, der giver feedback til patienten. Her vha. vibratorer. Der skal i alt være to vibratorer, som placeres i medialt på hver underarm. Vibrationen skal ske i modsatte side af hældning, så patienterne kan rette sig mod siden, hvor vibrationen gives. Vibratorerne skal give en bestemt vibrationshastighed ved bestemte hældningsgrader hhv. den gule og røde LED-diode. Hvis den gule LED-diode lyser, skal vibrationen være let og hvis den røde LED-diode lyser skal vibrationen være moderat. Spændingsforsyningen til vibratorerne skal udgøres af 9 V batterier.
 \\
 \textbf{Krav:}
 \begin{itemize}
