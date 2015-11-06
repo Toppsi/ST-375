@@ -12,7 +12,7 @@ Accelerometeret ADXL335, som ses på \figref{ADXL335} er en treakset sensor, som
 Når accelerometeret hældes til siden, vil der ske en acceleration ift. tyngdekraften i en given retning og dermed et udslag fra referencepunktet, som er ved en hældning på 0$^{\circ}$. Sammenhængen mellem de enkelte parametre kan udtrykkes ved følgende ligning:\\ 
 \begin{equation}
 $Vout=Voffset+sensitiviteten*tyngdekraften*sin(vinklen)$ \\
-$Vout=Voffset+(\frac{\frac{\delta V}{\delta g} * g * \sin(\Theta))$
+$Vout=Voffset+(\frac{\frac{\Delta V}{\Delta g} * g * \sin(\Theta))$
 \end{equation}
 
 Herudfra er det muligt at isolere og udregne de ukendte parametre, altså kan patientens hældningsgrad bestemmes ud fra accelerometerets output.
