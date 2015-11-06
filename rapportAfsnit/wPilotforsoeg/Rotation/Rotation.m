@@ -44,7 +44,7 @@ P1V(2:end-1) = 2*P1V(2:end-1);
 %Define the frequency domain f and plot the single-sided amplitude spectrum P1.
 figure
 plot(f,P1V)
-axis([-10 250 0 0.0004])
+axis([0 250 0 0.001])
 title('Frekvensspektrum for rotation til venstre') 
 %title('Single-Sided Amplitude Spectrum of X(t)')
 xlabel('f (Hz)')
