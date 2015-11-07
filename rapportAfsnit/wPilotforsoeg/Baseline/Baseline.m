@@ -13,6 +13,10 @@ f = Fs*(0:(L/2))/L;     %Define the frequency domain f
 %% Gennemsnitsværdi
 Offset = mean(B0.data)
 
+%% plot af baseline
+figure
+plot(B0.data, t)
+
 %% FFT af baseline
 fftB = fft(B0.data);
 
@@ -23,6 +27,7 @@ P1 = P2(1:L/2+1);
 P1(2:end-1) = 2*P1(2:end-1);
 
  %Plot the single-sided amplitude spectrum P1.
+figure
 plot(f,P1)
 axis([-10 250 0 0.0004])
 title('Frekvensspektrum for baseline ved 0g') 

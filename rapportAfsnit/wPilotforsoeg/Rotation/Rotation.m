@@ -12,6 +12,17 @@ L = Fs*Samplelength;
 t = (0:L-1)*T;
 f = Fs*(0:(L/2))/L;
 
+%% Plot af rotation i tidsdomæne
+figure
+plot(RV.data)
+axis([0 15000 1 2])
+title('Rotation til venstre')
+hold on
+
+plot(RH.data)
+axis([0 15000 1 2])
+title('Rotation til højre')
+
 %% FFT af rotation til højre side
 fftRH = fft(RH.data);
 
