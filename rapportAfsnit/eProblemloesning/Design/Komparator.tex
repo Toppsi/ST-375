@@ -1,6 +1,16 @@
 \section{Komparator}
-- hvad er komparatoren input og hvad er dens output? 1,7 til 5 eller sådan noget (tjek microkontrolleren)
-- Hvad bruges en komparator til?
+Som nævnt i afsnit x side x anvendes en komparator til at sammenligne to inputsspændinger. I dette tilfælde vil komparatoren blive tilkoblet hhv. en LED-diode og vibrator samt en modstand og den positive spændingsforsyning (+Vcc). Komparatorens input i den inverterende terminal er outputtet fra forrige blok, der filtrer signalet fra accelerometeret og dens input i den ikke-inverterende terminal er beregnede tærskelværdier. Komparatoren kan derfor have to forskellige outputs afhængig spændingen af inputtet. Hvis tærskelværdien er højere end inputsignalet vil ouput svare til ***+Vcc, hvor spændingsfaldet i komparatoren er fratrukket, dvs. teoretisk set vil der ikke være et spændingsfald over dioden eller vibratoren, som aktiverer den.*** ***Er tærskelværdien mindre end inputsignalet vil outputtet svare til jord, dvs. strømmen fra den positive spændingsforsyning vil løbe igennem komparatoren til jord***. LED-dioden og vibratoren vil blive aktiveret idet der er et spændingsfald over den positive og negative pol på en værdi over den mindste spændingsfald, den kræver for at blive aktiveret***
+For LED-dioderne vil der blive anvendt fem komparatorer, som skal sammensættes, da der ifølge kravspecifikationerne i afsnit X side X skal være fem tærskelværdier. Disse tærskelværdier bygges vha. fem paralleltforbundet modstande og en spændingsreference. Derudover placeres modstande mellem LED-dioderne og +Vcc for at bestykke LED-dioderne mod for høj strømstyrke og for at udgå at batteriet ikke drænes. På figur X vises selve konstruktionen af kredsløbet med de fem komparatorer og tilhørende modstande.
+
+indsæt et billede
+
+\textbf{Beregning af tærskelværdier og tilhørende modstande for LED-dioderne}
+Beregning af referencespændinger: 
+
+\textbf{Beregning af tærskelværdier og tilhørende modstande for vibratorerne}
+For vibratorerne vil der blive anvendt to komparatorer, som skal sammensættes, da der iføl
+
+
 - hvad sker der med signalet, når det er over og under tærskelværdien? 
 - hvordan laves tæskelværdier?
 - Vis det visuelt. 
