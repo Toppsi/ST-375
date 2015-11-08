@@ -1,1 +1,20 @@
 \section{ADC}
+
+\subsection{Teori}
+I dette projekt anvendes NI USB-6009 til at konvertere det analoge signal til digital som beskrevet i \fxnote{Henvis til afsnit i problemanalyse.}. Signalet skal konverteres, for at kunne sendes ind i den digitale del af systemet, så plejepersonalet kan aflæse og behandle målingerne. Med denne ADC kan der samples med 13 bits single-ended. ADC'en kan dermed inddeles i 2^13=8192 niveauer. Den maksimale sampling rate er på 48 kS/s, hvormed det er muligt at sample med minimum det tidobbbelte af båndbredden\fxnote{Evt. specificer dette med en konkret værdi for båndbredden..}. Arbejdsområdet for ADC'en ift. spænding ligger på 10Vpp. \cite{Instruments2014} Ud fra oplysningerne er det muligt at udregne LSB ud fra ligningen i \fxnote{henvis her..}. Udregningen ser således ud: \\
+\begin{center}
+	LSB=FSR/2^n \fxnote{Skriv denne ligning ordentligt}
+\end{center}  
+FSR er arbejdsområdet, dvs. 10Vpp, som indsættes i formlen som 20V, imens n er antallet af bits, der kan samples med, dvs. 13.
+Værdierne indsættes i formlen: \\
+\begin{center}
+	LSB=20V/2^13
+	LSB=0,00244V=2,44mV
+\end{center}
+Dermed vil det opsamlede signal blive forvrænget, og dermed ikke være repræsentativt, hvis der opsamles værdier på under 2,44mV. 
+
+\subsection{Test af ADC}
+For at sikre, at ADC'en også i praksis lever op til de stillede krav udføres en test.
+
+- Anvendelse af tonegenerator
+- Send signaler m. største og mindste forventede signal ind i adc'en ved forskellige frekvenser - frekvenser vælges ud fra filterets knækfrekvens samt en referencemåling ved anden frekvens
