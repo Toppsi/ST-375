@@ -1,24 +1,33 @@
 \section{Komparator}
 Som nævnt i afsnit x side x anvendes en komparator til at sammenligne to inputspændinger. %Rent teknisk gøres dette ved, at komparatoren inverterer det ene signal $\pm$ 180$^{\circ}$ (V_{-}), hvor det andet signal ikke inverteres (V_{+}).
 I dette tilfælde vil komparatoren blive tilkoblet hhv. en LED-diode og vibrator samt en modstand og den positive spændingsforsyning (+V_{cc}). Komparatorens input i den inverterende terminal er outputtet fra forrige blok, der filtrerer signalet fra accelerometeret og dets input i den ikke-inverterende terminal er beregnede tærskelværdier. Komparatoren kan derfor have to forskellige outputs afhængig af spændingen af inputtet. Hvis beregnede tærskelværdier er højere end inputsignalet vil ouputtet være 0 V og der vil ikke være et spændingsfald over dioden eller vibratoren, som aktiverer den. Er tærskelværdien mindre end inputsignalet vil outputtet svare til jord, da strømmen fra (+V_{cc}) vil løbe igennem komparatoren og derefter til jord. Der vil opstå et spændingsfald over den positive og negative pol for LED-dioden og vibratoren på en værdi, der ligger over den minimale spændingsfald, der kræves for en aktivering. LED-dioderne og vibratorerne vil altså blive aktiveret og give et feedback til patienten. 
-For LED-dioderne vil der blive anvendt fem komparatorer, som skal sammensættes, da der ifølge kravspecifikationerne i afsnit X side X skal være fem tærskelværdier. Disse tærskelværdier bygges vha. fem parallelforbundede modstande (R1-R5) og spændingsreferencer, der skal matche hældningsgraden. Derudover placeres modstande mellem LED-dioderne og (+V_{cc}) for at beskytte LED-dioderne mod for høj strømstyrke og for at udgå at batteriet drænes. Disse defineres som R6-R10. På figur X vises selve konstruktionen af kredsløbet med de fem komparatorer og tilhørende modstande.
+For LED-dioderne vil der blive anvendt fem komparatorer, som skal sammensættes, da der ifølge kravspecifikationerne i afsnit X side X skal være fem tærskelværdier. Disse tærskelværdier bygges vha. fem parallelforbundede modstande (R1-R5) og en spændingsreference. Derudover placeres modstande mellem LED-dioderne og (+V_{cc}) for at beskytte LED-dioderne mod for høj strømstyrke og for at udgå at batteriet drænes. Disse defineres som R6-R10. På figur X vises selve konstruktionen af kredsløbet med de fem komparatorer og tilhørende modstande.
 
 indsæt et billede
 
-\textbf{Beregning af tærskelværdier og tilhørende modstande...}
+\textbf{Beregning af tærskelværdier og tilhørende modstande... Hvad skal afsnittet hedde?}
+Ifølge systemets funktionelle krav afsnit X side X ønskes det, at LED-dioderne skal lyse ved en bestemt kropshældning, altså en bestemt tærskelværdi i komparatoren. Spændingsreferencen indgår som del af en spændingsdeler med en spændingsforsyning på 9V i form af et batteri samt modstandene mellem spændingsreferencen og batteriet. Disse modstande har derudover også med det formål at sørge for, at batteriet ikke drænes for strøm, fordi kredsløbet trækker strøm. Hvis modstandene er høje, vil kredsløbet ikke få lov til at trække meget strøm og batteriet vil holde længere. Modstandene beregnes vha. spændingsdelerformlen. 
 
-Beregning af referencespændinger: 
-word dokument
-\textbf{Beregning af modstande...}
-Ifølge kravspecifikationerne for komparatoren afnsit X side X skal den have en forsyningsspænding på minimum 3V og maksimalt 9V og der benyttes derfor en komparator af typen XX. LED-dioderne der anvendes i systemet er følgende: en L-53LG 5mm (grøn), to L-53LI 5mm (rød) og to L-53LY 5mm (gul). Disse LED-dioder kræver en minimum spænding på 2mA for at lyse og spændingsfaldet over dioderne ligger maksimalt i intervallet 2,0 til 2,2 V (rød: 2,0, gul: 2,1 og grøn: 2,2). LED-dioderne forsynes af et 9V batteri. LED-dioderne tilkobles, som sagt, tilhørende modstande for bla. at undgå at LED-dioderne brænder af. Spændingsfaldet over dioderne samt den spænding LED-dioderne som minimum skal bruge for at lyse er kendte værdier, dvs. modstandene R6-R10 kan derfor findes vha. Ohms lov.
+indsæt formel
+
+- Beregninger af referencespændinger - se datablad
+- beregninger af modstande
+- word dokument
+
+\textbf{Beregning af modstande.. HVad skal afsnittet hedde?}
+Ifølge kravspecifikationerne for komparatoren afnsit X side X skal den have en forsyningsspænding på minimum 3V og maksimalt 9V og der benyttes derfor en komparator af typen XX. LED-dioderne der anvendes i systemet er følgende: en L-53LG 5mm (grøn), to L-53LI 5mm (rød) og to L-53LY 5mm (gul). Disse LED-dioder kræver en minimum spænding på 2mA for at lyse og spændingsfaldet over dioderne ligger maksimalt i intervallet 2,0 til 2,2 V (rød: 2,0, gul: 2,1 og grøn: 2,2). LED-dioderne forsynes af et 9V batteri. LED-dioderne tilkobles, som sagt, tilhørende modstande for bla. at undgå at LED-dioderne brænder af. Spændingsfaldet over dioderne samt den spænding LED-dioderne som minimum skal bruge for at lyse er kendte værdier, dvs. modstandene R6-R10 kan derfor findes vha. Ohms lov. Nedestående udregning giver en værdi af modstandene, hvis batteriet yder maksimal spænding:
 
 indsæt ligning 
 
-\textbf{Beregning af tærskelværdier og tilhørende modstande for vibratorerne}
+I praksis vil batteriet ikke yde en maksimal spænding på 9 V... \fxnote{hvorfor vælger de lige en spænding på 6,2 V}, da spændingen aftager som funktion af tiden... 
+
+\textbf{Beregning af tærskelværdier og tilhørende modstande for vibratorerne.. hvad skal afsnittet hedde?}
 For vibratorerne vil der blive anvendt to komparatorer, som skal sammensættes, da der ifølge kravsspecifikationerne i afsnit X side X skal være 2 tærskelværdier. Ligeledes med LED-dioderne konstrueres disse tærskelværdier vha. to parallelforbundede modstande og spændingsreferencer, samt de resterende modstande mellem vibratorerne og (+V_{cc}). PÅ figur X vises konstruktionen af kredsløbet med de to vibratorer og tilhørende modstande.
 
 indsæt billede og word dokument
 
+\textbf{Beregning af modstande.. HVad skal afsnittet hedde?}
+Vibratorerne der anvendes i systemet er af typen XX... Afsnit skal skrives, når vi har information om vibratorer. 
 
 
 FÅ SWITCH MED IND I DET? 
