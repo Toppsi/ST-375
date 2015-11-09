@@ -54,7 +54,7 @@ Det skal kunne detektere en hældningsgrad op til $\pm$ 90$^{\circ}$ \fxnote{180
 %\item Der må være en afvigelse i indgangsimpedans på 5\%.
 %\end{itemize}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Filter}
+\subsection{Filter}\label{FilterAfs}
 Blokken indeholdende et filter anvendes til at frasortere uønskede signaler, der kan forekomme under målinger med accelerometeret. Hvis disse signaler ikke frafiltreres vil det forvrænge det ønskede biologiske signal og opleves som støj. Frekvensområdet for kropshældning er ikke defineret, men studier anvender et frekvensområde liggende mellem 0.02 til 10 Hz \cite{Martinez-Mendez2011}. Alle signaler, der ligger udenfor dette spektrum, ønskes derfor fjernet. I pilotforsøget kan det påvises, hvor meget støj der er over 10 Hz og skal frafiltreres. Dette gøres ved at benytte et lavpasfilter, der har en knækfrekvens ved 12 Hz. \\
 Som beskrevet i \ref{StoejAfsnit} på side \pageref{StoejAfsnit} findes der forskellige støjkilder, som kan påvirke biologiske signaler. \\
 SKRIV NOGET OM DÆMPNING OG UDREGNE A-MIN HER, HVIS DET SKAL MED HER.\\
@@ -62,6 +62,7 @@ SKRIV NOGET OM DÆMPNING OG UDREGNE A-MIN HER, HVIS DET SKAL MED HER.\\
 \begin{itemize}
 \item Skal have en knækfrekvens på 12 Hz.
 \item Skal have en stopbåndsfrekvens på 45 Hz.
+\item Der ønskes maksimal fladhed på pasbåndet og stopbåndet.
 \item DÆMPNING! LSB...
 \end{itemize}
 \textbf{Tolerance:}
