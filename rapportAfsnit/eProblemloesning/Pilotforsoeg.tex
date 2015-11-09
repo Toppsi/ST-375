@@ -7,7 +7,7 @@ Det er nødvendigt at vide hvilke frekvenser af signalet der er støj, før syst
 \item Identificere de frekvenser, der udgør støj i outputsignalet fra accelerometeret.
 \item Identificere accelerometerets g-påvirkning ved $8^{\circ}$ og $13^{\circ}$.
 \item Identificere maksimum og minimum outputsignal af accelerometeret.
-\item Kontrollere om informationerne fra databladet på accelerometeret stemmer overens med målt data.
+\item Kontrollere om offset og sensitivitets værdierne fra databladet på accelerometeret stemmer overens med målt data.
 \end{enumerate}
 
 \subsection{Materialer}
@@ -41,14 +41,15 @@ Der ses et billede af den samlede opsætningen på \figref{pforsoeg1}.
 \item Outputsignalet fra USI-01 sendes ind i computeren, hvor det optages med ScopeLogger og behandles i MATLAB R2015a.
 \end{itemize}
 
-\begin{figure}[H]\label{pforsoeg1}
+\begin{figure}[H]
 	\centering
 	\includegraphics[scale=0.15]{figures/cProblemloesning/PF2.jpg}
 	\caption{På billedet ses opsætningen på breadboardet. De røde ledninger symboliserer inputtet fra den 5V strømforsyning. De sorte ledninger fungerer som ground. Den gule ledning fungerer som en leder for outputtet fra accelerometerets pågældende akse (kan skiftes imellem række 15, 16 og 17 alt efter hvilken akse, der skal måles på). Den grønne ledning symboliserer outputtet fra breadboardet, som sendes til NI USB-6009.}
+	\label{pforsoeg1}
 \end{figure}
 
 \noindent\textbf{Fremgangsmåde}\\
-Hele systemets opsætning ses på \figref{pforsoeg2}. \\
+Hele pilotforsøgets opsætning ses på \figref{pforsoeg2}. \\
 Accelerometeret sættes fast med hæftemasse på en lineal så der måles på x-aksen, når der sker en rotation til højre og venstre. Vinkelmåleren sættes fast i en lodret position, så linealen kan følge graderne. Herved bliver $90^{\circ}$ på vinkelmåleren accelerometerets nulpunkt. \\
 Først måles baseline for 0g og 1g i 30 sekunder. Dette gøres ved, at linealen med accelerometeret holdes i 30 sekunder ved nulpunktet samt $90^{\circ}$ til henholdsvis højre og venstre. Dette giver 3 baselines, som optages og gemmes i ScopeLogger. Herudover måles en baseline for g påvirkningen af accelerometeret ved $8^{\circ}$ og $13^{\circ}$. Dette gøres ved at holde accelerometeret i 30 sekunder på $8^{\circ}$ og $13^{\circ}$ henholdsvis til højre og venstre. Herved fås 4 baselines, som optages og gemmes i ScopeLogger.
 Til sidst måles g påvirkningen af accelerometeret under rotation fra $0^{\circ}$ til $\pm$ $90^{\circ}$ for både højre og venstre. Her måles 10 sekunders baseline inden og efter rotationen, som varer 10 sekunder og foretages langsomt og kontrolleret. Disse to målinger optages og gemmes ligeså i ScopeLogger. \\
@@ -56,7 +57,7 @@ Alt data vil efterfølgende blive behandlet i MATLAB R2015a, hvor der beregnes e
 
 \begin{figure}[H]
 	\centering
-	\label{pforsoeg2}
 	\includegraphics[scale=0.14]{figures/cProblemloesning/Pilotforsoeg1.jpg}
 	\caption{På billedet ses (fra venstre til højre) opsætningen af accelerometeret på linealen, der kan aflæse grader på vinkelmåleren. Øverst i midten på billedet ses den 5V spændingsforsyning, som leder strømmen til- og ground fra breadboardet. Nederst i midten ses breadboardet, der sender sit output videre til NI USB-6009. Herefter ledes signalet igennem USI-01 og til sidst ind i computeren, hvor det optages i ScopeLogger.}
+	\label{pforsoeg2}
 \end{figure}

@@ -1,7 +1,7 @@
 % !TeX spellcheck = da_DK
 \section{Kravspecifikationer}
 %For at gøre anvendelse af samme system muligt til 4. Semester skal arbejdsområdet kunne benyttes sammen med et USB-baseret trådløst udviklingsværktøj eZ430-RF2500 fra Texas Instruments. Det er derfor nødvendigt, at designet stemmer overens med udviklingsværktøjet for at kunne sende og modtage data til og fra computeren. Udviklingsværktøjet indeholder hardware og software som evaluerer mikrokontrolleren MSP430F2274. For at hele vores system kan anvendes med udviklingsværktøjet, skal outputsignalet være 0-3V, eftersom mikrokontrolleren opererer med spændingsforsyning mellem 1,8V og 3,6V. \\
-I praksis er det ikke muligt at have ideelle komponenter \cite{Webster2009}. Der vurderes derfor ud fra et pilotforsøg, litteratur og accelerometerets datablad hvilke krav de blokke i blokdiagrammet skal opflyde og den tolerance, der accepteres ift. forskellige parametre.
+I praksis er det ikke muligt at have ideelle komponenter \cite{Nilsson2011}. Der vurderes derfor ud fra et pilotforsøg, litteratur og accelerometerets datablad hvilke krav de blokke i blokdiagrammet skal opflyde og den tolerance, der accepteres ift. forskellige parametre.
 
 %\subsubsection{Det samlede system}
 %Systemet skal ved sammenligning af inputtet fra et flerakset accelerometeret og output fra dioder samt vibration give et analogt output. På denne måde vil aktivering af bestemte LED-dioder og vibratorer afspejle inputsignalet, således at et input ved en bestemt hældningsgrad aktivere en gul LED-diode og vibration, mens yderligere hældning vil aktivere en rød diode og øge vibrationshastigheden. Derimod vil et input hvor opretholdelsen af balancen er korrekt, dvs. en hældningen der ligger under risikizonen aktivere den grønne LED-diode. Derudover vil det kunne bestemmes, hvilken retning patienten falder mod pga. accelerometerets 3 output akser, der kan måle i negativ og positiv retning. 
@@ -24,7 +24,7 @@ I praksis er det ikke muligt at have ideelle komponenter \cite{Webster2009}. Der
 
 \subsection{Opsamling}
 Blokken opsamling omfatter systemets sensor dvs. accelerometeret. Accelerometeret skal have en sådan størrelse, at det kan påsættes en patient uden at give fysiske begrænsninger. Derudover skal accelerometeret have mindst en akse, da der måles i det frontale plan. %Desuden skal det være flerakset, så det bliver muligt at påsætte i en optimal position, der giver mindst støj. 
-Accelerometeret skal kunne måle en statisk acceleration i både positiv og negativ retning, så det kan bestemme, hvilken retning patienterne hælder mod i stående position.  %Derudover skal det kunne detektere hældningsgraden af patienten. Dette gøres ud fra tyngdekraften, hvor accelerometeret giver et output i mV alt efter påvirkningen fra tyngdekraften, også kaldet statisk acceleration. Dette output vil kunne omregnes til grader. 
+Accelerometeret skal kunne måle en statisk acceleration i mindst en retning. Herved kan det bestemmes, hvilken retning patienterne hælder mod i stående position.  %Derudover skal det kunne detektere hældningsgraden af patienten. Dette gøres ud fra tyngdekraften, hvor accelerometeret giver et output i mV alt efter påvirkningen fra tyngdekraften, også kaldet statisk acceleration. Dette output vil kunne omregnes til grader. 
 Det skal kunne detektere en hældningsgrad op til $\pm$ 90$^{\circ}$ \fxnote{180 grader range, men en tærskel på 8 grader - kan det blive problematisk (vi kommer til at arbejde med meget små værdier for de 6 grader)}, så det er muligt at detektere om patienten er faldet. \\
 %For at kunne adskille det ønskede signal fra diverse støjkomponenter skal signalet forstærkes således at der kan skelnes mellem disse når signalet filtres. Da signalet allerede ligger inden for arbejdsområdet, er det ikke nødvendigt at forstærke amplituden af signalet. En forstærkning af signalet med et gain på 1, vil gøre at noget af den støj der indgår i signalet vil blive frasorteret, da de to kredsløb vil blive adskilt.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -32,7 +32,7 @@ Det skal kunne detektere en hældningsgrad op til $\pm$ 90$^{\circ}$ \fxnote{180
 \begin{itemize}
 \item Skal mindst have en output akse, da der udelukkende måles i det frontale plan.
 \item Skal være under $5x5$ cm i dimensionerne, da dette gør implementeringen på patienten nemmere.
-\item Skal kunne måle statisk acceleration uanset hvilken g påvirkning. %i positiv og negativ retning.
+\item Skal kunne måle statisk acceleration i mindst en retning.
 \item Skal kunne detektere en hældning fra $\pm 0^{\circ}$ til $\pm 90^{\circ}$.
 \item Skal give et outputsignal i elektrisk spænding målt i volt \fxnote{I hvilken range?}.
 \end{itemize}
@@ -55,19 +55,19 @@ Det skal kunne detektere en hældningsgrad op til $\pm$ 90$^{\circ}$ \fxnote{180
 %\end{itemize}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Filter}
-Blokken indeholdende et filter anvendes til at frasortere uønskede signaler, der kan forekomme under målinger med accelerometeret. Hvis disse signaler ikke frafiltreres vil det forvrænge det ønskede biologiske signal og opleves som støj. Frekvensområdet for kropshældning er ikke defineret, men studier anvender et frekvensområde liggende mellem 0.02 til 10 Hz \cite{Martinez-Mendez2011}. Alle signaler, der ligger udenfor dette spektrum, ønskes derfor fjernet. I pilotforsøget kan det påvises, hvor meget støj der er over 10 Hz og skal frafiltreres. Dette gøres ved at benytte et lavpasfilter, der har en knækfrekvens ved 20 Hz \fxnote{hvad fandt vi ud af ift. pilotforsøget - er dette stadigvæk vores knækfrekvens?}. \\
+Blokken indeholdende et filter anvendes til at frasortere uønskede signaler, der kan forekomme under målinger med accelerometeret. Hvis disse signaler ikke frafiltreres vil det forvrænge det ønskede biologiske signal og opleves som støj. Frekvensområdet for kropshældning er ikke defineret, men studier anvender et frekvensområde liggende mellem 0.02 til 10 Hz \cite{Martinez-Mendez2011}. Alle signaler, der ligger udenfor dette spektrum, ønskes derfor fjernet. I pilotforsøget kan det påvises, hvor meget støj der er over 10 Hz og skal frafiltreres. Dette gøres ved at benytte et lavpasfilter, der har en knækfrekvens ved 12 Hz. \\
 Som beskrevet i \ref{StoejAfsnit} på side \pageref{StoejAfsnit} findes der forskellige støjkilder, som kan påvirke biologiske signaler. \\
 SKRIV NOGET OM DÆMPNING OG UDREGNE A-MIN HER, HVIS DET SKAL MED HER.\\
 \textbf{Krav:}
 \begin{itemize}
-\item Skal have en knækfrekvens på 20 Hz.
+\item Skal have en knækfrekvens på 12 Hz.
 \item Skal have en stopbåndsfrekvens på 45 Hz.
-\item DÆMPNING!
+\item DÆMPNING! LSB...
 \end{itemize}
 \textbf{Tolerance:}
 \begin{itemize}
-\item Der accepteres en afvigelse fra knækfrekvensen på $\pm$ 2 Hz.
-\item Der accepteres en afvigelse fra stopbåndsfrekvensen på $\pm$ 2 Hz.
+\item Der accepteres en afvigelse fra knækfrekvensen på $\pm$ 10\%.
+\item Der accepteres en afvigelse fra stopbåndsfrekvensen på $\pm$ 10\%.
 \end{itemize}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Tilpasning} \fxnote{implementering af noget offset, hvis vi overhovedet skal have det med}
