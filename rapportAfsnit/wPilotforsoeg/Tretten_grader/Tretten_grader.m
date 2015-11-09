@@ -16,6 +16,10 @@ f = Fs*(0:(L/2))/L;     %Define the frequency domain f
 TrettenHmean = mean(TrettenH.data)    %Mean af A = 1.6441
 TrettenVmean = mean(TrettenV.data)    %Mean af B = 1.5231
 
+%% Finder mean med offset minusset
+TrettenHmeanUdenOffset = mean(TrettenH.data) - 1.5817
+TrettenVmeanUdenOffset = mean(TrettenV.data) - 1.5817
+
 %% FFT af baseline ved 8 grader til højre side
 fftTrettenH = fft(TrettenH.data);
 

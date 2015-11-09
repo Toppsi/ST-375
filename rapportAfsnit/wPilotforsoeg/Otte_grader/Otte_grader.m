@@ -17,6 +17,11 @@ f = Fs*(0:(L/2))/L;     %Define the frequency domain f
 OtteHmean = mean(OtteH.data)    %Mean af otte grader til højre 1.6202
 OtteVmean = mean(OtteV.data)    %Mean af otte grader til venstre 1.5436
 
+%% Mean med offset minusset fra
+
+OtteHmeanUdenOffset = mean(OtteH.data) - 1.5817
+OtteVmeanUdenOffset = mean(OtteV.data) - 1.5817
+
 %% FFT af baseline ved 8 grader til højre side
 fftOtteH = fft(OtteH.data);
 

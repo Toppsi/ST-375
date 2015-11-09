@@ -15,7 +15,7 @@ Offset = mean(B0.data)
 
 %% plot af baseline
 figure
-plot(B0.data, t)
+plot(B0.data)
 
 %% FFT af baseline
 fftB = fft(B0.data);
