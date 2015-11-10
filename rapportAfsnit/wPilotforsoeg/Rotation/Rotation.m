@@ -14,13 +14,15 @@ f = Fs*(0:(L/2))/L;
 
 %% Plot af rotation i tidsdomæne
 figure
-plot(RV.data)
-axis([0 15000 1 2])
+plot(t, RV.data(1:L))
+axis([0 30 1 2])
 title('Rotation til venstre')
+xlabel('Tid angivet i sekunder')
+ylabel('Spænding målt i Volt')
 hold on
 
-plot(RH.data)
-axis([0 15000 1 2])
+plot(t, RH.data(1:L))
+axis([0 30 1 2])
 title('Rotation til højre')
 
 %% FFT af rotation til højre side

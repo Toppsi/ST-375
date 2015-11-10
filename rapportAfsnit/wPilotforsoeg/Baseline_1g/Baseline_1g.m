@@ -17,6 +17,26 @@ f = Fs*(0:(L/2))/L;     %Define the frequency domain f
 B1Hmean = mean(B1H.data)
 B1Vmean = mean(B1V.data)
 
+
+%% Minusser det offset vi har ved 0g som er  1.5817
+
+B1HmeanUdenOffset = mean(B1H.data) - 1.5817
+B1VmeanUdenOffset = mean(B1V.data) - 1.5817
+
+%% Finder ændring for en grad:
+
+EnGradH = B1HmeanUdenOffset/90
+EnGradV = B1VmeanUdenOffset/90
+
+%% Finder grænser:
+TyveGraenseH = EnGradH*20
+TyveGraenseH = EnGradV*20
+TrediveGraenseH = EnGradH*30
+TrediveGraenseV = EnGradV*30
+FemogfyrreGraenseH = EnGradH*45
+FemogfyrreGraenseV = EnGradV*45
+
+
 %% FFT af baseline 1g til højre side
 fftB1H = fft(B1H.data);
 
