@@ -491,6 +491,17 @@
   Timestamp                = {2015.09.15}
 }
 
+@Electronic{Karni2014,
+  Title                    = {Electrical loading},
+  Author                   = {Karni, Shlomo},
+  Organization             = {Access Science},
+  Url                      = {http://www.accessscience.com/content/electrical-loading/218900},
+  Year                     = {2014},
+
+  Owner                    = {Cecilie},
+  Timestamp                = {2015.11.10}
+}
+
 @Electronic{Kjaergaard2015,
   Title                    = {Antikoagulationsbehandling (blodfortyndende medicin)},
   Author                   = {Kjærgaard, Jesper},
