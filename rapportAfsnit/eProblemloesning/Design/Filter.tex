@@ -1,5 +1,5 @@
 % !TeX spellcheck = da_DK
-\section{Filter}
+\subsection{Filter}
 Efter signalet er blevet forstærket skal det filtreres, så alle de uønskede signaler kan dæmpes. Der benyttes kun et lavpasfilter, da det ønskede signal ligger i frekvensområdet 0-10 Hz, som beskrevet i afsnit \ref{FilterAfs} på side \pageref{FilterAfs}. Filtre kan udarbejdes både som et passivt filter og et aktivt filter. Hvis signalet ligger i frekvensområdet under 1 MHz anbefales det at benytte aktive filtre \cite{Op amps for everyone}. Aktive filtre benytter operationforstærkere, kondensatorer og modstande, hvor passive filtre benytter kondensatorer, modstande og spoler \cite{Op amps for everyone}. Der findes flere forskellige typer filter heriblandt et Butterworth filter, et Tschebyschevfiltre og et Besselfilter. Butterworth filteret giver maksimal fladhed i pasbåndet og stopbåndet. Tschebyschevfilteret giver den hurtigste overgang fra pasbåndet til stopbåndet. Besselfilteret giver en lineær faserespons, hvilket vil sige at fasen er lineær med frekvensen.\fxnote{Fasen angiver hvor godt et signals frekvensspektrum bliver gengivet}\fxnote{skal vi have et billede ind af de forskellige typer?} \cite{Op amps for everyone} Butterworthfilteret benyttes til at filtrere dette signal, da der ønskes maksimal fladhed i pasbåndet og stopbåndet som nævnt i kravspecifikationerne for filtret.
 
 I afsnit \ref{FilterAfs} på side \ref{FilterAfs} blev karakteristikaene af lavpasfilteret bestemt. Der kræves en minimumsdæmpning af stopbåndet $(Amin)$ på 20 dB, der accepteres en maksimal variation af pasbåndet $(Amax)$ på 3 dB, knækfrekvensen $(\omega _p)$ er på 12 Hz, samt en stopbåndstærskel $( \omega _s)$ på 45 Hz. Nedenfor ses en illustration af hvad de forskellige karakteristka beskriver.
@@ -23,7 +23,7 @@ I ligning \ref{eq:lavpasfilter} er filterets orden angivet af N, når alle de an
 \end{equation}
 \end{center}
 
-\section{Design}
+\subsubsection{Design}
 Ordenen af lavpasfilteret bestemmes ved at sætte værdierne fra (henvisning til kravspecifikation) ind i ligningen \ref{eq:lavpasfilter}, udregningen vil se ud som følgende:
 \begin{align}
 \epsilon = \sqrt{\frac{103dB}{10 - 1}} = 0.998 \\
