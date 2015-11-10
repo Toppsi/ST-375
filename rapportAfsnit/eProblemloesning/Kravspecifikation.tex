@@ -6,7 +6,7 @@ I praksis er det ikke muligt at have ideelle komponenter \cite{Nilsson2011}. Der
 %\subsubsection{Det samlede system}
 %Systemet skal ved sammenligning af inputtet fra et flerakset accelerometeret og output fra dioder samt vibration give et analogt output. På denne måde vil aktivering af bestemte LED-dioder og vibratorer afspejle inputsignalet, således at et input ved en bestemt hældningsgrad aktivere en gul LED-diode og vibration, mens yderligere hældning vil aktivere en rød diode og øge vibrationshastigheden. Derimod vil et input hvor opretholdelsen af balancen er korrekt, dvs. en hældningen der ligger under risikizonen aktivere den grønne LED-diode. Derudover vil det kunne bestemmes, hvilken retning patienten falder mod pga. accelerometerets 3 output akser, der kan måle i negativ og positiv retning. 
 
-\subsection{Overordnede funktionelle krav til systemet:}
+\subsection{Overordnede funktionelle krav til systemet:}\label{FunkKrav}
 \begin{itemize}
 	\item Systemet skal være brugervenligt, så det kan anvendes af apopleksipatienter og fagkyndigt personale
 	\item Systemet skal kunne måle kropshældning, samt angive hvilken retning hældningen sker mod. Derudover skal det kunne måle statisk acceleration, eftersom vi måler på stående position \fxnote{skal sidste sætning med - referer til Erikas rettelse på side 4 fra statusseminar "skal kunne måle statisk acceleration" - hvorfor?}.
@@ -83,7 +83,7 @@ Blokken tilpasning har til formål at tilpasse det filtrerede signal fra acceler
 \item Der accepteres ingen afvigelse.
 \end{itemize}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Komparator} \fxnote{det at vi har et range på 180 grader gør, at vi skal regulere meget fint i tærskelværdierne. Kan dette påvirke designet af systemet?}
+\subsection{Komparator}\label{KomparatorAfs} \fxnote{det at vi har et range på 180 grader gør, at vi skal regulere meget fint i tærskelværdierne. Kan dette påvirke designet af systemet?}
 Blokken indeholdende en komparator skal kunne sammenligne inputsignalet fra accelerometeret med en referencespænding og kunne modtange et signal mellem 0 til 3V. Komparatoren skal vha. definerede tærskelværdier bestemme hvilken hældningsgrad patienten har og i hvilken retning vedkommende hælder mod. Der skal være flere tærskelværdier, så feedbacken kan gives i flere niveauer og forskellige sværhedsgrader. Dette gør systemet fleksibelt, så det kan benyttes af patienter på forskellige balanceniveauer.
 SKRIV NOGET OM DE ENKELTE TRIN/TÆRSKELVÆRDIER KOMPARATOREN SKAL HAVE PÅ BAGGRUND AF PILOTFORSØGET. \\
 %Komparatoren skal kunne tænde for en diode og en vibrator, som afhænger af hældningsgraden hos patienten. \\
@@ -93,6 +93,7 @@ SKRIV NOGET OM DE ENKELTE TRIN/TÆRSKELVÆRDIER KOMPARATOREN SKAL HAVE PÅ BAGGR
 \item Skal have en forsyningsspænding på minimum 3V og maksimalt 9 V \fxnote{er dette korrekt}.
 \item Skal kunne modtage et inputsignal på 0 til 3V.
 \item Skal ved en bestemt spænding \fxnote{Hvilken spænding? - pilotforsøg} tænde for en diode og vibrator \fxnote{Hvor mange? Her skal der beskrive antal og tærskelværdierne til de enkelte niveauer}.
+\item Skal have syv tærskelværdier, da der skal en til hver LED-diode og vibrator.
 \end{itemize}
 \textbf{Tolerance:}
 \begin{itemize}
