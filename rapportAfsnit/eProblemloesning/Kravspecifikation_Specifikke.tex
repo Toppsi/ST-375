@@ -98,10 +98,10 @@ Blokken indeholdende en komparator skal kunne sammenligne inputsignalet med en r
 	\item Skal kunne modtage et inputsignal på $\pm 5 V$. 
 	\item Skal ved et bestemt spændingsinterval aktivere en diode og vibrator:
 	\begin{itemize}
-		\item Grøn diode og ingen vibration: I intervallet indenfor 0,0241 V til -0,0236 V.
-		\item Gul diode og let vibration: I intervallet fra 0,0241 V til 0,0392 V og intervallet fra -0,0236 V til -0,0384 V.
-		\item Rød diode og moderat vibration: I intervallet fra 0,0392 V til 0,0753 V og intervallet fra -0,0384 V til -0,0739 V.
-		\item Ingen feedback: Over 0,0753 V og under -0,0739 V. 
+		\item Grøn diode og ingen vibration: I intervallet indenfor 0,324V til -0,324V.
+		\item Gul diode og let vibration: I intervallet fra 1,314V til 2,1168V og intervallet fra -1,2744V til -2,0736V.
+		\item Rød diode og moderat vibration: I intervallet fra 2,1168V til 4,0662V og intervallet fra -2,0736 V til -3,9906V.
+		\item Ingen feedback: Over 4,0662V og under -3,9906V. 
 	\end{itemize}
 \end{itemize}
 \textbf{Tolerance:}
@@ -111,7 +111,7 @@ Blokken indeholdende en komparator skal kunne sammenligne inputsignalet med en r
 \end{itemize}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Visuel feedback}
-Blokken med visuel feedback omfatter den del af systemet, der giver feedback til patienten vha. LED-dioder. Der skal i alt være fem LED-dioder: En grøn, der placeres i midten, en gul på hver side af den grønne diode og en rød diode på hver side af de gule dioder. Den grønne LED-diode skal lyse, når accelerometret er placeret præcist på patienten, hvorved der er sikret den rette udgangsposition for hældningen. Dette gør, at den grønne LED-diode er aktiveret fra $0^{\circ}$-$1^{\circ}$. i intervallet $0^{\circ}$-$8^{\circ}$ lyser ingen LED-dioder. Den gule LED-diode aktiveres, når patienten skal være opmærksom på sin kropshældning, da vedkommende har bevæget sig ud i intervallet $8^{\circ}$-$13^{\circ}$. Den røde LED-diode aktiveres, når patienten er over $13^{\circ}$ og derfor er i fare for at falde. Retningen af patientens kropshældning bestemmes vha. placeringen af LED-dioderne. LED-dioderne til højre for den grønne LED-diode indikerer at patienten er ved at falde til højre. Det samme gør sig gældende for fald til venstre. Forsyningsspændingen til LED-dioderne skal udgøres af 9 V batterier.   
+Blokken med visuel feedback omfatter den del af systemet, der giver feedback til patienten vha. LED-dioder. Der skal i alt være fem LED-dioder: En grøn, der placeres i midten, en gul på hver side af den grønne diode og en rød diode på hver side af de gule dioder. Den grønne LED-diode skal lyse, når accelerometret er placeret præcist på patienten, hvorved der er sikret den rette udgangsposition for hældningen. Dette gør, at den grønne LED-diode er aktiveret fra $0^{\circ}$-$2^{\circ}$. I intervallet $0^{\circ}$-$8^{\circ}$ lyser ingen LED-dioder. Den gule LED-diode aktiveres, når patienten skal være opmærksom på sin kropshældning, da vedkommende har bevæget sig ud i intervallet $8^{\circ}$-$13^{\circ}$. Den røde LED-diode aktiveres, når patienten er over $13^{\circ}$ og derfor er i fare for at falde. Retningen af patientens kropshældning bestemmes vha. placeringen af LED-dioderne. LED-dioderne til højre for den grønne LED-diode indikerer at patienten er ved at falde til højre. Det samme gør sig gældende for fald til venstre. Forsyningsspændingen til LED-dioderne skal udgøres af 9 V batterier.   
 \\
 \textbf{Krav:}
 \begin{itemize}
