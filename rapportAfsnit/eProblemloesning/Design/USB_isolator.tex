@@ -2,6 +2,22 @@
 \subsection{USB-isolator}
 Efter konvertering fra analogt til digital anvendes en USB-isolator til adskillelse af computeren til systemet samt sikre computerens forbindelse til elnettet. 
 Der anvendes USB-isolatoren USI-01 som er godkendt til brug ved sikkerhedsklassifikation BF og CE som isoleringsspænding på 4kV samt fungerer som en galvanisk adskillende af systemet, hvilket har til formål at overføre signal mellem to isolerede kredsløb. For yderligere sikring af computerens forbindelse til elnettet er denne ikke tilkoblet elnettet. USB-isolatoren implementeres mellem ADC'en og computeren, hvilket er illustreret på \figref{blokdiagram} på side \pageref{blokdiagram}
-\subsubsection{Test}
-For at kunne teste hvor vidt kravet om input er lig med outputspændingen udføres et forsøg hvor dette sammenlignes. Dette gøres ved at tilslutte USB-isolatoren til en spændingsforsyning og voltmeter, hvorefter variationen af strømmen  aflæses på voltmeteret, herudfra skal det konkluderes hvorvidt inputtet er lig med outputspænding. 
 
+\subsubsection{Test}
+For at kunne teste, hvor vidt kravet jævnført \pageref{kravspecifikationer} om inputspændingen er lig med outputspændingen udføres en test, hvor dette sammenlignes. Dette gøres ved at tilslutte NIDAQ til USB-isolatoren til en spændingsforsyning og computer, som sammenligner inputspændingen med outputspændingen. Derudover indsættes et oscilloskop ved inputtet fra spændingsforsyning, som har til formål at måle den reelle spænding der løber fra spændingsforsyningen. 
+
+\subsubsection{Resultat fra test}
+De målte værdier fra testen ses i \figref{USBisolatortest}. Ud fra de målte værdier er der en afvigelse fra spændingsforsyningen til den målte værdi fra oscilloskop og scopelogger. De målte værdier fra ocilloskoppet er rent teoretisk de værdier som spændingsforsyningen vil give som input til kredsløbet. Der er en afvigelse fra 0$%$ til 1,5$%$ i forhold til spændingsforsyning og ocilloskoppet, dette kan skyldes at spændingsforsyningen har en tolerance i forhold til databladet for den enkelte spændingsforsyning. I forhold til spændingsforsyningen og Scopelogger er der en afvigelse fra -0,6$%$ til 0,3$%$. En af grundene til denne forskel kan være at de reelle komponenter og systemet bruger en del af spændingen. Generelt varierer de anvendte instrumenter i antallet af decimaler på det visuelle skærm, hvilket ydermere kan være en faktor for at de målte værdier afviger fra det teoretiske. På baggrund af de målte værdier vurderes ud fra \pageref{kravspecifikationer} at USB-isolatoren må have en tolerance på $\pm$ 2$%$.
+
+\begin{center}
+\label{USBisolatortest}
+    \begin{tabular}{ | l | l | l | l | p{5cm} |}
+    \hline
+    \textbf{Spændingsforsyning} 	&  \textbf{Oscilloskop} 	& \textbf{Procentafvigelse fra spændingsforsyning og Oscilloskop}	& textbf{Målt i Scopelogger}		&\textbf{Procent afvigelse fra spændingsforsyning og Scopelogger} \\ \hline
+    1,00V             				& 1,00V    				& 0$5$ 		    	& 0,9940V       &  -0,6006 $%$  \\ \hline
+    2,00V                          	& 2,03V					& 1,5$%$			& 2,0237V       &   1,1827 $%$  \\ \hline
+    3,00V                         	& 3,03V					& 1$%$	    		& 3,0060V       &   0,2008 $%$   \\ \hline
+    4,00V                          	& 4,06V					& 1,5$%$			& 4,0131V       &   0,3280 $%$   \\ \hline
+    5,00V                          	& 5,06V					& 1,2$%$ 		& 5,0053V       &   0,1061 $%$   \\ \hline
+    \end{tabular}
+\end{center}
