@@ -19,17 +19,6 @@ B1gN1 = load('Baseline1gNegativ1');
 B1gN2 = load('Baseline1gNegativ2');
 B1gN3 = load('Baseline1gNegativ3');
 
-%% Sætter længden af signalet til 30 sekunder
-% B0g1 = B0g1Load.data(1:L);
-% B0g2 = B0g2Load.data(1:L);
-% B0g3 = B0g3Load.data(1:L);
-% B1gP1 = B1gP1Load.data(1:L);
-% B1gP2 = B1gP2Load.data(1:L);
-% B1gP3 = B1gP3Load.data(1:L);
-% B1gN1 = B1gN1Load.data(1:L);
-% B1gN2 = B1gN2Load.data(1:L);
-% B1gN3 = B1gN3Load.data(1:L);
-
 %% Finder mean
  B0g1mean = mean(B0g1.data(1:L))
  B0g2mean = mean(B0g2.data(1:L))
