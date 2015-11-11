@@ -1,0 +1,88 @@
+\changetocdepth {1}
+\select@language {danish}
+\contentsline {chapter}{\chapternumberline {1}Indledning}{1}{chapter.1}
+\contentsline {section}{\numberline {1.1}Initierende problem}{2}{section.1.1}
+\contentsline {chapter}{\chapternumberline {2}Problemanalyse}{3}{chapter.2}
+\contentsline {section}{\numberline {2.1}Apopleksi}{3}{section.2.1}
+\contentsline {subsubsection}{Isk\IeC {\ae }misk apopleksi}{4}{section*.4}
+\contentsline {subsubsection}{H\IeC {\ae }moragisk apopleksi}{4}{section*.5}
+\contentsline {subsection}{\numberline {2.1.1}P\IeC {\r a}virkning p\IeC {\r a} encephalon}{4}{subsection.2.1.1}
+\contentsline {subsection}{\numberline {2.1.2}Plasticitet}{6}{subsection.2.1.2}
+\contentsline {section}{\numberline {2.2}Unders\IeC {\o }gelse og behandling}{7}{section.2.2}
+\contentsline {subsection}{\numberline {2.2.1}Unders\IeC {\o }gelse}{7}{subsection.2.2.1}
+\contentsline {subsection}{\numberline {2.2.2}Behandling}{7}{subsection.2.2.2}
+\contentsline {subsection}{\numberline {2.2.3}Forebyggelse}{7}{subsection.2.2.3}
+\contentsline {section}{\numberline {2.3}F\IeC {\o }lger af apopleksi }{8}{section.2.3}
+\contentsline {subsection}{\numberline {2.3.1}Sensoriske og motoriske skader}{8}{subsection.2.3.1}
+\contentsline {subsubsection}{Balance}{9}{section*.8}
+\contentsline {subsubsection}{Neglekt}{10}{section*.11}
+\contentsline {subsection}{\numberline {2.3.2}Personlige f\IeC {\o }lger}{11}{subsection.2.3.2}
+\contentsline {section}{\numberline {2.4}Rehabilitering}{11}{section.2.4}
+\contentsline {subsection}{\numberline {2.4.1}Forl\IeC {\o }bsprogram for rehabilitering}{11}{subsection.2.4.1}
+\contentsline {subsubsection}{Den f\IeC {\o }rste fase}{12}{section*.13}
+\contentsline {subsubsection}{Den anden fase}{12}{section*.14}
+\contentsline {subsubsection}{Den tredje fase}{12}{section*.15}
+\contentsline {subsubsection}{Den fjerde fase}{12}{section*.16}
+\contentsline {subsection}{\numberline {2.4.2}Organisering af rehabiliteringsprocessen}{13}{subsection.2.4.2}
+\contentsline {subsection}{\numberline {2.4.3}Metoder til rehabilitering af balance}{13}{subsection.2.4.3}
+\contentsline {section}{\numberline {2.5}Biofeedback}{14}{section.2.5}
+\contentsline {subsection}{\numberline {2.5.1}Fysiologisk biofeedback}{15}{subsection.2.5.1}
+\contentsline {subsection}{\numberline {2.5.2}Biomekanisk biofeedback}{15}{subsection.2.5.2}
+\contentsline {subsection}{\numberline {2.5.3}Krav til patienter med balanceproblemer ved anvendelse af biofeedback}{16}{subsection.2.5.3}
+\contentsline {section}{\numberline {2.6}Behandling af biologiske signaler}{16}{section.2.6}
+\contentsline {subsection}{\numberline {2.6.1}Forst\IeC {\ae }rker}{17}{subsection.2.6.1}
+\contentsline {subsection}{\numberline {2.6.2}Filtrering}{17}{subsection.2.6.2}
+\contentsline {subsection}{\numberline {2.6.3}St\IeC {\o }j}{18}{subsection.2.6.3}
+\contentsline {subsection}{\numberline {2.6.4}Komparator}{19}{subsection.2.6.4}
+\contentsline {subsection}{\numberline {2.6.5}ADC og konvertering til computeren}{19}{subsection.2.6.5}
+\contentsline {section}{\numberline {2.7}Problemafgr\IeC {\ae }nsning}{21}{section.2.7}
+\contentsline {section}{\numberline {2.8}Problemformulering}{21}{section.2.8}
+\contentsline {chapter}{\chapternumberline {3}Probleml\IeC {\o }sning}{22}{chapter.3}
+\contentsline {section}{\numberline {3.1}Systembeskrivelse}{22}{section.3.1}
+\contentsline {subsection}{\numberline {3.1.1}Systemets bruger}{22}{subsection.3.1.1}
+\contentsline {subsection}{\numberline {3.1.2}Systemets form\IeC {\r a}l og anvendelse}{22}{subsection.3.1.2}
+\contentsline {subsection}{\numberline {3.1.3}Accelerometer}{23}{subsection.3.1.3}
+\contentsline {subsection}{\numberline {3.1.4}Systemets opbygning}{24}{subsection.3.1.4}
+\contentsline {section}{\numberline {3.2}Kravspecifikationer}{25}{section.3.2}
+\contentsline {subsection}{\numberline {3.2.1}Overordnede funktionelle krav til systemet:}{25}{subsection.3.2.1}
+\contentsline {subsection}{\numberline {3.2.2}Opsamling}{26}{subsection.3.2.2}
+\contentsline {subsection}{\numberline {3.2.3}Filter}{26}{subsection.3.2.3}
+\contentsline {subsection}{\numberline {3.2.4}Tilpasning}{26}{subsection.3.2.4}
+\contentsline {subsection}{\numberline {3.2.5}Komparator}{27}{subsection.3.2.5}
+\contentsline {subsection}{\numberline {3.2.6}Visuel feedback}{27}{subsection.3.2.6}
+\contentsline {subsection}{\numberline {3.2.7}Somatosensorisk feedback}{28}{subsection.3.2.7}
+\contentsline {subsection}{\numberline {3.2.8}ADC}{28}{subsection.3.2.8}
+\contentsline {subsection}{\numberline {3.2.9}USB-isolator}{28}{subsection.3.2.9}
+\contentsline {subsection}{\numberline {3.2.10}Software}{28}{subsection.3.2.10}
+\contentsline {section}{\numberline {3.3}Pilotfors\IeC {\o }g}{29}{section.3.3}
+\contentsline {subsection}{\numberline {3.3.1}Form\IeC {\r a}l med pilotfors\IeC {\o }g}{29}{subsection.3.3.1}
+\contentsline {subsection}{\numberline {3.3.2}Materialer}{29}{subsection.3.3.2}
+\contentsline {subsection}{\numberline {3.3.3}Metode}{29}{subsection.3.3.3}
+\contentsline {subsection}{\numberline {3.3.4}Fors\IeC {\o }get}{30}{subsection.3.3.4}
+\contentsline {subsection}{\numberline {3.3.5}Databehandling}{31}{subsection.3.3.5}
+\contentsline {subsubsection}{St\IeC {\o }j}{31}{section*.23}
+\contentsline {subsubsection}{Accelerometers p\IeC {\r a}virkning}{31}{section*.24}
+\contentsline {subsubsection}{Outputsignal}{31}{section*.25}
+\contentsline {subsubsection}{Databladet}{31}{section*.26}
+\contentsline {section}{\numberline {3.4}Teori, design, simulering, implementering og test }{31}{section.3.4}
+\contentsline {subsection}{\numberline {3.4.1}Sp\IeC {\ae }ndingsforsyning}{31}{subsection.3.4.1}
+\contentsline {subsubsection}{Test af sp\IeC {\ae }ndingsforsyning}{32}{section*.28}
+\contentsline {subsection}{\numberline {3.4.2}Filter}{32}{subsection.3.4.2}
+\contentsline {subsubsection}{Teori og design}{32}{section*.29}
+\contentsline {subsection}{\numberline {3.4.3}Komparator}{35}{subsection.3.4.3}
+\contentsline {subsubsection}{Teori og design}{35}{section*.33}
+\contentsline {subsection}{\numberline {3.4.4}ADC}{37}{subsection.3.4.4}
+\contentsline {subsubsection}{Teori}{37}{section*.34}
+\contentsline {subsubsection}{Test af ADC}{37}{section*.35}
+\contentsline {subsection}{\numberline {3.4.5}USB-isolator}{37}{subsection.3.4.5}
+\contentsline {subsubsection}{Test}{37}{section*.36}
+\contentsline {subsubsection}{Resultat fra test}{38}{section*.37}
+\contentsline {subsection}{\numberline {3.4.6}Software}{38}{subsection.3.4.6}
+\contentsline {appendix}{\chapternumberline {A}Nervesystemer og nervefysiologi}{39}{chapter.A}
+\contentsline {section}{\numberline {A.1}Hjernens anatomi}{39}{section.A.1}
+\contentsline {section}{\numberline {A.2}Nervens anatomi}{40}{section.A.2}
+\contentsline {section}{\numberline {A.3}Aktionspotentiale}{40}{section.A.3}
+\contentsline {appendix}{\chapternumberline {B}Kroppens balance}{43}{chapter.B}
+\contentsline {section}{\numberline {B.1}\IeC {\O }rets bidrag til balance}{43}{section.B.1}
+\contentsline {section}{\numberline {B.2}\IeC {\O }jets bidrag til balance}{44}{section.B.2}
+\contentsline {section}{\numberline {B.3}Proprioceptorerne og skeletmuskulaturens bidrag til balancen}{45}{section.B.3}
