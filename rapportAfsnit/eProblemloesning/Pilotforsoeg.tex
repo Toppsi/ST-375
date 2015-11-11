@@ -65,23 +65,58 @@ Alt data vil efterfølgende blive behandlet i MATLAB R2015a, hvor der beregnes e
 \end{figure}
 
 \subsection{Databehandling}
-I dette afsnit vil der grafisk blive vist, hvordan accelerometerets output ændrer sig ift. g påvirkning / vinkelhældning. På \figref{Fig:PilotTid} ses accelerometerets output i tidsdomænet. Der udføres herefter en FFT på de 3 målinger for hver baseline, hvilket giver en grafisk skildning af, hvorledes accelerometerets egne frekvenser adskiller sig fra støjfrekvenser. På \figref{Fig:Pilot_FFT}
+I dette afsnit vil der grafisk blive vist, hvordan accelerometerets output ændrer sig ift. g påvirkning / vinkelhældning. På \figref{Fig:Pilot_Tid} ses accelerometerets output i tidsdomænet. Der udføres herefter en FFT på de 3 målinger for hver baseline, hvilket giver ni grafiske skiltninger af, hvorledes accelerometerets egne frekvenser adskiller sig fra støjfrekvenser.
 
 \begin{figure}[H]
 	\centering
-	\includegraphics[scale=0.14]{figures/cProblemloesning/Pilotforsoeg_Tid.png}
-	\caption{På graferne ses}
-	\label{Fig:PilotTid}
+	\includegraphics[scale=0.5]{figures/cProblemloesning/Pilotforsoeg_Tid.png}
+	\caption{På graferne ses henholdsvis første, anden og tredje måling for hver g påvirkning af accelerometret. Den røde graf repræsenterer outputtet målt ved 1. g påvirkning i positiv retning. Den blå graf repræsenterer outputtet målt ved  0 g påvirkning. Den gule graf repræsenterer outputtet målt ved 1. g påvirkning i negativ retning.}
+	\label{Fig:Pilot_Tid}
 \end{figure}
 
-Tid - sensitivitet
+Offsettet for accelerometerets x-akse udregnet ved at tage gennemsnitsværdien af det samlede data målt ved 0 g påvirkning. Dette ses som den blå graf på \figref{Pilot_Tid}. Denne udregning ses på \ref{Mean_tid_0g}:
+\begin{equation}\label{Mean_tid_0g}
+\text{Offset} = \frac{1.5911 + 1.5916 + 1.5916}{3} = 1.5915
+\end{equation}
+\noindent Offsettet burde ifølge databladet for accelerometret være halvdelen af spændingsforsyning, som i dette tilfælde leder en spænding på 3.3V. Derfor burde offsettet være 1.65V. Afvigelsen kan derved udregnes:
+\begin{equation}
+\text{Afvigelse for offset} = \dfrac{1.5915 - 1.65}{1.65} \cdot 100 = -3.5481\% \approx 3.5\%
+\end{equation}
 
+\noindent Herefter kan sensitiviteten for accelerometeret udregnes. Dette gøres ved først at udregne en gennemsnitsværdi for 1 g påvirkning i henholdsvis positiv og negativ retning. Herefter trækkes offset værdien fra.
+\begin{align}
+	\text{Gennemsnit 1 g positiv retning} = \frac{1.8627 + 1.8627 + 1.8626}{3} = 1.8627 \\
+	\text{Gennemsnit 1 g negativ retning} = \frac{1.3254 + 1.3255 + 1.3254}{3} = 1.3254 \\
+	\text{Sensitivitet positiv retning} = 1.8627 - 1.5915 = 0.2712 \\
+	\text{Sensitivitet negativ retning} = 1.3254 - 1.5915 = -0.2660
+\end{align}
+\noindent Da der findes en lineær sammenhæng imellem g påvirkning og outputtet burde sensitiviteten for accelerometret med en spændingsforsyning på 3.3V være 330 mV/g. Vi kan derved udregne afvigelse for både negativ og positiv retning:
+\begin{align}
+	\text{Afvigelse for sensitivitet i positiv retning} = \dfrac{0.2712 - 0.330}{0.330} = -17.8182\% \approx 17.8\% \\
+	\text{Afvigelse for sensitivitet i negativ retning} = \dfrac{0.2660 - 0.330}{0.330} = -19.3940\% \approx 19.4\%
+\end{align}
+
+På \figref{Fig:Pilot_FFT0}, \figref{Fig:Pilot_FFTN} samt \figref{Fig:Pilot_FFTP} ses FFT af det målte data.
 \begin{figure}[H]
 	\centering
-	\includegraphics[scale=0.14]{figures/cProblemloesning/Pilotforsoeg_Tid.png}
-	\caption{På graferne ses}
-	\label{Fig:Pilot_FFT}
+	\includegraphics[scale=0.5]{figures/cProblemloesning/Pilotforsoeg_Frekvens0.png}
+	\caption{På de tre grafer ses en FFT af første, anden og tredje måling ved en 0 g påvirkning af accelerometret. Peaken ved 0 Hz går op til ca. 1.58, men dette ses ikke på grafen, da resten af værdierne derved vil være meget svære at se.}
+	\label{Fig:Pilot_FFT0}
 \end{figure}
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=0.5]{figures/cProblemloesning/Pilotforsoeg_FrekvensP.png}
+	\caption{På de tre grafer ses en FFT af første, anden og tredje måling ved en 1 g påvirkning af accelerometret i positiv retning. Peaken ved 0 Hz går op til ca. 1.86, men dette ses ikke på grafen, da resten af værdierne derved vil være meget svære at se.}
+	\label{Fig:Pilot_FFTP}
+\end{figure}
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=0.5]{figures/cProblemloesning/Pilotforsoeg_FrekvensN.png}
+	\caption{På de tre grafer ses en FFT af første, anden og tredje måling ved en 1 g påvirkning af accelerometret i negativ retning. Peaken ved 0 Hz går op til ca. 1.33, men dette ses ikke på grafen, da resten af værdierne derved vil være meget svære at se.}
+	\label{Fig:Pilot_FFTN}
+\end{figure}
+
+\noindent 
 
 Støj
 
@@ -92,5 +127,5 @@ Outputsignal
 Databladet
 
 \subsection{Konklusion}
-
+Hvorfor er der en afvigelse på 3.5\%?
 \cite{Devices2009}
