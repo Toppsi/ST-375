@@ -16,17 +16,16 @@ f = Fs*(0:(L/2))/L;
 figure
 plot(t, RV.data(1:L))
 axis([0 30 1 2])
-title('Rotation til venstre')
+title('Rotation til begge retninger')
 xlabel('Tid angivet i sekunder')
 ylabel('Spænding målt i Volt')
 hold on
 
 plot(t, RH.data(1:L))
 axis([0 30 1 2])
-title('Rotation til højre')
 
 %% FFT af rotation til højre side
-fftRH = fft(RH.data);
+fftRH = fft(RH.data(1:L));
 
 %Compute the two-sided spectrum P2. 
 %Then compute the single-sided spectrum P1 based on P2 and the even-valued signal length L
@@ -37,8 +36,9 @@ P1H(2:end-1) = 2*P1H(2:end-1);
 %Define the frequency domain f and plot the single-sided amplitude spectrum P1.
 %Plotter vores frekvensgraf
 figure
+subplot(2,1,1)
 plot(f,P1H)
-axis([-10 250 0 1.8])
+axis([-10 250 0 0.001])
 title('Frekvensspektrum for rotation til højre') 
 %title('Single-Sided Amplitude Spectrum of X(t)')
 xlabel('f (Hz)')
@@ -46,7 +46,7 @@ ylabel('|P1(f)|')
 
 %% FFT af rotation til venstre side
 
-fftRV = fft(RV.data);
+fftRV = fft(RV.data(1:L));
 
 %Compute the two-sided spectrum P2. 
 %Then compute the single-sided spectrum P1 based on P2 and the even-valued signal length L
@@ -55,9 +55,9 @@ P1V = P2V(1:L/2+1);
 P1V(2:end-1) = 2*P1V(2:end-1);
 
 %Define the frequency domain f and plot the single-sided amplitude spectrum P1.
-figure
+subplot(2,1,2)
 plot(f,P1V)
-axis([0 250 0 0.001])
+axis([-10 250 0 0.001])
 title('Frekvensspektrum for rotation til venstre') 
 %title('Single-Sided Amplitude Spectrum of X(t)')
 xlabel('f (Hz)')
