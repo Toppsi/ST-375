@@ -1,6 +1,6 @@
 % !TeX spellcheck = da_DK
 \section{Pilotforsøg}\label{Sec:Pilotforsoeg}
-Det er nødvendigt at vide hvilke frekvenser af signalet der er støj, før systemet kan designes. Grunden til dette er, at signalet skal aktivere komponenter senere i systemet og skal derfor være uden støjsignaler for ikke at påvirke outputtet. For at undgå dette frafiltreres støjsignaler. Derudover er det nødvendigt at vide, hvilket outputsignal accelerometeret giver ift. den valgte hældningsgrad. Dette gøres ud fra sensitiviteten, der måles. Ud fra disse oplysninger er det muligt at designe de enkelte blokke i systemet.% Oplysningerne findes på baggrund af et pilotforsøg. 
+Det er nødvendigt at vide hvilke frekvenser af signalet der er støj på, før systemet kan designes. Grunden til dette er, at signalet skal aktivere komponenter senere i systemet og skal derfor være uden støjsignaler for ikke at påvirke outputtet. For at undgå dette frafiltreres støjsignaler. Derudover er det nødvendigt at vide, hvilket outputsignal accelerometeret giver ift. den valgte hældningsgrad. Dette gøres ud fra sensitiviteten, der måles. Ud fra disse oplysninger er det muligt at designe de enkelte blokke i systemet.% Oplysningerne findes på baggrund af et pilotforsøg. 
 
 \subsection{Formål med pilotforsøg}
 \begin{enumerate}
@@ -16,7 +16,7 @@ Det er nødvendigt at vide hvilke frekvenser af signalet der er støj, før syst
 \item To stk. 0,1 $\mu$ F kondensatorer.
 \item Ledninger.
 \item Breadboard.
-\item 5V strøm fra spændingsforsyning.
+\item 5V fra spændingsforsyning.
 \item NI USB-6009.
 \item USB isolator USI-01.
 \item Computer med ScopeLogger og MATLAB R2015a.
@@ -36,7 +36,7 @@ Inden, under og efter forsøget måles temperaturen i lokalet, da denne kan have
 Der ses et billede af den samlede opsætningen på \figref{pforsoeg1}.
 \begin{itemize}
 \item Accelerometeret tilkobles breadboardet.
-\item To kondensatorer på $0.10 \mu F$ tilkobles breadboardet. \fxnote{Den som sidder på pin 1 og 2 i accelerometeret fjerner støj fra strømforsygningen, mens kondensatoren fra pin 3 giver en båndbredde på 50 Hz.}
+\item To kondensatorer på $0.1 \mu F$ tilkobles breadboardet. Kondensatorererne er valgt på baggrund af databladet for acceleorometeret ift. power supply decoupling og båndbredde.\fxnote{Den som sidder på pin 1 og 2 i accelerometeret fjerner støj fra strømforsygningen, mens kondensatoren fra pin 3 giver en båndbredde på 50 Hz.}
 \item Accelerometeret tilnyttes en forsyningsspænding på 5V.
 \item Outputtet fra systemet sendes igennem NI USB-6009.
 \item Signalet fra NI USB-6009 sendes igennem USI-01. \fxnote{USB isolator}
@@ -46,14 +46,14 @@ Der ses et billede af den samlede opsætningen på \figref{pforsoeg1}.
 \begin{figure}[H]
 	\centering
 	\includegraphics[scale=0.15]{figures/cProblemloesning/PF2.jpg}
-	\caption{På billedet ses opsætningen på breadboardet. De røde ledninger symboliserer inputtet fra den 5V strømforsyning. De sorte ledninger fungerer som ground. Den gule ledning fungerer som en leder for outputtet fra accelerometerets pågældende akse (kan skiftes imellem række 15, 16 og 17 alt efter hvilken akse, der skal måles på). Den grønne ledning symboliserer outputtet fra breadboardet, som sendes til NI USB-6009.}
+	\caption{På billedet ses opsætningen på breadboardet. De røde ledninger symboliserer inputtet fra den 5V spændingsforsyning. De sorte ledninger fungerer som ground. Den gule ledning fungerer som en leder for outputtet fra accelerometerets pågældende akse (kan skiftes imellem række 15, 16 og 17 alt efter hvilken akse, der skal måles på). Den grønne ledning symboliserer outputtet fra breadboardet, som sendes til NI USB-6009.}
 	\label{pforsoeg1}
 \end{figure}
 
 \subsection{Fremgangsmåde}
 Hele pilotforsøgets opsætning ses på \figref{pforsoeg2}. \\
-For at måle 0 g påvirkning på accelerometerets x akse, lægges det fladt ned på et plant bord, som er tjekket med et vaterpas. Dette gøres over tre omgange i 30 sekunder. Herefter holdes accelerometeret fast på en vinkel, hvor ledningerne påsættes med hæftemasse. Accelerometeret sættes så der igen måles på x-aksen, når der sker en rotation til højre og venstre. Vinklen sættes således, at der måles 1 g påvirkning i positiv retning og negativ retning, hvilket svarer til $\pm 90^{\circ}$ fra accelerometerets nulpunkt. \\
-Dette giver 3 baselines for hver g påvirkning, som optages og gemmes i ScopeLogger. %Herudover måles en baseline for g påvirkningen af accelerometeret ved $8^{\circ}$ og $13^{\circ}$. Dette gøres ved at holde accelerometeret i 30 sekunder på $8^{\circ}$ og $13^{\circ}$ henholdsvis til højre og venstre. Herved fås 4 baselines, som optages og gemmes i ScopeLogger. 
+For at måle 0g påvirkning på accelerometerets x-akse, lægges det fladt ned på et plant bord, som er tjekket med et vaterpas. Målingen gøres over tre omgange i 30 sekunder. Herefter holdes accelerometeret fast på en vinkel, hvor ledningerne påsættes med hæftemasse. Accelerometeret sættes så der igen måles på x-aksen, når der sker en rotation til højre og venstre. Vinklen sættes således, at der måles 1 g påvirkning i positiv retning og negativ retning, hvilket svarer til $\pm 90^{\circ}$ fra accelerometerets nulpunkt. \\
+Dette giver tre baselines for hver g påvirkning, som optages og gemmes i ScopeLogger. %Herudover måles en baseline for g påvirkningen af accelerometeret ved $8^{\circ}$ og $13^{\circ}$. Dette gøres ved at holde accelerometeret i 30 sekunder på $8^{\circ}$ og $13^{\circ}$ henholdsvis til højre og venstre. Herved fås 4 baselines, som optages og gemmes i ScopeLogger. 
 Til sidst måles g påvirkningen af accelerometeret under rotation fra $0^{\circ}$ til $\pm$ $90^{\circ}$ for både højre og venstre. Her måles 10 sekunders baseline inden og efter rotationen, som varer 10 sekunder og foretages langsomt og kontrolleret. Disse to målinger optages og gemmes ligeså i ScopeLogger. \\
 Alt data vil efterfølgende blive behandlet i MATLAB R2015a, hvor der beregnes en gennemsnitsværdi for henholdsvis de tre baselines målt ved 0 g påvirkning samt 1 g påvirkning i positiv retning og negativ retning. Der foretages desuden en Fast Fourier Transformation (FFT) på de ni målinger (tre målinger ved hver g påvirkning). FFT foretages for at få en repræsentation af støj på signalet. Formålet med at optage en baseline er, at man kan se, hvilken påvirkning omgivelserne har på signalet, da der ikke er nogen bevægelse på disse.
 
@@ -65,32 +65,32 @@ Alt data vil efterfølgende blive behandlet i MATLAB R2015a, hvor der beregnes e
 \end{figure}
 
 \subsection{Databehandling}
-I dette afsnit vil der grafisk blive vist, hvordan accelerometerets output ændrer sig ift. g påvirkning / vinkelhældning. På \figref{Fig:Pilot_Tid} ses accelerometerets output i tidsdomænet. Der udføres herefter en FFT på de 3 målinger for hver baseline, hvilket giver ni grafiske skiltninger af, hvorledes accelerometerets egne frekvenser adskiller sig fra støjfrekvenser.
+I dette afsnit vil der grafisk blive vist, hvordan accelerometerets output ændrer sig ift. g påvirkning. På \figref{Fig:Pilot_Tid} ses accelerometerets output i tidsdomænet. Der udføres herefter en FFT på de tre målinger for hver baseline, hvilket giver ni grafiske skiltninger af, hvorledes accelerometerets egne frekvenser adskiller sig fra støjfrekvenser.
 
 \begin{figure}[H]
 	\centering
 	\includegraphics[scale=0.45]{figures/cProblemloesning/Pilotforsoeg_Tid.png}
-	\caption{På graferne ses henholdsvis første, anden og tredje måling for hver g påvirkning af accelerometret. Den røde graf repræsenterer outputtet målt ved 1. g påvirkning i positiv retning. Den blå graf repræsenterer outputtet målt ved  0 g påvirkning. Den gule graf repræsenterer outputtet målt ved 1. g påvirkning i negativ retning.}
+	\caption{På graferne ses henholdsvis første, anden og tredje måling for hver g påvirkning af accelerometret. Den røde graf repræsenterer outputtet målt ved 1g påvirkning i positiv retning. Den blå graf repræsenterer outputtet målt ved 0g påvirkning. Den gule graf repræsenterer outputtet målt ved 1g påvirkning i negativ retning.}
 	\label{Fig:Pilot_Tid}
 \end{figure}
 
-Offsettet for accelerometerets x-akse udregnet ved at tage gennemsnitsværdien af det samlede data målt ved 0 g påvirkning. Dette ses som den blå graf på \figref{Fig:Pilot_Tid}. Denne udregning ses på \ref{Mean_tid_0g}:
+Offsettet for accelerometerets x-akse udregnet ved at tage gennemsnitsværdien af det samlede data målt ved påvirkning af 0g. Dette ses som den blå graf på \figref{Fig:Pilot_Tid}. Denne udregning ses på \ref{Mean_tid_0g}:
 \begin{equation}\label{Mean_tid_0g}
 \text{Offset} = \frac{1.5911 + 1.5916 + 1.5916}{3} = 1.5915
 \end{equation}
-\noindent Offsettet burde ifølge databladet for accelerometret være halvdelen af spændingsforsyning, som i dette tilfælde leder en spænding på 3.3V. \cite{Devices2009} Derfor burde offsettet være 1.65V. Afvigelsen kan derved udregnes:
+\noindent Offsettet burde ifølge databladet for accelerometret være halvdelen af spændingsforsyningen, som i dette tilfælde leder en spænding på 3.3V. \cite{Devices2009} Derfor burde offsettet være 1.65V. Afvigelsen kan derved udregnes:
 \begin{equation}
 \text{Afvigelse for offset} = \dfrac{1.5915 - 1.65}{1.65} \cdot 100 = -3.5481\% \approx 3.5\%
 \end{equation}
 
-\noindent Herefter kan sensitiviteten for accelerometeret udregnes. Dette gøres ved først at udregne en gennemsnitsværdi for 1 g påvirkning i henholdsvis positiv og negativ retning. Herefter trækkes offset værdien fra.
+\noindent Herefter kan sensitiviteten for accelerometeret udregnes. Dette gøres ved først at udregne en gennemsnitsværdi for 1g påvirkning i henholdsvis positiv og negativ retning. Herefter trækkes offset værdien fra.
 \begin{align}
-	\text{Gennemsnit 1 g positiv retning} = \frac{1.8627 + 1.8627 + 1.8626}{3} = 1.8627 \\
-	\text{Gennemsnit 1 g negativ retning} = \frac{1.3254 + 1.3255 + 1.3254}{3} = 1.3254 \\
+	\text{Gennemsnit 1g positiv retning} = \frac{1.8627 + 1.8627 + 1.8626}{3} = 1.8627 \\
+	\text{Gennemsnit 1g negativ retning} = \frac{1.3254 + 1.3255 + 1.3254}{3} = 1.3254 \\
 	\text{Sensitivitet positiv retning} = 1.8627 - 1.5915 = 0.2712 \\
 	\text{Sensitivitet negativ retning} = 1.3254 - 1.5915 = -0.2660
 \end{align}
-\noindent Da der findes en lineær sammenhæng imellem g påvirkning og outputtet burde sensitiviteten for accelerometret med en spændingsforsyning på 3.3V være 330 mV/g. Vi kan derved udregne afvigelse for både negativ og positiv retning:
+\noindent Da der findes en lineær sammenhæng imellem g påvirkning og outputtet burde sensitiviteten for accelerometret med en spændingsforsyning på 3.3V være 330 mV/g. Der kan derved udregnes afvigelse for både negativ og positiv retning:
 \begin{align}
 	\text{Afvigelse for sensitivitet i positiv retning} = \dfrac{0.2712 - 0.330}{0.330} = -17.8182\% \approx 17.8\% \\
 	\text{Afvigelse for sensitivitet i negativ retning} = \dfrac{0.2660 - 0.330}{0.330} = -19.3940\% \approx 19.4\%
@@ -100,28 +100,28 @@ På \figref{Fig:Pilot_FFT0}, \figref{Fig:Pilot_FFTN} samt \figref{Fig:Pilot_FFTP
 \begin{figure}[H]
 	\centering
 	\includegraphics[scale=0.5]{figures/cProblemloesning/Pilotforsoeg_Frekvens0.png}
-	\caption{På de tre grafer ses en FFT af første, anden og tredje måling ved en 0 g påvirkning af accelerometret. Peaken ved 0 Hz går op til ca. 1.58, men dette ses ikke på grafen, da resten af værdierne derved vil være meget svære at se.}
+	\caption{På de tre grafer ses en FFT af første, anden og tredje måling ved en 0g påvirkning af accelerometret. Peaken ved 0Hz går op til ca. 1.58V, men dette ses ikke på grafen, da resten af værdierne derved vil være meget svære at se.}
 	\label{Fig:Pilot_FFT0}
 \end{figure}
 \begin{figure}[H]
 	\centering
 	\includegraphics[scale=0.5]{figures/cProblemloesning/Pilotforsoeg_FrekvensP.png}
-	\caption{På de tre grafer ses en FFT af første, anden og tredje måling ved en 1 g påvirkning af accelerometret i positiv retning. Peaken ved 0 Hz går op til ca. 1.86, men dette ses ikke på grafen, da resten af værdierne derved vil være meget svære at se.}
+	\caption{På de tre grafer ses en FFT af første, anden og tredje måling ved en 1g påvirkning af accelerometret i positiv retning. Peaken ved 0Hz går op til ca. 1.86V, men dette ses ikke på grafen, da resten af værdierne derved vil være meget svære at se.}
 	\label{Fig:Pilot_FFTP}
 \end{figure}
 \begin{figure}[H]
 	\centering
 	\includegraphics[scale=0.5]{figures/cProblemloesning/Pilotforsoeg_FrekvensN.png}
-	\caption{På de tre grafer ses en FFT af første, anden og tredje måling ved en 1 g påvirkning af accelerometret i negativ retning. Peaken ved 0 Hz går op til ca. 1.33, men dette ses ikke på grafen, da resten af værdierne derved vil være meget svære at se.}
+	\caption{På de tre grafer ses en FFT af første, anden og tredje måling ved en 1g påvirkning af accelerometret i negativ retning. Peaken ved 0Hz går op til ca. 1.33V, men dette ses ikke på grafen, da resten af værdierne derved vil være meget svære at se.}
 	\label{Fig:Pilot_FFTN}
 \end{figure}
 
-\noindent Der ses på graferne, at vores "signal to noise" ratio er meget lav, hvilket betyder, at vi ikke har ret meget støj ift. ønsket signal. Der ses altså, at accelerometerets frekvensområde ligger i de lave frekvenser. Der ses ved en statisk acceleration at, signalet stort set kun er til stede ved 0 Hz. Alt over 0 Hz betragtes derfor som støj. 
+\noindent Der ses på graferne, at vores "signal to noise" ratio er lav, hvilket betyder, at der ikke er meget støj ift. ønsket signal. Der ses altså, at accelerometerets frekvensområde ligger i de lave frekvenser. Der ses ved en statisk acceleration at, signalet stort set kun er til stede ved 0Hz. Alt over  0Hz betragtes derfor som støj. 
 
 \begin{figure}[H]
 	\centering
 	\includegraphics[scale=0.45]{figures/cProblemloesning/Pilotforsoeg_Rotation.png}
-	\caption{På graferne ses accelerometerets output ved rotation fra 0 g påvirkning til 1 g påvirkning. Den orange graf repræsenterer rotation i positiv retning, hvorimod den blå graf repræsenterer rotation i negativ retning.}
+	\caption{På graferne ses accelerometerets output ved rotation fra 0g påvirkning til 1g påvirkning. Den orange graf repræsenterer rotation i positiv retning, hvorimod den blå graf repræsenterer rotation i negativ retning.}
 	\label{Fig:Pilot_Rottid}
 \end{figure}
 \begin{figure}[H]
@@ -130,11 +130,11 @@ På \figref{Fig:Pilot_FFT0}, \figref{Fig:Pilot_FFTN} samt \figref{Fig:Pilot_FFTP
 	\caption{På graferne ses en FFT af målinger for rotation i henholdsvis positiv og negativ retning.}
 	\label{Fig:Pilot_Rotfrek}
 \end{figure}
-På \figref{Fig:Pilot_Rottid} ses der, at der er en lineær sammenhæng imellem g påvirkning af accelerometret og outputtet. Der ses, at de tre baselines ved 0 g påvirkning samt 1 g påvirkning i henholdsvis positiv og negativ retning, som måles i de første og sidste 10 sekunder af målingen, stemmer overens med de målte baselines uden rotation. \\
-På \figref{Fig:Pilot_Rotfrek} ses en FFT af rotationerne. Ud fra dette kan der ses, at der er kommet større udsving i de lavere frekvenser fra 0 til ca. 25 Hz sammenlignet med de statiske baseline målinger. Signalet regnes altså for at være i frekvensspektrummet 0-25 Hz. Alt uden for dette spektrum regnes derfor som støj.
+På \figref{Fig:Pilot_Rottid} ses der en lineær sammenhæng imellem g påvirkning af accelerometret og outputtet. Der ses, at de tre baselines ved 0g påvirkning samt 1g påvirkning i henholdsvis positiv og negativ retning, som måles i de første og sidste 10 sekunder af målingen, stemmer overens med de målte baselines uden rotation. \\
+På \figref{Fig:Pilot_Rotfrek} ses en FFT af rotationerne. Ud fra dette kan der ses, at der er kommet større udsving i de lavere frekvenser fra 0 til ca. 25Hz sammenlignet med de statiske baseline målinger. Signalet regnes altså for at være i frekvensspektrummet 0-25Hz. Alt uden for dette spektrum regnes derfor som støj.
 
 \subsection{Diskussion og konklusion}
-Der kan argumenteres for og imod at accelerometret er blevet udsat for 0 g påvirkning, da bordet eksempelvis måske ikke er plant. Bordets hældning blev målt med et vaterpas, men dette kan muligvis være blevet aflæst forkert, eller vaterpasset kan være fejlagtigt. Accelerometret har desuden ujævnheder på overfladen i form af ledninger, hvilket kan betyde, at det muligvis ikke har lagt plant på bordet. \\
-1 g påvirkningen kan også være fejlagtig, da vinklen nødvendigvis ikke er helt vinkelret. Ujævnheder på accelerometret samt vores holdemåde på det kan også have påvirket målingen. \\
+Der kan argumenteres for og imod at accelerometret er blevet udsat for 0g påvirkning, da det kan være svært at vurdere hvorvidt bordet er plant. Bordets hældning blev målt med et vaterpas, men dette kan være blevet aflæst forkert, eller vaterpasset kan være upræcist. Accelerometret har desuden ujævnheder på overfladen i form af ledninger, hvilket kan betyde, at det muligvis ikke har lagt plant på bordet. \\
+Der kan også være faktorer som har betydning for 1g påvirkningen, da vinklen nødvendigvis ikke er helt vinkelret. Ujævnheder på accelerometret samt vores holdemåde på det kan også have påvirket målingen. \\
 Accelerometerets output afhænger også af rumtemperaturen, da denne påvirker aksernes offset samt sensitiviteten. Ved dette forsøg var temperaturen før, under og efter forsøget X, X og X, hvilket vil gå ind og påvirke målingerne. \\
-Alle disse faktorer kan have indflydelse på de afvigelser, der er udregnet for pilotforsøget.
+Alle disse faktorer som er udregnet for pilotforsøget kan have indflydelse på de afvigelser der fås ift. databladet for accelerometeret.
