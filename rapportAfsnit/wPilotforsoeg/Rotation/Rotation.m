@@ -38,7 +38,7 @@ P1H(2:end-1) = 2*P1H(2:end-1);
 figure
 subplot(2,1,1)
 plot(f,P1H)
-axis([-10 250 0 0.001])
+axis([-10 50 0 0.001])
 title('Frekvensspektrum for rotation i positiv retning') 
 %title('Single-Sided Amplitude Spectrum of X(t)')
 xlabel('f (Hz)')
