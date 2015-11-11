@@ -23,11 +23,13 @@ Det er nødvendigt at vide hvilke frekvenser af signalet der er støj, før syst
 \item Hæftemasse.
 \item Vinkel.
 \item Vaterpas.
+\item Termometer
 \end{itemize}
 
 \subsection{Metode}
 Støjfrekvenserne i outputsignalet identificeres ved først at måle en baseline ved $0$g dvs. uden hældning. Dette medfører at signalet kan analyseres uden nogen påvirkning på outputsignalet. Dernæst måles en påvirkningen ved $1$g, hvilket svarer til en hældning på 90$^{\circ}$. Dette måles både til højre og venstre. Derved kan det sammenlignes, om der er støj ift. baseline. %Det samme gøres for de specificerede hældningsgrader, som er $8^{\circ}$ og $13^{\circ}$. 
-For at simulere den påvirkning, accelerometeret udsættes for og identificere den mulige støj ved en rotation, roteres accelerometret i en langsom rotation fra $0^{\circ}$ til $90^{\circ}$ til både højre og venstre. Disse målinger vil identificere minimum og maksimum outputsignal, som accelerometeret kan afgive i dette tilfælde, samt kontrollere om offset og sensitivitet informationerne fra accelerometerets datablad stemmer overens med det målte data.
+For at simulere den påvirkning, accelerometeret udsættes for og identificere den mulige støj ved en rotation, roteres accelerometret i en langsom rotation fra $0^{\circ}$ til $90^{\circ}$ til både højre og venstre. Disse målinger vil identificere minimum og maksimum outputsignal, som accelerometeret kan afgive i dette tilfælde, samt kontrollere om offset og sensitivitet informationerne fra accelerometerets datablad stemmer overens med det målte data. \\
+Inden, under og efter forsøget måles temperaturen i lokalet, da denne kan have en effekt på accelerometerets sensitivitet. \cite{Devices2009}
 
 \subsection{Forsøget}
 \textbf{Opsætning}\\
@@ -48,7 +50,7 @@ Der ses et billede af den samlede opsætningen på \figref{pforsoeg1}.
 	\label{pforsoeg1}
 \end{figure}
 
-\noindent\textbf{Fremgangsmåde}\\
+\subsection{Fremgangsmåde}
 Hele pilotforsøgets opsætning ses på \figref{pforsoeg2}. \\
 For at måle 0 g påvirkning på accelerometerets x akse, lægges det fladt ned på et plant bord, som er tjekket med et vaterpas. Dette gøres over tre omgange i 30 sekunder. Herefter holdes accelerometeret fast på en vinkel, hvor ledningerne påsættes med hæftemasse. Accelerometeret sættes så der igen måles på x-aksen, når der sker en rotation til højre og venstre. Vinklen sættes således, at der måles 1 g påvirkning i positiv retning og negativ retning, hvilket svarer til $\pm 90^{\circ}$ fra accelerometerets nulpunkt. \\
 Dette giver 3 baselines for hver g påvirkning, som optages og gemmes i ScopeLogger. %Herudover måles en baseline for g påvirkningen af accelerometeret ved $8^{\circ}$ og $13^{\circ}$. Dette gøres ved at holde accelerometeret i 30 sekunder på $8^{\circ}$ og $13^{\circ}$ henholdsvis til højre og venstre. Herved fås 4 baselines, som optages og gemmes i ScopeLogger. 
@@ -63,7 +65,32 @@ Alt data vil efterfølgende blive behandlet i MATLAB R2015a, hvor der beregnes e
 \end{figure}
 
 \subsection{Databehandling}
-\subsubsection{Støj}
-\subsubsection{Accelerometers påvirkning}
-\subsubsection{Outputsignal}
-\subsubsection{Databladet}
+I dette afsnit vil der grafisk blive vist, hvordan accelerometerets output ændrer sig ift. g påvirkning / vinkelhældning. På \figref{Fig:PilotTid} ses accelerometerets output i tidsdomænet. Der udføres herefter en FFT på de 3 målinger for hver baseline, hvilket giver en grafisk skildning af, hvorledes accelerometerets egne frekvenser adskiller sig fra støjfrekvenser. På \figref{Fig:Pilot_FFT}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=0.14]{figures/cProblemloesning/Pilotforsoeg_Tid.png}
+	\caption{På graferne ses}
+	\label{Fig:PilotTid}
+\end{figure}
+
+Tid - sensitivitet
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=0.14]{figures/cProblemloesning/Pilotforsoeg_Tid.png}
+	\caption{På graferne ses}
+	\label{Fig:Pilot_FFT}
+\end{figure}
+
+Støj
+
+Accelerometers påvirkning
+
+Outputsignal
+
+Databladet
+
+\subsection{Konklusion}
+
+\cite{Devices2009}
