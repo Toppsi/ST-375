@@ -1,5 +1,5 @@
 % !TeX spellcheck = da_DK
-\section{Pilotforsøg}
+\section{Pilotforsøg}\label{Sec:Pilotforsoeg}
 Det er nødvendigt at vide hvilke frekvenser af signalet der er støj, før systemet kan designes. Grunden til dette er, at signalet skal aktivere komponenter senere i systemet og skal derfor være uden støjsignaler for ikke at påvirke outputtet. For at undgå dette frafiltreres støjsignaler. Derudover er det nødvendigt at vide, hvilket outputsignal accelerometeret giver ift. den valgte hældningsgrad. Dette gøres ud fra sensitiviteten, der måles. Ud fra disse oplysninger er det muligt at designe de enkelte blokke i systemet.% Oplysningerne findes på baggrund af et pilotforsøg. 
 
 \subsection{Formål med pilotforsøg}
@@ -69,16 +69,16 @@ I dette afsnit vil der grafisk blive vist, hvordan accelerometerets output ændr
 
 \begin{figure}[H]
 	\centering
-	\includegraphics[scale=0.5]{figures/cProblemloesning/Pilotforsoeg_Tid.png}
+	\includegraphics[scale=0.45]{figures/cProblemloesning/Pilotforsoeg_Tid.png}
 	\caption{På graferne ses henholdsvis første, anden og tredje måling for hver g påvirkning af accelerometret. Den røde graf repræsenterer outputtet målt ved 1. g påvirkning i positiv retning. Den blå graf repræsenterer outputtet målt ved  0 g påvirkning. Den gule graf repræsenterer outputtet målt ved 1. g påvirkning i negativ retning.}
 	\label{Fig:Pilot_Tid}
 \end{figure}
 
-Offsettet for accelerometerets x-akse udregnet ved at tage gennemsnitsværdien af det samlede data målt ved 0 g påvirkning. Dette ses som den blå graf på \figref{Pilot_Tid}. Denne udregning ses på \ref{Mean_tid_0g}:
+Offsettet for accelerometerets x-akse udregnet ved at tage gennemsnitsværdien af det samlede data målt ved 0 g påvirkning. Dette ses som den blå graf på \figref{Fig:Pilot_Tid}. Denne udregning ses på \ref{Mean_tid_0g}:
 \begin{equation}\label{Mean_tid_0g}
 \text{Offset} = \frac{1.5911 + 1.5916 + 1.5916}{3} = 1.5915
 \end{equation}
-\noindent Offsettet burde ifølge databladet for accelerometret være halvdelen af spændingsforsyning, som i dette tilfælde leder en spænding på 3.3V. Derfor burde offsettet være 1.65V. Afvigelsen kan derved udregnes:
+\noindent Offsettet burde ifølge databladet for accelerometret være halvdelen af spændingsforsyning, som i dette tilfælde leder en spænding på 3.3V. \cite{Devices2009} Derfor burde offsettet være 1.65V. Afvigelsen kan derved udregnes:
 \begin{equation}
 \text{Afvigelse for offset} = \dfrac{1.5915 - 1.65}{1.65} \cdot 100 = -3.5481\% \approx 3.5\%
 \end{equation}
@@ -96,7 +96,7 @@ Offsettet for accelerometerets x-akse udregnet ved at tage gennemsnitsværdien a
 	\text{Afvigelse for sensitivitet i negativ retning} = \dfrac{0.2660 - 0.330}{0.330} = -19.3940\% \approx 19.4\%
 \end{align}
 
-På \figref{Fig:Pilot_FFT0}, \figref{Fig:Pilot_FFTN} samt \figref{Fig:Pilot_FFTP} ses FFT af det målte data.
+På \figref{Fig:Pilot_FFT0}, \figref{Fig:Pilot_FFTN} samt \figref{Fig:Pilot_FFTP} ses en FFT af det målte data for statisk acceleration.
 \begin{figure}[H]
 	\centering
 	\includegraphics[scale=0.5]{figures/cProblemloesning/Pilotforsoeg_Frekvens0.png}
@@ -116,16 +116,25 @@ På \figref{Fig:Pilot_FFT0}, \figref{Fig:Pilot_FFTN} samt \figref{Fig:Pilot_FFTP
 	\label{Fig:Pilot_FFTN}
 \end{figure}
 
-\noindent 
+\noindent Der ses på graferne, at vores "signal to noise" ratio er meget lav, hvilket betyder, at vi ikke har ret meget støj ift. ønsket signal. Der ses altså, at accelerometerets frekvensområde ligger i de lave frekvenser. Der ses ved en statisk acceleration at, signalet stort set kun er til stede ved 0 Hz. Alt over 0 Hz betragtes derfor som støj. 
 
-Støj
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=0.45]{figures/cProblemloesning/Pilotforsoeg_Rotation.png}
+	\caption{På graferne ses accelerometerets output ved rotation fra 0 g påvirkning til 1 g påvirkning. Den orange graf repræsenterer rotation i positiv retning, hvorimod den blå graf repræsenterer rotation i negativ retning.}
+	\label{Fig:Pilot_Rottid}
+\end{figure}
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=0.5]{figures/cProblemloesning/Pilotforsoeg_RotationFrekvens.png}
+	\caption{På graferne ses en FFT af målinger for rotation i henholdsvis positiv og negativ retning.}
+	\label{Fig:Pilot_Rotfrek}
+\end{figure}
+På \figref{Fig:Pilot_Rottid} ses der, at der er en lineær sammenhæng imellem g påvirkning af accelerometret og outputtet. Der ses, at de tre baselines ved 0 g påvirkning samt 1 g påvirkning i henholdsvis positiv og negativ retning, som måles i de første og sidste 10 sekunder af målingen, stemmer overens med de målte baselines uden rotation. \\
+På \figref{Fig:Pilot_Rotfrek} ses en FFT af rotationerne. Ud fra dette kan der ses, at der er kommet større udsving i de lavere frekvenser fra 0 til ca. 25 Hz sammenlignet med de statiske baseline målinger. Signalet regnes altså for at være i frekvensspektrummet 0-25 Hz. Alt uden for dette spektrum regnes derfor som støj.
 
-Accelerometers påvirkning
-
-Outputsignal
-
-Databladet
-
-\subsection{Konklusion}
-Hvorfor er der en afvigelse på 3.5\%?
-\cite{Devices2009}
+\subsection{Diskussion og konklusion}
+Der kan argumenteres for og imod at accelerometret er blevet udsat for 0 g påvirkning, da bordet eksempelvis måske ikke er plant. Bordets hældning blev målt med et vaterpas, men dette kan muligvis være blevet aflæst forkert, eller vaterpasset kan være fejlagtigt. Accelerometret har desuden ujævnheder på overfladen i form af ledninger, hvilket kan betyde, at det muligvis ikke har lagt plant på bordet. \\
+1 g påvirkningen kan også være fejlagtig, da vinklen nødvendigvis ikke er helt vinkelret. Ujævnheder på accelerometret samt vores holdemåde på det kan også have påvirket målingen. \\
+Accelerometerets output afhænger også af rumtemperaturen, da denne påvirker aksernes offset samt sensitiviteten. Ved dette forsøg var temperaturen før, under og efter forsøget X, X og X, hvilket vil gå ind og påvirke målingerne. \\
+Alle disse faktorer kan have indflydelse på de afvigelser, der er udregnet for pilotforsøget.
