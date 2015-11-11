@@ -158,6 +158,22 @@ Blokken med somatosensorisk feedback omfatter også den del af systemet, der giv
 %\item Der accepteres en afvigelse i tærskelværdien på $\pm$ 2 \% af feedbacken.
 %\end{itemize}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Spændingsforsyning}
+I systemet anvendes der en spændingsforsyning af batterier. Dette gøres for at undgå tilslutning til elnettet og gøre selve systemet trådløst, hvilket gør det mere anvendeligt for patienten. Spændingsforsyningen kan havde inflydelse på hvilket outputsignal der opnås og det er derfor vigtigt at spændingen indstilles således at signalet ikke bliver klippet.
+\textbf{Krav:}
+\begin{itemize}
+\item Skal være forsyning for samtlige blokke i systemet
+\item Spændingsforsyningen må ikke få signalet klippet
+\item Spændingen skal være minimalt $\pm$ XXV \fxnote{dette finder vi ud af efter vejledermødet} og maksimalt $\pm$ 9 V
+\end{itemize}
+
+\textbf{Tolerance:}
+\begin{itemize}
+\item Der accepteres ingen afvigelse for minimum og maksimum for spændingsforsyningen
+\item Der accepteres ingen klipning af signalet
+\item Der accepteres ingen spænding højere end dioderne kan tåle \fxnote{måske en anden måde det kan skrives på}
+\end{itemize}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{ADC}
 Blokken med en ADC anvendes i systemet, for at konvertere det analoge signal til digitalt. %Den skal kunne sample det forstærkede signal. 
 ADC'ens inputsignal skal ligge i området $\pm 5 V$. Båndbredden på accelerometeret bestemmer hvilken samplingsfrekvens, der skal benyttes. I følge Nyquists sætning skal der samples med minimun det dobbelte af det biologiske signal. I praksis samples der med minimum det tidobbelte. I dette tilfælde er båndbredden 50 Hz, dvs. at der som minimum skal samples med 100 Hz, og i praksis vil det være hensigtsmæssigt at sample med minimum 500 Hz. \\
