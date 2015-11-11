@@ -39,10 +39,10 @@ figure
 subplot(2,1,1)
 plot(f,P1H)
 axis([-10 250 0 0.001])
-title('Frekvensspektrum for rotation til højre') 
+title('Frekvensspektrum for rotation i positiv retning') 
 %title('Single-Sided Amplitude Spectrum of X(t)')
 xlabel('f (Hz)')
-ylabel('|P1(f)|')
+ylabel('|Y(f)|')
 
 %% FFT af rotation til venstre side
 
@@ -58,7 +58,7 @@ P1V(2:end-1) = 2*P1V(2:end-1);
 subplot(2,1,2)
 plot(f,P1V)
 axis([-10 250 0 0.001])
-title('Frekvensspektrum for rotation til venstre') 
+title('Frekvensspektrum for rotation i negativ retning') 
 %title('Single-Sided Amplitude Spectrum of X(t)')
 xlabel('f (Hz)')
-ylabel('|P1(f)|')
+ylabel('|Y(f)|')
