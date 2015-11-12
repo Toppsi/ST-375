@@ -5,13 +5,17 @@ I praksis er det ikke muligt at have ideelle komponenter \cite{Nilsson2011}. Der
 \subsection{Opsamling}
 Blokken opsamling omfatter systemets sensor dvs. accelerometeret, offsetjustering og forstærkning. Accelerometeret skal have en sådan størrelse, at det kan påsættes en patient uden at give fysiske begrænsninger. Derudover skal accelerometeret have mindst en akse, da der måles i det frontale plan. %Desuden skal det være flerakset, så det bliver muligt at påsætte i en optimal position, der giver mindst støj. 
 Accelerometeret skal kunne måle en statisk acceleration i mindst en retning. Herved kan det bestemmes, hvilken retning patienterne hælder mod i stående position.  %Derudover skal det kunne detektere hældningsgraden af patienten. Dette gøres ud fra tyngdekraften, hvor accelerometeret giver et output i mV alt efter påvirkningen fra tyngdekraften, også kaldet statisk acceleration. Dette output vil kunne omregnes til grader. 
-Det skal kunne detektere en hældningsgrad op til $\pm 25^{\circ}$, da det forventes, at raske forsøgspersoner kan holde sig indenfor denne grænse under udførelse af øvelserne. \\
-Offsetjusteringen skal centrere det målte signal omkring 0V, da accelerometeret ifølge pilotforsøget måler minimum 1.65 V ved en inputspænding på 3.3 V ved steady state. Justeringen af offset skal forekomme inden forstærkning, således at dette ikke også forstærkes. Der må her ikke ske en ændring i signalets frekvens og amplitude. 
-Forstærkningen skal gøre det muligt at adskille det ønskede signal fra støj i den efterfølgende filtreringsblok. Signalet skal efter forstærkningen ligge indenfor $\pm 5 V$. Der ønskes den størst mulige forstærkning ift. arbejdsområdet, dvs. at der vil forstærkes med en faktor 18. Forstærkningen i dB udregnes ud fra følgende formel: 
+Det skal kunne detektere en hældningsgrad op til $\pm 25^{\circ}$, da det forventes, at forsøgspersoner kan holde sig indenfor denne grænse under udførelse af øvelserne uden fald. \\
+Offsetjusteringen skal centrere det målte signal omkring 0V, da accelerometeret ifølge pilotforsøget måler minimum 1.65 V ved en inputspænding på 3.3 V ved steady state. Justeringen af offset skal forekomme inden forstærkning, således at der ikke sker en forskudt forstærkning, når accelerometret måler i positiv og negativ retning. Der må her ikke ske en ændring i signalets frekvens og amplitude. 
+Forstærkningen skal gøre det muligt at adskille det ønskede signal fra støj i den efterfølgende filtreringsblok. Signalet skal efter forstærkningen ligge indenfor $\pm 5 V$. Der ønskes den størst mulige forstærkning ift. arbejdsområdet, som er $\pm 5V$. Den højeste måling ved $\pm 90^{\circ}$ var 0.2712. Derfor kan forstærkningen udregnes således:
+\begin{equation}
+\dfrac{5}{0.2712} = 18.4366 \approx 18. \text{faktor forstækning}
+\end{equation}
+\noindent Der ønskes altså en forstærkning på faktor 18. Forstærkningens gain i dB udregnes ud fra følgende formel: 
 \begin{equation}
 20 \cdot log_{10} (\frac{5 V}{0,2712 V}) = 25.31 dB
 \end{equation}
-Hvor de 5V er grænsen for arbejdsområdet, imens 0.2712 V er sensitiviteten målt i pilotforsøget. Resultatet afrundes til nærmeste hele tal. 
+\noindent Hvor de 5V er grænsen for arbejdsområdet, imens 0.2712 V er sensitiviteten målt i pilotforsøget. Resultatet afrundes til nærmeste hele tal. 
 
 %For at kunne adskille det ønskede signal fra skal signalet forstærkes således at der kan skelnes mellem disse når signalet filtres. Da signalet allerede ligger inden for arbejdsområdet, er det ikke nødvendigt at forstærke amplituden af signalet. En forstærkning af signalet med et gain på 1, vil gøre at noget af den støj der indgår i signalet vil blive frasorteret, da de to kredsløb vil blive adskilt.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -70,12 +74,13 @@ A_{min}=20 \cdot log_{10} \cdot (\frac{1}{5}) = -13,98 \approx -14 dB
 \end{itemize}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Tilpasning} 
-Blokken tilpasning har til formål at tilpasse det filtrerede signal til komparatoren. Dette gøres med en forstærker, således at spektret, der skal reguleres indenfor, øges. Derudover afgrænses måleintervallet til $\pm$ 25$^{\circ}$, da et range på $\pm$ 90$^{\circ}$ er unødvendigt ift. at vurdere hvorvidt patienten er faldet. Dermed vurderes det, at en hældning på over $25^{\circ}$ medfører fald. Der ønskes størst mulig forstærkning indenfor det afgrænsede område, dvs. at der skal forstærkes med en faktor 3.  Forstærkningen i dB udregnes på følgende måde:
+Blokken tilpasning har til formål at tilpasse det filtrerede signal til komparatoren. Dette gøres med en forstærker, således at spektret, der skal reguleres indenfor, øges. Derudover afgrænses måleintervallet til $\pm$ 25$^{\circ}$, da et range på $\pm$ 90$^{\circ}$ er unødvendigt ift. at vurdere hvorvidt patienten er faldet. Dermed vurderes det, at en hældning på over $25^{\circ}$ medfører fald. Der ønskes størst mulig forstærkning indenfor det afgrænsede område, som er $\pm 5V$. Forstærkningens faktor samt gain i dB udregnes på følgende måde:
 \begin{align}\label{TilpasEq1}
-0.0753 \cdot 18 = 1.3554\text{, hvilket er den maksimale inputspænding ved} 25^{\circ} \\
-\label{TilpasEq2} 20 \cdot log_{10} (\frac{5 V}{1.3554 V}) = 11.3380 \text{dB} \approx 11 \text{dB}
+0.0753 \cdot 18 = 1.3554\text{, hvilket er den maksimale inputspænding ved } 25^{\circ} \\
+\label{TilpasEq2} \dfrac{5}{1.3554} = 3.6889 \approx 3. \text{faktor forstækning} \\
+\label{TilpasEq3} 20 \cdot log_{10} (\frac{5 V}{1.3554 V}) = 11.3380 \text{dB} \approx 11 \text{dB}
 \end{align} 
-I \eqref{TilpasEq1} og \eqref{TilpasEq2} er de 5 V grænsen for arbejdsområdet, imens 0,0753 V er den målte spænding ved $25^{\circ}$ mod højre fra pilotforsøget, hvilket er den højeste målte volt. Resultatet afrundes nedad til nærmeste hele tal. \\
+I \eqref{TilpasEq1}, \eqref{TilpasEq2} og \eqref{TilpasEq3} er de 5 V grænsen for arbejdsområdet, imens 0,0753 V er den målte spænding ved $25^{\circ}$ mod positiv retning fra pilotforsøget, hvilket er den højeste målte volt i denne grad. Resultatet afrundes nedad til nærmeste hele tal ofr at sikre, at systemet ikke går i mætning. \\
 
 \noindent\textbf{Krav:}
 \begin{itemize}
