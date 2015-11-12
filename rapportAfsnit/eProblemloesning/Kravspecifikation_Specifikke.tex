@@ -164,20 +164,20 @@ Blokken med somatosensorisk feedback omfatter også den del af systemet, der giv
 %\end{itemize}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Spændingsforsyning}
-I systemet anvendes der en spændingsforsyning af batterier. Dette gøres for at undgå tilslutning til elnettet og gøre selve systemet trådløst, hvilket gør det mere anvendeligt for patienten. Spændingsforsyningen kan havde inflydelse på hvilket outputsignal der opnås og det er derfor vigtigt at spændingen indstilles således at signalet ikke bliver klippet.
-\textbf{Krav:}
+I systemet anvendes der en spændingsforsyning af batterier. Dette gøres for at undgå tilslutning til elnettet og gøre selve systemet trådløst, hvilket gør det mere anvendeligt for patienten. Spændingsforsyningen kan havde inflydelse på hvilket outputsignal der opnås og det er derfor vigtigt at spændingen indstilles således at signalet ikke bliver klippet. \\
+\noindent\textbf{Krav:}
 \begin{itemize}
 \item Skal være forsyning for samtlige blokke i systemet
 \item Spændingsforsyningen må ikke få signalet klippet
 \item Spændingen skal være minimalt $\pm$ XXV \fxnote{dette finder vi ud af efter vejledermødet} og maksimalt $\pm9V$.
 \end{itemize}
-
-\textbf{Tolerance:}
+\noindent\textbf{Tolerance:}
 \begin{itemize}
 \item Der accepteres ingen afvigelse for minimum og maksimum for spændingsforsyningen
 \item Der accepteres ingen klipning af signalet
 \item Der accepteres ingen spænding højere end dioderne kan tåle \fxnote{måske en anden måde det kan skrives på}
 \end{itemize}
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{ADC}
 Blokken med en ADC anvendes i systemet, for at konvertere det analoge signal til digitalt. %Den skal kunne sample det forstærkede signal. 
