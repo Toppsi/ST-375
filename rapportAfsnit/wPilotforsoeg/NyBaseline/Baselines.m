@@ -110,7 +110,7 @@ P1B0g1(2:end-1) = 2*P1B0g1(2:end-1);
 figure
 subplot(3,1,1) %% Hvis det skal være i hver sin figur, så slet det her
 plot(f,P1B0g1)
-axis([-10 250 0 0.0004])
+%axis([-10 250 0 0.0004])
 title('Frekvensspektrum for baseline ved 0g (1 måling)') 
 %title('Single-Sided Amplitude Spectrum of X(t)')
 xlabel('f (Hz)')
@@ -127,7 +127,7 @@ P1B0g2(2:end-1) = 2*P1B0g2(2:end-1);
 %Plot the single-sided amplitude spectrum P1.
 subplot(3,1,2) %% Hvis det skal være i hver sin figur, så slet det her
 plot(f,P1B0g2)
-axis([-10 250 0 0.0004])
+%axis([-10 250 0 0.0004])
 title('Frekvensspektrum for baseline ved 0g (2 måling)') 
 %title('Single-Sided Amplitude Spectrum of X(t)')
 xlabel('f (Hz)')
@@ -145,7 +145,7 @@ P1B0g3(2:end-1) = 2*P1B0g3(2:end-1);
 %Plot the single-sided amplitude spectrum P1.
 subplot(3,1,3) %% Hvis det skal være i hver sin figur, så slet det her
 plot(f,P1B0g3)
-axis([-10 250 0 0.0004])
+%axis([-10 250 0 0.0004])
 title('Frekvensspektrum for baseline ved 0g (3 måling)') 
 %title('Single-Sided Amplitude Spectrum of X(t)')
 xlabel('f (Hz)')
@@ -261,3 +261,6 @@ title('Frekvensspektrum for baseline ved 1g i negativ retning (3 måling)')
 %title('Single-Sided Amplitude Spectrum of X(t)')
 xlabel('f (Hz)')
 ylabel('|Y(f)|')
+
+A = max(fftB1gN3)
+plot(B0g3.data)
