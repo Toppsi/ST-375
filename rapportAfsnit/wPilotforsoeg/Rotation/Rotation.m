@@ -62,3 +62,10 @@ title('Frekvensspektrum for rotation i negativ retning')
 %title('Single-Sided Amplitude Spectrum of X(t)')
 xlabel('f (Hz)')
 ylabel('|Y(f)|')
+
+%% RMS på rotation til højre side:
+RMSRH = rms(P2H) 
+%0.0141 V vil give en dæmpning på -15,24 dB og en faktor 0.173 og et 3. orden lavpasfilter 
+%% RMS på rotation til venstre side:
+RMSRV = rms(P2V) 
+%0.0118 V vil give en dæmpning på -13,69 dB og en faktor 0.207 og et 3. orden lavpasfilter

@@ -264,3 +264,6 @@ ylabel('|Y(f)|')
 
 A = max(fftB1gN3)
 plot(B0g3.data)
+
+
+RMS = rms(B0g3.data)
