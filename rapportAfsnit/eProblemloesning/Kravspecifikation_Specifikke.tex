@@ -73,14 +73,21 @@ A_{min}=20 \cdot log_{10} \cdot (\frac{1}{5}) = -13,98 \approx -14\text{dB}
 	\item Der accepteres en afvigelse fra pasbåndet på $\pm10\%$.
 \end{itemize}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Tilpasning} 
-Blokken tilpasning har til formål at tilpasse det filtrerede signal til komparatoren. Dette gøres med en forstærker, således at spektret, der skal reguleres indenfor, øges. Derudover afgrænses måleintervallet til $\pm25^{\circ}$, da et range på $\pm90^{\circ}$ er unødvendigt ift. at vurdere hvorvidt patienten er faldet. Dermed vurderes det, at en hældning på over $25^{\circ}$ medfører fald. Der ønskes størst mulig forstærkning indenfor det afgrænsede område, som er $\pm5V$. I \eqref{TilpasEq1} udregnes den maksimale indputspænding ved $25^{\circ}$. Forstærkningens faktor samt gain i dB udregnes i \eqref{TilpasEq2} og \eqref{TilpasEq3}.
-\begin{align}\label{TilpasEq1}
-0.0753V \cdot 18 = 1.3554V \\
+\subsection{Tilpasning}\label{Tilpasningsblok}
+Blokken tilpasning har til formål at tilpasse det filtrerede signal til komparatoren. Dette gøres med en forstærker, således at spektret, der skal reguleres indenfor, øges. Derudover afgrænses måleintervallet til $\pm25^{\circ}$, da et range på $\pm90^{\circ}$ er unødvendigt ift. at vurdere hvorvidt patienten er faldet. Dermed vurderes det, at en hældning på over $25^{\circ}$ medfører fald. Der ønskes størst mulig forstærkning indenfor det afgrænsede område, som er $\pm5V$. I \eqref{Udreg1} og \eqref{Udreg2} udregnes den størst mulige spænding efter justering af offsettet. 
+\begin{align}
+\label{Udreg1} 1.8627V - 1.5915 = 0.2712 \\
+\label{Udreg2} 1.3254 - 1.5915 = -0.2660 \\
+\label{Udreg3} \dfrac{0.2712}{90} \cdot 25 = 0.0753V
+\end{align}
+Der ses, at \eqref{Udreg1} giver den højeste spænding. I \eqref{Udreg3} bestemmes den maksimale spænding ved $\pm25^{\circ}$ hældning. \\
+I \eqref{TilpasEq1} udregnet inputspændingen efter den første forstærkning. Denne forstærkers faktor samt gain i dB udregnes i \eqref{TilpasEq2} og \eqref{TilpasEq3}.
+\begin{align}
+\label{TilpasEq1} 0.0753V \cdot 18 = 1.3554V \\
 \label{TilpasEq2} \dfrac{5V}{1.3554V} = 3.6889 \approx 3 \\
 \label{TilpasEq3} 20 \cdot log_{10} (3) = 9.5424\text{dB}
 \end{align} 
-I \eqref{TilpasEq1}, \eqref{TilpasEq2} og \eqref{TilpasEq3} er de $5V$ grænsen for arbejdsområdet, imens $0,0753V$ er den målte spænding ved $25^{\circ}$ mod positiv retning fra pilotforsøget, hvilket er den højeste målte volt i denne grad. Der forstærkes med en faktor 3. Resultatet afrundes nedad til nærmeste hele tal. \\
+I \eqref{TilpasEq1}, \eqref{TilpasEq2} og \eqref{TilpasEq3} er de $5V$ grænsen for arbejdsområdet. Der forstærkes med en faktor 3. Resultatet afrundes nedad til nærmeste hele tal. \\
 
 \noindent\textbf{Krav:}
 \begin{itemize}

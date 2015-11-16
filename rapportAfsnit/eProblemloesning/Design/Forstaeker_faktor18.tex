@@ -1,5 +1,5 @@
 % !TeX spellcheck = da_DK
-\subsection{Forstærker i opsamlingsblok}
+\subsection{Forstærker i opsamlingsblok}\label{Subsec:Forstaerker}
 \subsubsection{Teori og design}
 Til forstærkningen i opsamlingsblokken på \figref{kravblok} skal der benyttes en ikke-inverterende forstærker, da der ønskes, at inputtet og outputtet har samme polaritet. Ved en ikke-inverterende forstærker bliver inputtet tilkoblet direkte til den ikke-inverterende inputterminal, hvilket vil give en høj inputimpedansen, da der kigges direkte ind i operationsforstærkeren. Kredsløbet består af en operationsforstærker kaldet LT1028A, som ligner den operationsforstærker, der er tiltænkt at benytte i implementeringsdelen. Denne sidder i et closed-loop med modstandene R$1$ og R$2$, som udgør en spændingsdeler. Dette ses på \figref{fig:Forstaerker}.
 \begin{figure}[H]
@@ -23,7 +23,7 @@ R$1$ og R$2$ bliver brugt til at designe kredsløbet for en ikke-inverterende op
 \label{fig:Forstaerker_faktor18}
 \end{figure} 
 
-\subsubsection{Simulering}
+\subsubsection{Simulering}\label{Subsec:Forstaerker_simu}
 Der undersøges i tre simuleringer, om forstærkeren virker ved det laveste input på -$0.2660$V, uden påvirkning ved $0$V samt højeste input på $0.2712$V. Det kan ses på \figref{fig:Forstaerker_faktor18_simulering}, at det forstærkede signal, kaldet $V_{out}$, er ca. $0.2712$V, hvilket er $18$ gange større end $V_{in}$, som i simuleringen er sat til $0.2712$V. Derved er der sket den ønskede forstærkning, hvilket var forventet, da simuleringen er med ideelle komponenter. Derfor har de enkelte komponenter ingen tolerance, som der vil være ved reelle komponenter i et reelt kredsløb. \\. 
 
 \begin{figure}[H]
@@ -39,9 +39,9 @@ Resultaterne af de tre simuleringer ses i \tableref{tab:forstarker18_sim}
 	\begin{tabular}{|l|l|l|l|l|}
 		\hline
 		\multicolumn{1}{|c|}{\textit{Inputsignalet}} & \multicolumn{1}{c|}{\textit{Forstærkning}} & \multicolumn{1}{c|}{\textit{Forventet outputsignal}} & \multicolumn{1}{c|}{Outputsignalet} & \multicolumn{1}{c|}{\textit{Afvigelse}} \\ \hline
-		-$0.2660$V     & 18       & -$4.7880$V    & -$4.7881$V   & $0.0020\%$  \\ \hline
-		$0$V           & 18       & $0$V          & $0$V         & $0$\%       \\ \hline
 		$0.2712$V      & 18       & $4.8816$V     & $4.8817$V    & $0.0020\%$  \\ \hline
+		$0$V           & 18       & $0$V          & $0$V         & $0$\%       \\ \hline
+		-$0.2660$V     & 18       & -$4.7880$V    & -$4.7881$V   & $0.0020\%$  \\ \hline
 	\end{tabular}
 	\caption{Her ses resultaterne for simuleringerne med det laveste input, uden påvirkning samt højeste input.}
 	\label{tab:forstarker18_sim}
