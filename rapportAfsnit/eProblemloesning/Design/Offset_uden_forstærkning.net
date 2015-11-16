@@ -1,0 +1,14 @@
+* C:\Users\Mathias\Desktop\ST-375\rapportAfsnit\eProblemloesning\Design\Offset_uden_forstærkning.asc
+V1 N002 0 1.5915
+V3 Vcc 0 7
+V4 Vdd 0 -7
+R1 N002 N001 100k
+R2 N001 Vout 100k
+R3 N003 N004 100k
+R4 N004 0 100k
+V2 N003 0 1.8627
+XU1 N004 N001 Vcc Vdd Vout LT1028
+.tran 1
+.lib LTC.lib
+.backanno
+.end
