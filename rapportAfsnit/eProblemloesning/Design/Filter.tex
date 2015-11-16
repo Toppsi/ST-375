@@ -75,11 +75,23 @@ I ligning \ref{eq:LavpasModstande} står C variablene for kondensatorer, R varia
 2. orden: R_{1,2} = \frac{1.4142 \cdot 480\text{nF} \pm \sqrt{1.4142^2 \cdot 480\text{nF}^2 - 4 \cdot 1 \cdot 100\text{nF} \cdot 480\text{nF}}}{4 \pi \cdot 25\text{Hz} \cdot 100\text{nF} \cdot 480\text{nF}} = \begin{cases} R_{1} = 7939.62 \Omega \\ R_{2} = 1063.46 \Omega \end{cases}
 \end{equation}
 
-\noindent Kondensatorernes samt modstandenes værdier er hermed udregnet for hhv. 1. og 2. ordens filteret. Disse kan nu indsættes i LT Spice, hvorefter filtret kan simuleres. 
+\noindent Kondensatorernes samt modstandenes værdier er hermed udregnet for hhv. 1. og 2. ordens filteret. Disse kan nu indsættes i LTspice, hvorefter filtret kan simuleres. 
 
 \begin{figure}[H]
 	\centering
 	\includegraphics[scale=0.58]{figures/cProblemloesning/Lavpasfilter1_LTspice.PNG}
-	\caption{På figuren ses det teoretiske kredsløb for lavpasfilteret tegnet i LT Spice. Værdierne $R_{2}$ og $R_{3}$ svarer til de udregnede værdier $R_{1}$ og $R_{2}$ for 2. ordens filteret \ref{eq:2ordenmodstand}
+	\caption{Figuren ses det teoretiske kredsløb for lavpasfilteret konstrueret i LTspice. Værdierne $R_{2}$ og $R_{3}$ svarer til de udregnede værdier $R_{1}$ og $R_{2}$ for 2. ordens filteret \ref{eq:2ordenmodstand}
+	\label{fig:lavpasfilter1_LTspice}
+\end{figure}
+
+\subsubsection{Simulering}
+For at udføre en simulering af et lavpasfilter foretages der en AC-analyse som beskriver forholdet mellem frekvens og dæmpningen målt i dB. Start- og stopfrekvensen er valgt til hhv. 25Hz og 45Hz, på baggrund af opstillet krav \ref{kravspecifikation}.Til simuleringen af lavpasfilteret er der anvendt LTspice operationsforstærker LT1028A. Der undersøges for om kravene stemmer overens ved at betragte et bodeplot over det simulerede 3. ordens filter.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=0.58]{figures/cProblemloesning/Lavpasfilter_LTspice.PNG}
+	\caption{Figuren illustrerer kredsløbet for lavpasfilteret konstrueret i LTspice}
 	\label{fig:lavpasfilter_LTspice}
 \end{figure}
+
+
