@@ -9,18 +9,11 @@ Hvis der vælges en inverterende konfiguration for filtret, falder den samlede r
 I afsnit \ref{FilterAfs} på side \ref{FilterAfs} blev karakteristikaene af lavpasfilteret bestemt. Der kræves en minimumsdæmpning af stopbåndet $(Amin)$ på 10 dB, der accepteres en maksimal variation af pasbåndet $(Amax)$ på 3 dB, knækfrekvensen $(\omega _p)$ er på 25 Hz, samt en stopbåndstærskel $( \omega _s)$ på 45 Hz. Nedenfor ses en illustration af hvad de forskellige karakteristka beskriver.
 
 \begin{figure}[H]
-\centering
-\begin{subfigure}[a] {0.5}\textwidth}
-	\includegraphics[width=\textwidth]{figures/cProblemloesning/Lavpasfilter_generisk.PNG}
-\caption{Figuren viser et bodeplot for et 1. ordens filter, hvor de fire karakteristika af et lavpasfilter er angivet.}
-\label{fig:lavpasfilter1_generisk}
-\end{subfigure}
-\begin{subfigure}[b] {0.5}\textwidth}
-	\includegraphics[width=\textwidth]{figures/cProblemloesning/Lavpasfilter_generisk.PNG}
-\caption{Figuren viser et bodeplot for et 2. orden filter, hvor de fire karakteristika af et lavpasfilter er angivet.}
-\label{fig:lavpasfilter_generisk}
-\end{subfigure}
-\end{figure} 
+	\centering
+	\includegraphics[scale=0.8]{figures/cProblemloesning/Lavpasfilter_generisk.PNG}
+	\caption{Figuren viser et bodeplot filter, hvor de fire karakteristika af et lavpasfilter er angivet} \fxnote{nyt billede}
+	\label{fig:Lavpasfilter_generisk}
+\end{figure
 
 \noindent Ud fra karakteristikaene af filteret kan filterets orden beregnes via overføringsfunktionen:
 \begin{equation} \label{eq:lavpasfilter}
@@ -40,43 +33,53 @@ N = 2.711 \approx 3
 \end{align}
 \noindent Ordenen af filtret rundes op til 3, da filterets orden kun kan angives i hele tal. Hvis kravene til filteret skal overholdes, skal der altid rundes opad ved udregning af orden.
 
-Der skal altså benyttes et 3. ordens lavpasfilter. Der findes to forskellige måder hvorpå det kan designes: Sallen-Key topologien (SKT) og Multiple Feedback toppologien (MFT). SKT-metoden er den mest anvendte og tillader separate gain indstillinger, hvorimod MFT-metoden benyttes i filter design med høj gain nøjagtighed eller høj Q værdi. For dette filter benyttes SKT. På figur \ref{fig:SallenKey} ses et 3. ordens lavpasfilter designet efter SKT. \cite{Carter2013}
+Der skal altså benyttes et 3. ordens lavpasfilter. Der findes to forskellige måder hvorpå det kan designes: Sallen-Key topologien (SKT) og Multiple Feedback toppologien (MFT). SKT-metoden er den mest anvendte og tillader separate gain indstillinger, hvorimod MFT-metoden benyttes i filter design med høj gain nøjagtighed eller høj Q værdi. For dette filter benyttes SKT. På \figref{fig:SallenKey1} ses et 1. ordens lavpasfilter og på \figref{fig:SallenKey2)ses et 2. ordens lavpasfilter designet efter SKT. \cite{Carter2013}
 \begin{figure}[H]
-	\centering
-	\includegraphics[scale=0.8]{figures/cProblemloesning/SallenLavpas.PNG}
-	\caption{På figuren ses en illutration af et 3. ordens unity-gain Sallen-Key lavpasfilter} \fxnote{nyt billede}
-	\label{fig:SallenKey}
+\centering
+\begin{subfigure}[a] {0.5}\textwidth}
+	\includegraphics[width=\textwidth]{figures/cProblemloesning/Lavpasfilter1_generisk.PNG}
+\caption{På figuren ses en illutration af et 1. ordens unity-gain Sallen-Key lavpasfilter}
+\label{fig:SallenKey1}
+\end{subfigure}
+\begin{subfigure}[b] {0.5}\textwidth}
+	\includegraphics[width=\textwidth]{figures/cProblemloesning/Sallenlavpas.PNG}
+\caption{På figuren ses en illutration af et 2. ordens unity-gain Sallen-Key lavpasfilter.}
+\label{fig:SallenKey2}
+\end{subfigure}
 \end{figure}
 
-I designet af et 3. ordens filter designes både et første og et andens orden i forlængelse af hinanden. Et sallen-Key filteret består derfor af tre modstande og tre kondensatorer. Værdierne for modstandene kan udregnes med følgende ligninger:
-\begin{equation} \label{eq:LavpasModstande}
+I designet af et 3. ordens filter designes både 1. og 2. orden i forlængelse af hinanden. Dette designes efter sallen-key metoden, hvor filtreret består af tre modstande og tre kondensatorer. Værdierne for modstandene kan udregnes med følgende ligninger:
+\begin{equation} \label{Lavpas1Modstande}
 1. orden: R_{1} = \frac{a_1}{2 \cdot \pi \cdot f_c \cdot C_1}
+\end{equation}
+\begin{equation} \label{eq:LavpasModstande}
 2. orden: R_{1,2} = \frac{a_1 \cdot C_2 \pm \sqrt{A_1^2 \cdot C_2^2 - 4b_1 \cdot C_1 \cdot C_2}}{4 \pi \cdot f_c \cdot C_1 \cdot C_2}
 \end{equation}
 
-\noindent For at finde reelle værdier under kvadratroden skal følgende være opfyldt:
+\noindent  For at finde reelle værdier under kvadratroden skal følgende være opfyldt:
 \begin{equation} \label{eq:kondensator}
 C_2 \geq C_1 \frac{4b_1}{a_1^2}
 \end{equation}
 I ligning \ref{eq:LavpasModstande} står C variablene for kondensatorer, R variablene står for modstande, $a_1$ og $b_1$ er konstanter, mens $f_c$ er den valgte knækfrekvens. 
 
-\noindent For at udregne modstandene vælges $C_1$ til at være 100nF{hvad skal denne være?}, ud fra dette kan $C_1$ bestemmes med ligning \ref{eq:kondensator}:
-\begin{equation}
+\noindent For at udregne modstandene vælges $C_1$ til at være 100nF for hhv. 1. orden og 2. ordens filtrene. Ud fra dette kan $C_2$ i 2. ordens filteret bestemmes med ligningen \ref{eq:kondensator}:
+\begin{equation} 
 2.orden: C_2 \geq 100\text{nF} \frac{4\cdot 1}{1.4142^2} = C_2 \geq 200\text{nF}
 \end{equation}
 
-\noindent Ud fra ovenstående ligning vælges $C_2$ til at være 480nF, dermed kan $R_1$ og $R_2$ beregnes med ligning \ref{eq:LavpasModstande}:
+\noindent Ud fra ovenstående ligning vælges $C_2$ til at være 480nF, dermed kan $R_1$ for og $R_2$ beregnes med ligning \ref{eq:LavpasModstande}. For 1. ordens filteret benyttes \ref{eq:Lavpas1Modstande} til at beregne $R_1$.
 \begin{equation}
-1. orden: R_{1} = \frac{1}{2 \cdot \pi \cdot 25 \cdot 4}
-
-2. orden: R_{1,2} = \frac{1.4142 \cdot 480\text{nF} \pm \sqrt{1.4142^2 \cdot 480\text{nF}^2 - 4 \cdot 1 \cdot 100\text{nF} \cdot 480\text{nF}}}{4 \pi \cdot 25\text{Hz} \cdot 100\text{nF} \cdot 480\text{nF}} = \begin{cases} R_{1} = 44825.94 \Omega \\ R_{2} = 18836.04 \Omega \end{cases}
+1. orden: R_{1} = \frac{1}{2 \cdot \pi \cdot 25 \cdot 100nF} R_{1} = 6366.20 \Omega
+\end{equation}
+\begin{equation} \label{eq:2ordenmodstand}
+2. orden: R_{1,2} = \frac{1.4142 \cdot 480\text{nF} \pm \sqrt{1.4142^2 \cdot 480\text{nF}^2 - 4 \cdot 1 \cdot 100\text{nF} \cdot 480\text{nF}}}{4 \pi \cdot 25\text{Hz} \cdot 100\text{nF} \cdot 480\text{nF}} = \begin{cases} R_{1} = 7939.62 \Omega \\ R_{2} = 1063.46 \Omega \end{cases}
 \end{equation}
 
-\noindent Kondensatorernes samt modstandenes værdier er hermed udregnet. Disse kan nu indsættes i LT Spice, hvorefter filtret kan simuleres. 
+\noindent Kondensatorernes samt modstandenes værdier er hermed udregnet for hhv. 1. og 2. ordens filteret. Disse kan nu indsættes i LT Spice, hvorefter filtret kan simuleres. 
 
 \begin{figure}[H]
 	\centering
-	\includegraphics[scale=0.58]{figures/cProblemloesning/Lavpasfilter_teoretisk.PNG}
-	\caption{På figuren ses det teoretiske kredsløb for lavpasfilteret tegnet i LT Spice.}
-	\label{fig:lavpasfilter_teoretisk}
+	\includegraphics[scale=0.58]{figures/cProblemloesning/Lavpasfilter1_LTspice.PNG}
+	\caption{På figuren ses det teoretiske kredsløb for lavpasfilteret tegnet i LT Spice. Værdierne $R_{2}$ og $R_{3}$ svarer til de udregnede værdier $R_{1}$ og $R_{2}$ for 2. ordens filteret \ref{eq:2ordenmodstand}
+	\label{fig:lavpasfilter_LTspice}
 \end{figure}
