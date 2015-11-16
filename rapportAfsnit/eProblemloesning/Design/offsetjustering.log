@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (MiKTeX 2.9) (preloaded format=pdflatex 2015.9.17)  16 NOV 2015 10:38
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (MiKTeX 2.9) (preloaded format=pdflatex 2015.9.17)  16 NOV 2015 10:50
 entering extended mode
 **offsetjustering.tex
 (offsetjustering.tex
@@ -1765,127 +1765,30 @@ Missing character: There is no 5 in font nullfont!
 Missing character: There is no 9 in font nullfont!
 Missing character: There is no 1 in font nullfont!
 Missing character: There is no 5 in font nullfont!
-! Missing \endgroup inserted.
+! Missing $ inserted.
 <inserted text> 
-                \endgroup 
-l.31 \begin{equation}
-                     
-I've inserted something that you may have forgotten.
-(See the <inserted text> above.)
-With luck, this will get me unwedged. But if you
-really didn't forget anything, try typing `2' now; then
-my insertion and my current dilemma will both disappear.
+                $
+l.31 
+     
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
 
 Missing character: There is no √ in font cmr10!
 Missing character: There is no ¶ in font cmr10!
 Missing character: There is no √ in font cmr10!
 Missing character: There is no ∏ in font cmr10!
-Missing character: There is no 1 in font nullfont!
-Missing character: There is no 1 in font nullfont!
-Missing character: There is no . in font nullfont!
-Missing character: There is no 6 in font nullfont!
-Missing character: There is no 0 in font nullfont!
-Missing character: There is no 1 in font nullfont!
-Missing character: There is no . in font nullfont!
-Missing character: There is no 5 in font nullfont!
-Missing character: There is no 9 in font nullfont!
-Missing character: There is no 1 in font nullfont!
-Missing character: There is no 5 in font nullfont!
-Missing character: There is no 0 in font nullfont!
-Missing character: There is no , in font nullfont!
-Missing character: There is no 0 in font nullfont!
-Missing character: There is no 0 in font nullfont!
-Missing character: There is no 8 in font nullfont!
-Missing character: There is no 5 in font nullfont!
-Missing character: There is no 8 in font nullfont!
-Missing character: There is no . in font nullfont!
-Missing character: There is no 5 in font nullfont!
-! You can't use `\eqno' in math mode.
-\endequation ->\eqno 
-                     \hbox {\@eqnnum }$$\@ignoretrue 
-l.35 \end{equation}
-                   
-Sorry, but I'm not programmed to handle this case;
-I'll just pretend that you didn't ask for it.
-If you're in the wrong mode, you might be able to
-return to the right one by typing `I}' or `I$' or `I\par'.
 
-
-! LaTeX Error: \begin{document} ended by \end{equation}.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.35 \end{equation}
-                   
-Your command was ignored.
-Type  I <command> <return>  to replace it with another command,
-or  <return>  to continue without it.
-
-! Missing $ inserted.
-<inserted text> 
-                $
-l.35 \end{equation}
-                   
-I've inserted something that you may have forgotten.
-(See the <inserted text> above.)
-With luck, this will get me unwedged. But if you
-really didn't forget anything, try typing `2' now; then
-my insertion and my current dilemma will both disappear.
-
-! Missing } inserted.
-<inserted text> 
-                }
-l.35 \end{equation}
-                   
-I've inserted something that you may have forgotten.
-(See the <inserted text> above.)
-With luck, this will get me unwedged. But if you
-really didn't forget anything, try typing `2' now; then
-my insertion and my current dilemma will both disappear.
-
-! Extra \endgroup.
-<recently read> \endgroup 
-                          
-l.35 \end{equation}
-                   
-Things are pretty mixed up, but I think the worst is over.
-
-
-Overfull \hbox (20.0pt too wide) in paragraph at lines 29--36
+Overfull \hbox (20.0pt too wide) in paragraph at lines 29--31
 []
  []
 
 
-Overfull \hbox (762.47173pt too wide) in paragraph at lines 29--36
+Overfull \hbox (733.88676pt too wide) in paragraph at lines 29--31
 $[]\OML/cmm/m/it/10 eneriskeroutputtetfraaccelerometeret\OT1/cmr/m/n/10 (\OML/c
 mm/m/it/10 Va\OT1/cmr/m/n/10 )\OML/cmm/m/it/10 ; sattilatvre$$V; ogoffsettet\OT
 1/cmr/m/n/10 (\OML/cmm/m/it/10 V$$\OT1/cmr/m/n/10 )\OML/cmm/m/it/10 erpaccelero
 meteret$$V:Derfordetforventetoutputafblokkenvrebestemtvedflgendeudregning \OT1/
-cmr/m/n/10 :$$\OML/cmm/m/it/10 V[] \OT1/cmr/m/n/10 =$
- []
-
-
-Overfull \hbox (21.11925pt too wide) in paragraph at lines 29--36
-$\OML/cmm/m/it/10 Va \OMS/cmsy/m/n/10  $
- []
-
-
-Overfull \hbox (8.05556pt too wide) in paragraph at lines 29--36
-$\OML/cmm/m/it/10 V$$[] $
- []
-
-
-Overfull \hbox (52.47388pt too wide) in paragraph at lines 29--36
-$\OML/cmm/m/it/10 V[] \OT1/cmr/m/n/10 =$$\OML/cmm/m/it/10 V\OMS/cmsy/m/n/10  $$
-\OML/cmm/m/it/10 V[] $
- []
-
-
-Overfull \hbox (76.80954pt too wide) in paragraph at lines 29--36
-$\OML/cmm/m/it/10 V[] \OT1/cmr/m/n/10 =$$\OML/cmm/m/it/10 V \OT1/cmr/m/n/10 =$$
-\OML/cmm/m/it/10 mV[]$$$ 
+cmr/m/n/10 :$ 
  []
 
 
@@ -1895,7 +1798,94 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.37 R
+l.32 \begin{equation}
+                     
+You're in trouble here.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+Overfull \hbox (20.0pt too wide) in paragraph at lines 32--32
+[] 
+ []
+
+
+! LaTeX Error: Environment aligned undefined.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.33 \begin{aligned}
+                    
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+! Misplaced alignment tab character &.
+l.34 V_{out}={} &
+                  Va - V1 \\
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Misplaced alignment tab character &.
+<recently read> &
+                 
+l.35            &
+                  1.60V - 1.5915V \\
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Misplaced alignment tab character &.
+<recently read> &
+                 
+l.36            &
+                   0,0085V = 8.5mV
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+
+! LaTeX Error: \begin{equation} on input line 32 ended by \end{aligned}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.37 \end{aligned}
+                  
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+Overfull \hbox (215.42888pt too wide) detected at line 38
+\OML/cmm/m/it/10 V[] \OT1/cmr/m/n/10 = []\OML/cmm/m/it/10 Va \OMS/cmsy/m/n/10  
+ \OML/cmm/m/it/10 V\OT1/cmr/m/n/10 1[] 1\OML/cmm/m/it/10 :\OT1/cmr/m/n/10 60\OM
+L/cmm/m/it/10 V \OMS/cmsy/m/n/10   \OT1/cmr/m/n/10 1\OML/cmm/m/it/10 :\OT1/cmr/
+m/n/10 5915\OML/cmm/m/it/10 V[] \OT1/cmr/m/n/10 0\OML/cmm/m/it/10 ; \OT1/cmr/m/
+n/10 0085\OML/cmm/m/it/10 V \OT1/cmr/m/n/10 = 8\OML/cmm/m/it/10 :\OT1/cmr/m/n/1
+0 5\OML/cmm/m/it/10 mV
+ []
+
+
+! LaTeX Error: Missing \begin{document}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.46 R
       esultat er lig med v√¶rdien, der fremkommer ved simuleringen i LTspice...
 
 You're in trouble here.  Try typing  <return>  to proceed.
@@ -1976,7 +1966,7 @@ Missing character: There is no r in font nullfont!
 Missing character: There is no a in font nullfont!
 Missing character: There is no f in font nullfont!
 ! Undefined control sequence.
-l.37 ...leringen i LTspice som fremg√•r af \figref
+l.46 ...leringen i LTspice som fremg√•r af \figref
                                                   {fig:Offset_simulering}. D...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1997,13 +1987,13 @@ Missing character: There is no t in font nullfont!
 ! Missing $ inserted.
 <inserted text> 
                 $
-l.37 ...Tspice som fremg√•r af \figref{fig:Offset_
+l.46 ...Tspice som fremg√•r af \figref{fig:Offset_
                                                   simulering}. Dette betyder...
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
 
 ! Extra }, or forgotten $.
-l.37 ...fremg√•r af \figref{fig:Offset_simulering}
+l.46 ...fremg√•r af \figref{fig:Offset_simulering}
                                                   . Dette betyder at kredsl√...
 I've deleted a group-closing symbol because it seems to be
 spurious, as in `$x}$'. But perhaps the } is legitimate and
@@ -2018,15 +2008,15 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.38 \begin{figure}
+l.47 \begin{figure}
                    [H]
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
 ! Undefined control sequence.
-l.40 \includegraphics
-                     [scale=1]{figures/cProblemloesning/Offset_simulering.png}
+l.49 \includegraphics
+                     [scale=0.7]{figures/cProblemloesning/Offset_simulering....
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
@@ -2040,7 +2030,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.41 \caption
+l.50 \caption
              {P√• figuren ses en simulering af kredsl√∏bet}.
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -2052,7 +2042,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.43 \end{figure}
+l.52 \end{figure}
                  
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
@@ -2061,7 +2051,7 @@ or  <return>  to continue without it.
 ! Missing $ inserted.
 <inserted text> 
                 $
-l.44 
+l.53 
      
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
@@ -2073,24 +2063,25 @@ Missing character: There is no • in font cmr10!
 Missing character: There is no √ in font cmr10!
 Missing character: There is no ∏ in font cmr10!
 
-Overfull \hbox (20.0pt too wide) in paragraph at lines 37--44
+Overfull \hbox (20.0pt too wide) in paragraph at lines 46--53
 []
  []
 
 
-Overfull \hbox (525.31984pt too wide) in paragraph at lines 37--44
+Overfull \hbox (525.31984pt too wide) in paragraph at lines 46--53
 $[]\OML/cmm/m/it/10 imulering:Dettebetyderatkredslbetfungererentteoretiskmedide
 ellekomponenter; sombliverbrugtiLTspice:\OT1/cmr/m/n/10 [\OML/cmm/m/it/10 H\OT1
 /cmr/m/n/10 ][\OML/cmm/m/it/10 scale \OT1/cmr/m/n/10 =$
  []
 
 
-Overfull \hbox (406.6754pt too wide) in paragraph at lines 37--44
-$\OT1/cmr/m/n/10 1][][]\OML/cmm/m/it/10 :[]$ 
+Overfull \hbox (414.4532pt too wide) in paragraph at lines 46--53
+$\OT1/cmr/m/n/10 0\OML/cmm/m/it/10 :\OT1/cmr/m/n/10 7][][]\OML/cmm/m/it/10 :[]$
+ 
  []
 
 ! Undefined control sequence.
-l.45 \subsubsection
+l.54 \subsubsection
                    {Implementering og test}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -2105,7 +2096,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.45 \subsubsection{I
+l.54 \subsubsection{I
                      mplementering og test}
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -2138,10 +2129,10 @@ Missing character: There is no t in font nullfont!
 
  
 Here is how much of TeX's memory you used:
- 17 strings out of 493673
- 252 string characters out of 3141524
+ 19 strings out of 493673
+ 269 string characters out of 3141524
  55455 words of memory out of 3000000
- 3464 multiletter control sequences out of 15000+200000
+ 3466 multiletter control sequences out of 15000+200000
  3948 words of font info for 15 fonts, out of 3000000 for 9000
  1025 hyphenation exceptions out of 8191
  18i,5n,14p,578b,116s stack positions out of 5000i,500n,10000p,200000b,50000s

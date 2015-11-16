@@ -28,16 +28,19 @@ I dette tilfælde kræves der ikke en forstærkning, derfor skal modstandene $R_
 
 \subsubsection{Simulering}
 Ved simulering i LTspice af kredsløbet som vist på \figref{fig:Offset_generisk} er outputtet fra accelerometeret (Va), sat til at være $1.60$V, og offsettet (V$1$) er på accelerometeret $1.5915$V. Derfor det forventet output af blokken være bestemt ved følgende udregning: 
+
 \begin{equation}
-V_{out} = Va - V$1$ \\
-V_{out} = $1.60$V - $1.5915$V \\
-V_{out} = $0,0085$V = $8.5$mV
-\end{equation}  
+\begin{aligned}
+V_{out}={} & Va - V1 \\
+           & 1.60V - 1.5915V \\
+           &  0,0085V = 8.5mV
+\end{aligned}
+\end{equation}
 
 Resultat er lig med værdien, der fremkommer ved simuleringen i LTspice som fremgår af \figref{fig:Offset_simulering}. Dette betyder at kredsløbet fungere rent teoretisk med ideelle komponenter, som bliver brugt i LTspice.  
 \begin{figure}[H]
 \centering
-\includegraphics[scale=1]{figures/cProblemloesning/Offset_simulering.png}
+\includegraphics[scale=0.7]{figures/cProblemloesning/Offset_simulering.png}
 \caption{På figuren ses en simulering af kredsløbet}. 
 \label{fig:Offset_simulering}
 \end{figure}
