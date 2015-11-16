@@ -1,3 +1,4 @@
+% !TeX spellcheck = da_DK
 \subsection{Forstærker i opsamlingsblok}
 \subsubsection{Teori og design}
 Til forstærkningen i opsamlingsblokken på \figref{kravblok} skal der benyttes en ikke-inverterende forstærker, da der ønskes, at inputtet og outputtet har samme polaritet. Ved en ikke-inverterende forstærker bliver inputtet tilkoblet direkte til den ikke-inverterende inputterminal, hvilket vil give en høj inputimpedansen, da der kigges direkte ind i operationsforstærkeren. Kredsløbet består af en operationsforstærker kaldet LT1028A, som ligner den operationsforstærker, der er tiltænkt at benytte i implementeringsdelen. Denne sidder i et closed-loop med modstandene R$1$ og R$2$, som udgør en spændingsdeler. Dette ses på \figref{fig:Forstaerker}.
@@ -23,16 +24,16 @@ R$1$ og R$2$ bliver brugt til at designe kredsløbet for en ikke-inverterende op
 \end{figure} 
 
 \subsubsection{Simulering}
-Det kan ses på \figref{fig:Forstaerker_faktor18_simulering}, at det forstærkede signal, kaldet $V_{out}$, er $1.8$V, hvilket er $18$ gange større end $V_{in}$, som i simuleringen er sat til $0.1$V. Derved er der sket den ønskede forstærkning, hvilket var forventet, da simuleringen er med ideelle komponenter. Derfor har de enkelte komponenter ingen tolerance, som der vil være ved reelle komponenter i et reelt kredsløb. 
+Der undersøges i tre simuleringer, om forstærkeren virker ved det laveste input på -$0.2660$V, uden påvirkning ved $0$V samt højeste input på $0.2712$V. Det kan ses på \figref{fig:Forstaerker_faktor18_simulering}, at det forstærkede signal, kaldet $V_{out}$, er ca. $0.2712$V, hvilket er $18$ gange større end $V_{in}$, som i simuleringen er sat til $0.2712$V. Derved er der sket den ønskede forstærkning, hvilket var forventet, da simuleringen er med ideelle komponenter. Derfor har de enkelte komponenter ingen tolerance, som der vil være ved reelle komponenter i et reelt kredsløb. \\. 
 
 \begin{figure}[H]
 \centering
-\includegraphics[scale=0.5]{figures/cProblemloesning/Forstaerker_faktor18_simulering.PNG}
-\caption{En simuleringen af en ikke-inverterende forstærker, som ses på \figref{fig:Forstaerker_faktor18}, hvor der er en forstærkning med en faktor 18. Dette kan på figuren ses at inputtet, $V_{in}$, er 0.1V, som bliver forstærket 18 gange, så outputtet, $V_{out}$, er $1.8$V}
+\includegraphics[scale=0.4]{figures/cProblemloesning/Forstaerker_faktor18_simulering.PNG}
+\caption{En simuleringen af en ikke-inverterende forstærker, som ses på \figref{fig:Forstaerker_faktor18}, hvor der er en forstærkning med en faktor $18$. Dette kan på figuren ses at inputtet, $V_{in}$, er $0.2712$V, som bliver forstærket $18$ gange}
 \label{fig:Forstaerker_faktor18_simulering}
 \end{figure}
 
-Der undersøges i tre yderligere simuleringer, om forstærkeren virker ved det laveste input på -$0.2660$V, uden påvirkning ved $0$V samt højeste input på $0.2712$V. Resultatet ses i \tableref{tab:forstarker18_sim}.
+Resultaterne af de tre simuleringer ses i \tableref{tab:forstarker18_sim}
 \begin{table}[H]
 	\centering
 	\begin{tabular}{|l|l|l|l|l|}
@@ -45,6 +46,6 @@ Der undersøges i tre yderligere simuleringer, om forstærkeren virker ved det l
 	\caption{Her ses resultaterne for simuleringerne med det laveste input, uden påvirkning samt højeste input.}
 	\label{tab:forstarker18_sim}
 \end{table}
-Der ses på afvigelsen, at der arbejdes med ideelle komponenter, da der er en meget lav afvigelse i outputtet fra det forventede output. Den procent mæssige afvigelse holder sig derved inden for tolerancekravene beskrevet i afsnit \ref{OpsamlingsAfs} på side \pageref{OpsamlingsAfs}.
+Der ses på afvigelserne, at der arbejdes med ideelle komponenter, da der er en meget lav afvigelse i outputtet ift. det forventede output. Den procent mæssige afvigelse holder sig derved inden for tolerancekravene beskrevet i afsnit \ref{OpsamlingsAfs} på side \pageref{OpsamlingsAfs}.
 
 \subsubsection{Implementering og test}
