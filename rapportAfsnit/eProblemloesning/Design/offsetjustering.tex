@@ -21,8 +21,21 @@ I dette tilfælde kræves der ikke en forstærkning, derfor skal modstandene $R_
 \begin{figure}[H]
 \centering
 \includegraphics[scale=1]{figures/cProblemsloesning/Offset_generisk.png}
-\caption{På figuren ses offsetjusteringen, hvor V$1$ er det nuværende offset på accelerometeret og Va er outputtet fra accelerometeret. Modstandene i kredsløbet er alle ens, hvilket medføre at signalet ikke forstærkes.}
+\caption{På figuren ses offsetjusteringen, hvor V$1$ er det nuværende offset på accelerometeret og Va er outputtet fra accelerometeret. Modstandene i kredsløbet er alle ens, hvilket medføre at signalet ikke forstærkes. Grunden til at spændingsforsyningen er $\pm 6$V er at spændingsforsyningen til hele systemet, er designet til at give et output på $\pm 6$V.}
 \label{fig:Offset_generisk}
 \end{figure}
 
-Grunden til at spændingsforsyningen er $\pm 6$V er at spændingsforsyningen til hele systemet, er designet til at give et output på $\pm 6$V. 
+Ved simulering i LTspice af kredsløbet som vist på \figref{fig:Offset_generisk} er outputtet fra accelerometeret (Va), sat til at være $1.60$V, og offsettet (V$1$) er på accelerometeret $1.5915$V. Derfor det forventet output af blokken være bestemt ved følgende udregning: 
+\begin{equation}
+Vout = Va - V$1$\\
+Vout = $1.60$V - $1.5915$V\\
+Vout = $0,0085$V = $8.5$mV
+\end{equation}  
+
+Resultat er lig med værdien, der fremkommer ved simuleringen i LTspice som fremgår af \figref{fig:Offset_simulering}. Dette betyder at kredsløbet fungere rent teoretisk med ideelle komponenter, som bliver brugt i LTspice.  
+\begin{figure}[H]
+\centering
+\includegraphics[scale=1]{figures/cProblemsloesning/Offset_simulering.png}
+\caption{På figuren ses en simulering af kredsløbet som ses på \figref{fig:Offset_generisk}. 
+\label{fig:Offset_simulering}
+\end{figure}
