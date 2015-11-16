@@ -48,7 +48,12 @@ Forstærkningen skal gøre det muligt at adskille det ønskede signal fra støj 
 \subsection{Filter}\label{FilterAfs}
 Blokken indeholdende et filter anvendes til at frasortere uønskede signaler, der kan forekomme under målinger med accelerometret. Hvis disse signaler ikke frafiltreres vil det forvrænge det ønskede biologiske signal og opleves som støj. Frekvensområdet for kropshældning er ikke defineret, men studier anvender et frekvensområde liggende mellem $0.02-$ til $10$Hz \cite{Martinez-Mendez2011}. Alle signaler, der ligger udenfor dette spektrum, ønskes derfor fjernet. I pilotforsøget blev der påvist, at signalet i dette tilfælde ligger mellem $0-25Hz$. Alt signal uden for dette spektrum ønskes derfor frafiltreres. Dette gøres ved at benytte et lavpasfilter, der har en knækfrekvens ved $25$Hz. \\
 Som beskrevet i afsnit \ref{StoejAfsnit} på side \pageref{StoejAfsnit} findes der forskellige støjkilder, som kan påvirke biologiske signaler. \\
-Den maksimale variation i pasbåndstransmissionen ($A_{max}$) sættes til 3dB. For at sikre at $50$Hz støj fjernes, dæmpes med en faktor $5$\fxnote{ret evt. dette til}. For at udregne dæmpningen i dB $A_{min}$, anvendes følgende formel:
+Den maksimale variation i pasbåndstransmissionen ($A_{max}$) sættes til 3dB. For at bestemme dæmpningsfaktoren og dermed fjerne $50Hz$ støj, udregnes en faktor ud fra LSB og den maksimale amlitude på signalet for hhv. højre og venstre rotation, da der her vi opstå mest muligt støj. Dæmpningsfaktoren kan udregnes således:
+\begin{equation}
+\dfrac{0.00244\text{V}}{0.0141\text{V}} = 0.173 \approx 0.2 
+\dfrac{0.00244\text{V}}{0.0118\text{V}} = 0.207  \approx 
+\end{equation}
+Der ønskes en dæmpning på faktor $\dfrac{1}{5}$, da der tages forbehold for et tolerance område. Dæmpningens gain i dB udregnes ud fra følgende formel:   
 \begin{equation}
 A_{min}=20 \cdot log_{10} \cdot (\frac{1}{5}) = -13,98 \approx -14\text{dB}
 \end{equation}
@@ -57,14 +62,14 @@ A_{min}=20 \cdot log_{10} \cdot (\frac{1}{5}) = -13,98 \approx -14\text{dB}
 	\item Skal have en knækfrekvens på 25Hz.
 	\item Skal have en stopbåndsfrekvens på 45Hz.
 	\item Der ønskes maksimal fladhed på pasbåndet og stopbåndet.
-	\item Der ønskes en minimum dæmpning af stopbåndet på 14dB.\fxnote{LSB...} 
+	\item Der ønskes en minimum dæmpning af stopbåndet på 14dB.
 	\item Der ønskes en maksimal variation i pasbåndet på 3dB.
 \end{itemize}
 \textbf{Tolerance:}
 \begin{itemize}
 	\item Der accepteres en afvigelse fra knækfrekvensen på $\pm10\%$.
 	\item Der accepteres en afvigelse fra stopbåndsfrekvensen på $\pm5\%$.
-	\item Der accepteres en afvigelse på $10\%$ ift. dæmpningen af signalet.\fxnote{Skal rettes til, når vi finder ud af, hvilken faktor, vi skal dæmpe med. Kræver at vi ved LSB}
+	\item Der accepteres en afvigelse på $2\%$ ift. dæmpningen af signalet.
 	\item Der accepteres en afvigelse fra pasbåndet på $\pm10\%$.
 \end{itemize}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
