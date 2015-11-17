@@ -56,10 +56,10 @@ R_{1} = \frac{a_1}{2 \cdot \pi \cdot f_c \cdot C_1} \\
 \end{equation}
 \begin{equation}
  \label{eq:LavpasModstande}
-R_{1,2} = \frac{a_1 \cdot C_2 \pm \sqrt{A_1^2 \cdot C_2^2 - 4b_1 \cdot C_1 \cdot C_2}}{4 \pi \cdot f_c \cdot C_1 \cdot C_2}
+R_{1,2} = \frac{a_1 \cdot C_2 \pm \sqrt{A_1^2 \cdot C_2^2 - 4 \cdot b_1 \cdot C_1 \cdot C_2}}{4 \pi \cdot f_c \cdot C_1 \cdot C_2}
 \end{equation}
 
-\noindent  For at finde reelle værdier under kvadratroden skal følgende være opfyldt:
+\noindent Værdierne for $a_{1}$ og $b_{1}$ findes i tabellen for konstanter for butterworth filtre. Ved aflæsning i tabellen bliver værdierne for $a_{1}$  og  $b_{2}$ 1.0000. For at finde reelle værdier under kvadratroden skal følgende være opfyldt:
 \begin{equation} \label{eq:kondensator}
 C_2 \geq C_1 \frac{4b_1}{a_1^2}
 \end{equation}
@@ -67,15 +67,15 @@ I ligning \ref{eq:LavpasModstande} står C variablene for kondensatorer, R varia
 
 \noindent For at udregne modstandene vælges $C_1$ til at være 100nF for hhv. 1. orden og 2. ordens filtrene. Ud fra dette kan $C_2$ i 2. ordens filteret bestemmes med ligningen \ref{eq:kondensator}:
 \begin{equation} 
-C_2 \geq 100\text{nF} \frac{4\cdot 1}{1.4142^2} = C_2 \geq 200\text{nF}
+C_2 \geq 100\text{nF} \frac{4\cdot 1}{1.000^2} = C_2 \geq 200\text{nF}
 \end{equation}
 
 \noindent Ud fra ovenstående ligning vælges $C_2$ til at være 480nF, dermed kan $R_1$ for og $R_2$ beregnes med ligning \ref{eq:LavpasModstande}. For 1. ordens filteret benyttes \ref{eq:Lavpas1Modstande} til at beregne $R_1$.
 \begin{equation} \label{eq:Lavpas1Modstande}
-R_{1} = \frac{1}{2 \cdot \pi \cdot 25 \cdot 100nF} R_{1} = 6366.20 \Omega
+R_{1} = \frac{1}{2 \cdot \pi \cdot 25 \cdot 100nF} R_{1} = 63661.98 \Omega
 \end{equation}
 \begin{equation} \label{eq:2ordenmodstand}
-R_{1,2} = \frac{1.4142 \cdot 480\text{nF} \pm \sqrt{1.4142^2 \cdot 480\text{nF}^2 - 4 \cdot 1 \cdot 100\text{nF} \cdot 480\text{nF}}}{4 \pi \cdot 25\text{Hz} \cdot 100\text{nF} \cdot 480\text{nF}} = \begin{cases} R_{1} = 7939.62 \Omega \\ R_{2} = 1063.46 \Omega \end{cases}
+R_{1,2} = \frac{1.0000 \cdot 480\text{nF} \pm \sqrt{1.0000^2 \cdot 480\text{nF}^2 - 4 \cdot 1.0000 \cdot 100\text{nF} \cdot 480\text{nF}}}{4 \pi \cdot 25\text{Hz} \cdot 100\text{nF} \cdot 480\text{nF}} = \begin{cases} R_{1} =  44825.94\Omega \\ R_{2} = 18836.04 \Omega \end{cases}
 \end{equation}
 \noindent Kondensatorernes samt modstandenes værdier er hermed udregnet for hhv. 1. og 2. ordens filteret. Disse kan nu indsættes i LTspice, hvorefter filtret kan simuleres. 
 
