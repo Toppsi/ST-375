@@ -82,12 +82,12 @@ R_{1,2} = \frac{1.0000 \cdot 480\text{nF} \pm \sqrt{1.0000^2 \cdot 480\text{nF}^
 \begin{figure}[H]
 	\centering
 	\includegraphics[scale=0.58]{figures/cProblemloesning/Lavpasfilter1_LTspice.PNG}
-	\caption{Figuren ses det teoretiske kredsløb for lavpasfilteret konstrueret i LTspice. Værdierne $R_{2}$ og $R_{3}$ svarer til de udregnede værdier $R_{1}$ og $R_{2}$ for 2. ordens filteret \ref{eq:2ordenmodstand}}
+	\caption{Figuren ses det teoretiske kredsløb for lavpasfilteret konstrueret i LTspice. Værdierne $R_{2}$ og $R_{3}$ på figuren svarer til de udregnede værdier $R_{1}$ og $R_{2}$ for 2. ordens filteret i ligning \ref{eq:2ordenmodstand}}
 	\label{fig:lavpasfilter1_LTspice}
 \end{figure}
 
 \subsubsection{Simulering}
-For at udføre en simulering af et lavpasfilter foretages der en AC-analyse som beskriver forholdet mellem frekvens og dæmpningen målt i dB. Start- og stopfrekvensen er valgt til hhv. 25Hz og 45Hz på baggrund af opstillet krav i afsnit \ref{FilterAfs} på side \pageref{FilterAfs} samt resultaterne fra pilotforsøget. Til simuleringen af lavpasfilteret er der anvendt LTspice operationsforstærker LT1028A. Der undersøges for om kravene stemmer overens ved at betragte et bodeplot over det simulerede 3. ordens filter.
+For at udføre en simulering af et lavpasfilter foretages der en AC-analyse som beskriver forholdet mellem frekvens og dæmpningen målt i dB. Knæk- og stopfrekvensen er valgt til hhv. 25Hz og 45Hz på baggrund af opstillet krav i afsnit \ref{FilterAfs} på side \pageref{FilterAfs} samt resultaterne fra pilotforsøget. Til simuleringen af lavpasfilteret er der anvendt LTspice operationsforstærker LT1028A. Der undersøges for om kravene stemmer overens ved at betragte et bodeplot over det simulerede 3. ordens filter.
 
 \begin{figure}[H]
 	\centering
@@ -96,4 +96,13 @@ For at udføre en simulering af et lavpasfilter foretages der en AC-analyse som 
 	\label{fig:lavpasfilter_LTspice}
 \end{figure}
 
+Ud fra det simulerede kredsløb undersøges det, hvorvidt knækfrekvensen stemmer overens men den tilhørende amplitude ved 25 Hz og 45 Hz. Det aflæses på grafen i LTspice at knækfrekvensen ved 25Hz svarer til en amplitude på 3dB, hvilket er illuseret i \figref{fig:Lavpasfiltergraf_LTspice}. Der aflæses, at der ved 45 Hz er en dæmpning på 15dB. Dette overholder de opstillede krav på minimum 14 dB. Sammenholdt med kravspecifikationerne i afsnittet \ref{FilterAfs} på side \pageref{FilterAfs} er lavpasfilteret godkendt.
 
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=0.4]{figures/cProblemloesning/Lavpasfiltergraf_LTspice1.PNG}
+	\caption{Figuren illustrerer kredsløbet for lavpasfilteret konstrueret i LTspice}
+	\label{fig:lavpasfilter_LTspice}
+\end{figure}
+
+\subsubsection{Implementering og test}
