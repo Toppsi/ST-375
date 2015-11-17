@@ -835,6 +835,17 @@
   Url                      = {https://books.google.dk/books?id=vNK8CRu4t9sC&pg=PA444&lpg=PA444&dq=karokklusion&source=bl&ots=jAu__8N4Oz&sig=I4LKVLfRFQVE4NZYjHpUepM6jms&hl=da&sa=X&ved=0CEMQ6AEwB2oVChMI1Lbp_fv4xwIVCANzCh0AmgAV#v=onepage&q=apopleksi&f=false}
 }
 
+@Book{Sedra2010,
+  Title                    = {Microelectronic Circuits},
+  Author                   = {Adel S. Sedra and Kenneth C. Smith},
+  Editor                   = {Adel S. Sedra and Kenneth C. Smith},
+  Publisher                = {Oxford University Press},
+  Year                     = {2010},
+
+  Owner                    = {Nikolineeeee},
+  Timestamp                = {2015.11.15}
+}
+
 @Book{Stanfield2014,
   Title                    = {Principles of Human Physiology},
   Author                   = {Stanfield, Cindy L.},
@@ -984,6 +995,16 @@
 
   Owner                    = {Cecilie},
   Timestamp                = {2015.10.01}
+}
+
+@Book{Wolf2004,
+  Title                    = {Student Reference Manual for Electronic Instrumentation Laboratories},
+  Author                   = {Wolf, Stanley and Smith, Richard F.M.},
+  Publisher                = {Prentice Hall},
+  Year                     = {2004},
+
+  Owner                    = {Cecilie},
+  Timestamp                = {2015.11.17}
 }
 
 @Book{Zouridakis2003,

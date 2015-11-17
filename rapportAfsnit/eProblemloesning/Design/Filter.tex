@@ -1,7 +1,7 @@
 % !TeX spellcheck = da_DK
 \subsection{Filter}
 \subsubsection{Teori og design}
-Efter signalet er blevet forstærket skal det filtreres, så alle de uønskede signaler kan dæmpes. Der benyttes kun et lavpasfilter, da det ønskede signal ligger ifølge litteratur i frekvensområdet 0-10 Hz, som beskrevet i afsnit \ref{FilterAfs} på side \pageref{FilterAfs}, men i forhold til pilotforsøget i afsnit \ref{Sec:Pilotforsoeg} på side \pageref{Sec:Pilotfosoeg} ligger det ønskede signal i frekvensområdet 0-25Hz. Derfor bliver frekvensområdet sat til 0-25Hz, for at filtere ønskede signaler fra. Filtre kan udarbejdes både i aktiv og passiv form. Hvis signalet ligger i frekvensområdet under 1 MHz anbefales det at benytte aktive filtre \cite{Carter2013}. Aktive filtre benytter operationforstærkere, kondensatorer og modstande, hvor passive filtre benytter kondensatorer, modstande og spoler \cite{Carter2013}. Der findes flere forskellige typer filtre, heriblandt Butterworth-, Tschebyschev- og Besselfilter. Butterworthfilteret giver maksimal fladhed i pasbåndet og stopbåndet. Tschebyschevfilteret giver den hurtigste overgang fra pasbåndet til stopbåndet. Besselfilteret giver en lineær faserespons, hvilket vil sige at fasen er lineær med frekvensen.\fxnote{Til os: Fasen angiver hvor godt et signals frekvensspektrum bliver gengivet}\fxnote{skal vi have et billede ind af de forskellige typer?} \cite{Carter2013} Butterworthfilteret benyttes til at filtrere signalet i dette forsøg, da der ønskes maksimal fladhed i pasbåndet og stopbåndet som nævnt i kravspecifikationerne for filtret.
+Efter signalet er blevet forstærket skal det filtreres, så alle de uønskede signaler kan dæmpes. Der benyttes kun et lavpasfilter, da det ønskede signal ligger ifølge litteratur i frekvensområdet 0-10 Hz, som beskrevet i afsnit \ref{FilterAfs} på side \pageref{FilterAfs}, men i forhold til pilotforsøget i afsnit \ref{Sec:Pilotforsoeg} på side \pageref{Sec:Pilotforsoeg} ligger det ønskede signal i frekvensområdet 0-25Hz. Derfor bliver frekvensområdet sat til 0-25Hz, for at filtere ønskede signaler fra. Filtre kan udarbejdes både i aktiv og passiv form. Hvis signalet ligger i frekvensområdet under 1 MHz anbefales det at benytte aktive filtre \cite{Carter2013}. Aktive filtre benytter operationforstærkere, kondensatorer og modstande, hvor passive filtre benytter kondensatorer, modstande og spoler \cite{Carter2013}. Der findes flere forskellige typer filtre, heriblandt Butterworth-, Tschebyschev- og Besselfilter. Butterworthfilteret giver maksimal fladhed i pasbåndet og stopbåndet. Tschebyschevfilteret giver den hurtigste overgang fra pasbåndet til stopbåndet. Besselfilteret giver en lineær faserespons, hvilket vil sige at fasen er lineær med frekvensen.\fxnote{Til os: Fasen angiver hvor godt et signals frekvensspektrum bliver gengivet}\fxnote{skal vi have et billede ind af de forskellige typer?} \cite{Carter2013} Butterworthfilteret benyttes til at filtrere signalet i dette forsøg, da der ønskes maksimal fladhed i pasbåndet og stopbåndet som nævnt i kravspecifikationerne for filtret.
 
 Filtre kan laves i inverterende og ikke-inverterende konfigurationer. Der vælges i dette forsøg at benytte et ikke-inverterende filter, da dette har en høj indgangsimpedans. Herved forhindres loading af filtrets output. Loading defineres som effekten af, at et spændingsmålende instrument bruger strømmen i et kredsløb og kan være både ønsket og uønsket i et system. Der må eksempelvis gerne være loading, hvis det ønskes at tænde for en lampe eller en højtaler. Loading-effekten er derimod en uønsket effekt for dette projekts system, da der ønskes et lavt effektforbrug, hvilket giver en lang levetid. Loading reducerer den samlede strøm, som løber i kredsløbet, og trækker meget strøm fra batteriet. \\
 Hvis der vælges en inverterende konfiguration for filtret, falder den samlede resistans, og der kræves derfor mere strøm for at opretholde outputspændingsniveauet. Eftersom den ikke-inverterende forstærker i filteret har høj inputimpedans, hvilket vil sige, at modstanden i operationsforstærkeren har en høj værdi, vil filterets output ikke blive påvirket af loading. \cite{Webster2009,Carter2013,Karni2014}
@@ -33,27 +33,29 @@ N = 2.711 \approx 3
 \end{align}
 \noindent Ordenen af filtret rundes op til 3, da filterets orden kun kan angives i hele tal. Hvis kravene til filteret skal overholdes, skal der altid rundes opad ved udregning af orden.
 
-Der skal altså benyttes et 3. ordens lavpasfilter. Der findes to forskellige måder hvorpå det kan designes: Sallen-Key topologien (SKT) og Multiple Feedback toppologien (MFT). SKT-metoden er den mest anvendte og tillader separate gain indstillinger, hvorimod MFT-metoden benyttes i filter design med høj gain nøjagtighed eller høj Q værdi. For dette filter benyttes SKT. På \figref{fig:SallenKey1} ses et 1. ordens lavpasfilter og på \figref{fig:SallenKey2)ses et 2. ordens lavpasfilter designet efter SKT. \cite{Carter2013}
+Der skal altså benyttes et 3. ordens lavpasfilter. Der findes to forskellige måder hvorpå det kan designes: Sallen-Key topologien (SKT) og Multiple Feedback toppologien (MFT). SKT-metoden er den mest anvendte og tillader separate gain indstillinger, hvorimod MFT-metoden benyttes i filter design med høj gain nøjagtighed eller høj Q værdi. For dette filter benyttes SKT. På \figref{fig:SallenKey1} ses et 1. ordens lavpasfilter og på \figref{fig:SallenKey2} ses et 2. ordens lavpasfilter designet efter SKT. \cite{Carter2013}
+	
 \begin{figure}[H]
-\centering
-\begin{minipage}[b] {0.5\textwidth}
-	\includegraphics[width=\textwidth]{figures/cProblemloesning/Lavpasfilter1_generisk.PNG}
-\caption{På figuren ses en illutration af et 1. ordens unity-gain Sallen-Key lavpasfilter}
-\label{fig:SallenKey1}
-\end{minipage}
-\hfill
-\begin{minipage}[b] {0.5\textwidth}
-	\includegraphics[width=\textwidth]{figures/cProblemloesning/Sallenlavpas.PNG}
-\caption{På figuren ses en illutration af et 2. ordens unity-gain Sallen-Key lavpasfilter.}
-\label{fig:SallenKey2}
-\end{minipage}
+	\centering
+	\begin{minipage}[b]{0.45\textwidth}
+		\includegraphics[width=\textwidth]{figures/cProblemloesning/Lavpasfilter1_teoretisk.PNG}
+		\caption{På figuren ses en illutration af et 1. ordens unity-gain Sallen-Key lavpasfilter.}
+		\label{fig:SallenKey1}
+	\end{minipage}
+	\hfill
+	\begin{minipage}[b]{0.45\textwidth}
+		\includegraphics[width=\textwidth]{figures/cProblemloesning/Sallenlavpas.PNG}
+		\caption{På figuren ses en illutration af et 1. ordens unity-gain Sallen-Key lavpasfilter.}
+		\label{fig:SallenKey2}
+	\end{minipage}
 \end{figure}
 
-I designet af et 3. ordens filter designes både 1. og 2. orden i forlængelse af hinanden. Dette designes efter sallen-key metoden, hvor filtreret består af tre modstande og tre kondensatorer. Værdierne for modstandene kan udregnes for hhv. 1. orden \ref{Lavpas1Modstande} og for 2. orden \ref{eq:LavpasModstande} med følgende ligninger:
+I designet af et 3. ordens filter designes både 1. og 2. orden i forlængelse af hinanden. Dette designes efter sallen-key metoden, hvor filtreret består af tre modstande og tre kondensatorer. Værdierne for modstandene kan udregnes for hhv. 1. orden \ref{Lavpas1Modstande} og for 2. orden \eqref{eq:LavpasModstande} med følgende ligninger:
 \begin{equation} \label{Lavpas1Modstande}
-R_{1} = \frac{a_1}{2 \cdot \pi \cdot f_c \cdot C_1}
+R_{1} = \frac{a_1}{2 \cdot \pi \cdot f_c \cdot C_1} \\
 \end{equation}
-\begin{equation} \label{eq:LavpasModstande}
+\begin{equation}
+ \label{eq:LavpasModstande}
 R_{1,2} = \frac{a_1 \cdot C_2 \pm \sqrt{A_1^2 \cdot C_2^2 - 4b_1 \cdot C_1 \cdot C_2}}{4 \pi \cdot f_c \cdot C_1 \cdot C_2}
 \end{equation}
 
@@ -75,13 +77,12 @@ R_{1} = \frac{1}{2 \cdot \pi \cdot 25 \cdot 100nF} R_{1} = 6366.20 \Omega
 \begin{equation} \label{eq:2ordenmodstand}
 R_{1,2} = \frac{1.4142 \cdot 480\text{nF} \pm \sqrt{1.4142^2 \cdot 480\text{nF}^2 - 4 \cdot 1 \cdot 100\text{nF} \cdot 480\text{nF}}}{4 \pi \cdot 25\text{Hz} \cdot 100\text{nF} \cdot 480\text{nF}} = \begin{cases} R_{1} = 7939.62 \Omega \\ R_{2} = 1063.46 \Omega \end{cases}
 \end{equation}
-
 \noindent Kondensatorernes samt modstandenes værdier er hermed udregnet for hhv. 1. og 2. ordens filteret. Disse kan nu indsættes i LTspice, hvorefter filtret kan simuleres. 
 
 \begin{figure}[H]
 	\centering
 	\includegraphics[scale=0.58]{figures/cProblemloesning/Lavpasfilter1_LTspice.PNG}
-	\caption{Figuren ses det teoretiske kredsløb for lavpasfilteret konstrueret i LTspice. Værdierne $R_{2}$ og $R_{3}$ svarer til de udregnede værdier $R_{1}$ og $R_{2}$ for 2. ordens filteret \ref{eq:2ordenmodstand}
+	\caption{Figuren ses det teoretiske kredsløb for lavpasfilteret konstrueret i LTspice. Værdierne $R_{2}$ og $R_{3}$ svarer til de udregnede værdier $R_{1}$ og $R_{2}$ for 2. ordens filteret \ref{eq:2ordenmodstand}}
 	\label{fig:lavpasfilter1_LTspice}
 \end{figure}
 
@@ -90,7 +91,7 @@ For at udføre en simulering af et lavpasfilter foretages der en AC-analyse som 
 
 \begin{figure}[H]
 	\centering
-	\includegraphics[scale=0.58]{figures/cProblemloesning/Lavpasfilter_LTspice.PNG}
+	\includegraphics[scale=0.4]{figures/cProblemloesning/Lavpasfilter_LTspice.PNG}
 	\caption{Figuren illustrerer kredsløbet for lavpasfilteret konstrueret i LTspice}
 	\label{fig:lavpasfilter_LTspice}
 \end{figure}
