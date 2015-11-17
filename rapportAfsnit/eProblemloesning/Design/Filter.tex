@@ -13,7 +13,7 @@ I afsnit \ref{FilterAfs} på side \ref{FilterAfs} blev karakteristikaene af lavp
 	\includegraphics[scale=0.8]{figures/cProblemloesning/Lavpasfilter_generisk.PNG}
 	\caption{Figuren viser et bodeplot filter, hvor de fire karakteristika af et lavpasfilter er angivet}
 	\label{fig:Lavpasfilter_generisk}
-\end{figure
+\end{figure}
 
 \noindent Ud fra karakteristikaene af filteret kan filterets orden beregnes via overføringsfunktionen:
 \begin{equation} \label{eq:lavpasfilter}
@@ -36,16 +36,17 @@ N = 2.711 \approx 3
 Der skal altså benyttes et 3. ordens lavpasfilter. Der findes to forskellige måder hvorpå det kan designes: Sallen-Key topologien (SKT) og Multiple Feedback toppologien (MFT). SKT-metoden er den mest anvendte og tillader separate gain indstillinger, hvorimod MFT-metoden benyttes i filter design med høj gain nøjagtighed eller høj Q værdi. For dette filter benyttes SKT. På \figref{fig:SallenKey1} ses et 1. ordens lavpasfilter og på \figref{fig:SallenKey2)ses et 2. ordens lavpasfilter designet efter SKT. \cite{Carter2013}
 \begin{figure}[H]
 \centering
-\begin{subfigure}[a] {0.5}\textwidth}
+\begin{minipage}[b] {0.5\textwidth}
 	\includegraphics[width=\textwidth]{figures/cProblemloesning/Lavpasfilter1_generisk.PNG}
 \caption{På figuren ses en illutration af et 1. ordens unity-gain Sallen-Key lavpasfilter}
 \label{fig:SallenKey1}
-\end{subfigure}
-\begin{subfigure}[b] {0.5}\textwidth}
+\end{minipage}
+\hfill
+\begin{minipage}[b] {0.5\textwidth}
 	\includegraphics[width=\textwidth]{figures/cProblemloesning/Sallenlavpas.PNG}
 \caption{På figuren ses en illutration af et 2. ordens unity-gain Sallen-Key lavpasfilter.}
 \label{fig:SallenKey2}
-\end{subfigure}
+\end{minipage}
 \end{figure}
 
 I designet af et 3. ordens filter designes både 1. og 2. orden i forlængelse af hinanden. Dette designes efter sallen-key metoden, hvor filtreret består af tre modstande og tre kondensatorer. Værdierne for modstandene kan udregnes for hhv. 1. orden \ref{Lavpas1Modstande} og for 2. orden \ref{eq:LavpasModstande} med følgende ligninger:
