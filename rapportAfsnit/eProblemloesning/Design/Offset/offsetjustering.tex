@@ -1,33 +1,32 @@
 % !TeX spellcheck = da_DK
 \subsection{Offsetjustering}
 \subsubsection{Teori og design}
-Det analoge signal, der kommer fra accelerometeret, har et indbygget offset på halvdelen af dens spændingsforsyning. For at kunne forstærke signalet der både skal indeholde positive og negative værdier, er det nødvendigt at ændre dette offset. På denne måde kan  accelerometeret i steady state have et outputsignal på $0$V. Måden dette nye offset indføres er ved anvendelse af et differensforstærker kredsløb. Dette kredsløb kan tage et af inputsignalerne og  fratrække det  andet inputsignal. Kredsløbet designes således:
+Det analoge signal, der kommer fra accelerometeret, har et indbygget offset på halvdelen af dens spændingsforsyning. For at kunne forstærke signalet, der både skal indeholde positive og negative værdier, er det nødvendigt at ændre dette offset. På denne måde kan  accelerometeret i steady state ved $0$g påvirkning have et outputsignal på $0$V. Måden hvorpå dette nye offset indføres er ved anvendelse af et differensforstærker kredsløb, som ses på \figref{fig:Differensforstaerker_generisk}. Dette kredsløb kan tage et af inputsignalerne, kaldet $V_{b}$ på figuren, og  fratrække det andet inputsignal, kaldet $V_{a}$ på figuren, som vil fungere som en referenceværdi.
 
 \begin{figure}[H]
 \centering
-\includegraphics[scale=1]{figures/cProblemloesning/Differensforstaerker_generisk.png}
+\includegraphics[scale=1.2]{figures/cProblemloesning/Differensforstaerker_generisk.png}
 \caption{På figuren er et generisk differens forstærker kredsløb illustreret. \cite{Nilsson2011}}
 \label{fig:Differensforstaerker_generisk}
 \end{figure}
 
-Ligning \ref{eq:Diff1} er den simplificeret ligning for differensforstærker kredsløbet, hvor $\frac{R_a}{R_b} = \frac{R_c}{R_d}$;
+\noindent Ligning \ref{eq:Diff1} er den simplificeret ligning for differensforstærker kredsløbet, hvor $\frac{R_a}{R_b} = \frac{R_c}{R_d}$;
 
 \begin{equation}\label{eq:Diff1}
 V_o = \frac{R_b}{R_a} \cdot (v_b - v_a)
 \end{equation}
 
-Det kan heraf ses at forstærkningen på signalet kan bestemmes ved at vælge modstandene $R_a \text{og} R_b$ og at det er spændingsforsyningen $v_a$ der trækkes fra spændingsforsyningen $v_b$. 
-
-I dette tilfælde kræves der ikke en forstærkning, derfor skal modstandene $R_{a}$ og $R_{b}$ være det samme. Da signalet ikke skal inverteres sættes accelerometerets output ind i den ikke-inverterende kanal og offsettet, som i dette tilfælde er på $1.5915$V jævnført  \ref{Mean_tid_0g} på side \pageref{Mean_tid_0g}, ind i den inverterende kanal. Dette illustreres på figur \ref{fig:Offset_generisk}:
+\noindent Der kan heraf ses, at forstærkningen på signalet kan bestemmes ved at vælge modstandene $R_a \text{og} R_b$, og at det er spændingen $V_{a}$, der trækkes fra spændingen $V_{b}$. \\
+I dette tilfælde kræves der ikke en forstærkning, hvorfor modstandene $R_{a}$ og $R_{b}$ skal være det samme. Da signalet ikke skal inverteres sendes accelerometerets output ind i den ikke-inverterende kanal. Offsettet, som i dette tilfælde er på $1.5915$V jævnført \ref{Mean_tid_0g} på side \pageref{Mean_tid_0g}, sendes ind i den inverterende kanal. Dette illustreres på figur \ref{fig:Offset_generisk}:
 \begin{figure}[H]
 \centering
 \includegraphics[scale=1]{figures/cProblemloesning/Offset_generisk.png}
-\caption{På figuren ses offsetjusteringen, hvor V$1$ er det nuværende offset på accelerometeret og Va er outputtet fra accelerometeret. Modstandene i kredsløbet er alle ens, hvilket medføre at signalet ikke forstærkes. Grunden til at spændingsforsyningen er $\pm 6$V er at spændingsforsyningen til hele systemet, er designet til at give et output på $\pm 6$V.}
+\caption{På figuren ses offsetjusteringens opbygning. $V1$ er referenceværdien, som sættes til $1.5915$V, og $Va$ er outputtet fra accelerometeret, som vil skabe inputtet $V2$ til operationsforstærkeren. Modstandene i kredsløbet er ens, hvilket medfører, at signalet ikke forstærkes. Grunden til at spændingsforsyningen er $\pm7$V er, at spændingsforsyningen til hele systemet er designet til at give et output på $\pm7$V. Derudover sikres der derved også, at ønskede signal ikke går i mætning.}
 \label{fig:Offset_generisk}
 \end{figure}
 
 \subsubsection{Simulering}
-Der foretages tre simuleringer i LTspice. En for hhv. den højeste- og laveste spænding, som accelerometret kan give for øvelserne, samt en for ingen påvirkning. Resultaterne ses i \tableref{Tab:offset_sim}.
+Der foretages tre simuleringer i LTspice - en for hhv. den højeste- og laveste spænding, som accelerometret kan give for øvelserne. Dette vil svare til 1g påvirkning af accelerometerets x akse - altså $90^{\circ}$ rotation. Derudover foretages der en simulering for 0g påvirkning, hvilket svarer til $0^{\circ}$ rotation. Resultaterne ses i \tableref{Tab:offset_sim}.
 \begin{table}[H]
 	\centering
 	\begin{tabular}{|l|l|l|l|l|}
@@ -35,27 +34,49 @@ Der foretages tre simuleringer i LTspice. En for hhv. den højeste- og laveste s
 		\multicolumn{1}{|c|}{\textit{Inputsignal}} & \multicolumn{1}{c|}{\textit{Offset}} & \multicolumn{1}{c|}{\textit{Forventet outputsignal}} & \multicolumn{1}{c|}{\textit{Outputsignalet}} & \multicolumn{1}{c|}{\textit{Afvigelse}} \\ \hline
 		$1.8627$V     & $1.5915$V    & $0.2712$V     & $0.2712$V     & $0$\%              \\ \hline
 		$1.5915$V     & $1.5915$V    & $0$V          & $217.850$pV   & $\approx 0$\%      \\ \hline
-		$1.3254$V     & $1.5915$V    & -$0.2661$V    & $0.2661$      & $0$\%                \\ \hline
+		$1.3254$V     & $1.5915$V    & -$0.2661$V    & $0.2661$V      & $0$\%                \\ \hline
 	\end{tabular}
-	\caption{I tabellen ses resultaterne fra simuleringerne af offsettet med forskellige input.}
+	\caption{I tabellen ses resultaterne fra simuleringerne af offsettet med forskellige inputs.}
 	\label{Tab:offset_sim}
 \end{table}
-Der ses, at der ingen afvigelse er. Dette betyder, at kredsløbet fungere rent teoretisk med ideelle komponenter, som bliver brugt i LTspice. På \figref{fig:Offset_simulering} ses simuleringen af $1.8627$V input fra accelerometret.
+\noindent Der ses, at der ingen afvigelse er imellem de forventede outputsignal og det simulerede outputsignal. Dette betyder, at kredsløbet fungerer rent teoretisk med ideelle komponenter, som bliver anvendt i LTspice. På \figref{fig:Offset_simulering} ses simuleringen af $1.8627$V input fra accelerometret.
  
 \begin{figure}[H]
 \centering
-\includegraphics[scale=0.35]{figures/cProblemloesning/Offset_simulering.png}
+\includegraphics[scale=0.4]{figures/cProblemloesning/Offset_simulering.png}
 \caption{På figuren ses en simulering af $1.8627$V input, hvilket giver et output på $0.2712$V.}
 \label{fig:Offset_simulering}
 \end{figure}
 
-%Ved simulering i LTspice af kredsløbet som vist på \figref{fig:Offset_generisk} er outputtet fra accelerometeret (Va), sat til at være $1.60$V, og offsettet (V$1$) er på accelerometeret $1.5915$V. Derfor det forventet output af blokken være bestemt ved følgende udregning: 
-%\begin{equation}
-%\begin{aligned}
-%V_{out}={} & Va - V1 \\
-%           & 1.60V - 1.5915V \\
-%           & 0.0085V = 8.5mV
-%\end{aligned}
-%\end{equation}
-
 \subsubsection{Implementering og test}
+I implementeringen arbejdes der med reelle komponenter. Derfor vil der være afvigelser fra resultaterne imellem testen med ideelle komponenter i dette afsnit og testen med reelle komponenter i simuleringen. \\
+Der ses på \figref{fig:Offset_generisk}, at der skal benyttes fire modstandere på $100$K$\Omega$ til opbygningen af offsettet. Disse blev målt inden testen, hvilket fremgår i \tableref{Tab:modstand_offset}.
+\begin{table}[H]
+	\centering
+	\begin{tabular}{|l|l|l|}
+		\hline
+		\textit{Teoretisk} & \textit{Ved måling} & \textit{\% afvigelse} \\ \hline
+		$100$K$\Omega$       & $99.8$K$\Omega$       & $0.2$\%               \\ \hline
+		$100$K$\Omega$       & $99.7$K$\Omega$       & $0.3$\%               \\ \hline
+		$100$K$\Omega$       & $99.8$K$\Omega$       & $0.2$\%               \\ \hline
+		$100$K$\Omega$       & $99.8$K$\Omega$       & $0.2$\%               \\ \hline
+	\end{tabular}
+	\caption{I tabellen ses der, at alle fire modstandere afviger lidt fra deres teoretiske værdi, hvilket er forventet af reelle komponenter. Kravet til disse fire modstandere var dog, at de skulle være ens således at der ikke sker en forstærkning. Disse modstandere accepteres derfor.}
+	\label{Tab:modstand_offset}
+\end{table}
+\noindent Herefter implementeres kredsløbet. Til opsamling af signalet benyttes en computer med ScopeLogger, hvorefter dataen bliver behandlet i Matlab. I testen blev der foretaget 3 målinger for hver af de tre spændingsniveauer. Herefter blev gennemsnittet for hver måling udregnet, som lægges sammen og til slut også tages gennemsnittet af. Dette giver den endelige værdi, som står under "Output" i \tableref{Tab:Offset_test}.
+\begin{table}[H]
+	\centering
+	\begin{tabular}{l|l|l|l|l|l|l|}
+		\cline{2-7}
+		& \textit{\begin{tabular}[c]{@{}l@{}}Teoretisk\\ input\end{tabular}} & \textit{\begin{tabular}[c]{@{}l@{}}Input fra spæn-\\ dingsforsyning\end{tabular}} & \textit{Målte input} & \textit{\begin{tabular}[c]{@{}l@{}}Forventet\\ output\end{tabular}} & \textit{Output} & \% afvigelse \\ \hline
+		\multicolumn{1}{|l|}{\textit{\begin{tabular}[c]{@{}l@{}}$V1$\\ ref\end{tabular}}}    & $1.5915$V    & $1.6$V   & $1.5900$V    & $\times$    & $\times$   & $0.09\%$     \\ \hline
+		\multicolumn{1}{|l|}{\multirow{3}{*}{\textit{\begin{tabular}[c]{@{}l@{}}$V2$\\ signal\end{tabular}}}} & $1.8627$V    & $1.8$V   & $1.8600$V    & $0.2712$V   & $0.2545$V   & $6.16\%$     \\ \cline{2-7} 
+		\multicolumn{1}{|l|}{}                                         & $1.5915$V    & $1.5$V   & $1.5900$V    & $0$V         & $-0.0018$V  & $0.18\%$     \\ \cline{2-7} 
+		\multicolumn{1}{|l|}{}                                         & $1.3254$V    & $1.3$V   & $1.3300$V    & $-0.2661$V  & $-0.2603$V  & $2.18\%$     \\ \hline
+	\end{tabular}
+	\caption{I tabellen ses en oversigt over det udregnede resultat for de tre forskellige spændingsniveauer.}
+	\label{Tab:Offset_test}
+\end{table}
+I \tableref{Tab:Offset_test} betegner "$V1$ / ref." referencespændingen, som sendes ind i den inverterende kanal, mens "$V2$ / signal.)" betegner de tre forskellige spændinger, som bliver sendt ind i den ikke-inverterende kanal. Det "teoretiske input" er beregnet i afsnit \ref{Sec_Pilot_Data} på side \pageref{Sec_Pilot_Data} og burde være det, som sendes ind i $V2$. "Inputspændingen fra spændingsforsyningen" er den spænding, som stod på displayet af spændingsforsyningen, og det "målte input" er inputspændingen målt med et oscilloskop - hvilket er den spænding, der bliver betragtet som den korrekte. "Forventet output" udregnes ud fra det teoretiske input, "output" er slutresultatet efter gennemsnitsberegninger og "afvigelsen" kan derved beregnes. \\
+Der ses i \tableref{Tab:Offset_test}, at der er en afvigelse imellem outputtet og det forventede output for hver inputspænding. Men disse afvigelser ligger inde for tolerancen for offsettet beskrevet i afsnit \ref{OpsamlingsAfs} på side \pageref{OpsamlingsAfs}. Derfor anses disse afvigelser som acceptable.
