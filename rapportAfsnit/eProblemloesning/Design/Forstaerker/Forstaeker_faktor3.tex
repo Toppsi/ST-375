@@ -8,48 +8,53 @@ For at udregne modstandene er R$2$ blevet valgt til $10$K$\Omega$. Ud fra dette 
 R1 = 20\text{K}\Omega
 \end{align}
 
+\noindent Forstærkerens opbygning kan ses på \figref{fig:Forstaerker_faktor3}.
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=0.4]{figures/cProblemloesning/Forstaerker_faktor3.PNG}
+	\caption{På figuren ses den ikke-inverterende opbygningen af forstærkeren, hvor der sker en forstærkning med en faktor $3$.}
+	\label{fig:Forstaerker_faktor3}
+\end{figure}
+
 \subsubsection{Simulering}
-Denne forstærker undersøges ligeledes i tre simuleringer for, hvorledes forstærkeren virker ved det laveste input , uden påvirkning samt højeste input. Det kan ses på  %\figref{fig:Forstaerker_faktor18_simulering}, 
-at det forstærkede signal, kaldet $V_{out}$, er ca. $XX$V, hvilket er $3$ gange større end $V_{in}$, som i simuleringen er sat til $XX$V. Derved er der sket den ønskede forstærkning, hvilket var forventet, da simuleringen er med ideelle komponenter. Derfor har de enkelte komponenter ingen tolerance, som der vil være ved reelle komponenter i et reelt kredsløb. \\. 
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% INDSÆT DENNE FIFUR, NÅR EN SIMULERING ER LAVET EFTER SNAKKET MED ERIKA %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%\begin{figure}[H]
-%\centering
-%\includegraphics[scale=0.4]{figures/cProblemloesning/}
-%\caption{}
-%\label{fig:Forstaerker_faktor13_simulering}
-%\end{figure}
-
-\noindent Resultaterne af de fem simuleringer ses i \tableref{tab:forstarker3_simT}. Der er benyttet de teoretiske værdier, som er udregnet fra start.
+Denne forstærker undersøges ligeledes i tre simuleringer for, hvorledes forstærkeren virker ved det laveste input , uden påvirkning samt højeste input. Det forstærkede signal, kaldet $V_{out}$, skal være $3$ gange større end $V_{in}$. Resultaterne af de fem simuleringer ses i \tableref{tab:forstarker3_simT}. Der er benyttet de teoretiske værdier, som er udregnet fra start.
 \begin{table}[H]
 	\centering
 	\begin{tabular}{|l|l|l|l|l|}
 		\hline
-		\multicolumn{1}{|c|}{\textit{\begin{tabular}[c]{@{}c@{}}Teoretisk\\ inputsignal\\ fra filter\end{tabular}}} & \multicolumn{1}{c|}{\textit{Forstærkning}} & \multicolumn{1}{c|}{\textit{Forventet outputsignal}}                    & \multicolumn{1}{c|}{\textit{Outputsignalet}} & \multicolumn{1}{c|}{\textit{Afvigelse}} \\ \hline
-		$4.8816$V     & 3   & \begin{tabular}[c]{@{}l@{}}Forventer mætning\\ $14.6448$V\end{tabular}  & XX   & XX     \\ \hline
-		$1.3554$V     & 3   & $4.0662$V                                                               & XX   & XX     \\ \hline
-		$0$V          & 3   & $0$V                                                                    & XX   & XX     \\ \hline
-		-$1.332$V     & 3   & -$3.9906$V                                                              & XX   & XX     \\ \hline
-		$4.7880$V     & 3   & \begin{tabular}[c]{@{}l@{}}Forventer mætning\\ -$14.3640$V\end{tabular} & XX   & XX     \\ \hline
+		\multicolumn{1}{|c|}{\textit{Inputsignalet} & \multicolumn{1}{c|}{\textit{Forstærkning}} & \multicolumn{1}{c|}{\textit{Forventet outputsignal}}                    & \multicolumn{1}{c|}{\textit{Outputsignalet}} & \multicolumn{1}{c|}{\textit{Afvigelse}} \\ \hline
+		$4.8816$V     & 3   & \begin{tabular}[c]{@{}l@{}}Forventer mætning\\ $14.6448$V\end{tabular}  & $5.0530$V   & $\times$     \\ \hline
+		$1.3554$V     & 3   & $4.0662$V                                                               & $4.0662$V   & $0\%$     \\ \hline
+		$0$V          & 3   & $0$V                                                                    & $0$V        & $0\%$     \\ \hline
+	   -$1.3302$V     & 3   & -$3.9906$V                                                              & -$3.9906$V  & $0\%$     \\ \hline
+	   -$4.7880$V     & 3   & \begin{tabular}[c]{@{}l@{}}Forventer mætning\\ -$14.3640$V\end{tabular} & -$5.0527$V  & $\times$     \\ \hline
 	\end{tabular}
 		\caption{I tabellen ses resultaterne af de fem simuleringer.}
 		\label{tab:forstarker3_simT}
 \end{table}
 
-\noindent Resultaterne af de fem simuleringer ses i \tableref{tab:forstarker3_simF}. Der er benyttet de værdier, som fås fra simuleringen med den første forstærker i afsnit \ref{Subsec:Forstaerker_simu} på side \pageref{Subsec:Forstaerker_simu}.
-\begin{table}[H]
-	\centering
-	\begin{tabular}{|l|l|l|l|l|}
-		\hline
-		\multicolumn{1}{|c|}{\textit{\begin{tabular}[c]{@{}c@{}}Simulerede\\ inputsignal\\ fra filter\end{tabular}}} & \multicolumn{1}{c|}{\textit{Forstærkning}} & \multicolumn{1}{c|}{\textit{Forventet outputsignal}}                      & \multicolumn{1}{c|}{\textit{Outputsignalet}} & \multicolumn{1}{c|}{\textit{Afvigelse}} \\ \hline
-		$4.8817$V   & 3    & \begin{tabular}[c]{@{}l@{}}Forventer mætning\\ (14,6451V)\end{tabular}    & XX  & XX   \\ \hline
-		$1.3560$V   & 3    & $4.0681$V                                                                 & XX  & XX   \\ \hline
-		$0$V        & 3    & $0$V                                                                      & XX  & XX   \\ \hline
-		-$1.3300$V  & 3    & -$3.9901$V                                                                & XX  & XX   \\ \hline
-		-$4.7881$V  & 3    & \begin{tabular}[c]{@{}l@{}}Forventer mætning\\ (-$14.3643$V)\end{tabular} & XX  & XX   \\ \hline
-	\end{tabular}
-		\caption{I tabellen ses resultaterne af de fem simuleringer.}
-		\label{tab:forstarker3_simF}
-\end{table}
+Der ses, at der ingen afvigelse er. Kredsløbet fungere rent teoretisk med ideelle komponenter, som bliver brugt i LTspice. På \figref{Fig:simulering3faktor} ses simuleringen af $1.3554$V input, som ideelt vil komme fra filtret. På \figref{fig:faktor3_simulering}
 
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=0.4]{figures/cProblemloesning/Forstaerker_faktor3_simulering.PNG}
+	\caption{På figuren ses simuleringen af $1.3554$V input, som giver $4.0662$V i output. Der er altså sket en forstærkning med en faktor $3$.}
+	\label{fig:faktor3_simulering}
+\end{figure}
+
+%\noindent Resultaterne af de fem simuleringer ses i \tableref{tab:forstarker3_simF}. Der er benyttet de værdier, som fås fra simuleringen med den første forstærker i afsnit \ref{Subsec:Forstaerker_simu} på side \pageref{Subsec:Forstaerker_simu}.
+%\begin{table}[H]
+%	\centering
+%	\begin{tabular}{|l|l|l|l|l|}
+%		\hline
+%		\multicolumn{1}{|c|}{\textit{\begin{tabular}[c]{@{}c@{}}Simulerede\\ inputsignal\\ fra filter\end{tabular}}} & \multicolumn{1}{c|}{\textit{Forstærkning}} & \multicolumn{1}{c|}{\textit{Forventet outputsignal}}                      & \multicolumn{1}{c|}{\textit{Outputsignalet}} & \multicolumn{1}{c|}{\textit{Afvigelse}} \\ \hline
+%		$4.8817$V   & 3    & \begin{tabular}[c]{@{}l@{}}Forventer mætning\\ (14,6451V)\end{tabular}    & XX  & XX   \\ \hline
+%		$1.3560$V   & 3    & $4.0681$V                                                                 & XX  & XX   \\ \hline
+%		$0$V        & 3    & $0$V                                                                      & XX  & XX   \\ \hline
+%		-$1.3300$V  & 3    & -$3.9901$V                                                                & XX  & XX   \\ \hline
+%		-$4.7881$V  & 3    & \begin{tabular}[c]{@{}l@{}}Forventer mætning\\ (-$14.3643$V)\end{tabular} & XX  & XX   \\ \hline
+%	\end{tabular}
+%		\caption{I tabellen ses resultaterne af de fem simuleringer.}
+%		\label{tab:forstarker3_simF}
+%\end{table}
 \subsubsection{Implementering og test}
