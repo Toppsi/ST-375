@@ -1,0 +1,13 @@
+* C:\Users\Mathias\Desktop\ST-375\rapportAfsnit\eProblemloesning\Design\Forstaerker\Forstærker - faktor 3.asc
+V1 Vin 0 1.3554
+V2 Vcc 0 7
+V3 Vdd 0 -7
+R2 N001 0 10K
+R1 Vout N001 20K
+XU1 Vin N001 Vcc Vdd Vout LT1028
+* Av = 1+ (R1/R2)
+.tran 1
+* Ikke-inverterende forstærker - faktor 3
+.lib LTC.lib
+.backanno
+.end
