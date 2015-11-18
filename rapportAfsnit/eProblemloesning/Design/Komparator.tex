@@ -28,7 +28,7 @@ Tærskelværdierne er som jævnført afsnit \ref{KomparatorAfs} udregnet til at 
 Der vælges en justerbar mikropower spændingsreference (shunt-reference LM385), som skal levere minimum $4.0662$V til spændingstræet ved et ideelt kredsløb, men skal i praksis kunne levere mere. Spændingsreferencen indgår som del af en variabel spændingsdeler og bruges hvis spændingen falder over tid, da der anvendes et $9$V batteri som spændingsforsyning. Modstandene (R1-R5) mellem spændingsreferencen og batteriet har til formål at sørge for, at batteriet ikke drænes, fordi kredsløbet trækker strøm. Hvis modstanden er høj, vil strømmen til kredsløbet være lav, og batteriet vil derved holde længere. Modstanden beregnes ud fra Ohms lov, hvor strømmen, som skal videre til spændingsreference og spændingstræet, sættes til at være $0.1$mA. Denne værdi vælges, da spændingsreferencen forbruger mellem $10\mu$A til $20$mA, og der skal være noget strøm til spændingstræet og tilhørende komparatorer. Spændingsfaldet over modstanden beregnes til at være;
 
 \begin{equation}
-$7$V - $4.0662$V = $2.9338$V   
+7V - 4.0662V = 2.9338V   
 \end{equation}
 Hvor de $7$V er den spænding der minimum skal leveres, og de $4.0662$V er den højeste tærskelværdi, dvs. den 
 
@@ -38,18 +38,18 @@ Hvor de $7$V er den spænding der minimum skal leveres, og de $4.0662$V er den h
 
 
 \noindent\textbf{Beregning af R6-R10 modstande for aktivering af LED-dioder} \\
-Ifølge kravspecifikationerne i afsnit \ref{FunkKrav}  på side \pageref{FunkKrav} for komparatoren skal den have en forsyningsspænding på minimum 3V og maksimalt 9V. De anvendte LED-dioder i systemet er: en L-53LG 5mm (grøn), to L-53LI 5mm (rød) og to L-53LY 5mm (gul). Disse LED-dioder kræver en minimum spænding på 2mA for at lyse og spændingsfaldet over dioderne ligger maksimalt i intervallet 2,0 til 2,2 V (rød: 2,0, gul: 2,1 og grøn: 2,2), men typisk mellem $1.7$V-$1.9$V. LED-dioderne forsynes af et 9V batteri og tilkobles, som sagt, tilhørende modstande for bla. at undgå at LED-dioderne brænder af. Spændingsfaldet over dioderne samt den spænding LED-dioderne som minimum skal bruge for at lyse er kendte værdier, dvs. modstandene R6-R10 kan derfor findes vha. Ohms lov. Nedestående udregning giver en værdi af modstandene, hvis batteriet yder maksimal spænding: \\
+Ifølge kravspecifikationerne i afsnit \ref{FunkKrav}  på side \pageref{FunkKrav} for komparatoren skal den have en forsyningsspænding på minimum 3V og maksimalt 9V. De anvendte LED-dioder i systemet er: en L-53LG 5mm (grøn), to L-53LI 5mm (rød) og to L-53LY 5mm (gul). Disse LED-dioder kræver en minimum spænding på 2mA for at lyse og spændingsfaldet over dioderne ligger maksimalt i intervallet 2,0 til 2,2 V (rød: 2,0, gul: 2,1 og grøn: 2,2), men typisk mellem $1.7$V-$1.9$V. LED-dioderne forsynes af et 9V batteri og tilkobles, som sagt, tilhørende modstande for bla. at undgå at LED-dioderne brænder af. Spændingsfaldet over dioderne samt den spænding LED-dioderne som minimum skal bruge for at lyse er kendte værdier, dvs. modstandene R6-R10 kan derfor findes vha. Ohms lov. Nedestående udregning giver en værdi af modstandene, hvis batteriet yder maksimal spænding:
 
 \begin{equation}
-R=\dfrac{$9$V-$2.2$V}{$2$mA}=$3500$\Omega
+\text{R} = \dfrac{9V - 2.2V}{2mA} = 3500\Omega
 \end{equation}
 
-I praksis vil batteriet ikke yde en maksimal spænding på $9$V, da spændingen aftager som funktion af tiden. Da det i praksis er påkrævet, at batteriet forsyner kredsløbet med minimum $7$V, og dioderne kan forsynes med op til $150$mA, før de brændes af, kan samme udregning laves, for at bestemme den lavest mulige modstandsværdi for R$6$-R$10$:
+\noindent I praksis vil batteriet ikke yde en maksimal spænding på $9$V, da spændingen aftager som funktion af tiden. Da det i praksis er påkrævet, at batteriet forsyner kredsløbet med minimum $7$V, og dioderne kan forsynes med op til $150$mA, før de brændes af, kan samme udregning laves, for at bestemme den lavest mulige modstandsværdi for R$6$-R$10$:
 \begin{equation}
-R_{min}=\dfrac{$7$V-$2.2$V}{$2$mA}=$2400$\Omega
+R_{min} = \dfrac{7V-2.2V}{2mA} = 2400\Omega
 \end{equation}
- \\
-Dermed sættes modstandene R$6$-R$10$ alle til $2400$\Omega for at sikre at der er tilstrækkeligt med strøm i kredsløbet til at dioderne kan lyse, uden at de brændes af eller at batteriet drænes. 
+
+\noindent Dermed sættes modstandene R$6$-R$10$ alle til $2400\Omega$ for at sikre at der er tilstrækkeligt med strøm i kredsløbet til at dioderne kan lyse, uden at de brændes af eller at batteriet drænes. 
 
 \noindent\textbf{Beregning af tærskelværdier og tilhørende R1-R5 modstande for aktivering af  vibratorerne} \\
 For aktivering af vibratorerne vil der blive anvendt to komparatorer, da der ifølge kravsspecifikationerne i afsnit \ref{KomparatorAfs} på side \pageref{KomparatorAfs} skal være 2 tærskelværdier. Disse tærskelværdier konstrueres ligeledes vha. to parallelforbundede modstande og spændingsreferencer, samt de resterende modstande mellem vibratorerne og $+V_{cc}$. På figur X vises konstruktionen af kredsløbet med de to vibratorer og tilhørende modstande. \\
