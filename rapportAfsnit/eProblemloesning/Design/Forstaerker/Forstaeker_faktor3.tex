@@ -41,20 +41,42 @@ Der ses, at der ingen afvigelse er. Kredsløbet fungere rent teoretisk med ideel
 	\caption{På figuren ses simuleringen af $1.3554$V input, som giver $4.0662$V i output. Der er altså sket en forstærkning med en faktor $3$.}
 	\label{fig:faktor3_simulering}
 \end{figure}
+\noindent Der ses på afvigelserne, at der arbejdes med ideelle komponenter, da der er en meget lav afvigelse i outputtet ift. det forventede output. Det er herved bevist, at kredsløbet fungerer teoretisk og kan derfor implementeres.
 
-%\noindent Resultaterne af de fem simuleringer ses i \tableref{tab:forstarker3_simF}. Der er benyttet de værdier, som fås fra simuleringen med den første forstærker i afsnit \ref{Subsec:Forstaerker_simu} på side \pageref{Subsec:Forstaerker_simu}.
-%\begin{table}[H]
-%	\centering
-%	\begin{tabular}{|l|l|l|l|l|}
-%		\hline
-%		\multicolumn{1}{|c|}{\textit{\begin{tabular}[c]{@{}c@{}}Simulerede\\ inputsignal\\ fra filter\end{tabular}}} & \multicolumn{1}{c|}{\textit{Forstærkning}} & \multicolumn{1}{c|}{\textit{Forventet outputsignal}}                      & \multicolumn{1}{c|}{\textit{Outputsignalet}} & \multicolumn{1}{c|}{\textit{Afvigelse}} \\ \hline
-%		$4.8817$V   & 3    & \begin{tabular}[c]{@{}l@{}}Forventer mætning\\ (14,6451V)\end{tabular}    & XX  & XX   \\ \hline
-%		$1.3560$V   & 3    & $4.0681$V                                                                 & XX  & XX   \\ \hline
-%		$0$V        & 3    & $0$V                                                                      & XX  & XX   \\ \hline
-%		-$1.3300$V  & 3    & -$3.9901$V                                                                & XX  & XX   \\ \hline
-%		-$4.7881$V  & 3    & \begin{tabular}[c]{@{}l@{}}Forventer mætning\\ (-$14.3643$V)\end{tabular} & XX  & XX   \\ \hline
-%	\end{tabular}
-%		\caption{I tabellen ses resultaterne af de fem simuleringer.}
-%		\label{tab:forstarker3_simF}
-%\end{table}
 \subsubsection{Implementering og test}
+På \figref{fig:Forstaerker_faktor3} kan der ses, at der skal benyttes to modstandere på $10$K$\Omega$ og $20$K$\Omega$ til opbygningen af forstærkeren med en faktor på 3. Reelt findes der dog ikke en $20$K$\Omega$, hvorfor der istedet benyttes to $10$K$\Omega$ modstandere i serieforbindelse, hvilket teoretisk vil give en $0$\% afvigelse fra en ideelt $20$K$\Omega$ modstander. Disse tre modstandere blev målt inden testen, hvilket fremgår i \tableref{Tab:modstand_faktor18}.
+\begin{table}[H]
+	\centering
+	\begin{tabular}{|l|l|l|}
+		\hline
+		\textit{Teoretisk}  & \textit{Ved måling} & \textit{\% afvigelse} \\ \hline
+		$10$K$\Omega$       & $99.8$K$\Omega$     & $0.2$\%               \\ \hline
+		$10$K$\Omega$       & $99.8$K$\Omega$     & $0.2$\%               \\ \hline
+		$10$K$\Omega$       & $10$K$\Omega$       & $0$\%               \\ \hline
+	\end{tabular}
+	\caption{I tabellen ses der, at de tre modstandere afviger lidt fra deres teoretiske værdi, hvilket er forventet af reelle komponenter. Det er dog en acceptabel afvigelse, så modstanderne kan derfor anvendes til implementeringen.}
+	\label{Tab:modstand_faktor18}
+\end{table}
+
+\noindent Herefter implementeres kredsløbet. Til opsamling af signalet benyttes en computer med ScopeLogger, hvorefter dataen bliver behandlet i Matlab. I testen blev der foretaget 3 målinger for hver af de tre spændingsniveauer. Herefter blev gennemsnittet for hver måling udregnet, som lægges sammen og til slut også tages gennemsnittet af. Dette giver den endelige værdi, som står under "Output" i \tableref{Tab:faktor3_test}.\
+
+\begin{table}[H]
+	\centering
+	\begin{tabular}{|l|l|l|l|l|}
+		\hline
+		\textit{Ønskede input} & \textit{Målte input} & \textit{Forventet output} & \textit{Output} & \% afvigelse \\ \hline
+		$1.3554$V              & $1.3534$V            & $4.0602$V                 & $4.0602$V       & $0\%$        \\ \hline
+		$0$V                   & $-1.030$mV           & $-3.090$mV                & $-6.200$mV      &              \\ \hline
+		$-1.3302$V             & $-1.3178$V           & $-3.9534$V                & $-3.9783$V      & $0.63\%$     \\ \hline
+	\end{tabular}
+	\caption{I tabellen ses resultaterne fra testen med forstærkeren, der har en faktor 3.}
+	\label{Tab:faktor3_test}
+\end{table}
+
+For $1.3554$V samt $0$V er spændingen kommet direkte fra en strømforsyning, men for at undersøge forstærkningen af $-1.3302$V er det nødsaget at benytte offsettet samt faktor 18 forstærkeren, da spændingsforsyningen ikke kan levere en negativ spænding. Det var derfor forventet, at der kunne være en større afvigelse på målingerne med $-1.3302$V spænding, da denne spænding skulle igennem flere kredsløb. Inputtet i offsettet (som kan ses på \figref{fig:Offset_generisk}) var $1.5170$V og udregnet på følgende måde:
+\begin{equation}\label{Udregnxfaktor3}
+( x - 1.5902V ) * 18 = -1.3302 \\
+x = 1.5163V
+\end{equation}
+Reference blev målt til $1.5902$V og via teorien vides det, at den ønskede spænding skulle være $-1.3302$V. I \eqref{Udregnxfaktor3} udregnes inputspændingen til offsettet til at være $1.5163$V. Denne blev sat til $1.5170$V, som gav et output på $-0.0722$V, der blev sendt ind i faktor 18 forstærkeren. Herefter var outputtet $-1.3178$V, som blev sendt ind i faktor 3 forstærkeren. Dette gav i gennemsnit outputtet $-3.9783$V, som ses i \tableref{Tab:faktor3_test}. Afvigelsen, som ville opstå grundet to ekstra kredsløb ift. de to andre målinger, ville være præsentabel for afvigelsen, som der også burde have været for de to andre spændingers tests. Der ses i \tableref{Tab:faktor3_test}, at der ikke opstod større forstyrrelser, som ville give ekstra afvigelse i det målte signal ift. det forventede signal. \\
+Der ses ud fra testen, at forstærkeren overholder kravene fra afsnit \ref{OpsamlingsAfs} på side \pageref{OpsamlingsAfs} samt ligger inde for tolerancerne.
