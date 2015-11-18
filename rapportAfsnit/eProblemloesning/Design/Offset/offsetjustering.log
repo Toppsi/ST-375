@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (MiKTeX 2.9) (preloaded format=pdflatex 2015.9.17)  18 NOV 2015 13:17
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (MiKTeX 2.9) (preloaded format=pdflatex 2015.9.17)  18 NOV 2015 14:26
 entering extended mode
 **offsetjustering.tex
 (offsetjustering.tex
@@ -668,7 +668,7 @@ Missing character: There is no H in font nullfont!
 Missing character: There is no ] in font nullfont!
 ! Undefined control sequence.
 l.8 \includegraphics
-                    [scale=1.2]{figures/cProblemloesning/Differensforstaerke...
+                    [scale=1.3]{figures/cProblemloesning/Differensforstaerke...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
@@ -684,7 +684,7 @@ Missing character: There is no e in font nullfont!
 Missing character: There is no = in font nullfont!
 Missing character: There is no 1 in font nullfont!
 Missing character: There is no . in font nullfont!
-Missing character: There is no 2 in font nullfont!
+Missing character: There is no 3 in font nullfont!
 Missing character: There is no ] in font nullfont!
 Missing character: There is no f in font nullfont!
 Missing character: There is no i in font nullfont!
@@ -1449,7 +1449,7 @@ Missing character: There is no H in font nullfont!
 Missing character: There is no ] in font nullfont!
 ! Undefined control sequence.
 l.23 \includegraphics
-                     [scale=1]{figures/cProblemloesning/Offset_generisk.png}
+                     [scale=0.45]{figures/cProblemloesning/Offset_generisk.png}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
@@ -1463,7 +1463,10 @@ Missing character: There is no a in font nullfont!
 Missing character: There is no l in font nullfont!
 Missing character: There is no e in font nullfont!
 Missing character: There is no = in font nullfont!
-Missing character: There is no 1 in font nullfont!
+Missing character: There is no 0 in font nullfont!
+Missing character: There is no . in font nullfont!
+Missing character: There is no 4 in font nullfont!
+Missing character: There is no 5 in font nullfont!
 Missing character: There is no ] in font nullfont!
 Missing character: There is no f in font nullfont!
 Missing character: There is no i in font nullfont!
@@ -1499,7 +1502,7 @@ Missing character: There is no t in font nullfont!
 ! Missing $ inserted.
 <inserted text> 
                 $
-l.23 ...[scale=1]{figures/cProblemloesning/Offset_
+l.23 ...ale=0.45]{figures/cProblemloesning/Offset_
                                                   generisk.png}
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
@@ -2689,15 +2692,82 @@ Missing character: There is no • in font cmr10!
 Missing character: There is no 1 in font nullfont!
 Missing character: There is no 0 in font nullfont!
 Missing character: There is no 0 in font nullfont!
-! Undefined control sequence.
-l.53 ... benyttes fire modstandere p√• $100$K$\Ohm
+! Missing $ inserted.
+<inserted text> 
+                $
+l.53 ...enyttes fire modstandere p√• $100$K$\Omega
                                                   $ til opbygningen af offse...
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
 
+Missing character: There is no t in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no l in font nullfont!
+Missing character: There is no o in font nullfont!
+Missing character: There is no p in font nullfont!
+Missing character: There is no b in font nullfont!
+Missing character: There is no y in font nullfont!
+Missing character: There is no g in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no g in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no a in font nullfont!
+Missing character: There is no f in font nullfont!
+Missing character: There is no o in font nullfont!
+Missing character: There is no f in font nullfont!
+Missing character: There is no f in font nullfont!
+Missing character: There is no s in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no . in font nullfont!
+Missing character: There is no D in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no s in font nullfont!
+Missing character: There is no s in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no b in font nullfont!
+Missing character: There is no l in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no v in font nullfont!
+Missing character: There is no m in font nullfont!
+Missing character: There is no √ in font nullfont!
+Missing character: There is no • in font nullfont!
+Missing character: There is no l in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no d in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no s in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no , in font nullfont!
+Missing character: There is no h in font nullfont!
+Missing character: There is no v in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no l in font nullfont!
+Missing character: There is no k in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no f in font nullfont!
+Missing character: There is no r in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no m in font nullfont!
+Missing character: There is no g in font nullfont!
+Missing character: There is no √ in font nullfont!
+Missing character: There is no • in font nullfont!
+Missing character: There is no r in font nullfont!
+Missing character: There is no i in font nullfont!
 ! Undefined control sequence.
 l.53 ...inden testen, hvilket fremg√•r i \tableref
                                                   {Tab:modstand_offset}.
@@ -2706,6 +2776,35 @@ of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
+
+Missing character: There is no T in font nullfont!
+Missing character: There is no a in font nullfont!
+Missing character: There is no b in font nullfont!
+Missing character: There is no : in font nullfont!
+Missing character: There is no m in font nullfont!
+Missing character: There is no o in font nullfont!
+Missing character: There is no d in font nullfont!
+Missing character: There is no s in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no a in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no d in font nullfont!
+! Missing $ inserted.
+<inserted text> 
+                $
+l.53 ...hvilket fremg√•r i \tableref{Tab:modstand_
+                                                  offset}.
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+! Extra }, or forgotten $.
+l.53 ... fremg√•r i \tableref{Tab:modstand_offset}
+                                                  .
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
 
 
 ! LaTeX Error: Environment table undefined.
@@ -2723,104 +2822,16 @@ or  <return>  to continue without it.
 Missing character: There is no √ in font cmti10!
 Missing character: There is no • in font cmti10!
 Missing character: There is no K in font nullfont!
-! Undefined control sequence.
-<recently read> \Ohm 
-                     
-l.59 		$100$K$\Ohm
-                  $       & $99.8$K$\Ohm$       & $0.2$\%               \\ \...
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
 Missing character: There is no K in font nullfont!
-! Undefined control sequence.
-<recently read> \Ohm 
-                     
-l.59 		$100$K$\Ohm$       & $99.8$K$\Ohm
-                                        $       & $0.2$\%               \\ \...
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
 Missing character: There is no % in font nullfont!
 Missing character: There is no K in font nullfont!
-! Undefined control sequence.
-<recently read> \Ohm 
-                     
-l.60 		$100$K$\Ohm
-                  $       & $99.7$K$\Ohm$       & $0.3$\%               \\ \...
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
 Missing character: There is no K in font nullfont!
-! Undefined control sequence.
-<recently read> \Ohm 
-                     
-l.60 		$100$K$\Ohm$       & $99.7$K$\Ohm
-                                        $       & $0.3$\%               \\ \...
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
 Missing character: There is no % in font nullfont!
 Missing character: There is no K in font nullfont!
-! Undefined control sequence.
-<recently read> \Ohm 
-                     
-l.61 		$100$K$\Ohm
-                  $       & $99.8$K$\Ohm$       & $0.2$\%               \\ \...
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
 Missing character: There is no K in font nullfont!
-! Undefined control sequence.
-<recently read> \Ohm 
-                     
-l.61 		$100$K$\Ohm$       & $99.8$K$\Ohm
-                                        $       & $0.2$\%               \\ \...
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
 Missing character: There is no % in font nullfont!
 Missing character: There is no K in font nullfont!
-! Undefined control sequence.
-<recently read> \Ohm 
-                     
-l.62 		$100$K$\Ohm
-                  $       & $99.8$K$\Ohm$       & $0.2$\%               \\ \...
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
 Missing character: There is no K in font nullfont!
-! Undefined control sequence.
-<recently read> \Ohm 
-                     
-l.62 		$100$K$\Ohm$       & $99.8$K$\Ohm
-                                        $       & $0.2$\%               \\ \...
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
 Missing character: There is no % in font nullfont!
 
 ! LaTeX Error: \caption outside float.
@@ -2889,8 +2900,8 @@ Missing character: There is no V in font nullfont!
 Missing character: There is no V in font nullfont!
 ! Undefined control sequence.
 \@sharp ->\multirow 
-                    {3}{*}{\textit {$V2$ / signal.}}
-l.74 ...{\multirow{3}{*}{\textit{$V2$ / signal.}}}
+                    {3}{*}{\textit {\begin {tabular}[c]{@{}l@{}}$V2$\\ signa...
+l.74 ...}[c]{@{}l@{}}$V2$\\ signal\end{tabular}}}}
                                                    & $1.8627$V    & $1.8$V  ...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -2914,6 +2925,7 @@ Missing character: There is no V in font nullfont!
 Missing character: There is no V in font nullfont!
 Missing character: There is no V in font nullfont!
 Missing character: There is no V in font nullfont!
+Missing character: There is no V in font nullfont!
 
 ! LaTeX Error: \caption outside float.
 
@@ -2922,7 +2934,7 @@ Type  H <return>  for immediate help.
  ...                                              
                                                   
 l.78 	\caption
-              {I tabellen ses det udregnede resultat for de tre forskellige ...
+              {I tabellen ses en oversigt over det udregnede resultat for de...
 
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -2942,17 +2954,13 @@ or  <return>  to continue without it.
 
 ! Undefined control sequence.
 l.81 I \tableref
-                {Tab:Offset_tes} betegner "$V1$ / ref." referencesp√¶ndingen...
+                {Tab:Offset_test} betegner "$V1$ / ref." referencesp√¶ndinge...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-Missing character: There is no √ in font cmr10!
-Missing character: There is no • in font cmr10!
-Missing character: There is no √ in font cmr10!
-Missing character: There is no • in font cmr10!
 Missing character: There is no √ in font cmr10!
 Missing character: There is no ¶ in font cmr10!
 Missing character: There is no √ in font cmr10!
@@ -3023,7 +3031,7 @@ Missing character: There is no V in font nullfont!
 Missing character: There is no 2 in font nullfont!
 ! Undefined control sequence.
 l.82 Der ses i \tableref
-                        {Tab:Offset_tes}, at der er en afvigelse imellem out...
+                        {Tab:Offset_test}, at der er en afvigelse imellem ou...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
@@ -3066,11 +3074,11 @@ LaTeX Warning: Reference `OpsamlingsAfs' on page  undefined on input line 82.
 
  
 Here is how much of TeX's memory you used:
- 25 strings out of 493673
- 328 string characters out of 3141524
+ 24 strings out of 493673
+ 325 string characters out of 3141524
  65455 words of memory out of 3000000
- 3471 multiletter control sequences out of 15000+200000
+ 3470 multiletter control sequences out of 15000+200000
  4294 words of font info for 16 fonts, out of 3000000 for 9000
  1025 hyphenation exceptions out of 8191
- 18i,13n,21p,809b,261s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 18i,14n,21p,810b,293s stack positions out of 5000i,500n,10000p,200000b,50000s
 !  ==> Fatal error occurred, no output PDF file produced!

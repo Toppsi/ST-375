@@ -5,7 +5,7 @@ Det analoge signal, der kommer fra accelerometeret, har et indbygget offset på 
 
 \begin{figure}[H]
 \centering
-\includegraphics[scale=1.2]{figures/cProblemloesning/Differensforstaerker_generisk.png}
+\includegraphics[scale=1.3]{figures/cProblemloesning/Differensforstaerker_generisk.png}
 \caption{På figuren er et generisk differens forstærker kredsløb illustreret. \cite{Nilsson2011}}
 \label{fig:Differensforstaerker_generisk}
 \end{figure}
@@ -20,7 +20,7 @@ V_o = \frac{R_b}{R_a} \cdot (v_b - v_a)
 I dette tilfælde kræves der ikke en forstærkning, hvorfor modstandene $R_{a}$ og $R_{b}$ skal være det samme. Da signalet ikke skal inverteres sendes accelerometerets output ind i den ikke-inverterende kanal. Offsettet, som i dette tilfælde er på $1.5915$V jævnført \ref{Mean_tid_0g} på side \pageref{Mean_tid_0g}, sendes ind i den inverterende kanal. Dette illustreres på figur \ref{fig:Offset_generisk}:
 \begin{figure}[H]
 \centering
-\includegraphics[scale=1]{figures/cProblemloesning/Offset_generisk.png}
+\includegraphics[scale=0.45]{figures/cProblemloesning/Offset_generisk.png}
 \caption{På figuren ses offsetjusteringens opbygning. $V1$ er referenceværdien, som sættes til $1.5915$V, og $Va$ er outputtet fra accelerometeret, som vil skabe inputtet $V2$ til operationsforstærkeren. Modstandene i kredsløbet er ens, hvilket medfører, at signalet ikke forstærkes. Grunden til at spændingsforsyningen er $\pm7$V er, at spændingsforsyningen til hele systemet er designet til at give et output på $\pm7$V. Derudover sikres der derved også, at ønskede signal ikke går i mætning.}
 \label{fig:Offset_generisk}
 \end{figure}
