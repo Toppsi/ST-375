@@ -32,7 +32,7 @@ For0V1mean = mean(For0V1.data)
 For0V2mean = mean(For0V2.data)
 For0V3mean = mean(For0V3.data)
 For0V = [For0V1mean For0V2mean For0V3mean];
-For0V1mean = mean(For0V)
+For0Vmean = mean(For0V)
 
 For266V1mean = mean(For266V1.data)
 For266V2mean = mean(For266V2.data)
