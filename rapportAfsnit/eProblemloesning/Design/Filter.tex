@@ -6,7 +6,7 @@ Efter signalet er blevet forstærket skal det filtreres, så alle de uønskede s
 Filtre kan laves i inverterende og ikke-inverterende konfigurationer. Der vælges i dette forsøg at benytte et ikke-inverterende filter, da dette har en høj indgangsimpedans. Herved forhindres loading af filtrets output. Loading defineres som effekten af, at et spændingsmålende instrument bruger strømmen i et kredsløb og kan være både ønsket og uønsket i et system. Der må eksempelvis gerne være loading, hvis det ønskes at tænde for en lampe eller en højtaler. Loading-effekten er derimod en uønsket effekt for dette projekts system, da der ønskes et lavt effektforbrug, hvilket giver en lang levetid. Loading reducerer den samlede strøm, som løber i kredsløbet, og trækker meget strøm fra batteriet. \\
 Hvis der vælges en inverterende konfiguration for filtret, falder den samlede resistans, og der kræves derfor mere strøm for at opretholde outputspændingsniveauet. Eftersom den ikke-inverterende forstærker i filteret har høj inputimpedans, hvilket vil sige, at modstanden i operationsforstærkeren har en høj værdi, vil filterets output ikke blive påvirket af loading. \cite{Webster2009,Carter2013,Karni2014}
 
-I afsnit \ref{FilterAfs} på side \ref{FilterAfs} blev karakteristikaene af lavpasfilteret bestemt. Der kræves en minimumsdæmpning af stopbåndet $(Amin)$ på 14 dB, der accepteres en maksimal variation af pasbåndet $(Amax)$ på 3 dB, knækfrekvensen $(\omega _p)$ er på 25 Hz, samt en stopbåndstærskel $( \omega _s)$ på 45 Hz. Nedenfor ses en illustration af hvad de forskellige karakteristka beskriver.
+I afsnit \ref{FilterAfs} på side \ref{FilterAfs} blev karakteristikaene af lavpasfilteret bestemt. Der kræves en minimumsdæmpning af stopbåndet $(Amin)$ på 14 dB, der accepteres en maksimal variation af pasbåndet $(Amax)$ på 3 dB, knækfrekvensen $(\omega _p)$ er på 25 Hz, samt en stopbåndstærskel $(\omega _s)$ på 45 Hz. Nedenfor ses en illustration af hvad de forskellige karakteristka beskriver.
 
 \begin{figure}[H]
 	\centering
@@ -33,7 +33,7 @@ N = 2.711 \approx 3
 \end{align}
 \noindent Ordenen af filtret rundes op til 3, da filterets orden kun kan angives i hele tal. Hvis kravene til filteret skal overholdes, skal der altid rundes opad ved udregning af orden.
 
-Der skal altså benyttes et 3. ordens lavpasfilter. Der findes to forskellige måder hvorpå det kan designes: Sallen-Key topologien (SKT) og Multiple Feedback toppologien (MFT). SKT-metoden er den mest anvendte og tillader separate gain indstillinger, hvorimod MFT-metoden benyttes i filter design med høj gain nøjagtighed eller høj Q værdi. For dette filter benyttes SKT. På \figref{fig:SallenKey1} ses et 1. ordens lavpasfilter og på \figref{fig:SallenKey2} ses et 2. ordens lavpasfilter designet efter SKT. \cite{Carter2013}
+Der skal benyttes et 3. ordens lavpasfilter. Der findes to forskellige måder hvorpå det kan designes: Sallen-Key topologien (SKT) og Multiple Feedback toppologien (MFT). SKT-metoden er den mest anvendte og tillader separate gain indstillinger, hvorimod MFT-metoden benyttes i filter design med høj gain nøjagtighed eller høj Q værdi. For dette filter benyttes SKT. På \figref{fig:SallenKey1} ses et 1. ordens lavpasfilter og på \figref{fig:SallenKey2} ses et 2. ordens lavpasfilter designet efter SKT. \cite{Carter2013}
 	
 \begin{figure}[H]
 	\centering
@@ -45,13 +45,13 @@ Der skal altså benyttes et 3. ordens lavpasfilter. Der findes to forskellige m�
 	\hfill
 	\begin{minipage}[b]{0.45\textwidth}
 		\includegraphics[width=\textwidth]{figures/cProblemloesning/Sallenlavpas.PNG}
-		\caption{På figuren ses en illutration af et 1. ordens unity-gain Sallen-Key lavpasfilter.}
+		\caption{På figuren ses en illutration af et 2. ordens unity-gain Sallen-Key lavpasfilter.}
 		\label{fig:SallenKey2}
 	\end{minipage}
 \end{figure}
 
-I designet af et 3. ordens filter designes både 1. og 2. orden i forlængelse af hinanden. Dette designes efter sallen-key metoden, hvor filtreret består af tre modstande og tre kondensatorer. Værdierne for modstandene kan udregnes for hhv. 1. orden \ref{Lavpas1Modstande} og for 2. orden \eqref{eq:LavpasModstande} med følgende ligninger:
-\begin{equation} \label{Lavpas1Modstande}
+I designet af et 3. ordens filter designes både et 1. og et 2. ordens filter i forlængelse af hinanden. Dette designes efter sallen-key metoden, hvor filtreret består af tre modstande og tre kondensatorer. Værdierne for modstandene kan udregnes med 1. orden ligning \ref{eq:Lavpas1Modstande} og for 2. orden ligning \ref{eq:LavpasModstande}. 
+\begin{equation} \label{eq:Lavpas1Modstande}
 R_{1} = \frac{a_1}{2 \cdot \pi \cdot f_c \cdot C_1} \\
 \end{equation}
 \begin{equation}
@@ -70,7 +70,7 @@ I ligning \ref{eq:LavpasModstande} står C variablene for kondensatorer, R varia
 C_2 \geq 100\text{nF} \frac{4\cdot 1}{1.000^2} = C_2 \geq 200\text{nF}
 \end{equation}
 
-\noindent Ud fra ovenstående ligning vælges $C_2$ til at være 480nF, dermed kan $R_1$ for og $R_2$ beregnes med ligning \ref{eq:LavpasModstande}. For 1. ordens filteret benyttes \ref{eq:Lavpas1Modstande} til at beregne $R_1$.
+\noindent Ud fra ovenstående ligning vælges $C_2$ til at være 480nF for at opfylde ligning \ref{eq:kondensator}.  Herefter kan $R_1$ for og $R_2$ beregnes med ligning \ref{eq:LavpasModstande}. For 1. ordens filteret benyttes \ref{eq:Lavpas1Modstande} til at beregne $R_1$.
 \begin{equation} \label{eq:Lavpas1Modstande}
 R_{1} = \frac{1}{2 \cdot \pi \cdot 25 \cdot 100nF} R_{1} = 63661.98 \Omega
 \end{equation}
@@ -82,27 +82,80 @@ R_{1,2} = \frac{1.0000 \cdot 480\text{nF} \pm \sqrt{1.0000^2 \cdot 480\text{nF}^
 \begin{figure}[H]
 	\centering
 	\includegraphics[scale=0.58]{figures/cProblemloesning/Lavpasfilter1_LTspice.PNG}
-	\caption{Figuren ses det teoretiske kredsløb for lavpasfilteret konstrueret i LTspice. Værdierne $R_{2}$ og $R_{3}$ på figuren svarer til de udregnede værdier $R_{1}$ og $R_{2}$ for 2. ordens filteret i ligning \ref{eq:2ordenmodstand}}
+	\caption{Figuren viser det teoretiske kredsløb for lavpasfilteret konstrueret i LTspice. Værdierne $R_{2}$ og $R_{3}$ på figuren svarer til de udregnede værdier $R_{1}$ og $R_{2}$ for 2. ordens filteret i ligning \ref{eq:2ordenmodstand}}
 	\label{fig:lavpasfilter1_LTspice}
 \end{figure}
 
 \subsubsection{Simulering}
-For at udføre en simulering af et lavpasfilter foretages der en AC-analyse som beskriver forholdet mellem frekvens og dæmpningen målt i dB. Knæk- og stopfrekvensen er valgt til hhv. 25Hz og 45Hz på baggrund af opstillet krav i afsnit \ref{FilterAfs} på side \pageref{FilterAfs} samt resultaterne fra pilotforsøget. Til simuleringen af lavpasfilteret er der anvendt LTspice operationsforstærker LT1028A. Der undersøges for om kravene stemmer overens ved at betragte et bodeplot over det simulerede 3. ordens filter.
+For at udføre en simulering af et lavpasfilter foretages der en AC-analyse som beskriver forholdet mellem frekvens og dæmpningen. Knæk- og stopfrekvensen er valgt til hhv. 25Hz og 45Hz på baggrund af opstillet krav i afsnit \ref{FilterAfs} på side \pageref{FilterAfs} samt resultaterne fra pilotforsøget\ref{sec:pilotforsoeg}. Til simuleringen af lavpasfilteret er der anvendt LTspice operationsforstærker LT1028A. Der undersøges for om kravene stemmer overens ved at betragte et bodeplot over det simulerede 3. ordens filter.
 
 \begin{figure}[H]
 	\centering
 	\includegraphics[scale=0.4]{figures/cProblemloesning/Lavpasfilter_LTspice.PNG}
-	\caption{Figuren illustrerer kredsløbet for lavpasfilteret konstrueret i LTspice}
+	\caption{Figuren illustrerer kredsløbet for 3. ordens lavpasfilter konstrueret i LTspice}
 	\label{fig:lavpasfilter_LTspice}
 \end{figure}
 
-Ud fra det simulerede kredsløb undersøges det, hvorvidt knækfrekvensen stemmer overens men den tilhørende amplitude ved 25 Hz og 45 Hz. Det aflæses på grafen i LTspice at knækfrekvensen ved 25Hz svarer til en amplitude på 3dB, hvilket er illuseret i \figref{fig:Lavpasfiltergraf_LTspice}. Der aflæses, at der ved 45 Hz er en dæmpning på 15dB. Dette overholder de opstillede krav på minimum 14 dB. Sammenholdt med kravspecifikationerne i afsnittet \ref{FilterAfs} på side \pageref{FilterAfs} er lavpasfilteret godkendt.
+Ud fra det simulerede kredsløb undersøges det, hvorvidt knækfrekvensen stemmer overens men den tilhørende amplitude ved hhv. 25 Hz og 45 Hz. Det aflæses på grafen i LTspice at knækfrekvensen ved 25Hz svarer til en amplitude på 3dB, hvilket er illuseret i \figref{fig:Lavpasfiltergraf_LTspice}. Der aflæses, at der ved 45 Hz er en dæmpning på 15dB. Dette overholder de opstillede krav på minimum 14 dB. Sammenholdt med kravspecifikationerne i afsnittet \ref{FilterAfs} på side \pageref{FilterAfs} er lavpasfilteret godkendt.
 
 \begin{figure}[H]
 	\centering
 	\includegraphics[scale=0.4]{figures/cProblemloesning/Lavpasfiltergraf_LTspice1.PNG}
-	\caption{Figuren illustrerer kredsløbet for lavpasfilteret konstrueret i LTspice}
+	\caption{Figuren illustrerer en graf over frekvensen målt i Hz over dæmpningen målt i dB af det 3. ordens lavpasfilter konstrueret i LTspice}
 	\label{fig:lavpasfilter_LTspice}
 \end{figure}
 
 \subsubsection{Implementering og test}
+Der ses på \figref{fig:lavpasfilter_LTspice} at der benyttes 3 modstande og 3 kondensatorer til at designe kredsløbet. Reelt findes der ikke de anvendte modstande og kondensatorer, derfor benyttes der dem som kommer tættest på det teoretiske, dette gøres  blandt andet ved at sætte modstande samt kondensatorer i henholdsvis serie- og parallelforbindelse. For $R_{1}$ og $R_{2}$ anvendes der modstande i parallelforbindelse og for $R_{3}$ i serieforbindelse. For $C_3$ anvendes der kondensatorer i parallelforbindelse. Der blev målt 3 forskellige modstande og kondensatorer for at finde dem der afviger mindst fra det teoretiske, dette er illustreret i \ref{Tab:Maalingfilter}
+
+\begin{table}[H]
+	\centering
+	\begin{tabular}{|l|l|l|l|}
+		\hline
+						& \textit{Teoretisk}			& \textit{Måling} 	&  \textit{Afvigelse} \\ \hline
+	 \textbf{$R_{1}:$} 	& $1M\Omega$ 				& $1.00462M\Omega$ 		& $0.46\%$  \\ \hline
+				//		& $68K\Omega$ 				& $68.035K\Omega$ 		& $0.051\%$  \\ \hline
+	 \textbf{$R_{2}:$} 	& $1M\Omega$ 				& $1.00373K\Omega$		& $0.37\%$	\\ \hline
+	 			//		& $47K\Omega$ 				& $47.054K\Omega$		& $0.11\%$ 	\\ \hline
+	 \textbf{$R_{3}:$} 	& $18K\Omega$				& $17.960\Omega$ 		& $0.22\%$ 	\\ \hline
+	 					& $820\Omega$				& $816.0\Omega$			& $0.49\%$ 	\\ \hline
+	 \textbf{$C_{1}:$} 	& $100n$ 					& $98n$ 					& $2\%$      \\ \hline
+	 \textbf{$C_{2}:$} 	& $470n$						& $464n$					& $1.29\%$  		\\ \hline
+	 			//		& $10n$						& $9n$					& $11\%$  		\\ \hline
+	\textbf{$C_{3}:$}	& $100n$ 					& $98n$ 					& $2\%$      \\ \hline
+	\end{tabular}
+	\caption{I tabellen ses der, at de anvendte modstande og kondensatorer afviger fra den teoretiske værdi, hvilket er forventet af reelle komponenter. Det er en acceptabel afvigelse, så modstandene kan derfor anvendes til implementering}
+	\label{Tab:Maalingfilter}
+\end{table}
+
+Herefter implementeres kredsløbet. I testen anvendes en spændingsforsyning på 7V og en funktionsgenerator som inputsignal, mens der anvendes et multimeter til aflæsning af dæmpningen. Funktionsgeneratoren sættes til de ønskede frekvenser i intervaller af $1Hz$ fra $15Hz$ til $50Hz$. Dæmpningen aflæses for hvert frekvens. Ud fra disse målinger plottes en graf i MatLab, hvilket er illustreret på \ref{fig:Lavpas_Matlab}.  
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=0.4]{figures/cProblemloesning/Lavpas_Matlab.PNG}
+	\caption{Figuren viser en graf over de målte frekvenser målt i Hz som funktion af dæmpningerne målt i dB. På grafen er der angivet knækfrekvens og stopbåndfrekvens}
+	\label{fig:Lavpas_Matlab}
+\end{figure}
+
+Sammenlignes grafen \ref{Lavpas_Matlab} for det testede kredsløb med grafen \ref{fig:lavpasfilter_LTspice} for det simulerede kredsløb. 
+Simuleret:
+25.009Hz : -3.029dB
+45.001Hz : -15.437dB
+Test:
+25 Hz    : -2.663 dB
+45 Hz    : -14.881 dB
+
+
+\begin{table}[H]
+	\centering
+	\begin{tabular}{|l|l|l|l|l|}
+		\hline
+        & \textit{Krav} 			& \textit{Test}  &\textit{Afvigelse} 	&  \textit{Afvigelse fra Tolerance} \\ \hline
+Knækfrekvens	 & $25Hz$ 			& $25Hz$			& $0\%$ &  \\ \hline
+Stopbåndsfrekvens & $45Hz$		& $45Hz$			& $0\%$ & \\ \hline
+Dæmpning på stopbånd & $14dB$    & $14.881dB$    & $5.9\%$  & \\ \hline
+Dæmpning på pasbånd & $3dB$		& $-2.663dB$	    & $12.65\%$ & \\ \hline
+	\end{tabular}
+	\caption{Skriv tekst her}
+	\label{Tab:Tolerance}
+\end{table}
