@@ -23,11 +23,11 @@ Denne forstærker undersøges ligeledes i tre simuleringer for, hvorledes forst�
 	\begin{tabular}{|l|l|l|l|l|}
 		\hline
 		\multicolumn{1}{|c|}{\textit{Inputsignalet}} & \multicolumn{1}{c|}{\textit{Forstærkning}} & \multicolumn{1}{c|}{\textit{Forventet outputsignal}}                      & \multicolumn{1}{c|}{\textit{Outputsignalet}} & \multicolumn{1}{c|}{\textit{Afvigelse}} \\ \hline
-		$4.8816$V     & 3   & \begin{tabular}[c]{@{}l@{}}Forventer mætning\\ $14.6448$V\end{tabular}  & $5.0530$V   & $\times$     \\ \hline
-		$1.3554$V     & 3   & $4.0662$V                                                               & $4.0662$V   & $0\%$     \\ \hline
-		$0$V          & 3   & $0$V                                                                    & $0$V        & $0\%$     \\ \hline
-	   -$1.3302$V     & 3   & -$3.9906$V                                                              & -$3.9906$V  & $0\%$     \\ \hline
-	   -$4.7880$V     & 3   & \begin{tabular}[c]{@{}l@{}}Forventer mætning\\ -$14.3640$V\end{tabular} & -$5.0527$V  & $\times$     \\ \hline
+		$4.8816$V     & 3   & \begin{tabular}[c]{@{}l@{}}Forventer mætning\\ $14.6448$V\end{tabular}  & $5.4764$V   & $\times$     \\ \hline
+		$1.3554$V     & 3   & $4.0662$V                                                               & $4.0661$V   & $0.0025\%$     \\ \hline
+		$0$V          & 3   & $0$V                                                                    & $33.6527\mu $V        & $\approx 0\%$     \\ \hline
+	   -$1.3302$V     & 3   & -$3.9906$V                                                              & -$3.9904$V  & $0.005\%$     \\ \hline
+	   -$4.7880$V     & 3   & \begin{tabular}[c]{@{}l@{}}Forventer mætning\\ -$14.3640$V\end{tabular} & -$5.4773$V  & $\times$     \\ \hline
 	\end{tabular}
 		\caption{I tabellen ses resultaterne af de fem simuleringer.}
 		\label{tab:forstarker3_simT}
@@ -38,7 +38,7 @@ Der ses, at der ingen afvigelse er. Kredsløbet fungere rent teoretisk med ideel
 \begin{figure}[H]
 	\centering
 	\includegraphics[scale=0.4]{figures/cProblemloesning/Forstaerker_faktor3_simulering.PNG}
-	\caption{På figuren ses simuleringen af $1.3554$V input, som giver $4.0662$V i output. Der er altså sket en forstærkning med en faktor $3$.}
+	\caption{På figuren ses simuleringen af $1.3554$V input, som giver $4.0661$V i output. Der er altså sket en forstærkning med en faktor $3$.}
 	\label{fig:faktor3_simulering}
 \end{figure}
 \noindent Der ses på afvigelserne, at der arbejdes med ideelle komponenter, da der er en meget lav afvigelse i outputtet ift. det forventede output. Det er herved bevist, at kredsløbet fungerer teoretisk og kan derfor implementeres.
