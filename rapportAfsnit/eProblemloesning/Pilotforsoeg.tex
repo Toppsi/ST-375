@@ -1,6 +1,6 @@
 % !TeX spellcheck = da_DK
 \section{Pilotforsøg}\label{Sec:Pilotforsoeg}
-Det er nødvendigt at vide hvilke frekvenser af signalet der er støj på, før systemet kan designes. Grunden til dette er, at signalet skal aktivere komponenter senere i systemet og skal derfor være uden støjsignaler for ikke at påvirke outputtet. For at undgå dette frafiltreres støjsignaler. Derudover er det nødvendigt at vide, hvilket outputsignal accelerometeret giver ift. den valgte hældningsgrad. Dette gøres ud fra sensitiviteten, der måles. Ud fra disse oplysninger er det muligt at designe de enkelte blokke i systemet.% Oplysningerne findes på baggrund af et pilotforsøg. 
+Det er nødvendigt at kunne skelne det reelle signal fra støjkomponenter, før systemet kan designes. Signalet skal aktivere komponenter i slutningen af det analoge system og skal derfor være adskilt fra støj, der kan påvirke outputtet. For at undgå dette frafiltreres støjsignaler. Derudover er det nødvendigt at vide, hvilket outputsignal accelerometeret giver ift. den valgte hældningsgrad. Dette gøres ud fra sensitiviteten, der måles. Ud fra disse oplysninger er det muligt at kravspecificere de enkelte blokke i systemet.% Oplysningerne findes på baggrund af et pilotforsøg. 
 
 \subsection{Formål med pilotforsøg}
 \begin{enumerate}
@@ -31,40 +31,40 @@ Støjfrekvenserne i outputsignalet identificeres ved først at måle en baseline
 For at simulere den påvirkning, accelerometeret udsættes for og identificere den mulige støj ved en rotation, roteres accelerometret i en langsom rotation fra $0^{\circ}$ til $90^{\circ}$ til både højre og venstre. Disse målinger vil identificere minimum og maksimum outputsignal, som accelerometeret kan afgive i dette tilfælde, samt kontrollere om offset og sensitivitet informationerne fra accelerometerets datablad stemmer overens med det målte data. \\
 Inden, under og efter forsøget måles temperaturen i lokalet, da denne kan have en effekt på accelerometerets sensitivitet. \cite{Devices2009}
 
-\subsection{Forsøget}
+\subsection{Forsøgsopsætning på breadboard}
 \textbf{Opsætning}\\
-Der ses et billede af den samlede opsætningen på \figref{pforsoeg1}.
+Der ses et billede af forsøgsopsætningen på breadboardet på \figref{pforsoeg1}.
 \begin{itemize}
 \item Accelerometeret tilkobles breadboardet.
 \item To kondensatorer på $0.1\mu$F tilkobles breadboardet. Kondensatorererne er valgt på baggrund af databladet for acceleorometeret ift. power supply decoupling og båndbredde.\fxnote{Den som sidder på pin $1$ og $2$ i accelerometeret fjerner støj fra strømforsygningen, mens kondensatoren fra pin $3$ giver en båndbredde på $50Hz$.}
-\item Accelerometeret tilnyttes en forsyningsspænding på $5V$.
-\item Outputtet fra systemet sendes igennem NI USB-6009.
-\item Signalet fra NI USB-6009 sendes igennem USI-01. \fxnote{USB isolator}
+\item Accelerometeret tilnyttes en forsyningsspænding på $7V$ - en regulator sikrer at det kun forsynes med en spænding indenfor dets arbejdsområde.
+\item Outputtet fra systemet sendes igennem en ADC af typen NI USB-6009.
+\item Signalet fra NI USB-6009 sendes igennem en USB-isolator af typen USI-01.
 \item Outputsignalet fra USI-01 sendes ind i computeren, hvor det optages med ScopeLogger og behandles i MATLAB R2015a.
 \end{itemize}
 
 \begin{figure}[H]
 	\centering
 	\includegraphics[scale=0.15]{figures/cProblemloesning/PF2.jpg}
-	\caption{På billedet ses opsætningen på breadboardet. De røde ledninger symboliserer inputtet fra den $5V$ spændingsforsyning. De sorte ledninger fungerer som ground. Den gule ledning fungerer som en leder for outputtet fra accelerometerets pågældende akse (kan skiftes imellem række $15$, $16$ og $17$ alt efter hvilken akse, der skal måles på). Den grønne ledning symboliserer outputtet fra breadboardet, som sendes til NI USB-6009.}
+	\caption{På billedet ses opsætningen på breadboardet. De røde ledninger symboliserer inputtet fra den $5V$ spændingsforsyning. De sorte ledninger leder til ground. Den gule ledning fungerer som en leder for outputtet fra accelerometerets pågældende akse (kan skiftes imellem række $15$, $16$ og $17$ alt efter hvilken akse, der skal måles på). Den grønne ledning symboliserer outputtet fra kredsløbet, som sendes til NI USB-6009.}
 	\label{pforsoeg1}
 \end{figure}
 
 \subsection{Fremgangsmåde}
 Hele pilotforsøgets opsætning ses på \figref{pforsoeg2}. \\
 For at måle $0g$ påvirkning på accelerometerets x-akse, lægges det fladt ned på et plant bord, som er tjekket med et vaterpas. Målingen gøres over tre omgange i $30$ sekunder. Herefter holdes accelerometeret fast på en vinkel, hvor ledningerne påsættes med hæftemasse. Accelerometeret sættes så der igen måles på x-aksen, når der sker en rotation til højre og venstre. Vinklen sættes således, at der måles $1g$ påvirkning i positiv retning og negativ retning, hvilket svarer til $\pm90^{\circ}$ fra accelerometerets nulpunkt. \\
-Dette giver tre baselines for hver g påvirkning, som optages og gemmes i ScopeLogger. %Herudover måles en baseline for g påvirkningen af accelerometeret ved $8^{\circ}$ og $13^{\circ}$. Dette gøres ved at holde accelerometeret i 30 sekunder på $8^{\circ}$ og $13^{\circ}$ henholdsvis til højre og venstre. Herved fås 4 baselines, som optages og gemmes i ScopeLogger. 
+Dette giver tre baselines for hver g påvirkning, som opsamles og gemmes i ScopeLogger. %Herudover måles en baseline for g påvirkningen af accelerometeret ved $8^{\circ}$ og $13^{\circ}$. Dette gøres ved at holde accelerometeret i 30 sekunder på $8^{\circ}$ og $13^{\circ}$ henholdsvis til højre og venstre. Herved fås 4 baselines, som optages og gemmes i ScopeLogger. 
 Til sidst måles g påvirkningen af accelerometeret under rotation fra $0^{\circ}$ til $\pm$ $90^{\circ}$ for både højre og venstre. Her måles $10$ sekunders baseline inden og efter rotationen, som varer $10$ sekunder og foretages langsomt og kontrolleret. Disse to målinger optages og gemmes ligeså i ScopeLogger. \\
-Alt data vil efterfølgende blive behandlet i MATLAB R2015a, hvor der beregnes en gennemsnitsværdi for henholdsvis de tre baselines målt ved $0g$ påvirkning samt $1g$ påvirkning i positiv retning og negativ retning. Der foretages desuden en Fast Fourier Transformation (FFT) på de ni målinger (tre målinger ved hver g påvirkning). FFT foretages for at få en repræsentation af støj på signalet. Formålet med at optage en baseline er, at man kan se, hvilken påvirkning omgivelserne har på signalet, da der ikke er nogen bevægelse på disse.
+Alt data vil efterfølgende blive behandlet i MATLAB R2015a, hvor der beregnes en gennemsnitsværdi for henholdsvis de tre baselines målt ved $0g$ påvirkning samt $1g$ påvirkning i positiv retning og negativ retning. Der foretages desuden en Fast Fourier Transformation (FFT) på de ni målinger (tre målinger ved hver g påvirkning). FFT foretages for at få en grafisk repræsentation af det målte signal i frekvensdomænet. Formålet med at optage en baseline er, at man kan se, hvilken påvirkning omgivelserne har på signalet, da der ikke er nogen bevægelse på disse.
 
 \begin{figure}[H]
 	\centering
 	\includegraphics[scale=0.14]{figures/cProblemloesning/Pilotforsoeg1_2.jpg}
-	\caption{På billedet ses (fra venstre til højre) den 5V spændingsforsyning, som leder strømmen til- og ground fra breadboardet. Fra breadboardet sendes outputtet videre til NI USB-6009. Herefter ledes signalet igennem USI-01 og til sidst ind i computeren, hvor det optages i ScopeLogger. Over breadboardet i midten på billedet ses vaterpasset. Forrest i midten på billedet ses accelerometret fastgjort på vinklen.}
+	\caption{På billedet ses (fra venstre til højre) den 5V spændingsforsyning, som leder strømmen til og fra ground fra breadboardet. Fra breadboardet sendes outputtet videre til ADC'en(NI USB-6009). Herefter ledes signalet igennem USB-isolatoren(USI-01) og til sidst ind i computeren, hvor det optages i ScopeLogger. Over breadboardet i midten på billedet ses vaterpasset. Forrest i midten på billedet ses accelerometret fastgjort på vinklen.}
 	\label{pforsoeg2}
 \end{figure}
 
-\subsection{Databehandling}\label{Sec_Pilot_Data}
+\subsection{Resultater}\label{Sec_Pilot_Data}
 I dette afsnit vil der grafisk blive vist, hvordan accelerometerets output ændrer sig ift. g påvirkning. På \figref{Fig:Pilot_Tid} ses accelerometerets output i tidsdomænet. Der udføres herefter en FFT på de tre målinger for hver baseline, hvilket giver ni grafiske skiltninger af, hvorledes accelerometerets egne frekvenser adskiller sig fra støjfrekvenser.
 
 \begin{figure}[H]
