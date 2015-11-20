@@ -137,25 +137,21 @@ Herefter implementeres kredsløbet. I testen anvendes en spændingsforsyning på
 	\label{fig:Lavpas_Matlab}
 \end{figure}
 
-Sammenlignes grafen \ref{Lavpas_Matlab} for det testede kredsløb med grafen \ref{fig:lavpasfilter_LTspice} for det simulerede kredsløb. 
-Simuleret:
-25.009Hz : -3.029dB
-45.001Hz : -15.437dB
-Test:
-25 Hz    : -2.663 dB
-45 Hz    : -14.881 dB
+Sammenlignes grafen \ref{Lavpas_Matlab} for det testede kredsløb med grafen \ref{fig:lavpasfilter_LTspice} for det simulerede kredsløb ses der en ændring i frekvens og dæmpning. 
 
 
 \begin{table}[H]
 	\centering
-	\begin{tabular}{|l|l|l|l|l|}
+	\begin{tabular}{|l|l|l|l|}
 		\hline
-        & \textit{Krav} 			& \textit{Test}  &\textit{Afvigelse} 	&  \textit{Afvigelse fra Tolerance} \\ \hline
+   & \textit{Krav} 	& \textit{Test}  &\textit{Afvigelse} \\ \hline
 Knækfrekvens	 & $25Hz$ 			& $25Hz$			& $0\%$ &  \\ \hline
 Stopbåndsfrekvens & $45Hz$		& $45Hz$			& $0\%$ & \\ \hline
 Dæmpning på stopbånd & $14dB$    & $14.881dB$    & $5.9\%$  & \\ \hline
-Dæmpning på pasbånd & $3dB$		& $-2.663dB$	    & $12.65\%$ & \\ \hline
+Dæmpning på pasbånd & $3dB$		& $2.663dB$	    & $12.65\%$ & \\ \hline
 	\end{tabular}
-	\caption{Skriv tekst her}
+	\caption{Afvigelse_filter}
 	\label{Tab:Tolerance}
 \end{table}
+
+Ud fra de testede værdier i \ref{Tab:Tolerance} og kravspecifikationer \ref{filterAfs) er der er ingen afvigelse på knækfrekvensen og stopbåndsfrekvensen. Der er en ændring i forhold til dæmpningen for både stop- og pasbånd på hhv. $5.9\%$ og $12.65$ i forhold til kravet. I forhold til tolerance i afsnit \ref{filterAfs) skulle dæmpningen på stopbåndet være minimum $14 dB$ og have en afvigelse på $+10\%$. Denne tolerance overholdes da det maksimale for dæmpningen af stopbåndet er $15.4dB$. For pasbåndet skulle dæmpningen maksimalt være $3dB$ og have en afvigelse på $-15\%$. Dette vil sige at testen passer inden for tolerance, da pasbåndet minimalt må være $2.55dB$. På baggrund af dette accepteres afvigelserne for testen.
