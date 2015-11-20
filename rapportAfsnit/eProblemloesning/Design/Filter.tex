@@ -137,21 +137,36 @@ Herefter implementeres kredsløbet. I testen anvendes en spændingsforsyning på
 	\label{fig:Lavpas_Matlab}
 \end{figure}
 
-Sammenlignes grafen \ref{Lavpas_Matlab} for det testede kredsløb med grafen \ref{fig:lavpasfilter_LTspice} for det simulerede kredsløb ses der en ændring i frekvens og dæmpning. 
+%Sammenlignes værdierne fra \ref{Lavpas_Matlab} for det testede kredsløb med værdierne fra \ref{fig:lavpasfilter_LTspice} for det simulerede kredsløb ses der en ændring i frekvens og dæmpning, hvilket også er forventet grundet andre kodensatorer og modstande. 
 
+%\begin{table}[H]
+%	\centering
+%	\begin{tabular}{|l|l|l|l|}
+%		\hline
+ %  & \textit{Simulering} 	& \textit{Test}  &\textit{Afvigelse} \\ \hline
+%Knækfrekvens	 & $25Hz$ 			& $25.0308Hz$			& $4\%$  \\ %\hline
+%Stopbåndsfrekvens & $45Hz$		& $45.0816Hz$			& $0.18\%$ \\ \hline
+%Dæmpning på stopbånd & $15.489dB$  & $14.881dB$     & $9.61\%$  \\ \hline
+%Dæmpning på pasbånd & $3.0273dB$	  & $2.663dB$  & $13.68\%$  \\ \hline
+%	\end{tabular}
+%	\caption{I tabellen ses afvigelserne for hhv. knækfrekvens, stopbåndsfrekvens og dæmpning af stopbånd og pasbånd ift. simlering og test}
+%	\label{Tab:Afvigelse_simulering}
+%\end{table}
+
+Ud fra de testede værdier i \ref{Tab:Tolerance} og kravspecifikationer \ref{filterAfs) er der er ingen afvigelse på knækfrekvensen og stopbåndsfrekvensen. Der er en ændring i forhold til dæmpningen for både stop- og pasbånd på hhv. $5.9\%$ og $12.65$ i forhold til kravet.
 
 \begin{table}[H]
 	\centering
 	\begin{tabular}{|l|l|l|l|}
 		\hline
    & \textit{Krav} 	& \textit{Test}  &\textit{Afvigelse} \\ \hline
-Knækfrekvens	 & $25Hz$ 			& $25Hz$			& $0\%$ &  \\ \hline
-Stopbåndsfrekvens & $45Hz$		& $45Hz$			& $0\%$ & \\ \hline
-Dæmpning på stopbånd & $14dB$    & $14.881dB$    & $5.9\%$  & \\ \hline
-Dæmpning på pasbånd & $3dB$		& $2.663dB$	    & $12.65\%$ & \\ \hline
+Knækfrekvens	 & $25Hz$ 			& $25Hz$			& $0\%$  \\ \hline
+Stopbåndsfrekvens & $45Hz$		& $45Hz$			& $0\%$ \\ \hline
+Dæmpning på stopbånd & $14dB$    & $14.881dB$    & $5.9\%$  \\ \hline
+Dæmpning på pasbånd & $3dB$		& $2.663dB$	    & $12.65\%$ \\ \hline
 	\end{tabular}
-	\caption{Afvigelse_filter}
+	\caption{I tabellen ses afvigelserne for hhv. knækfrekvens, stopbåndsfrekvens og dæmpning af stopbånd og pasbånd ift. krav og test}
 	\label{Tab:Tolerance}
 \end{table}
 
-Ud fra de testede værdier i \ref{Tab:Tolerance} og kravspecifikationer \ref{filterAfs) er der er ingen afvigelse på knækfrekvensen og stopbåndsfrekvensen. Der er en ændring i forhold til dæmpningen for både stop- og pasbånd på hhv. $5.9\%$ og $12.65$ i forhold til kravet. I forhold til tolerance i afsnit \ref{filterAfs) skulle dæmpningen på stopbåndet være minimum $14 dB$ og have en afvigelse på $+10\%$. Denne tolerance overholdes da det maksimale for dæmpningen af stopbåndet er $15.4dB$. For pasbåndet skulle dæmpningen maksimalt være $3dB$ og have en afvigelse på $-15\%$. Dette vil sige at testen passer inden for tolerance, da pasbåndet minimalt må være $2.55dB$. På baggrund af dette accepteres afvigelserne for testen.
+I forhold til tolerance i afsnit \ref{filterAfs) skulle dæmpningen på stopbåndet være minimum $14 dB$ og have en afvigelse på $+10\%$. Denne tolerance overholdes da det maksimale for dæmpningen af stopbåndet er $15.4dB$. For pasbåndet skulle dæmpningen maksimalt være $3dB$ og have en afvigelse på $-15\%$. Dette vil sige at testen passer inden for tolerance, da pasbåndet minimalt må være $2.55dB$. På baggrund af dette accepteres afvigelserne for testen.
