@@ -32,19 +32,19 @@ Der foretages tre simuleringer i LTspice - en for hhv. den højeste- og laveste 
 	\begin{tabular}{|l|l|l|l|l|}
 		\hline
 		\multicolumn{1}{|c|}{\textit{Inputsignal}} & \multicolumn{1}{c|}{\textit{Offset}} & \multicolumn{1}{c|}{\textit{Forventet outputsignal}} & \multicolumn{1}{c|}{\textit{Outputsignalet}} & \multicolumn{1}{c|}{\textit{Afvigelse}} \\ \hline
-		$1.8627$V     & $1.5915$V    & $0.2712$V     & $0.2712$V     & $0$\%              \\ \hline
-		$1.5915$V     & $1.5915$V    & $0$V          & $217.850$pV   & $\approx 0$\%      \\ \hline
-		$1.3254$V     & $1.5915$V    & -$0.2661$V    & $0.2661$V      & $0$\%                \\ \hline
+		$1.8627$V     & $1.5915$V    & $0.2712$V     & $0.2711684$V     & $0.0117$\%              \\ \hline
+		$1.5915$V     & $1.5915$V    & $0$V          & -$21.8194\mu $V   & $\approx 0$\%      \\ \hline
+		$1.3254$V     & $1.5915$V    & -$0.2661$V    & -$0.2661122$V      & $0.0046$\%                \\ \hline
 	\end{tabular}
 	\caption{I tabellen ses resultaterne fra simuleringerne af offsettet med forskellige inputs.}
 	\label{Tab:offset_sim}
 \end{table}
-\noindent Der ses, at der ingen afvigelse er imellem de forventede outputsignal og det simulerede outputsignal. Dette betyder, at kredsløbet fungerer rent teoretisk med ideelle komponenter, som bliver anvendt i LTspice. På \figref{fig:Offset_simulering} ses simuleringen af $1.8627$V input fra accelerometret.
+\noindent Der ses, at der ingen afvigelse er imellem de forventede outputsignal og det simulerede outputsignal. Dette betyder, at kredsløbet fungerer rent teoretisk med ideelle komponenter, som bliver anvendt i LTspice. På \figref{fig:Offset_simulering} ses simuleringen af $1.5915$V input fra accelerometret.
  
 \begin{figure}[H]
 \centering
 \includegraphics[scale=0.4]{figures/cProblemloesning/Offset_simulering.png}
-\caption{På figuren ses en simulering af $1.8627$V input, hvilket giver et output på $0.2712$V.}
+\caption{På figuren ses en simulering af $1.5915$V input, hvilket giver et output på $\approx 0$V.}
 \label{fig:Offset_simulering}
 \end{figure}
 
