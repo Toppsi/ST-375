@@ -24,18 +24,18 @@ Tærskelværdierne er som jævnført afsnit \ref{KomparatorAfs} udregnet til at 
 \item $25^{\circ}$ = $4.0662$V
 \item -$25^{\circ}$ = -$3.9906$V
 \end{itemize}
-%Der vælges en justerbar mikropower spændingsreference (shunt-reference LM385), som skal levere minimum $4.0662$V til spændingstræet ved et ideelt kredsløb, men skal i praksis kunne levere mere. Spændingsreferencen indgår som del af en variabel spændingsdeler og bruges hvis spændingen falder over tid, da der anvendes et $9$V batteri som spændingsforsyning.
-Modstandene (R$1$-R$5$)\fxnote{ret disse navne} har til formål at sørge for, at batteriet ikke drænes, fordi kredsløbet trækker strøm. Hvis modstanden er høj, vil strømmen til kredsløbet være lav, og batteriet vil derved holde længere.
-Ved bestemmelse af R$1$-R$5$\fxnote{ret disse navne}, defineres R$1$\fxnote{ret igen her..} først til at være $100$K$\Omega$, hvorefter R$2$-R$5$\fxnote{ret igen her..} udregnes vha. den generelle formel for en spændingsdeler:
+Der vælges en justerbar mikropower spændingsreference (shunt-reference LM385), som består af en regulator så den kan levere $2.5$V til spændingstræet. Spændingsreferencen indgår som del af en variabel spændingsdeler og benyttes for at holde en fast referencespænding, da spændingen ellers vil falder over tid, som det ville være tilfældet hvis, der blev anvendt et $9$V batteri som spændingsforsyning.
+Når referencespændingen er kendt kan modstandene i spændingsdeleren bestemmes. Modstandene (R$1$-R$5$)\fxnote{ret disse navne} har til formål at sørge for, at batteriet ikke drænes, fordi kredsløbet trækker strøm. Hvis modstanden er høj, vil strømmen til kredsløbet være lav, og batteriet vil derved holde længere.
+Ved bestemmelse af R$1$-R$5$\fxnote{ret disse navne}, defineres R$1$\fxnote{ret igen her..} først til at være $10$K$\Omega$, hvorefter R$2$-R$5$\fxnote{ret igen her..} udregnes vha. den generelle formel for en spændingsdeler:
 \begin{equation}
 V_{out}=V_{in}*\dfrac{R2}{R1+R2}
 \end{equation}
 %Modstanden beregnes ud fra Ohms lov, hvor strømmen, som skal videre til spændingsreference og spændingstræet, sættes til at være $0.1$mA. Denne værdi vælges, da spændingsreferencen forbruger mellem $10\mu$A til $20$mA, og der skal være noget strøm til spændingstræet og tilhørende komparatorer. Spændingsfaldet over modstanden beregnes til at være;
 
-\begin{equation}
-7V - 4.0662V = 2.9338V   
-\end{equation}
-Hvor de $7$V er den spænding der minimum skal leveres, og de $4.0662$V er den højeste tærskelværdi, dvs. den 
+%\begin{equation}
+%7V - 4.0662V = 2.9338V   
+%\end{equation}
+%Hvor de $7$V er den spænding der minimum skal leveres, og de $4.0662$V er den højeste tærskelværdi, dvs. den 
 
 
 - Beregninger af referencespændinger - se datablad \\
