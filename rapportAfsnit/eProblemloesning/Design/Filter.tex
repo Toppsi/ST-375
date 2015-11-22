@@ -20,12 +20,12 @@ I afsnit \ref{FilterAfs} på side \ref{FilterAfs} blev karakteristikaene af lavp
 A(\omega_s) = 10 \text{log} \cdot \left[1 + \epsilon^2 \cdot (\frac{\omega _s}{\omega _p})^{2N}\right] 
 \end{equation}
 
-\noindent I ligning \ref{eq:lavpasfilter} er filterets orden angivet af N. Når alle de andre variable kendes, kan ordenen for filtret udregnes. I ligningen betegner $A(\omega _s)$ den minimale dæmpning der kræves af stopbåndet. $\epsilon$ er udtrykt ved ligningen:
+\noindent I \eqref{eq:lavpasfilter} er filterets orden angivet af N. Når alle de andre variable kendes, kan ordenen for filtret udregnes. I ligningen betegner $A(\omega _s)$ den minimale dæmpning der kræves af stopbåndet. $\epsilon$ er udtrykt ved ligningen:
 \begin{equation}
 \epsilon = \sqrt{10^{\frac{A_{max}{10}} - 1}}
 \end{equation}
 
-Ordenen af lavpasfilteret bestemmes ved at sætte værdierne fra afsnit \ref{FilterAfs} på side \pageref{FilterAfs} ind i ligning \ref{eq:lavpasfilter}. Udregningerne vil se ud som følgende:
+Ordenen af lavpasfilteret bestemmes ved at sætte værdierne fra afsnit \ref{FilterAfs} på side \pageref{FilterAfs} ind i \eqref{eq:lavpasfilter}. Udregningerne vil se ud som følgende:
 \begin{align}
 \epsilon = \sqrt{10^{\frac{3dB}{10}} - 1} = 0.998 \\
 14\text{dB} = 10 \cdot \text{log} \left[1 + \epsilon ^2 \cdot \frac{45\text{Hz}}{25\text{Hz}}^{2N}\right] \\
@@ -50,7 +50,7 @@ Der skal benyttes et 3. ordens lavpasfilter. Der findes to forskellige måder hv
 	\end{minipage}
 \end{figure}
 
-I designet af et 3. ordens filter designes både et 1. og et 2. ordens filter i forlængelse af hinanden. Dette designes efter sallen-key metoden, hvor filtreret består af tre modstande og tre kondensatorer. Værdierne for modstandene kan udregnes med 1. orden ligning \ref{eq:Lavpas1Modstande} og for 2. orden ligning \ref{eq:LavpasModstande}. 
+I designet af et 3. ordens filter designes både et 1. og et 2. ordens filter i forlængelse af hinanden. Dette designes efter sallen-key metoden, hvor filtreret består af tre modstande og tre kondensatorer. Værdierne for modstandene kan udregnes med 1. orden \eqref{eq:Lavpas1Modstande} og for 2. orden \eqref{eq:LavpasModstande}. 
 \begin{equation} \label{eq:Lavpas1Modstande}
 R_{1} = \frac{a_1}{2 \cdot \pi \cdot f_c \cdot C_1} \\
 \end{equation}
@@ -63,14 +63,14 @@ R_{1,2} = \frac{a_1 \cdot C_2 \pm \sqrt{A_1^2 \cdot C_2^2 - 4 \cdot b_1 \cdot C_
 \begin{equation} \label{eq:kondensator}
 C_2 \geq C_1 \frac{4b_1}{a_1^2}
 \end{equation}
-I ligning \ref{eq:LavpasModstande} står C variablene for kondensatorer, R variablene står for modstande, $a_1$ og $b_1$ er konstanter, mens $f_c$ er den valgte knækfrekvens. 
+I \eqref{eq:LavpasModstande} står C variablene for kondensatorer, R variablene står for modstande, $a_1$ og $b_1$ er konstanter, mens $f_c$ er den valgte knækfrekvens. 
 
-\noindent For at udregne modstandene vælges $C_1$ til at være 100nF for hhv. 1. orden og 2. ordens filtrene. Ud fra dette kan $C_2$ i 2. ordens filteret bestemmes med ligningen \ref{eq:kondensator}:
+\noindent For at udregne modstandene vælges $C_1$ til at være 100nF for hhv. 1. orden og 2. ordens filtrene. Ud fra dette kan $C_2$ i 2. ordens filteret bestemmes med \eqref{eq:kondensator}:
 \begin{equation} 
 C_2 \geq 100\text{nF} \frac{4\cdot 1}{1.000^2} = C_2 \geq 200\text{nF}
 \end{equation}
 
-\noindent Ud fra ovenstående ligning vælges $C_2$ til at være 480nF for at opfylde ligning \ref{eq:kondensator}.  Herefter kan $R_1$ for og $R_2$ beregnes med ligning \ref{eq:LavpasModstande}. For 1. ordens filteret benyttes \ref{eq:Lavpas1Modstande} til at beregne $R_1$.
+\noindent Ud fra ovenstående ligning vælges $C_2$ til at være 480nF for at opfylde \eqref{eq:kondensator}.  Herefter kan $R_1$ for og $R_2$ beregnes med \eqref{eq:LavpasModstande}. For 1. ordens filteret benyttes \eqref{eq:Lavpas1Modstande} til at beregne $R_1$.
 \begin{equation} \label{eq:Lavpas1Modstande}
 R_{1} = \frac{1}{2 \cdot \pi \cdot 25 \cdot 100nF} R_{1} = 63661.98 \Omega
 \end{equation}
@@ -82,12 +82,12 @@ R_{1,2} = \frac{1.0000 \cdot 480\text{nF} \pm \sqrt{1.0000^2 \cdot 480\text{nF}^
 \begin{figure}[H]
 	\centering
 	\includegraphics[scale=0.58]{figures/cProblemloesning/Lavpasfilter1_LTspice.PNG}
-	\caption{Figuren viser det teoretiske kredsløb for lavpasfilteret konstrueret i LTspice. Værdierne $R_{2}$ og $R_{3}$ på figuren svarer til de udregnede værdier $R_{1}$ og $R_{2}$ for 2. ordens filteret i ligning \ref{eq:2ordenmodstand}}
+	\caption{Figuren viser det teoretiske kredsløb for lavpasfilteret konstrueret i LTspice. Værdierne $R_{2}$ og $R_{3}$ på figuren svarer til de udregnede værdier $R_{1}$ og $R_{2}$ for 2. ordens filteret i \eqref{eq:2ordenmodstand}}
 	\label{fig:lavpasfilter1_LTspice}
 \end{figure}
 
 \subsubsection{Simulering}
-For at udføre en simulering af et lavpasfilter foretages der en AC-analyse som beskriver forholdet mellem frekvens og dæmpningen. Knæk- og stopfrekvensen er valgt til hhv. 25Hz og 45Hz på baggrund af opstillet krav i afsnit \ref{FilterAfs} på side \pageref{FilterAfs} samt resultaterne fra pilotforsøget\ref{sec:pilotforsoeg}. Til simuleringen af lavpasfilteret er der anvendt LTspice operationsforstærker LT1028A. Der undersøges for om kravene stemmer overens ved at betragte et bodeplot over det simulerede 3. ordens filter.
+For at udføre en simulering af et lavpasfilter foretages der en AC-analyse som beskriver forholdet mellem frekvens og dæmpningen. Knæk- og stopfrekvensen er valgt til hhv. 25Hz og 45Hz på baggrund af opstillet krav i afsnit \ref{FilterAfs} på side \pageref{FilterAfs} samt resultaterne fra pilotforsøget i afsnit \ref{sec:pilotforsoeg} på side \pageref{sec:pilotforsoeg}. Til simuleringen af lavpasfilteret er der anvendt LTspice operationsforstærker LT1028A. Der undersøges for om kravene stemmer overens ved at betragte et bodeplot over det simulerede 3. ordens filter.
 
 \begin{figure}[H]
 	\centering
@@ -106,7 +106,7 @@ Ud fra det simulerede kredsløb undersøges det, hvorvidt knækfrekvensen stemme
 \end{figure}
 
 \subsubsection{Implementering og test}
-Der ses på \figref{fig:lavpasfilter_LTspice} at der benyttes 3 modstande og 3 kondensatorer til at designe kredsløbet. Reelt findes der ikke de anvendte modstande og kondensatorer, derfor benyttes der dem som kommer tættest på det teoretiske, dette gøres  blandt andet ved at sætte modstande samt kondensatorer i henholdsvis serie- og parallelforbindelse. For $R_{1}$ og $R_{2}$ anvendes der modstande i parallelforbindelse og for $R_{3}$ i serieforbindelse. For $C_3$ anvendes der kondensatorer i parallelforbindelse. Der blev målt 3 forskellige modstande og kondensatorer for at finde dem der afviger mindst fra det teoretiske, dette er illustreret i \ref{Tab:Maalingfilter}
+Der ses på \figref{fig:lavpasfilter_LTspice} at der benyttes 3 modstande og 3 kondensatorer til at designe kredsløbet. Reelt findes der ikke de anvendte modstande og kondensatorer, derfor benyttes der dem som kommer tættest på det teoretiske, dette gøres  blandt andet ved at sætte modstande samt kondensatorer i henholdsvis serie- og parallelforbindelse. For $R_{1}$ og $R_{2}$ anvendes der modstande i parallelforbindelse og for $R_{3}$ i serieforbindelse. For $C_3$ anvendes der kondensatorer i parallelforbindelse. Der blev målt 3 forskellige modstande og kondensatorer for at finde dem der afviger mindst fra det teoretiske, dette er illustreret i \tableref{Tab:Maalingfilter}
 
 \begin{table}[H]
 	\centering
@@ -128,7 +128,7 @@ Der ses på \figref{fig:lavpasfilter_LTspice} at der benyttes 3 modstande og 3 k
 	\label{Tab:Maalingfilter}
 \end{table}
 
-Herefter implementeres kredsløbet. I testen anvendes en spændingsforsyning på 7V og en funktionsgenerator som inputsignal, mens der anvendes et multimeter til aflæsning af dæmpningen. Funktionsgeneratoren sættes til de ønskede frekvenser i intervaller af $1Hz$ fra $15Hz$ til $50Hz$. Dæmpningen aflæses for hvert frekvens. Ud fra disse målinger plottes en graf i MatLab, hvilket er illustreret på \ref{fig:Lavpas_Matlab}.  
+Herefter implementeres kredsløbet. I testen anvendes en spændingsforsyning på 7V og en funktionsgenerator som inputsignal, mens der anvendes et multimeter til aflæsning af dæmpningen. Funktionsgeneratoren sættes til de ønskede frekvenser i intervaller af $1Hz$ fra $15Hz$ til $50Hz$. Dæmpningen aflæses for hvert frekvens. Ud fra disse målinger plottes en graf i MatLab, hvilket er illustreret på \figref{fig:Lavpas_Matlab}.  
 
 \begin{figure}[H]
 	\centering
@@ -153,7 +153,7 @@ Herefter implementeres kredsløbet. I testen anvendes en spændingsforsyning på
 %	\label{Tab:Afvigelse_simulering}
 %\end{table}
 
-Ud fra de testede værdier i \ref{Tab:Tolerance} og kravspecifikationer \ref{filterAfs) er der er ingen afvigelse på knækfrekvensen og stopbåndsfrekvensen. Der er en ændring i forhold til dæmpningen for både stop- og pasbånd på hhv. $5.9\%$ og $12.65$ i forhold til kravet.
+Ud fra de testede værdier i \tableref{Tab:Tolerance} og kravspecifikationer i afsnit \ref{filterAfs} på side \pageref{filterAfs} er der er ingen afvigelse på knækfrekvensen og stopbåndsfrekvensen. Der er en ændring i forhold til dæmpningen for både stop- og pasbånd på hhv. $5.9\%$ og $12.65$ i forhold til kravet.
 
 \begin{table}[H]
 	\centering
@@ -169,4 +169,4 @@ Dæmpning på pasbånd & $3dB$		& $2.663dB$	    & $12.65\%$ \\ \hline
 	\label{Tab:Tolerance}
 \end{table}
 
-I forhold til tolerance i afsnit \ref{filterAfs) skulle dæmpningen på stopbåndet være minimum $14 dB$ og have en afvigelse på $+10\%$. Denne tolerance overholdes da det maksimale for dæmpningen af stopbåndet er $15.4dB$. For pasbåndet skulle dæmpningen maksimalt være $3dB$ og have en afvigelse på $-15\%$. Dette vil sige at testen passer inden for tolerance, da pasbåndet minimalt må være $2.55dB$. På baggrund af dette accepteres afvigelserne for testen.
+I forhold til tolerance i afsnit \ref{filterAfs} på side \pageref{filterAfs} skulle dæmpningen på stopbåndet være minimum $14 dB$ og have en afvigelse på $+10\%$. Denne tolerance overholdes da det maksimale for dæmpningen af stopbåndet er $15.4dB$. For pasbåndet skulle dæmpningen maksimalt være $3dB$ og have en afvigelse på $-15\%$. Dette vil sige at testen passer inden for tolerance, da pasbåndet minimalt må være $2.55dB$. På baggrund af dette accepteres afvigelserne for testen.
