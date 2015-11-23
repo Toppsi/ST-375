@@ -1,12 +1,12 @@
 % !TeX spellcheck = da_DK
 \subsection{Filter}
 \subsubsection{Teori og design}
-Efter signalet er blevet forstærket skal det filtreres, så alle de uønskede signaler kan dæmpes. Der benyttes kun et lavpasfilter, da det ønskede signal ifølge litteraturen ligger i frekvensområdet 0-10 Hz, som beskrevet i afsnit \ref{FilterAfs} på side \pageref{FilterAfs}, men i forhold til pilotforsøget i afsnit \ref{Sec:PilotforsoegKort} på side \pageref{Sec:Pilotforsoeg} ligger det ønskede signal i frekvensområdet 0-25Hz. Derfor bliver frekvensområdet sat til 0-25Hz, for at filtere ønskede signaler fra. Filtre kan udarbejdes både i aktiv og passiv form. Hvis signalet ligger i frekvensområdet under 1 MHz anbefales det at benytte aktive filtre \cite{Carter2013}. Aktive filtre benytter operationforstærkere, kondensatorer og modstande, hvor passive filtre benytter kondensatorer, modstande og spoler \cite{Carter2013}. Der findes flere forskellige typer filtre, heriblandt Butterworth-, Tschebyschev- og Besselfilter. Butterworthfilteret giver maksimal fladhed i pasbåndet og stopbåndet. Tschebyschevfilteret giver den hurtigste overgang fra pasbåndet til stopbåndet. Besselfilteret giver en lineær faserespons, hvilket vil sige at fasen er lineær med frekvensen.\fxnote{Til os: Fasen angiver hvor godt et signals frekvensspektrum bliver gengivet}\fxnote{skal vi have et billede ind af de forskellige typer?} \cite{Carter2013} Butterworthfilteret benyttes til at filtrere signalet i dette forsøg, da der ønskes maksimal fladhed i pasbåndet og stopbåndet som nævnt i kravspecifikationerne for filtret.
+Efter signalet er blevet forstærket skal det filtreres, så alle de uønskede signaler kan dæmpes. Der benyttes kun et lavpasfilter, da det ønskede signal ifølge litteraturen ligger i frekvensområdet $0-10$Hz, som beskrevet i afsnit \ref{FilterAfs} på side \pageref{FilterAfs}, men i forhold til pilotforsøget i afsnit \ref{Sec:PilotforsoegKort} på side \pageref{Sec:PilotforsoegKort} ligger det ønskede signal i frekvensområdet $0-25$Hz. Derfor bliver frekvensområdet sat til $0-25$Hz, for at filtrere uønskede signaler fra. Filtre kan udarbejdes både i aktiv og passiv form. Hvis signalet ligger i frekvensområdet under $1$MHz anbefales det at benytte aktive filtre \cite{Carter2013}. Aktive filtre benytter operationforstærkere, kondensatorer og modstande, hvor passive filtre benytter kondensatorer, modstande og spoler \cite{Carter2013}. Der findes flere forskellige typer filtre, heriblandt Butterworth-, Tschebyschev- og Besselfilter. Butterworthfilteret giver maksimal fladhed i pasbåndet og stopbåndet. Tschebyschevfilteret giver den hurtigste overgang fra pasbåndet til stopbåndet. Besselfilteret giver en lineær faserespons, hvilket vil sige at fasen er lineær med frekvensen.\fxnote{Til os: Fasen angiver hvor godt et signals frekvensspektrum bliver gengivet}\fxnote{skal vi have et billede ind af de forskellige typer?} \cite{Carter2013} Butterworthfilteret benyttes til at filtrere signalet i dette forsøg, da der ønskes maksimal fladhed i pasbåndet og stopbåndet som nævnt i kravspecifikationerne for filtret.
 
 Filtre kan laves i inverterende og ikke-inverterende konfigurationer. Der vælges i dette forsøg at benytte et ikke-inverterende filter, da dette har en høj indgangsimpedans. Herved forhindres loading af filtrets output. Loading defineres som effekten af, at et spændingsmålende instrument bruger strømmen i et kredsløb og kan være både ønsket og uønsket i et system. Der må eksempelvis gerne være loading, hvis det ønskes at tænde for en lampe eller en højtaler. Loading-effekten er derimod en uønsket effekt for dette projekts system, da der ønskes et lavt effektforbrug, hvilket giver en lang levetid. Loading reducerer den samlede strøm, som løber i kredsløbet, og trækker meget strøm fra batteriet. \\
 Hvis der vælges en inverterende konfiguration for filtret, falder den samlede resistans, og der kræves derfor mere strøm for at opretholde outputspændingsniveauet. Eftersom den ikke-inverterende forstærker i filteret har høj inputimpedans, hvilket vil sige, at modstanden i operationsforstærkeren har en høj værdi, vil filterets output ikke blive påvirket af loading. \cite{Webster2009,Carter2013,Karni2014}
 
-I afsnit \ref{FilterAfs} på side \ref{FilterAfs} blev karakteristikaene af lavpasfilteret bestemt. Der kræves en minimumsdæmpning af stopbåndet $(Amin)$ på 14 dB, der accepteres en maksimal variation af pasbåndet $(Amax)$ på 3 dB, knækfrekvensen $(\omega _p)$ er på 25 Hz, samt en stopbåndstærskel $(\omega _s)$ på 45 Hz. Nedenfor ses en illustration af hvad de forskellige karakteristka beskriver.
+I afsnit \ref{FilterAfs} på side \ref{FilterAfs} blev karakteristikaene af lavpasfilteret bestemt. Der kræves en minimumsdæmpning af stopbåndet $(Amin)$ på $14$dB, der accepteres en maksimal variation af pasbåndet $(Amax)$ på $3$dB, knækfrekvensen $(\omega _p)$ er på $25$ z, samt en stopbåndstærskel $(\omega _s)$ på $45$ Hz Nedenfor ses en illustration af hvad de forskellige karakteristka beskriver.
 
 \begin{figure}[H]
 	\centering
@@ -31,7 +31,7 @@ Ordenen af lavpasfilteret bestemmes ved at sætte værdierne fra afsnit \ref{Fil
 14\text{dB} = 10 \cdot \text{log} \left[1 + \epsilon ^2 \cdot \frac{45\text{Hz}}{25\text{Hz}}^{2N}\right] \\
 N = 2.711 \approx 3
 \end{align}
-\noindent Ordenen af filtret rundes op til 3, da filterets orden kun kan angives i hele tal. Hvis kravene til filteret skal overholdes, skal der altid rundes opad ved udregning af orden.
+\noindent Ordenen af filtret rundes op til $3$, da filterets orden kun kan angives i hele tal. Hvis kravene til filteret skal overholdes, skal der altid rundes opad ved udregning af orden.
 
 Der skal benyttes et 3. ordens lavpasfilter. Der findes to forskellige måder hvorpå det kan designes: Sallen-Key topologien (SKT) og Multiple Feedback toppologien (MFT). SKT-metoden er den mest anvendte og tillader separate gain indstillinger, hvorimod MFT-metoden benyttes i filter design med høj gain nøjagtighed eller høj Q værdi. For dette filter benyttes SKT. På \figref{fig:SallenKey1} ses et 1. ordens lavpasfilter og på \figref{fig:SallenKey2} ses et 2. ordens lavpasfilter designet efter SKT. \cite{Carter2013}
 	
@@ -39,13 +39,13 @@ Der skal benyttes et 3. ordens lavpasfilter. Der findes to forskellige måder hv
 	\centering
 	\begin{minipage}[b]{0.45\textwidth}
 		\includegraphics[width=\textwidth]{figures/cProblemloesning/Lavpasfilter1_teoretisk.PNG}
-		\caption{På figuren ses en illutration af et 1. ordens unity-gain Sallen-Key lavpasfilter.}
+		\caption{På figuren ses en illustration af et 1. ordens unity-gain Sallen-Key lavpasfilter.}
 		\label{fig:SallenKey1}
 	\end{minipage}
 	\hfill
 	\begin{minipage}[b]{0.45\textwidth}
 		\includegraphics[width=\textwidth]{figures/cProblemloesning/Sallenlavpas.PNG}
-		\caption{På figuren ses en illutration af et 2. ordens unity-gain Sallen-Key lavpasfilter.}
+		\caption{På figuren ses en illustration af et 2. ordens unity-gain Sallen-Key lavpasfilter.}
 		\label{fig:SallenKey2}
 	\end{minipage}
 \end{figure}
@@ -87,7 +87,7 @@ R_{1,2} = \frac{1.0000 \cdot 480\text{nF} \pm \sqrt{1.0000^2 \cdot 480\text{nF}^
 \end{figure}
 
 \subsubsection{Simulering}
-For at udføre en simulering af et lavpasfilter foretages der en AC-analyse som beskriver forholdet mellem frekvens og dæmpningen. Knæk- og stopfrekvensen er valgt til hhv. 25Hz og 45Hz på baggrund af opstillet krav i afsnit \ref{FilterAfs} på side \pageref{FilterAfs} samt resultaterne fra pilotforsøget i afsnit \ref{sec:pilotforsoeg} på side \pageref{sec:pilotforsoeg}. Til simuleringen af lavpasfilteret er der anvendt LTspice operationsforstærker LT1028A. Der undersøges for om kravene stemmer overens ved at betragte et bodeplot over det simulerede 3. ordens filter.
+For at udføre en simulering af et lavpasfilter foretages der en AC-analyse som beskriver forholdet mellem frekvens og dæmpningen. Knæk- og stopfrekvensen er valgt til hhv. $25$Hz og $45$Hz på baggrund af opstillet krav i afsnit \ref{FilterAfs} på side \pageref{FilterAfs} samt resultaterne fra pilotforsøget i afsnit \ref{sec:pilotforsoeg} på side \pageref{sec:pilotforsoeg}. Til simuleringen af lavpasfilteret er der anvendt LTspice operationsforstærker TL081. Der undersøges for om kravene stemmer overens ved at betragte et bodeplot over det simulerede 3. ordens filter.
 
 \begin{figure}[H]
 	\centering
@@ -96,7 +96,7 @@ For at udføre en simulering af et lavpasfilter foretages der en AC-analyse som 
 	\label{fig:lavpasfilter_LTspice}
 \end{figure}
 
-Ud fra det simulerede kredsløb undersøges det, hvorvidt knækfrekvensen stemmer overens men den tilhørende amplitude ved hhv. 25 Hz og 45 Hz. Det aflæses på grafen i LTspice at knækfrekvensen ved 25Hz svarer til en amplitude på 3dB, hvilket er illuseret i \figref{fig:Lavpasfiltergraf_LTspice}. Der aflæses, at der ved 45 Hz er en dæmpning på 15dB. Dette overholder de opstillede krav på minimum 14 dB. Sammenholdt med kravspecifikationerne i afsnittet \ref{FilterAfs} på side \pageref{FilterAfs} er lavpasfilteret godkendt.
+Ud fra det simulerede kredsløb undersøges det, hvorvidt knækfrekvensen stemmer overens men den tilhørende amplitude ved hhv. $25$Hz og $45$Hz. Det aflæses på grafen i LTspice at knækfrekvensen ved $25$Hz svarer til en amplitude på $3.01$3B, hvilket er illuseret i \figref{fig:Lavpasfiltergraf_LTspice}. Der aflæses, at der ved $45$ H er en dæmpning på $15.49$dB. Dette overholder de opstillede krav på minimum $14$ dB Sammenholdt med kravspecifikationerne i afsnittet \ref{FilterAfs} på side \pageref{FilterAfs} er lavpasfilteret godkendt.
 
 \begin{figure}[H]
 	\centering
@@ -113,22 +113,22 @@ Der ses på \figref{fig:lavpasfilter_LTspice} at der benyttes 3 modstande og 3 k
 	\begin{tabular}{|l|l|l|l|}
 		\hline
 						& \textit{Teoretisk}			& \textit{Måling} 	&  \textit{Afvigelse} \\ \hline
-	 \textbf{$R_{1}:$} 	& $1M\Omega$ 				& $1.00462M\Omega$ 		& $0.46\%$  \\ \hline
-				//		& $68K\Omega$ 				& $68.035K\Omega$ 		& $0.051\%$  \\ \hline
-	 \textbf{$R_{2}:$} 	& $1M\Omega$ 				& $1.00373K\Omega$		& $0.37\%$	\\ \hline
-	 			//		& $47K\Omega$ 				& $47.054K\Omega$		& $0.11\%$ 	\\ \hline
-	 \textbf{$R_{3}:$} 	& $18K\Omega$				& $17.960\Omega$ 		& $0.22\%$ 	\\ \hline
+	 \textbf{$R_{1}(Parallel):$} 	& $1M\Omega$ 				& $1.00462M\Omega$ 		& $0.46\%$  \\ \hline
+					& $68K\Omega$ 				& $68.035K\Omega$ 		& $0.05\%$  \\ \hline
+	 \textbf{$R_{2}(Parallel):$} 	& $1M\Omega$ 				& $1.00373K\Omega$		& $0.37\%$	\\ \hline
+	 					& $47K\Omega$ 				& $47.054K\Omega$		& $0.11\%$ 	\\ \hline
+	 \textbf{$R_{3}(Serie):$} 	& $18K\Omega$				& $17.960\Omega$ 		& $0.22\%$ 	\\ \hline
 	 					& $820\Omega$				& $816.0\Omega$			& $0.49\%$ 	\\ \hline
-	 \textbf{$C_{1}:$} 	& $100n$ 					& $98n$ 					& $2\%$      \\ \hline
-	 \textbf{$C_{2}:$} 	& $470n$						& $464n$					& $1.29\%$  		\\ \hline
-	 			//		& $10n$						& $9n$					& $11\%$  		\\ \hline
-	\textbf{$C_{3}:$}	& $100n$ 					& $98n$ 					& $2\%$      \\ \hline
+	 \textbf{$C_{1}:$} 	& $100n$ 					& $98n$ 					& $2.00\%$      \\ \hline
+	 \textbf{$C_{2}(Parallel):$} 	& $470n$						& $464n$					& $1.29\%$  		\\ \hline
+	 					& $10n$						& $9n$					& $11\%$  		\\ \hline
+	\textbf{$C_{3}:$}	& $100n$ 					& $98n$ 					& $2.00\%$      \\ \hline
 	\end{tabular}
 	\caption{I tabellen ses der, at de anvendte modstande og kondensatorer afviger fra den teoretiske værdi, hvilket er forventet af reelle komponenter. Det er en acceptabel afvigelse, så modstandene kan derfor anvendes til implementering}
 	\label{Tab:Maalingfilter}
 \end{table}
 
-Herefter implementeres kredsløbet. I testen anvendes en spændingsforsyning på 7V og en funktionsgenerator som inputsignal, mens der anvendes et multimeter til aflæsning af dæmpningen. Funktionsgeneratoren sættes til de ønskede frekvenser i intervaller af $1Hz$ fra $15Hz$ til $50Hz$. Dæmpningen aflæses for hvert frekvens. Ud fra disse målinger plottes en graf i MatLab, hvilket er illustreret på \figref{fig:Lavpas_Matlab}.  
+Herefter implementeres kredsløbet. I testen anvendes en spændingsforsyning på $5.5$V og en funktionsgenerator som inputsignal, mens der anvendes et multimeter til aflæsning af dæmpningen. Funktionsgeneratoren sættes til de ønskede frekvenser i intervaller af $1$Hz fra $10$Hz til $50$Hz. Dæmpningen aflæses for hvert frekvens. Ud fra disse målinger plottes en graf i MatLab, hvilket er illustreret på \figref{fig:Lavpas_Matlab}.  
 
 \begin{figure}[H]
 	\centering
