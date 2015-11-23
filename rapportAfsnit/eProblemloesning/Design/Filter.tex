@@ -106,7 +106,7 @@ Ud fra det simulerede kredsløb undersøges det, hvorvidt knækfrekvensen stemme
 \end{figure}
 
 \subsubsection{Implementering og test}
-Der ses på \figref{fig:lavpasfilter_LTspice} at der benyttes 3 modstande og 3 kondensatorer til at designe kredsløbet. Reelt findes der ikke de anvendte modstande og kondensatorer, derfor benyttes der dem som kommer tættest på det teoretiske, dette gøres  blandt andet ved at sætte modstande samt kondensatorer i henholdsvis serie- og parallelforbindelse. For $R_{1}$ og $R_{2}$ anvendes der modstande i parallelforbindelse og for $R_{3}$ i serieforbindelse. For $C_3$ anvendes der kondensatorer i parallelforbindelse. Der blev målt 3 forskellige modstande og kondensatorer for at finde dem der afviger mindst fra det teoretiske, dette er illustreret i \tableref{Tab:Maalingfilter}
+Der ses på \figref{fig:lavpasfilter_LTspice} at der benyttes 3 modstande og 3 kondensatorer til at designe kredsløbet. Reelt findes de udregnede modstande og kondensatorer ikke, og derfor benyttes der dem som kommer tættest på det teoretiske. Dette gøres ved at sætte både modstande og kondensatorer i henholdsvis serie- og parallelforbindelse for at opnå de ønskede værdier. For $R_{1}$ og $R_{2}$ anvendes der modstande i parallelforbindelse og for $R_{3}$ i serieforbindelse. For $C_3$ anvendes der kondensatorer i parallelforbindelse. Der foretages målinger på tre ens reelle modstande og kondensatorer for at kunne anvende de komponenter som afviger mindst fra de teoretiske værdier. Dette er illustreret i \tableref{Tab:Maalingfilter}
 
 \begin{table}[H]
 	\centering
@@ -128,12 +128,12 @@ Der ses på \figref{fig:lavpasfilter_LTspice} at der benyttes 3 modstande og 3 k
 	\label{Tab:Maalingfilter}
 \end{table}
 
-Herefter implementeres kredsløbet. I testen anvendes en spændingsforsyning på $5.5$V og en funktionsgenerator som inputsignal, mens der anvendes et multimeter til aflæsning af dæmpningen. Funktionsgeneratoren sættes til de ønskede frekvenser i intervaller af $1$Hz fra $10$Hz til $50$Hz. Dæmpningen aflæses for hvert frekvens. Ud fra disse målinger plottes en graf i MatLab, hvilket er illustreret på \figref{fig:Lavpas_Matlab}.  
+Herefter implementeres kredsløbet. I testen anvendes en spændingsforsyning på $5.5$V og en funktionsgenerator som inputsignal, samt et multimeter til aflæsning af dæmpningen. Funktionsgeneratoren sættes til de ønskede frekvenser i intervaller af $1$Hz fra $10$Hz til $50$Hz. Outputtet i dB måles for hver frekvens. Ud fra disse målinger plottes en graf af dæmpningen i MatLab, hvilket er illustreret på \figref{fig:Lavpas_Matlab}.  
 
 \begin{figure}[H]
 	\centering
 	\includegraphics[scale=0.4]{figures/cProblemloesning/Lavpas_Matlab.PNG}
-	\caption{Figuren viser en graf over de målte frekvenser målt i Hz som funktion af dæmpningerne målt i dB. På grafen er der angivet knækfrekvens og stopbåndfrekvens}
+	\caption{Figuren viser dæmpningen som en graf over de målte frekvenser i Hz som funktion af outputtet i dB. På grafen er der angivet knækfrekvens og stopbåndfrekvens}
 	\label{fig:Lavpas_Matlab}
 \end{figure}
 
@@ -153,7 +153,7 @@ Herefter implementeres kredsløbet. I testen anvendes en spændingsforsyning på
 %	\label{Tab:Afvigelse_simulering}
 %\end{table}
 
-Ud fra de testede værdier i \tableref{Tab:Tolerance} og kravspecifikationer i afsnit \ref{filterAfs} på side \pageref{filterAfs} er der er ingen afvigelse på knækfrekvensen og stopbåndsfrekvensen. Der er en ændring i forhold til dæmpningen for både stop- og pasbånd på hhv. $5.9\%$ og $12.65$ i forhold til kravet.
+Ud fra de testede værdier i \tableref{Tab:Tolerance} og kravspecifikationer i afsnit \ref{filterAfs} på side \pageref{filterAfs} er der er ingen afvigelse på knækfrekvensen og stopbåndsfrekvensen. Der er en variation ift. dæmpningen for både stop- og pasbånd på hhv. $6.36\%$ og $8.37$\% i forhold til kravet.
 
 \begin{table}[H]
 	\centering
@@ -162,11 +162,11 @@ Ud fra de testede værdier i \tableref{Tab:Tolerance} og kravspecifikationer i a
    & \textit{Krav} 	& \textit{Test}  &\textit{Afvigelse} \\ \hline
 Knækfrekvens	 & $25Hz$ 			& $25Hz$			& $0\%$  \\ \hline
 Stopbåndsfrekvens & $45Hz$		& $45Hz$			& $0\%$ \\ \hline
-Dæmpning på stopbånd & $14dB$    & $14.881dB$    & $5.9\%$  \\ \hline
-Dæmpning på pasbånd & $3dB$		& $2.663dB$	    & $12.65\%$ \\ \hline
+Dæmpning på stopbånd & $14dB$    & $14.8910dB$    & $6.36\%$  \\ \hline
+Dæmpning på pasbånd & $3dB$		& $2.7490dB$	    & $8.37\%$ \\ \hline
 	\end{tabular}
 	\caption{I tabellen ses afvigelserne for hhv. knækfrekvens, stopbåndsfrekvens og dæmpning af stopbånd og pasbånd ift. krav og test}
 	\label{Tab:Tolerance}
 \end{table}
 
-I forhold til tolerance i afsnit \ref{filterAfs} på side \pageref{filterAfs} skulle dæmpningen på stopbåndet være minimum $14 dB$ og have en afvigelse på $+10\%$. Denne tolerance overholdes da det maksimale for dæmpningen af stopbåndet er $15.4dB$. For pasbåndet skulle dæmpningen maksimalt være $3dB$ og have en afvigelse på $-15\%$. Dette vil sige at testen passer inden for tolerance, da pasbåndet minimalt må være $2.55dB$. På baggrund af dette accepteres afvigelserne for testen.
+I forhold til tolerancekravene i afsnit \ref{filterAfs} på side \pageref{filterAfs} skulle dæmpningen på stopbåndet være minimum $14 dB$ og måtte maksimalt have en afvigelse herfra på $+10\%$. Denne tolerance overholdes ved testen, da de acceptable dæmpningsværdier vil ligge i intervallet $14$-$15.4$db. For pasbåndet skulle dæmpningen maksimalt være $3$dB med en maksimal afvigelse på $-15\%$. Dette vil sige at testen passer inden for tolerancekravene, da der accepteres værdier i intervallet $2.55$-$3$dB. På baggrund af dette accepteres alle målte afvigelser ved testen af filteret.
