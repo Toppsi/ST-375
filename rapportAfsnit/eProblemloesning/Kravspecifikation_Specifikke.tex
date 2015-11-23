@@ -60,7 +60,7 @@ A_{min}=20 \cdot log_{10} \cdot (\frac{1}{5}) = -13,98 \approx -14\text{dB}
 \begin{itemize}
 	\item Der accepteres en afvigelse fra knækfrekvensen på $\pm10\%$.
 	\item Der accepteres en afvigelse fra stopbåndsfrekvensen på $\pm5\%$.
-	\item Der accepteres minimal dæmpning på 14dB af stopbåndet eller en afvigelse på $+15\%$.
+	\item Der accepteres minimal dæmpning på 14dB af stopbåndet eller en afvigelse på $+10\%$.
 	\item Der accepteres maksimal dæmpning på 3dB af pasbåndet eller en afvigelse på $-15\%$.
 \end{itemize}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -74,8 +74,8 @@ Blokken tilpasning har til formål at tilpasse det filtrerede signal til kompara
 Der ses, at \eqref{Udreg1} giver den højeste spænding. I \eqref{Udreg3} bestemmes den maksimale spænding ved $\pm25^{\circ}$ hældning. \\
 I \eqref{TilpasEq1} udregnet inputspændingen efter den første forstærkning. Denne forstærkers faktor samt gain i dB udregnes i \eqref{TilpasEq2} og \eqref{TilpasEq3}.
 \begin{align}
-\label{TilpasEq1} 0.0753V \cdot 10 = 0.7534V \\
-\label{TilpasEq2} \dfrac{3V}{0.7534V} = 3.9819 \approx 3 \\
+\label{TilpasEq1} 0.0753V \cdot 10 = 0.7530V \\
+\label{TilpasEq2} \dfrac{3V}{0.7530V} = 3.984 \approx 3 \\
 \label{TilpasEq3} 20 \cdot log_{10} (3) = 9.5424\text{dB}
 \end{align} 
 I \eqref{TilpasEq1}, \eqref{TilpasEq2} og \eqref{TilpasEq3} er de $3V$ grænsen for arbejdsområdet. Der forstærkes med en faktor 3. Resultatet afrundes nedad til nærmeste hele tal. \\
@@ -98,28 +98,28 @@ Blokken indeholdende en komparator skal kunne sammenligne inputsignalet med en r
 \textbf{Krav:} 
 \begin{itemize}
 	\item Skal kunne skifte mellem sværhedsgrad ved at ændre tærskelværdierne.
-	\item Skal have en forsyningsspænding på  $5.5V$.\fxnote{evt. rette dette til}
-	\item Skal kunne modtage et inputsignal på $\pm3V$. 
+	\item Skal have en forsyningsspænding på  $\pm5.5$V.\fxnote{evt. rette dette til}
+	\item Skal kunne modtage et inputsignal på $\pm3$V. 
 	\item Skal ved et bestemt spændingsinterval aktivere en diode og vibrator:
 	\begin{itemize}
-		\item Grøn diode og ingen vibration: I intervallet indenfor $0,324V$ til $-0,324V$.
-		\item Gul diode og let vibration: I intervallet fra $1.314V$ til $2.1168V$ og intervallet fra $-1.2744V$ til $-2.0736V$.
-		\item Rød diode og moderat vibration: I intervallet fra $2.1168V$ til $4.0662V$ og intervallet fra $-2.0736V$ til $-3.9906V$.
-		\item Ingen feedback: Over $4.0662V$ og under $-3.9906V$. 
+		\item Grøn diode og ingen vibration: I intervallet indenfor $0.1808$V til -$0.1773$V. Som svare til $\pm2^{\circ}$.
+		\item Gul diode og let vibration: I intervallet fra $0.7233$V til $1.1753$V og intervallet fra -$0.7094$V til -$1.1527$V. Som svare til $\pm 8^{\circ}-13^{\circ}$.
+		\item Rød diode og moderat vibration: I intervallet fra $1.1753$V til $2.2602$V og intervallet fra -$1.1527$V til -$2.2168$V. Som svare til $\pm13^{\circ}-25^{\circ}$.
+		%\item Ingen feedback: Over $2.2602$V og under -$2.2168$V. 
 	\end{itemize}
 \end{itemize}
 \textbf{Tolerance:}
 \begin{itemize}
 	\item Der accepteres en afvigelse i tærskelværdien på $\pm1\%$.
-	\item Der accepteres en afvigelse i forsyningsspændingen ned til $7$V.
+	\item Der accepteres en afvigelse i forsyningsspændingen på $\pm5\%$.
 \end{itemize}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Visuel feedback}
-Blokken med visuel feedback omfatter den del af systemet, der giver feedback til patienten vha. LED-dioder. Der skal i alt være fem LED-dioder: En grøn, der placeres i midten, en gul på hver side af den grønne diode og en rød diode på hver side af de gule dioder. Den grønne LED-diode skal lyse, når accelerometret er placeret præcist på patienten, hvorved der er sikret den rette udgangsposition for hældningen. Dette gør, at den grønne LED-diode er aktiveret fra $0^{\circ}$-$2^{\circ}$. I intervallet $0^{\circ}$-$8^{\circ}$ lyser ingen LED-dioder. Den gule LED-diode aktiveres, når patienten skal være opmærksom på sin kropshældning, da vedkommende har bevæget sig ud i intervallet $8^{\circ}$-$13^{\circ}$. Den røde LED-diode aktiveres, når patienten er over $13^{\circ}$ og derfor er i fare for at falde. Retningen af patientens kropshældning bestemmes vha. placeringen af LED-dioderne. LED-dioderne til højre for den grønne LED-diode indikerer at patienten er ved at falde til højre. Det samme gør sig gældende for fald til venstre. Forsyningsspændingen til LED-dioderne skal udgøres af $9V$ batterier.   
+Blokken med visuel feedback omfatter den del af systemet, der giver feedback til patienten vha. LED-dioder. Der skal i alt være fem LED-dioder: En grøn, der placeres i midten, en gul på hver side af den grønne diode og en rød diode på hver side af de gule dioder. Den grønne LED-diode skal lyse, når accelerometret er placeret præcist på patienten, hvorved der er sikret den rette udgangsposition for hældningen. Dette gør, at den grønne LED-diode er aktiveret fra $0^{\circ}$-$2^{\circ}$. I intervallet $0^{\circ}$-$8^{\circ}$ lyser ingen LED-dioder. Den gule LED-diode aktiveres, når patienten skal være opmærksom på sin kropshældning, da vedkommende har bevæget sig ud i intervallet $8^{\circ}$-$13^{\circ}$. Den røde LED-diode aktiveres, når patienten er over $13^{\circ}$ og derfor er i fare for at falde. Retningen af patientens kropshældning bestemmes vha. placeringen af LED-dioderne. LED-dioderne til højre for den grønne LED-diode indikerer at patienten er ved at falde til højre. Det samme gør sig gældende for fald til venstre. 
 \\
 \textbf{Krav:}
 \begin{itemize}
-	\item Skal have en forsyningsspænding på  $9V$.
+	\item Skal have en forsyningsspænding på  $5.5$V.
 	\item LED-dioderne skal informere patienten om hvilken retning kropshældningen sker i.
 	\item LED-dioderne skal kunne informere patienten omkring accelerometerets placering.
 	\item LED-dioderne skal informere patienten om risikoen for fald.
@@ -128,7 +128,7 @@ Blokken med visuel feedback omfatter den del af systemet, der giver feedback til
 \textbf{Tolerance:}
 \begin{itemize}
 	\item Der accepteres en afvigelse i tærskelværdien på $\pm1\%$ af LED-dioderne.
-	\item Der accepteres en afvigelse i forsyningsspændingen ned til $7$V.
+	\item Der accepteres en afvigelse i forsyningsspændingen på $\pm5\%$.
 \end{itemize}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Somatosensorisk feedback} 
@@ -136,7 +136,7 @@ Blokken med somatosensorisk feedback omfatter også den del af systemet, der giv
 \\
 \textbf{Krav:}
 \begin{itemize}
-	\item Skal have en forsyningsspænding på $9$V.
+	\item Skal have en forsyningsspænding på $5.5$V.
 	\item Vibratorerne skal informere patienten om hvilken retning kropshældningen sker i.
 	\item Vibratorerne skal informere patienten om risikoen for fald.
 	\item Vibratorerne skal have to vibrationshastigheder.
@@ -144,7 +144,7 @@ Blokken med somatosensorisk feedback omfatter også den del af systemet, der giv
 \textbf{Tolerance:}
 \begin{itemize}
 	\item Der accepteres en afvigelse i tærskelværdien på $\pm1\%$ af vibratorerne.
-	\item Der accepteres en afvigelse i forsyningsspændingen ned til $7$V.
+	\item Der accepteres en afvigelse i forsyningsspændingen på $\pm5\%$.
 \end{itemize}
 
 %\subsection{feedback}
@@ -180,10 +180,10 @@ I systemet anvendes der en spændingsforsyning af batterier. Dette gøres for at
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{ADC}
 Blokken med en ADC anvendes i systemet, for at konvertere det analoge signal til digitalt. %Den skal kunne sample det forstærkede signal. 
-ADC'ens inputsignal skal ligge i området $\pm5V$. Båndbredden på accelerometeret bestemmer hvilken samplingsfrekvens, der skal benyttes. I følge Nyquists sætning skal der samples med minimun det dobbelte af det biologiske signal. I praksis samples der med minimum det tidobbelte. I dette tilfælde er båndbredden $50Hz$, dvs. at der som minimum skal samples med $100Hz$, og i praksis vil det være hensigtsmæssigt at sample med minimum $500Hz$. \\
+ADC'ens inputsignal skal ligge i området $\pm3V$. Båndbredden på accelerometeret bestemmer hvilken samplingsfrekvens, der skal benyttes. I følge Nyquists sætning skal der samples med minimun det dobbelte af det biologiske signal. I praksis samples der med minimum det tidobbelte. I dette tilfælde er båndbredden $50Hz$, dvs. at der som minimum skal samples med $100Hz$, og i praksis vil det være hensigtsmæssigt at sample med minimum $500Hz$. \\
 \textbf{Krav:}
 \begin{itemize}
-	\item Skal kunne modtage et inputsignal i intervallet $\pm 5 V$.
+	\item Skal kunne modtage et inputsignal i intervallet $\pm 3 V$.
 	\item Skal have en samplingsfrekvens på minimum $500Hz$.
 \end{itemize}
 \textbf{Tolerance:}
