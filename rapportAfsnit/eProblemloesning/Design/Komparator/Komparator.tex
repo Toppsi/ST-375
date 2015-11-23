@@ -12,9 +12,9 @@ Diodernes katode skal tilkobles komparatorens output, hvorimod dens anode skal t
 %\end{figure}
 
 \noindent\textbf{Beregning af tærskelværdier og tilhørende R1-R5 modstande for aktivering af LED-dioder} \\
-Inputsignalet fra forrige blok, som er tilpasningsblokken, vil være et signal, der ligger imellem -$3.9906$V og $4.0662$V jævnført afsnit \ref{KomparatorAfs} på side\pageref{KomparatorAfs}. Ifølge systemets funktionelle krav i afsnit \ref{FunkKrav} på side \pageref{FunkKrav} ønskes det, at LED-dioderne skal lyse ved en bestemt kropshældning, dvs. ved en bestemt tærskelværdi. %Disse tærskelværdier sættes ud fra to punkter; det maksimale teoretiske signal  ved $25^{\circ}$ $4.0662$, og en tilgængelig spændingsreference, der kan sørge for en fast spænding til spændingstræet. 
+Inputsignalet fra forrige blok, som er tilpasningsblokken, vil være et signal, der ligger imellem {\color{red} -$3.9906$V og $4.0662$V} jævnført afsnit \ref{KomparatorAfs} på side\pageref{KomparatorAfs}. Ifølge systemets funktionelle krav i afsnit \ref{FunkKrav} på side \pageref{FunkKrav} ønskes det, at LED-dioderne skal lyse ved en bestemt kropshældning, dvs. ved en bestemt tærskelværdi. %Disse tærskelværdier sættes ud fra to punkter; det maksimale teoretiske signal  ved $25^{\circ}$ $4.0662$, og en tilgængelig spændingsreference, der kan sørge for en fast spænding til spændingstræet. 
 Tærskelværdierne er som jævnført afsnit \ref{KomparatorAfs} udregnet til at være:
-\begin{itemize}
+{\color{red} \begin{itemize}
 \item $2^{\circ}$ = $0.324$V
 \item -$2^{\circ}$ = -$0.324$V
 \item $8^{\circ}$ = $1.314$V
@@ -23,13 +23,22 @@ Tærskelværdierne er som jævnført afsnit \ref{KomparatorAfs} udregnet til at 
 \item -$13^{\circ}$ = -$2.0736$V
 \item $25^{\circ}$ = $4.0662$V
 \item -$25^{\circ}$ = -$3.9906$V
-\end{itemize}
-Der vælges en justerbar mikropower spændingsreference (shunt-reference LM385), som består af en regulator så den kan levere $2.5$V til spændingstræet. Spændingsreferencen indgår som del af en variabel spændingsdeler og benyttes for at holde en fast referencespænding, da spændingen ellers vil falder over tid, som det ville være tilfældet hvis, der blev anvendt et $9$V batteri som spændingsforsyning.
-Når referencespændingen er kendt kan modstandene i spændingsdeleren bestemmes. Modstandene (R$1$-R$5$)\fxnote{ret disse navne} har til formål at sørge for, at batteriet ikke drænes, fordi kredsløbet trækker strøm. Hvis modstanden er høj, vil strømmen til kredsløbet være lav, og batteriet vil derved holde længere.
-Ved bestemmelse af R$1$-R$5$\fxnote{ret disse navne}, defineres R$1$\fxnote{ret igen her..} først til at være $10$K$\Omega$, hvorefter R$2$-R$5$\fxnote{ret igen her..} udregnes vha. den generelle formel for en spændingsdeler:
+\end{itemize}}
+Der vælges en  spændingsreference, som består af en regulator så den kan levere $2.5$V til komparatorkredløbet. Spændingsreferencen indgår som del af en spændingsdeler og benyttes for at holde en fast referencespænding, da spændingen ellers vil falder over tid, som det ville være tilfældet hvis, der blev anvendt et batteri som spændingsforsyning.
+Når referencespændingen er kendt kan modstandene i spændingsdeleren bestemmes. Modstandene (R$1$-R$5$)\fxnote{ret disse navne} har til formål at sørge for, at batteriet ikke drænes, fordi kredsløbet trækker strøm. Hvis modstanden er høj, vil strømmen til kredsløbet være lav, og batterierne i spændingsreferencen vil derved holde længere.
+Der bliver brugt otte spændingsdelere, hvor fire af den indgår som vindues-komparation og fire indgår som normale komparatore. Dette design bliver valgt til fordel for to spændingtræer, da modstandene i et spændingstræ har påvirkning på hinanden og derved kan der ske ændringer i alle tærskelværdier, hvis én af modstandene ikke fungere ideelt. For at sikre dette ikke sker, brugs der derved en spændingsdeler for hver tærskelværdi som kan ses på \fxnote{Indsæt figur af kredsløbet}.  
+For at udarbejdet spændingsdelerne skal R$1$-R$14$ bestemmes så dioderne lyser ved de ønskede tærskelværdier. For at det er muligt at bestemme modstandene skal én af dem defineres.  Derfor bliver R$1$ defineret til at være $10$K$\Omega$, hvilket også gør sig gældende for R$2$-R$8$, da der bliver brugt en spændingsdeler for hver tærskelværdi. Derefter kan R$9$-R$14$ udregnes vha. den generelle formel for en spændingsdeler:
 \begin{equation}
 V_{out}=V_{in}*\dfrac{R2}{R1+R2}
 \end{equation}
+Dette medføre at R$9$-R$14$ vil blive som følgende:\\
+R$9$ = \\
+R$10$ = \\
+R$11$ = \\
+R$12$ = \\
+R$13$ = \\
+R$14$ = \\
+
 %Modstanden beregnes ud fra Ohms lov, hvor strømmen, som skal videre til spændingsreference og spændingstræet, sættes til at være $0.1$mA. Denne værdi vælges, da spændingsreferencen forbruger mellem $10\mu$A til $20$mA, og der skal være noget strøm til spændingstræet og tilhørende komparatorer. Spændingsfaldet over modstanden beregnes til at være;
 
 %\begin{equation}
