@@ -3,47 +3,36 @@
 I praksis er det ikke muligt at have ideelle komponenter \cite{Nilsson2011}. Der vurderes derfor ud fra pilotforsøget, litteratur samt relevante datablade, hvilke krav blokkene i blokdiagrammet i afsnit \ref{kravblok} på side \pageref{kravblok} skal opfylde og den tolerance, der accepteres ift. forskellige parametre.
 
 \subsection{Opsamling}\label{OpsamlingsAfs}
-Blokken opsamling omfatter accelerometeret, offsetjustering og forstærkning. Accelerometeret skal have en sådan størrelse, at det kan påsættes en patient uden at give fysiske begrænsninger. Derudover skal accelerometeret have mindst en akse, da der måles i det frontale plan. Accelerometeret skal kunne måle en statisk acceleration i mindst en retning. Herved kan det bestemmes, hvilken retning patienterne hælder mod i stående position. Det skal kunne detektere en hældningsgrad op til $\pm90^{\circ}$, da det forventes, at forsøgspersoner kan holde sig indenfor denne grænse under udførelse af øvelserne uden fald. \\
-Offsetjusteringen skal centrere det målte signal omkring $0V$, da accelerometeret ifølge pilotforsøget typisk måler $1.65V$ ved en inputspænding på $3.3V$ ved steady state. Justeringen af offset skal forekomme inden forstærkning, således at der ikke sker en forskydelse af offsettet, når accelerometret måler i positiv og negativ retning. Ved justering af offsettet må der ikke ske en ændring i signalets frekvens og amplitude. \\
-Forstærkningen skal gøre det muligt at adskille det ønskede signal fra støj i den efterfølgende filtreringsblok. Signalet skal efter forstærkningen ligge indenfor arbejdsområdet $\pm5V$ og der ønskes derfor størst mulige forstærkning. Den højeste måling ved $\pm90^{\circ}$ var ifølge pilotforsøget $0.2712V.$ Derfor kan forstærkningen udregnes således:
+Blokken opsamling omfatter accelerometeret, offsetjustering og forstærkning. Accelerometeret skal have en sådan størrelse, at det kan påsættes en patient uden at give fysiske begrænsninger. Accelerometeret skal kunne måle en statisk acceleration i mindst en retning, da der måles i det frontale plan. Herved kan det bestemmes, hvilken retning patienterne hælder mod i stående position. Det skal kunne detektere en hældningsgrad op til $\pm90^{\circ}$, da en forsøgsperson ikke kan komme over denne hældningsgrad. \\
+Offsetjusteringen skal centrere det målte signal omkring $0V$, da accelerometeret typisk måler $1.5915V$ ved $0$g påvirkning af den pågældende akse ifølge pilotforsøget. Derfor skal der trækkes $1.5915$V fra alle inputs fra accelerometret. Justeringen af offset skal forekomme inden forstærkning således, at der ikke sker en forskydelse af offsettet, når accelerometret måler i positiv og negativ retning, hvorved g påvirkningen ændres. Ved justering af offsettet må der ikke ske en ændring i signalets frekvens og amplitude. \\
+Forstærkningen skal gøre det nemmere at adskille det ønskede signal fra støj i den efterfølgende filtreringsblok. Signalet skal efter forstærkningen ligge indenfor arbejdsområdet $\pm3V$ og der ønskes derfor størst mulige forstærkning. Den højeste måling ved $\pm90^{\circ}$ var ifølge pilotforsøget efter offsetjusteringen $0.2712V.$ Derfor kan forstærkningen udregnes således:
 \begin{equation}
-\dfrac{5\text{V}}{0.2712\text{V}} = 18.4366 \approx 18
+\dfrac{3\text{V}}{0.2712\text{V}} =  11.06 \approx 11
 \end{equation}
-\noindent Der ønskes en forstærkning på faktor $18$, da der skal tages forbehold for et toleranceområde. Forstærkningens gain i dB udregnes ud fra følgende formel: 
+\noindent Der ønskes en forstærkning på faktor $10$, da der skal tages forbehold for et toleranceområde. Forstærkningens gain i dB udregnes ud fra følgende formel: 
 \begin{equation}
-20 \cdot log_{10} (18) = 25.1055\text{dB}
+20 \cdot log_{10} (10) = 20\text{dB}
 \end{equation} 
 
 \noindent\textbf{Krav:}
 \begin{itemize}
 	\item Accelerometeret skal minimum have en output akse.%, da der udelukkende måles i det frontale plan.
-	\item Accelerometeret skal være under $5x5$ cm i dimensionerne.%, da dette gør implementeringen på patienten nemmere.
+%	\item Accelerometeret skal være under $5x5$ cm i dimensionerne.%, da dette gør implementeringen på patienten nemmere.
 	\item Accelerometeret skal kunne måle statisk acceleration i mindst en retning.
 	\item Accelerometeret skal kunne detektere en hældning fra $0^{\circ}$ til $\pm90^{\circ}$.
-	\item Accelerometeret skal give et output signal i volt.
+	\item Accelerometeret skal give et outputsignal i volt.
 	\item Offsetjusteringen skal centrere det målte signal omkring $0V$.
-	\item Forstærkeren skal have en indgangsimpedans på $3.68M\Omega$\fxnote{Da man ikke vil dræne blokken før for strøm. Udregnet ved 32Kohm, da indputimpedans skal være mindst 100 gange større end den forrige bloks outputimpedans. Accelerometrets indgangsimpedans har en afvigelse på +15\%}.% på over $1M\Omega$. \fxnote{Dette skal udregnes og forklares i teksten ovenfor}
-	\item Forstærkningen skal være på 18, som svarer til $25.1055dB$.
+	\item Forstærkeren skal have en indgangsimpedans på $3.68M\Omega$\fxnote{Da man ikke vil dræne blokken før for strøm. Udregnet ved 32Kohm, da indputimpedans skal være mindst 100 gange større end den forrige bloks outputimpedans. Accelerometrets indgangsimpedans har en afvigelse på +15\%}.
+	\item Forstærkningen skal være på 10, som svarer til $20dB$.
+	\item Outputtet fra denne blok skal være mellem $2.712V$V og $-2.660$V.
 \end{itemize}
 \textbf{Tolerance:}
 \begin{itemize}
 	\item Der accepteres en afvigelse i detektionen af hældningsgrad på $5\%$.
+	\item Der accepteres en afvigelse af offsetjusteringen på $5\%$.
 	\item Der accepteres en afvigelse i forstærkningen på $2\%$.
-	\item Der accepteres en afvigelse af offsetjusteringen på $10\%$.
-	%\item Hældningen skal have en lille tolerance for ikke at risikere at patienten ikke vil falde og sikre at man ikke bevæger sig ud i den næste risikozone uden at der 
+	\item Der accepteres en afvigelse ift. maksimum og minimum output fra blokken på $5\%$.
 \end{itemize}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%\subsubsection{Forstærker} \fxnote{Forsyningsspænding? - input/output range?}
-%\textbf{Krav:}
-%\begin{itemize}
-%\item Skal forstærke signalet med et gain på 1.
-%\item Skal have en indgangsimpedans på over 1m$\Omega$.
-%\end{itemize}
-%\textbf{Tolerance:}
-%\begin{itemize}
-%\item Tolerance krav vil blive beskrevet på baggrund af pilotforsøg.
-%\item Der må være en afvigelse i indgangsimpedans på 5\%.
-%\end{itemize}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Filter}\label{FilterAfs}
 Blokken indeholdende et filter anvendes til at frasortere uønskede signaler, der kan forekomme under målinger med accelerometret. Hvis disse signaler ikke frafiltreres vil det forvrænge det ønskede biologiske signal og opleves som støj. Frekvensområdet for kropshældning er ikke defineret, men studier anvender et frekvensområde liggende mellem $0.02-10Hz$ \cite{Martinez-Mendez2011}. Alle signaler, der ligger udenfor dette spektrum, ønskes derfor fjernet. I pilotforsøget blev der påvist, at signalet i dette tilfælde ligger mellem $0-25Hz$. Alt signal uden for dette spektrum ønskes derfor frafiltreret. Dette gøres ved at benytte et lavpasfilter, der har en knækfrekvens ved $25$Hz. \\
