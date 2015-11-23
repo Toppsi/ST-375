@@ -65,7 +65,7 @@ A_{min}=20 \cdot log_{10} \cdot (\frac{1}{5}) = -13,98 \approx -14\text{dB}
 \end{itemize}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Tilpasning}\label{Tilpasningsblok}
-Blokken tilpasning har til formål at tilpasse det filtrerede signal til komparatoren. Dette gøres med en forstærker, således at spektret, der skal reguleres indenfor, øges. Derudover afgrænses måleintervallet til $\pm25^{\circ}$, da et range på $\pm90^{\circ}$ er unødvendigt ift. at vurdere hvorvidt patienten er faldet. Dermed vurderes det, at en hældning på over $25^{\circ}$ medfører fald. Der ønskes størst mulig forstærkning indenfor det afgrænsede område, som er $\pm5V$. I \eqref{Udreg1} og \eqref{Udreg2} udregnes den størst mulige spænding efter justering af offsettet. 
+Blokken tilpasning har til formål at tilpasse det filtrerede signal til komparatoren. Dette gøres med en forstærker, således at spektret, der skal reguleres indenfor, øges. Derudover afgrænses måleintervallet til $\pm25^{\circ}$, da et range på $\pm90^{\circ}$ er unødvendigt ift. at vurdere hvorvidt patienten er faldet. Dermed vurderes det, at en hældning på over $25^{\circ}$ medfører fald. Der ønskes størst mulig forstærkning indenfor det afgrænsede område, som er $\pm3V$. I \eqref{Udreg1} og \eqref{Udreg2} udregnes den størst mulige spænding efter justering af offsettet. 
 \begin{align}
 \label{Udreg1} 1.8627V - 1.5915 = 0.2712 \\
 \label{Udreg2} 1.3254 - 1.5915 = -0.2660 \\
@@ -74,18 +74,18 @@ Blokken tilpasning har til formål at tilpasse det filtrerede signal til kompara
 Der ses, at \eqref{Udreg1} giver den højeste spænding. I \eqref{Udreg3} bestemmes den maksimale spænding ved $\pm25^{\circ}$ hældning. \\
 I \eqref{TilpasEq1} udregnet inputspændingen efter den første forstærkning. Denne forstærkers faktor samt gain i dB udregnes i \eqref{TilpasEq2} og \eqref{TilpasEq3}.
 \begin{align}
-\label{TilpasEq1} 0.0753V \cdot 18 = 1.3554V \\
-\label{TilpasEq2} \dfrac{5V}{1.3554V} = 3.6889 \approx 3 \\
+\label{TilpasEq1} 0.0753V \cdot 10 = 0.7534V \\
+\label{TilpasEq2} \dfrac{3V}{0.7534V} = 3.9819 \approx 3 \\
 \label{TilpasEq3} 20 \cdot log_{10} (3) = 9.5424\text{dB}
 \end{align} 
-I \eqref{TilpasEq1}, \eqref{TilpasEq2} og \eqref{TilpasEq3} er de $5V$ grænsen for arbejdsområdet. Der forstærkes med en faktor 3. Resultatet afrundes nedad til nærmeste hele tal. \\
+I \eqref{TilpasEq1}, \eqref{TilpasEq2} og \eqref{TilpasEq3} er de $3V$ grænsen for arbejdsområdet. Der forstærkes med en faktor 3. Resultatet afrundes nedad til nærmeste hele tal. \\
 
 \noindent\textbf{Krav:}
 \begin{itemize}
 	\item Forstærkningen skal være på 3, som svarer til $9.5424dB$.
 	\item Indgangsimpedansen skal være over $3.2M\Omega$.
 	\item Output impedansen skal være under $32K\Omega$.
-	\item Output spændingen skal ligge i intervallet $\pm5V$.
+	\item Output spændingen skal ligge i intervallet $\pm3V$.
 \end{itemize}
 \noindent\textbf{Tolerance:}
 \begin{itemize}
@@ -94,12 +94,12 @@ I \eqref{TilpasEq1}, \eqref{TilpasEq2} og \eqref{TilpasEq3} er de $5V$ grænsen 
 \end{itemize}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Komparator}\label{KomparatorAfs} 
-Blokken indeholdende en komparator skal kunne sammenligne inputsignalet med en referencespænding og kunne modtage et signal mellem $\pm5V$. Komparatoren skal vha. definerede tærskelværdier bestemme hvilken hældningsgrad patienten har og i hvilken retning vedkommende hælder mod. Der skal være flere tærskelværdier, så feedbacken kan gives i flere niveauer og forskellige sværhedsgrader. Dette gør systemet fleksibelt, så det kan benyttes af patienter på forskellige balanceniveauer. Tærskelværdierne er bestemt på baggrund af pilotforsøg, hvor værdierne er beregnet ved først at finde spændingen for $90^{\circ}$, som jævnført \ref{Sec:Pilotforsoeg} på side \pageref{Sec:Pilotforsoeg} er $0.2712$V for positiv retning og -$0.2660$V i negativ retning efter forstærkning på hhv. en faktor $18$ og derefter en faktor $3$. Denne værdi divideres med $90$ for at bestemme spændingen ved $\pm1^{\circ}$ og ganges herefter med hhv. $2^{\circ}$,  $8^{\circ}$, $13^{\circ}$ og $25^{\circ}$ for at bestemme spændingen ved de enkelte hældninger.\\
+Blokken indeholdende en komparator skal kunne sammenligne inputsignalet med en referencespænding og kunne modtage et signal mellem $\pm3V$. Komparatoren skal vha. definerede tærskelværdier bestemme hvilken hældningsgrad patienten har og i hvilken retning vedkommende hælder mod. Der skal være flere tærskelværdier, så feedbacken kan gives i flere niveauer og forskellige sværhedsgrader. Dette gør systemet fleksibelt, så det kan benyttes af patienter på forskellige balanceniveauer. Tærskelværdierne er bestemt på baggrund af pilotforsøg, hvor værdierne er beregnet ved først at finde spændingen for $90^{\circ}$, som jævnført \ref{Sec:Pilotforsoeg} på side \pageref{Sec:Pilotforsoeg} er $0.2712$V for positiv retning og -$0.2660$V i negativ retning efter forstærkning på hhv. en faktor $10$ og derefter en faktor $3$. Denne værdi divideres med $90$ for at bestemme spændingen ved $\pm1^{\circ}$ og ganges herefter med hhv. $2^{\circ}$,  $8^{\circ}$, $13^{\circ}$ og $25^{\circ}$ for at bestemme spændingen ved de enkelte hældninger.\\
 \textbf{Krav:} 
 \begin{itemize}
 	\item Skal kunne skifte mellem sværhedsgrad ved at ændre tærskelværdierne.
-	\item Skal have en forsyningsspænding på  $9V$.\fxnote{evt. rette dette til}
-	\item Skal kunne modtage et inputsignal på $\pm5V$. 
+	\item Skal have en forsyningsspænding på  $5.5V$.\fxnote{evt. rette dette til}
+	\item Skal kunne modtage et inputsignal på $\pm3V$. 
 	\item Skal ved et bestemt spændingsinterval aktivere en diode og vibrator:
 	\begin{itemize}
 		\item Grøn diode og ingen vibration: I intervallet indenfor $0,324V$ til $-0,324V$.

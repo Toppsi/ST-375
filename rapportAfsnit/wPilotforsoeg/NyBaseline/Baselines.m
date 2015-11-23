@@ -61,6 +61,7 @@ B1gN3 = load('Baseline1gNegativ3');
  
  FemogtyveGraderP = EnGradP*25
  FemogtyveGraderN = EnGradN*25
+ FemogtyveGraderP*10
  
 %% Plot af tidsgraf
 figure
