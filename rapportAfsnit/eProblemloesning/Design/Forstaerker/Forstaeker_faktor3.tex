@@ -23,11 +23,11 @@ Denne forstærker undersøges ligeledes i tre simuleringer for, hvorledes forst�
 	\begin{tabular}{|l|l|l|l|l|}
 		\hline
 		\multicolumn{1}{|c|}{\textit{Inputsignalet}} & \multicolumn{1}{c|}{\textit{Forstærkning}} & \multicolumn{1}{c|}{\textit{Forventet outputsignal}}                      & \multicolumn{1}{c|}{\textit{Outputsignalet}} & \multicolumn{1}{c|}{\textit{Afvigelse}} \\ \hline
-		$4.8816$V     & 3   & \begin{tabular}[c]{@{}l@{}}Forventer mætning\\ $14.6448$V\end{tabular}  & $5.4764$V   & $\times$     \\ \hline
-		$1.3554$V     & 3   & $4.0662$V                                                               & $4.0661$V   & $0.0025\%$     \\ \hline
-		$0$V          & 3   & $0$V                                                                    & $33.6527\mu $V        & $\approx 0\%$     \\ \hline
-	   -$1.3302$V     & 3   & -$3.9906$V                                                              & -$3.9904$V  & $0.005\%$     \\ \hline
-	   -$4.7880$V     & 3   & \begin{tabular}[c]{@{}l@{}}Forventer mætning\\ -$14.3640$V\end{tabular} & -$5.4773$V  & $\times$     \\ \hline
+		$2.7120$V     & 3   & \begin{tabular}[c]{@{}l@{}}Forventer mætning\\ $8.1360$V\end{tabular}  & $5.4764$V   & $\times$     \\ \hline
+		$0.7534$V     & 3   & $2.2602$V                                                               & $4.0661$V   & $0.0025\%$     \\ \hline
+%		$0$V          & 3   & $0$V                                                                    & $33.6527\mu $V        & $\approx 0\%$     \\ \hline
+	   -$0.7389$V     & 3   & -$2.2167$V                                                              & -$3.9904$V  & $0.005\%$     \\ \hline
+	   -$2.6600$V     & 3   & \begin{tabular}[c]{@{}l@{}}Forventer mætning\\ -$7.9800$V\end{tabular} & -$5.4773$V  & $\times$     \\ \hline
 	\end{tabular}
 		\caption{I tabellen ses resultaterne af de fem simuleringer.}
 		\label{tab:forstarker3_simT}
@@ -64,19 +64,21 @@ På \figref{fig:Forstaerker_faktor3} kan der ses, at der skal benyttes to modsta
 	\centering
 	\begin{tabular}{|l|l|l|l|l|}
 		\hline
-		\textit{Ønskede input} & \textit{Målte input} & \textit{Forventet output} & \textit{Output} & \% afvigelse \\ \hline
-		$1.3554$V              & $1.3534$V            & $4.0602$V                 & $4.0602$V       & $0\%$        \\ \hline
-		$0$V                   & $-1.030$mV           & $-3.090$mV                & $-6.200$mV      &              \\ \hline
-		$-1.3302$V             & $-1.3178$V           & $-3.9534$V                & $-3.9783$V      & $0.63\%$     \\ \hline
+ \textit{Input} & \textit{Forventet output} & \textit{Output}  &  \textit{Forstærkning}  & \% afvigelse \\ \hline
+ $2.7145$V            & Mætning              & $4.8210$V       &    $\times$             & $\times$  \\ \hline
+ $0.7541$V            & $2.2623$V            & $2.2569$V       &    $2.99$               & $0.33\%$     \\ \hline
+%		$0$V                   & $-1.030$mV           & $-3.090$mV                & $-6.200$mV      &              \\ \hline
+-$0.7386$V           & $2.2158$V            & -$2.2247$V       &    $3.01$               & $0.33\%$     \\ \hline
+-$2.6375$V           & Mætning              & -$4.1536$V       &    $\times$             & $\times$    \\ \hline
 	\end{tabular}
 	\caption{I tabellen ses resultaterne fra testen med forstærkeren, der har en faktor 3.}
 	\label{Tab:faktor3_test}
 \end{table}
 
-For $1.3554$V samt $0$V er spændingen kommet direkte fra en strømforsyning, men for at undersøge forstærkningen af $-1.3302$V er det nødsaget at benytte offsettet samt faktor 18 forstærkeren, da spændingsforsyningen ikke kan levere en negativ spænding. Det var derfor forventet, at der kunne være en større afvigelse på målingerne med $-1.3302$V spænding, da denne spænding skulle igennem flere kredsløb. Inputtet i offsettet (som kan ses på \figref{fig:Offset_generisk}) var $1.5170$V og udregnet på følgende måde:
+For $2.7120$, $0.7534$V, $0$V og -$0.7389$ er spændingen kommet direkte fra en strømforsyning, men for at undersøge forstærkningen af -$2.6600$V er det nødsaget at benytte offsettet samt faktor 10 forstærkeren, da spændingsforsyningen ikke kan levere en så stor negativ spænding. Det var derfor forventet, at der kunne være en større afvigelse på målingerne med -$2.6600$V spænding, da denne spænding skulle igennem flere kredsløb. Inputtet i offsettet (som kan ses på \figref{fig:Offset_generisk}) udregnes på følgende måde:
 \begin{equation}\label{Udregnxfaktor3}
-( x - 1.5902V ) * 18 = -1.3302 \\
-x = 1.5163V
+( x - 1.5902V ) * 10 = -2.6600V \\
+x = 1.3253V
 \end{equation}
-Reference blev målt til $1.5902$V og via teorien vides det, at den ønskede spænding skulle være $-1.3302$V. I \eqref{Udregnxfaktor3} udregnes inputspændingen til offsettet til at være $1.5163$V. Denne blev sat til $1.5170$V, som gav et output på $-0.0722$V, der blev sendt ind i faktor 18 forstærkeren. Herefter var outputtet $-1.3178$V, som blev sendt ind i faktor 3 forstærkeren. Dette gav i gennemsnit outputtet $-3.9783$V, som ses i \tableref{Tab:faktor3_test}. Afvigelsen, som ville opstå grundet to ekstra kredsløb ift. de to andre målinger, ville være præsentabel for afvigelsen, som der også burde have været for de to andre spændingers tests. Der ses i \tableref{Tab:faktor3_test}, at der ikke opstod større forstyrrelser, som ville give ekstra afvigelse i det målte signal ift. det forventede signal. \\
+Reference blev målt til $1.5913$V og via teorien vides det, at den ønskede spænding skulle være -$2.6600$V. I \eqref{Udregnxfaktor3} udregnes inputspændingen til offsettet til at være $1.3253$V. Denne blev sat til $1.3263$V, som gav et output på $-0.2640$V, der blev sendt ind i faktor 10 forstærkeren. Herefter var outputtet i gennemsnit -$2.6375$V, som blev sendt ind i faktor 3 forstærkeren. Dette gav i gennemsnit outputtet $-3.9783$V, som ses i \tableref{Tab:faktor3_test}. Afvigelsen, som ville opstå grundet to ekstra kredsløb ift. de to andre målinger, ville være præsentabel for afvigelsen, som der også burde have været for de to andre spændingers tests. Der ses i \tableref{Tab:faktor3_test}, at der ikke opstod større forstyrrelser, som ville give ekstra afvigelse i det målte signal ift. det forventede signal. \\
 Der ses ud fra testen, at forstærkeren overholder kravene fra afsnit \ref{OpsamlingsAfs} på side \pageref{OpsamlingsAfs} samt ligger inde for tolerancerne.
