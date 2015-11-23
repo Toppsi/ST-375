@@ -69,15 +69,15 @@ Der ses på \figref{fig:Forstaerker_faktor18}, at der skal benyttes to modstande
 
 \begin{table}[H]
 	\centering
-	\begin{tabular}{|l|l|l|l|l|}
+	\begin{tabular}{|l|l|l|l|l|l|}
 		\hline
-		\textit{Teoretisk input} & \textit{Målte input} & \textit{Forventet output} & \textit{Output} & \% afvigelse \\ \hline
-		$0.2712$V   & $0.2726$V    & $2.7260$V     & $2.7096$V       & $0.60\%$     \\ \hline
+		\textit{Teoretisk input} & \textit{Målte input} & \textit{Forventet output} & \textit{Output} & \% \textit{\begin{tabular}[c]{@{}l@{}}Faktiske\\ forstærkning\end{tabular}} & \textit{\begin{tabular}[c]{@{}l@{}}\% afvigelse\\ i forstærkning\end{tabular}} \\ \hline
+		$0.2712$V   & $0.2726$V    & $2.7260$V     & $2.7096$V       &    9.94   & $0.06\%$     \\ \hline
 %		$0$V        & $0.3523$mV   & $3.5230$mV    & -$10$mV         & $38.49\%$      \\ \hline
-		-$0.2660$V  & -$0.2641$V   & -$2.6410$V    & -$2.6388$V      & $0.08\%$     \\ \hline
+		-$0.2660$V  & -$0.2641$V   & -$2.6410$V    & -$2.6388$V      &    9.99   & $0.01\%$     \\ \hline
 	\end{tabular}
 	\caption{I tabellen ses resultaterne fra testen med forstærkeren, der har en faktor 10. Det maksimale og minimale input fra offsetjusteringen sendes ind.}
 	\label{Tab:faktor18_test}
 \end{table}
 Det "målte input" er her blevet målt med et multimeter, da det er nemmere at håndtere end et oscilloskop. For $0.2712$V samt $0$V er spændingen kommet direkte fra en strømforsyning, men for at undersøge forstærkningen af $-0.2660$V er det nødsaget at benytte offsettet, da spændingsforsyningen ikke kan levere en negativ spænding. Det var derfor forventet, at der kunne være en større afvigelse på målingerne med $-0.2660$V spænding, da denne spænding skulle igennem flere kredsløb. Inputtet i offsettet (som kan ses på \figref{fig:Offset_generisk}) var $1.3227$V og referencen var $1.5877$V. Derved skabes den negative spænding, som sendes videre til forstærkeren. Afvigelsen, som ville opstå grundet et ekstra kredsløb, ville være præsentabel for afvigelsen, som der også burde have været for de to andre signalers tests. Der ses i \tableref{Tab:faktor18_test}, at der ikke opstod større forstyrrelser, som gav ekstra afvigelse i det målte signal ift. det forventede signal. \\
-Der ses ud fra testen, at forstærkeren overholder kravene fra afsnit \ref{OpsamlingsAfs} på side \pageref{OpsamlingsAfs} samt ligger inde for tolerancerne.
+Der ses ud fra testen, at forstærkeren overholder kravene fra afsnit \ref{OpsamlingsAfs} på side \pageref{OpsamlingsAfs} samt ligger inde for tolerancerne for afvigelser i forstærkningen.
