@@ -2,7 +2,9 @@
 \subsection{Komparator}
 \subsubsection{Teori og design}
 Som nævnt i afsnit \ref{Komparatorafsnit} på side \pageref{Komparatorafsnit} anvendes en komparator til at sammenligne to inputspændinger. I dette tilfælde vil komparatorens output blive tilkoblet hhv. en LED-diode eller/og vibrator, en modstand og den positive spændingsforsyning ($+V_{cc}$). I komparatorens inverterende terminal skal outputtet fra forrige blok tilsluttes. Inputtet til den ikke-inverterende terminal skal være reference spændingen, hvilket anvendes til at angive de beregnede tærskelværdier. Komparatoren kan derfor have to forskellige outputs afhængig af inputspændingen. Hvis inputsignalet er mindre end den beregnede tærskelværdi, vil outputtet være $0V$, og dioderne og vibratoren vil ikke aktiveres. Er inputtet højere end tærskelværdien, vil outputtet svare til jord, da strømmen fra $+V_{cc}$ vil løbe igennem komparatoren og derefter til jord. Derved opnås et spændingsfald over den positive og negative pol for LED-dioden og vibratoren på en værdi, der ligger over det minimale spændingsfald, der kræves for en aktivering. LED-dioderne og vibratorerne vil derved blive aktiveret og give feedback til patienten. \\
-Diodernes katode skal tilkobles komparatorens output, hvorimod dens anode skal tilkobles $+V_{cc}$. For aktivering af LED-dioderne vil der blive anvendt seks komparatorer, da der ifølge kravspecifikationerne i afsnit \ref{KomparatorAfs} på side \pageref{KomparatorAfs} er fem forskellige stadier for aktivering Der skal midlertidig bruges seks da den ene stadie både har positive og negative tærskelværdier og derfor skal der bruge to komparatorere til dette stadie. Tærskelværdierne for disse kan både implemeteres som to spændingstræer eller som otte spændingsdelere. Der er fordele og ulemper ved begge metoder. Det vælges at bruge otte spændingsdelere, hvor fire indgår i to vindues-komparatorere og fire i normale komparatorere. 
+
+\noindent\textbf{Visuel komparator kredsløb} \\
+Til den visuelle del af komparator kredsløbet bruges der LED-dioder. Diodernes katode skal tilkobles komparatorens output, hvorimod dens anode skal tilkobles $+V_{cc}$. For aktivering af LED-dioderne vil der blive anvendt seks komparatorer, da der ifølge kravspecifikationerne i afsnit \ref{KomparatorAfs} på side \pageref{KomparatorAfs} er fem forskellige stadier for aktivering Der skal midlertidig bruges seks da den ene stadie både har positive og negative tærskelværdier og derfor skal der bruge to komparatorere til dette stadie. Tærskelværdierne for disse kan både implemeteres som to spændingstræer eller som otte spændingsdelere. Der er fordele og ulemper ved begge metoder. Det vælges at bruge otte spændingsdelere, hvor fire indgår i to vindues-komparatorere og fire i normale komparatorere. 
 Dette design bliver valgt til fordel for to spændingtræer, da modstandene i et spændingstræ har påvirkning på hinanden og derved kan der ske ændringer i alle tærskelværdier, hvis én af modstandene ikke fungere ideelt. For at sikre dette ikke sker, brugs der derved en spændingsdeler for hver tærskelværdi som kan ses på figur \figref{fig:komparator_visuel}.
 Derudover bruges der en spændingsreference $+V_{ref}$ på $2.5$V og  seks modstande (R$15$-R$20$) mellem LED-dioderne og $+V_{cc}$ for at beskytte LED-dioderne mod for høj strømstyrke og undgå, at batteriet drænes. Desuden bliver der placeret  dioder (D$7$ - D$10$) ved hver af de to operations forstærkere(TL$081$) i vindues-komparationen. Dette gøres for at adskille de to operations forstærkere ellers ville de påvirke hinanden og vindues-komparatoren vil derved ikke fungere som ønsket.  
 \begin{figure}[H]
@@ -75,4 +77,15 @@ Vibratorerne der anvendes i systemet er af typen XX... Afsnit skal skrives, når
 FÅ SWITCH MED IND I DET? \\
 
 \subsubsection{Simulering}
+\noindent\textbf{Simulering af visuel komparator kredsløb} \\
+For at udføre en simulering af det visuelle komparator kredsløb bliver kredsløbet tilkoblet et sinus-signal, der svinger mellem $\pm3$V, som input. Dette gøres for at simulerer signalet, der kommer far forrige blok, hvor arbejdsområdet er på $\pm3$V. Der test om det visuelle komparator kredsløb opfylder kravene fra kravspecifikationerne i afsnit \ref{KomparatorAfs} på side \pageref{KomparatorAfs}. Simuleringen af det visuelle komparator kredsløb kan ses på figur \figref{fig:komparator_visuel_simulering}.
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=1.0]{figures/cProblemloesning/komparator_visuel_simulering.PNG}
+	\caption{}
+	\label{fig:komparator_visuel_simulering}
+\end{figure}
+
+\noindent\textbf{Simulering af somasensorisk komparator kredsløb} \\
+
 \subsubsection{Implementering og test}
