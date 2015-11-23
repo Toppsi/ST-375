@@ -78,13 +78,14 @@ FÅ SWITCH MED IND I DET? \\
 
 \subsubsection{Simulering}
 \noindent\textbf{Simulering af visuel komparator kredsløb} \\
-For at udføre en simulering af det visuelle komparator kredsløb bliver kredsløbet tilkoblet et sinus-signal, der svinger mellem $\pm3$V, som input. Dette gøres for at simulerer signalet, der kommer far forrige blok, hvor arbejdsområdet er på $\pm3$V. Der test om det visuelle komparator kredsløb opfylder kravene fra kravspecifikationerne i afsnit \ref{KomparatorAfs} på side \pageref{KomparatorAfs}. Simuleringen af det visuelle komparator kredsløb kan ses på figur \figref{fig:komparator_visuel_simulering}.
+For at udføre en simulering af det visuelle komparator kredsløb bliver kredsløbet tilkoblet et sinus-signal, der svinger mellem $\pm3$V, som input. Dette gøres for at simulerer signalet, der kommer far forrige blok, hvor arbejdsområdet er på $\pm3$V. Der test om det visuelle komparator kredsløb opfylder kravene fra kravspecifikationerne i afsnit \ref{KomparatorAfs} på side \pageref{KomparatorAfs}. Simuleringen af det visuelle komparator kredsløb kan ses på figur \figref{fig:komparator_visuel_simulering_samlet}.
 \begin{figure}[H]
 	\centering
-	\includegraphics[scale=1.0]{figures/cProblemloesning/komparator_visuel_simulering.PNG}
-	\caption{}
-	\label{fig:komparator_visuel_simulering}
+	\includegraphics[scale=1.0]{figures/cProblemloesning/komparator_visuel_simulering_samlet.PNG}
+	\caption{En simulering af den visuelle del af komparator kredsløbet. Den røde kurve er en sinus signale, som skal forestille input signalet til blokken. De resterende kurver er de enkelte komparatore, som under tærskelværdien er i negativ mætning. Når input signalet når diverse tærskelværdier, vil kurverne gå i positiv mætning og dioderne vil lyse. Ved vindues-komparatoren er den positive og negative mætning ikke så høj, som ved de normale komparatore. Dette skyldes at dette signal skal over to yderlige dioder, hvilket giver et spændingsfald. }
+	\label{fig:komparator_visuel_simulering_samlet}
 \end{figure}
+På figuren \figref{fig:komparator_visuel_simulering_samlet} kan det ses at ved de enkelte tærskelværdier går signalerne i positiv mætning og det derved får dioderne til at lyse. Mætningen er under $5.5$V som er den spænding dioderne maksium kan klare unden at brænde af \fxnote{Kontrollere af denne værdi (5.5) er rigtig}, men samtidig nok til at få dioderne til at lyse, hvilket krævede mellem $1.7-1.9$V og $2$mA. 
 
 \noindent\textbf{Simulering af somasensorisk komparator kredsløb} \\
 
