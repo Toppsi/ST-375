@@ -53,14 +53,17 @@ B1gN3 = load('Baseline1gNegativ3');
  EnGradN = B1gNUdenOffset/90
  
  %% Findedr værdien for de bestemte grænser
- OtteGraderP = EnGradP*8
- OtteGraderN = EnGradN*8
+ ToGraderP = (EnGradP*2)*30
+ ToGraderN = (EnGradN*2)*30
  
- TrettenGraderP = EnGradP*13
- TrettenGraderN = EnGradN*13
+ OtteGraderP = (EnGradP*8)*30
+ OtteGraderN = (EnGradN*8)*30
  
- FemogtyveGraderP = EnGradP*25
- FemogtyveGraderN = EnGradN*25
+ TrettenGraderP = (EnGradP*13)*30
+ TrettenGraderN = (EnGradN*13)*30
+ 
+ FemogtyveGraderP = (EnGradP*25)*30
+ FemogtyveGraderN = (EnGradN*25)*30
  FemogtyveGraderP*10
  
 %% Plot af tidsgraf
