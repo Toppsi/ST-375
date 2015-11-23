@@ -1,5 +1,7 @@
 Circuit: * C:\Users\User\Desktop\ST-375\rapportAfsnit\eProblemloesning\Design\Komparator\Komparator system.asc
 
+WARNING: Less than two connections to node N011.  This node is used by R10.
+WARNING: Less than two connections to node N021.  This node is used by R20.
 Early termination of direct N-R iteration.
 Direct Newton iteration failed to find .op point.  (Use ".option noopiter" to skip.)
 Starting Gmin stepping
@@ -22,22 +24,22 @@ Gmin = 0
 Gmin stepping succeeded in finding the operating point.
 
 
-Date: Mon Nov 23 09:27:50 2015
-Total elapsed time: 3.606 seconds.
+Date: Mon Nov 23 09:42:27 2015
+Total elapsed time: 5.311 seconds.
 
 tnom = 27
 temp = 27
 method = modified trap
-totiter = 25409
-traniter = 23940
-tranpoints = 5523
-accept = 4064
-rejected = 1459
-matrix size = 242
-fillins = 729
+totiter = 24203
+traniter = 22755
+tranpoints = 5419
+accept = 3958
+rejected = 1461
+matrix size = 244
+fillins = 1088
 solver = Normal
-Thread vector: 49.0/34.8[2] 15.5/11.9[2] 10.3/8.3[2] 5.3/6.0[1]  2592/500
-Matrix Compiler1: 42.78 KB object code size  26.6/14.7/[7.6]
-Matrix Compiler2: 33.93 KB object code size  13.8/14.6/[13.5]
+Thread vector: 80.2/47.8[2] 17.8/10.4[2] 10.8/8.9[2] 7.9/171.0[1]  2592/500
+Matrix Compiler1: 99.11 KB object code size  51.6/25.8/[19.0]
+Matrix Compiler2: 39.83 KB object code size  16.6/17.0/[7.8]
 
 
