@@ -32,8 +32,8 @@ plot(f,P1)
 axis([-10 250 0 0.0004])
 title('Frekvensspektrum for baseline ved 0g') 
 %title('Single-Sided Amplitude Spectrum of X(t)')
-xlabel('f (Hz)')
-ylabel('|P1(f)|')
+xlabel('frekvens (Hz)')
+ylabel('volt (V)')
 
 
 

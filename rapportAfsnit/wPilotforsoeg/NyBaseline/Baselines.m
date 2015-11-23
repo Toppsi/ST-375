@@ -69,7 +69,7 @@ plot(t, B0g1.data(1:L))
 axis([0 30 1 2])
 title('Volt målt ved de forskellige baselines (1. måling)')
 xlabel('Tid i sekunder')
-ylabel('Spænding målt i Volt')
+ylabel('Spænding målt i volt')
 hold on
 plot(t, B1gP1.data(1:L))
 hold on
@@ -80,7 +80,7 @@ plot(t, B0g2.data(1:L))
 axis([0 30 1 2])
 title('Volt målt ved de forskellige baselines (2. måling)')
 xlabel('Tid i sekunder')
-ylabel('Spænding målt i Volt')
+ylabel('Spænding målt i volt')
 hold on
 plot(t, B1gP2.data(1:L))
 hold on
@@ -91,7 +91,7 @@ plot(t, B0g3.data(1:L))
 axis([0 30 1 2])
 title('Volt målt ved de forskellige baselines (3. måling)')
 xlabel('Tid i sekunder')
-ylabel('Spænding målt i Volt')
+ylabel('Spænding målt i volt')
 hold on
 plot(t, B1gP3.data(1:L))
 hold on
@@ -110,11 +110,11 @@ P1B0g1(2:end-1) = 2*P1B0g1(2:end-1);
 figure
 subplot(3,1,1) %% Hvis det skal være i hver sin figur, så slet det her
 plot(f,P1B0g1)
-%axis([-10 250 0 0.0004])
+axis([-10 250 0 0.0004])
 title('Frekvensspektrum for baseline ved 0g (1 måling)') 
 %title('Single-Sided Amplitude Spectrum of X(t)')
-xlabel('f (Hz)')
-ylabel('|Y(f)|')
+xlabel('Frekvens målt i Hz')
+ylabel('Spændingen målt i volt')
 %% FFT af Baseline ved 0g 2 måling
 fftB0g2 = fft(B0g2.data(1:L));
 
@@ -127,11 +127,11 @@ P1B0g2(2:end-1) = 2*P1B0g2(2:end-1);
 %Plot the single-sided amplitude spectrum P1.
 subplot(3,1,2) %% Hvis det skal være i hver sin figur, så slet det her
 plot(f,P1B0g2)
-%axis([-10 250 0 0.0004])
+axis([-10 250 0 0.0004])
 title('Frekvensspektrum for baseline ved 0g (2 måling)') 
 %title('Single-Sided Amplitude Spectrum of X(t)')
-xlabel('f (Hz)')
-ylabel('|Y(f)|')
+xlabel('Frekvens målt i Hz')
+ylabel('Spænding målt i volt')
 
 %% FFT af Baseline ved 0g 3 måling
 fftB0g3 = fft(B0g3.data(1:L));
@@ -145,11 +145,11 @@ P1B0g3(2:end-1) = 2*P1B0g3(2:end-1);
 %Plot the single-sided amplitude spectrum P1.
 subplot(3,1,3) %% Hvis det skal være i hver sin figur, så slet det her
 plot(f,P1B0g3)
-%axis([-10 250 0 0.0004])
+axis([-10 250 0 0.0004])
 title('Frekvensspektrum for baseline ved 0g (3 måling)') 
 %title('Single-Sided Amplitude Spectrum of X(t)')
-xlabel('f (Hz)')
-ylabel('|Y(f)|')
+xlabel('Frekvens målt i Hz')
+ylabel('Spænding målt i volt')
 
 %% FFT af baseline bed 1 g i positiv retning 1 måling
 fftB1gP1 = fft(B1gP1.data(1:L));
@@ -167,8 +167,8 @@ plot(f,P1B1gP1)
 axis([-10 250 0 0.0004])
 title('Frekvensspektrum for baseline ved 1g i positiv retning (1 måling)') 
 %title('Single-Sided Amplitude Spectrum of X(t)')
-xlabel('f (Hz)')
-ylabel('|Y(f)|')
+xlabel('Frekvens målt i Hz')
+ylabel('Spænding målt i volt')
 
 %% FFT af baseline bed 1 g i positiv retning 2 måling
 fftB1gP2 = fft(B1gP2.data(1:L));
@@ -185,8 +185,8 @@ plot(f,P1B1gP2)
 axis([-10 250 0 0.0004])
 title('Frekvensspektrum for baseline ved 1g i positiv retning (2 måling)') 
 %title('Single-Sided Amplitude Spectrum of X(t)')
-xlabel('f (Hz)')
-ylabel('|Y(f)|')
+xlabel('Frekvens målt i Hz')
+ylabel('Spænding målt i volt')
 
 %% FFT af baseline bed 1 g i positiv retning 3 måling
 fftB1gP3 = fft(B1gP3.data(1:L));
@@ -203,8 +203,8 @@ plot(f,P1B1gP3)
 axis([-10 250 0 0.0004])
 title('Frekvensspektrum for baseline ved 1g i positiv retning (3 måling)') 
 %title('Single-Sided Amplitude Spectrum of X(t)')
-xlabel('f (Hz)')
-ylabel('|Y(f)|')
+xlabel('Frekvens målt i Hz')
+ylabel('Spænding målt i volt')
 
 
 %% FFT af baseline bed 1 g i negativ retning 1 måling
@@ -223,8 +223,8 @@ plot(f,P1B1gN1)
 axis([-10 250 0 0.0004])
 title('Frekvensspektrum for baseline ved 1g i negativ retning (1 måling)') 
 %title('Single-Sided Amplitude Spectrum of X(t)')
-xlabel('f (Hz)')
-ylabel('|Y(f)|')
+xlabel('Frekvens målt i Hz')
+ylabel('Spænding målt i volt')
 
 %% FFT af baseline bed 1 g i negativ retning 2 måling
 fftB1gN2 = fft(B1gN2.data(1:L));
@@ -241,8 +241,8 @@ plot(f,P1B1gN2)
 axis([-10 250 0 0.0004])
 title('Frekvensspektrum for baseline ved 1g i negativ retning (2 måling)') 
 %title('Single-Sided Amplitude Spectrum of X(t)')
-xlabel('f (Hz)')
-ylabel('|Y(f)|')
+xlabel('Frekvens målt i Hz')
+ylabel('Spænding målt i volt')
 
 %% FFT af baseline bed 1 g i negativ retning 3 måling
 fftB1gN3 = fft(B1gN3.data(1:L));
@@ -259,11 +259,11 @@ plot(f,P1B1gN3)
 axis([-10 250 0 0.0004])
 title('Frekvensspektrum for baseline ved 1g i negativ retning (3 måling)') 
 %title('Single-Sided Amplitude Spectrum of X(t)')
-xlabel('f (Hz)')
-ylabel('|Y(f)|')
+xlabel('Frekvens målt i Hz')
+ylabel('Spænding målt i volt')
 
 A = max(fftB1gN3)
-plot(B0g3.data)
+%plot(B0g3.data)
 
 
 RMS = rms(B0g3.data)
