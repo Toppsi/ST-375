@@ -2,21 +2,21 @@ Circuit: * C:\Users\Mathias\Desktop\ST-375\rapportAfsnit\eProblemloesning\Design
 
 Direct Newton iteration for .op point succeeded.
 
-Date: Fri Nov 20 14:54:21 2015
-Total elapsed time: 0.184 seconds.
+Date: Mon Nov 23 10:13:40 2015
+Total elapsed time: 0.283 seconds.
 
 tnom = 27
 temp = 27
 method = modified trap
-totiter = 2109
-traniter = 2088
-tranpoints = 1045
-accept = 1045
-rejected = 0
+totiter = 9122
+traniter = 9086
+tranpoints = 3068
+accept = 2318
+rejected = 750
 matrix size = 29
 fillins = 32
 solver = Normal
-Matrix Compiler1: 2.77 KB object code size  3.0/1.8/[1.0]
-Matrix Compiler2: 2.94 KB object code size  1.6/2.4/[1.3]
+Matrix Compiler1: 2.77 KB object code size  2.8/1.6/[1.0]
+Matrix Compiler2: 2.94 KB object code size  1.6/2.3/[1.4]
 
 
