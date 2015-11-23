@@ -51,15 +51,15 @@ Resultaterne af de tre simuleringer ses i \tableref{tab:forstarker18_sim}
 \noindent Der ses på afvigelserne, at der arbejdes med ideelle komponenter, da der er en meget lav afvigelse i outputtet ift. det forventede output. Det er herved bevist, at kredsløbet fungerer teoretisk og kan derfor implementeres.
 
 \subsubsection{Implementering og test}
-Der ses på \figref{fig:Forstaerker_faktor18}, at der skal benyttes to modstandere på $10$K$\Omega$ og $170$K$\Omega$ til opbygningen af forstærkeren. Reelt findes der dog ikke en $170$K$\Omega$, hvorfor der istedet benyttes en $270$K$\Omega$ og $470$K$\Omega$ modstander i parallel forbindelse, hvilket teoretisk vil give en $0.874$\% afvigelse fra en ideelt $170$K$\Omega$ modstander. Disse tre modstandere blev målt inden testen, hvilket fremgår i \tableref{Tab:modstand_faktor18}.
+Der ses på \figref{fig:Forstaerker_faktor18}, at der skal benyttes to modstandere på $10$K$\Omega$ og $90$K$\Omega$ til opbygningen af forstærkeren. Reelt findes der ikke en $90$K$\Omega$, hvorfor der istedet benyttes en $22$K$\Omega$ og $68$K$\Omega$ modstander i serie forbindelse, hvilket teoretisk vil give en $0$\% afvigelse fra en ideel $90$K$\Omega$ modstand. Disse tre modstande blev målt inden testen, hvilket fremgår i \tableref{Tab:modstand_faktor18}.
 \begin{table}[H]
 	\centering
 	\begin{tabular}{|l|l|l|}
 		\hline
 		\textit{Teoretisk} & \textit{Ved måling} & \textit{\% afvigelse} \\ \hline
 		$10$K$\Omega$       & $10$K$\Omega$        & $0$\%               \\ \hline
-		$270$K$\Omega$      & $270.2$K$\Omega$     & $0.01$\%               \\ \hline
-		$470$K$\Omega$      & $470$K$\Omega$       & $0$\%               \\ \hline
+		$22$K$\Omega$      & $21.87$K$\Omega$     & $0.59$\%               \\ \hline
+		$68$K$\Omega$      & $67.8$K$\Omega$       & $0.29$\%               \\ \hline
 	\end{tabular}
 	\caption{I tabellen ses der, at de tre modstandere afviger lidt fra deres teoretiske værdi, hvilket er forventet af reelle komponenter. Det er dog en acceptabel afvigelse, så modstanderne kan derfor anvendes til implementeringen.}
 	\label{Tab:modstand_faktor18}
