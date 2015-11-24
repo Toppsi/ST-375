@@ -28,7 +28,7 @@ Tærskelværdierne er som jævnført afsnit \ref{KomparatorAfs} udregnet til at 
 \item -$13^{\circ}$ = -$1.1527$V
 \item $25^{\circ}$ = $2.2602$V
 \item -$25^{\circ}$ = -$2.2168$V
-\end{itemize}}
+\end{itemize}
 
 Der vælges en  spændingsreference, som består af en regulator så den kan levere $2.5$V til komparatorkredløbet. Spændingsreferencen indgår som del af en spændingsdeler og benyttes for at holde en fast referencespænding, da spændingen ellers vil falder over tid, som det ville være tilfældet hvis, der blev anvendt et batteri som spændingsforsyning. For at det er muligt at bruge den $2.5$V spændingsforsyning til de negative tærskelværider bruges en inverterende forstærker med et gain på en som kan ses på figur \figref{fig:komparator_visuel}. Derved vendes signalet uden at bliver forstærket og kan derved bruges som referencespænding til den negative retning.  
 Når referencespændingen er kendt kan modstandene i spændingsdeleren bestemmes. Modstandene (R$15$-R$20$) har til formål at sørge for, at batterierne i spændingsforsyningen ikke drænes, fordi kredsløbet trækker strøm. Hvis modstanden er høj, vil strømmen til kredsløbet være lav, og batterierne i spændingsreferencen vil derved holde længere.
@@ -60,19 +60,18 @@ R$14$ = $8555.629778$ \\
 Ifølge kravspecifikationerne i afsnit \ref{FunkKrav}  på side \pageref{FunkKrav} for komparatoren skal den have en forsyningsspænding på  $5.5$V. De anvendte LED-dioder i systemet er: to grønne L-$53$LG $5$mm (D$3$  og D$4$), to røde L-$53$LI $5$mm (D$1$ og D$6$) og to gule L-$53$LY $5$mm (D$2$ og D$5$). Disse LED-dioder kræver en minimum spænding på 2mA for at lyse og spændingsfaldet over dioderne ligger maksimalt i intervallet $2.0$V til $2.2$ V (rød: $2.0$, gul: $2.1$ og grøn: $2.2$), men typisk mellem $1.7$V-$1.9$V.Derudover skal LED-dioderne forsynes med $2$mA for at fungere, men kan forsynes med op til $150$mA, før de brændes af. LED-dioderne forsynes af en $5.5$V spændingsforsyneing og tilkobles, som sagt, tilhørende modstande for bla. at undgå at LED-dioderne brænder af. Spændingsfaldet over dioderne samt den spænding LED-dioderne som minimum skal bruge for at lyse er kendte værdier, dvs. modstandene R$15$-R$20$ kan derfor findes vha. Ohms lov. Nedestående udregning giver en værdi af modstandene, hvis spændingsforsyningen giver $5.5$V til kredløbet og hvor der tages udgangspunkt i  minimum strømmen for LED-dioderne:
 
 \begin{equation}
-\text{R} = \dfrac{$5.5$V -$ 2.2$V}{2mA} = $1650$$\Omega$
+R = \dfrac{5.5V - 2.2V}{2mA} = 1650\Omega
 \end{equation}
 \noindent Dermed sættes modstandene R$15$-R$20$ alle til $1650\Omega$ for at sikre at der er tilstrækkeligt med strøm i kredsløbet til at dioderne kan lyse, uden at de brændes af eller at batterierne drænes. Opsætningen af LED-dioderne kan ses på figur \figref{fig:komparator_visuel}.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\color{
 \noindent\textbf{Beregning af tærskelværdier og tilhørende R1-R5 modstande for aktivering af  vibratorerne} \\
 For aktivering af vibratorerne vil der blive anvendt to komparatorer, da der ifølge kravsspecifikationerne i afsnit \ref{KomparatorAfs} på side \pageref{KomparatorAfs} skal være 2 tærskelværdier. Disse tærskelværdier konstrueres ligeledes vha. to parallelforbundede modstande og spændingsreferencer, samt de resterende modstande mellem vibratorerne og $+V_{cc}$. På figur X vises konstruktionen af kredsløbet med de to vibratorer og tilhørende modstande. \\
 
 indsæt billede og word dokument \\
 
 \noindent\textbf{Beregning af R6-R10 modstande for aktivering af vibratorerne} \\
-Vibratorerne der anvendes i systemet er af typen XX... Afsnit skal skrives, når vi har information om vibratorer.  \\}
+Vibratorerne der anvendes i systemet er af typen XX... Afsnit skal skrives, når vi har information om vibratorer.  \\
 
 FÅ SWITCH MED IND I DET? \\
 

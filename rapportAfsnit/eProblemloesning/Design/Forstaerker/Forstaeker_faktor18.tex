@@ -25,7 +25,7 @@ R1 = 90\text{K}\Omega
 \end{figure} 
 
 \subsubsection{Simulering}\label{Subsec:Forstaerker_simu}
-Der undersøges i tre simuleringer, om forstærkeren virker ved det laveste input på -$0.2660$V, uden påvirkning ved $0$V samt højeste input på $0.2712$V, som er blevet udregnet igennem pilotforsøget. På \figref{fig:Forstaerker_faktor18_simulering} ses en af de tre simuleringer af spændingerne.
+Der undersøges i to simuleringer, om forstærkeren virker ved det laveste input på -$0.2660$V og højeste input på $0.2712$V, som er blevet udregnet igennem pilotforsøget. På \figref{fig:Forstaerker_faktor18_simulering} ses en af de to simuleringer af spændingerne.
 
 \begin{figure}[H]
 \centering
@@ -35,7 +35,7 @@ Der undersøges i tre simuleringer, om forstærkeren virker ved det laveste inpu
 \end{figure}
 
 Der kan ses på \figref{fig:Forstaerker_faktor18_simulering}, at det forstærkede signal, kaldet $V_{out}$, er ca. $2.7120$V, hvilket er $10$ gange større end $V_{in}$, som i simuleringen er sat til $0.2712$V. Derved er der sket den ønskede forstærkning, hvilket var forventet, da simuleringen er med ideelle komponenter. Derfor har de enkelte komponenter i denne simulering næsten ingen tolerance, hvilket reelle komponenter i et reelt kredsløb vil have mere af. \\
-Resultaterne af de tre simuleringer ses i \tableref{tab:forstarker18_sim}
+Resultaterne af de to simuleringer ses i \tableref{tab:forstarker18_sim}
 \begin{table}[H]
 	\centering
 	\begin{tabular}{|l|l|l|l|l|}
@@ -64,20 +64,18 @@ Der ses på \figref{fig:Forstaerker_faktor18}, at der skal benyttes to modstande
 	\caption{I tabellen ses der, at de tre modstandere afviger lidt fra deres teoretiske værdi, hvilket er forventet af reelle komponenter. Det er dog en acceptabel afvigelse, så modstanderne kan derfor anvendes til implementeringen.}
 	\label{Tab:modstand_faktor18}
 \end{table}
-
-\noindent Herefter implementeres kredsløbet. Til opsamling af signalet benyttes en computer med ScopeLogger, hvorefter dataen bliver behandlet i Matlab. I testen blev der foretaget 3 målinger for hver af de tre spændingsniveauer. Herefter blev gennemsnittet for hver måling udregnet, som lægges sammen og til slut også tages gennemsnittet af. Dette giver den endelige værdi, som står under "Output" i \tableref{Tab:faktor18_test}.\
-
+\noindent Herefter implementeres kredsløbet. Til opsamling af signalet benyttes en computer med ScopeLogger, hvorefter dataen bliver behandlet i Matlab. I testen blev der foretaget 3 målinger for de to spændingsniveauer. Herefter blev gennemsnittet for hver måling udregnet, som lægges sammen og til slut også tages gennemsnittet af. Dette giver den endelige værdi, som står under "Output" i \tableref{Tab:faktor18_test}.\
 \begin{table}[H]
 	\centering
-	\begin{tabular}{|l|l|l|l|l|l|}
+	\begin{tabular}{|l|l|l|l|l|}
 		\hline
-		\textit{Teoretisk input} & \textit{Målte input} & \textit{Forventet output} & \textit{Output} & \% \textit{\begin{tabular}[c]{@{}l@{}}Faktiske\\ forstærkning\end{tabular}} & \textit{\begin{tabular}[c]{@{}l@{}}\% afvigelse\\ i forstærkning\end{tabular}} \\ \hline
-		$0.2712$V   & $0.2726$V    & $2.7260$V     & $2.7096$V       &    9.94   & $0.06\%$     \\ \hline
+		\textit{Teoretisk input} & \textit{Målte input} & \textit{Output} & \% \textit{\begin{tabular}[c]{@{}l@{}}Faktiske\\ forstærkning\end{tabular}} & \textit{\begin{tabular}[c]{@{}l@{}}\% afvigelse\\ i forstærkning\end{tabular}} \\ \hline
+		$0.2712$V   & $0.2726$V    & $2.7096$V       &    9.94   & $0.06\%$     \\ \hline
 %		$0$V        & $0.3523$mV   & $3.5230$mV    & -$10$mV         & $38.49\%$      \\ \hline
-		-$0.2660$V  & -$0.2641$V   & -$2.6410$V    & -$2.6388$V      &    9.99   & $0.01\%$     \\ \hline
+		-$0.2660$V  & -$0.2641$V   & -$2.6388$V      &    9.99   & $0.01\%$     \\ \hline
 	\end{tabular}
-	\caption{I tabellen ses resultaterne fra testen med forstærkeren, der har en faktor 10. Det maksimale og minimale input fra offsetjusteringen sendes ind.}
+	\caption{I tabellen ses resultaterne fra testen med forstærkeren, der har en faktor 10. Det maksimale og minimale input fra offsetjusteringen er forsøgt at blive sendt ind.}
 	\label{Tab:faktor18_test}
 \end{table}
-Det "målte input" er her blevet målt med et multimeter, da det er nemmere at håndtere end et oscilloskop. For $0.2712$V samt $0$V er spændingen kommet direkte fra en strømforsyning, men for at undersøge forstærkningen af $-0.2660$V er det nødsaget at benytte offsettet, da spændingsforsyningen ikke kan levere en negativ spænding. Det var derfor forventet, at der kunne være en større afvigelse på målingerne med $-0.2660$V spænding, da denne spænding skulle igennem flere kredsløb. Inputtet i offsettet (som kan ses på \figref{fig:Offset_generisk}) var $1.3227$V og referencen var $1.5877$V. Derved skabes den negative spænding, som sendes videre til forstærkeren. Afvigelsen, som ville opstå grundet et ekstra kredsløb, ville være præsentabel for afvigelsen, som der også burde have været for de to andre signalers tests. Der ses i \tableref{Tab:faktor18_test}, at der ikke opstod større forstyrrelser, som gav ekstra afvigelse i det målte signal ift. det forventede signal. \\
+Det "målte input" er her blevet målt med et multimeter, da det er nemmere at håndtere end et oscilloskop. For $0.2712$V er spændingen kommet direkte fra en strømforsyning, men for at undersøge forstærkningen af $-0.2660$V er det nødsaget at benytte offsettet, da spændingsforsyningen ikke kan levere en negativ spænding. Det var derfor forventet, at der kunne være en større afvigelse på målingerne med $-0.2660$V spænding, da denne spænding skulle igennem flere kredsløb. Inputtet i offsettet (som kan ses på \figref{fig:Offset_generisk}) var $1.3227$V og referencen var $1.5877$V. Derved skabes den negative spænding, som sendes videre til forstærkeren. Afvigelsen, som ville opstå grundet et ekstra kredsløb, ville være præsentabel for afvigelsen, som der også burde have været for de to andre signalers tests. Der ses i \tableref{Tab:faktor18_test}, at der ikke opstod større forstyrrelser, som gav ekstra afvigelse i det målte signal ift. det forventede signal. \\
 Der ses ud fra testen, at forstærkeren overholder kravene fra afsnit \ref{OpsamlingsAfs} på side \pageref{OpsamlingsAfs} samt ligger inde for tolerancerne for afvigelser i forstærkningen.
