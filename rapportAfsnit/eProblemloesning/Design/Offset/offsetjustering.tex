@@ -68,15 +68,15 @@ Der ses på \figref{fig:Offset_generisk}, at der skal benyttes fire modstandere 
 \begin{table}[H]
 	\centering
 	\begin{tabular}{l|l|l|l|l|l|}
-		\cline{2-7}
+		\cline{2-6}
 		& \textit{\begin{tabular}[c]{@{}l@{}}Ønskede\\ input\end{tabular}} & \textit{Input} & \textit{\begin{tabular}[c]{@{}l@{}}Forventet\\ output\end{tabular}} & \textit{Output} & \% afvigelse \\ \hline
 		\multicolumn{1}{|l|}{\textit{\begin{tabular}[c]{@{}l@{}}$V1$\\ ref\end{tabular}}}    & $1.5915$V    & $1.5919$V    & $\times$    & $\times$   & $\times$     \\ \hline
-		\multicolumn{1}{|l|}{\multirow{3}{*}{\textit{\begin{tabular}[c]{@{}l@{}}$V2$\\ signal\end{tabular}}}} & $1.8627$V   & $1.8619$V    & $0.2700$V   & $0.2689$V   & $0.41\%$     \\ \cline{2-7} 
+		\multicolumn{1}{|l|}{\multirow{2}{*}{\textit{\begin{tabular}[c]{@{}l@{}}$V2$\\ signal\end{tabular}}}} & $1.8627$V   & $1.8619$V    & $0.2700$V   & $0.2689$V   & $0.41\%$     \\ \cline{2-6} 
 		%\multicolumn{1}{|l|}{}                                         & $1.5915$V    & $1.5$V   & $1.5900$V    & $0$V         & $-0.0018$V  & $0.18\%$     \\ \cline{2-7} 
 		\multicolumn{1}{|l|}{}   & $1.3254$V   &    $1.3261$V    & $-0.2658$V  & $-0.2673$V  & $0.56\%$     \\ \hline
 	\end{tabular}
 	\caption{I tabellen ses en oversigt over det udregnede resultat for de to spændingsniveauer.}
 	\label{Tab:Offset_test}
-\end{table}\fxnote{Det forventede output er regnet således, at den inpu det er udregnet udfra hvad i reelt har af input og reference, derefter tjekker vi om det vi målte passer med det vi fik ud}
-I \tableref{Tab:Offset_test} betegner "$V1$ / ref." referencespændingen, som sendes ind i den inverterende kanal, mens "$V2$ / signal.)" betegner den laveste og højeste spændinger, som bliver sendt ind i den ikke-inverterende kanal. Det "Ønskede input" er beregnet i afsnit \ref{Sec_Pilot_Data} på side \pageref{Sec_Pilot_Data} og burde være det, som sendes ind i $V2$. "Input" er den spænding, som sendes ind fra spændingsforsyningen, og "Forventet output" udregnes ved at trække inputtet fra reference spændingen. "Output" er slutresultatet efter gennemsnitsberegninger og "afvigelsen" kan derved beregnes. \\
+\end{table}
+\noindent I \tableref{Tab:Offset_test}\fxnote{Det forventede output er regnet således, at den inpu det er udregnet udfra hvad i reelt har af input og reference, derefter tjekker vi om det vi målte passer med det vi fik ud} betegner "$V1$ / ref." referencespændingen, som sendes ind i den inverterende kanal, mens "$V2$ / signal.)" betegner den laveste og højeste spændinger, som bliver sendt ind i den ikke-inverterende kanal. Det "Ønskede input" er beregnet i afsnit \ref{Sec_Pilot_Data} på side \pageref{Sec_Pilot_Data} og burde være det, som sendes ind i $V2$. "Input" er den spænding, som sendes ind fra spændingsforsyningen, og "Forventet output" udregnes ved at trække inputtet fra reference spændingen. "Output" er slutresultatet efter gennemsnitsberegninger og "afvigelsen" kan derved beregnes. \\
 Der ses i \tableref{Tab:Offset_test}, at der er en meget lav afvigelse imellem outputtet og det forventede output for hver inputspænding. Disse afvigelser ligger inde for tolerancen for offsettet beskrevet i afsnit \ref{OpsamlingsAfs} på side \pageref{OpsamlingsAfs}. Derfor anses disse afvigelser som acceptable.
