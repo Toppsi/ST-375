@@ -24,7 +24,7 @@ Forstærkningen skal gøre det nemmere at adskille det ønskede signal fra støj
 	\item Offsetjusteringen skal centrere det målte signal omkring $0V$.
 	\item Forstærkeren skal have en indgangsimpedans på $3.68M\Omega$\fxnote{Da man ikke vil dræne blokken før for strøm. Udregnet ved 32Kohm, da indputimpedans skal være mindst 100 gange større end den forrige bloks outputimpedans. Accelerometrets indgangsimpedans har en afvigelse på +15\%}.
 	\item Forstærkningen skal være på 10, som svarer til $19.0849$dB.
-	\item Outputtet fra denne blok skal være mellem $0.3313$V og -$0.3233V$V.
+	\item Outputtet fra denne blok skal være mellem $2.9817$V og -$2.9097$V.
 \end{itemize}
 \textbf{Tolerance:}
 \begin{itemize}
@@ -72,8 +72,8 @@ Blokken tilpasning har til formål at tilpasse det filtrerede signal til kompara
 \end{align}
 Forstærkerens faktor samt gain i dB udregnes i \eqref{TilpasEq2} og \eqref{TilpasEq3}.
 \begin{align}
-\label{TilpasEq1} 0.0925V \cdot 10 = 0.9250V \\
-\label{TilpasEq2} \dfrac{3V}{0.9250V} = 3.2532 \approx 3 \\
+\label{TilpasEq1} 0.0925V \cdot 9 = 0.8325V \\
+\label{TilpasEq2} \dfrac{3V}{0.8325V} = 3.6036 \approx 3 \\
 \label{TilpasEq3} 20 \cdot log_{10} (3) = 9.5424\text{dB}
 \end{align} 
 I \eqref{TilpasEq1}, \eqref{TilpasEq2} og \eqref{TilpasEq3} er de $3V$ grænsen for arbejdsområdet. Der forstærkes med en faktor 3. Resultatet afrundes nedad til nærmeste hele tal. \\

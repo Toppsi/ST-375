@@ -17,11 +17,11 @@ V_o = \frac{R_b}{R_a} \cdot (v_b - v_a)
 \end{equation}
 
 \noindent Der kan heraf ses, at forstærkningen på signalet kan bestemmes ved at vælge modstandene $R_a \text{og} R_b$, og at det er spændingen $V_{a}$, der trækkes fra spændingen $V_{b}$. \\
-I dette tilfælde kræves der ikke en forstærkning, hvorfor modstandene $R_{a}$ og $R_{b}$ skal være det samme. Da signalet ikke skal inverteres sendes accelerometerets output ind i den ikke-inverterende kanal. Offsettet, som i dette tilfælde er på $1.5915$V jævnført \ref{Mean_tid_0g} på side \pageref{Mean_tid_0g}, sendes ind i den inverterende kanal. Dette illustreres på figur \ref{fig:Offset_generisk}:
+I dette tilfælde kræves der ikke en forstærkning, hvorfor modstandene $R_{a}$ og $R_{b}$ skal være det samme. Da signalet ikke skal inverteres sendes accelerometerets output ind i den ikke-inverterende kanal. Offsettet, som i dette tilfælde er på $1.6325$V jævnført \ref{Mean_tid_0g} på side \pageref{Mean_tid_0g}, sendes ind i den inverterende kanal. Dette illustreres på figur \ref{fig:Offset_generisk}:
 \begin{figure}[H]
 \centering
 \includegraphics[scale=0.45]{figures/cProblemloesning/Offset_generisk.png}
-\caption{På figuren ses offsetjusteringens opbygning. $V1$ er referenceværdien, som sættes til $1.5915$V, og $Va$ er outputtet fra accelerometeret, som vil skabe inputtet $V2$ til operationsforstærkeren. Modstandene i kredsløbet er ens, hvilket medfører, at signalet ikke forstærkes. Grunden til at spændingsforsyningen er $\pm5.5$V er, at spændingsforsyningen til hele systemet er designet til at give et output på $\pm5.5$V, hvor arbejdsområdet er $\pm3$V. Derved sikres det, at ønskede signal ikke går i mætning.}
+\caption{På figuren ses offsetjusteringens opbygning. $V1$ er referenceværdien, som sættes til $1.6325$V, og $Va$ er outputtet fra accelerometeret, som vil skabe inputtet $V2$ til operationsforstærkeren. Modstandene i kredsløbet er ens, hvilket medfører, at signalet ikke forstærkes. Grunden til at spændingsforsyningen er $\pm5.5$V er, at spændingsforsyningen til hele systemet er designet til at give et output på $\pm5.5$V, hvor arbejdsområdet er $\pm3$V. Derved sikres det, at ønskede signal ikke går i mætning.}
 \label{fig:Offset_generisk}
 \end{figure}
 
@@ -32,9 +32,9 @@ Der foretages tre simuleringer i LTspice - en for hhv. den højeste- og laveste 
 	\begin{tabular}{|l|l|l|l|l|}
 		\hline
 		\multicolumn{1}{|c|}{\textit{Inputsignal}} & \multicolumn{1}{c|}{\textit{Offset}} & \multicolumn{1}{c|}{\textit{Forventet outputsignal}} & \multicolumn{1}{c|}{\textit{Outputsignalet}} & \multicolumn{1}{c|}{\textit{Afvigelse}} \\ \hline
-		$1.8627$V     & $1.5915$V    & $0.2712$V     & $0.2711684$V     & $0.0117$\%              \\ \hline
-		$1.5915$V     & $1.5915$V    & $0$V          & -$21.8194\mu $V   & $\approx 0$\%      \\ \hline
-		$1.3254$V     & $1.5915$V    & -$0.2661$V    & -$0.2661122$V      & $0.0046$\%                \\ \hline
+		$1.9638$V     & $1.6325$V    & $0.3313V$V    & $0.3313$V       & $0$\%              \\ \hline
+		$1.6325$V     & $1.6325$V    & $0$V          & -$22.949\mu$V   & $\approx 0$\%      \\ \hline
+		$1.3092$V     & $1.6325$V    & -$0.3233V$V   & -$0.3233$V      & $0$\%                \\ \hline
 	\end{tabular}
 	\caption{I tabellen ses resultaterne fra simuleringerne af offsettet med forskellige inputs.}
 	\label{Tab:offset_sim}
@@ -44,7 +44,7 @@ Der foretages tre simuleringer i LTspice - en for hhv. den højeste- og laveste 
 \begin{figure}[H]
 \centering
 \includegraphics[scale=0.4]{figures/cProblemloesning/Offset_simulering.png}
-\caption{På figuren ses en simulering af $1.5915$V input, hvilket giver et output på $\approx 0$V.}
+\caption{På figuren ses en simulering af $1.6325$V input, hvilket giver et output på $\approx 0$V.}
 \label{fig:Offset_simulering}
 \end{figure}
 
@@ -70,10 +70,10 @@ Der ses på \figref{fig:Offset_generisk}, at der skal benyttes fire modstandere 
 	\begin{tabular}{l|l|l|l|l|l|}
 		\cline{2-6}
 		& \textit{\begin{tabular}[c]{@{}l@{}}Ønskede\\ input\end{tabular}} & \textit{Input} & \textit{\begin{tabular}[c]{@{}l@{}}Forventet\\ output\end{tabular}} & \textit{Output} & \% afvigelse \\ \hline
-		\multicolumn{1}{|l|}{\textit{\begin{tabular}[c]{@{}l@{}}$V1$\\ ref\end{tabular}}}    & $1.5915$V    & $1.5919$V    & $\times$    & $\times$   & $\times$     \\ \hline
-		\multicolumn{1}{|l|}{\multirow{2}{*}{\textit{\begin{tabular}[c]{@{}l@{}}$V2$\\ signal\end{tabular}}}} & $1.8627$V   & $1.8619$V    & $0.2700$V   & $0.2689$V   & $0.41\%$     \\ \cline{2-6} 
+		\multicolumn{1}{|l|}{\textit{\begin{tabular}[c]{@{}l@{}}$V1$\\ ref\end{tabular}}}    & $1.6325$V    & $1.X$V    & $\times$    & $\times$   & $\times$     \\ \hline
+		\multicolumn{1}{|l|}{\multirow{2}{*}{\textit{\begin{tabular}[c]{@{}l@{}}$V2$\\ signal\end{tabular}}}} & $1.9638$V   & $1.X$V    & $0.X$V   & $0.X$V   & $X\%$     \\ \cline{2-6} 
 		%\multicolumn{1}{|l|}{}                                         & $1.5915$V    & $1.5$V   & $1.5900$V    & $0$V         & $-0.0018$V  & $0.18\%$     \\ \cline{2-7} 
-		\multicolumn{1}{|l|}{}   & $1.3254$V   &    $1.3261$V    & $-0.2658$V  & $-0.2673$V  & $0.56\%$     \\ \hline
+		\multicolumn{1}{|l|}{}   & $1.3092$V   &    $1.X$V    & $-0.X$V  & $-0.X$V  & $0.X\%$     \\ \hline
 	\end{tabular}
 	\caption{I tabellen ses en oversigt over det udregnede resultat for de to spændingsniveauer.}
 	\label{Tab:Offset_test}

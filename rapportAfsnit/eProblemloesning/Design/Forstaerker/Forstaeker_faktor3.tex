@@ -23,21 +23,21 @@ Denne forstærker undersøges i fire simuleringer for, hvorledes forstærkeren v
 	\begin{tabular}{|l|l|l|l|l|l|}
 		\hline
 		\multicolumn{1}{|c|}{\textit{Inputsignalet}} & \multicolumn{1}{c|}{\textit{Forstærkning}} & \multicolumn{1}{c|}{\textit{Forventet outputsignal}}                      & \multicolumn{1}{c|}{\textit{Outputsignalet}} & \textit{Forstærkning}  & \multicolumn{1}{c|}{\textit{Afvigelse}} \\ \hline
-		$2.7120$V     & 3   & \begin{tabular}[c]{@{}l@{}}Forventer mætning\\ $8.1360$V\end{tabular}  & $3.9765$V  & $\times$ & $\times$     \\ \hline
-		$0.7534$V     & 3   & $2.2602$V                                                               & $2.2601$V  & $3$ & $0.0025\%$     \\ \hline
-%		$0$V          & 3   & $0$V                                                                    & $33.6527\mu $V        & $\approx 0\%$     \\ \hline
-	   -$0.7389$V     & 3   & -$2.2167$V                                                              & -$2.2166$V  & $3$ & $0.005\%$     \\ \hline
-	   -$2.6600$V     & 3   & \begin{tabular}[c]{@{}l@{}}Forventer mætning\\ -$7.9800$V\end{tabular} & -$3.9770$V  & $\times$ & $\times$     \\ \hline
+		$2.7096$V     & 3   & \begin{tabular}[c]{@{}l@{}}Forventer mætning\\ $8.1288$V\end{tabular}  & $3.9765$V  & $\times$ & $\times$     \\ \hline
+		$0.8325$V     & 3   & $2.4975$V                                                              & $2.4975$V  & $3$ & $0\%$     \\ \hline
+%		$0$V          & 3   & $0$V                                                                   & $33.6527\mu $V        & $\approx 0\%$     \\ \hline
+	   -$0.8100$V     & 3   & -$2.4300$V                                                             & -$2.4299$V  & $3$ & $0.004\%$     \\ \hline
+	   -$2.6388$V     & 3   & \begin{tabular}[c]{@{}l@{}}Forventer mætning\\ -$7.9164$V\end{tabular} & -$3.9770$V  & $\times$ & $\times$     \\ \hline
 	\end{tabular}
 		\caption{I tabellen ses resultaterne af de fire simuleringer.}
 		\label{tab:forstarker3_simT}
 \end{table}
-Der ses i \tableref{tab:forstarker3_simT} , at der ingen afvigelse er i forstærkningen. Kredsløbet fungere rent teoretisk med ideelle komponenter, som bliver brugt i LTspice. På \figref{fig:faktor3_simulering} ses simuleringen af $1.3554$V input, som ideelt vil komme fra filtret.
+Der ses i \tableref{tab:forstarker3_simT} , at der ingen afvigelse er i forstærkningen. Kredsløbet fungere rent teoretisk med ideelle komponenter, som bliver brugt i LTspice. På \figref{fig:faktor3_simulering} ses simuleringen af $0.8325$V input, som ideelt vil komme fra filtret, hvis accelerometret hælder i $25^{\circ}$.
 
 \begin{figure}[H]
 	\centering
 	\includegraphics[scale=0.4]{figures/cProblemloesning/Forstaerker_faktor3_simulering.PNG}
-	\caption{På figuren ses simuleringen af $0.7534$V input, som giver $2.2602$V i output. Der er altså sket en forstærkning med en faktor $3$.}
+	\caption{På figuren ses simuleringen af $0.8325$V input, som giver $2.4975$V i output. Der er altså sket en forstærkning med en faktor $3$.}
 	\label{fig:faktor3_simulering}
 \end{figure}
 \noindent Der ses på afvigelserne, at der arbejdes med ideelle komponenter. Det er herved bevist, at kredsløbet fungerer teoretisk og kan derfor implementeres.
@@ -64,21 +64,21 @@ På \figref{fig:Forstaerker_faktor3} kan der ses, at der skal benyttes to modsta
 	\begin{tabular}{|l|l|l|l|l|}
 		\hline
  \textit{Input} & \textit{Forventet output} & \textit{Output}  &  \textit{Forstærkning}  & \% afvigelse \\ \hline
- $2.7145$V            & Mætning              & $4.8210$V       &    $\times$             & $\times$  \\ \hline
- $0.7541$V            & $2.2623$V            & $2.2569$V       &    $2.99$               & $0.33\%$     \\ \hline
+ $2.7096$V            & Mætning              & $4.8210$V       &    $\times$             & $\times$  \\ \hline
+ $0.8325$V            & $2.2623$V            & $2.2569$V       &    $2.99$               & $0.33\%$     \\ \hline
 %		$0$V                   & $-1.030$mV           & $-3.090$mV                & $-6.200$mV      &              \\ \hline
--$0.7386$V           & $2.2158$V            & -$2.2247$V       &    $3.01$               & $0.33\%$     \\ \hline
--$2.6375$V           & Mætning              & -$4.1536$V       &    $\times$             & $\times$    \\ \hline
+-$0.8100$V           & $2.2158$V            & -$2.2247$V       &    $3.01$               & $0.33\%$     \\ \hline
+-$2.6388$V           & Mætning              & -$4.1536$V       &    $\times$             & $\times$    \\ \hline
 	\end{tabular}
 	\caption{I tabellen ses resultaterne fra testen med forstærkeren, der har en faktor 3.}
 	\label{Tab:faktor3_test}
 \end{table}
 
-For $2.7120$, $0.7534$V, $0$V og -$0.7389$ er spændingen kommet direkte fra en strømforsyning, men for at undersøge forstærkningen af -$2.6600$V er det nødsaget at benytte offsettet samt faktor 10 forstærkeren, da spændingsforsyningen ikke kan levere en så stor negativ spænding. Det var derfor forventet, at der kunne være en større afvigelse på målingerne med -$2.6600$V spænding, da denne spænding skulle igennem flere kredsløb. Inputtet i offsettet (som kan ses på \figref{fig:Offset_generisk}) udregnes på følgende måde:
+For $2.7096$, $0.8325$V og -$0.8100$ er spændingen kommet direkte fra en strømforsyning, men for at undersøge forstærkningen af -$2.6388$V er det nødsaget at benytte offsettet samt faktor 9 forstærkeren, da spændingsforsyningen ikke kan levere en så stor negativ spænding. Det var derfor forventet, at der kunne være en større afvigelse på målingerne med -$2.6388$V spænding, da denne spænding skulle igennem flere kredsløb. Inputtet i offsettet (som kan ses på \figref{fig:Offset_generisk}) udregnes på følgende måde:
 \begin{equation}\label{Udregnxfaktor3}
-( x - 1.5902V ) * 10 = -2.6600V \\
-x = 1.3253V
+( x - 1.5902V ) * 9 = -XXX \\
+x =
 \end{equation}
-Reference blev målt til $1.5913$V og via teorien vides det, at den ønskede spænding skulle være -$2.6600$V. I \eqref{Udregnxfaktor3} udregnes inputspændingen til offsettet til at være $1.3253$V. Denne blev sat til $1.3263$V, som gav et output på $-0.2640$V, der blev sendt ind i faktor 10 forstærkeren. Herefter var outputtet i gennemsnit -$2.6375$V, som blev sendt ind i faktor 3 forstærkeren. Dette gav i gennemsnit outputtet $-3.9783$V, som ses i \tableref{Tab:faktor3_test}. %Afvigelsen, som ville opstå grundet to ekstra kredsløb ift. de to andre målinger, ville være præsentabel for afvigelsen, som der også burde have været for de to andre spændingers tests. 
+Reference blev målt til $XX$V og via teorien vides det, at den ønskede spænding skulle være -$2.6388$V. I \eqref{Udregnxfaktor3} udregnes inputspændingen til offsettet til at være $XX$V. Denne blev sat til $XX$V, som gav et output på $-0.2640$V, der blev sendt ind i faktor 9 forstærkeren. Herefter var outputtet i gennemsnit -$XX$V, som blev sendt ind i faktor 3 forstærkeren. Dette gav i gennemsnit outputtet $XX$V, som ses i \tableref{Tab:faktor3_test}. %Afvigelsen, som ville opstå grundet to ekstra kredsløb ift. de to andre målinger, ville være præsentabel for afvigelsen, som der også burde have været for de to andre spændingers tests. 
 Der ses i \tableref{Tab:faktor3_test}, at der ikke opstod større forstyrrelser trods flere sammensatte systemer, der ville give ekstra afvigelse i det målte signal ift. det forventede signal. \\
 Der ses ud fra testen, at forstærkeren overholder kravene fra afsnit \ref{OpsamlingsAfs} på side \pageref{OpsamlingsAfs} samt ligger inde for tolerancerne.
