@@ -4,14 +4,14 @@ I praksis er det ikke muligt at have ideelle komponenter \cite{Nilsson2011}. Der
 
 \subsection{Opsamling}\label{OpsamlingsAfs}
 Blokken opsamling omfatter accelerometeret, offsetjustering og forstærkning. Accelerometeret skal have en sådan størrelse, at det kan påsættes en patient uden at give fysiske begrænsninger. Accelerometeret skal kunne måle en statisk acceleration i mindst to retninger, da der måles i det frontale plan til hhv. højre og venstre side. Herved kan det bestemmes, hvilken retning patienterne hælder mod i stående position. Det skal kunne detektere en hældningsgrad op til $\pm90^{\circ}$, da en forsøgsperson ikke kan komme over denne hældningsgrad. \\
-Offsetjusteringen skal centrere det målte signal omkring $0V$, da accelerometeret typisk måler $1.5915V$ ved $0$g påvirkning af den pågældende akse ifølge pilotforsøget. Derfor skal der trækkes $1.5915$V fra alle inputs fra accelerometret. Justeringen af offset skal forekomme inden forstærkning således, at der ikke sker en forstærkning og dermed forskydning af offsetværdien, når accelerometret måler i positiv og negativ retning, hvorved g påvirkningen ændres. Ved justering af offsettet må der ikke ske en ændring af amplitudens peak-to-peak og frekvensen. \\
-Forstærkningen skal gøre det nemmere at adskille det ønskede signal fra støj i den efterfølgende filtreringsblok. For at forstærkningskredsløbet ikke dræner strømforsyningen, skal inputimpedansen til forstærkeren være mindst $100$ gange større end outputimpedansen i accelerometeret som kan ses i afsnit \ref{Subsec:AccTeori} på side \pageref{Subsec:AccTeori}. Signalet skal efter forstærkningen ligge indenfor arbejdsområdet $\pm3V$ og der ønskes derfor størst mulige forstærkning. Den højeste måling ved $\pm90^{\circ}$ var ifølge pilotforsøget efter offsetjusteringen $0.2712V.$ Derfor kan forstærkningen udregnes således:
+Offsetjusteringen skal centrere det målte signal omkring $0V$, da accelerometeret typisk måler $1.6325V$ ved $0$g påvirkning af den pågældende akse ifølge pilotforsøget. Derfor skal der trækkes $1.6325$V fra alle inputs fra accelerometret. Justeringen af offset skal forekomme inden forstærkning således, at der ikke sker en forstærkning og dermed forskydning af offsetværdien, når accelerometret måler i positiv og negativ retning, hvorved g påvirkningen ændres. Ved justering af offsettet må der ikke ske en ændring af amplitudens peak-to-peak og frekvensen. \\
+Forstærkningen skal gøre det nemmere at adskille det ønskede signal fra støj i den efterfølgende filtreringsblok. For at forstærkningskredsløbet ikke dræner strømforsyningen, skal inputimpedansen til forstærkeren være mindst $100$ gange større end outputimpedansen i accelerometeret som kan ses i afsnit \ref{Subsec:AccTeori} på side \pageref{Subsec:AccTeori}. Signalet skal efter forstærkningen ligge indenfor arbejdsområdet $\pm3V$ og der ønskes derfor størst mulige forstærkning. Den højeste måling ved $\pm90^{\circ}$ var ifølge pilotforsøget efter offsetjusteringen $0.3313$V. Derfor kan forstærkningen udregnes således:
 \begin{equation}
-\dfrac{3\text{V}}{0.2712\text{V}} =  11.06 \approx 11
+\dfrac{3\text{V}}{0.3313\text{V}} =  9.05 \approx 9
 \end{equation}
-\noindent Der ønskes en forstærkning på faktor $10$, da der skal tages forbehold for et toleranceområde. Forstærkningens gain i dB udregnes ud fra følgende formel: 
+\noindent Der ønskes en forstærkning på faktor $9$, da der skal tages forbehold for et toleranceområde. Forstærkningens gain i dB udregnes ud fra følgende formel: 
 \begin{equation}
-20 \cdot log_{10} (10) = 20\text{dB}
+20 \cdot log_{10} (9) = 19.0849\text{dB}
 \end{equation} 
 
 \noindent\textbf{Krav:}
@@ -23,8 +23,8 @@ Forstærkningen skal gøre det nemmere at adskille det ønskede signal fra støj
 	\item Accelerometeret skal kunne detektere en hældning fra $0^{\circ}$ til $\pm90^{\circ}$.
 	\item Offsetjusteringen skal centrere det målte signal omkring $0V$.
 	\item Forstærkeren skal have en indgangsimpedans på $3.68M\Omega$\fxnote{Da man ikke vil dræne blokken før for strøm. Udregnet ved 32Kohm, da indputimpedans skal være mindst 100 gange større end den forrige bloks outputimpedans. Accelerometrets indgangsimpedans har en afvigelse på +15\%}.
-	\item Forstærkningen skal være på 10, som svarer til $20dB$.
-	\item Outputtet fra denne blok skal være mellem $2.712V$V og $-2.660$V.
+	\item Forstærkningen skal være på 10, som svarer til $19.0849$dB.
+	\item Outputtet fra denne blok skal være mellem $0.3313$V og -$0.3233V$V.
 \end{itemize}
 \textbf{Tolerance:}
 \begin{itemize}
@@ -38,10 +38,10 @@ Forstærkningen skal gøre det nemmere at adskille det ønskede signal fra støj
 Blokken indeholdende et filter anvendes til at frasortere uønskede signaler, der kan forekomme under målinger med accelerometret. Filtreringsblokken inddrages i systemet jævnfør afsnit\ref{Filterafsnit} på side \pageref{Filterafsnit}. Frekvensområdet for kropshældning er ikke klart defineret, men studier anvender et frekvensområde liggende mellem $0.02-10Hz$ \cite{Martinez-Mendez2011}. Alle signaler, der ligger udenfor dette spektrum, ønskes derfor fjernet. I pilotforsøget blev der påvist, at signalet i dette tilfælde ligger mellem $0-25Hz$. Alt signal uden for dette spektrum ønskes derfor frafiltreret. Dette gøres ved at benytte et lavpasfilter, der har en knækfrekvens ved $25$Hz. \\
 Den maksimale variation i pasbåndstransmissionen ($A_{max}$) sættes til $3$dB. For fjerne $50Hz$ støj, sættes stopbåndsfrekvensen til $45$Hz, og der udregnes en faktor ud fra LSB \ref{ADCafsnit} og den maksimale amplitude af signalet. Den maksimale amplitude beregnes ved en Root Mean Square (RMS) analyse ud fra rotationerne foretaget i \ref{Sec:Pilotforsoeg} for hhv. højre og venstre side. Dæmpningsfaktoren udregnes ved følgende ligning:
 \begin{equation}
-\dfrac{0.00244\text{V}}{0.0141\text{V}} = 0.173 \approx 0.2 
+\dfrac{0.00244\text{V}}{0.0162\text{V}} = 0.1506 \approx 0.2 
 \end{equation}
 \begin{equation}
-\dfrac{0.00244\text{V}}{0.0118\text{V}} = 0.207  \approx 0.2
+\dfrac{0.00244\text{V}}{0.0131\text{V}} = 0.1863  \approx 0.2
 \end{equation}
 Der ønskes en dæmpning på faktor $\dfrac{1}{5}$, da der tages forbehold for et tolerance område. Dæmpningens gain i dB(A_{min}) udregnes ud fra følgende formel:   
 \begin{equation}
@@ -66,17 +66,14 @@ A_{min}=20 \cdot log_{10} \cdot (\frac{1}{5}) = -13,98 \approx -14\text{dB}
 \end{itemize}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Tilpasning}\label{Tilpasningsblok}
-Blokken tilpasning har til formål at tilpasse det filtrerede signal til komparatoren. Dette gøres med en forstærker, således at spektret, der skal reguleres indenfor, øges. Derudover afgrænses måleintervallet til $\pm25^{\circ}$, da et range på $\pm90^{\circ}$ er unødvendigt ift. at vurdere hvorvidt patienten er faldet. Det vurderes, at en hældning på over $25^{\circ}$ medfører fald, da denne hældning ligger væsentligt ud over den naturlige hældningsgrad jævnfør afsnit \ref{BalanceAfsnit}, side \pageref{BalanceAfsnit}. Der ønskes størst mulig forstærkning indenfor det fastsatte arbejdsområde på $\pm3$V. Indgangsimpedansen bestemmes ud fra samme kriterier som for forstærkeren i opsamlingsblokken. I \eqref{Udreg1} og \eqref{Udreg2} udregnes den størst mulige spænding efter justering af offsettet. 
+Blokken tilpasning har til formål at tilpasse det filtrerede signal til komparatoren. Dette gøres med en forstærker, således at spektret, der skal reguleres indenfor, øges. Derudover afgrænses måleintervallet til $\pm25^{\circ}$, da et range på $\pm90^{\circ}$ er unødvendigt ift. at vurdere hvorvidt patienten er faldet. Det vurderes, at en hældning på over $25^{\circ}$ medfører fald, da denne hældning ligger væsentligt ud over den naturlige hældningsgrad jævnfør afsnit \ref{BalanceAfsnit}, side \pageref{BalanceAfsnit}. Der ønskes størst mulig forstærkning indenfor det fastsatte arbejdsområde på $\pm3$V. Indgangsimpedansen bestemmes ud fra samme kriterier som for forstærkeren i opsamlingsblokken. I bilag \ref{Bilag:Pilotforsoeg} på side \pageref{Bilag:Pilotforsoeg} er den størst mulige spænding efter justering af offsettet udregnet, hvilket er $0.3313V$. Derudover er der det beregnet, at den maksimale volt pr. grad er $0.0037$V. Ved $\pm25^{\circ}$ vil outputtet være;
 \begin{align}
-\label{Udreg1} 1.8627V - 1.5915 = 0.2712 \\
-\label{Udreg2} 1.3254 - 1.5915 = -0.2660 \\
-\label{Udreg3} \dfrac{0.2712}{90} \cdot 25 = 0.0753V
+\label{Udreg3} 0.0037 \cdot 25 = 0.0925V
 \end{align}
-Det ses, at \eqref{Udreg1} giver den højeste spænding. I \eqref{Udreg3} bestemmes den maksimale spænding ved $\pm25^{\circ}$ hældning. \\
-I \eqref{TilpasEq1} udregnes inputspændingen efter den første forstærkning. Denne forstærkers faktor samt gain i dB udregnes i \eqref{TilpasEq2} og \eqref{TilpasEq3}.
+Forstærkerens faktor samt gain i dB udregnes i \eqref{TilpasEq2} og \eqref{TilpasEq3}.
 \begin{align}
-\label{TilpasEq1} 0.0753V \cdot 10 = 0.7530V \\
-\label{TilpasEq2} \dfrac{3V}{0.7530V} = 3.984 \approx 3 \\
+\label{TilpasEq1} 0.0925V \cdot 10 = 0.9250V \\
+\label{TilpasEq2} \dfrac{3V}{0.9250V} = 3.2532 \approx 3 \\
 \label{TilpasEq3} 20 \cdot log_{10} (3) = 9.5424\text{dB}
 \end{align} 
 I \eqref{TilpasEq1}, \eqref{TilpasEq2} og \eqref{TilpasEq3} er de $3V$ grænsen for arbejdsområdet. Der forstærkes med en faktor 3. Resultatet afrundes nedad til nærmeste hele tal. \\
