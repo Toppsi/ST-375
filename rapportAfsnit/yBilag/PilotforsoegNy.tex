@@ -1,8 +1,8 @@
 % !TeX spellcheck = da_DK
-\section{Pilotforsøg}\label{Bilag:Pilotforsoeg}
+\chapter{Pilotforsøg}\label{Bilag:Pilotforsoeg}
 Det er nødvendigt at kunne skelne det reelle signal fra støjkomponenter, før systemet kan designes. Signalet skal aktivere komponenter i slutningen af det analoge system og skal derfor være adskilt fra støj, der kan påvirke outputtet. For at undgå dette frafiltreres støjsignaler. Derudover er det nødvendigt at vide, hvilket outputsignal accelerometeret giver ift. den valgte hældningsgrad. Dette gøres ud fra sensitiviteten, der måles. Ud fra disse oplysninger er det muligt at kravspecificere de enkelte blokke i systemet.% Oplysningerne findes på baggrund af et pilotforsøg. 
 
-\subsection{Formål med pilotforsøg}
+\section{Formål med pilotforsøg}
 \begin{enumerate}
 \item Identificere de frekvenser, der udgør støj i outputsignalet fra accelerometeret.
 %\item Udregner accelerometerets g-påvirkning ved $8^{\circ}$ og $13^{\circ}$.
@@ -10,7 +10,7 @@ Det er nødvendigt at kunne skelne det reelle signal fra støjkomponenter, før 
 \item Kontrollere om offset og sensitivitets værdierne fra databladet på accelerometeret stemmer overens med målt data.
 \end{enumerate}
 
-\subsection{Materialer}
+\section{Materialer}
 \begin{itemize}
 \item ADXL335 accelerometer.
 \item To stk. $0.1\mu$F kondensatorer.
@@ -27,7 +27,7 @@ Det er nødvendigt at kunne skelne det reelle signal fra støjkomponenter, før 
 \item Termometer
 \end{itemize}
 
-\subsection{Metode}
+\section{Metode}
 \begin{enumerate} [label=\bfseries Formål \arabic*:]
 \item Støjfrekvenserne i outputsignalet identificeres ved først at måle en baseline ved $0g$ dvs. uden hældning. Dette medfører at signalet kan analyseres uden nogen påvirkning på outputsignalet. Dernæst måles en påvirkningen ved $1$g, hvilket svarer til en hældning på $90^{\circ}$. Dette måles både til højre og venstre. Derudover udføres en langsom rotation fra $0^{\circ}$ til $90^{\circ}$ til både højre og venstre. Det vil på denne måde være muligt at identificere den støj som accelerometeret kan udsættes for. %Det samme gøres for de specificerede hældningsgrader, som er $8^{\circ}$ og $13^{\circ}$. 
 \item For at simulere den påvirkning, accelerometeret udsættes for, og derved identificere accelerometerets maksimum og minimums outputsignal, roteres accelerometret i en langsom rotation fra $0^{\circ}$ til $90^{\circ}$ til både højre og venstre.
@@ -37,7 +37,7 @@ Det er nødvendigt at kunne skelne det reelle signal fra støjkomponenter, før 
 %For at simulere den påvirkning, accelerometeret udsættes for og identificere den mulige støj ved en rotation, roteres accelerometret i en langsom rotation fra $0^{\circ}$ til $90^{\circ}$ til både højre og venstre. Disse målinger vil identificere minimum og maksimum outputsignal, som accelerometeret kan afgive i dette tilfælde, samt kontrollere om offset og sensitivitet informationerne fra accelerometerets datablad stemmer overens med det målte data. \\
 %Inden, under og efter forsøget måles temperaturen i lokalet, da denne kan have en effekt på accelerometerets sensitivitet. \cite{Devices2009}
 
-\subsection{Forsøgsopsætning på breadboard}
+\section{Forsøgsopsætning på breadboard}
 \textbf{Opsætning}\\
 Der ses et billede af forsøgsopsætningen på breadboardet på \figref{pforsoeg1}.
 \begin{itemize}
@@ -52,18 +52,18 @@ Der ses et billede af forsøgsopsætningen på breadboardet på \figref{pforsoeg
 
 \begin{figure}[H]
 	\centering
-	\includegraphics[scale=0.15]{figures/cProblemloesning/PF2.jpg}
+	\includegraphics[scale=0.12]{figures/cProblemloesning/PF2.jpg}
 	\caption{På billedet ses opsætningen på breadboardet. De røde ledninger symboliserer den positive spænding fra den $5.5$V spændingsforsyning. De sorte ledninger leder til ground, og den blå ledning symboliserer den negative spænding fra spændingsforsyning. De gule ledning fungerer som ledere for signalet igennem systemet (den gule ledning fra accelerometret kan skiftes imellem pin $3$, $4$ og $5$ alt efter hvilken akse, der skal måles på). Den grønne ledning symboliserer outputtet fra kredsløbet, som sendes til NI USB-6009.}
 	\label{pforsoeg1}
 \end{figure}
 
-\subsection{Fremgangsmåde}
-\subsubsection{Forsøgets udførelse}
+\section{Fremgangsmåde}
+\subsection{Forsøgets udførelse}
 Hele pilotforsøgets opsætning ses på \figref{pforsoeg2}. \\
 For at måle $0g$ påvirkning på accelerometerets x-akse, lægges det fladt ned på et plant bord, som er tjekket med et vaterpas. Målingen gøres over tre omgange i $30$ sekunder. Herefter holdes accelerometeret fast på en vinkel, hvor ledningerne påsættes med hæftemasse. Accelerometeret sættes så der igen måles på x-aksen, når der sker en rotation til højre og venstre. Vinklen sættes således, at der måles $1g$ påvirkning i positiv retning og negativ retning, hvilket svarer til $\pm90^{\circ}$ fra accelerometerets nulpunkt. \\
 Dette giver tre baselines for hver g påvirkning, som opsamles og gemmes i ScopeLogger. %Herudover måles en baseline for g påvirkningen af accelerometeret ved $8^{\circ}$ og $13^{\circ}$. Dette gøres ved at holde accelerometeret i 30 sekunder på $8^{\circ}$ og $13^{\circ}$ henholdsvis til højre og venstre. Herved fås 4 baselines, som optages og gemmes i ScopeLogger. 
 Til sidst måles g påvirkningen af accelerometeret under rotation fra $0^{\circ}$ til $\pm$ $90^{\circ}$ for både højre og venstre. Her måles $10$ sekunders baseline inden og efter rotationen, som varer $5$ sekunder og foretages langsomt og kontrolleret. Disse to målinger optages og gemmes ligeså i ScopeLogger. \\
-\subsubsection{Behandling af data}
+\subsection{Behandling af data}
 Efter udførelse af forsøget vil alt data blive behandlet i MATLAB R2015a, hvor der beregnes en gennemsnitsværdi for henholdsvis de tre baselines målt ved $0g$ påvirkning samt $1g$ påvirkning i positiv retning og negativ retning. Der foretages desuden en Fast Fourier Transformation (FFT) på de ni målinger (tre målinger ved hver g påvirkning). FFT foretages for at få en grafisk repræsentation af det målte signal i frekvensdomænet. Baseline optages for at se hvilken påvirkning omgivelserne har på signalet, da der ikke er nogen bevægelse på disse.
 
 \begin{figure}[H]
@@ -73,7 +73,7 @@ Efter udførelse af forsøget vil alt data blive behandlet i MATLAB R2015a, hvor
 	\label{pforsoeg2}
 \end{figure}
 
-\subsection{Resultater}\label{Sec_Pilot_Data}
+\section{Resultater}\label{Sec_Pilot_Data}
 I dette afsnit vil der grafisk blive vist, hvordan accelerometerets output ændrer sig ift. g påvirkning. På \figref{Fig:Pilot_Tid} ses accelerometerets output i tidsdomænet. Der udføres herefter en FFT på de tre målinger for hver baseline, hvilket giver ni grafiske skiltninger af, hvorledes accelerometerets egne frekvenser adskiller sig fra støjfrekvenser.
 
 \begin{figure}[H]
@@ -98,7 +98,7 @@ Offsettet for accelerometerets x-akse udregnes ved at tage den målte gennemsnit
 	\text{Gennemsnit 1g negativ retning} = \frac{1.3091 + 1.3093 + 1.3093}{3} = 1.3092 \\
 	\text{Sensitivitet positiv retning} = 1.9638 - 1.6325 = 0.3313 \\
 	\text{Sensitivitet negativ retning} = 1.3092 - 1.6325 = -0.3233 \\
-	\text{Volt pr grad positiv retning} = \dfrac{0.3313}{90} = 0.0037\text{V}
+	\text{Volt pr grad positiv retning} = \dfrac{0.3313}{90} = 0.0037\text{V} \\
 	\text{Volt pr grad negativ retning} = \dfrac{-0.3233}{90} = 0.0036\text{V}
 \end{align}
 \noindent Da der findes en lineær sammenhæng imellem g påvirkning og outputtet burde sensitiviteten for accelerometret med en spændingsforsyning på $3.3V$ være $330mV/g$. Der kan derved udregnes afvigelse for både negativ og positiv retning:
@@ -144,7 +144,7 @@ På \figref{Fig:Pilot_FFT0}, \figref{Fig:Pilot_FFTN} samt \figref{Fig:Pilot_FFTP
 På \figref{Fig:Pilot_Rottid} ses der en lineær sammenhæng imellem g-påvirkning af accelerometret og outputtet. Der ses, at de tre baselines ved $0g$ påvirkning samt $1$g påvirkning i henholdsvis positiv og negativ retning, som måles i de første og sidste $10$ sekunder af målingen, stemmer overens med de målte baselines uden rotation. \\
 På \figref{Fig:Pilot_Rotfrek} ses en FFT af målingerne af rotationerne. Ud fra dette kan der ses, at der er kommet større udsving i de lavere frekvenser fra $0-$ til ca. $25Hz$ sammenlignet med de statiske baseline målinger. Signalet regnes altså for at være i frekvensspektrummet $0-25Hz$. Alt uden for dette spektrum regnes derfor som støj.
 
-\subsection{Diskussion og konklusion}
+\section{Diskussion og konklusion}
 Der kan argumenteres for og imod at accelerometret er blevet udsat for $0g$ påvirkning, da det kan være svært at vurdere hvorvidt bordet er plant. Bordets hældning blev målt med et vaterpas, men der er mulighed for, at vaterpasset kan være upræcist. Accelerometret har desuden ujævnheder på overfladen i form af ledninger, hvilket kan betyde, at det muligvis ikke har lagt plant på bordet. \\
 Der kan også være faktorer som har betydning for $1g$ påvirkningen, da vinklen nødvendigvis ikke er helt vinkelret. Ujævnheder på accelerometret samt vores holdemåde på det kan også have påvirket målingen. \\
 Accelerometerets output afhænger også af rumtemperaturen, da denne påvirker aksernes offset samt sensitiviteten. Ved dette forsøg var temperaturen før, under og efter forsøget {\color{red}X, X og X}, hvilket vil gå ind og påvirke målingerne. \\
