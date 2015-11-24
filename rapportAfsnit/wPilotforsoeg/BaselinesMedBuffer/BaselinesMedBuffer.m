@@ -56,11 +56,11 @@ B1gN3 = load('Baseline1gNegativ3');
  ToGraderP = (EnGradP*2)
  ToGraderN = (EnGradN*2)
  
- OtteGraderP = (EnGradP*8)
- OtteGraderN = (EnGradN*8)
+ OtteGraderP = (EnGradP*8)+ Baseline0gmean
+ OtteGraderN = (EnGradN*8)+ Baseline0gmean
  
- TrettenGraderP = (EnGradP*13)
- TrettenGraderN = (EnGradN*13)
+ TrettenGraderP = (EnGradP*13)+ Baseline0gmean
+ TrettenGraderN = (EnGradN*13)+ Baseline0gmean
  
  FemogtyveGraderP = (EnGradP*25)
  FemogtyveGraderN = (EnGradN*25)
