@@ -28,10 +28,10 @@ Forstærkningen skal gøre det nemmere at adskille det ønskede signal fra støj
 \end{itemize}
 \textbf{Tolerance:}
 \begin{itemize}
-	\item Der accepteres en afvigelse i detektionen af hældningsgrad på $5\%$.
-	\item Der accepteres en afvigelse af offsetjusteringen på $2\%$.
-	\item Der accepteres en afvigelse i forstærkningen på $2\%$.
-	\item Der accepteres en afvigelse ift. maksimum og minimum output fra blokken på $5\%$.
+	\item Der accepteres en afvigelse i detektionen af hældningsgrad på $\pm5\%$.
+	\item Der accepteres en afvigelse af offsetjusteringen på $\pm2\%$.
+	\item Der accepteres en afvigelse i forstærkningen på $\pm2\%$.
+	\item Der accepteres en afvigelse ift. maksimum og minimum output fra blokken på $\pm5\%$.
 \end{itemize}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Filter}\label{FilterAfs}
@@ -92,7 +92,7 @@ I \eqref{TilpasEq1}, \eqref{TilpasEq2} og \eqref{TilpasEq3} er de $3V$ grænsen 
 \noindent\textbf{Tolerance:}
 \begin{itemize}
 %	\item Der accepteres en afvigelse i indgangsimpedansen på ??
-	\item Der accepteres en afvigelse i forstærkningen på $2\%$.
+	\item Der accepteres en afvigelse i forstærkningen på $\pm2\%$.
 \end{itemize}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Komparator}\label{KomparatorAfs} 
@@ -196,19 +196,20 @@ ADC'ens inputsignal skal ligge i området $\pm3V$. Båndbredden på acceleromete
 Blokken med USB-isolatoren anvendes i systemet for at øge patientens sikkerhed. USB-isolatoren isolerer patienten fra kredsløbet og sørger, at der ikke løber lækstrømme fra computeren ind i systemet.\\
 \textbf{Krav:}
 \begin{itemize}
-	\item Skal have den samme outputspænding som inputspænding. 
+	\item Skal have en inputspænding på $\pm3$V.
+	\item Skal have samme outputspænding som inputspænding. 
 \end{itemize}
 \textbf{Tolerance:}
 \begin{itemize}
-	\item Der accepteres en afvigelse på $\pm2\%$ for USB-isolatoren. 
+	\item Der accepteres en afvigelse på $\pm2\%$ for USB-isolatorens input- og outputspænding. 
 \end{itemize}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%55
 \subsection{Software}\label{subsec:software}
-Blokken indeholdende softwaren implementeres i systemet for at kunne beahndle og gemme patienternes øvelsesresultater. Denne del af systemet er brugerfladen for det fagkyndige personale og skal derfor kunne fremvise information omkring patienternes balance i form af grafer eller lignende. Det fagkyndige personale skal vha. af softwaren kunne følge med i patienternes udvikling ift. balancen. \\
+Blokken indeholdende softwaren implementeres i systemet for at kunne behandle og gemme patienternes øvelsesresultater. Denne del af systemet er brugerfladen for det fagkyndige personale og skal derfor kunne fremvise information omkring patienternes balance i form af grafer eller lignende. Det fagkyndige personale skal vha. af softwaren kunne følge med i patienternes udvikling ift. balancen. \\
 \textbf{Krav:}
 \begin{itemize}
-	\item Skal kunne fremvise information om patientens hældning i de enkelte øvelser, herunder hvor ofte patienten har bevæget sig ud i risikozonerne. 
-	\item Skal kunne gemme data.
+	\item Skal kunne fremvise data med information om patientens hældning i de enkelte øvelser, herunder hvor ofte patienten har bevæget sig ud i risikozonerne. 
+	\item Skal kunne gemme data med information om patientens hældning.
 	%\item Skal være brugervenligt for det fagkyndige personale, dvs. designet af programmet skal være enkelt. 
 \end{itemize}
 \textbf{Tolerance:}
