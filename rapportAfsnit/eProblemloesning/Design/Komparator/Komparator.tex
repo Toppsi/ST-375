@@ -17,6 +17,7 @@ Til den visuelle del af komparatorkredsløbet anvendes LED-dioder. LED-diodernes
 \noindent\textbf{Beregning af tærskelværdier og tilhørende R$1$-R$14$ modstande for aktivering af LED-dioder} \\
 Inputsignalet fra forrige blok, tilpasningsblokken, ligger mellem -$2.2168$V og $2.2602$V jævnfør afsnit \ref{KomparatorAfs}, side\pageref{KomparatorAfs}. Jævnfør systemets funktionelle krav afsnit \ref{FunkKrav}, side \pageref{FunkKrav} ønskes det, at de enkelte LED-dioder skal lyse ved bestemte kropshældninger, dvs. ved en bestemt tærskelværdi. %Disse tærskelværdier sættes ud fra to punkter; det maksimale teoretiske signal  ved $25^{\circ}$ $4.0662$, og en tilgængelig spændingsreference, der kan sørge for en fast spænding til spændingstræet. 
 Tærskelværdierne er udregnet til at være:
+
 \begin{itemize}
 \item $2^{\circ}$ = $0.1808$V
 \item -$2^{\circ}$ = -$01773$V
@@ -27,6 +28,13 @@ Tærskelværdierne er udregnet til at være:
 \item $25^{\circ}$ = $2.2602$V
 \item -$25^{\circ}$ = -$2.2168$V
 \end{itemize}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=1.0]{figures/cProblemloesning/Taerskelvaerdier.PNG}
+	\caption{Af figuren fremgår de beregnede tærskelværdier.}
+	\label{fig:taerskelvaerdier}
+\end{figure}
 
 Der vælges en  spændingsreference, som består af en regulator så den kan levere $2.5$V til komparatorkredløbet. Spændingsreferencen indgår som del af en spændingsdeler og benyttes for at holde en fast referencespænding, da spændingen ved anvendelse af et batteri vil falde som funktion af tid. For at muliggøre anvendelsen af spændingsforsyningen på $2.5$V til negative tærskelværider benyttes en inverterende forstærker med et gain på $1$, der fremgår af figur \figref{fig:komparator_visuel}. Ved denne konfiguration vendes signalet uden at blive forstærket og kan på denne måde benyttes som referencespænding til negative inputspændinger.  
 Når referencespændingen er kendt kan modstandene i spændingsdeleren bestemmes. Da kredsløbet trækker strøm har modstandene (R$15$-R$20$) til formål at sikre, at spændingsforsyningen ikke drænes. Hvis modstanden er høj, vil strømmen til kredsløbet være lav, og batterierne i spændingsreferencen vil derved holde længere.
