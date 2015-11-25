@@ -227,6 +227,18 @@
   Timestamp                = {2015.10.08}
 }
 
+@Manual{Corporation1995,
+  Title                    = {TL081 Wide Bandwidth JFET Input Operational Amplifier},
+
+  Address                  = {http://www.ti.com/lit/ds/snosbw6a/snosbw6a.pdf},
+  Author                   = {National Semiconductor Corporation},
+  Organization             = {Texas Instruments},
+  Year                     = {1995},
+
+  Owner                    = {Cecilie},
+  Timestamp                = {2015.11.25}
+}
+
 @Book{Devasahayam2000,
   Title                    = {Signals and Systems in Biomedical Engineering: Signal Processing and Physiological Systems Modelling},
   Author                   = {Suresh R. Devasahayam},
@@ -479,6 +491,15 @@
 
   Owner                    = {Nikolineeeee},
   Timestamp                = {2015.11.08}
+}
+
+@Manual{,
+  Title                    = {LM285-2.5, LM385-2.5, LM385B-2.5 Micropower Voltage References},
+  Author                   = {Texas Instruments},
+  Year                     = {2005},
+
+  Owner                    = {Nikolineeeee},
+  Timestamp                = {2015.11.25}
 }
 
 @Article{Joergensen2004,
