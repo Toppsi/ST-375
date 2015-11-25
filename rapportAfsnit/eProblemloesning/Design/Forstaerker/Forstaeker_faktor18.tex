@@ -5,7 +5,7 @@ Til forstærkningen i opsamlingsblokken på \figref{kravblok} skal der benyttes 
 Kredsløbet består af en operationsforstærker kaldet TL081, som er den operationsforstærker, der er tiltænkt at benytte i implementerings delen. Den sidder i et closed-loop med modstandene R$1$ og R$2$, som udgør en spændingsdeler. Dette ses på \figref{fig:Forstaerker}.
 \begin{figure}[H]
 \centering
-\includegraphics[scale=0.85]{figures/cProblemloesning/Forstaerker.PNG}
+\includegraphics[scale=0.75]{figures/cProblemloesning/Forstaerker.PNG}
 \caption{Kredsløbet for en ikke-inverterende forstærker i en closed-loop konfiguration.}
 \label{fig:Forstaerker}
 \end{figure} 
@@ -51,17 +51,16 @@ Resultaterne af de to simuleringer ses i \tableref{tab:forstarker18_sim}
 \noindent Der ses på afvigelserne, at der arbejdes med ideelle komponenter, da der er en meget lav afvigelse i outputtet ift. det forventede output. Det er herved bevist, at kredsløbet fungerer teoretisk og kan derfor implementeres.
 
 \subsubsection{Implementering og test}
-Der ses på \figref{fig:Forstaerker_faktor18}, at der skal benyttes to modstande på $10$K$\Omega$ og $80$K$\Omega$ til opbygningen af forstærkeren. Reelt findes der ikke en $80$K$\Omega$, hvorfor der istedet benyttes en $12$K$\Omega$ og en $68$K$\Omega$ modstande i serie forbindelse, hvilket teoretisk vil give en $0$\% afvigelse fra en ideel $80$K$\Omega$ modstand. Disse tre modstande blev målt inden testen, hvilket fremgår i \tableref{Tab:modstand_faktor18}.
+Der ses på \figref{fig:Forstaerker_faktor18}, at der skal benyttes to modstande på $10$K$\Omega$ og $81$K$\Omega$ til opbygningen af forstærkeren. Reelt findes der ikke en $81$K$\Omega$, hvorfor der istedet benyttes en $82$K$\Omega$, hvilket teoretisk giver $1.235$\% forskel i modstanden. Dette er det tætteste man kan komme på $81$K$\Omega$. Der kunne også benyttes en $150$K$\Omega$- og $180$K$\Omega$ modstand i parallel forbindelse, hvilket vil give $1.01$\% afvigelse, men disse komponenter vil også have afvigelser, hvorved den samlede procent afvigelse vil forstørres. De to modstande blev målt inden testen, hvilket fremgår i \tableref{Tab:modstand_faktor18}.
 \begin{table}[H]
 	\centering
 	\begin{tabular}{|l|l|l|}
 		\hline
 		\textit{Teoretisk} & \textit{Ved måling} & \textit{\% afvigelse} \\ \hline
-		$10$K$\Omega$       & $10$K$\Omega$        & $0$\%               \\ \hline
-		$12$K$\Omega$      & $11.9$K$\Omega$     & $0.83$\%               \\ \hline
-		$68$K$\Omega$      & $67.8$K$\Omega$       & $0.29$\%               \\ \hline
+		$10$K$\Omega$      & $10.0236$K$\Omega$    & $0.236$\%           \\ \hline
+		$82$K$\Omega$      & $81.724$K$\Omega$     & $0.337$\%           \\ \hline
 	\end{tabular}
-	\caption{I tabellen ses der, at de tre modstandere afviger lidt fra deres teoretiske værdi, hvilket er forventet af reelle komponenter. Det er dog en acceptabel afvigelse, så modstanderne kan derfor anvendes til implementeringen.}
+	\caption{I tabellen ses der, at de tre modstandere afviger lidt fra deres teoretiske værdi, hvilket er forventet af reelle komponenter. Det er dog en acceptabel afvigelse ifølge tolerancerne i afsnit \ref{OpsamlingsAfs} på side \pageref{OpsamlingsAfs}, så modstanderne kan derfor anvendes til implementeringen.}
 	\label{Tab:modstand_faktor18}
 \end{table}
 \noindent Herefter implementeres kredsløbet. Til opsamling af signalet benyttes en computer med ScopeLogger, hvorefter dataen bliver behandlet i Matlab. I testen blev der foretaget 3 målinger for de to spændingsniveauer. Herefter blev gennemsnittet for hver måling udregnet, som lægges sammen og til slut også tages gennemsnittet af. Dette giver den endelige værdi, som står under "Output" i \tableref{Tab:faktor18_test}.\
@@ -70,12 +69,12 @@ Der ses på \figref{fig:Forstaerker_faktor18}, at der skal benyttes to modstande
 	\begin{tabular}{|l|l|l|l|l|}
 		\hline
 		\textit{Teoretisk input} & \textit{Målte input} & \textit{Output} & \% \textit{\begin{tabular}[c]{@{}l@{}}Faktiske\\ forstærkning\end{tabular}} & \textit{\begin{tabular}[c]{@{}l@{}}\% afvigelse\\ i forstærkning\end{tabular}} \\ \hline
-		$0.3313$V   & $0.2726$V    & $2.7096$V       &    9.94   & $0.06\%$     \\ \hline
+		$0.3313$V   & $0.3310$V    & $3.0221$V       &    9.13   & $0.33\%$     \\ \hline
 %		$0$V        & $0.3523$mV   & $3.5230$mV    & -$10$mV         & $38.49\%$      \\ \hline
-		-$0.3233$V  & -$0.2641$V   & -$2.6388$V      &    9.99   & $0.01\%$     \\ \hline
+		-$0.3233$V  & -$0.3231$V   & -$2.9631$V      &    9.17   & $0.77\%$     \\ \hline
 	\end{tabular}
-	\caption{I tabellen ses resultaterne fra testen med forstærkeren, der har en faktor 10. Det maksimale og minimale input fra offsetjusteringen er forsøgt at blive sendt ind.}
+	\caption{I tabellen ses resultaterne fra testen med forstærkeren, der har en faktor 9.1. Det maksimale og minimale input fra offsetjusteringen er forsøgt at blive sendt ind.}
 	\label{Tab:faktor18_test}
 \end{table}
-Det "målte input" er her blevet målt med et multimeter, da det er nemmere at håndtere end et oscilloskop. For $0.3313$V er spændingen kommet direkte fra en strømforsyning, men for at undersøge forstærkningen af $-0.3233$V er det nødsaget at benytte offsettet, da spændingsforsyningen ikke kan levere en negativ spænding. Det var derfor forventet, at der kunne være en større afvigelse på målingerne med $-0.3233$V spænding, da denne spænding skulle igennem flere kredsløb. Inputtet i offsettet (som kan ses på \figref{fig:Offset_generisk}) var $1.3092$V og referencen var $1.6325$V. Derved skabes den negative spænding, som sendes videre til forstærkeren. Afvigelsen, som ville opstå grundet et ekstra kredsløb, ville være præsentabel for afvigelsen, som der også burde have været for de to andre signalers tests. Der ses i \tableref{Tab:faktor18_test}, at der ikke opstod større forstyrrelser, som gav ekstra afvigelse i det målte signal ift. det forventede signal. \\
-Der ses ud fra testen, at forstærkeren overholder kravene fra afsnit \ref{OpsamlingsAfs} på side \pageref{OpsamlingsAfs} samt ligger inde for tolerancerne for afvigelser i forstærkningen.
+Det "målte input" er her blevet målt med et multimeter. %For $0.3313$V er spændingen kommet direkte fra en strømforsyning, men for at undersøge forstærkningen af $-0.3233$V er det nødsaget at benytte offsettet, da spændingsforsyningen ikke kan levere en negativ spænding. Det var derfor forventet, at der kunne være en større afvigelse på målingerne med $-0.3233$V spænding, da denne spænding skulle igennem flere kredsløb. Inputtet i offsettet (som kan ses på \figref{fig:Offset_generisk}) var $1.3092$V og referencen var $1.6325$V. Derved skabes den negative spænding, som sendes videre til forstærkeren. Afvigelsen, som ville opstå grundet et ekstra kredsløb, ville være præsentabel for afvigelsen, som der også burde have været for de to andre signalers tests. Der ses i \tableref{Tab:faktor18_test}, at der ikke opstod større forstyrrelser, som gav ekstra afvigelse i det målte signal ift. det forventede signal. \\
+Der ses ud fra testen, at forstærkeren overholder kravene fra afsnit \ref{OpsamlingsAfs} på side \pageref{OpsamlingsAfs}, samt ligger inde for afvigelser i forstærkningen, som er $\pm2\%$, da forstærkeren har en maksimal afvigelse på $0.77\%$.
