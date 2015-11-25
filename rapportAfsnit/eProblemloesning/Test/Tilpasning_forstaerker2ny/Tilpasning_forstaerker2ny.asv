@@ -1,0 +1,57 @@
+clear
+%% Konstanter
+Fs = 500;
+Samplelength = 30;
+T = 1/Fs;
+L = Fs*Samplelength;
+t = (0:L-1)*T;
+f = Fs*(0:(L/2))/L;     %Define the frequency domain f
+get(0,'Factory');
+set(0,'defaultfigurecolor',[1,1,1]);
+
+%% Loader data
+For301V1 = load('3.01V_maaling1');
+For301V2 = load('3.01V_maaling2');
+For301V3 = load('3.01V_maaling3');
+For842V1 = load('842V_maaling1');
+For842V2 = load('842V_maaling2');
+For842V3 = load('842V_maaling3');
+ForNegativ294V1 = load('negativ2.94V_maaling1');
+ForNegativ294V2 = load('negativ2.94V_maaling2');
+ForNegativ294V3 = load('negativ2.94V_maaling3');
+ForNegativ819V1 = load('negativ819V_maaling1');
+ForNegativ819V2 = load('negativ819V_maaling2');
+ForNegativ819V3 = load('negativ819V_maaling3');
+
+%% Gennemsnitsværdi
+For301V1mean = mean(For301V1.data)
+For301V2mean = mean(For301V2.data)
+For301V3mean = mean(For301V3.data)
+For301V = [For301V1mean For301V2mean For301V3mean];
+ForVmean = mean(For301V)
+
+For75V1mean = mean(For842V1.data)
+For75V2mean = mean(For842V2.data)
+For75V3mean = mean(For842V3.data)
+For75V = [For75V1mean For75V2mean For75V3mean];
+For75Vmean = mean(For75V)
+
+% For0V1mean = mean(For0V1.data)
+% For0V2mean = mean(For0V2.data)
+% For0V3mean = mean(For0V3.data)
+% For0V = [For0V1mean For0V2mean For0V3mean];
+% For0Vmean = mean(For0V)
+
+ForNegativ73V1mean = mean(ForNegativ294V1.data)
+ForNegativ73V2mean = mean(ForNegativ294V2.data)
+ForNegativ73V3mean = mean(ForNegativ294V3.data)
+ForNegativ73V = [ForNegativ73V1mean ForNegativ73V2mean ForNegativ73V3mean];
+ForNegativ73Vmean = mean(ForNegativ73V)
+
+ForNegativ266V1mean = mean(ForNegativ819V1.data)
+ForNegativ266V2mean = mean(ForNegativ819V2.data)
+ForNegativ266V3mean = mean(ForNegativ819V3.data)
+ForNegativ266V = [ForNegativ266V1mean ForNegativ266V2mean ForNegativ266V3mean];
+ForNegativ266Vmean = mean(ForNegativ266V)
+
+

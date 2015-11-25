@@ -1,0 +1,46 @@
+clear
+
+%% Konstanter
+Fs = 500;
+Samplelength = 30;
+T = 1/Fs;
+L = Fs*Samplelength;
+t = (0:L-1)*T;
+f = Fs*(0:(L/2))/L;     %Define the frequency domain f
+get(0,'Factory');
+set(0,'defaultfigurecolor',[1,1,1]);
+
+%% Loader data
+For313V1 = load('313V_maaling1');
+For313V2 = load('313V_maaling2');
+For313V3 = load('313V_maaling3');
+ForN313V1= load('negativ323V_maaling1');
+ForN313V2 = load('negativ323V_maaling2');
+ForN313V3 = load('negativ323V_maaling3');
+
+%% Gennemsnitsværdi
+For313V1mean = mean(For313V1.data)
+For2V2mean = mean(For313V2.data)
+For271V3mean = mean(For313V3.data)
+For271V = [For313V1mean For271V2mean For271V3mean];
+For271Vmean = mean(For271V)
+
+For0V1mean = mean(For0V1.data)
+For0V2mean = mean(For0V2.data)
+For0V3mean = mean(For0V3.data)
+For0V = [For0V1mean For0V2mean For0V3mean];
+For0Vmean = mean(For0V)
+
+For266V1mean = mean(For266V1.data)
+For266V2mean = mean(For266V2.data)
+For266V3mean = mean(For266V3.data)
+For266V = [For266V1mean For266V2mean For266V3mean];
+For266Vmean = mean(For266V)
+
+%% Plotter tidsgrafen
+%figure
+%plot(t, Off159V1.data(1:L))
+% axis([0 30 -0.5 0.5])
+% title('Volt målt inputspænding 1.59V(1. måling)')
+% xlabel('Tid i sekunder')
+% ylabel('Spænding målt i Volt')
