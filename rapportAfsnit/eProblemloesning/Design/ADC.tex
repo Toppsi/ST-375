@@ -1,8 +1,7 @@
 % !TeX spellcheck = da_DK
 \subsection{ADC}
-
-\subsubsection{Teori}
-I dette projekt anvendes NI USB-6009 til at konvertere det analoge signal til digital som beskrevet i afsnit \ref{ADCafsnit} på side \pageref{ADCafsnit}. Signalet skal konverteres, for at kunne sendes ind i den digitale del af systemet, så plejepersonalet kan aflæse og behandle målingerne. Med denne ADC kan der samples med 13 bits single-ended. ADC'en kan dermed inddeles i $2^{13} = 8192 \text{niveauer}$. Den maksimale sampling rate er på $48$kS/s, hvormed det er muligt at sample med minimum det tidobbbelte af båndbredden. Arbejdsområdet for ADC'en ift. spænding ligger på $10Vpp$. \cite{Instruments2014} Ud fra oplysningerne er det muligt at udregne LSB ud fra ligningen i afsnit \ref{ADCafsnit}. Udregningen ser således ud: \\
+\subsubsection{Teori og design}
+I dette projekt anvendes NI USB-6009 til at konvertere det analoge signal til digital som beskrevet i afsnit \ref{ADCafsnit} på side \pageref{ADCafsnit}. Signalet skal konverteres, for at kunne sendes ind i den digitale del af systemet, så plejepersonalet kan aflæse og behandle målingerne. Med denne ADC kan der samples med $13$ bits single-ended. ADC'en kan dermed inddeles i $2^{13} = 8192 \text{niveauer}$. Den maksimale sampling rate er på $48$kS/s, hvormed det er muligt at sample med minimum det tidobbbelte af båndbredden. Arbejdsområdet for ADC'en ift. spænding ligger på $10Vpp$ og har en typisk præcision på $14.7$mV ved $25^{\circ}$C. \cite{Instruments2014} Ud fra oplysningerne er det muligt at udregne LSB ud fra ligningen i afsnit \ref{ADCafsnit} på side \pageref{ADCafsnit}. Udregningen ser således ud: \\
 \begin{equation}
 	LSB = \frac{FSR}{2^{n}} 
 \end{equation}  
@@ -10,12 +9,12 @@ FSR er arbejdsområdet, dvs. $10Vpp$, som indsættes i formlen som $20V$, imens 
 Værdierne indsættes i formlen: \\
 \begin{align}
 	LSB = \frac{20V}{2^{13}}
-	LSB = 0.00244V = 2.44mV
+	LSB = 0.00244V = 2.44\text{mV}
 \end{align}
-Det opsamlede signal bliver forvrænget, og vil dermed ikke være repræsentativt, hvis der opsamles værdier på under $2.44mV$. 
-
-\subsubsection{Test af ADC}
-For at sikre, at ADC'en også i praksis lever op til de stillede krav udføres en test.
-
-\noindent - Anvendelse af tonegenerator \\
-- Send signaler m. største og mindste forventede signal ind i adc'en ved forskellige frekvenser - frekvenser vælges ud fra filterets knækfrekvens samt en referencemåling ved anden frekvens
+Det opsamlede signal bliver forvrænget, og vil dermed ikke være repræsentativt, hvis der opsamles værdier på under $2.44mV$.\\
+ADC'en skal tilkobles efter lavpasfiltret, som det kan ses på \figref{kravblok} på side \pageref{kravblok}.
+\subsubsection{Simulering}
+Ifølge tolerancerne for ADC'en beskrevet i afsnit \ref{ADCafsnit} på side \pageref{ADCafsnit} skal der testes, om ADC'en kan modtage og konvertere et inputsignal på $\pm4$V samt sample 500 gange i sekundet. \\
+Der kan ikke laves en simulering af en ADC i programmet LTSpice, da inputsignalet i LTSpice allerede er et digitalt signal, og der er derfor ikke noget, som skal konverteres.
+ 
+\subsubsection{Implementering}

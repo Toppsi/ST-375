@@ -180,15 +180,15 @@ I systemet anvendes en spændingsforsyning af batterier placeret i en spændings
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{ADC}
 Blokken med en ADC anvendes i systemet, for at konvertere det analoge signal til digitalt. %Den skal kunne sample det forstærkede signal. 
-ADC'ens inputsignal skal ligge i området $\pm3V$. Båndbredden på accelerometeret bestemmer hvilken samplingsfrekvens, der skal benyttes. I følge Nyquists sætning skal der samples med minimun det dobbelte af det biologiske signals frekvens. I praksis samples der med minimum det tidobbelte jævnfør afsnit \ref{ADCafsnit}, side \pageref{ADCafsnit}. I dette tilfælde er båndbredden $50Hz$, dvs. at der som minimum skal samples med $100Hz$, og i praksis vil det være hensigtsmæssigt at sample med minimum $500Hz$. \\
+ADC'ens inputsignal vil ligge i området $\pm3V$, men der skal tages højde for afvigelser, så derfor skal ADC'en kunne modtage signaler på $\pm4V$. Båndbredden på accelerometeret bestemmer, hvilken samplingsfrekvens der skal benyttes. I følge Nyquists sætning skal der samples med minimun det dobbelte af det biologiske signals frekvens. I praksis samples der med minimum det tidobbelte jævnfør afsnit \ref{ADCafsnit}, side \pageref{ADCafsnit}. I dette tilfælde er båndbredden $50Hz$, dvs. at der som minimum skal samples med $100Hz$, og i praksis vil det være hensigtsmæssigt at sample med minimum $500Hz$. \\
 \textbf{Krav:}
 \begin{itemize}
-	\item Skal kunne modtage et inputsignal i intervallet $\pm 3 V$.
+	\item Skal kunne modtage et inputsignal i intervallet $\pm4$V.
 	\item Skal have en samplingsfrekvens på minimum $500Hz$.
 \end{itemize}
 \textbf{Tolerance:}
 \begin{itemize}
-	\item Der accepteres ingen afvigelse ift. ADCen.
+	\item Der accepteres ingen afvigelse ift. ADC'ens bearbejdning af signalet.
 \end{itemize}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{USB-isolator}\label{kravspecifikationer_USB}
