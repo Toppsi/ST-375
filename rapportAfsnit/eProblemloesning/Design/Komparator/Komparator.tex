@@ -4,10 +4,10 @@
 Som nævnt i afsnit \ref{Komparatorafsnit} på side \pageref{Komparatorafsnit} anvendes en komparator til at sammenligne to inputspændinger. Der vil blive anvendt flere komparatorer og i dette tilfælde vil komparatorernes output blive tilkoblet en LED-diode eller vibrator, en modstand og den positive spændingsforsyning ($+V_{cc}$). I komparatorernes inverterende terminaler skal outputtet fra forrige blok tilsluttes. Inputtet til de ikke-inverterende terminaler skal fungere som referencespænding, hvilket anvendes til at forsyne med de beregnede tærskelværdier. Komparatorerne kan derfor have to forskellige outputs afhængig af inputspændingen. Hvis inputsignalet ligger udenfor de beregnede tærskelværdier, vil outputtet være $0V$, og dioderne og vibratoren vil ikke aktiveres. Er inputtet indenfor de beregnede tærskelværdier, vil outputtet svare til jord, da strømmen fra $+V_{cc}$ vil løbe igennem komparatorerne og derefter til jord. Derved opnås et spændingsfald over den positive (anode) og negative (katode) pol for LED-dioden og vibratoren på en værdi, der ligger over det minimale spændingsfald, der kræves for en aktivering. LED-dioderne og vibratorerne vil derved blive aktiveret og give feedback til patienten. \\
 
 \noindent\textbf{Visuel komparator kredsløb} \\
-Til den visuelle del af komparatorkredsløbet anvendes LED-dioder. LED-diodernes katode tilkobles komparatorens output, imens anoden tilkobles $+V_{cc}$. Jævnfør kravspecifikationerne i afsnit \ref{KomparatorAfs}, side \pageref{KomparatorAfs} er der valgt fem forskellige stadier for aktivering af LED-dioderne. For aktivering af LED-dioderne vil der blive anvendt seks komparatorer, da det første stadie, indeholdende den grønne LED-diode, både har en positiv og negativ tærskelværdi og derfor kræver to komparatorer. Tærskelværdierne kan både implemeteres som to spændingstræer eller som otte spændingsdelere og der er fordele og ulemper ved begge metoder. Der anvendes her otte spændingsdelere, hvor fire indgår i to vindues-komparatorer og fire almindelige komparatorer. Dette design vælges til fordel for to spændingtræer, da modstandene i et spændingstræ påvirker hinanden, hvilket kan ændre tærskelværdierne, hvis én af modstandene ikke fungerer ideelt. For at modvirke dette, anvendes en spændingsdeler for hver tærskelværdi, der fremgår af figur \figref{fig:komparator_visuel}. Konfigurationen indeholder en spændingsreference $+V_{ref}$ på $2.5$V og seks modstande (R$15$-R$20$) mellem LED-dioderne og $+V_{cc}$ for at beskytte LED-dioderne mod for høj strømstyrke og at batteriet ikke drænes. I vindues-konfigurationen placeres LED-dioderne (D$7$ - D$10$) ved hver af de to operationsforstærkere(TL$081$). Dette gøres for at adskille de to operationsforstærkere, så de ikke påvirker hinanden og vindues-komparatoren fungerer som ønsket.  
+Til den visuelle del af komparatorkredsløbet anvendes LED-dioder. LED-diodernes katode tilkobles komparatorens output, imens anoden tilkobles $+V_{cc}$. Jævnfør kravspecifikationerne i afsnit \ref{KomparatorAfs}, side \pageref{KomparatorAfs} er der valgt fem forskellige stadier for aktivering af LED-dioderne. For aktivering af LED-dioderne vil der blive anvendt seks komparatorer, da det første stadie, indeholdende den grønne LED-diode, både har en positiv og negativ tærskelværdi og derfor kræver to komparatorer. Tærskelværdierne kan både implemeteres som to spændingstræer eller som otte spændingsdelere og der er fordele og ulemper ved begge metoder. Der anvendes her otte spændingsdelere, hvor fire indgår i to vindues-komparatorer og fire almindelige komparatorer. Dette design vælges til fordel for to spændingtræer, da modstandene i et spændingstræ påvirker hinanden, hvilket kan ændre tærskelværdierne, hvis én af modstandene ikke fungerer ideelt. For at modvirke dette, anvendes en spændingsdeler for hver tærskelværdi, der fremgår af figur \figref{fig:komparator_visuel}. Konfigurationen indeholder en spændingsreference $+V_{ref}$ på $2.5$V og seks modstande (R$15$-R$20$) mellem LED-dioderne og $+V_{cc}$ for at beskytte LED-dioderne mod for høj strømstyrke og at batteriet ikke drænes. Der udarbejdes et vindues-konfigurationen som placeres for LED-dioderne (D$3$ - D$4$) ved hver af de to komparatorer (LM$311$). Dette gøres for at adskille de to komparatorerer, så de ikke påvirker hinanden og vindues-komparatoren fungerer som ønsket.  
 \begin{figure}[H]
 	\centering
-	\includegraphics[scale=1.0]{figures/cProblemloesning/komparator_visuel.PNG}
+	\includegraphics[scale=1.0]{figures/cProblemloesning/komparator_visuel1.PNG}
 	\caption{Figuren illustrerer komparatorkonfigurationen for den visuelle del. Kredsløbet består af to dele; en for hældning i positiv retning og en for hældning i negativ retning. Hver del består af en vindues-komparator og to almindelige komparatorer. Der er implementeret en inverterende forstærker for at gøre referencespændingen negativ, så hældning i den negative retning kan dedekteres. Kredsløbet er udarbejdet i LTspice.}
 	\label{fig:komparator_visuel}
 \end{figure}
@@ -15,18 +15,18 @@ Til den visuelle del af komparatorkredsløbet anvendes LED-dioder. LED-diodernes
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \noindent\textbf{Beregning af tærskelværdier og tilhørende R$1$-R$14$ modstande for aktivering af LED-dioder} \\
-Inputsignalet fra forrige blok, tilpasningsblokken, ligger mellem -$2.2168$V og $2.2602$V jævnfør afsnit \ref{KomparatorAfs}, side\pageref{KomparatorAfs}. Jævnfør systemets funktionelle krav afsnit \ref{FunkKrav}, side \pageref{FunkKrav} ønskes det, at de enkelte LED-dioder skal lyse ved bestemte kropshældninger, dvs. ved en bestemt tærskelværdi. %Disse tærskelværdier sættes ud fra to punkter; det maksimale teoretiske signal  ved $25^{\circ}$ $4.0662$, og en tilgængelig spændingsreference, der kan sørge for en fast spænding til spændingstræet. 
+Inputsignalet fra forrige blok, tilpasningsblokken, ligger mellem -$2.9417$V og $3.0151$V jævnfør afsnit \ref{KomparatorAfs}, side\pageref{KomparatorAfs}. Jævnfør systemets funktionelle krav afsnit \ref{FunkKrav}, side \pageref{FunkKrav} ønskes det, at de enkelte LED-dioder skal lyse ved bestemte kropshældninger, dvs. ved en bestemt tærskelværdi. %Disse tærskelværdier sættes ud fra to punkter; det maksimale teoretiske signal  ved $25^{\circ}$ $4.0662$, og en tilgængelig spændingsreference, der kan sørge for en fast spænding til spændingstræet. 
 Tærskelværdierne er udregnet til at være:
 
 \begin{itemize}
-\item $2^{\circ}$ = $0.1808$V
-\item -$2^{\circ}$ = -$01773$V
-\item $8^{\circ}$ = $0.7233$V
-\item -$8^{\circ}$ = -$0.7094$V
-\item $13^{\circ}$ = $1.1753$V
-\item -$13^{\circ}$ = -$1.1527$V
-\item $25^{\circ}$ = $2.2602$V
-\item -$25^{\circ}$ = -$2.2168$V
+\item $2^{\circ}$ = $0.2412$V
+\item -$2^{\circ}$ = -$0.2353$V
+\item $8^{\circ}$ = $0.9648$V
+\item -$8^{\circ}$ = -$0.9413$V
+\item $13^{\circ}$ = $1.5679$V
+\item -$13^{\circ}$ = -$1.5297$V
+\item $25^{\circ}$ = $3.0151$V
+\item -$25^{\circ}$ = -$2.9417$V
 \end{itemize}
 
 \begin{figure}[H]
@@ -49,16 +49,16 @@ Hvor følgende er kendt:
 \begin{itemize}
 \item $V_out$ = den ønskede tærskelværdi
 \item $V_in$ = spændingsreferencen
-\item R$1$-R$8$ = $10$K
+\item R$1$-R$8$ = $10$K$\Omega$
 \end{itemize}
 
 Dette medfører at R$9$-R$14$ giver følgende resultater:\\
-R$9$ = $8872.197479$\\
-R$10$ = $4071.030562$ \\
-R$11$ = $779.5791652$ \\
-R$12$ = $763.3357730$ \\
-R$13$ = $3961.800514$ \\
-R$14$ = $8555.629778$ \\
+R$9$ = $16821\Omega$ \\
+R$10$ = $6285\Omega$ \\
+R$11$ = $1068\Omega$ \\
+R$12$ = $1039\Omega$ \\
+R$13$ = $6039\Omega$ \\
+R$14$ = $15765\Omega$ \\
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -83,14 +83,32 @@ FÅ SWITCH MED IND I DET? \\
 
 \subsubsection{Simulering}
 \noindent\textbf{Simulering af visuel komparatorkonfiguration} \\
-Til simulering af den visuelle komparatorkonfiguration anvendes komparatorer af typen TL$081$, da operationsforstærkerne til det reelle kredsløb er af denne type. For at udføre en simulering af den visuelle komparatorkonfiguration tilkobles kredsløbet et sinus-signal, der svinger mellem $\pm3$V. Dette gøres for at simulere signalet, der kommer fra den forrige blok, hvor arbejdsområdet er på $\pm3$V. Under simuleringen i LTspice testes det, hvorvidt den visuelle komparatorkonfiguration opfylder de opstillede specifikke krav, jævnfør kravspecifikationerne i afsnit \ref{KomparatorAfs}, side \pageref{KomparatorAfs}. Simuleringen af den visuelle komparatorkonfiguration fremgår af figur \figref{fig:komparator_visuel_simulering_samlet}. \fxnote{Vi kan starte med at simulere tærskelværdier og derefter hvordan komparatoren fungerer.}
+Til simulering af den visuelle komparatorkonfiguration anvendes komparatorer af typen LT$1011$, da operationsforstærkerne til det reelle kredsløb er af denne type. For at udføre en simulering af den visuelle komparatorkonfiguration tilkobles kredsløbet et sinus-signal, der svinger mellem $\pm3$V. Dette gøres for at simulere signalet, der kommer fra den forrige blok, hvor arbejdsområdet er på $\pm3$V. Under simuleringen i LTspice testes det, hvorvidt den visuelle komparatorkonfiguration opfylder de opstillede specifikke krav, jævnfør kravspecifikationerne i afsnit \ref{KomparatorAfs}, side \pageref{KomparatorAfs}. Simuleringen af den visuelle komparatorkonfiguration fremgår af figur \figref{fig:komparator_visuel_simulering_samlet}. \fxnote{Vi kan starte med at simulere tærskelværdier og derefter hvordan komparatoren fungerer.}
 \begin{figure}[H]
 	\centering
-	\includegraphics[scale=1.0]{figures/cProblemloesning/komparator_visuel_simulering_samlet.PNG}
-	\caption{Figuren viser simuleringen af den visuelle komparatorkonfiguration. Den røde kurve er et sinus signal, der illustrerer blokkens inputsignal. De resterende kurver er de enkelte komparatorer, som under tærskelværdien er i negativ mætning. Når inputsignalet når de definerede tærskelværdier, vil kurverne gå i positiv mætning og LED-dioderne vil lyse. Ved vindue-komparatoren er den positive og negative mætning ikke så høj, som ved de normale komparatorer. Dette skyldes, at signalet skal passere yderligere to LED-dioder, hvilket giver et spændingsfald. Kredsløbet er simuleret i LTspice.}
+	\includegraphics[scale=1.0]{figures/cProblemloesning/komparator_visuel_simulering_samlet1.PNG}
+	\caption{Figuren viser simuleringen af den visuelle komparatorkonfiguration. Den sorte kurve er et sinus signal, der illustrerer blokkens inputsignal. De resterende kurver er de enkelte komparatorer, som under tærskelværdien er i negativ mætning. De røde kurver symboliserer den røde diode, de gule kurver de gule dioder og de grønne kurver de grønne dioder. Når inputsignalet når de definerede tærskelværdier, vil kurverne gå i positiv mætning og LED-dioderne vil lyse. Ved vindue-komparatoren er den positive og negative mætning ikke så høj, som ved de normale komparatorer. Dette skyldes, at signalet skal passere yderligere to LED-dioder, hvilket giver et spændingsfald. Kredsløbet er simuleret i LTspice.}
 	\label{fig:komparator_visuel_simulering_samlet}
 \end{figure}
 På figur \figref{fig:komparator_visuel_simulering_samlet} fremgår det, at ved de enkelte tærskelværdier går signalet i positiv mætning, hvilket får LED-dioderne til at lyse. Mætningen er under $5.5$V som er den spænding LED-dioderne maksimalt kan forsynes med  \fxnote{Kontrollere af denne værdi (5.5) er rigtig}, men samtidig nok til at få dioderne til at lyse, hvilket krævede mellem $1.7-1.9$V og $2$mA. 
+
+\begin{table}[H]
+	\centering
+	\begin{tabular}{|l|l|l|l|l|l|}
+		\hline
+					& \textit{Tærskelværdier} 	& \textit{Måling til højre} & \textbf{Måling til venstre}		&  \textit{Afvigelse for højre}  \textit{Afvigelse for venstre}\\ \hline
+\textbf{$2^{\circ}$} 		& $0.2412$V  				&$0.24134816$V 			&$0.24118759$V		& $0.06\%$  &$0.005\%$ \\ \hline
+\textbf{-$2^{\circ}$} 		&-$0.2353$V 					&-$0.23478814$V 			&-$0.23517756$V  	& $0.2\%$	&$0.05\%$\\ \hline
+ \textbf{$8^{\circ}$} 		&$0.9648$V					&$0.96499801$V			&$0.9648845$V		& $0.02\%$	&$0.009\%$\\ \hline
+\textbf{-$8^{\circ}$} 		&-$0.9413$V					&-$0.94152431$V 			&-$0.94096205$V		& $0.02\%$	&$0.04\%$\\ \hline 		
+\textbf{$13^{\circ}$} 		&$1.5679$V 					&$1.5680858$V 		  	&$1.5701384$V		& $0.01\%$	&$0.14\%$\\ \hline
+\textbf{-$13^{\circ}$} 		&-$1.5297$VV 				&-$1.530243$V		   	&-$1.5278897$V		& $0.04\%$	&$0.12\%$ \\ \hline
+	\end{tabular}
+	\caption{I tabellen ses der, at de anvendte tærskelværdier afviger fra den teoretiske værdi, hvilket er forventet af reelle komponenter. Det er en acceptabel afvigelse, så tærskelværdierne kan derfor anvendes til implementering}
+	\label{Tab:Maalingtearskelvaerdier}
+\end{table}
+
+Det kan udfra \ref{Tab:Maalingtearskelvaerdier} konkluderes at afvigelsen fra de udregnede tærkselværdier stemmer overens med tolerance for tærkselværdierne jævnfør afsnit \ref{KomparatorAfs}, side \pageref{KomparatorAfs} som var på $\pm1$\%. 
 
 \noindent\textbf{Simulering af somasensorisk komparator kredsløb} \\
 
