@@ -7,11 +7,11 @@ Blokken opsamling omfatter accelerometeret, offsetjustering og forstærkning. Ac
 Offsetjusteringen skal centrere det målte signal omkring $0V$, da accelerometeret typisk måler $1.6325V$ ved $0$g påvirkning af den pågældende akse ifølge pilotforsøget. Derfor skal der trækkes $1.6325$V fra alle inputs fra accelerometret. Justeringen af offset skal forekomme inden forstærkning således, at der ikke sker en forstærkning og dermed forskydning af offsetværdien, når accelerometret måler i positiv og negativ retning, hvorved g påvirkningen ændres. Ved justering af offsettet må der ikke ske en ændring af amplitudens peak-to-peak og frekvensen. \\
 Forstærkningen skal gøre det nemmere at adskille det ønskede signal fra støj i den efterfølgende filtreringsblok. For at forstærkningskredsløbet ikke dræner strømforsyningen, skal inputimpedansen til forstærkeren være mindst $100$ gange større end outputimpedansen i accelerometeret som kan ses i afsnit \ref{Subsec:AccTeori} på side \pageref{Subsec:AccTeori}. Signalet skal efter forstærkningen ligge indenfor arbejdsområdet $\pm3V$ og der ønskes derfor størst mulige forstærkning. Den højeste måling ved $\pm90^{\circ}$ var ifølge pilotforsøget efter offsetjusteringen $0.3313$V. Derfor kan forstærkningen udregnes således:
 \begin{equation}
-\dfrac{3\text{V}}{0.3313\text{V}} =  9.05 \approx 9
+\dfrac{3\text{V}}{0.3313\text{V}} =  9.05 \approx 9.1
 \end{equation}
-\noindent Der ønskes en forstærkning på faktor $9$, da der skal tages forbehold for et toleranceområde. Forstærkningens gain i dB udregnes ud fra følgende formel: 
+\noindent Der ønskes en forstærkning på faktor $9.1$. Derved vil den maksimale spænding efter denne forstærkning være $3.0148$V, hvilket accepteres, da der vides fra databladet for operationsforstærkeren TL081 og teori, at når TL081 bliver forsynet med en spænding på $5.5$V, så vil den maks give ca. $4$V ud. \cite{Corporation1995} Derfor vil en lille afvigelse i outputsignalet ift. arbejdsområdet ikke få systemet til at gå i mætning. Forstærkningens gain i dB udregnes ud fra følgende formel: 
 \begin{equation}
-20 \cdot log_{10} (9) = 19.0849\text{dB}
+20 \cdot log_{10} (9.1) = 19.1808\text{dB}
 \end{equation} 
 
 \noindent\textbf{Krav:}
@@ -22,8 +22,8 @@ Forstærkningen skal gøre det nemmere at adskille det ønskede signal fra støj
 	\item Accelerometeret skal kunne måle statisk acceleration i mindst to retninger.
 	\item Accelerometeret skal kunne detektere en hældning fra $0^{\circ}$ til $\pm90^{\circ}$.
 	\item Offsetjusteringen skal centrere det målte signal omkring $0V$.
-	\item Forstærkeren skal have en indgangsimpedans på $3.68M\Omega$\fxnote{Da man ikke vil dræne blokken før for strøm. Udregnet ved 32Kohm, da indputimpedans skal være mindst 100 gange større end den forrige bloks outputimpedans. Accelerometrets indgangsimpedans har en afvigelse på +15\%}.
-	\item Forstærkningen skal være på 10, som svarer til $19.0849$dB.
+	\item Forstærkeren skal have en indgangsimpedans på $3.68M\Omega$\fxnote{Da man ikke vil dræne blokken før for strøm. Udregnet ved 32Kohm, da indputimpedans skal være mindst $100$ gange større end den forrige bloks outputimpedans. Accelerometrets indgangsimpedans har en afvigelse på +15\%}.
+	\item Forstærkningen skal være på $9.1$, som svarer til $19.1808$dB.
 	\item Outputtet fra denne blok skal være mellem $2.9817$V og -$2.9097$V.
 \end{itemize}
 \textbf{Tolerance:}
@@ -73,16 +73,16 @@ Blokken tilpasning har til formål at tilpasse det filtrerede signal til kompara
 Forstærkerens faktor samt gain i dB udregnes i \eqref{TilpasEq2} og \eqref{TilpasEq3}.
 \begin{align}
 \label{TilpasEq1} 0.0925V \cdot 9 = 0.8325V \\
-\label{TilpasEq2} \dfrac{3V}{0.8325V} = 3.6036 \approx 3 \\
-\label{TilpasEq3} 20 \cdot log_{10} (3) = 9.5424\text{dB}
+\label{TilpasEq2} \dfrac{3V}{0.8325V} = 3.6036 \approx 3.6 \\
+\label{TilpasEq3} 20 \cdot log_{10} (3) = 11.1261\text{dB}
 \end{align} 
-I \eqref{TilpasEq1}, \eqref{TilpasEq2} og \eqref{TilpasEq3} er de $3V$ grænsen for arbejdsområdet. Der forstærkes med en faktor 3. Resultatet afrundes nedad til nærmeste hele tal. \\
+I \eqref{TilpasEq1}, \eqref{TilpasEq2} og \eqref{TilpasEq3} er de $3V$ grænsen for arbejdsområdet. Der forstærkes med en faktor $3.6$. \\
 
 \noindent\textbf{Krav:}
 \begin{itemize}
 	\item Tilpasningsblokken skal have en spændingsforsyning på $5.5$V.
 	\item Skal kunne modtage et inputsignal på $\pm3V$
-	\item Forstærkningen skal være på 3, som svarer til $9.5424dB$.
+	\item Forstærkningen skal være på $3.6$, som svarer til $11.1261dB$.
 	\item Indgangsimpedansen skal være over $3.2M\Omega$.
 	\item Output impedansen skal være under $32K\Omega$.
 \end{itemize}
