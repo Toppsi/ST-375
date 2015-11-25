@@ -52,7 +52,7 @@ B1gN3 = load('Baseline1gNegativ3');
  EnGradP = B1gPUdenOffset/90
  EnGradN = B1gNUdenOffset/90
  
- %% Findedr værdien for de bestemte grænser
+ %% Finder værdien for de bestemte grænser
  ToGraderP = (EnGradP*2)
  ToGraderN = (EnGradN*2)
  
@@ -269,5 +269,15 @@ ylabel('Spænding målt i volt')
 A = max(fftB1gN3)
 %plot(B0g3.data)
 
-
-RMS = rms(B0g3.data)
+%% Beregning af tærskelværdier:
+ToGraderPT = (EnGradP*2)*3.6*9.1
+ToGraderNT = (EnGradN*2)*3.6*9.1
+ 
+OtteGraderPT = (EnGradP*8)*3.6*9.1
+OtteGraderNT = (EnGradN*8)*3.6*9.1
+ 
+TrettenGraderPT = (EnGradP*13)*3.6*9.1
+TrettenGraderNT = (EnGradN*13)*3.6*9.1
+ 
+FemogtyveGraderPT = (EnGradP*25)*3.6*9.1
+FemogtyveGraderNT = (EnGradN*25)*3.6*9.1
