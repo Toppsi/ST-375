@@ -107,27 +107,25 @@ Ud fra det simulerede kredsløb undersøges det, hvorvidt knækfrekvensen stemme
 
 \subsubsection{Implementering og test}
 Der ses på \figref{fig:lavpasfilter_LTspice} at der benyttes 3 modstande og 3 kondensatorer til at designe kredsløbet. Reelt findes de udregnede modstande og kondensatorer ikke, og derfor benyttes der dem som kommer tættest på det teoretiske. Dette gøres ved at sætte både modstande og kondensatorer i henholdsvis serie- og parallelforbindelse for at opnå de ønskede værdier. For $R_{1}$ og $R_{2}$ anvendes der modstande i parallelforbindelse og for $R_{3}$ i serieforbindelse. For $C_3$ anvendes der kondensatorer i parallelforbindelse. Der foretages målinger på tre ens reelle modstande og kondensatorer for at kunne anvende de komponenter som afviger mindst fra de teoretiske værdier. Dette er illustreret i \tableref{Tab:Maalingfilter}
-
 \begin{table}[H]
 	\centering
 	\begin{tabular}{|l|l|l|l|}
 		\hline
-						& \textit{Teoretisk}			& \textit{Måling} 	&  \textit{Afvigelse} \\ \hline
-	 \textbf{$R_{1}(Parallel):$} 	& $1M\Omega$ 				& $1.00462M\Omega$ 		& $0.46\%$  \\ \hline
-					& $68K\Omega$ 				& $68.035K\Omega$ 		& $0.05\%$  \\ \hline
-	 \textbf{$R_{2}(Parallel):$} 	& $1M\Omega$ 				& $1.00373K\Omega$		& $0.37\%$	\\ \hline
-	 					& $47K\Omega$ 				& $47.054K\Omega$		& $0.11\%$ 	\\ \hline
-	 \textbf{$R_{3}(Serie):$} 	& $18K\Omega$				& $17.960\Omega$ 		& $0.22\%$ 	\\ \hline
-	 					& $820\Omega$				& $816.0\Omega$			& $0.49\%$ 	\\ \hline
-	 \textbf{$C_{1}:$} 	& $100n$ 					& $98n$ 					& $2.00\%$      \\ \hline
-	 \textbf{$C_{2}(Parallel):$} 	& $470n$						& $464n$					& $1.29\%$  		\\ \hline
-	 					& $10n$						& $9n$					& $11\%$  		\\ \hline
-	\textbf{$C_{3}:$}	& $100n$ 					& $98n$ 					& $2.00\%$      \\ \hline
+		\textit{}                                     & \textit{Teoretisk} & \textit{Måling}    & \textit{Afvigelse} \\ \hline
+		\multirow{2}{*}{\textit{$R_{1}$(Parallel) :}} & $1$M$\Omega$       & $1.0046$M$\Omega$  & $0.46\%$           \\ \cline{2-4} 
+		& $68$K$\Omega$      & $68.0350$K$\Omega$ & $0.05\%$           \\ \hline
+		\multirow{2}{*}{\textit{$R_{2}$(Parallel) :}} & $1$M$\Omega$       & $1.0037$K$\Omega$  & $0.37\%$           \\ \cline{2-4} 
+		& $47$K$\Omega$      & $47.0540$K$\Omega$ & $0.11\%$           \\ \hline
+		\multirow{2}{*}{\textit{$R_{3}$(Serie) :}}    & $18$K$\Omega$      & $17.9600\Omega$    & $0.22\%$           \\ \cline{2-4} 
+		& $820\Omega$        & $816\Omega$        & $0.49\%$           \\ \hline
+		\textit{$C_{1}$ :}                            & $100$n             & $98$n              & $2.00\%$           \\ \hline
+		\multirow{2}{*}{\textit{$C_{2}$(Parallel) :}} & $470$n             & $464$n             & $1.29\%$           \\ \cline{2-4} 
+		& $10$n              & $9$n               & $10\%$             \\ \hline
+		\textit{$C_{3}$ :}                            & $100$n             & $98$n              & $2.00\%$           \\ \hline
 	\end{tabular}
 	\caption{I tabellen ses der, at de anvendte modstande og kondensatorer afviger fra den teoretiske værdi, hvilket er forventet af reelle komponenter. Det er en acceptabel afvigelse, så modstandene kan derfor anvendes til implementering}
 	\label{Tab:Maalingfilter}
 \end{table}
-
 Herefter implementeres kredsløbet. I testen anvendes en spændingsforsyning på $5.5$V og en funktionsgenerator som inputsignal, samt et multimeter til aflæsning af dæmpningen. Funktionsgeneratoren sættes til de ønskede frekvenser i intervaller af $1$Hz fra $10$Hz til $50$Hz. Outputtet i dB måles for hver frekvens. Ud fra disse målinger plottes en graf af dæmpningen i MatLab, hvilket er illustreret på \figref{fig:Lavpas_Matlab}.  
 
 \begin{figure}[H]
