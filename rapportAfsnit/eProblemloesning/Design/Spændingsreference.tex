@@ -13,7 +13,7 @@ For at udregne værdien af modstanden, R, i kredsløbet, anvendes følgende gene
 R=\dfrac{V_{forsyning}-V_{Reference}}{I_{Z}}
 \end{equation}
 Hvor V_{forsyning} er forsyningsspændingen som sendes ind i kredsløbet, V_{Reference} er den referencespænding der skal sendes ud af systemet og I_{Z} er strøm forbruget fra de komponenter, der er i referencespændings kredsløbet. 
-
+\noindet \textbf{Beregning af referenceværdien til offset}
 Først udregnes R for referencespændingen til offsettet. V_{forsyning} er de $5.5$V, der forsynes med fra spændingsforsyningen. V_{Reference} $2.5$V. I kredsløbet for ofsettet indgår én operationsforstærker(TL$081$), der har en maksimal biasstrøm på $200$pA\fxnote{KILDE, datablad påTL081}. Referencedioden har et arbejdsområde mellem $20\muA$ til $20mA$ og for at sikre der er strøm nok til referencedioden er den sat til at bruge $100\muA$\fxnote{ KILDE: Datablad LM385}. Dermed kan strømforbruget, I_Z, for offsettet udregnes som summen af de to biasstrømme og alle de kendte værdier indsættes i formlen:
 
 \begin{equation}
@@ -25,7 +25,20 @@ Da offsettet på accelerometeret er på $1.6325$V jævnført \ref{Offset_Teori_D
 V_{out}=V_{in}*\dfrac{R2}{R1+R2}
 \end{equation}
 
-Herefter kan samme fremgangsmåde anvendes til udregning af R for referencespændingen til komparatoren. I kredsløbet for komparatoren indgår én operationsforstærker(TL$081$), med en maksimal biasstrøm på $200$pA. Biasstrømmen for referencedioden er igen sat til $100\muA$. Derudover indgår \textcolor{red}{otte komparatorer} (LM$311$), der alle har en maksimal biasstrøm på $250$nA. Dermed kan værdierne igen indsættes i formlen og R kan beregnes.
+R$1$ bliver valgt til at være $10$K\Omega og derved er følgende kendt: 
+\begin{itemize}
+\item V_{out}  = $1.6325$V
+\item V_{in} = $5.5$V
+\item R1 = $10$K\Omega
+\end{itemize}
+Ligningen kommer til at være således: 
+\begin{equation}
+1.6325V = 5.5* \dfrac{R2}{10000\Omega+R2} 
+R2 = 18818.44380\Omega \approx 18820\Omega
+\end{equation}
+
+\noindet \textbf{Beregning af referenceværdien til komparator}
+Den samme fremgangsmåde anvendes til udregning af R for referencespændingen til komparatoren. Her er den ønskede referenceværdi  $2.5$V, så der benyttes ikke en spændingsdeler.  I kredsløbet for komparatoren indgår én operationsforstærker(TL$081$), med en maksimal biasstrøm på $200$pA. Biasstrømmen for referencedioden er igen sat til $100\muA$. Derudover indgår \textcolor{red}{otte komparatorer} (LM$311$), der alle har en maksimal biasstrøm på $250$nA. Dermed kan værdierne igen indsættes i formlen og R kan beregnes.
 
 \begin{equation}
 R_komparator=\frac{5.5V-2.5V}{0.0001020002A}=29411.70704\Omega \approx 29.5K\Omega 
