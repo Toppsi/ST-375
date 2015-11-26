@@ -40,12 +40,7 @@ Der vælges en  spændingsreference, som består af en regulator så den kan lev
 Når referencespændingen er kendt kan modstandene i spændingsdeleren bestemmes. Da kredsløbet trækker strøm har modstandene (R$15$-R$20$) til formål at sikre, at spændingsforsyningen ikke drænes. Hvis modstanden er høj, vil strømmen til kredsløbet være lav, og batterierne i spændingsreferencen vil derved holde længere.
 
 Der anvendes otte spændingsdelere, hvor fire indgår som vindues-komparatorer og de resterende som almindelige komparatorer, hvillket fremgår af figur \figref{fig:komparator_visuel}.. 
-For at opstille spændingsdelerne skal R$1$-R$14$ bestemmes så LED-dioderne lyser ved de ønskede tærskelværdier. For at modstandene kan bestemmes defineres R$1$ til en bestemt værdi, der her fastsættes til at være $10$K$\Omega$. Den samme værdi er gældende for R$2$-R$8$, eftersom der anvendes en spændingsdeler for hver tærskelværdi. Herefter kan R$9$-R$14$ udregnes vha. den generelle formel for en spændingsdeler:
-
-\begin{equation}
-V_{out}=V_{in}*\dfrac{R2}{R1+R2}
-\end{equation}
-Hvor følgende er kendt:
+For at opstille spændingsdelerne skal R$1$-R$14$ bestemmes så LED-dioderne lyser ved de ønskede tærskelværdier. For at modstandene kan bestemmes defineres R$1$ til en bestemt værdi, der her fastsættes til at være $10$K$\Omega$. Den samme værdi er gældende for R$2$-R$8$, eftersom der anvendes en spændingsdeler for hver tærskelværdi. Herefter kan R$9$-R$14$ udregnes vha. den generelle formel for en spændingsdeler jævnført \eqref{Spaendingsdeler}. Hvor følgende er kendt:
 \begin{itemize}
 \item $V_out$ = den ønskede tærskelværdi
 \item $V_in$ = spændingsreferencen
