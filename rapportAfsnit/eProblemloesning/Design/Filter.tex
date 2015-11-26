@@ -1,12 +1,20 @@
 % !TeX spellcheck = da_DK
 \subsection{Filter}
 \subsubsection{Teori og design}
-Efter signalet er blevet forstærket skal det filtreres, så alle de uønskede signaler kan dæmpes. Der benyttes kun et lavpasfilter, da det ønskede signal ifølge litteraturen ligger i frekvensområdet $0-10$Hz, som beskrevet i afsnit \ref{FilterAfs} på side \pageref{FilterAfs}, men i forhold til pilotforsøget i afsnit \ref{Sec:PilotforsoegKort} på side \pageref{Sec:PilotforsoegKort} ligger det ønskede signal i frekvensområdet $0-25$Hz. Derfor bliver frekvensområdet sat til $0-25$Hz, for at filtrere uønskede signaler fra. Filtre kan udarbejdes både i aktiv og passiv form. Hvis signalet ligger i frekvensområdet under $1$MHz anbefales det at benytte aktive filtre \cite{Carter2013}. Aktive filtre benytter operationforstærkere, kondensatorer og modstande, hvor passive filtre benytter kondensatorer, modstande og spoler \cite{Carter2013}. Der findes flere forskellige typer filtre, heriblandt Butterworth-, Tschebyschev- og Besselfilter. Butterworthfilteret giver maksimal fladhed i pasbåndet og stopbåndet. Tschebyschevfilteret giver den hurtigste overgang fra pasbåndet til stopbåndet. Besselfilteret giver en lineær faserespons, hvilket vil sige at fasen er lineær med frekvensen.\fxnote{Til os: Fasen angiver hvor godt et signals frekvensspektrum bliver gengivet}\fxnote{skal vi have et billede ind af de forskellige typer?} \cite{Carter2013} Butterworthfilteret benyttes til at filtrere signalet i dette forsøg, da der ønskes maksimal fladhed i pasbåndet og stopbåndet som nævnt i kravspecifikationerne for filtret.
+Efter signalet er blevet forstærket skal det filtreres, så alle de uønskede signaler kan dæmpes. Der benyttes kun et lavpasfilter, da det ønskede signal ifølge litteraturen kan ligge i frekvensområdet $0-10$Hz, som beskrevet i afsnit \ref{FilterAfs} på side \pageref{FilterAfs}. Jævnfør pilotforsøget i afsnit \ref{Sec:PilotforsoegKort}, side \pageref{Sec:PilotforsoegKort} blev der målt et signal i frekvensområdet $0-25$Hz og det frekvensområdet sættes derfor til $0-25$Hz, for at filtrere uønskede signaler fra. 
+Filtre kan udarbejdes både i aktiv og passiv form. Hvis signalet ligger i frekvensområdet under $1$MHz anbefales det at benytte aktive filtre. Aktive filtre benytter operationforstærkere, kondensatorer og modstande, hvor passive filtre benytter kondensatorer, modstande og spoler. \cite{Carter2013} Der findes flere forskellige typer filtre, heriblandt Butterworth-, Tschebyschev- og Besselfilter. Butterworthfilteret giver maksimal fladhed i pasbåndet og stopbåndet. Tschebyschevfilteret giver den hurtigste overgang fra pasbåndet til stopbåndet. Besselfilteret giver en lineær faserespons, hvilket vil sige at fasen er lineær med frekvensen.\fxnote{Til os: Fasen angiver hvor godt et signals frekvensspektrum bliver gengivet}\fxnote{skal vi have et billede ind af de forskellige typer?} \cite{Carter2013} Butterworthfilteret benyttes til at filtrere signalet i dette forsøg, da der ønskes maksimal fladhed i pasbåndet og stopbåndet som nævnt i kravspecifikationerne for filtret. De forskellige typer filtre fremgår af nedestående figur \figref{fig:type_filtre}. \fxnote{kilde?}
 
-Filtre kan laves i inverterende og ikke-inverterende konfigurationer. Der vælges i dette forsøg at benytte et ikke-inverterende filter, da dette har en høj indgangsimpedans. Herved forhindres loading af filtrets output. Loading defineres som effekten af, at et spændingsmålende instrument bruger strømmen i et kredsløb og kan være både ønsket og uønsket i et system. Der må eksempelvis gerne være loading, hvis det ønskes at tænde for en lampe eller en højtaler. Loading-effekten er derimod en uønsket effekt for dette projekts system, da der ønskes et lavt effektforbrug, hvilket giver en lang levetid. Loading reducerer den samlede strøm, som løber i kredsløbet, og trækker meget strøm fra batteriet. \\
-Hvis der vælges en inverterende konfiguration for filtret, falder den samlede resistans, og der kræves derfor mere strøm for at opretholde outputspændingsniveauet. Eftersom den ikke-inverterende forstærker i filteret har høj inputimpedans, hvilket vil sige, at modstanden i operationsforstærkeren har en høj værdi, vil filterets output ikke blive påvirket af loading. \cite{Webster2009,Carter2013,Karni2014}
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=0.8]{figures/cProblemloesning/type_filtre.PNG}
+	\caption{Figuren viser et bodeplot filter, hvor de fire karakteristika af et lavpasfilter er angivet}
+	\label{fig:type_filtre}
+\end{figure}
 
-I afsnit \ref{FilterAfs} på side \ref{FilterAfs} blev karakteristikaene af lavpasfilteret bestemt. Der kræves en minimumsdæmpning af stopbåndet $(Amin)$ på $14$dB, der accepteres en maksimal variation af pasbåndet $(Amax)$ på $3$dB, knækfrekvensen $(\omega _p)$ er på $25$ z, samt en stopbåndstærskel $(\omega _s)$ på $45$ Hz Nedenfor ses en illustration af hvad de forskellige karakteristka beskriver.
+Filtre kan laves i inverterende og ikke-inverterende konfigurationer. I dette projekt benyttes en ikke-inverterende operationsforstærker til filterkonfigurationen, da denne har en høj indgangsimpedans i den ikke-inverterende terminal. Herved forhindres loading af filtrets output. Loading defineres som effekten af, at et spændingsmålende instrument bruger strømmen i et kredsløb og kan være både ønsket og uønsket i et system. Der må eksempelvis gerne være loading, hvis det ønskes at tænde for en lampe eller en højtaler. Loading-effekten er derimod en uønsket effekt for dette projekts system, da der ønskes et lavt effektforbrug, hvilket giver en lang levetid. Loading reducerer den samlede strøm, som løber i kredsløbet, og trækker meget strøm fra batteriet. \\
+Hvis der vælges en inverterende operationsforstærker i filterkonfiguration, falder den samlede resistans, og der kræves derfor mere strøm for at opretholde outputspændingsniveauet. Eftersom den ikke-inverterende forstærker i filteret har høj inputimpedans, hvilket vil sige, at modstanden i operationsforstærkeren har en høj værdi, vil filterets output ikke blive påvirket af loading. \cite{Webster2009,Carter2013,Karni2014}
+
+Jævnfør kravspecifikationer af lavasfilteret i afsnit \ref{FilterAfs}, side \ref{FilterAfs} kræves det, at filteret har en minimumsdæmpning af stopbåndet $(min_{A})$ på $14$dB og der accepteres en maksimal dæmpning af pasbåndet $(max_{A})$ på $3$dB. Derudover skal lavpasfilteret have en knækfrekvens $(\omega _p)$ på $25$ Hz, samt en stopbåndsfrekvens $(\omega _s)$ på $45$ Hz. Af nedestående figur \figref{fig:lavpasfilter_generisk} fremgår en illustration af, hvad de forskellige parametre beskriver.
 
 \begin{figure}[H]
 	\centering
@@ -15,23 +23,23 @@ I afsnit \ref{FilterAfs} på side \ref{FilterAfs} blev karakteristikaene af lavp
 	\label{fig:Lavpasfilter_generisk}
 \end{figure}
 
-\noindent Ud fra karakteristikaene af filteret kan filterets orden beregnes via overføringsfunktionen:
+\noindent Med udgangspunkt i de enkelte parametre af lavpasfilteret kan den pågældende orden af filteret bestemmes vha. formel \eqref{lavpasfilter} for overføringsfunktionen:
 \begin{equation} \label{eq:lavpasfilter}
 A(\omega_s) = 10 \text{log} \cdot \left[1 + \epsilon^2 \cdot (\frac{\omega _s}{\omega _p})^{2N}\right] 
 \end{equation}
 
-\noindent I \eqref{eq:lavpasfilter} er filterets orden angivet af N. Når alle de andre variable kendes, kan ordenen for filtret udregnes. I ligningen betegner $A(\omega _s)$ den minimale dæmpning der kræves af stopbåndet. $\epsilon$ er udtrykt ved ligningen:
-\begin{equation}
+\noindent I formel \eqref{eq:lavpasfilter} er filterets orden angivet af N. Når de resterende variabler kendes, kan lavpasfilterets orden udregnes. I formelen betegner $A(\omega _s)$ den minimale dæmpning der kræves af stopbåndet, hvor $\epsilon$ er udtrykt ved nedestående formel \eqref{epsilon}:
+\begin{equation}\label{eq:epsilon}
 \epsilon = \sqrt{10^{\frac{A_{max}{10}} - 1}}
 \end{equation}
 
-Ordenen af lavpasfilteret bestemmes ved at sætte værdierne fra afsnit \ref{FilterAfs} på side \pageref{FilterAfs} ind i \eqref{eq:lavpasfilter}. Udregningerne vil se ud som følgende:
-\begin{align}
-\epsilon = \sqrt{10^{\frac{3dB}{10}} - 1} = 0.998 \\
+Nu kan lavpasfilterets orden bestemmes, jævnfør værdierne fra kravspecifikationerne fra afsnit \ref{FilterAfs}, side \pageref{FilterAfs} ved at indsætte disse værdier i formel \eqref{eq:lavpasfilter}. Udregningerne vil se ud som følgende:
+\begin{equation}
+\epsilon = \sqrt{10^{\frac{3dB}{10}} - 1} = 0.998 \\ \tabel{eq:orden}
 14\text{dB} = 10 \cdot \text{log} \left[1 + \epsilon ^2 \cdot \frac{45\text{Hz}}{25\text{Hz}}^{2N}\right] \\
 N = 2.711 \approx 3
-\end{align}
-\noindent Ordenen af filtret rundes op til $3$, da filterets orden kun kan angives i hele tal. Hvis kravene til filteret skal overholdes, skal der altid rundes opad ved udregning af orden.
+\end{equation}
+\noindent Ordenen af lavpasfiltret afrundes til $3$, eftersom filterets orden kun kan angives i hele tal. Hvis kravene til filteret skal overholdes, skal der altid rundes opad ved udregning af orden. \fxnote{Sofie har rettet hertil - ville lave en ref til ligningen i midten til teksten nedenfor}
 
 Der skal benyttes et 3. ordens lavpasfilter. Der findes to forskellige måder hvorpå det kan designes: Sallen-Key topologien (SKT) og Multiple Feedback toppologien (MFT). SKT-metoden er den mest anvendte og tillader separate gain indstillinger, hvorimod MFT-metoden benyttes i filter design med høj gain nøjagtighed eller høj Q værdi. For dette filter benyttes SKT. På \figref{fig:SallenKey1} ses et 1. ordens lavpasfilter og på \figref{fig:SallenKey2} ses et 2. ordens lavpasfilter designet efter SKT. \cite{Carter2013}
 	
