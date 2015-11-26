@@ -28,11 +28,11 @@ Forstærkningen skal gøre det nemmere at adskille det ønskede signal fra støj
 \end{itemize}
 \textbf{Tolerance:}
 \begin{itemize}
-	\item Der accepteres en afvigelse i de benyttede modstandes reelle værdi på $\pm1\%$
 	\item Der accepteres en afvigelse i detektionen af hældningsgrad på $\pm5\%$.
 	\item Der accepteres en afvigelse af offsetjusteringen på $\pm2\%$.
 	\item Der accepteres en afvigelse i forstærkningen på $\pm2\%$.
 	\item Der accepteres en afvigelse ift. maksimum og minimum output fra blokken på $\pm5\%$.
+	\item Der accepteres kun en minimum indgangsimpedans på $3.68M\Omega$ 
 \end{itemize}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Filter}\label{FilterAfs}
@@ -89,7 +89,7 @@ I \eqref{TilpasEq1}, \eqref{TilpasEq2} og \eqref{TilpasEq3} er de $3V$ grænsen 
 \end{itemize}
 \noindent\textbf{Tolerance:}
 \begin{itemize}
-%	\item Der accepteres en afvigelse i indgangsimpedansen på ??
+	\item Der accepteres kun en minimum indgangsimpedans på $3.2M\Omega$ 
 	\item Der accepteres en afvigelse i de benyttede modstandes reelle værdi på $\pm1\%$
 	\item Der accepteres en afvigelse i forstærkningen på $\pm2\%$.
 \end{itemize}
@@ -180,7 +180,7 @@ I systemet anvendes en spændingsforsyning af batterier placeret i en spændings
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{ADC}
 Blokken med en ADC anvendes i systemet, for at konvertere det analoge signal til digitalt. %Den skal kunne sample det forstærkede signal. 
-ADC'ens inputsignal vil ligge i området $\pm3V$, men der skal tages højde for afvigelser, så derfor skal ADC'en kunne modtage signaler på $\pm4V$. Båndbredden på accelerometeret bestemmer, hvilken samplingsfrekvens der skal benyttes. I følge Nyquists sætning skal der samples med minimun det dobbelte af det biologiske signals frekvens. I praksis samples der med minimum det tidobbelte jævnfør afsnit \ref{ADCafsnit}, side \pageref{ADCafsnit}. I dette tilfælde er båndbredden $50Hz$, dvs. at der som minimum skal samples med $100Hz$, og i praksis vil det være hensigtsmæssigt at sample med minimum $500Hz$. \\
+ADC'ens inputsignal vil ligge i området $\pm3V$, men der skal tages højde for afvigelser, så derfor skal ADC'en kunne modtage signaler på $\pm4V$. Båndbredden på accelerometeret bestemmer, hvilken samplingsfrekvens der skal benyttes. I følge Nyquists sætning skal der samples med minimun det dobbelte af det biologiske signals frekvens. I praksis samples der med minimum det tidobbelte jævnfør afsnit \ref{ADCafsnit}, side \pageref{ADCafsnit}. I dette tilfælde er båndbredden $25Hz$, dvs. at der som minimum skal samples med $100Hz$, og i praksis vil det være hensigtsmæssigt at sample med minimum $250Hz$. \\
 \textbf{Krav:}
 \begin{itemize}
 	\item Skal kunne modtage et inputsignal på $\pm4$V.
