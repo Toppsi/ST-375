@@ -12,9 +12,18 @@ Værdierne indsættes i formlen: \\
 	LSB = 0.00244V = 2.44\text{mV}
 \end{align}
 Det opsamlede signal bliver forvrænget, og vil dermed ikke være repræsentativt, hvis der opsamles værdier på under $2.44mV$.\\
-ADC'en skal tilkobles efter lavpasfiltret, som det kan ses på \figref{kravblok} på side \pageref{kravblok}.
 \subsubsection{Simulering}
 Ifølge tolerancerne for ADC'en beskrevet i afsnit \ref{ADCafsnit} på side \pageref{ADCafsnit} skal der testes, om ADC'en kan modtage og konvertere et inputsignal på $\pm4$V samt sample 500 gange i sekundet. \\
 Der kan ikke laves en simulering af en ADC i programmet LTSpice, da inputsignalet i LTSpice allerede er et digitalt signal, og der er derfor ikke noget, som skal konverteres.
  
-\subsubsection{Implementering}
+\subsubsection{Implementering og test}
+ADC'en skal implementeres og tilkobles efter lavpasfiltret, som det kan ses på \figref{kravblok} på side \pageref{kravblok}. \\
+Der benyttes en tonegenerator til at undersøge, om den valgte ADC overholder kravene beskrevet i afsnit \ref{ADCafsnit} på side \pageref{ADCafsnit}. Tonegeneratoren skal sende 4 forskellige input til ADC'en;
+\begin{enumerate}
+	\item Et sinussignal med en frekvens på $100$Hz og den højeste forventede amplitude, dvs. $0.3313 \times 2 = 0.6626\text{Vpp}$.
+	\item Et sinussignal med en frekvens på $100$Hz og den laveste forventede amplitude, dvs. -$0.3233 \times 2 = -0.6466 \approx 0.6466\text{Vpp}$.
+	\item Et sinussignal med en frekvens på $100$Hz og en amplitude på $8$Vpp, da der ses i \tableref{Tab:faktor3_test}, at operationsforstærkerne går i mætning ved ca. $4$V, når de forsynes med $5.5$V. 
+	\item Et sinussignal med en frekvens svarende til knækfrekvensen i lavpasfiltret, dvs. $25$Hz, og den højeste forventede amplitude, dvs. $0.3313 \times 2 = 0.6626\text{Vpp}$.
+	\item Et sinussignal med en frekvens svarende til knækfrekvensen i lavpasfiltret, dvs. $25$Hz, og den laveste forventede amplitude, dvs. -$0.3233 \times 2 = -0.6466 \approx 0.6466\text{Vpp}$.
+\end{enumerate}
+Der samples med 500 Hz.
