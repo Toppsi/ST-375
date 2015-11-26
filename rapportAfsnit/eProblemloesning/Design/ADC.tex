@@ -18,12 +18,39 @@ Der kan ikke laves en simulering af en ADC i programmet LTSpice, da inputsignale
  
 \subsubsection{Implementering og test}
 ADC'en skal implementeres og tilkobles efter lavpasfiltret, som det kan ses på \figref{kravblok} på side \pageref{kravblok}. \\
-Der benyttes en tonegenerator til at undersøge, om den valgte ADC overholder kravene beskrevet i afsnit \ref{ADCafsnit} på side \pageref{ADCafsnit}. Tonegeneratoren skal sende 4 forskellige input til ADC'en;
+Der benyttes en tonegenerator til at undersøge, om den valgte ADC overholder kravene beskrevet i afsnit \ref{ADCafsnit} på side \pageref{ADCafsnit}. Tonegeneratoren skal sende fem forskellige input til ADC'en;
 \begin{enumerate}
-	\item Et sinussignal med en frekvens på $100$Hz og den højeste forventede amplitude, dvs. $0.3313 \times 2 = 0.6626\text{Vpp}$.
-	\item Et sinussignal med en frekvens på $100$Hz og den laveste forventede amplitude, dvs. -$0.3233 \times 2 = -0.6466 \approx 0.6466\text{Vpp}$.
-	\item Et sinussignal med en frekvens på $100$Hz og en amplitude på $8$Vpp, da der ses i \tableref{Tab:faktor3_test}, at operationsforstærkerne går i mætning ved ca. $4$V, når de forsynes med $5.5$V. 
-	\item Et sinussignal med en frekvens svarende til knækfrekvensen i lavpasfiltret, dvs. $25$Hz, og den højeste forventede amplitude, dvs. $0.3313 \times 2 = 0.6626\text{Vpp}$.
-	\item Et sinussignal med en frekvens svarende til knækfrekvensen i lavpasfiltret, dvs. $25$Hz, og den laveste forventede amplitude, dvs. -$0.3233 \times 2 = -0.6466 \approx 0.6466\text{Vpp}$.
+	\item Et sinussignal med en frekvens på $100$Hz og den højeste forventede amplitude, dvs. $3.0147 \times 2 = 6.0294\text{Vpp}$.
+	\item Et sinussignal med en frekvens på $100$Hz og den laveste forventede amplitude, dvs. -$2.9400 \times 2 = -5.8800 \approx 5.8800\text{Vpp}$.
+	\item Et sinussignal med en frekvens på $25$Hz og en amplitude på $8$Vpp, da der ses i \tableref{Tab:faktor3_test}, at operationsforstærkerne går i mætning ved ca. $4$V, når de forsynes med $5.5$V. 
+	\item Et sinussignal med en frekvens svarende til knækfrekvensen i lavpasfiltret, dvs. $25$Hz, og den højeste forventede amplitude, dvs. $3.0147 \times 2 = 6.0294\text{Vpp}$.
+	\item Et sinussignal med en frekvens svarende til knækfrekvensen i lavpasfiltret, dvs. $25$Hz, og den laveste forventede amplitude, dvs. -$2.9400 \times 2 = -5.8800 \approx 5.8800\text{Vpp}$.
 \end{enumerate}
-Der samples med 500 Hz.
+Der samples med $500$Hz, selvom $250$Hz havde været nok, da vores båndbredte er $25$Hz, men ScopeLogger kan enten sample med $200$ eller $500$, så derfor samples der med $500$Hz. På \figref{fig:ADC_Test} ses resultatet af målingerne.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=0.8]{figures/cProblemloesning/ADC_Test2_matlab.PNG}
+	\caption{På figuren ses resultatet af de fem målinger plottet i Matlab. Der ses, at x-aksen for alle plots er sat til 0.1 sekunder.}
+	\label{fig:ADC_Test}
+\end{figure}
+
+\noindent Dataen optaget med ADC'en, som er plottet i \figref{fig:ADC_Test}, blev efterfølgende bearbejdet i Matlab. Derudover blev et oscilloskop tilkoblet outputtet fra tonegeneratoren. Resultatet herfra betragtes som det faktiske output fra tonegeneratoren, hvilket indgår i beregningen af afvigelsen i ADC'ens sampling. Resultaterne ses i \tableref{Tab:ADC_resultat}:
+
+\begin{table}[H]
+	\centering
+	\begin{tabular}{|l|l|l|l|l|l|}
+		\hline
+		\textit{Måling nr} & \textit{\begin{tabular}[c]{@{}l@{}}Indstillet\\ frekvens\end{tabular}} & \textit{\begin{tabular}[c]{@{}l@{}}Indstillet\\ amplitude\end{tabular}} & \textit{\begin{tabular}[c]{@{}l@{}}Målte amplitude\\ på oscilloscop\end{tabular}} & \textit{\begin{tabular}[c]{@{}l@{}}Målte amplitude\\ via ADC\end{tabular}} & \textit{Afvigelse} \\ \hline
+		$1$         & $100$Hz     & $3.0147$V    & $3.0800$V      & $2.5989$V       & $15.62$\%          \\ \hline
+		$2$         & $100$Hz     & $2.9400$V    & $2.9200$V      & $2.5284$V       & $13.32$\%          \\ \hline
+		$3$         & $25$Hz      & $4$V         & $4.0400$V      & $4.0442$V       & $0.10$\%           \\ \hline
+		$4$         & $25$Hz      & $3.0147$V    & $3.0800$V      & $3.0689$V       & $0.36$\%           \\ \hline
+		$5$         & $25$Hz      & $2.9400$V    & $2.9200$V      & $2.9207$V       & $0.02$\%           \\ \hline
+	\end{tabular}
+	\caption{I tabellen ses resultaterne af de beregnede afvigelser.}
+	\label{Tab:ADC_resultat}
+\end{table}
+
+Der kan ses på \figref{fig:ADC_Test}, at sinussignalet i måling $1$ og $2$ er mere kantet end signalerne i måling $3$-$5$. Årsagen til dette kan være, at vi sampler med $500$Hz, mens signalets frekvens er $100$Hz. Dette gør, at ADC'en sampler med $5$ gange pr. periode og derved bliver signalet kantet. Derfor giver ADC'ens værdi for amplituden en procentafvigelse på henholdsvis $15.62$ og $13.32$, da der ikke samples med nok ift. frekvensen. Det vurderes dermed, at det er samplingsfrekvensen, som er årsagen til de høje afvigelser.\\
+I måling $3$-$5$ er sinussignalets frekvens nedsat, hvilket gør, at signalet bliver mere regelmæssigt. Der samples med en samplingshastighed, der er $20$ gange større end frekvensen, og der opsamles derved tilstrækkeligt med datapunkter. Derfor er procentafvigelserne fra måling $3$-$5$ mere repræsentative for ADC'ens afvigelse. Men afvigelserne kan også skyldes afvigelser i oscilloskopet. Der vurderes derfor, at ADC'en viser det forventede og er dermed godkendt.
