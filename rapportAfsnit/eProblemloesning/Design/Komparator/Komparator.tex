@@ -7,7 +7,7 @@ Som nævnt i afsnit \ref{Komparatorafsnit} på side \pageref{Komparatorafsnit} a
 Til den visuelle del af komparatorkredsløbet anvendes LED-dioder. LED-diodernes katode tilkobles komparatorens output, imens anoden tilkobles $+V_{cc}$. Jævnfør kravspecifikationerne i afsnit \ref{KomparatorAfs}, side \pageref{KomparatorAfs} er der valgt fem forskellige stadier for aktivering af LED-dioderne. For aktivering af LED-dioderne vil der blive anvendt otte komparatorer, da det første stadie, indeholdende den grønne LED-diode, både har en positiv og negativ tærskelværdi og derfor kræver to komparatorer. Tærskelværdierne kan både implemeteres som to spændingstræer eller som otte spændingsdelere og der er fordele og ulemper ved begge metoder. Der anvendes her otte spændingsdelere, hvor fire indgår i to vindues-komparatorer og fire almindelige komparatorer. Dette design vælges til fordel for to spændingtræer, da modstandene i et spændingstræ påvirker hinanden, hvilket kan ændre tærskelværdierne, hvis én af modstandene ikke fungerer ideelt. For at modvirke dette, anvendes en spændingsdeler for hver tærskelværdi, der fremgår af figur \figref{fig:komparator_visuel}. Konfigurationen indeholder en spændingsreference $+V_{ref}$ på $2.5$V og seks modstande (R$15$-R$20$) mellem LED-dioderne og $+V_{cc}$ for at beskytte LED-dioderne mod for høj strømstyrke og at batteriet ikke drænes. Der udarbejdes et vindues-konfigurationen som placeres for LED-dioderne (D$3$ - D$4$) ved hver af de to komparatorer (LM$311$). \textcolor{red}{Dette gøres for at adskille de to komparatorerer, så de ikke påvirker hinanden og vindues-komparatoren fungerer som ønsket.}  
 \begin{figure}[H]
 	\centering
-	\includegraphics[scale=1.0]{figures/cProblemloesning/komparator_visuel1.PNG}
+	\includegraphics[scale=0.7]{figures/cProblemloesning/komparator_visuel1.PNG}
 	\caption{Figuren illustrerer komparatorkonfigurationen for den visuelle del. Kredsløbet består af to dele; en for hældning i positiv retning og en for hældning i negativ retning. Hver del består af en vindues-komparator og to almindelige komparatorer. Der er implementeret en inverterende forstærker for at gøre referencespændingen negativ, så hældning i den negative retning kan dedekteres. Kredsløbet er udarbejdet i LTspice.}
 	\label{fig:komparator_visuel}
 \end{figure}
@@ -69,7 +69,7 @@ FÅ SWITCH MED IND I DET? \\
 Til simulering af den visuelle komparatorkonfiguration anvendes komparatorer af typen LT$1011$, da operationsforstærkerne til det reelle kredsløb er af denne type. For at udføre en simulering af den visuelle komparatorkonfiguration tilkobles kredsløbet et sinus-signal, der svinger mellem $\pm3$V. Dette gøres for at simulere signalet, der kommer fra den forrige blok, hvor arbejdsområdet er på $\pm3$V. Under simuleringen i LTspice testes det, hvorvidt den visuelle komparatorkonfiguration opfylder de opstillede specifikke krav, jævnfør kravspecifikationerne i afsnit \ref{KomparatorAfs}, side \pageref{KomparatorAfs}. Simuleringen af den visuelle komparatorkonfiguration fremgår af figur \figref{fig:komparator_visuel_simulering_samlet}. \fxnote{Vi kan starte med at simulere tærskelværdier og derefter hvordan komparatoren fungerer.}
 \begin{figure}[H]
 	\centering
-	\includegraphics[scale=1.0]{figures/cProblemloesning/komparator_visuel_simulering_samlet1.PNG}
+	\includegraphics[scale=0.3]{figures/cProblemloesning/komparator_visuel_simulering_samlet1.PNG}
 	\caption{Figuren viser simuleringen af den visuelle komparatorkonfiguration. Den sorte kurve er et sinus signal, der illustrerer blokkens inputsignal. De resterende kurver er de enkelte komparatorer, som under tærskelværdien er i negativ mætning. De røde kurver symboliserer den røde diode, de gule kurver de gule dioder og de grønne kurver de grønne dioder. Når inputsignalet når de definerede tærskelværdier, vil kurverne gå i positiv mætning og LED-dioderne vil lyse. Ved vindue-komparatoren er den positive og negative mætning ikke så høj, som ved de normale komparatorer. Dette skyldes, at signalet skal passere yderligere to LED-dioder, hvilket giver et spændingsfald. Kredsløbet er simuleret i LTspice.}
 	\label{fig:komparator_visuel_simulering_samlet}
 \end{figure}
@@ -79,7 +79,7 @@ På figur \figref{fig:komparator_visuel_simulering_samlet} fremgår det, at ved 
 	\centering
 	\begin{tabular}{|l|l|l|l|l|l|}
 		\hline
-					& \textit{Tærskelværdier} 	& \textit{Måling til højre} & \textbf{Måling til venstre}		&  \textit{Afvigelse for højre}  \textit{Afvigelse for venstre}\\ \hline
+					& \textit{Tærskelværdier} 	& \textit{Måling til højre} & \textit{Måling til venstre}		&  \textit{\begin{tabular}[c]{@{}l@{}}Afvigelse\\ for højre\end{tabular}}   &  \textit{\begin{tabular}[c]{@{}l@{}}Afvigelse\\ for venstre\end{tabular}}   \\ \hline
 \textbf{$2^{\circ}$} 		& $0.2412$V  				&$0.24134816$V 			&$0.24118759$V		& $0.06\%$  &$0.005\%$ \\ \hline
 \textbf{-$2^{\circ}$} 		&-$0.2353$V 					&-$0.23478814$V 			&-$0.23517756$V  	& $0.2\%$	&$0.05\%$\\ \hline
  \textbf{$8^{\circ}$} 		&$0.9648$V					&$0.96499801$V			&$0.9648845$V		& $0.02\%$	&$0.009\%$\\ \hline
