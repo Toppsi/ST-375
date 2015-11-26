@@ -1,6 +1,6 @@
 % !TeX spellcheck = da_DK
 \subsection{Offsetjustering}
-\subsubsection{Teori og design}
+\subsubsection{Teori og design} \label{Offset_Teori_Design}
 Det analoge signal, der kommer fra accelerometeret, har et indbygget offset, som gør, at outputtet giver halvdelen af accelerometerets spændingsforsyning. For at kunne forstærke signalet, der både skal indeholde positive og negative værdier, er det nødvendigt at ændre dette offset. På denne måde kan  accelerometeret i steady state ved $0$g påvirkning have et outputsignal på $0$V. Måden hvorpå dette nye offset indføres er ved anvendelse af et differensforstærker kredsløb, som ses på \figref{fig:Differensforstaerker_generisk}. Dette kredsløb kan tage et af inputsignalerne, kaldet $V_{b}$ på figuren, og  fratrække det andet inputsignal, kaldet $V_{a}$ på figuren, som vil fungere som en referenceværdi.
 
 \begin{figure}[H]
@@ -17,7 +17,7 @@ V_o = \frac{R_b}{R_a} \cdot (v_b - v_a)
 \end{equation}
 
 \noindent Der kan heraf ses, at forstærkningen på signalet kan bestemmes ved at vælge modstandene $R_a \text{og} R_b$, og at det er spændingen $V_{a}$, der trækkes fra spændingen $V_{b}$. \\
-I dette tilfælde kræves der ikke en forstærkning, hvorfor modstandene $R_{a}$ og $R_{b}$ skal være det samme. Da signalet ikke skal inverteres sendes accelerometerets output ind i den ikke-inverterende kanal. Offsettet, som i dette tilfælde er på $1.6325$V jævnført \ref{Mean_tid_0g} på side \pageref{Mean_tid_0g}, sendes ind i den inverterende kanal. Dette illustreres på figur \ref{fig:Offset_generisk}:
+I dette tilfælde kræves der ikke en forstærkning, hvorfor modstandene $R_{a}$ og $R_{b}$ skal være det samme. Da signalet ikke skal inverteres sendes accelerometerets output ind i den ikke-inverterende kanal. Offsettet, som i dette tilfælde er en referenceværdi på $1.6325$V jævnført \ref{Mean_tid_0g} på side \pageref{Mean_tid_0g}, sendes ind i den inverterende kanal. Dette illustreres på figur \ref{fig:Offset_generisk}:
 \begin{figure}[H]
 \centering
 \includegraphics[scale=0.45]{figures/cProblemloesning/Offset_generisk.png}
