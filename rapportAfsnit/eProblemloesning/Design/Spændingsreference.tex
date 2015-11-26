@@ -14,7 +14,7 @@ R=\dfrac{V_{forsyning}-V_{Reference}}{I_{Z}}
 \end{equation}
 Hvor V_{forsyning} er forsyningsspændingen som sendes ind i kredsløbet, V_{Reference} er den referencespænding der skal sendes ud af systemet og I_{Z} er strøm forbruget fra de komponenter, der er i referencespændings kredsløbet. 
 \noindet \textbf{Beregning af referenceværdien til offset}
-Først udregnes R for referencespændingen til offsettet. V_{forsyning} er de $5.5$V, der forsynes med fra spændingsforsyningen. V_{Reference} $2.5$V. I kredsløbet for ofsettet indgår én operationsforstærker(TL$081$), der har en maksimal biasstrøm på $200$pA\fxnote{KILDE, datablad påTL081}. Referencedioden har et arbejdsområde mellem $20\muA$ til $20mA$ og for at sikre der er strøm nok til referencedioden er den sat til at bruge $100\muA$\fxnote{ KILDE: Datablad LM385}. Dermed kan strømforbruget, I_Z, for offsettet udregnes som summen af de to biasstrømme og alle de kendte værdier indsættes i formlen:
+Først udregnes R for referencespændingen til offsettet. V_{forsyning} er de $5.5$V, der forsynes med fra spændingsforsyningen. V_{Reference} $2.5$V. I kredsløbet for ofsettet indgår én operationsforstærker(TL$081$), der har en maksimal biasstrøm på $200$pA\cite{Corporation1995}. Referencedioden har et arbejdsområde mellem $20\muA$ til $20mA$ og for at sikre der er strøm nok til referencedioden er den sat til at bruge $100\muA$\cite{Instruments2005}. Dermed kan strømforbruget, I_Z, for offsettet udregnes som summen af de to biasstrømme og alle de kendte værdier indsættes i formlen:
 
 \begin{equation}
 R_{offset}=\frac{5.5V-2.5V}{0.0001000002A}=29999.94\Omega \approx 30K\Omega
