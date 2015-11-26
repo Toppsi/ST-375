@@ -64,19 +64,19 @@ Der ses på \figref{fig:Offset_generisk}, at der skal benyttes fire modstandere 
 	\caption{I tabellen ses der, at alle fire modstandere afviger lidt fra deres teoretiske værdi, hvilket er forventet af reelle komponenter. Kravet til disse fire modstandere var dog, at de skulle være ens således at der ikke sker en forstærkning. Disse modstandere accepteres derfor.}
 	\label{Tab:modstand_offset}
 \end{table}
-\noindent Herefter implementeres kredsløbet. Til opsamling af signalet benyttes en computer med ScopeLogger, hvorefter dataen bliver behandlet i Matlab. I testen blev der foretaget 3 målinger for de to spændingsniveauer. Herefter blev gennemsnittet for hver måling udregnet, som lægges sammen og til slut også tages gennemsnittet af. Dette giver den endelige værdi, som står under "Output" i \tableref{Tab:Offset_test}.
+\noindent Herefter implementeres kredsløbet. Til afbildning af signalet for de tre spændingsniveauer benyttes et oscilloskop, hvilket står under "Output" i \tableref{Tab:Offset_test}.
 \begin{table}[H]
 	\centering
 	\begin{tabular}{l|l|l|l|l|l|}
 		\cline{2-6}
 		& \textit{\begin{tabular}[c]{@{}l@{}}Ønskede\\ input\end{tabular}} & \textit{Input} & \textit{\begin{tabular}[c]{@{}l@{}}Forventet\\ output\end{tabular}} & \textit{Output} & \% afvigelse \\ \hline
-		\multicolumn{1}{|l|}{\textit{\begin{tabular}[c]{@{}l@{}}$V1$\\ ref\end{tabular}}}    & $1.6325$V    & $1.6352$V    & $\times$    & $\times$   & $\times$     \\ \hline
-		\multicolumn{1}{|l|}{\multirow{2}{*}{\textit{\begin{tabular}[c]{@{}l@{}}$V2$\\ signal\end{tabular}}}} & $1.9638$V   & $1.9629$V    & $0.3277$V   & $0.3252X$V   & $0.76\%$     \\ \cline{2-6} 
-		\multicolumn{1}{|l|}{}   & $1.6325$V   & $1.6352$V    &  $0$V        & -$0.0013V$V  & $\approx0\%$     \\ \cline{2-6} 
-		\multicolumn{1}{|l|}{}   & $1.3092$V   &$1.3097X$V    & -$0.3255$V   & -$0.3263X$V     & $0.25\%$     \\ \hline
+		\multicolumn{1}{|l|}{\textit{\begin{tabular}[c]{@{}l@{}}$V1$\\ ref\end{tabular}}}    & $1.6325$V    & $1.6346$V    & $\times$    & $\times$   & $\times$     \\ \hline
+		\multicolumn{1}{|l|}{\multirow{2}{*}{\textit{\begin{tabular}[c]{@{}l@{}}$V2$\\ signal\end{tabular}}}} & $1.9638$V   & $1.9633$V    & $0.3287$V   & $0.3293X$V   & $0.18\%$     \\ \cline{2-6} 
+		\multicolumn{1}{|l|}{}   & $1.6346$V   & $1.6346$V    &  $0$V    & -$0.831V$mV  & $\approx0\%$     \\ \cline{2-6} 
+		\multicolumn{1}{|l|}{}   & $1.3092$V   &$1.3091X$V    & -$0.3254$V   & -$0.3247X$V     & $0.22\%$     \\ \hline
 	\end{tabular}
-	\caption{I tabellen ses en oversigt over det udregnede resultat for de to spændingsniveauer.}
+	\caption{I tabellen ses en oversigt over det udregnede resultat for de tre spændingsniveauer.}
 	\label{Tab:Offset_test}
 \end{table}
-\noindent I \tableref{Tab:Offset_test}\fxnote{NTK: Det forventede output er regnet således, at den inpu det er udregnet udfra hvad i reelt har af input og reference, derefter tjekker vi om det vi målte passer med det vi fik ud} betegner "$V1$ / ref." referencespændingen, som sendes ind i den inverterende kanal. "$V2$ / signal." betegner det mindste og største output, som accelerometret kan give ved $\pm90^{\circ}$. Derudover indsendes en spænding, som svarer til reference spændingen. Disse tre spændinger bliver sendt ind i den ikke-inverterende kanal. Det "Ønskede input" er beregnet i afsnit \ref{Sec_Pilot_Data} på side \pageref{Sec_Pilot_Data} og burde være det, som sendes ind i $V2$. "Input" er den spænding, som sendes ind fra spændingsforsyningen, og "Forventet output" udregnes ved at trække inputtet fra reference spændingen fra inputtet fra det indsendte signal. "Output" er slutresultatet efter gennemsnitsberegninger og "afvigelsen" kan derved beregnes. \\
+\noindent I \tableref{Tab:Offset_test}\fxnote{NTK: Det forventede output er regnet således, at den inpu det er udregnet udfra hvad i reelt har af input og reference, derefter tjekker vi om det vi målte passer med det vi fik ud} betegner "$V1$ / ref." referencespændingen, som sendes ind i den inverterende kanal. "$V2$ / signal." betegner det mindste og største output, som accelerometret kan give ved $\pm90^{\circ}$. Derudover indsendes en spænding, som svarer til reference spændingen. Disse tre spændinger bliver sendt ind i den ikke-inverterende kanal. Det "Ønskede input" er beregnet i afsnit \ref{Sec_Pilot_Data} på side \pageref{Sec_Pilot_Data} og burde være det, som sendes ind i $V2$. "Input" er den spænding, som sendes ind fra spændingsforsyningen, og "Forventet output" udregnes ved at trække inputtet fra reference spændingen fra inputtet fra det indsendte signal. "Output" er den afmålte værdi fra multimetret og "\% afvigelsen" kan derved beregnes. \\
 Der ses i \tableref{Tab:Offset_test}, at der er en meget lav afvigelse imellem outputtet og det forventede output for hver inputspænding. Disse afvigelser ligger inde for tolerancen for offsettet beskrevet i afsnit \ref{OpsamlingsAfs} på side \pageref{OpsamlingsAfs}. Derfor anses disse afvigelser som acceptable.

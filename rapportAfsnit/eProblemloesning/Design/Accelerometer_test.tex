@@ -13,7 +13,7 @@ Der kan ikke laves en simulering af et accelerometer i programmet LT Spice, da d
 
 \subsubsection{Implementering og test}
 I simuleringen blev der arbejdet med reelle komponenter, hvilket også bliver benyttet til implementeringen. \\
-Til opsamling af data fra accelerometret benyttes en computer med ScopeLogger, hvorefter dataen bliver behandlet i Matlab. I testen blev der foretaget 3 målinger for henholdsvis $0^\circ$, $\pm8^\circ$, $\pm13^\circ$ og $\pm90^\circ$. Herefter blev gennemsnittet for hver måling ved hver grad udregnet, som lægges sammen og til slut også tages gennemsnittet af. Herved fås 7 værdier - en for hver grad, men målingerne ved $0^\circ$ samt $\pm90^\circ$ benyttes for at udregne accelerometerets detektion af grader. Værdierne for dette ses i \tableref{Tab:acc_procent}. Den teoretiske stigning af volt pr. grad for henholdsvis negativ og positiv hældning er udregnet i bilag \ref{Bilag:Pilotforsoeg} på side \pageref{Bilag:Pilotforsoeg}. De teoretiske værdier for $8^\circ$ og $13^\circ$ udregnet derfor ud fra disse værdier. Dette gøres i følgende ligninger:
+Til opsamling af data fra accelerometret blev der benyttet et multimeter. I testen blev der foretaget en aflæsning med multimetret for $\pm8^\circ$ og $\pm13^\circ$. Herefter blev gennemsnittet for hver grad udregnet, hvilket blev til 4 værdier, der ses i \tableref{Tab:acc_procent}. Den teoretiske stigning af volt pr. grad for henholdsvis negativ og positiv hældning er udregnet i bilag \ref{Bilag:Pilotforsoeg} på side \pageref{Bilag:Pilotforsoeg}. De teoretiske værdier for $8^\circ$ og $13^\circ$ udregnet derfor ud fra disse værdier. Dette gøres i følgende ligninger:
 \begin{align}
 (-0.0036 \cdot 13) + 1.6325 = 1.5858\text{V} \\
 (-0.0036 \cdot 8) + 1.6325 = 1.6038\text{V}  \\
@@ -27,14 +27,14 @@ Disse værdier indsættes og der udregnes en afvigelse.
 		\hline
 		\textit{\begin{tabular}[c]{@{}l@{}}Vinkel af\\ accelerometer\end{tabular}} & \textit{Output} & \textit{\begin{tabular}[c]{@{}l@{}}Beregnet\\ Output\end{tabular}} & \textit{\begin{tabular}[c]{@{}l@{}}\% afvigelse\\ ift. dektering\\ af hældningsgrad\end{tabular}} \\ \hline
 %		$-90^\circ$     & $1.3092$V    & $\times$     & $\times$      \\ \hline
-		$-13^\circ$     & $1.5858$V    & $1.5769$V  & 0.56\%      \\ \hline
-		$-8^\circ$      & $1.6038$V    & $1.5984$V  & 0.34\%      \\ \hline
+		$-13^\circ$     & $1.5858$V    & $1.5686$V  & 1.08\%      \\ \hline
+		$-8^\circ$      & $1.6038$V    & $1.5947$V  & 0.57\%      \\ \hline
 %		$0^\circ$       & $1.6325$V    & $\times$     & $\times$      \\ \hline
-		$8^\circ$       & $1.6619$V    & $1.6889$V  & 1.62\%      \\ \hline
-		$13^\circ$      & $1.6803$V    & $1.7197$V  & 2.34\%      \\ \hline
+		$8^\circ$       & $1.6619$V    & $1.6761$V  & 0.85\%      \\ \hline
+		$13^\circ$      & $1.6803$V    & $1.7114$V  & 1.85\%      \\ \hline
 %		$90^\circ$      & $1.9638$V    & $\times$     & $\times$      \\ \hline
 	\end{tabular}
 	\caption{I tabellen ses det målte output ved en bestemt grad, hvor outputtet er blevet beregnet ift. outputtet målt i pilotforsøget. Herved kan der beregnes en afvigelse i procent.}
 	\label{Tab:Acc_test_procent}
 \end{table}
-Der ses i tabel \tableref{Tab:Acc_test_procent}, at accelerometret har en maksimal afvigelse i detektionen af hældningsgrad på $2.34\%$. Derved overholder accelerometret tolerancerne, som er blevet stillet i afsnit \ref{OpsamlingsAfs} på side \pageref{OpsamlingsAfs} og kan derved accepteres til videre implementering.
+Der ses i tabel \tableref{Tab:Acc_test_procent}, at accelerometret har en maksimal afvigelse i detektionen af hældningsgrad på $1.85\%$. Derved overholder accelerometret tolerancerne, som er blevet stillet i afsnit \ref{OpsamlingsAfs} på side \pageref{OpsamlingsAfs} og kan derved accepteres til videre implementering.
