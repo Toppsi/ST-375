@@ -6,7 +6,7 @@ Filtre kan udarbejdes både i aktiv og passiv form. Hvis signalet ligger i frekv
 
 \begin{figure}[H]
 	\centering
-	\includegraphics[scale=0.63]{figures/cProblemloesning/type_filtre.PNG}
+	\includegraphics[scale=0.8]{figures/cProblemloesning/type_filtre.PNG}
 	\caption{Figuren viser et bodeplot filter, hvor de fire karakteristika af et lavpasfilter er angivet}
 	\label{fig:type_filtre}
 \end{figure}
@@ -18,28 +18,28 @@ Jævnfør kravspecifikationer af lavasfilteret i afsnit \ref{FilterAfs}, side \r
 
 \begin{figure}[H]
 	\centering
-	\includegraphics[scale=0.85]{figures/cProblemloesning/Lavpasfilter_generisk.PNG}
+	\includegraphics[scale=0.8]{figures/cProblemloesning/Lavpasfilter_generisk.PNG}
 	\caption{Figuren viser et bodeplot filter, hvor de fire karakteristika af et lavpasfilter er angivet}
 	\label{fig:Lavpasfilter_generisk}
 \end{figure}
 
-\noindent Med udgangspunkt i de enkelte parametre af lavpasfilteret kan den pågældende orden af filteret bestemmes vha. formel \eqref{lavpasfilter} for overføringsfunktionen:
+\noindent Med udgangspunkt i de enkelte parametre af lavpasfilteret kan den pågældende orden af filteret bestemmes vha. \eqref{lavpasfilter} for overføringsfunktionen:
 \begin{equation} \label{eq:lavpasfilter}
 A(\omega_s) = 10 \text{log} \cdot \left[1 + \epsilon^2 \cdot (\frac{\omega _s}{\omega _p})^{2N}\right] 
 \end{equation}
 
-\noindent I formel \eqref{eq:lavpasfilter} er filterets orden angivet af N. Når de resterende variabler kendes, kan lavpasfilterets orden udregnes. I formelen betegner $A(\omega _s)$ den minimale dæmpning der kræves af stopbåndet, hvor $\epsilon$ er udtrykt ved nedestående formel \eqref{epsilon}:
+\noindent I \eqref{eq:lavpasfilter} er filterets orden angivet af N. Når de resterende variabler kendes, kan lavpasfilterets orden udregnes. I formelen betegner $A(\omega _s)$ den minimale dæmpning der kræves af stopbåndet, hvor $\epsilon$ er udtrykt ved nedestående \eqref{epsilon}:
 \begin{equation}\label{eq:epsilon}
 \epsilon = \sqrt{10^{\frac{A_{max}{10}} - 1}}
 \end{equation}
 
-Nu kan lavpasfilterets orden bestemmes, jævnfør værdierne fra kravspecifikationerne fra afsnit \ref{FilterAfs}, side \pageref{FilterAfs} ved at indsætte disse værdier i formel \eqref{eq:lavpasfilter}. Udregningerne vil se ud som følgende:
+Nu kan lavpasfilterets orden bestemmes, jævnfør værdierne fra kravspecifikationerne fra afsnit \ref{FilterAfs}, side \pageref{FilterAfs} ved at indsætte disse værdier i \eqref{eq:lavpasfilter}. Udregningerne vil se ud som følgende:
 \begin{equation}
 \epsilon = \sqrt{10^{\frac{3dB}{10}} - 1} = 0.998 \\ \label{eq:orden}
 14\text{dB} = 10 \cdot \text{log} \left[1 + \epsilon ^2 \cdot \frac{45\text{Hz}}{25\text{Hz}}^{2N}\right] \\
 N = 2.711 \approx 3
 \end{equation}
-\noindent Det fremgår af formel \eqref{eq: orden}, at lavpasfilterets orden bliver $3$. Filterets orden kun kan angives i hele tal og derfor afrundes resultatet. Hvis kravene til filteret skal overholdes, skal der altid rundes opad ved udregning af orden.
+\noindent Det fremgår af \eqref{eq: orden}, at lavpasfilterets orden bliver $3$. Filterets orden kun kan angives i hele tal og derfor afrundes resultatet. Hvis kravene til filteret skal overholdes, skal der altid rundes opad ved udregning af orden.
 
 Der skal altså benyttes et 3. ordens lavpasfilter. Der findes to forskellige måder hvorpå dette kan designes: Sallen-Key topologien (SKT) og Multiple Feedback toppologien (MFT). SKT-metoden er den mest anvendte og tillader separate gain indstillinger, hvorimod MFT-metoden benyttes i filter design med høj gain-nøjagtighed eller høj Q-værdi. I dette tilfælde anvendes filtertypen, SKT. Et 3. ordens lavpasfilter konstrueres ved at sammenætte et 1. ordens filter med et 2. ordens filter. Af figur \figref{fig:SallenKey1} og \figref{fig:SallenKey2} fremgår hhv. et 1. og 2. ordens lavpasfilter designet efter SKT. \cite{Carter2013}
 	
@@ -58,7 +58,7 @@ Der skal altså benyttes et 3. ordens lavpasfilter. Der findes to forskellige m�
 	\end{minipage}
 \end{figure}
 
-I designet af et 3. ordens filter designes, som sagt, både et 1. og et 2. ordens filter i forlængelse af hinanden. Dette designes efter sallen-key metoden bestående af tre modstande, tre kondensatorer og to operationsforstærkere. Værdierne for modstandene kan udregnes ved formel \eqref{eq:Lavpas1Modstande} for et 1. orden lavpasfilter og formel \eqref{eq:LavpasModstande} for et  2. orden lavpasfilter.  
+I designet af et 3. ordens filter designes, som sagt, både et 1. og et 2. ordens filter i forlængelse af hinanden. Dette designes efter sallen-key metoden bestående af tre modstande, tre kondensatorer og to operationsforstærkere. Værdierne for modstandene kan udregnes ved \eqref{eq:Lavpas1Modstande} for et 1. orden lavpasfilter og \eqref{eq:LavpasModstande} for et  2. orden lavpasfilter.  
 \begin{equation} \label{eq:Lavpas1Modstande}
 R_{1} = \frac{a_1}{2 \cdot \pi \cdot f_c \cdot C_1} \\
 \end{equation}
@@ -71,49 +71,50 @@ R_{1,2} = \frac{a_1 \cdot C_2 \pm \sqrt{A_1^2 \cdot C_2^2 - 4 \cdot b_1 \cdot C_
 \begin{equation} \label{eq:kondensator}
 C_2 \geq C_1 \frac{4b_1}{a_1^2}
 \end{equation}
-I ovenstående formel \eqref{eq:LavpasModstande} er C variabler for kondensatorer, R er variabler for modstande og $a_1$ og $b_1$ er konstanter, mens $f_c$ er den valgte knækfrekvens, jævnfør kravspecifikationerne afsnit \ref{FilterAfs} på side \pageref{FilterAfs}. 
+I ovenstående \eqref{eq:LavpasModstande} er C variabler for kondensatorer, R er variabler for modstande og $a_1$ og $b_1$ er konstanter, mens $f_c$ er den valgte knækfrekvens, jævnfør kravspecifikationerne afsnit \ref{FilterAfs} på side \pageref{FilterAfs}. 
 
-\noindent For at udregne modstandene fastsættes $C_1$ til 100nF for hhv. både 1. og 2. ordens lavpasfiltrene. Når $C_1$ er bestemt, kan $C_2$ for 2. ordens lavpasfilteret beregnes ved at benytte følgende formel \eqref{eq:kondensator}. Som grundregel skal $C_2$ være over dobbelt så stor som $C_1$:
+\noindent For at udregne modstandene fastsættes $C_1$ til 100nF for hhv. både 1. og 2. ordens lavpasfiltrene. Når $C_1$ er bestemt, kan $C_2$ for 2. ordens lavpasfilteret beregnes ved at benytte følgende \eqref{eq:kondensator}. Som grundregel skal $C_2$ være over dobbelt så stor som $C_1$:
 \begin{equation}  
 C_2 \geq 100\text{nF} \frac{4\cdot 1}{1.000^2} = C_2 \geq 200\text{nF}
 \end{equation}
 
-\noindent Ud fra ovenstående ligning vælges $C_2$ til at være 480nF for at opfylde \eqref{eq:kondensator}.  Herefter kan $R_1$ for og $R_2$ beregnes med \eqref{eq:LavpasModstande}. For 1. ordens filteret benyttes \eqref{eq:Lavpas1Modstande} til at beregne $R_1$.
-\begin{equation} \label{eq:Lavpas1Modstande}
+\noindent Ud fra ovenstående ligning vælges $C_2$ til at være 480nF for at opfylde \eqref{eq:kondensator}. Når værdierne for C er bestemt kan modstandene for filteret bestemmes. For et 1. orden lavpasfilter benyttes \eqref{eq:Lavpas1Modstande} til at beregne $R_1$ og for et 2. ordens lavpasfilter anvendes \eqref{LavpasModstande} for at beregne $R_1$ og $R_2$. 
+\begin{equation} \label{eq:1ordenmodstand}
 R_{1} = \frac{1}{2 \cdot \pi \cdot 25 \cdot 100nF} R_{1} = 63661.98 \Omega
 \end{equation}
 \begin{equation} \label{eq:2ordenmodstand}
 R_{1,2} = \frac{1.0000 \cdot 480\text{nF} \pm \sqrt{1.0000^2 \cdot 480\text{nF}^2 - 4 \cdot 1.0000 \cdot 100\text{nF} \cdot 480\text{nF}}}{4 \pi \cdot 25\text{Hz} \cdot 100\text{nF} \cdot 480\text{nF}} = \begin{cases} R_{1} =  44825.94\Omega \\ R_{2} = 18836.04 \Omega \end{cases}
 \end{equation}
-\noindent Kondensatorernes samt modstandenes værdier er hermed udregnet for hhv. 1. og 2. ordens filteret. Disse kan nu indsættes i LTspice, hvorefter filtret kan simuleres. 
+\noindent Filterets værdier for kondensatoerne og modstandene er nu udregnet for hhv. 1. og 2. ordens filter. Filterkonfigurationen kan nu simuleres i LTspice for at bestemme, hvor godt et 3. ordens filter, der er blevet designet.
 
 \begin{figure}[H]
 	\centering
 	\includegraphics[scale=0.5]{figures/cProblemloesning/Lavpasfilter1_LTspice.PNG}
-	\caption{Figuren viser det teoretiske kredsløb for lavpasfilteret konstrueret i LTspice. Værdierne $R_{2}$ og $R_{3}$ på figuren svarer til de udregnede værdier $R_{1}$ og $R_{2}$ for 2. ordens filteret i \eqref{eq:2ordenmodstand}}
+	\caption{Af figuren fremgår det teoretiske kredsløb for lavpasfilteret med udregnede værdier for de enkelte modstande og kondenstatorer. På figuren fremgår værdierne $R_{2}$ og $R_{3}$, hvilket svarer til de udregnede værdier $R_{1}$ og $R_{2}$ for 2. ordens filteret i \eqref{eq:2ordenmodstand}. Filteret er designet i LTspice.}
 	\label{fig:lavpasfilter1_LTspice}
 \end{figure}
 
 \subsubsection{Simulering}
-For at udføre en simulering af et lavpasfilter foretages der en AC-analyse som beskriver forholdet mellem frekvens og dæmpningen. Knæk- og stopfrekvensen er valgt til hhv. $25$Hz og $45$Hz på baggrund af opstillet krav i afsnit \ref{FilterAfs} på side \pageref{FilterAfs} samt resultaterne fra pilotforsøget i afsnit \ref{sec:pilotforsoeg} på side \pageref{sec:pilotforsoeg}. Til simuleringen af lavpasfilteret er der anvendt LTspice operationsforstærker TL081. Der undersøges for om kravene stemmer overens ved at betragte et bodeplot over det simulerede 3. ordens filter.
+For at udføre en simulering af 3. ordens lavpasfilteret, foretages en AC-analyse, der beskriver forholdet mellem frekvensindholdet og filterets dæmpning. Kredsløbet simuleres med et inputsignal, der har en amplitude på $1$V. Jævnfør kravspecifikationerne afsnit \ref{FilterAfs}, side \pageref{FilterAfs} er knækfrekvensen bestemt til at være $25$Hz og stopbåndsfrekvensen til $45$Hz grundet resultater fra pilotforsøget i afsnit \ref{sec:pilotforsoeg}, side \pageref{sec:pilotforsoeg}. LTspice anvendes til simulering af lavpasfilteret, hvor der anvendes operationsforstærkeren, TL081, hvilket er den operationsforstærker, der også vil blive benyttet i test af filteret. I simuleringen vil der blive undersøgt, hvorledes kravene stemmer overens med kravspicifikationerne, ved at betragte et bodeplot over det simulerede 3. ordens filter.
 
 \begin{figure}[H]
 	\centering
 	\includegraphics[scale=0.45]{figures/cProblemloesning/Lavpasfilter_LTspice.PNG}
-	\caption{Figuren illustrerer kredsløbet for 3. ordens lavpasfilter konstrueret i LTspice}
+	\caption{Af figuren fremgår en illustration af kredsløbet for et 3. ordens lavpasfilter. Filteret simuleres i LTspice vha. en AC-analyse med et inputsignal, der har en amplitude på $1$V.}
 	\label{fig:lavpasfilter_LTspice}
 \end{figure}
-
-Ud fra det simulerede kredsløb undersøges det, hvorvidt knækfrekvensen stemmer overens men den tilhørende amplitude ved hhv. $25$Hz og $45$Hz. Det aflæses på grafen i LTspice at knækfrekvensen ved $25$Hz svarer til en amplitude på $3.01$3B, hvilket er illuseret i \figref{fig:Lavpasfiltergraf_LTspice}. Der aflæses, at der ved $45$ H er en dæmpning på $15.49$dB. Dette overholder de opstillede krav på minimum $14$ dB Sammenholdt med kravspecifikationerne i afsnittet \ref{FilterAfs} på side \pageref{FilterAfs} er lavpasfilteret godkendt.
 
 \begin{figure}[H]
 	\centering
-	\includegraphics[scale=0.32]{figures/cProblemloesning/Lavpasfiltergraf_LTspice1.PNG}
-	\caption{Figuren illustrerer en graf over frekvensen målt i Hz over dæmpningen målt i dB af det 3. ordens lavpasfilter konstrueret i LTspice}
+	\includegraphics[scale=0.4]{figures/cProblemloesning/Lavpasfiltergraf_LTspice1.PNG}
+	\caption{Af figuren fremgår en illustration på et bodeplot, der viser 3. ordens filterets frekvensindhold målt i Hz over dæmpningen målt i dB. Lavpasfilteret er simuleret i LTspice.}
 	\label{fig:lavpasfilter_LTspice}
 \end{figure}
 
-\subsubsection{Implementering og test}
+Af bodeplottet fremgår det, at det simulerede filter har en maksimal amplitude i db på XX \fxnote{skla være under 3 db} ved en knækfrekvens på $25$Hz, hvilket overholder kravspecifikationerne i afsnit \ref{FilterAfs}, side \pageref{FilterAfs}. Der aflæses, at der ved stopbåndsfrekvens på $45$Hz er en amplitude i db på $15.49$. Dette overholder projektets opstillede krav for filterkonfigurationen ved en minimum dæmpning på $14$ dB i stopbåndsfrekvensen.  
+
+
+\subsubsection{Implementering og test} 
 Der ses på \figref{fig:lavpasfilter_LTspice} at der benyttes 3 modstande og 3 kondensatorer til at designe kredsløbet. Reelt findes de udregnede modstande og kondensatorer ikke, og derfor benyttes der dem som kommer tættest på det teoretiske. Dette gøres ved at sætte både modstande og kondensatorer i henholdsvis serie- og parallelforbindelse for at opnå de ønskede værdier. For $R_{1}$ og $R_{2}$ anvendes der modstande i parallelforbindelse og for $R_{3}$ i serieforbindelse. For $C_3$ anvendes der kondensatorer i parallelforbindelse. Der foretages målinger på tre ens reelle modstande og kondensatorer for at kunne anvende de komponenter som afviger mindst fra de teoretiske værdier. Dette er illustreret i \tableref{Tab:Maalingfilter}
 \begin{table}[H]
 	\centering
