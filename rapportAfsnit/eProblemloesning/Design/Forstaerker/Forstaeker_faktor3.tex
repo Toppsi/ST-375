@@ -57,19 +57,19 @@ På \figref{fig:Forstaerker_faktor3} kan der ses, at der skal benyttes to modsta
 	\label{Tab:modstand_faktor18}
 \end{table}
 
-\noindent Herefter implementeres kredsløbet. Til opsamling af signalet benyttes en computer med ScopeLogger, hvorefter dataen bliver behandlet i Matlab. I testen blev der foretaget tre målinger for hver af de fire spændingsniveauer. Herefter blev gennemsnittet for hver måling udregnet, som lægges sammen og til slut også tages gennemsnittet af. Dette giver den endelige værdi, som står under "Output" i \tableref{Tab:faktor3_test}.\
+\noindent Herefter blev kredsløbet implementeret. Til afbildning af signalet blev benyttet et multimeter. De aflæste resultater for spændingen efter forstærkningen er angivet under "Output" i \tableref{Tab:faktor3_test}.\
 
 \begin{table}[H]
 	\centering
-	\begin{tabular}{|l|l|l|l|l|}
+	\begin{tabular}{|l|l|l|l|l|l|}
 		\hline
- \textit{Input} & \textit{Forventet output} & \textit{Output}  &  \textit{Forstærkning}  & \% afvigelse \\ \hline
- $3.0147$V           & \begin{tabular}[c]{@{}l@{}}mætning\\ $10.8529$V\end{tabular}  & $4.1296$V   &    $\times$     & $\times$  \\ \hline
- $0.8421$V           & $3.0316$V                                                     & $3.0257$V   &    $3.59$       & $0.28\%$     \\ \hline
--$0.8188$V           & $2.9477$V                                                     & -$2.9584$V  &    $3.61$       & $0.28\%$     \\ \hline
--$2.9400$V           & \begin{tabular}[c]{@{}l@{}}mætning\\ $10.5840$V\end{tabular}  & -$4.1567$V  &    $\times$     & $\times$    \\ \hline
+ \textit{\begin{tabular}[c]{@{}l@{}}Ønsket\\input\end{tabular}} & \textit{Input} & \textit{Forventet output} & \textit{Output}  &  \textit{Forstærkning}  & \% afvigelse \\ \hline
+   $3.0148$V &  $3.0146$V           & \begin{tabular}[c]{@{}l@{}}mætning\\ $10.8526$V\end{tabular}  & $4.8403$V   &    $\times$     & $\times$  \\ \hline
+   $0.8418$V &  $0.8417$V           & $3.0301$V                                                     & $3.0286$V   &    $3.6$        & $0\%$     \\ \hline
+  -$0.8190$V & -$0.8192$V           & -$2.9491$V                                                    & -$2.9584$V  &    $3.61$       & $0.28\%$     \\ \hline
+  -$2.9420$V &-$2.9439$V            & \begin{tabular}[c]{@{}l@{}}mætning\\ -$10.5980$V\end{tabular} & -$4.1651$V  &    $\times$     & $\times$    \\ \hline
 	\end{tabular}
 	\caption{I tabellen ses resultaterne fra testen med forstærkeren, der har en faktor 3.}
 	\label{Tab:faktor3_test}
 \end{table}
-Der ses i \tableref{Tab:faktor3_test}, at forstærkeren overholder kravene fra afsnit \ref{OpsamlingsAfs} på side \pageref{OpsamlingsAfs} samt ligger inde for tolerancerne.
+Der ses i \tableref{Tab:faktor3_test}, at forstærkeren overholder kravene fra afsnit \ref{OpsamlingsAfs} på side \pageref{OpsamlingsAfs} samt ligger inde for tolerancerne. Derfor anses disse afvigelser som acceptable.
