@@ -1,8 +1,8 @@
 % !TeX spellcheck = da_DK
 \subsection{Forstærker i opsamlingsblok}\label{Subsec:Forstaerker}
 \subsubsection{Teori og design}
-Til forstærkningen i opsamlingsblokken på \figref{kravblok} skal der benyttes en ikke-inverterende forstærker, da der ønskes, at inputtet og outputtet har samme polaritet. Ved en ikke-inverterende forstærker bliver inputtet tilkoblet direkte til den ikke-inverterende inputterminal, hvilket vil give en høj inputimpedansen, da der kigges direkte ind i operationsforstærkeren. Hvis der var en lav indgangsimpedans, ville denne blok trække meget strøm fra kredsløbet og derved aflade batteriet, der er tiltænkt som spændingsforsyning. \\
-Kredsløbet består af en operationsforstærker kaldet TL081, som er den operationsforstærker, der er tiltænkt at benytte i implementerings delen. Den sidder i et closed-loop med modstandene R$1$ og R$2$, som udgør en spændingsdeler. Dette ses på \figref{fig:Forstaerker}.
+Til forstærkningen i opsamlingsblokken på \figref{kravblok} skal der benyttes en ikke-inverterende forstærker, da der ønskes, at inputtet og outputtet har samme polaritet. Ved en ikke-inverterende forstærker bliver inputtet tilkoblet direkte til den ikke-inverterende inputterminal, hvilket vil give en høj inputimpedansen, da der kigges direkte ind i operationsforstærkeren. Hvis der var en lav indgangsimpedans, ville denne blok trække spænding fra inputsignalet, hvilket vil give store afvigelser i de efterfølgende blokke. \\
+Kredsløbet består af en operationsforstærker kaldet TL081, som sidder i et closed-loop med modstandene R$1$ og R$2$, der udgør en spændingsdeler. Dette ses på \figref{fig:Forstaerker}.
 \begin{figure}[H]
 \centering
 \includegraphics[scale=0.75]{figures/cProblemloesning/Forstaerker.PNG}
@@ -10,7 +10,7 @@ Kredsløbet består af en operationsforstærker kaldet TL081, som er den operati
 \label{fig:Forstaerker}
 \end{figure} 
 
-\noindent Der er jævnført i afsnit \ref{OpsamlingsAfs} på side \pageref{OpsamlingsAfs} bestemt, at forstærkningen skal være en faktor $9.1$, hvilket svarer til $19.1808$dB. For at udregne R$1$ er R$2$ modstanden blevet valgt til $10$K$\Omega$. Ud fra dette er R$1$ blevet bestemt ved følgende udregning:
+\noindent Der er jævnfør afsnit \ref{OpsamlingsAfs} på side \pageref{OpsamlingsAfs} bestemt, at forstærkningen skal være en faktor $9.1$, hvilket svarer til $19.1808$dB. For at udregne R$1$ er R$2$ modstanden blevet valgt til $10$K$\Omega$. Ud fra dette er R$1$ blevet bestemt ved følgende udregning:
 \begin{align}
 9 = 1 + (\frac{R1}{10\text{K}\Omega})\\
 R1 = 81\text{K}\Omega
@@ -25,7 +25,7 @@ R1 = 81\text{K}\Omega
 \end{figure} 
 
 \subsubsection{Simulering}\label{Subsec:Forstaerker_simu}
-Der undersøges i to simuleringer, om forstærkeren virker ved det laveste input på -$0.3233$V og højeste input på $0.3313$V, som er blevet udregnet igennem pilotforsøget. På \figref{fig:Forstaerker_faktor18_simulering} ses en af de to simuleringer af spændingerne.
+Der undersøges i to simuleringer, om forstærkeren virker ved det laveste input på -$0.3233$V og højeste input på $0.3313$V, som er blevet udregnet igennem pilotforsøget. På \figref{fig:Forstaerker_faktor18_simulering} ses en simulering af dette.
 
 \begin{figure}[H]
 \centering
