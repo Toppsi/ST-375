@@ -3,9 +3,9 @@
 \subsubsection{Teori og design}
 Teorien bag accelerometret ADXL335 ses i afsnit \ref{Subsec:AccTeori} på side \pageref{Subsec:AccTeori}, hvorimod designet af accelerometret ses i på \figref{pforsoeg1} på side \pageref{pforsoeg1}. Der blev ud fra pilotforsøget fundet ud af signalet ligger i et frekvensområde fra $0$-$25$ og derved er båndbreden $25$ Hz. For at få en båndbrede på $25$Hz, skal der ændres på kapasitorens størrelse, hvilket kan beregnes ud fra følgende formel fra accelerometers datablad \cite{Device2009}:
 \begin{equation}
-Båndbrede = \dfrac{5\muF}{C}
+Båndbrede = \dfrac{5\mu F}{C}
 \end{equation}
-Her er kendes båndbreden, som er $25$Hz, hvilket gør at C bliver $0.2\mu$F. For at finde en kapasitor med værdien $0.2\mu$F bruges der to $0.1\mu$F kapasitorer i parallelforbindes.  
+Her er kendes båndbredden, som er $25$Hz, hvilket gør at C bliver $0.2\mu$F. For at finde en kapasitor med værdien $0.2\mu$F bruges der to $0.1\mu$F kapasitorer i parallelforbindes.  
 
 \subsubsection{Simulering}
 Ifølge tolerancerne for accelerometret beskrevet i afsnit \ref{OpsamlingsAfs} på side \pageref{OpsamlingsAfs} skal der testes, hvorledes accelerometret overholder kravet om, at der maks må være en $5\%$ afvigelse i detektionen af hældningsgrad. \\
