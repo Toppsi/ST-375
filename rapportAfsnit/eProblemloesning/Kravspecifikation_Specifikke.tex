@@ -101,11 +101,11 @@ Blokken indeholdende komparatorer skal kunne sammenligne inputsignalet med refer
 	\item Komparatorblokken skal have en forsyningsspænding på  $\pm5.5$V.\fxnote{evt. rette dette til}
 	\item Skal kunne skifte mellem sværhedsgrad ved at ændre tærskelværdierne.
 	\item Skal kunne modtage et inputsignal på $\pm3$V. 
-	\item Skal ved et bestemt spændingsinterval aktivere en diode og vibrator:
+	\item Skal ved et bestemt spændingsniveauer aktivere en diode og vibrator:
 	\begin{itemize}
-		\item Grøn diode og ingen vibration: I intervallet indenfor $0.1808$V til -$0.1773$V. Som svare til $\pm2^{\circ}$.
-		\item Gul diode og let vibration: I intervallet fra $0.7233$V til $1.1753$V og intervallet fra -$0.7094$V til -$1.1527$V. Som svare til $\pm 8^{\circ}-13^{\circ}$.
-		\item Rød diode og moderat vibration: I intervallet fra $1.1753$V til $2.2602$V og intervallet fra -$1.1527$V til -$2.2168$V. Som svare til $\pm13^{\circ}-25^{\circ}$.
+		\item Grøn diode og ingen vibration: I intervallet indenfor $0.1808$V til -$0.1773$V. Svarende til $\pm2^{\circ}$.
+		\item Gul diode og let vibration: Fra niveauet $0.9648$V og -$0.9413$V. Svarende til $\pm 8^{\circ}$ eller over.
+		\item Rød diode og moderat vibration: Fra nivauet $1.5679$V og -$1.5297$V. Svarende til $\pm13^{\circ}$ eller over.
 		%\item Ingen feedback: Over $2.2602$V og under -$2.2168$V. 
 	\end{itemize}
 \end{itemize}
@@ -121,9 +121,10 @@ Blokken med visuel feedback omfatter den del af systemet, der giver feedback til
 \textbf{Krav:}
 \begin{itemize}
 	\item Den visuelle feedbackblok skal have en spændingsforsyning på  $5.5$V.
-	\item LED-dioderne skal informere patienten om hvilken retning kropshældningen sker i.
-	\item LED-dioderne skal kunne informere patienten omkring accelerometerets placering.
-	\item LED-dioderne skal informere patienten om risikoen for fald.
+	\item LED-dioderne skal aktiveres ved angivet spændingsniveauer i komparatoren.
+	%\item LED-dioderne skal informere patienten om hvilken retning kropshældningen sker i.
+	%\item LED-dioderne skal kunne informere patienten omkring accelerometerets placering.
+	%\item LED-dioderne skal informere patienten om risikoen for fald.
 	\item LED-dioderne skal kunne give et tydeligt lys.
 \end{itemize}
 \textbf{Tolerance:}
@@ -138,9 +139,10 @@ Blokken med somatosensorisk feedback omfatter også den del af systemet, der giv
 \textbf{Krav:}
 \begin{itemize}
 	\item Skal have en forsyningsspænding på $5.5$V.
-	\item Vibratorerne skal informere patienten om hvilken retning kropshældningen sker i.
-	\item Vibratorerne skal informere patienten om risikoen for fald.
-	\item Vibratorerne skal have to vibrationshastigheder\fxnote{Find evt. konkrete værdier - vi skal desuden måske kun have én hastighed}.
+	\item Vibratorerne skal aktiveres ved angivet spændingsniveauer i komparatoren.
+	%\item Vibratorerne skal informere patienten om hvilken retning kropshældningen sker i.
+	%\item Vibratorerne skal informere patienten om risikoen for fald.
+	%\item Vibratorerne skal have to vibrationshastigheder\fxnote{Find evt. konkrete værdier - vi skal desuden måske kun have én hastighed}.
 \end{itemize}
 \textbf{Tolerance:}
 \begin{itemize}
