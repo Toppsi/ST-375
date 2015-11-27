@@ -35,30 +35,30 @@ A(\omega_s) = 10 \text{log} \cdot \left[1 + \epsilon^2 \cdot (\frac{\omega _s}{\
 
 Nu kan lavpasfilterets orden bestemmes, jævnfør værdierne fra kravspecifikationerne fra afsnit \ref{FilterAfs}, side \pageref{FilterAfs} ved at indsætte disse værdier i formel \eqref{eq:lavpasfilter}. Udregningerne vil se ud som følgende:
 \begin{equation}
-\epsilon = \sqrt{10^{\frac{3dB}{10}} - 1} = 0.998 \\ \tabel{eq:orden}
+\epsilon = \sqrt{10^{\frac{3dB}{10}} - 1} = 0.998 \\ \label{eq:orden}
 14\text{dB} = 10 \cdot \text{log} \left[1 + \epsilon ^2 \cdot \frac{45\text{Hz}}{25\text{Hz}}^{2N}\right] \\
 N = 2.711 \approx 3
 \end{equation}
-\noindent Ordenen af lavpasfiltret afrundes til $3$, eftersom filterets orden kun kan angives i hele tal. Hvis kravene til filteret skal overholdes, skal der altid rundes opad ved udregning af orden. \fxnote{Sofie har rettet hertil - ville lave en ref til ligningen i midten til teksten nedenfor}
+\noindent Det fremgår af formel \eqref{eq: orden}, at lavpasfilterets orden bliver $3$. Filterets orden kun kan angives i hele tal og derfor afrundes resultatet. Hvis kravene til filteret skal overholdes, skal der altid rundes opad ved udregning af orden.
 
-Der skal benyttes et 3. ordens lavpasfilter. Der findes to forskellige måder hvorpå det kan designes: Sallen-Key topologien (SKT) og Multiple Feedback toppologien (MFT). SKT-metoden er den mest anvendte og tillader separate gain indstillinger, hvorimod MFT-metoden benyttes i filter design med høj gain nøjagtighed eller høj Q værdi. For dette filter benyttes SKT. På \figref{fig:SallenKey1} ses et 1. ordens lavpasfilter og på \figref{fig:SallenKey2} ses et 2. ordens lavpasfilter designet efter SKT. \cite{Carter2013}
+Der skal altså benyttes et 3. ordens lavpasfilter. Der findes to forskellige måder hvorpå dette kan designes: Sallen-Key topologien (SKT) og Multiple Feedback toppologien (MFT). SKT-metoden er den mest anvendte og tillader separate gain indstillinger, hvorimod MFT-metoden benyttes i filter design med høj gain-nøjagtighed eller høj Q-værdi. I dette tilfælde anvendes filtertypen, SKT. Et 3. ordens lavpasfilter konstrueres ved at sammenætte et 1. ordens filter med et 2. ordens filter. Af figur \figref{fig:SallenKey1} og \figref{fig:SallenKey2} fremgår hhv. et 1. og 2. ordens lavpasfilter designet efter SKT. \cite{Carter2013}
 	
 \begin{figure}[H]
 	\centering
 	\begin{minipage}[b]{0.45\textwidth}
 		\includegraphics[width=\textwidth]{figures/cProblemloesning/Lavpasfilter1_teoretisk.PNG}
-		\caption{På figuren ses en illustration af et 1. ordens unity-gain Sallen-Key lavpasfilter.}
+		\caption{På figuren ses en illustration af et 1. ordens unity-gain Sallen-Key lavpasfilter, hvor værdien C er kondensatoren, R er modstandene. filterKonfigurationen har en indgangsspænding, Vin og udgangsspænding, Vout. \citep{Carter2013}}
 		\label{fig:SallenKey1}
 	\end{minipage}
 	\hfill
 	\begin{minipage}[b]{0.45\textwidth}
 		\includegraphics[width=\textwidth]{figures/cProblemloesning/Sallenlavpas.PNG}
-		\caption{På figuren ses en illustration af et 2. ordens unity-gain Sallen-Key lavpasfilter.}
+		\caption{På figuren ses en illustration af et 2. ordens unity-gain Sallen-Key lavpasfilter, hvor værdien C er kondensatoren, R er modstandene. filterKonfigurationen har en indgangsspændings, Vin og en udgangsspænding, Vout. \citep{Carter2013}}
 		\label{fig:SallenKey2}
 	\end{minipage}
 \end{figure}
 
-I designet af et 3. ordens filter designes både et 1. og et 2. ordens filter i forlængelse af hinanden. Dette designes efter sallen-key metoden, hvor filtreret består af tre modstande og tre kondensatorer. Værdierne for modstandene kan udregnes med 1. orden \eqref{eq:Lavpas1Modstande} og for 2. orden \eqref{eq:LavpasModstande}. 
+I designet af et 3. ordens filter designes, som sagt, både et 1. og et 2. ordens filter i forlængelse af hinanden. Dette designes efter sallen-key metoden bestående af tre modstande, tre kondensatorer og to operationsforstærkere. Værdierne for modstandene kan udregnes ved formel \eqref{eq:Lavpas1Modstande} for et 1. orden lavpasfilter og formel \eqref{eq:LavpasModstande} for et  2. orden lavpasfilter.  
 \begin{equation} \label{eq:Lavpas1Modstande}
 R_{1} = \frac{a_1}{2 \cdot \pi \cdot f_c \cdot C_1} \\
 \end{equation}
@@ -67,14 +67,14 @@ R_{1} = \frac{a_1}{2 \cdot \pi \cdot f_c \cdot C_1} \\
 R_{1,2} = \frac{a_1 \cdot C_2 \pm \sqrt{A_1^2 \cdot C_2^2 - 4 \cdot b_1 \cdot C_1 \cdot C_2}}{4 \pi \cdot f_c \cdot C_1 \cdot C_2}
 \end{equation}
 
-\noindent Værdierne for $a_{1}$ og $b_{1}$ findes i tabellen for konstanter for butterworth filtre. Ved aflæsning i tabellen bliver værdierne for $a_{1}$  og  $b_{2}$ 1.0000. For at finde reelle værdier under kvadratroden skal følgende være opfyldt:
+\noindent Værdierne for $a_{1}$ og $b_{1}$ findes i en tabel, hvor konstanterne for et butterworthfilter fremgår. Af denne grund findes værdien for $a_{1}$  og  $b_{2}$, der begge er 1.0000. For at finde reelle værdier under kvadratroden skal følgende være opfyldt:
 \begin{equation} \label{eq:kondensator}
 C_2 \geq C_1 \frac{4b_1}{a_1^2}
 \end{equation}
-I \eqref{eq:LavpasModstande} står C variablene for kondensatorer, R variablene står for modstande, $a_1$ og $b_1$ er konstanter, mens $f_c$ er den valgte knækfrekvens. 
+I ovenstående formel \eqref{eq:LavpasModstande} er C variabler for kondensatorer, R er variabler for modstande og $a_1$ og $b_1$ er konstanter, mens $f_c$ er den valgte knækfrekvens, jævnfør kravspecifikationerne afsnit \ref{FilterAfs} på side \pageref{FilterAfs}. 
 
-\noindent For at udregne modstandene vælges $C_1$ til at være 100nF for hhv. 1. orden og 2. ordens filtrene. Ud fra dette kan $C_2$ i 2. ordens filteret bestemmes med \eqref{eq:kondensator}:
-\begin{equation} 
+\noindent For at udregne modstandene fastsættes $C_1$ til 100nF for hhv. både 1. og 2. ordens lavpasfiltrene. Når $C_1$ er bestemt, kan $C_2$ for 2. ordens lavpasfilteret beregnes ved at benytte følgende formel \eqref{eq:kondensator}. Som grundregel skal $C_2$ være over dobbelt så stor som $C_1$:
+\begin{equation}  
 C_2 \geq 100\text{nF} \frac{4\cdot 1}{1.000^2} = C_2 \geq 200\text{nF}
 \end{equation}
 
