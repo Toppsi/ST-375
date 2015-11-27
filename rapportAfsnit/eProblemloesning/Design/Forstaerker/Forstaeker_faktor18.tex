@@ -30,11 +30,11 @@ Der undersøges i to simuleringer, om forstærkeren virker ved det laveste input
 \begin{figure}[H]
 \centering
 \includegraphics[scale=0.3]{figures/cProblemloesning/Forstaerker_faktor18_simulering.PNG}
-\caption{På figuren ses en simuleringen af en ikke-inverterende forstærker, hvor der sker en forstærkning med en faktor $9.1$. Inputtet, $V_{in}$, er $0.3313$V, som bliver forstærket $9.1$ gange og derved giver ca. $3.0147$V i outputtet, $V_{out}$.}
+\caption{På figuren ses en simulering af en ikke-inverterende forstærker, hvor der sker en forstærkning med en faktor $9.1$. Inputtet, $V_{in}$, er $0.3313$V, som bliver forstærket $9.1$ gange og derved giver ca. $3.0147$V i outputtet, $V_{out}$.}
 \label{fig:Forstaerker_faktor18_simulering}
 \end{figure}
 
-Der kan ses på \figref{fig:Forstaerker_faktor18_simulering}, at det forstærkede signal, kaldet $V_{out}$, er ca. $3.0147$V, hvilket er $9.1$ gange større end $V_{in}$, som i simuleringen er sat til $0.3313$V. Derved er der sket den ønskede forstærkning, hvilket var forventet, da simuleringen er med ideelle komponenter. Derfor har de enkelte komponenter i denne simulering næsten ingen tolerance, hvilket reelle komponenter i et reelt kredsløb vil have mere af. \\
+Der kan ses på \figref{fig:Forstaerker_faktor18_simulering}, at det forstærkede signal, kaldet $V_{out}$, er ca. $3.0147$V, hvilket er $9.1$ gange større end $V_{in}$, som i simuleringen er sat til $0.3313$V. Derved er der sket den ønskede forstærkning som forventet, da simuleringen er med ideelle komponenter. Derfor har de enkelte komponenter i denne simulering en lav tolerance, sammenlignet med komponenterne i et reelt kredsløb. \\
 Resultaterne af de to simuleringer ses i \tableref{tab:forstarker18_sim}
 \begin{table}[H]
 	\centering
@@ -48,10 +48,10 @@ Resultaterne af de to simuleringer ses i \tableref{tab:forstarker18_sim}
 	\caption{Her ses resultaterne for simuleringerne med det laveste- og højeste input.}
 	\label{tab:forstarker18_sim}
 \end{table}
-\noindent Der ses på afvigelserne, at der arbejdes med ideelle komponenter, da der er en meget lav afvigelse i outputtet ift. det forventede output. Det er herved bevist, at kredsløbet fungerer teoretisk og kan derfor implementeres.
+\noindent Der ses på afvigelserne, at der arbejdes med ideelle komponenter, da der er en meget lav afvigelse i outputtet ift. det forventede output. Derved fungerer kredsløbet teoretisk og kan implementeres.
 
 \subsubsection{Implementering og test}
-Der ses på \figref{fig:Forstaerker_faktor18}, at der skal benyttes to modstande på $10$K$\Omega$ og $81$K$\Omega$ til opbygningen af forstærkeren. Reelt findes der ikke en $81$K$\Omega$, hvorfor der istedet benyttes en $82$K$\Omega$, hvilket teoretisk giver $1.235$\% forskel i modstanden. Dette er det tætteste man kan komme på $81$K$\Omega$. Der kunne også benyttes en $150$K$\Omega$- og $180$K$\Omega$ modstand i parallel forbindelse, hvilket vil give $1.01$\% afvigelse, men disse komponenter vil også have afvigelser, hvorved den samlede procent afvigelse vil forstørres. De to modstande blev målt inden testen, hvilket fremgår i \tableref{Tab:modstand_faktor18}.
+Der ses på \figref{fig:Forstaerker_faktor18}, at der skal benyttes to modstande på $10$K$\Omega$ og $81$K$\Omega$ til opbygningen af forstærkeren. Reelt findes der ikke en modstand på $81$K$\Omega$, hvorfor der istedet benyttes $82$K$\Omega$. Dette giver teoretisk en forskel på $1.235$\% i modstanden. Dette er det tætteste man kan komme på $81$K$\Omega$. Der kunne også benyttes en $150$K$\Omega$- og $180$K$\Omega$ modstand i parallel forbindelse, hvilket vil give $1.01$\% afvigelse. Disse komponenter vil også have afvigelser, hvorved den samlede procentvise afvigelse vil forøges. De to modstande blev målt inden testen, hvilket fremgår i \tableref{Tab:modstand_faktor18}.
 \begin{table}[H]
 	\centering
 	\begin{tabular}{|l|l|l|}
@@ -60,10 +60,10 @@ Der ses på \figref{fig:Forstaerker_faktor18}, at der skal benyttes to modstande
 		$10$K$\Omega$      & $10.0236$K$\Omega$    & $0.236$\%           \\ \hline
 		$82$K$\Omega$      & $81.724$K$\Omega$     & $0.337$\%           \\ \hline
 	\end{tabular}
-	\caption{I tabellen ses der, at de tre modstandere afviger lidt fra deres teoretiske værdi, hvilket er forventet af reelle komponenter. Det er dog en acceptabel afvigelse ifølge tolerancerne i afsnit \ref{OpsamlingsAfs} på side \pageref{OpsamlingsAfs}, så modstanderne kan derfor anvendes til implementeringen.}
+	\caption{I tabellen ses det, at de tre modstande afviger lidt fra deres teoretiske værdi, hvilket er forventet af reelle komponenter. Det er en acceptabel afvigelse ifølge tolerancerne i afsnit \ref{OpsamlingsAfs}, side \pageref{OpsamlingsAfs}. Modstandene kan derfor anvendes til implementeringen.}
 	\label{Tab:modstand_faktor18}
 \end{table}
-\noindent Herefter blev kredsløbet implementeret. Til afbildning af signalet blev der benyttet et multimeter, som målte det forstærkede signal for de to spændingsniveauer. Dette står under "Output" i \tableref{Tab:faktor18_test}.\
+\noindent Herefter blev kredsløbet implementeret. Til afbildning af signalet blev der benyttet et multimeter, som viste det forstærkede signal for de to spændingsniveauer. De aflæste resultater er angivet under "Output" i \tableref{Tab:faktor18_test}.\
 \begin{table}[H]
 	\centering
 	\begin{tabular}{|l|l|l|l|l|}
@@ -77,4 +77,4 @@ Der ses på \figref{fig:Forstaerker_faktor18}, at der skal benyttes to modstande
 	\label{Tab:faktor18_test}
 \end{table}
 % Det "målte input" er her blevet målt med et multimeter. %For $0.3313$V er spændingen kommet direkte fra en strømforsyning, men for at undersøge forstærkningen af $-0.3233$V er det nødsaget at benytte offsettet, da spændingsforsyningen ikke kan levere en negativ spænding. Det var derfor forventet, at der kunne være en større afvigelse på målingerne med $-0.3233$V spænding, da denne spænding skulle igennem flere kredsløb. Inputtet i offsettet (som kan ses på \figref{fig:Offset_generisk}) var $1.3092$V og referencen var $1.6325$V. Derved skabes den negative spænding, som sendes videre til forstærkeren. Afvigelsen, som ville opstå grundet et ekstra kredsløb, ville være præsentabel for afvigelsen, som der også burde have været for de to andre signalers tests. Der ses i \tableref{Tab:faktor18_test}, at der ikke opstod større forstyrrelser, som gav ekstra afvigelse i det målte signal ift. det forventede signal. \\
-Der ses ud fra testen, at forstærkeren overholder kravene fra afsnit \ref{OpsamlingsAfs} på side \pageref{OpsamlingsAfs}, samt ligger inde for afvigelser i forstærkningen, som er $\pm2\%$, da forstærkeren har en maksimal afvigelse på $0.66\%$. Derfor anses disse afvigelser som acceptable.
+Der ses ud fra testen, at forstærkeren overholder kravene fra afsnit \ref{OpsamlingsAfs}, side \pageref{OpsamlingsAfs}. Derudover ligger afvigelserne indenfor tolerancerne for forstærkningen, som er $\pm2\%$. Derfor anses disse afvigelser som acceptable.
