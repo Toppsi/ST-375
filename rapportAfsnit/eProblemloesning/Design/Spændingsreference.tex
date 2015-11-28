@@ -38,12 +38,11 @@ R2 = 18818.44380\Omega \approx 18820\Omega
 \end{equation}
 
 \noindet \textbf{Beregning af referenceværdien til komparator}
-Den samme fremgangsmåde anvendes til udregning af R for referencespændingen til komparatoren. Her er den ønskede referenceværdi  $2.5$V, så der benyttes ikke en spændingsdeler.  I kredsløbet for komparatoren indgår én operationsforstærker(TL$081$), med en maksimal biasstrøm på $200$pA. Biasstrømmen for referencedioden er igen sat til $100\muA$. Derudover indgår \textcolor{red}{otte komparatorer} (LM$311$), der alle har en maksimal biasstrøm på $250$nA. Dermed kan værdierne igen indsættes i formlen og R kan beregnes.
+Den samme fremgangsmåde anvendes til udregning af R for referencespændingen til komparatoren. Her er den ønskede referenceværdi  $2.5$V, så der benyttes ikke en spændingsdeler. Der er i begyndelse at kredsløbet indsat en operations forstærker (TL$082$), som har to input og output og derved kan fungere som både buffer til komparator kredsløbet og inverterende forstærker. Da spændingsdeleren går direkte ind i en buffer, så er den maksimale biasstrøm på $50nA$. Biasstrømmen for referencedioden er igen sat til $100\muA$. Dermed kan værdierne igen indsættes i formlen og R kan beregnes.
 
 \begin{equation}
-R_komparator=\frac{5.5V-2.5V}{0.0001020002A}=29411.70704\Omega \approx 29.5K\Omega 
+R_komparator=\frac{5.5V-2.5V}{0.000100005A}=29998.50007\Omega \approx 30K\Omega 
 \end{equation} 
-\fxnote{Rigtig afrunding}
 
 \textbf{Test af referencespænding}
 
