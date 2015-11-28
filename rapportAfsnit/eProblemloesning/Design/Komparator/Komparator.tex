@@ -14,44 +14,44 @@ Til den visuelle del af komparatorkredsløbet anvendes LED-dioder. LED-diodernes
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\noindent\textbf{Beregning af tærskelværdier og tilhørende R$1$-R$14$ modstande for aktivering af LED-dioder} \\
-Inputsignalet fra forrige blok, tilpasningsblokken, ligger mellem -$2.9417$V og $3.0151$V jævnfør afsnit \ref{KomparatorAfs}, side\pageref{KomparatorAfs}. Jævnfør systemets funktionelle krav afsnit \ref{FunkKrav}, side \pageref{FunkKrav} ønskes det, at de enkelte LED-dioder skal lyse ved bestemte kropshældninger, dvs. ved en bestemt tærskelværdi. %Disse tærskelværdier sættes ud fra to punkter; det maksimale teoretiske signal  ved $25^{\circ}$ $4.0662$, og en tilgængelig spændingsreference, der kan sørge for en fast spænding til spændingstræet. 
+\noindent\textbf{Beregning af tærskelværdier og tilhørende R$1$-R$12$ modstande for aktivering af LED-dioder} \\
+Inputsignalet fra forrige blok, tilpasningsblokken, ligger mellem -$2.9417$V og $3.0151$V jævnfør afsnit \ref{KomparatorAfs}, side\pageref{KomparatorAfs}. Jævnfør systemets funktionelle krav afsnit \ref{FunkKrav}, side \pageref{FunkKrav} ønskes det, at de enkelte LED-dioder skal lyse ved bestemte kropshældninger, dvs. ved en bestemt tærskelværdi. 
 Tærskelværdierne er udregnet til at være:
 \begin{figure}[H]
 	\centering
 	\includegraphics[scale=0.5]{figures/cProblemloesning/Taerskelvaerdier.PNG}
-	\caption{Af figuren fremgår de beregnede tærskelværdier.}
+	\caption{Af figuren fremgår de beregnede tærskelværdier og hvilket farve, der lyser ved de de enkelte tærskler.}
 	\label{fig:taerskelvaerdier}
 \end{figure}
 
-Der vælges en  spændingsreference, som består af en regulator så den kan levere $2.5$V til komparatorkredsløbet. Spændingsreferencen indgår som del af en spændingsdeler og benyttes for at holde en fast referencespænding, da spændingen ved anvendelse af et batteri vil falde som funktion af tid. For at muliggøre anvendelsen af spændingsforsyningen på $2.5$V til negative tærskelværdier benyttes en inverterende forstærker med et gain på $1$, der fremgår af figur \figref{fig:komparator_visuel}. Ved denne konfiguration vendes signalet uden at blive forstærket og kan på denne måde benyttes som referencespænding til negative inputspændinger.  
-Når referencespændingen er kendt kan modstandene i spændingsdeleren bestemmes. Da kredsløbet trækker strøm har modstandene (R$15$-R$20$) til formål at sikre, at spændingsforsyningen ikke drænes. Hvis modstanden er høj, vil strømmen til kredsløbet være lav, og batterierne i spændingsreferencen vil derved holde længere.
+Der vælges en  spændingsreference, som består af en regulator så den kan levere $2.5$V til komparatorkredsløbet jævnført \ref{Spaendingsref} på side \pageref{Spaendingsref}. Spændingsreferencen indgår som del af en spændingsdeler og benyttes for at holde en fast referencespænding, da spændingen ved anvendelse af et batteri vil falde som funktion af tid. For at muliggøre anvendelsen af spændingsforsyningen på $2.5$V til negative tærskelværdier benyttes en inverterende forstærker med et gain på $1$, der fremgår af figur \figref{fig:komparator_visuel}. Ved denne konfiguration vendes signalet uden at blive forstærket og kan på denne måde benyttes som referencespænding til negative inputspændinger.  
+Når referencespændingen er kendt kan modstandene i spændingsdeleren bestemmes. Da kredsløbet trækker strøm har modstandene (R$13$-R$17$) til formål at sikre, at spændingsforsyningen ikke drænes. Hvis modstanden er høj, vil strømmen til kredsløbet være lav, og batterierne i spændingsreferencen vil derved holde længere, men hvis modstanden er høj kan det påvirke LED-diodernes lysstyrke.
 
-Der anvendes otte spændingsdelere, hvor fire indgår som vindues-komparatorer og de resterende som almindelige komparatorer, hvilket fremgår af figur \figref{fig:komparator_visuel}.. 
-For at opstille spændingsdelerne skal R$1$-R$14$ bestemmes så LED-dioderne lyser ved de ønskede tærskelværdier. For at modstandene kan bestemmes defineres R$1$ til en bestemt værdi, der her fastsættes til at være $10$K$\Omega$. Den samme værdi er gældende for R$2$-R$8$, eftersom der anvendes en spændingsdeler for hver tærskelværdi. Herefter kan R$9$-R$14$ udregnes vha. den generelle formel for en spændingsdeler jævnført \eqref{Spaendingsdeler}. Hvor følgende er kendt:
+Der anvendes seks spændingsdelere, hvor to indgår som vindues-komparatorer og de resterende som almindelige komparatorer, hvilket fremgår af  \figref{fig:komparator_visuel}.
+For at opstille spændingsdelerne skal R$1$-R$12$ bestemmes så LED-dioderne lyser ved de ønskede tærskelværdier. For at modstandene kan bestemmes defineres R$1$ til en bestemt værdi, der her fastsættes til at være $10$K$\Omega$. Den samme værdi er gældende for R$2$-R$6$, eftersom der anvendes en spændingsdeler for hver tærskelværdi. Herefter kan R$7$-R$12$ udregnes vha. den generelle formel for en spændingsdeler jævnført \eqref{Spaendingsdeler}. Hvor følgende er kendt:
 \begin{itemize}
 \item $V_out$ = den ønskede tærskelværdi
 \item $V_in$ = spændingsreferencen
-\item R$1$-R$8$ = $10$K$\Omega$
+\item R$1$-R$6$ = $10$K$\Omega$
 \end{itemize}
 
-Dette medfører at R$9$-R$14$ giver følgende resultater:\\
-R$9$ = $16821\Omega$ \\
-R$10$ = $6285\Omega$ \\
-R$11$ = $1068\Omega$ \\
-R$12$ = $1039\Omega$ \\
-R$13$ = $6039\Omega$ \\
-R$14$ = $15765\Omega$ \\
+Dette medfører at R$7$-R$12$ giver følgende resultater:\\
+R$7$ = $16821\Omega$ \\
+R$8$ = $6285\Omega$ \\
+R$9$ = $1068\Omega$ \\
+R$10$ = $783\Omega$ \\
+R$11$ = $6039\Omega$ \\
+R$12$ = $15765\Omega$ \\
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\noindent\textbf{Beregning af R$15$-R$20$ modstande for aktivering af LED-dioder} \\
-Jænvfør kravspecifikationerne i afsnit \ref{KomparatorAfs}, side \pageref{KomparatorAfs} for komparatoren skal forsyningsspændingen være $5.5$V. De anvendte LED-dioder i systemet er: to grønne L-$53$LG $5$mm (D$3$ og D$4$), to røde L-$53$LI $5$mm (D$1$ og D$6$) og to gule L-$53$LY $5$mm (D$2$ og D$5$). Disse LED-dioder kræver en minimum spænding på 2mA for at lyse og spændingsfaldet over LED-dioderne ligger maksimalt i intervallet $2.0$V til $2.2$ V (rød: $2.0$, gul: $2.1$ og grøn: $2.2$), men typisk mellem $1.7$V-$1.9$V. LED-dioderne skal derudover forsynes med $2$mA for at fungere, men kan forsynes med op til \fxnote{Tjek og 150mA er rigtigt}$150$mA, før de brændes af. LED-dioderne forsynes af en $5.5$V spændingsforsyning og tilkobles, som sagt, tilhørende modstande for bla. at undgå at LED-dioderne brænder af. Spændingsfaldet over dioderne samt den spænding LED-dioderne som minimum skal bruge for at lyse er kendte værdier, dvs. modstandene R$15$-R$20$ kan derfor findes vha. Ohms lov. Nedenstående udregning giver en værdi af modstandene, hvis spændingsforsyningen giver $5.5$V til kredsløbet og hvor der tages udgangspunkt i den minimale strøm for LED-dioderne:
+\noindent\textbf{Beregning af R$13$-R$17$ modstande for aktivering af LED-dioder} \\
+Jænvfør kravspecifikationerne i afsnit \ref{KomparatorAfs}, side \pageref{KomparatorAfs} for komparatoren skal forsyningsspændingen være $5.5$V. De anvendte LED-dioder i systemet er: en grønne L-$53$LG $5$mm (D$3$), to røde L-$53$LI $5$mm (D$1$ og D$5$) og to gule L-$53$LY $5$mm (D$2$ og D$4$). Disse LED-dioder kræver en minimum spænding på $2$mA for at lyse, men omkring $20$mA for tydeligt lys, hvilket der er ønsket jævnført \ref{visuel_feedback_krav} på side \pageref{visuel_feedback_krav}.  Spændingsfaldet over LED-dioderne ligger maksimalt i intervallet $2.0$V til $2.2$ V (rød: $2.0$, gul: $2.1$ og grøn: $2.2$), men typisk mellem $1.7$V-$1.9$V. LED-dioderne skal derudover forsynes med $2$mA for at fungere, men kan forsynes med op til \fxnote{Tjek og 150mA er rigtigt}$150$mA, før de brændes af. LED-dioderne forsynes af en $5.5$V spændingsforsyning og tilkobles, som sagt, tilhørende modstande for bla. at undgå at LED-dioderne brænder af. Spændingsfaldet over dioderne samt den spænding LED-dioderne som minimum skal bruge for at lyse er kendte værdier, dvs. modstandene R$12$-R$17$ kan derfor findes vha. Ohms lov. Nedenstående udregning giver en værdi af modstandene, hvis spændingsforsyningen giver $5.5$V til kredsløbet og hvor der tages udgangspunkt i den minimale strøm for LED-dioderne:
 
 \begin{equation}
-R = \dfrac{5.5V - 2.2V}{2mA} = 1650\Omega
+R = \dfrac{5.5V - 2.2V}{0.02A} = 165\Omega
 \end{equation}
-\noindent Dermed sættes modstandene R$15$-R$20$ alle til $1650\Omega$ for at sikre, at der er tilstrækkeligt med strøm i kredsløbet til at dioderne kan lyse, uden at de brændes af eller at batterierne drænes. Opsætningen af LED-dioderne fremgår af figur \figref{fig:komparator_visuel}.
+\noindent Dermed sættes modstandene R$12$-R$17$ alle til $165\Omega$ for at sikre, at der er tilstrækkeligt med strøm i kredsløbet til at dioderne kan lyse, uden at de brændes af eller at batterierne drænes. Opsætningen af LED-dioderne fremgår af figur \figref{fig:komparator_visuel}.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \noindent\textbf{Beregning af tærskelværdier og tilhørende R1-R5 modstande for aktivering af  vibratorerne} \\
@@ -73,7 +73,7 @@ Til simulering af den visuelle komparatorkonfiguration anvendes komparatorer af 
 	\caption{Figuren viser simuleringen af den visuelle komparatorkonfiguration. Den sorte kurve er et sinus signal, der illustrerer blokkens inputsignal. De resterende kurver er de enkelte komparatorer, som under tærskelværdien er i negativ mætning. De røde kurver symboliserer den røde diode, de gule kurver de gule dioder og de grønne kurver de grønne dioder. Når inputsignalet når de definerede tærskelværdier, vil kurverne gå i positiv mætning og LED-dioderne vil lyse. Ved vindue-komparatoren er den positive og negative mætning ikke så høj, som ved de normale komparatorer. Dette skyldes, at signalet skal passere yderligere to LED-dioder, hvilket giver et spændingsfald. Kredsløbet er simuleret i LTspice.}
 	\label{fig:komparator_visuel_simulering_samlet}
 \end{figure}
-På figur \figref{fig:komparator_visuel_simulering_samlet} fremgår det, at ved de enkelte tærskelværdier går signalet i positiv mætning, hvilket får LED-dioderne til at lyse. Mætningen er under $5.5$V som er den spænding LED-dioderne maksimalt kan forsynes med  \fxnote{Kontrollere af denne værdi (5.5) er rigtig}, men samtidig nok til at få dioderne til at lyse, hvilket krævede mellem $1.7-1.9$V og $2$mA. 
+På figur \figref{fig:komparator_visuel_simulering_samlet} fremgår det, at ved de enkelte tærskelværdier går signalet i positiv mætning, hvilket får LED-dioderne til at lyse. Mætningen er under $5.5$V som er den spænding LED-dioderne maksimalt kan forsynes med  \fxnote{Kontrollere af denne værdi (5.5) er rigtig}, men samtidig nok til at få dioderne til at lyse tydeligt, hvilket krævede mellem $1.7-1.9$V og $0.02$A. 
 
 \begin{table}[H]
 	\centering
