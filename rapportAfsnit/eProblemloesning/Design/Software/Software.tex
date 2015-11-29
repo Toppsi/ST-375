@@ -1,14 +1,19 @@
 % !TeX spellcheck = da_DK
 \subsection{Software}
-Efter konverteringen af det analoge signal til digitalt i ADC’en indsendes data til en computer. Jævnfør afsnit \ref{subsec:software}, side \pageref{subsec:software} skal patienternes data behandles i form af grafisk visualisering deres hældningsresultater, samt gemmes til senere brug og analyse. For at imødekomme disse krav, bruges en computer med software programmerne; Scopelogger og Matlab, hvor Scopelogger anvendes til at optage det  digitale signal fra NIDAQ'en og Matlab benyttes til at behandle opsamlede data. Til behandling og lagring af data udarbejdes en manual for at gøre pogrammets design brugervenligt for det fagkyndige personale, som skal bruge disse data til analyse af patienternes udvikling ift. balancefunktionen. For at programmet skal kunne fungere med en switch knap, jævnfør afsnit \ref{formål_anvendelse}, side \pageref{formål_anvendelse} skal patienternes øvelsesresultater gemmes alt efter pågældende udførte øvelse hhv. 'anatomisk_data' og 'SRT_dato'. 
-Det fagkyndige personale skal åbne scriptet 'Patient_Oevelse' i Matlab for at kunne køre computerprogrammet, der skal behandle apopleksipatienternes data fra Scopelogger. Indsamlede data navngives alt efter den pågældende øvelse, der er udført og hentes ind i Matlab. Af nedestående flowdiagram \ref{Flow_manual} fremgår computerprogrammets manual.
+Efter det digitale signal er sendt igennem USB-isolatoren, indsendes de opsamlede data til en computer. Jævnfør afsnit \ref{subsec:software}, side \pageref{subsec:software} skal patienternes data behandles i form af grafisk visualisering af deres hældningsresultater, samt gemmes til senere brug og analyse. For at imødekomme disse krav, anvendes en computer med programmerne Scopelogger og Matlab, hvor Scopelogger anvendes til at optage det digitale signal fra NIDAQ'en og Matlab benyttes til at behandle signalet. Der udarbejdes en manual til det fagkyndige personale, som omhandler anvendelsen af programmet, for at optimere brugervenligheden. 
+For at programmet skal kunne fungere med en switch knap, jævnfør afsnit \ref{formål_anvendelse}, side \pageref{formål_anvendelse} skal patienternes øvelsesresultater gemmes alt efter pågældende udførte øvelse hhv. 'anatomisk_dato' og 'SRT_dato'. 
+Det fagkyndige personale skal åbne scriptet 'Patient_Oevelse' i Matlab for at kunne køre programmet, der skal behandle apopleksipatienternes data fra Scopelogger. Indsamlede data navngives efter den pågældende øvelse og dato og hentes ind i Matlab. Af \figref{Flow_manual} fremgår computerprogrammets manual som et flowdiagram.
 
 \begin{figure}[H] 
 	\centering 
 	\includegraphics[scale=0.5]{figures/cProblemloesning/Flow_manual.PNG}
-	\caption{af flowdiagrammet fremgår computerprogrammets manual, der omhandler hvorledes det fagkyndige skal behandle og gemme apopleksiatienterne øvelsesresultater}
+	\caption{Af figuren fremgår computerprogrammets manual som et flowdiagram.}
 	\label{Flow_manual}
 \end{figure} 
+
+\subsubsection{Test}
+%Her skal det testes, hvorvidt systemet kan hvad vi beskriver det skal kunne.
+%- Opsamling af noget data, hvor vi efterfølgende tester om programmet behandler dataen som det var tænkt.
 
 
 
