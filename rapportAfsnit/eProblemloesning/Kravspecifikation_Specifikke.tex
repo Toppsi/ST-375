@@ -22,7 +22,7 @@ Forstærkningen skal gøre det nemmere at adskille det ønskede signal fra støj
 	\item Accelerometeret skal kunne måle statisk acceleration i mindst to retninger.
 	\item Accelerometeret skal kunne detektere en hældning fra $0^{\circ}$ til $\pm90^{\circ}$.
 	\item Offsetjusteringen skal centrere det målte signal omkring $0V$.
-	\item Forstærkeren skal have en indgangsimpedans på $3.68M\Omega$\fxnote{Da man ikke vil dræne blokken før for strøm. Udregnet ved 32Kohm, da indputimpedans skal være mindst $100$ gange større end den forrige bloks outputimpedans. Accelerometrets indgangsimpedans har en afvigelse på +15\%}.
+	\item Forstærkeren skal have en indgangsimpedans på $3.68M\Omega$\fxnote{Da man ikke vil dræne blokken før for strøm. Udregnet ved $32K\Omega$, da indputimpedans skal være mindst $100$ gange større end den forrige bloks outputimpedans. Accelerometrets indgangsimpedans har en afvigelse på +$15$\%}.
 	\item Forstærkningen skal være på $9.1$, som svarer til $19.1808$dB.
 	\item Outputtet fra denne blok skal være mellem $2.9817$V og -$2.9097$V.
 \end{itemize}
@@ -52,18 +52,18 @@ A_{min}=20 \cdot log_{10} \cdot (\frac{1}{5}) = -13,98 \approx -14\text{dB}
 \begin{itemize}
 	\item Filtreringsblokken skal have en spændingsforsyning på $5.5$V.
 	\item Skal kunne modtage et inputsignal på $\pm3V$.
-	\item Der ønskes en knækfrekvens i pasbåndet på 25Hz.
-	\item Der ønskes en stopbåndsfrekvens på 45Hz.
+	\item Der ønskes en knækfrekvens i pasbåndet på $25$Hz.
+	\item Der ønskes en stopbåndsfrekvens på $45$Hz.
 	\item Der ønskes maksimal fladhed på pasbåndet og stopbåndet.
-	\item Der ønskes en minimum dæmpning af stopbåndet på 14dB.
-	\item Der ønskes en maksimal dæmpnning i pasbåndet på 3dB.
+	\item Der ønskes en minimum dæmpning af stopbåndet på $14$dB.
+	\item Der ønskes en maksimal dæmpnning i pasbåndet på $3$dB.
 \end{itemize}
 \textbf{Tolerance:}
 \begin{itemize}
 	\item Der accepteres en afvigelse fra knækfrekvensen på $\pm10\%$.
 	\item Der accepteres en afvigelse fra stopbåndsfrekvensen på $\pm5\%$.
-	\item Der accepteres minimal dæmpning på 14dB af stopbåndet eller en afvigelse på $+15\%$.
-	\item Der accepteres maksimal dæmpning på 3dB af pasbåndet eller en afvigelse på $-15\%$.
+	\item Der accepteres minimal dæmpning på $14$dB af stopbåndet eller en afvigelse på $+15\%$.
+	\item Der accepteres maksimal dæmpning på $3$dB af pasbåndet eller en afvigelse på $-15\%$.
 \end{itemize}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Tilpasning}\label{Tilpasningsblok}
