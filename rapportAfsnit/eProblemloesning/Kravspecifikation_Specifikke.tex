@@ -22,17 +22,23 @@ Forstærkningen skal gøre det nemmere at adskille det ønskede signal fra støj
 	\item Accelerometeret skal kunne måle statisk acceleration i mindst to retninger.
 	\item Accelerometeret skal kunne detektere en hældning fra $0^{\circ}$ til $\pm90^{\circ}$.
 	\item Offsetjusteringen skal centrere det målte signal omkring $0V$.
-	\item Forstærkeren skal have en indgangsimpedans på $3.68M\Omega$\fxnote{Da man ikke vil dræne blokken før for strøm. Udregnet ved $32K\Omega$, da indputimpedans skal være mindst $100$ gange større end den forrige bloks outputimpedans. Accelerometrets indgangsimpedans har en afvigelse på +$15$\%}.
+	\item Offsetjusteringen skal modtage en referencespænding på $1.6325$V.
+	\item Forstærkeren skal have en indgangsimpedans på mindst $3.68M\Omega$\fxnote{Da man ikke vil dræne blokken før for strøm. Udregnet ved $32K\Omega$, da indputimpedans skal være mindst $100$ gange større end den forrige bloks outputimpedans. Accelerometrets indgangsimpedans har en afvigelse på +$15$\%}.
 	\item Forstærkningen skal være på $9.1$, som svarer til $19.1808$dB.
+	\item De benyttede modstande til designet af forstærkeren skal besidde den navngivne værdi.
 	\item Outputtet fra denne blok skal være mellem $2.9817$V og -$2.9097$V.
 \end{itemize}
 \textbf{Tolerance:}
 \begin{itemize}
+	\item Der accepteres en afvigelse i spændingsforsyning på $\pm9\%$.
+	\item Der accepteres ingen afvigelse ift. krav for accelerometerets dimension og minimum antal af akser.
 	\item Der accepteres en afvigelse i detektionen af hældningsgrad på $\pm5\%$.
 	\item Der accepteres en afvigelse af offsetjusteringen på $\pm2\%$.
+	\item Der accepteres en afvigelse i referencespændingen på $\pm0.003$V.
+	\item Der accepteres kun en indgangsimpedans i forstærkeren på mindst $3.68M\Omega$.
 	\item Der accepteres en afvigelse i forstærkningen på $\pm2\%$.
+	\item Der accepteres en afvigelse i de benyttede modstandes reelle værdi på $\pm1\%$.
 	\item Der accepteres en afvigelse ift. maksimum og minimum output fra blokken på $\pm5\%$.
-	\item Der accepteres kun en minimum indgangsimpedans på $3.68M\Omega$ 
 \end{itemize}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Filter}\label{FilterAfs}
@@ -50,8 +56,8 @@ A_{min}=20 \cdot log_{10} \cdot (\frac{1}{5}) = -13,98 \approx -14\text{dB}
 \end{equation}
 \textbf{Krav:}
 \begin{itemize}
-	\item Filtreringsblokken skal have en spændingsforsyning på $5.5$V.
-	\item Skal kunne modtage et inputsignal på $\pm3V$.
+	\item Filteret skal have en spændingsforsyning på $5.5$V.
+	\item Filteret skal kunne modtage et inputsignal på $\pm3V$.
 	\item Der ønskes en knækfrekvens i pasbåndet på $25$Hz.
 	\item Der ønskes en stopbåndsfrekvens på $45$Hz.
 	\item Der ønskes maksimal fladhed på pasbåndet og stopbåndet.
@@ -60,8 +66,11 @@ A_{min}=20 \cdot log_{10} \cdot (\frac{1}{5}) = -13,98 \approx -14\text{dB}
 \end{itemize}
 \textbf{Tolerance:}
 \begin{itemize}
+	\item Der accepteres en afvigelse i spændingsforsyning på $\pm9\%$.
+	\item Der accepteres ingen afvigelse ift. hvor stort et inputsignal filtret skal kunne modtage.
 	\item Der accepteres en afvigelse fra knækfrekvensen på $\pm10\%$.
 	\item Der accepteres en afvigelse fra stopbåndsfrekvensen på $\pm5\%$.
+	\item Der accepteres kun en maksimal fladhed på pasbåndet og stopbåndet.\item{Hvordan tjekker man, at det man har fået er det maksimale?}
 	\item Der accepteres minimal dæmpning på $14$dB af stopbåndet eller en afvigelse på $+15\%$.
 	\item Der accepteres maksimal dæmpning på $3$dB af pasbåndet eller en afvigelse på $-15\%$.
 \end{itemize}
@@ -81,27 +90,31 @@ I \eqref{TilpasEq1}, \eqref{TilpasEq2} og \eqref{TilpasEq3} er de $3V$ grænsen 
 
 \noindent\textbf{Krav:}
 \begin{itemize}
-	\item Tilpasningsblokken skal have en spændingsforsyning på $5.5$V.
-	\item Skal kunne modtage et inputsignal på $\pm3V$
-	\item Forstærkningen skal være på $3.6$, som svarer til $11.1261dB$.
+	\item Forstærkeren skal modtage en spændingsforsyning på $5.5$V.
+	\item Forstærkeren skal kunne modtage et inputsignal på $\pm3V$.
+	\item Forstærkeren skal forstærke med en faktor $3.6$, som svarer til $11.1261dB$.
+	\item De benyttede modstande til designet af forstærkeren skal besidde den navngivne værdi.
 	\item Indgangsimpedansen skal være over $3.2M\Omega$.
-	\item Output impedansen skal være under $32K\Omega$.
+	\item Outputimpedansen skal være under $32K\Omega$.
 \end{itemize}
 \noindent\textbf{Tolerance:}
 \begin{itemize}
-	\item Der accepteres kun en minimum indgangsimpedans på $3.2M\Omega$ 
-	\item Der accepteres en afvigelse i de benyttede modstandes reelle værdi på $\pm1\%$
+	\item Der accepteres en afvigelse i spændingsforsyning på $\pm9\%$.
+	\item Der accepteres ingen afvigelse ift. hvor stort et inputsignal forstærkeren skal kunne modtage.
 	\item Der accepteres en afvigelse i forstærkningen på $\pm2\%$.
+	\item Der accepteres en afvigelse i de benyttede modstandes reelle værdi på $\pm1\%$.
+	\item Der accepteres en indgangsimpedans på mindst $3.2M\Omega$.
+	\item Der accepteres en outputimpedans under $32K\Omega$.
 \end{itemize}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Komparator}\label{KomparatorAfs} 
 Blokken indeholdende komparatorer skal kunne sammenligne inputsignalet med referencespændinger og kunne modtage et signal mellem $\pm3$V. Komparatorerne skal vha. definerede tærskelværdier bestemme hvilken hældningsgrad patienten har og i hvilken retning vedkommende hælder mod. Der skal være flere tærskelværdier, så feedbacken kan gives i flere niveauer og forskellige sværhedsgrader. Dette gør systemet fleksibelt, så det kan benyttes af patienter på forskellige balanceniveauer. Tærskelværdierne er bestemt på baggrund af pilotforsøg, hvor værdierne er beregnet ved først at finde spændingen for $90^{\circ}$, som jævnført \ref{Sec:Pilotforsoeg} på side \pageref{Sec:Pilotforsoeg} er $0.3313$V for positiv retning og -$0.3233$V i negativ retning efter forstærkning på hhv. en faktor $9.1$ og derefter en faktor $3.6$. Denne værdi divideres med $90$ for at bestemme spændingen ved $\pm1^{\circ}$ og ganges herefter med hhv. $2^{\circ}$,  $8^{\circ}$, $13^{\circ}$ og $25^{\circ}$ for at bestemme spændingen ved de enkelte hældninger.\\
 \textbf{Krav:} 
 \begin{itemize}
-	\item Komparatorblokken skal have en forsyningsspænding på  $\pm5.5$V.
-	\item Skal kunne skifte mellem sværhedsgrad ved at ændre tærskelværdierne.
-	\item Skal kunne modtage et inputsignal på $\pm3$V. 
-	\item Skal ved et bestemt spændingsniveauer aktivere en diode og vibrator:
+	\item Komparatorblokken skal have en spændingsforsyningen på $\pm5.5$V.
+	\item Komparatoren skal kunne skifte mellem to sværhedsgrader ved at ændre tærskelværdierne.
+	\item Komparatoren skal kunne modtage et inputsignal på $\pm3$V. 
+	\item Komparatoren skal ved et bestemt spændingsniveauer aktivere en diode og vibrator:
 	\begin{itemize}
 		\item Grøn diode og ingen vibration: I intervallet indenfor $0.1808$V til -$0.1773$V. Svarende til $\pm2^{\circ}$.
 		\item Gul diode og let vibration: Fra niveauet $0.9648$V og -$0.9413$V. Svarende til $\pm 8^{\circ}$ eller over.
@@ -111,8 +124,10 @@ Blokken indeholdende komparatorer skal kunne sammenligne inputsignalet med refer
 \end{itemize}
 \textbf{Tolerance:}
 \begin{itemize}
+	\item Der accepteres en afvigelse i spændingsforsyningen på $\pm5\%$.
+	\item Der accepteres ikke, at komparatoren ikke kan skifte imellem to sværhedsgrader.
+	\item Der accepteres ingen afvigelse ift. hvor stort et inputsignal komparatoren skal kunne modtage.
 	\item Der accepteres en afvigelse i tærskelværdien på $\pm1\%$.
-	\item Der accepteres en afvigelse i forsyningsspændingen på $\pm5\%$.
 \end{itemize}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Visuel feedback}\label{visuel_feedback_krav}
@@ -129,8 +144,9 @@ Blokken med visuel feedback omfatter den del af systemet, der giver feedback til
 \end{itemize}
 \textbf{Tolerance:}
 \begin{itemize}
-	\item Der accepteres en afvigelse i tærskelværdien på $\pm1\%$ af LED-dioderne.
-	\item Der accepteres en afvigelse i forsyningsspændingen på $\pm5\%$.
+	\item Der accepteres en afvigelse i spændingsforsyningen på $\pm5\%$.
+	\item Der accepteres ingen afvigelse ift. aktivering af LED-dioder ved angivet spændingsniveauer i komparatoren.
+	\item Der accepteres kun tydeligt lys fra LED-dioderne.
 \end{itemize}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Somatosensorisk feedback} 

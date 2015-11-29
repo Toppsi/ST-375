@@ -3,10 +3,10 @@
 \subsubsection{Teori og design}
 I afsnit \ref{Subsec:Forstaerker}, side \pageref{Subsec:Forstaerker} er teorien samt designet af en forstærker forklaret. Da blokken tilpasning skal tilpasse det filtrerede signal til komparatoren, afgrænses måleintervallet til $\pm25^{\circ}$. Et range på $\pm90^{\circ}$ er unødvendigt ift. at vurdere hvorvidt patienten er faldet. Derfor ønskes det, at $V_{out}$ fra denne blok er $\pm3$V, når accelerometret måler $\pm25^{\circ}$. Der skal dermed ske en forstærkning med en faktor $3.6$, hvilket svarer til $11.1261$dB, som beskrevet i afsnit \ref{Tilpasningsblok} på side \pageref{Tilpasningsblok}. \\
 For at udregne modstandene er R$2$ blevet valgt til $10$K$\Omega$. Ud fra dette er R$1$ blevet bestemt ved følgende udregning:
-\begin{align}
-$3.6$ = $1$ + (\frac{R1}{10\text{K}\Omega})\\
-R1 = $26$\text{K}\Omega
-\end{align}
+\begin{equation}
+3.6 = 1 + (\frac{R1}{10\text{K}\Omega}) \\
+R1 = 26\text{K}\Omega
+\end{equation}
 
 \noindent Forstærkerens opbygning kan ses på \figref{fig:Forstaerker_faktor3}.
 \begin{figure}[H]
