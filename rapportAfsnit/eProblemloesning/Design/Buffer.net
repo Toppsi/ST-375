@@ -1,5 +1,5 @@
 * C:\Users\Cecilie\Dropbox\ST-375\rapportAfsnit\eProblemloesning\Design\Buffer.asc
-V1 Vin 0 0.8418
+V1 Vin 0 1
 V2 Vcc 0 5.5
 V3 Vdd 0 -5.5
 XU1 Vin Vout Vcc Vdd Vout TL081
