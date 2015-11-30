@@ -1,8 +1,8 @@
 % !TeX spellcheck = da_DK
 \subsection{Spændingsforsyning}
 \subsubsection{Teori og design}
-Til systemet anvendes to 9V batterier som spændingsforsyning koblet i et splitsupply, hvilket er illustreres på \figref{fig:splitsupply}. Splitsupply medvirker til at sysemet opnår et arbejdsområde fra $\pm$ 9V. Systemet opsættes så den positive pol på det ene batteri tilkobles den negative pol på det andet batteri, på denne måde opnås en jordforbindelse. Den negative pol i batteri i det første batteri anvendes som systemets negative forsyningsspænding og indikeres med $-V_{cc}$, mens det andet batteri anvendes som den positive spændingsforsyning og indikeres med $+V_{cc}$.
-Da batterierne ikke leverer den samme spænding over hele batteriernes levetid, skal batteriet skiftes ud når det ikke leverer den spænding som er nødvendig for systemet. Batteriernes levetid afhænger af hvor mange ampere systemet trækker ud. Da feedbacken kræver en spænding på xx V skal systemet minimum leverer en spænding på xx V. Derfor kræver systemt en minimal spænding på xx V.
+Til systemet anvendes to $1.5$V batterier som spændingsforsyning, der sidder i en spændingsregulator. Denne kan leverer en spænding på $\pm5.5$V og $\pm3.3$V fra to forskellige terminaler. Derudover besidder spændingsregulatoren en jordkobling, som øvrige komponenter i systemet kan kobles til. I dette projekt benyttes terminalalen med en spændingen på $\pm5.5$V. Spændingsregulatoren er designet således, at den leverer en spænding koblet i et splitsupply, hvilket er illustreres på \figref{fig:splitsupply}. Spændingsregulatorens negative spændingsforsyning kaldes $-V_{cc}$ og den positive kaldes $+V_{cc}$. \\%Den positive pol fra det ene batteri tilkobles den negative pol på det andet batteri i. Derudover dannes en fælles jordforbindelse for øvrige komponenter i systemet, som kræver en forbindelse til jord. Den negative pol i det første batteri i det første batteri anvendes som systemets negative forsyningsspænding og indikeres med $-V_{cc}$, mens det andet batteri anvendes som den positive spændingsforsyning og indikeres med $+V_{cc}$.
+Da batterierne ikke leverer den samme spænding over hele batteriernes levetid, skal batteriet skiftes ud, når de ikke leverer den nødvendige spænding til systemet. Batteriernes levetid afhænger af, hvor meget strøm systemet trækker. %Da komparatorkonfigurationen kræver den højeste spænding iblandt blokkene, skal spændingsregulatoren minimum leverer en spænding på xx V. Derfor kræver systemt en minimal spænding på xx V.
 
 \begin{figure}[H]
 \centering
@@ -10,6 +10,12 @@ Da batterierne ikke leverer den samme spænding over hele batteriernes levetid, 
 \caption{Figuren viser opsætningen af et splitsupply spændingsforsyning. Ved testning af batterierne vil $-V_{cc}$ og $+V_{cc}$ illustrerer henholdsvis den positive og negative pol på batterierne.}
 \label{fig:splitsupply}
 \end{figure}
+\subsubsection{Simulering}
+%%%%%%%%%%%% LAV EN SIMULERING
 
 \subsubsection{Implementering og test}
+Der undersøges hvorvidt spændingsregulatoren leverer en spænding på $5.5$V, jævnfør afsnit \ref{Krav_spaending_spicifikt} på side \ref{Krav_spaending_spicifikt}. Derudover testes %%%%%%%%%%%%5 SKRIV AFSNIT FÆRDIGT.
+
 Batteriernes levetid undersøges ved at teste, hvor mange ampere systemet bruger. På baggrund af dette vil informationen omkring batteriernes levetid give en estimering af, hvornår de skal udskiftes. Testningen foregår ved en serieforbindelse mellem den negative spændingsforsyning $-V_{cc}$ eller positive spændingsforsyning $+V_{cc}$ og systemet. Selve opsætningen af testen illustreres på %\figref{spaendingsforsyning}.
+
+%%%%%%%%%% TJEK ERIKAS RETTELSER TIL AFSNITTET EFTERFØLGENDE

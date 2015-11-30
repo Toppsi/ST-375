@@ -181,17 +181,18 @@ Blokken med somatosensorisk feedback omfatter også den del af systemet, der giv
 %\item Der accepteres en afvigelse i tærskelværdien på $\pm$ 2 \% af feedbacken.
 %\end{itemize}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Spændingsforsyning}
-I systemet anvendes en spændingsforsyning af batterier placeret i en spændingsreference for at levere en konstant spænding til hele kredsløbet. Der anvendes batterier for at undgå tilslutning til elnettet, hvilket gør det mere sikkert og anvendeligt for patienten. Spændingsforsyningen kan havde indflydelse på hvilket outputsignal der opnås og det er derfor vigtigt at blokkene i systemet designes efter den fastsatte spænding. \\
+\subsection{Spændingsforsyning}\label{Krav_spaending_spicifikt}
+I systemet anvendes en spændingsforsyning af to $1.5$V batterier placeret i en spændingsregulator, der skal levere en konstant spænding til hele kredsløbet. Der anvendes batterier for at undgå tilslutning til elnettet, hvilket gør det mere sikkert og anvendeligt for patienten. Spændingsforsyningen kan havde indflydelse på, hvilket outputsignal der opnås, og det er derfor vigtigt, at blokkene i systemet designes efter den fastsatte spænding. \\
 \noindent\textbf{Krav:}
 \begin{itemize}
-\item Spændingsforsyningen skal være på $5.5$V.
-\item Skal være forsyning for samtlige blokke i systemet.
-\item Spændingsforsyningen må ikke forårsage klipning af signalet.
+\item Spændingsregulatoren skal levere en spænding på mindst $5.5$V.
+\item Spændingsregulatoren skal forsyne samtlige blokke i systemet med en konstant spænding.
+\item Spændingsregulatorens forsyning må ikke forårsage klipning af signalet.
 \end{itemize}
 \noindent\textbf{Tolerance:}
 \begin{itemize}
-\item Der accepteres ingen afvigelse for spændingsreferencen.
+\item Der accepteres ikke en spænding under $5.5$V.
+\item Der accepteres ingen afvigelse for spændingsregulatorens tilkobling eller klipning af signalet.
 %\item Der accepteres ingen spænding højere end dioderne kan tåle \fxnote{måske en anden måde det kan skrives på}
 \end{itemize}
 

@@ -1,7 +1,7 @@
 % !TeX spellcheck = da_DK
 \subsection{Offsetjustering}
 \subsubsection{Teori og design} \label{Offset_Teori_Design}
-Det analoge signal fra accelerometeret har et indbygget offset, som gør, at outputtet ved $0$g påvirkning er halvdelen af accelerometerets spændingsforsyning. For at kunne forstærke signalet, der både skal indeholde positive og negative værdier, er det nødvendigt at justere offsettet. Dermed kan accelerometeret i steady state ved $0$g påvirkning have et outputsignal på $0$V. Måden hvorpå dette nye offset indføres er ved anvendelse af et differensforstærker kredsløb, som ses på \figref{fig:Differensforstaerker_generisk}. Dette kredsløb kan tage et inputsignalerne, kaldet $V_{b}$ på figuren, og fratrække et andet inputsignal, kaldet $V_{a}$ på figuren, der vil fungere som en referenceværdi.
+Det analoge signal fra accelerometeret har et indbygget offset, som gør, at outputtet ved $0$g påvirkning er halvdelen af accelerometerets spændingsforsyning. For at kunne forstærke signalet, der både skal indeholde positive og negative værdier, er det nødvendigt at justere offsettet. Dermed kan accelerometeret i steady state ved $0$g påvirkning have et outputsignal på $0$V. Måden hvorpå dette nye offset indføres er ved anvendelse af et differensforstærker kredsløb, som ses på \figref{fig:Differensforstaerker_generisk}. Dette kredsløb kan tage et inputsignal, kaldet $V_{b}$ på figuren, og fratrække et andet inputsignal, kaldet $V_{a}$ på figuren, der vil fungere som en referenceværdi. Den inverterende kanal ($+V_{in}$) har en høj indgangsimpedans på $10^{12}\Omega$, og derfor er outputimpedansen for den forrige blok ikke relevant. \cite{Corporation1995} 
 
 \begin{figure}[H]
 \centering
