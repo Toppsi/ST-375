@@ -1,0 +1,9 @@
+* C:\Users\Mathias\Desktop\ST-375\rapportAfsnit\eProblemloesning\Design\spaeningsforsyning.asc
+V1 Vcc 0 5.5
+V2 Vdd 0 -5.5
+V3 N001 0 SINE(0 4 10)
+XU4 N001 Vout Vcc Vdd Vout TL081
+.tran 01
+.lib C:\Program Files (x86)\LTC\LTspiceIV\lib\sub\TL081.MOD
+.backanno
+.end
