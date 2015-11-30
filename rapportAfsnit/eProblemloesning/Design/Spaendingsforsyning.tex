@@ -11,10 +11,15 @@ Da batterierne ikke leverer den samme spænding over hele batteriernes levetid, 
 \label{fig:splitsupply}
 \end{figure}
 \subsubsection{Simulering}
+Ved simulering af spændingsforsyningen anvendes LTspice. Der undersøges flere forskellige spændinger ved at ændre på amplituden på den sinuskurve der indsendes til den ikke inverterende, hvilket er illustreret på \ref{fig:splitsupply}. Ud fra dette afgøres det, hvorvidt spændingsregulatoren leverer en spænding på $5.5$V samt hvornår spændingen går i mætning.
+
+
 %%%%%%%%%%%% LAV EN SIMULERING
 
 \subsubsection{Implementering og test}
-Der undersøges hvorvidt spændingsregulatoren leverer en spænding på $5.5$V, jævnfør afsnit \ref{Krav_spaending_spicifikt} på side \ref{Krav_spaending_spicifikt}. Derudover testes %%%%%%%%%%%%5 SKRIV AFSNIT FÆRDIGT.
+Der undersøges hvorvidt spændingsregulatoren leverer en spænding på $5.5$V, jævnfør afsnit \ref{Krav_spaending_spicifikt} på side \ref{Krav_spaending_spicifikt}. Derudover skal der testes for hvornår spændingen går i mætning, for at undgå klipning af signalet.
+
+ %%%%%%%%%%%%5 SKRIV AFSNIT FÆRDIGT.
 
 Batteriernes levetid undersøges ved at teste, hvor mange ampere systemet bruger. På baggrund af dette vil informationen omkring batteriernes levetid give en estimering af, hvornår de skal udskiftes. Testningen foregår ved en serieforbindelse mellem den negative spændingsforsyning $-V_{cc}$ eller positive spændingsforsyning $+V_{cc}$ og systemet. Selve opsætningen af testen illustreres på %\figref{spaendingsforsyning}.
 
