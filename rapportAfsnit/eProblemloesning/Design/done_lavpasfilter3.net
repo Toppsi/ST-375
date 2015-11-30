@@ -1,7 +1,7 @@
 * C:\Users\Mathias\Desktop\ST-375\rapportAfsnit\eProblemloesning\Design\done_lavpasfilter3.asc
 V2 Vcc 0 5.5
-R2 N001 N004 7913
-R3 N005 N001 1090
+R2 N001 N004 44115
+R3 N005 N001 19000
 C3 Vout N001 470n
 C1 N003 0 100n
 R1 N003 N002 63662
