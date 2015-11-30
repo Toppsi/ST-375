@@ -1,0 +1,11 @@
+* C:\Users\User\Desktop\ST-375\rapportAfsnit\eProblemloesning\Design\Forstaerker\Forstærker - faktor 3.asc
+V1 Vin 0 1
+V2 Vcc 0 5.5
+V3 Vdd 0 -5.5
+R2 N001 0 10K
+R1 Vout N001 26K
+XU1 Vin N001 Vcc Vdd Vout TL081
+.tran 1
+.lib C:\Program Files\LTC\LTspiceIV\lib\sub\TL081.MOD
+.backanno
+.end
