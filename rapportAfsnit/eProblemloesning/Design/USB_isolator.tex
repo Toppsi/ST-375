@@ -1,24 +1,23 @@
 % !TeX spellcheck = da_DK
 \subsection{USB-isolator}
-Efter konvertering fra et analogt signal til et digitalt signal anvendes en USB-isolator til adskillelse af computeren og systemet. %samt sikre computerens forbindelse til elnettet. 
-Der anvendes USB-isolatoren USI-01, som er godkendt til brug ved sikkerhedsklassifikation BF og CE som isoleringsspænding på op til 4KV samt fungerer som en galvanisk adskillende af systemet, hvilket har til formål at overføre signal mellem to isolerede kredsløb. For yderligere sikring af computerens forbindelse til elnettet er denne ikke tilkoblet elnettet. USB-isolatoren implementeres mellem ADC'en og computeren, hvilket er illustreret på \figref{kravblok} på side \pageref{kravblok}.
-
-\subsubsection{Test}
-For at kunne teste hvorvidt kravet, jævnfør afsnit \ref{kravspecifikationer_USB} på side \pageref{kravspecifikationer_USB}, om inputspændingen er lig med outputspændingen udføres en test, hvor dette sammenlignes. Dette gøres ved at tilslutte en spændingsforsyning til NI USB-6009, som herefter tilsluttes USB-isolatoren USI-01, der tilsluttes en computer med Scopelogger og Matlab. Inputspændingen fra spændingsforsyningen sammenlignes med den målte outputspænding i Scopelogger. Derudover indsættes et oscilloskop ved inputtet fra spændingsforsyningen, som har til formål at måle den reelle spænding, der modtages fra spændingsforsyningen. 
-
-\subsubsection{Resultat fra test}
-De målte værdier fra testen af USB-isolatoren ses i \tableref{USBisolatortest}. Der ses en afvigelse i de målte værdier fra spændingsforsyningen til den målte værdi fra oscilloskop og ScopeLogger. De målte værdier fra ocilloskoppet er rent teoretisk de værdier, som spændingsforsyningen vil give som input til kredsløbet. Der er en afvigelse fra 0\% til 1,5\% ift. spændingsforsyning og ocilloskoppet, hvilket kan skyldes, at spændingsforsyningen har en tolerance ift. databladet for den enkelte spændingsforsyning. Spændingsforsyningen og Scopelogger har en afvigelse fra -0,6\% til 0,3\%. En af grundene til denne forskel kan være, at de reelle komponenter og systemet bruger en del af spændingen. Generelt varierer de anvendte instrumenter i antallet af decimaler på det visuelle skærm, hvilket ydermere kan være en faktor for at de målte værdier afviger fra det teoretiske. På baggrund af de målte værdier vurderes der at USB-isolator USI-01 overholder de krav, der blev stillet i afsnit \ref{kravspecifikationer_USB} på side \pageref{kravspecifikationer_USB}.
-
-\begin{table}[H]
-	\centering
-    \begin{tabular}{|l|l|l|}\hline
-  \textit{Input} 	&  \textit{\begin{tabular}[c]{@{}l@{}}Scope-\\logger\end{tabular}}	&\textit{\begin{tabular}[c]{@{}l@{}}\%-afvigelse for\\ spændingsforsyning\\ og oscilloskop\end{tabular}} \\ \hline
- $1.00$V    			  	& $0.9940$V       &   $0.60$\%  \\ \hline
- $2.03$V					& $2.0237$V       &   $0.31$\%  \\ \hline
- $3.03$V					& $3.0060$V       &   $0.79$\%   \\ \hline
- $4.06$V					& $4.0131$V       &   $1.16$\%   \\ \hline
- $5.06$V					& $5.0053$V       &   $1.08$\%  \\ \hline
-    \end{tabular}
-        \caption{I tabellen ses de målte værdier fra testen af USB-isolatoren.}
-        \label{USBisolatortest}
-\end{table}
+Efter konvertering fra et analogt signal til et digitalt signal af ADC'en anvendes en USB-isolator til at skabe en adskillelse imellem computeren og systemet. Dette gøres for at undgå lækstrøm fra elnettet, der kan dannes, hvis computeren kobles til strøm. Der anvendes USB-isolatoren USI-01, som er godkendt til brug ved sikkerhedsklassifikation BF og CE som isoleringsspænding. Derudover fungerer USB-isolatoren som en galvanisk adskillende af systemet, hvilket har til formål at overføre signal mellem to isolerede kredsløb. For yderligere sikring af computerens forbindelse til elnettet er denne ikke tilkoblet elnettet. USB-isolatoren implementeres mellem ADC'en og computeren, hvilket er illustreret på \figref{kravblok} på side \pageref{kravblok}. \\
+Ifølge databladet for USB-isolatoren kan den modtage op til $4$KV, hvilket gør, da den lever op til kravet beskrevet i afsnit \ref{kravspecifikationer_USB} på side \pageref{kravspecifikationer_USB}.
+%\subsubsection{Test}
+%For at kunne teste hvorvidt kravet, jævnfør afsnit \ref{kravspecifikationer_USB} på side \pageref{kravspecifikationer_USB}, om inputspændingen er lig med outputspændingen udføres en test, hvor dette sammenlignes. Dette gøres ved at tilslutte en spændingsforsyning til NI USB-6009, som herefter tilsluttes USB-isolatoren USI-01, der tilsluttes en computer med Scopelogger og Matlab. Inputspændingen fra spændingsforsyningen sammenlignes med den målte outputspænding i Scopelogger. Derudover indsættes et oscilloskop ved inputtet fra spændingsforsyningen, som har til formål at måle den reelle spænding, der modtages fra spændingsforsyningen. 
+%
+%\subsubsection{Resultat fra test}
+%De målte værdier fra testen af USB-isolatoren ses i \tableref{USBisolatortest}. Der ses en afvigelse i de målte værdier fra spændingsforsyningen til den målte værdi fra oscilloskop og ScopeLogger. De målte værdier fra ocilloskoppet er rent teoretisk de værdier, som spændingsforsyningen vil give som input til kredsløbet. Der er en afvigelse fra 0\% til 1,5\% ift. spændingsforsyning og ocilloskoppet, hvilket kan skyldes, at spændingsforsyningen har en tolerance ift. databladet for den enkelte spændingsforsyning. Spændingsforsyningen og Scopelogger har en afvigelse fra -0,6\% til 0,3\%. En af grundene til denne forskel kan være, at de reelle komponenter og systemet bruger en del af spændingen. Generelt varierer de anvendte instrumenter i antallet af decimaler på det visuelle skærm, hvilket ydermere kan være en faktor for at de målte værdier afviger fra det teoretiske. På baggrund af de målte værdier vurderes der at USB-isolator USI-01 overholder de krav, der blev stillet i afsnit \ref{kravspecifikationer_USB} på side \pageref{kravspecifikationer_USB}.
+%
+%\begin{table}[H]
+%	\centering
+%    \begin{tabular}{|l|l|l|}\hline
+%  \textit{Input} 	&  \textit{\begin{tabular}[c]{@{}l@{}}Scope-\\logger\end{tabular}}	&\textit{\begin{tabular}[c]{@{}l@{}}\%-afvigelse for\\ spændingsforsyning\\ og oscilloskop\end{tabular}} \\ \hline
+% $1.00$V    			  	& $0.9940$V       &   $0.60$\%  \\ \hline
+% $2.03$V					& $2.0237$V       &   $0.31$\%  \\ \hline
+% $3.03$V					& $3.0060$V       &   $0.79$\%   \\ \hline
+% $4.06$V					& $4.0131$V       &   $1.16$\%   \\ \hline
+% $5.06$V					& $5.0053$V       &   $1.08$\%  \\ \hline
+%    \end{tabular}
+%        \caption{I tabellen ses de målte værdier fra testen af USB-isolatoren.}
+%        \label{USBisolatortest}
+%\end{table}
