@@ -1,9 +1,0 @@
-*
-XU1 N001 Vout Vcc Vdd Vout LT1028
-V1 Vcc 0 5.5
-V2 Vdd 0 -5.5
-V3 N001 0 SINE(0 3.3 10)
-.tran 01
-.lib LTC.lib
-.backanno
-.end
