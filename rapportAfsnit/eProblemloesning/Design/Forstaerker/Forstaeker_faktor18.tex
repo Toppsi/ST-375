@@ -1,7 +1,7 @@
 % !TeX spellcheck = da_DK
 \subsection{Forstærker i opsamlingsblok}\label{Subsec:Forstaerker}
 \subsubsection{Teori og design}
-Til forstærkningen i opsamlingsblokken på \figref{kravblok} skal der benyttes en ikke-inverterende forstærker, da der ønskes, at inputtet og outputtet har samme polaritet. Ved en ikke-inverterende forstærker bliver inputtet tilkoblet direkte til den ikke-inverterende inputterminal, som har en impedans på $10^{12}\Omega$ indbygget i operationsforstærkeren. Hvis der var en lav indgangsimpedans, hvilket der kan være i den inverterende kanal, ville denne blok trække spænding fra inputsignalet, hvilket vil give store afvigelser i de efterfølgende blokke. \\
+Til forstærkningen i opsamlingsblokken på \figref{kravblok} skal der benyttes en ikke-inverterende forstærker, da der ønskes, at inputtet og outputtet har samme polaritet. Ved en ikke-inverterende forstærker bliver inputtet tilkoblet direkte til den ikke-inverterende inputterminal, som har en impedans på $10^{12}\Omega$ indbygget i operationsforstærkeren. Hvis der var en lav indgangsimpedans, hvilket der kan være i den inverterende kanal grundet designet, ville denne blok trække spænding fra inputsignalet, hvilket vil give store afvigelser i de efterfølgende blokke. \\
 Kredsløbet består af en operationsforstærker kaldet TL081, som sidder i et closed-loop med modstandene R$1$ og R$2$, der udgør en spændingsdeler. Dette ses på \figref{fig:Forstaerker}.
 \begin{figure}[H]
 \centering
@@ -10,7 +10,7 @@ Kredsløbet består af en operationsforstærker kaldet TL081, som sidder i et cl
 \label{fig:Forstaerker}
 \end{figure} 
 
-\noindent Der er jævnfør afsnit \ref{OpsamlingsAfs} på side \pageref{OpsamlingsAfs} bestemt, at forstærkningen skal være en faktor $9.1$, hvilket svarer til $19.1808$dB. For at udregne R$1$ er R$2$ modstanden blevet valgt til $10$K$\Omega$. Ud fra dette er R$1$ blevet bestemt ved følgende udregning:
+\noindent Der er jævnfør afsnit \ref{OpsamlingsAfs} på side \pageref{OpsamlingsAfs} bestemt, at forstærkningen skal være en faktor $9.1$, hvilket svarer til $19.1808$dB. For at udregne R$1$ er R$2$ modstanden blevet valgt til $10$K$\Omega$. \cite{Nilsson2011} Ud fra dette er R$1$ blevet bestemt ved følgende udregning:
 \begin{align}
 9 = 1 + (\frac{R1}{10\text{K}\Omega})\\
 R1 = 81\text{K}\Omega
@@ -20,7 +20,7 @@ R1 = 81\text{K}\Omega
 \begin{figure}[H]
 \centering
 \includegraphics[scale=0.3]{figures/cProblemloesning/Forstaerker_faktor18.PNG}
-\caption{Kredsløbet for en ikke-inverterende forstærker med to modstande, R$1$ og R$2$, som med værdierne $10$K$\Omega$ og $81$K$\Omega$ giver en forstærkning med en faktor $9.1$.}
+\caption{Kredsløbet for en ikke-inverterende forstærker med to modstande, R$1$ og R$2$, som med værdierne $81$K$\Omega$ og $10$K$\Omega$ giver en forstærkning med en faktor $9.1$.}
 \label{fig:Forstaerker_faktor18}
 \end{figure} 
 
@@ -30,11 +30,11 @@ Der undersøges i to simuleringer, om forstærkeren virker ved det laveste input
 \begin{figure}[H]
 \centering
 \includegraphics[scale=0.3]{figures/cProblemloesning/Forstaerker_faktor18_simulering.PNG}
-\caption{På figuren ses en simulering af en ikke-inverterende forstærker, hvor der sker en forstærkning med en faktor $9.1$. Inputtet, $V_{in}$, er $0.3313$V, som bliver forstærket $9.1$ gange og derved giver ca. $3.0147$V i outputtet, $V_{out}$.}
+\caption{På figuren ses en simulering af en ikke-inverterende forstærker, hvor der sker en forstærkning med en faktor $9.1$. Inputtet, $V_{in}$, er $0.3313$V, som bliver forstærket $9.1$ gange og derved giver ca. $3$V i outputtet, $V_{out}$.}
 \label{fig:Forstaerker_faktor18_simulering}
 \end{figure}
 
-Der kan ses på \figref{fig:Forstaerker_faktor18_simulering}, at det forstærkede signal, kaldet $V_{out}$, er ca. $3.0147$V, hvilket er $9.1$ gange større end $V_{in}$, som i simuleringen er sat til $0.3313$V. Derved er der sket den ønskede forstærkning som forventet, da simuleringen er med ideelle komponenter. Derfor har de enkelte komponenter i denne simulering en lav tolerance, sammenlignet med komponenterne i et reelt kredsløb. \\
+Der kan ses på \figref{fig:Forstaerker_faktor18_simulering}, at det forstærkede signal, kaldet $V_{out}$, er ca. $3$V, hvilket er ca. $9.1$ gange større end $V_{in}$, som i simuleringen er sat til $0.3313$V. Derved er der sket den ønskede forstærkning som forventet, da simuleringen er med ideelle komponenter. Derfor har de enkelte komponenter i denne simulering en lav tolerance, sammenlignet med komponenterne i et reelt kredsløb. \\
 Resultaterne af de to simuleringer ses i \tableref{tab:forstarker18_sim}
 \begin{table}[H]
 	\centering
@@ -51,7 +51,7 @@ Resultaterne af de to simuleringer ses i \tableref{tab:forstarker18_sim}
 \noindent Der ses på afvigelserne, at der arbejdes med ideelle komponenter, da der er en meget lav afvigelse i outputtet ift. det forventede output. Derved fungerer kredsløbet teoretisk og kan implementeres.
 
 \subsubsection{Implementering og test}
-Der ses på \figref{fig:Forstaerker_faktor18}, at der skal benyttes to modstande på $10$K$\Omega$ og $81$K$\Omega$ til opbygningen af forstærkeren. Reelt findes der ikke en modstand på $81$K$\Omega$, hvorfor der istedet benyttes $82$K$\Omega$. Dette giver teoretisk en forskel på $1.235$\% i modstanden. Dette er det tætteste man kan komme på $81$K$\Omega$. Der kunne også benyttes en $150$K$\Omega$- og $180$K$\Omega$ modstand i parallel forbindelse, hvilket vil give $1.01$\% afvigelse. Disse komponenter vil også have afvigelser, hvorved den samlede procentvise afvigelse vil forøges. De to modstande blev målt inden testen, hvilket fremgår i \tableref{Tab:modstand_faktor18}.
+Ifølge det valgte design skal der benyttes to modstande på $10$K$\Omega$ og $81$K$\Omega$ til opbygningen af forstærkeren. Reelt findes der ikke en modstand på $81$K$\Omega$, hvorfor der istedet benyttes $82$K$\Omega$. Dette giver teoretisk en forskel på $1.235$\% i modstanden. Dette er det tætteste man kan komme på $81$K$\Omega$. Der kunne også benyttes en $150$K$\Omega$- og $180$K$\Omega$ modstand i parallel forbindelse, hvilket vil give $1.01$\% afvigelse. Disse komponenter vil også have afvigelser, hvorved den samlede procentvise afvigelse vil forøges. De to modstande blev målt inden testen, hvilket fremgår i \tableref{Tab:modstand_faktor18}.
 \begin{table}[H]
 	\centering
 	\begin{tabular}{|l|l|l|}
