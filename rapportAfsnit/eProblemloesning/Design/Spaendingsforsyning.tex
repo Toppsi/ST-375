@@ -7,12 +7,18 @@ Da batterierne ikke leverer den samme spænding over hele batteriernes levetid, 
 \begin{figure}[H]
 \centering
 \includegraphics[scale=0.5]{figures/cProblemloesning/Splitsupply.PNG}
-\caption{Figuren viser opsætningen af et splitsupply spændingsforsyning. Ved testning af batterierne vil $-V_{cc}$ og $+V_{cc}$ illustrerer henholdsvis den positive og negative pol på batterierne.}
+\caption{Figuren viser opsætningen af et splitsupply spændingsforsyning. Ved testning af batterierne vil $-V_{cc}$ og $+V_{cc}$ illustrerer hhv. den positive og negative pol på batterierne.}
 \label{fig:splitsupply}
 \end{figure}
 \subsubsection{Simulering}
-Ved simulering af spændingsforsyningen anvendes LTspice. Der undersøges flere forskellige spændinger ved at ændre på amplituden på den sinuskurve der indsendes til den ikke inverterende, hvilket er illustreret på \ref{fig:splitsupply}. Ud fra dette afgøres det, hvorvidt spændingsregulatoren leverer en spænding på $5.5$V samt hvornår spændingen går i mætning.
-
+Ved simulering af spændingsforsyningen anvendes LTspice. Der undersøges flere forskellige spændinger ved at ændre på amplituden på sinuskurven der indsendes til den ikke inverterende, hvilket er illustreret på \ref{fig:spaendingsforsyning_LTspice}. Ud fra dette afgøres det, hvorvidt spændingsregulatoren leverer en spænding på $5.5$V samt hvornår spændingen går i mætning. 
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.5]{figures/cProblemloesning/Spaendingsforsyning_LTspice.PNG}
+\caption{Figuren viser opsætningen af simuleringen af spændingsforsyning. Der ændres på amplituden på sinussignalet ved de forskellige målinger.}
+\label{fig:splitsupply}
+\end{figure}
+Der indsendes en spænding på hhv. $3.3$V og $5.5$V, som er den spænding som spændingsregulatoren kan levere. Derudover indsendes der en 
 
 %%%%%%%%%%%% LAV EN SIMULERING
 
