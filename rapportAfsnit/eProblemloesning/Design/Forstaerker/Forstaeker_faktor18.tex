@@ -1,7 +1,7 @@
 % !TeX spellcheck = da_DK
 \subsection{Forstærker i opsamlingsblok}\label{Subsec:Forstaerker}
 \subsubsection{Teori og design}
-Til forstærkningen i opsamlingsblokken på \figref{kravblok} skal der benyttes en ikke-inverterende forstærker, da der ønskes, at inputtet og outputtet har samme polaritet. Ved en ikke-inverterende forstærker bliver inputtet tilkoblet direkte til den ikke-inverterende inputterminal, hvilket vil give en høj inputimpedansen, da der kigges direkte ind i operationsforstærkeren. Hvis der var en lav indgangsimpedans, ville denne blok trække spænding fra inputsignalet, hvilket vil give store afvigelser i de efterfølgende blokke. \\
+Til forstærkningen i opsamlingsblokken på \figref{kravblok} skal der benyttes en ikke-inverterende forstærker, da der ønskes, at inputtet og outputtet har samme polaritet. Ved en ikke-inverterende forstærker bliver inputtet tilkoblet direkte til den ikke-inverterende inputterminal, som har en impedans på $10^{12}\Omega$ indbygget i operationsforstærkeren. Hvis der var en lav indgangsimpedans, hvilket der kan være i den inverterende kanal, ville denne blok trække spænding fra inputsignalet, hvilket vil give store afvigelser i de efterfølgende blokke. \\
 Kredsløbet består af en operationsforstærker kaldet TL081, som sidder i et closed-loop med modstandene R$1$ og R$2$, der udgør en spændingsdeler. Dette ses på \figref{fig:Forstaerker}.
 \begin{figure}[H]
 \centering
