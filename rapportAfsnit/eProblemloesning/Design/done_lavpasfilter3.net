@@ -1,10 +1,10 @@
-* C:\Users\Nikolineeeee\Documents\ST-375\rapportAfsnit\eProblemloesning\Design\done_lavpasfilter3.asc
+* C:\Users\Mathias\Desktop\ST-375\rapportAfsnit\eProblemloesning\Design\done_lavpasfilter3.asc
 V2 Vcc 0 5.5
-R2 N001 N004 18836.04
-R3 N005 N001 44825.94
-C3 Vout N001 480n
+R2 N001 N004 7913
+R3 N005 N001 1090
+C3 Vout N001 470n
 C1 N003 0 100n
-R1 N003 N002 63661.98
+R1 N003 N002 63662
 C2 0 N005 100n
 V1 N002 0 AC 1
 XU1 N003 N004 Vcc Vdd N004 TL081
