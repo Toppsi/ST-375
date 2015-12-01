@@ -18,8 +18,8 @@ figure
 semilogx(x,B,A(index),Y_point,'o',A(indexB),Y_point1,'o')
 xlabel('Frekvens (Hz)')
 ylabel('Forstærkning i dB')
-str1 = '(25 Hz, 2.7490 dB)';
+str1 = '(25 Hz, 2.7360 dB)';
 text(A(index),Y_point, str1,'HorizontalAlignment','right');
-str2 = '(45 Hz, 14.8910 dB)';
+str2 = '(45 Hz, 14.8480 dB)';
 text(A(indexB),Y_point1,str2,'HorizontalAlignment','right');
 
