@@ -112,23 +112,23 @@ For at udføre en simulering af 3. ordens lavpasfilteret, foretages en AC-analys
 	\centering
 	\includegraphics[scale=0.4]{figures/cProblemloesning/Lavpasfiltergraf_LTspice1.PNG}
 	\caption{Af figuren fremgår en illustration på et bodeplot, der viser 3. ordens filterets frekvensindhold målt i Hz over dæmpningen målt i dB. Lavpasfilteret er simuleret i LTspice.}
-	\label{fig:lavpasfilter_LTspice}
+	\label{fig:lavpasfiltergraf_LTspice1}
 \end{figure}
 \noindent Af bodeplottet fremgår det, at det simulerede filter har en maksimal amplitude i db på $-3.012$ ved en knækfrekvens på $25$Hz, hvilket ikke overholder kravspecifikationerne i afsnit \ref{FilterAfs}, side \pageref{FilterAfs}. Grundet den lave afvigelse accepteres afvigelsen i midlertidigt og der udføres derfor endnu en simulering af filteret med de reelle modstande, der kan benyttes under implementeringen. Der aflæses, at der ved en stopbåndsfrekvens på $45$Hz er amplituden i db på $-15.443$. Dette overholder projektets opstillede krav for filterkonfigurationen ved en minimum dæmpning på $14$ dB i stopbåndsfrekvensen. Filterkonfigurationen med reelle modstande fremgår af nedenstående \figref{Sim_reel_modstande}. Reelt findes de udregnede modstande ikke, hvorfor der benyttes de modstande der kommer tættest på den teoretiske værdi. 
 
-%\begin{figure}[H]
-%	\centering
-%	\includegraphics[scale=0.4]{figures/cProblemloesning/Sim_reel_modstande.PNG}
-%	\caption{Af figuren fremgår et 3. ordens filter med reelle modstande, hvor R$1$ er parallel med $68$K $\Omega$ og $1$M $\Omega$, R$2$ er er parallel med $47$K $\Omega$ og $680$K $\Omega$ og R$3$ er parallel med to $32$K $\Omega$ modstande.}
-%	\label{fig:Sim_reel_modstande}
-%\end{figure}
-%
-%\begin{figure}[H]
-%	\centering
-%	\includegraphics[scale=0.4]{figures/cProblemloesning/Sim_reel_graf.PNG}
-%	\caption{Af figuren fremgår en illustration af et bodeplot, der viser 3. ordens filterets frekvensindhold målt i Hz over dæmpningen målt i dB med reelle modstande. Lavpasfilteret er simuleret i LTspice.}
-%	\label{fig:Sim_reel_graf}
-%\end{figure}
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=0.4]{figures/cProblemloesning/Sim_reel_modstande.PNG}
+	\caption{Af figuren fremgår et 3. ordens filter med reelle modstande, hvor R$1$ er parallel med $68$K $\Omega$ og $1$M $\Omega$, R$2$ er er parallel med $47$K $\Omega$ og $680$K $\Omega$ og R$3$ er parallel med to $32$K $\Omega$ modstande.}
+	\label{fig:Sim_reel_modstande}
+\end{figure}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=0.4]{figures/cProblemloesning/Sim_reel_graf.PNG}
+	\caption{Af figuren fremgår en illustration af et bodeplot, der viser 3. ordens filterets frekvensindhold målt i Hz over dæmpningen målt i dB med reelle modstande. Lavpasfilteret er simuleret i LTspice.}
+	\label{fig:Sim_reel_graf}
+\end{figure}
 
 \noindent af bodeplottet det, at det simulerede filter med reelle værdier har en maksimal amplitude i dB $-2.985$ ved en knækfrekvens på $25$Hz, hvilket overholder kravspecifikationerne i afsnit \ref{FilterAfs}, side \pageref{FilterAfs}. Der aflæses, at ved stopbåndsfrekvensen på $45$Hz er amplituden i db $-15.389$, hvilket fortsat er acceptabelt ift. kravspecifikationerne for filterkonfigurationen. 
 
