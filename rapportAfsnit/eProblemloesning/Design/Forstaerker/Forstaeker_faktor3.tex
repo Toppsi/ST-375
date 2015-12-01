@@ -32,7 +32,7 @@ Forstærkeren testes i fire simuleringer for at undersøge, om den opfylder de o
 		\caption{I tabellen ses resultaterne af de fire simuleringer.}
 		\label{tab:forstarker3_simT}
 \end{table}
-Der ses i \tableref{tab:forstarker3_simT} , at der ingen afvigelse er i forstærkningen. Kredsløbet fungerer rent teoretisk med ideelle komponenter, som bliver brugt i LTspice. På \figref{fig:faktor3_simulering} ses simuleringen af et inputsignal på $0.8325$V, som ideelt vil komme fra filtreringsblokken, hvis accelerometret hælder i $25^{\circ}$.
+\indent Der ses i \tableref{tab:forstarker3_simT}, at der er en lav afvigelse er i forstærkningen, men dette lægger inde for referencerne. Kredsløbet fungerer rent teoretisk med ideelle komponenter, som bliver brugt i LTspice. På \figref{fig:faktor3_simulering} ses simuleringen af et inputsignal på $0.8325$V, som ideelt vil komme fra filtreringsblokken, hvis accelerometret hælder i $25^{\circ}$.
 
 \begin{figure}[H]
 	\centering
@@ -43,7 +43,7 @@ Der ses i \tableref{tab:forstarker3_simT} , at der ingen afvigelse er i forstær
 \noindent Der ses på afvigelserne, at der arbejdes med ideelle komponenter. Det er herved bevist, at kredsløbet fungerer teoretisk og kan derfor implementeres.
 
 \subsubsection{Implementering og test}
-På \figref{fig:Forstaerker_faktor3} kan der ses, at der skal benyttes to modstande på $10$K$\Omega$ og $26$K$\Omega$ til opbygningen af forstærkeren. Reelt findes der dog ikke en $26$K$\Omega$, hvorfor der istedet benyttes $27$K$\Omega$- og $680$K$\Omega$ modstande i parallel forbindelse, hvilket teoretisk vil give en $0.12$\% afvigelse fra en ideelt $26$K$\Omega$ modstander. Disse tre modstande blev målt inden testen, hvilket fremgår i \tableref{Tab:modstand_faktor18}.
+På \figref{fig:Forstaerker_faktor3} kan der ses, at der skal benyttes to modstande på $10$K$\Omega$ og $26$K$\Omega$ til opbygningen af forstærkeren. Reelt findes der dog ikke en $26$K$\Omega$, hvorfor der istedet benyttes $27$K$\Omega$- og $680$K$\Omega$ modstande i parallel forbindelse, hvilket teoretisk vil give en $0.12$\% afvigelse fra en ideelt $26$K$\Omega$ modstander. Disse tre modstande blev målt inden implementering, hvilket fremgår i \tableref{Tab:modstand_faktor18}.
 \begin{table}[H]
 	\centering
 	\begin{tabular}{|l|l|l|}
