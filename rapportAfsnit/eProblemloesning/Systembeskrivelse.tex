@@ -3,7 +3,7 @@
 Dette afsnit indeholder en beskrivelse af det system, der skal kunne anvendes af apopleksipatienter som et selvstændigt træningsapparat i rehabiliteringen af balanceproblemer. Systembeskrivelsen indeholder målgruppen for designet, samt hvilket formål og anvendelse det har. Ud fra disse faktorer er systemet blevet designet og illustreret i et blokdiagram. 
 
 \subsection{Systemets bruger}
-Systemet udvikles til apopleksipatienter med balanceproblemer mhp. selvtræning af balance i rehabiliteringsfasen i fase $3$ og $4$ (se afsnit \ref{Faser} på side \pageref{Faser}). Systemet skal være let anvendeligt, da det udvikles til anvendelse i hjemmet af patienterne selv. Systemets design skal altså være enkelt, så der ikke skabes forvirring blandt patienterne ift. systemets funktioner. Fagkyndigt personale, såsom fysioterapeuter og læger, skal kunne instruere patienten i brugen af systemet samt følge med i udviklingen, som patienten gennemgår. Det skal derfor være muligt for det fagkyndige personale at anvende systemet og aflæse data herfra. 
+Systemet udvikles til apopleksipatienter med balanceproblemer mhp. selvtræning af balance i rehabiliteringsfasen i fase $3$ og $4$ i afsnit \ref{Faser} på side \pageref{Faser}. Systemet skal være let anvendeligt, da det udvikles til anvendelse i hjemmet af patienterne selv. Systemets design skal altså være enkelt, så der ikke skabes forvirring blandt patienterne ift. systemets funktioner. Fagkyndigt personale, såsom fysioterapeuter og læger, skal kunne instruere patienten i brugen af systemet samt følge med i udviklingen, som patienten gennemgår. Det skal derfor være muligt for det fagkyndige personale at anvende systemet og aflæse data herfra. 
 %Dette gøres ved at have et analogt og digitalt output, hvor den digitale del henvender sig til det fagkyndige personale i form af grafer, mens den analoge del henvender sig til apopleksipatienterne. \fxnote{Erikas kommentar: relevans ift. analogt og digitalt output? Tekniske detaljer! Er det vigtigt, at det er et analog output eller at det output indeholder specifik information?}   
 
 \subsection{Systemets formål og anvendelse}\label{formål_anvendelse}
@@ -19,17 +19,17 @@ Det er på baggrund af afsnit \ref{MekBioFeed}, side \pageref{MekBioFeed} valgt,
 For at øge øvelsernes sværhedsgrad yderligere kan den visuelle sans udelukkes. Patienten skal under øvelsen forsøge at holde balancen så længe som muligt uden at bevæge sig ud i en risikozonerne. Hvis patienten kommer ud i en risikozone, vil dette blive markeret ved lys i dioderne samt vibration. Træningsøvelsen kan gentages efter behov. Ved at tage flere målinger igennem rehabiliteringsforløbet vil det forventes, at der sker en fremgang ift. tiden, hvori balancen kan opretholdes uden at patienten bevæger sig ud i risikozonerne. 
 
 \subsection{Accelerometer}\label{Subsec:AccTeori}
-Der er valgt et accelerometer til måling af det biologiske signal, som der skal gives feedback på. Accelerometeret ADXL335, som ses på \figref{ADXL335} er en treakset sensor, som kan anvendes til måling af statisk balance. Accelerometeret har en single-supply spændingsforsyning, der skal være mellem 1.8 - 3.6V, da dette er accelerometerets driftsspændings interval. På dette accelerometer er der tilkoblet en regulator, hvilket forhindrer at spændingsforsyningen kan supplere accelerometret med mere end 3.3 V.  Arbejdsområdet ligger mellem $\pm$ 3.6g, og outputtet fra accelerometeret er maksimalt på $\pm$ 1.188 V ift. accelerometerets indbyggede offset. Offsettet varierer efter spændingsforsyningen men ligger ved 3V forsyning på 1500 mV og beregnes som $Off = Vs/2$. Båndbredden for X og Y-akserne ligger mellem 0.5 til 1600Hz og for Z-aksen mellem 0.5 til 550Hz. Støjen fra Xout og Yout ligger normalt på 150 $\mu g/\sqrt{Hz * rms}$\fxnote{Ret evt. denne enhed - erikas rettelser}, mens det for Zout ligger på 300 $\mu g/\sqrt{Hz * rms}$. Sensitiviteten afhænger, ligesom offsettet, af spændingsforsyningen, da accelerometeret er ratiometrisk\fxnote{NTK: Ratiometrisk vil sige, at output er direkte proportionelt med input.} og ligger ved 3V forsyning mellem 270 og 330 mV/g. Outputsignalet er en analog spænding der er proportionel med accelerationen. Accelerometerets outputimpedans er $32K\Omega$ med en afvigelse på $\pm15\%$ \cite{Devices2009} %Outputtet ligger normalt ved -1.08g i X-aksen og  1.08g Y-aksen og 1.83 g ved Z-aksen. 
+Der er valgt et accelerometer til måling af det biologiske signal, som der skal gives feedback på. Accelerometeret ADXL335, som ses på \figref{ADXL335} er en treakset sensor, som kan anvendes til måling af statisk balance. Accelerometeret har en single-supply spændingsforsyning, der skal være mellem $1.8$ - $3.6$V, da dette er accelerometerets driftsspændings interval. På dette accelerometer er der tilkoblet en regulator, hvilket forhindrer at spændingsforsyningen kan supplere accelerometret med mere end $3.3$V.  Arbejdsområdet ligger mellem $\pm3.6$g, og outputtet fra accelerometeret er maksimalt på $\pm1.188$V ift. accelerometerets indbyggede offset. Offsettet varierer efter spændingsforsyningen men ligger ved $3$V forsyning på $1500$mV og beregnes som $Off = Vs/2$. Båndbredden for X og Y-akserne ligger mellem $0.5$ til $1600$Hz og for Z-aksen mellem $0.5$ til $550$Hz. Støjen fra Xout og Yout ligger normalt på $150\mu g/\sqrt{Hz * rms}$\fxnote{Ret evt. denne enhed - erikas rettelser}, mens det for Zout ligger på $300\mu g/\sqrt{Hz * rms}$. Sensitiviteten afhænger, ligesom offsettet, af spændingsforsyningen, da accelerometeret er ratiometrisk\fxnote{NTK: Ratiometrisk vil sige, at output er direkte proportionelt med input.} og ligger ved $3$V forsyning mellem $270$ og $330$mV/g. Outputsignalet er en analog spænding der er proportionel med accelerationen. Accelerometerets outputimpedans er $32K\Omega$ med en afvigelse på $\pm15\%$ \cite{Devices2009} %Outputtet ligger normalt ved -1.08g i X-aksen og  1.08g Y-aksen og 1.83 g ved Z-aksen. 
 
 \begin{figure}[H]
 	\centering 
-	\includegraphics[scale=0.9]{figures/cProblemloesning/ADXL335.JPG}
-	\caption{Accelerometeret ADXL335\fxnote{Skriv en bedre figurtekst}. \cite{Devices2009}}
+	\includegraphics[scale=0.5]{figures/cProblemloesning/ADXL335_2.JPG}
+	\caption{På figuren ses accelerometeret af typen ADXL335 i forskellige stillinger. Til venstre på figuren ses accelerometerets pin konfiguration og funktions beskrivelse. Til højre ses, hvordan accelerometret skal placeres for forskellig g påvirkning. \textit{(Revideret)} \cite{Devices2009}}
 	\label{ADXL335}
 \end{figure}
 
-Når accelerometeret hældes til siden, vil der ske en acceleration ift. tyngdekraften i en given retning og dermed et udslag fra referencepunktet, som er ved en hældning på 0$^{\circ}$. Hvis accelerometeret f.eks. stilles på højkant, som det ses på \figref{ADXL335}, vil x aksen blive påvirket med -1 g.\cite{Devices2009} \\
-Sammenhængen mellem de enkelte parametre kan udtrykkes ved følgende ligninger:\\ 
+Når accelerometeret hældes til siden, vil der ske en acceleration ift. tyngdekraften i en given retning og dermed et udslag fra referencepunktet, som er ved en hældning på 0$^{\circ}$. Hvis accelerometeret f.eks. stilles på højkant, som det ses til højre på \figref{ADXL335} i stilling $1$, vil x aksen blive påvirket med $-1$g.\cite{Devices2009} \\
+Sammenhængen mellem de enkelte parametre kan udtrykkes ved følgende ligninger: 
 \begin{align}
 	V_{out} = V_{offset} + sensitiviteten * tyngdekraften * \sin(vinklen) \\
 	V_{out} = V_{offset} + \frac{\Delta V}{\Delta g} * g * \sin \Theta
@@ -51,17 +51,16 @@ Herudfra er det muligt at isolere og udregne de ukendte parametre, altså kan pa
 	\item Systemet skal kunne give et digitalt outout, så fagkyndigt personale kan behandle og gemme patienternes data i et program.
 \end{itemize}
 
-
 \subsection{Systemets opbygning}\label{ref:blokdiagram}
 Systemets opbygning fremgår af \figref{kravblok}.
 
 \begin{figure}[H]
 	\centering
 	\includegraphics[scale=0.5]{figures/cProblemloesning/blokdiagram.PNG}
-	\caption{Figuren viser de enkelte blokke, som systemet skal indeholde.}
+	\caption{På figuren ses de enkelte blokke, som systemet skal indeholde.}
 	\label{kravblok}
 \end{figure}
-Det biologiske signal, der opsamles med accelerometeret, skal som det første centreres omkring $0$V ved en offsetjustering og efterfølgende forstærkes. Herefter skal signalet filtreres for at frasortere uønskede frekvenser, der ligger uden for det ønskede signals spektrum. Herefter deler systemet sig i en analog og digital del. I den analoge del følger en tilpasning af signalet i form af en forstærkning. Herefter kommer signalet over i en komparatordel, hvor det bliver sammenlignet med nogle definerede tærskelværdier, der hver især er koblet til en bestemt type feedback, der skal udløses hvis tærskelværdien overskrides. 
+Det biologiske signal, der opsamles med accelerometeret, skal som det første centreres omkring $0$V ved en offsetjustering og efterfølgende forstærkes. Herefter skal signalet filtreres for at frasortere uønskede frekvenser, der ligger uden for det ønskede signals spektrum. Herefter deler systemet sig i en analog og digital del. I den analoge del følger en tilpasning af signalet i form af en forstærkning. Herefter kommer signalet over i en komparatordel, hvor det bliver sammenlignet med nogle definerede tærskelværdier, der hver især er koblet til en bestemt type feedback, der skal udløses hvis tærskelværdien overskrides. \\
 I den digitale del af systemet, bliver signalet ledt ind i en ADC. Denne vil omdanne det analoge biologiske signal til et digitalt signal. Det digitale signal bliver herefter ledt ind i en USB-isolator, så der ikke opstår lækstrømme og for at øge patientens sikkerhed. Til sidst vil det digitale signal overføres til en computer, hvor det efterfølgende kan gemmes. Det bliver herved muligt at databehandle signalet og opstille det som en graf eller lignende. \\
 Systemet har altså både et output henvendt til patienterne og det fagkyndige personale. Patienternes output er den feedback, der oplyser om deres hældningsgrad. Programmet, der skal behandle og gemme patienternes øvelsesresultater, er output til det fagkyndige personale.
 

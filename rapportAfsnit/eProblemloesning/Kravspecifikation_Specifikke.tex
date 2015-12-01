@@ -4,8 +4,8 @@ I praksis er det ikke muligt at have ideelle komponenter \cite{Nilsson2011}. Der
 
 \subsection{Opsamling}\label{OpsamlingsAfs}
 Blokken opsamling omfatter accelerometeret, offsetjustering og forstærkning. Accelerometeret skal have en sådan størrelse, at det kan påsættes en patient uden at give fysiske begrænsninger. Accelerometeret skal kunne måle en statisk acceleration i mindst to retninger, da der måles i det frontale plan til hhv. højre og venstre side. Herved kan det bestemmes, hvilken retning patienterne hælder mod i stående position. Det skal kunne detektere en hældningsgrad op til $\pm90^{\circ}$, da en forsøgsperson ikke kan komme over denne hældningsgrad. \\
-Offsetjusteringen skal centrere det målte signal omkring $0V$, da accelerometeret typisk måler $1.6325V$ ved $0$g påvirkning af den pågældende akse ifølge pilotforsøget. Derfor skal der trækkes $1.6325$V fra alle inputs fra accelerometret. Justeringen af offset skal forekomme inden forstærkning således, at der ikke sker en forstærkning og dermed forskydning af offsetværdien, når accelerometret måler i positiv og negativ retning, hvorved g påvirkningen ændres. Ved justering af offsettet må der ikke ske en ændring af amplitudens peak-to-peak og frekvensen. \\
-Forstærkningen skal gøre det nemmere at adskille det ønskede signal fra støj i den efterfølgende filtreringsblok. For at forstærkningskredsløbet ikke dræner strømforsyningen, skal inputimpedansen til forstærkeren være mindst $100$ gange større end outputimpedansen i accelerometeret som kan ses i afsnit \ref{Subsec:AccTeori} på side \pageref{Subsec:AccTeori}. Signalet skal efter forstærkningen ligge indenfor arbejdsområdet $\pm3V$ og der ønskes derfor størst mulige forstærkning. Den højeste måling ved $\pm90^{\circ}$ var ifølge pilotforsøget efter offsetjusteringen $0.3313$V. Derfor kan forstærkningen udregnes således:
+Offsetjusteringen skal centrere det målte signal omkring $0$V, da accelerometeret typisk måler $1.6325$V ved $0$g påvirkning af den pågældende akse ifølge pilotforsøget. Derfor skal der trækkes $1.6325$V fra alle inputs fra accelerometret. Justeringen af offset skal forekomme inden forstærkning således, at der ikke sker en forstærkning og dermed forskydning af offsetværdien, når accelerometret måler i positiv og negativ retning, hvorved g påvirkningen ændres. Ved justering af offsettet må der ikke ske en ændring af amplitudens peak-to-peak og frekvensen. \\
+Forstærkningen skal gøre det nemmere at adskille det ønskede signal fra støj i den efterfølgende filtreringsblok. For at forstærkningskredsløbet ikke dræner strømforsyningen, skal inputimpedansen til forstærkeren være mindst $100$ gange større end outputimpedansen i accelerometeret som kan ses i afsnit \ref{Subsec:AccTeori} på side \pageref{Subsec:AccTeori}. Signalet skal efter forstærkningen ligge indenfor arbejdsområdet $\pm3$V og der ønskes derfor størst mulige forstærkning. Den højeste måling ved $\pm90^{\circ}$ var ifølge pilotforsøget efter offsetjusteringen $0.3313$V. Derfor kan forstærkningen udregnes således:
 \begin{equation}
 \dfrac{3\text{V}}{0.3313\text{V}} =  9.05 \approx 9.1
 \end{equation}
@@ -43,7 +43,7 @@ Forstærkningen skal gøre det nemmere at adskille det ønskede signal fra støj
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Filter}\label{FilterAfs}
 Blokken indeholdende et filter anvendes til at frasortere uønskede signaler, der kan forekomme under målinger med accelerometret. Filtreringsblokken inddrages i systemet jævnfør afsnit\ref{Filterafsnit} på side \pageref{Filterafsnit}. Frekvensområdet for kropshældning er ikke klart defineret, men studier anvender et frekvensområde liggende mellem $0.02-10Hz$ \cite{Martinez-Mendez2011}. Alle signaler, der ligger udenfor dette spektrum, ønskes derfor fjernet. I pilotforsøget blev der påvist, at signalet i dette tilfælde ligger mellem $0-25Hz$. Alt signal uden for dette spektrum ønskes derfor frafiltreret. Dette gøres ved at benytte et lavpasfilter, der har en knækfrekvens ved $25$Hz. \\
-Den maksimale variation i pasbåndstransmissionen ($A_{max}$) sættes til $3$dB. For fjerne $50Hz$ støj, sættes stopbåndsfrekvensen til $45$Hz, og der udregnes en faktor ud fra LSB \ref{ADCafsnit} og den maksimale amplitude af signalet. Den maksimale amplitude beregnes ved en Root Mean Square (RMS) analyse ud fra rotationerne foretaget i \ref{Sec:Pilotforsoeg} for hhv. højre og venstre side. Dæmpningsfaktoren udregnes ved følgende ligning:
+Den maksimale variation i pasbåndstransmissionen ($A_{max}$) sættes til $3$dB. For fjerne $50Hz$ støj, sættes stopbåndsfrekvensen til $45$Hz. Der beregnes en faktor ud fra LSB, som udregnes i afsnit \ref{ADCafsnit} på side \pageref{ADCafsnit} samt den maksimale amplitude af signalet. Den maksimale amplitude beregnes ved en Root Mean Square (RMS) analyse ud fra rotationerne foretaget i afsnit \ref{Sec:Pilotforsoeg} på side \pageref{Sec:Pilotforsoeg} for hhv. højre og venstre side. Dæmpningsfaktoren udregnes ved følgende ligning:
 \begin{equation}
 \dfrac{0.00244\text{V}}{0.0162\text{V}} = 0.1506 \approx 0.2 
 \end{equation}
@@ -57,7 +57,7 @@ A_{min}=20 \cdot log_{10} \cdot (\frac{1}{5}) = -13,98 \approx -14\text{dB}
 \textbf{Krav:}
 \begin{itemize}
 	\item Filteret skal have en spændingsforsyning på $5.5$V.
-	\item Filteret skal kunne modtage et inputsignal på $\pm3V$.
+	\item Filteret skal kunne modtage et inputsignal på $\pm3$V.
 	\item Der ønskes en knækfrekvens i pasbåndet på $25$Hz.
 	\item Der ønskes en stopbåndsfrekvens på $45$Hz.
 	\item Der ønskes maksimal fladhed på pasbåndet og stopbåndet.
@@ -91,8 +91,8 @@ I \eqref{TilpasEq1}, \eqref{TilpasEq2} og \eqref{TilpasEq3} er de $3V$ grænsen 
 \noindent\textbf{Krav:}
 \begin{itemize}
 	\item Forstærkeren skal modtage en spændingsforsyning på $5.5$V.
-	\item Forstærkeren skal kunne modtage et inputsignal på $\pm3V$.
-	\item Forstærkeren skal forstærke med en faktor $3.6$, som svarer til $11.1261dB$.
+	\item Forstærkeren skal kunne modtage et inputsignal på $\pm3$V.
+	\item Forstærkeren skal forstærke med en faktor $3.6$, som svarer til $11.1261$dB.
 	\item De benyttede modstande til designet af forstærkeren skal besidde den navngivne værdi.
 	\item Indgangsimpedansen skal være over $3.2M\Omega$.
 	\item Outputimpedansen skal være under $32K\Omega$.
@@ -186,7 +186,7 @@ ADC'ens inputsignal vil ligge i området $\pm3V$, men der skal tages højde for 
 \textbf{Krav:}
 \begin{itemize}
 	\item Komparatoren skal kunne modtage et inputsignal på $\pm3$V $+5\%$.
-	\item Skal have en samplingsfrekvens på minimum $250Hz$.
+	\item Skal have en samplingsfrekvens på minimum $250$Hz.
 	\item Skal ikke ændre på det signalet, som den optager.
 \end{itemize}
 \textbf{Tolerance:}
