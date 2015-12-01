@@ -108,12 +108,11 @@ I \eqref{TilpasEq1}, \eqref{TilpasEq2} og \eqref{TilpasEq3} er de $3V$ grænsen 
 \end{itemize}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Komparator}\label{KomparatorAfs} 
-Blokken indeholdende komparatorer skal kunne sammenligne inputsignalet med referencespændinger og kunne modtage et signal mellem $\pm3$V. Komparatorerne skal vha. definerede tærskelværdier bestemme hvilken hældningsgrad patienten har og i hvilken retning vedkommende hælder mod. Der skal være flere tærskelværdier, så feedbacken kan gives i flere niveauer og forskellige sværhedsgrader. Dette gør systemet fleksibelt, så det kan benyttes af patienter på forskellige balanceniveauer. Tærskelværdierne er bestemt på baggrund af pilotforsøg, hvor værdierne er beregnet ved først at finde spændingen for $90^{\circ}$, som jævnført \ref{Sec:Pilotforsoeg} på side \pageref{Sec:Pilotforsoeg} er $0.3313$V for positiv retning og -$0.3233$V i negativ retning efter forstærkning på hhv. en faktor $9.1$ og derefter en faktor $3.6$. Denne værdi divideres med $90$ for at bestemme spændingen ved $\pm1^{\circ}$ og ganges herefter med hhv. $2^{\circ}$,  $8^{\circ}$, $13^{\circ}$ og $25^{\circ}$ for at bestemme spændingen ved de enkelte hældninger.\\
+Blokken indeholdende komparatorer skal kunne sammenligne et inputsignal på maks $\pm3$V med referencespændinger. Komparatorerne skal vha. definerede tærskelværdier bestemme, hvilken hældningsgrad patienten har, og i hvilken retning vedkommende hælder mod. Der skal være flere tærskelværdier, så feedbacken kan gives i flere niveauer. Tærskelværdierne er bestemt på baggrund af pilotforsøg, hvor værdierne er beregnet ved først at finde spændingen for $90^{\circ}$, som jævnført \ref{Sec_Pilot_Data} på side \pageref{Sec_Pilot_Data} er $0.3313$V for positiv retning og -$0.3233$V i negativ retning efter forstærkning på hhv. en faktor $9.1$ og derefter en faktor $3.6$. Denne værdi divideres med $90$ for at bestemme spændingen ved $\pm1^{\circ}$ og ganges herefter med hhv. $2^{\circ}$,  $8^{\circ}$ og $13^{\circ}$ for at bestemme spændingen ved de enkelte hældninger og derved definere tærskelværdierne.\\
 \textbf{Krav:} 
 \begin{itemize}
 	\item Komparatorblokken skal have en spændingsforsyningen på $\pm5.5$V.
-	\item Komparatoren skal kunne skifte mellem to sværhedsgrader ved at ændre tærskelværdierne.
-	\item Komparatoren skal kunne modtage et inputsignal på $\pm3$V. 
+	\item Komparatoren skal kunne modtage et inputsignal på $\pm3$V $+5\%$.
 	\item Komparatoren skal ved et bestemt spændingsniveauer aktivere en diode og vibrator:
 	\begin{itemize}
 		\item Grøn diode og ingen vibration: I intervallet indenfor $0.1808$V til -$0.1773$V. Svarende til $\pm2^{\circ}$.
@@ -125,18 +124,18 @@ Blokken indeholdende komparatorer skal kunne sammenligne inputsignalet med refer
 \textbf{Tolerance:}
 \begin{itemize}
 	\item Der accepteres en afvigelse i spændingsforsyningen på $\pm5\%$.
-	\item Der accepteres ikke, at komparatoren ikke kan skifte imellem to sværhedsgrader.
 	\item Der accepteres ingen afvigelse ift. hvor stort et inputsignal komparatoren skal kunne modtage.
-	\item Der accepteres en afvigelse i tærskelværdien på $\pm1\%$.
+	\item Der accepteres en afvigelse i tærskelværdierne på $\pm1\%$.
 \end{itemize}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Visuel feedback}\label{visuel_feedback_krav}
-Blokken med visuel feedback omfatter den del af systemet, der giver feedback til patienten vha. LED-dioder. Der skal i alt være fem LED-dioder: En grøn, der placeres i midten, en gul på hver side af den grønne diode og en rød diode på hver side af de gule dioder. Den grønne LED-diode skal lyse, når accelerometret er placeret korrekt på patienten, hvorved der er sikret den rette udgangsposition for hældningen. Dette gør, at den grønne LED-diode er aktiveret fra $0^{\circ}$-$2^{\circ}$. I intervallet $2^{\circ}$-$8^{\circ}$ lyser ingen LED-dioder. Den gule LED-diode aktiveres, når patienten skal være opmærksom på sin kropshældning ved en hældning på $8^{\circ}$. Den røde LED-diode aktiveres, når patienten er over $13^{\circ}$ og derfor er i fare for at falde. Retningen af patientens kropshældning bestemmes vha. placeringen af LED-dioderne. LED-dioderne til højre for den grønne LED-diode indikerer at patienten er ved at falde til højre. Det samme gør sig gældende for fald til venstre. 
+\subsection{Feedback}
+\subsubsection{Visuel feedback}\label{visuel_feedback_krav}
+Blokken med visuel feedback omfatter den del af systemet, der giver feedback til patienten vha. LED-dioder. Der skal i alt være fem LED-dioder: En grøn, der placeres i midten, en gul på hver side af den grønne diode og en rød diode på hver side af de gule dioder. Den grønne LED-diode skal lyse, når accelerometret er placeret korrekt på patienten, hvorved der er sikret den rette udgangsposition for hældningen. Dette gør, at den grønne LED-diode er aktiveret fra $0^{\circ}$-$\pm2^{\circ}$. I intervallet $\pm2^{\circ}$-$\pm8^{\circ}$ lyser ingen LED-dioder. Den gule LED-diode aktiveres, når patienten skal være opmærksom på sin kropshældning ved en hældning på $\pm8^{\circ}$. Den røde LED-diode aktiveres, når patienten er over $\pm13^{\circ}$ og derfor er i fare for at falde. Retningen af patientens kropshældning bestemmes vha. placeringen af LED-dioderne. LED-dioderne til højre for den grønne LED-diode indikerer at patienten er ved at falde til højre. Det samme gør sig gældende for fald til venstre. 
 \\
 \textbf{Krav:}
 \begin{itemize}
 	\item Den visuelle feedbackblok skal have en spændingsforsyning på  $5.5$V.
-	\item LED-dioderne skal aktiveres ved angivet spændingsniveauer i komparatoren.
+	\item LED-dioderne skal aktiveres ved angivet tærskelværdier i komparatoren.
 	%\item LED-dioderne skal informere patienten om hvilken retning kropshældningen sker i.
 	%\item LED-dioderne skal kunne informere patienten omkring accelerometerets placering.
 	%\item LED-dioderne skal informere patienten om risikoen for fald.
@@ -145,69 +144,55 @@ Blokken med visuel feedback omfatter den del af systemet, der giver feedback til
 \textbf{Tolerance:}
 \begin{itemize}
 	\item Der accepteres en afvigelse i spændingsforsyningen på $\pm5\%$.
-	\item Der accepteres ingen afvigelse ift. aktivering af LED-dioder ved angivet spændingsniveauer i komparatoren.
+	\item Der accepteres ingen afvigelse ift. aktivering af LED-dioder, hvis tærskelværdierne for den bestemte LED-diode er opnået i komparatorblokken.
 	\item Der accepteres kun tydeligt lys fra LED-dioderne.
 \end{itemize}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Somatosensorisk feedback} 
+\subsubsection{Somatosensorisk feedback} 
 Blokken med somatosensorisk feedback omfatter også den del af systemet, der giver feedback til patienten. Her vha. vibratorer. Der skal i alt være to vibratorer, som placeres i medialt på hver underarm. Vibrationen skal ske i modsatte side af hældning, så patienterne kan rette sig mod siden, hvor vibrationen gives. Vibratorerne skal give en bestemt vibrationshastighed ved bestemte hældningsgrader hhv. den gule og røde LED-diode. Hvis den gule LED-diode lyser, skal vibrationen være let og hvis den røde LED-diode lyser skal vibrationen være moderat.
 \\
 \textbf{Krav:}
 \begin{itemize}
-	\item Skal have en forsyningsspænding på $5.5$V.
-	\item Vibratorerne skal aktiveres ved angivet spændingsniveauer i komparatoren.
+	\item Skal have en spændingsforsyningen på $5.5$V.
+	\item Vibratorerne skal aktiveres ved angivet tærskelværdier i komparatoren.
 	%\item Vibratorerne skal informere patienten om hvilken retning kropshældningen sker i.
 	%\item Vibratorerne skal informere patienten om risikoen for fald.
 	%\item Vibratorerne skal have to vibrationshastigheder\fxnote{Find evt. konkrete værdier - vi skal desuden måske kun have én hastighed}.
 \end{itemize}
 \textbf{Tolerance:}
 \begin{itemize}
-	\item Der accepteres en afvigelse i tærskelværdien på $\pm1\%$ af vibratorerne.
-	\item Der accepteres en afvigelse i forsyningsspændingen på $\pm5\%$.
+	\item Der accepteres en afvigelse i spændingsforsyningen på $\pm5\%$.
+	\item Der accepteres ingen afvigelse ift. aktivering af vibratorerne, hvis tærskelværdierne for den bestemte vibrator er opnået i komparatorblokken.
 \end{itemize}
-
-%\subsection{feedback}
-%Der skal være både visuel og sensorisk feedback i form af LED-dioder og vibratorer. Der skal være fem LED-dioder, en grøn, der indikerer midtpunkt, en gul diode på hver side af den grønne diode, en rød diode på hver side af den gule diode. Den gule diode skal begynde at lyse ved en bestemt hældningsgrad, der indikerer at patienten skal være opmærksom på sin balance. Den røde diode skal begynde at lyse ved en bestemt hældningsgrad, der indikerer at patienten er i fare for at falde. Dioderne til højre for den grønne diode, skal indikere at patienten falder til højre. Det samme gør sig gældende for fald til venstre. Den sensoriske feedback skal vibrere ved en bestemt hældningsgrad, samtidig med de enkelte dioder lyser. Hvis den gule diode lyser, skal vibrationen være let og hvis den røde diode lyser skal vibrationen være moderat. Der skal placeres en vibrator på højre side og venstre side af patienten, der skal indikere i hvilken retning patienten falder. Spændingsforsyningen til feedbacksystem skal udgøres af 9 V batterier. \\
-%\textbf{Krav:}
-%\begin{itemize}
-%\item Skal have en spændingsforsyning på 9 V.
-%\item Vibratorerne skal have mindst to vibrationshastigheder.
-%\item LED-dioderne og vibratorerne skal informere patienten om hvilken retning hældningen sker.
-%\item LED-dioderne og vibratorerne skal informere patienten om risikoen for fald.
-%\item LED-dioderne skal kunne lyse kraftigt nok til at kunne ses på fem meters afstand.
-%\end{itemize}
-%\textbf{Tolerance:}
-%\begin{itemize}
-%\item Der accepteres en afvigelse i tærskelværdien på $\pm$ 2 \% af feedbacken.
-%\end{itemize}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Spændingsforsyning}\label{Krav_spaending_spicifikt}
 I systemet anvendes en spændingsforsyning af to $1.5$V batterier placeret i en spændingsregulator, der skal levere en konstant spænding til hele kredsløbet. Der anvendes batterier for at undgå tilslutning til elnettet, hvilket gør det mere sikkert og anvendeligt for patienten. Spændingsforsyningen kan havde indflydelse på, hvilket outputsignal der opnås, og det er derfor vigtigt, at blokkene i systemet designes efter den fastsatte spænding. \\
 \noindent\textbf{Krav:}
 \begin{itemize}
-\item Spændingsregulatoren skal levere en spænding på mindst $5.5$V.
-\item Spændingsregulatoren skal forsyne samtlige blokke i systemet med en konstant spænding.
-\item Spændingsregulatorens forsyning må ikke forårsage klipning af signalet.
+	\item Spændingsregulatoren skal levere en spænding på mindst $5.5$V.
+	\item Spændingsregulatoren skal forsyne samtlige blokke i systemet med en konstant spænding.
+	\item Spændingsregulatorens forsyning må ikke forårsage klipning af signalet.
 \end{itemize}
 \noindent\textbf{Tolerance:}
 \begin{itemize}
-\item Der accepteres ikke en spænding under $5.5$V.
-\item Der accepteres ingen afvigelse for spændingsregulatorens tilkobling eller klipning af signalet.
-%\item Der accepteres ingen spænding højere end dioderne kan tåle \fxnote{måske en anden måde det kan skrives på}
+	\item Der accepteres ikke en spænding under $5.5$V.
+	\item Der accepteres ingen afvigelse for spændingsregulatorens tilkobling eller klipning af signalet.
+	%\item Der accepteres ingen spænding højere end dioderne kan tåle \fxnote{måske en anden måde det kan skrives på}
 \end{itemize}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{ADC}
 Blokken med en ADC anvendes i systemet, for at konvertere det analoge signal til digitalt. %Den skal kunne sample det forstærkede signal. 
-ADC'ens inputsignal vil ligge i området $\pm3V$, men der skal tages højde for afvigelser, så derfor skal ADC'en kunne modtage signaler på $\pm4V$. Båndbredden på accelerometeret bestemmer, hvilken samplingsfrekvens der skal benyttes. I følge Nyquists sætning skal der samples med minimun det dobbelte af det biologiske signals frekvens. I praksis samples der med minimum det tidobbelte jævnfør afsnit \ref{ADCafsnit}, side \pageref{ADCafsnit}. I dette tilfælde er båndbredden $25Hz$, dvs. at der som minimum skal samples med $100Hz$, og i praksis vil det være hensigtsmæssigt at sample med minimum $250Hz$. \\
+ADC'ens inputsignal vil ligge i området $\pm3V$, men der skal tages højde for afvigelser. Båndbredden på accelerometeret bestemmer, hvilken samplingsfrekvens der skal benyttes. I følge Nyquists sætning skal der samples med minimun det dobbelte af det biologiske signals frekvens. I praksis samples der med minimum det tidobbelte jævnfør afsnit \ref{ADCafsnit}, side \pageref{ADCafsnit}. I dette tilfælde er båndbredden $25Hz$, dvs. at der som minimum skal samples med $100Hz$, og i praksis vil det være hensigtsmæssigt at sample med minimum $250Hz$. \\
 \textbf{Krav:}
 \begin{itemize}
-	\item Skal kunne modtage et inputsignal på $\pm4$V.
-	\item Skal have en samplingsfrekvens på minimum $500Hz$.
+	\item Komparatoren skal kunne modtage et inputsignal på $\pm3$V $+5\%$.
+	\item Skal have en samplingsfrekvens på minimum $250Hz$.
+	\item Skal ikke ændre på det signalet, som den optager.
 \end{itemize}
 \textbf{Tolerance:}
 \begin{itemize}
-	\item Der accepteres ingen afvigelse ift. kravene.
+	\item Der accepteres ingen afvigelse ift. kravene om inputsignal og samplingsfrekvens.
+	\item Der accepteres en afvigelse på $\pm1\%$ af ADC'ens målinger af signalet sammenlignet med det indsendte signal.
 \end{itemize}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{USB-isolator}\label{kravspecifikationer_USB}
