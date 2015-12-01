@@ -23,3 +23,23 @@ text(A(index),Y_point, str1,'HorizontalAlignment','right');
 str2 = '(45 Hz, 14.8480 dB)';
 text(A(indexB),Y_point1,str2,'HorizontalAlignment','right');
 
+%sammenligning af sim og test
+data=xlsread('lavpas.xlsx');
+A=data(:,1);
+B=data(:,2);
+
+x = 10:50;
+
+index = find(A==25);
+Y_point = B(index)
+indexB = find(A==45);
+Y_point1 = B(indexB)
+
+figure
+semilogx(x,B,A(index),Y_point,'',A(indexB),Y_point1,'')
+xlabel('Frekvens (Hz)')
+ylabel('Forstærkning i dB')
+hold on
+plot(A,B)
+A = [10 12 14 16 18 20 22 24 26 28 30 32 34 36 38 40 42 44 46 48 50];	
+B = []

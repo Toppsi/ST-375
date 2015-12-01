@@ -133,26 +133,26 @@ For at udføre en simulering af 3. ordens lavpasfilteret, foretages en AC-analys
 \noindent af bodeplottet det, at det simulerede filter med reelle værdier har en maksimal amplitude i dB $-2.985$ ved en knækfrekvens på $25$Hz, hvilket overholder kravspecifikationerne i afsnit \ref{FilterAfs}, side \pageref{FilterAfs}. Der aflæses, at ved stopbåndsfrekvensen på $45$Hz er amplituden i db $-15.389$, hvilket fortsat er acceptabelt ift. kravspecifikationerne for filterkonfigurationen. 
 
 \subsubsection{Implementering og test} 
-Der ses på \figref{fig:lavpasfilter_LTspice} at der benyttes 3 modstande og 2 kondensatorer til at designe kredsløbet. Af \tableref{Tab:Maalingfilter} fremgår, hvorledes modstandene sammensættes for at få de ønskede værdier, der fremgår i \figref{Sim_reel_modstande}, samt modstandenes afvigelse fra de ideelle modstande. For at finde afvigelsen er der foretaget målinger på tre ens reelle modstande og kondensatorer og på denne måde vurderes det, hvilke komponenter, der afviger mindst fra de teoretiske værdier. Dette er ydermere illustreret i \tableref{Tab:Maalingfilter}.
+Der ses på \figref{fig:lavpasfilter_LTspice} at der benyttes 3 modstande og 3 kondensatorer til at designe kredsløbet. Af \tableref{Tab:Maalingfilter} fremgår, hvorledes modstandene sammensættes for at få de ønskede værdier, der fremgår i \figref{Sim_reel_modstande}, samt modstandenes afvigelse fra de ideelle modstande. For at finde afvigelsen er der foretaget målinger på tre ens reelle modstande og kondensatorer og på denne måde vurderes det, hvilke komponenter, der afviger mindst fra de teoretiske værdier. Dette er ydermere illustreret i \tableref{Tab:Maalingfilter}.
 \begin{table}[H]
 	\centering
 	\begin{tabular}{|l|l|l|l|}
 		\hline
 		\textit{}                                     & \textit{Teoretisk} & \textit{Måling}    & \textit{Afvigelse} \\ \hline
-		\multirow{2}{*}{\textit{$R_{1}$(Parallel) :}} & $1$M$\Omega$       & $1.0046$M$\Omega$  & $0.46\%$           \\ \cline{2-4} 
-		                                              & $68$K$\Omega$      & $68.0350$K$\Omega$ & $0.05\%$           \\ \hline
-		\multirow{2}{*}{\textit{$R_{2}$(Parallel) :}} & $680$K$\Omega$     & $1.0037$K$\Omega$  & $0.37\%$           \\ \cline{2-4} 
-	                                               	  & $47$K$\Omega$      & $47.0540$K$\Omega$ & $0.11\%$           \\ \hline
-		\multirow{2}{*}{\textit{$R_{3}$(Parallel) :}} & $32$K$\Omega$      & $17.9600\Omega$    & $0.22\%$           \\ \cline{2-4} 
-		                                              & $32$K $\Omega$     & $816\Omega$        & $0.49\%$           \\ \hline
+		\multirow{2}{*}{\textit{$R_{1}$(Parallel) :}} & $1$M$\Omega$       & $1.000006$M$\Omega$  & $0.007\%$           \\ \cline{2-4} 
+		                                              & $68$K$\Omega$      & $68.079$K$\Omega$ & $0.1\%$           \\ \hline
+		\multirow{2}{*}{\textit{$R_{2}$(Parallel) :}} & $680$K$\Omega$     & $683.370$K$\Omega$  & $0.5\%$           \\ \cline{2-4} 
+	                                               	  & $47$K$\Omega$      & $47.004$K$\Omega$ & $0.01\%$           \\ \hline
+		\multirow{2}{*}{\textit{$R_{3}$(Parallel) :}} & $39$K$\Omega$      & $38.888\Omega$    & $0.3\%$           \\ \cline{2-4} 
+		                                              & $39$K $\Omega$     & $39.043\Omega$        & $0.1\%$           \\ \hline
 		\textit{$C_{1}$ :}                            & $100$n             & $98$n              & $2.00\%$           \\ \hline
 		\textit{$C_{2}$ :}                            & $470$n             & $464$n             & $1.29\%$           \\ \cline{2-4} 
 		\textit{$C_{3}$ :}                            & $100$n             & $98$n              & $2.00\%$           \\ \hline
 	\end{tabular}
-	\caption{I tabellen ses der, at de anvendte modstande og kondensatorer afviger fra den teoretiske værdi, hvilket er forventet af reelle komponenter. Det er en acceptabel afvigelse, så modstandene kan derfor anvendes til implementering}
+	\caption{I tabellen ses, at de anvendte modstande og kondensatorer afviger fra den teoretiske værdi, hvilket er forventet af reelle komponenter. Det er en acceptabel afvigelse, så modstandene kan derfor anvendes til implementering}
 	\label{Tab:Maalingfilter}
 \end{table}
-Herefter implementeres kredsløbet. I testen anvendes en spændingsforsyning på $5.5$V og en funktionsgenerator som inputsignal, samt et multimeter til aflæsning af dæmpningen. Funktionsgeneratoren sættes til de ønskede frekvenser i intervaller af $1$Hz fra $10$Hz til $50$Hz. Outputtet i dB måles for hver frekvens. Ud fra disse målinger plottes en graf af dæmpningen i MatLab, hvilket er illustreret på \figref{fig:Lavpas_Matlab}.  
+Herefter implementeres kredsløbet. I testen anvendes spændingsregulatoren, der forsyner med $5.5$V og en funktionsgenerator som inputsignal, samt et multimeter til aflæsning af dæmpningen. Funktionsgeneratoren sættes til de ønskede frekvenser i intervaller af $1$Hz fra $10$Hz til $50$Hz. Outputtet i dB måles for hver frekvens og noteres. Ud fra disse målinger plottes en graf af dæmpningen i MatLab, hvilket er illustreret på \figref{fig:Lavpas_Matlab}.  
 
 \begin{figure}[H]
 	\centering
@@ -161,33 +161,36 @@ Herefter implementeres kredsløbet. I testen anvendes en spændingsforsyning på
 	\label{fig:Lavpas_Matlab}
 \end{figure}
 
-\noindent Sammenlignes værdierne fra \ref{fig:Lavpas_Matlab} for det testede kredsløb med værdierne fra \ref{fig:lavpasfilter_LTspice} for det simulerede kredsløb ses der en ændring i frekvens og dæmpning, hvilket også er forventet grundet andre kodensatorer og modstande. 
+%\noindent Sammenlignes værdierne fra \ref{fig:Lavpas_Matlab} for det testede kredsløb med værdierne fra det simulerede kredsløb på \ref{fig:lavpasfilter_LTspice}, ses der en ændring i frekvens og dæmpning, hvilket er forventet, når der anvendes reelle kondensatorer og modstande.
+
+%\begin{table}[H]
+%	\centering
+%	\begin{tabular}{|l|l|l|l|}
+%		\hline
+ % & \textit{Simulering} 	& \textit{Test}  &\textit{Afvigelse} \\ \hline
+%Knækfrekvens	 & $25Hz$ 			& $25.0308Hz$			& $4\%$  \\ %\hline
+%Stopbåndsfrekvens & $45Hz$		& $45.0816Hz$			& $0.18\%$ \\ \hline
+%Dæmpning på stopbånd & $15.489dB$  & $14.881dB$     & $9.61\%$  \\ \hline
+%Dæmpning på pasbånd & $3.0273dB$	  & $2.663dB$  & $13.68\%$  \\ \hline
+%	\end{tabular}
+%	\caption{I tabellen ses afvigelserne for hhv. knækfrekvens, stopbåndsfrekvens og dæmpning af stopbånd og pasbånd ift. simlering og test}
+%	\label{Tab:Afvigelse_simulering}
+%\end{table}
+
+\noindent Ud fra de testede værdier i \tableref{Tab:Tolerance} og kravspecifikationer i afsnit \ref{FilterAfs} på side \pageref{FilterAfs} ses ingen afvigelse på båndpas- og stopbåndsfrekvensen, men en variation i dæmpningen for både pasbånds- og stopbåndsfrekvensen på hhv. $8.8\%$ og $6.1$\% ift. kravspecikationerne.
 
 \begin{table}[H]
 	\centering
 	\begin{tabular}{|l|l|l|l|}
 		\hline
-  & \textit{Simulering} 	& \textit{Test}  &\textit{Afvigelse} \\ \hline
-Knækfrekvens	 & $25Hz$ 			& $25.0308Hz$			& $4\%$  \\ %\hline
-Stopbåndsfrekvens & $45Hz$		& $45.0816Hz$			& $0.18\%$ \\ \hline
-Dæmpning på stopbånd & $15.489dB$  & $14.881dB$     & $9.61\%$  \\ \hline
-Dæmpning på pasbånd & $3.0273dB$	  & $2.663dB$  & $13.68\%$  \\ \hline
+& \textit{Krav for dæmpning i dB} 	& \textit{Test af dæmpning i dB}  &\textit{Afvigelse} \\ \hline
+Pasbåndsfrekvens & $3$	& $2.7360$	    & $8.8\%$ \\ \hline
+Stopbåndsfrekvens & $14$    & $14.8480$    & $6.1\%$  \\ \hline
 	\end{tabular}
-	\caption{I tabellen ses afvigelserne for hhv. knækfrekvens, stopbåndsfrekvens og dæmpning af stopbånd og pasbånd ift. simlering og test}
-	\label{Tab:Afvigelse_simulering}
-\end{table}
-
-\noindent Ud fra de testede værdier i \tableref{Tab:Tolerance} og kravspecifikationer i afsnit \ref{FilterAfs} på side \pageref{FilterAfs} er der er ingen afvigelse på knækfrekvensen og stopbåndsfrekvensen. Der er en variation ift. dæmpningen for både stop- og pasbånd på hhv. $6.36\%$ og $8.37$\% i forhold til kravet.
-
-\begin{table}[H]
-	\centering
-	\begin{tabular}{|l|l|l|l|}
-		\hline
-   & \textit{Krav} 	& \textit{Test}  &\textit{Afvigelse} \\ \hline
-Dæmpning på stopbånd & $14dB$    & $14.8910dB$    & $6.36\%$  \\ \hline
-Dæmpning på pasbånd & $3dB$		& $2.7490dB$	    & $8.37\%$ \\ \hline
-	\end{tabular}
-	\caption{I tabellen ses afvigelserne for hhv. knækfrekvens, stopbåndsfrekvens og dæmpning af stopbånd og pasbånd ift. krav og test}
+	\caption{I tabellen ses afvigelserne for dæmpningen i pasbånds- og stopbåndsfrekvensen ift. kravspecifikationerne og den foretaget test}
 	\label{Tab:Tolerance}
 \end{table}
-\noindent I forhold til tolerancekravene i afsnit \ref{FilterAfs} på side \pageref{FilterAfs} skulle dæmpningen på stopbåndet være minimum $14 dB$ og måtte maksimalt have en afvigelse herfra på $+10\%$. Denne tolerance overholdes ved testen, da de acceptable dæmpningsværdier vil ligge i intervallet $14$-$15.4$db. For pasbåndet skulle dæmpningen maksimalt være $3$dB med en maksimal afvigelse på $-15\%$. Dette vil sige at testen passer inden for tolerancekravene, da der accepteres værdier i intervallet $2.55$-$3$dB. På baggrund af dette accepteres alle målte afvigelser ved testen af filteret.
+\noindent Jævnfør kravspecifikationerne i afsnit \ref{FilterAfs}, side \pageref{FilterAfs} skal dæmpningen i pasbåndsfrekvensen være maksimal $3$dB med en acceptabel afvigelse på -$15\%$, dvs. i intervallet $2.55$-$3$dB. Dette betyder, at testen ligger indenfor tolerancekravet med en dæmpning i pasbåndet på $2.7$dB. Derudover skal lavpasfilteret dæmpe med minimum $14$dB i stopbåndsfrekvensen med en acceptabel afvigelse på +$15\%$. Denne tolerance overholdes i testen med en dæmpning på $14.8480$dB, da de acceptable dæmpningsværdier ligger i intervallet $14$-$16.10$dB.
+
+\textbf{Sammenligning af det simulerede og det testede lavpasfilter}
+    
