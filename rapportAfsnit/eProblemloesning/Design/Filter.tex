@@ -116,37 +116,37 @@ For at udføre en simulering af 3. ordens lavpasfilteret, foretages en AC-analys
 \end{figure}
 \noindent Af bodeplottet fremgår det, at det simulerede filter har en maksimal amplitude i db på $-3.012$ ved en knækfrekvens på $25$Hz, hvilket ikke overholder kravspecifikationerne i afsnit \ref{FilterAfs}, side \pageref{FilterAfs}. Grundet den lave afvigelse accepteres afvigelsen i midlertidigt og der udføres derfor endnu en simulering af filteret med de reelle modstande, der kan benyttes under implementeringen. Der aflæses, at der ved en stopbåndsfrekvens på $45$Hz er amplituden i db på $-15.443$. Dette overholder projektets opstillede krav for filterkonfigurationen ved en minimum dæmpning på $14$ dB i stopbåndsfrekvensen. Filterkonfigurationen med reelle modstande fremgår af nedenstående \figref{Sim_reel_modstande}. Reelt findes de udregnede modstande ikke, hvorfor der benyttes de modstande der kommer tættest på den teoretiske værdi. 
 
-\begin{figure}[H]
-	\centering
-	\includegraphics[scale=0.4]{figures/cProblemloesning/Sim_reel_modstande.PNG}
-	\caption{Af figuren fremgår et 3. ordens filter med reelle modstande, hvor R$1$ er parallel med $68$K $\Omega$ og $1$M $\Omega$, R$2$ er er parallel med $47$K $\Omega$ og $680$K $\Omega$ og R$3$ er parallel med to $32$K $\Omega$ modstande.}
-	\label{fig:Sim_reel_modstande}
-\end{figure}
-
-\begin{figure}[H]
-	\centering
-	\includegraphics[scale=0.4]{figures/cProblemloesning/Sim_reel_graf.PNG}
-	\caption{Af figuren fremgår en illustration af et bodeplot, der viser 3. ordens filterets frekvensindhold målt i Hz over dæmpningen målt i dB med reelle modstande. Lavpasfilteret er simuleret i LTspice.}
-	\label{fig:Sim_reel_graf}
-\end{figure}
+%\begin{figure}[H]
+%	\centering
+%	\includegraphics[scale=0.4]{figures/cProblemloesning/Sim_reel_modstande.PNG}
+%	\caption{Af figuren fremgår et 3. ordens filter med reelle modstande, hvor R$1$ er parallel med $68$K $\Omega$ og $1$M $\Omega$, R$2$ er er parallel med $47$K $\Omega$ og $680$K $\Omega$ og R$3$ er parallel med to $32$K $\Omega$ modstande.}
+%	\label{fig:Sim_reel_modstande}
+%\end{figure}
+%
+%\begin{figure}[H]
+%	\centering
+%	\includegraphics[scale=0.4]{figures/cProblemloesning/Sim_reel_graf.PNG}
+%	\caption{Af figuren fremgår en illustration af et bodeplot, der viser 3. ordens filterets frekvensindhold målt i Hz over dæmpningen målt i dB med reelle modstande. Lavpasfilteret er simuleret i LTspice.}
+%	\label{fig:Sim_reel_graf}
+%\end{figure}
 
 \noindent af bodeplottet det, at det simulerede filter med reelle værdier har en maksimal amplitude i dB $-2.985$ ved en knækfrekvens på $25$Hz, hvilket overholder kravspecifikationerne i afsnit \ref{FilterAfs}, side \pageref{FilterAfs}. Der aflæses, at ved stopbåndsfrekvensen på $45$Hz er amplituden i db $-15.389$, hvilket fortsat er acceptabelt ift. kravspecifikationerne for filterkonfigurationen. 
 
 \subsubsection{Implementering og test} 
-Der ses på \figref{fig:lavpasfilter_LTspice} at der benyttes 3 modstande og 2 kondensatorer til at designe kredsløbet. Af tableref{Tab:Maalingfilter} fremgår, hvorledes modstandene sammensættes for at få de ønskede værdier, der fremgår i \figref{Sim_reel_modstande}, samt modstandenes afvigelse fra de ideelle modstande. For at finde afvigelsen er der foretaget målinger på tre ens reelle modstande og kondensatorer og på denne måde vurderes det, hvilke komponenter, der afviger mindst fra de teoretiske værdier. Dette er ydermere illustreret i \tableref{Tab:Maalingfilter}.
+Der ses på \figref{fig:lavpasfilter_LTspice} at der benyttes 3 modstande og 2 kondensatorer til at designe kredsløbet. Af \tableref{Tab:Maalingfilter} fremgår, hvorledes modstandene sammensættes for at få de ønskede værdier, der fremgår i \figref{Sim_reel_modstande}, samt modstandenes afvigelse fra de ideelle modstande. For at finde afvigelsen er der foretaget målinger på tre ens reelle modstande og kondensatorer og på denne måde vurderes det, hvilke komponenter, der afviger mindst fra de teoretiske værdier. Dette er ydermere illustreret i \tableref{Tab:Maalingfilter}.
 \begin{table}[H]
 	\centering
 	\begin{tabular}{|l|l|l|l|}
 		\hline
 		\textit{}                                     & \textit{Teoretisk} & \textit{Måling}    & \textit{Afvigelse} \\ \hline
 		\multirow{2}{*}{\textit{$R_{1}$(Parallel) :}} & $1$M$\Omega$       & $1.0046$M$\Omega$  & $0.46\%$           \\ \cline{2-4} 
-		& $68$K$\Omega$      & $68.0350$K$\Omega$ & $0.05\%$           \\ \hline
-		\multirow{2}{*}{\textit{$R_{2}$(Parallel) :}} & $680$K$\Omega$       & $1.0037$K$\Omega$  & $0.37\%$           \\ \cline{2-4} 
-		& $47$K$\Omega$      & $47.0540$K$\Omega$ & $0.11\%$           \\ \hline
-		\multirow{2}{*}{\textit{$R_{3}$(Parallel) :}}    & $32$K$\Omega$      & $17.9600\Omega$    & $0.22\%$           \\ \cline{2-4} 
-		& $32$K $\Omega$        & $816\Omega$        & $0.49\%$           \\ \hline
+		                                              & $68$K$\Omega$      & $68.0350$K$\Omega$ & $0.05\%$           \\ \hline
+		\multirow{2}{*}{\textit{$R_{2}$(Parallel) :}} & $680$K$\Omega$     & $1.0037$K$\Omega$  & $0.37\%$           \\ \cline{2-4} 
+	                                               	  & $47$K$\Omega$      & $47.0540$K$\Omega$ & $0.11\%$           \\ \hline
+		\multirow{2}{*}{\textit{$R_{3}$(Parallel) :}} & $32$K$\Omega$      & $17.9600\Omega$    & $0.22\%$           \\ \cline{2-4} 
+		                                              & $32$K $\Omega$     & $816\Omega$        & $0.49\%$           \\ \hline
 		\textit{$C_{1}$ :}                            & $100$n             & $98$n              & $2.00\%$           \\ \hline
-		\multirow{2}{*}{\textit{$C_{2}$} & $470$n             & $464$n             & $1.29\%$           \\ \cline{2-4} 
+		\textit{$C_{2}$ :}                            & $470$n             & $464$n             & $1.29\%$           \\ \cline{2-4} 
 		\textit{$C_{3}$ :}                            & $100$n             & $98$n              & $2.00\%$           \\ \hline
 	\end{tabular}
 	\caption{I tabellen ses der, at de anvendte modstande og kondensatorer afviger fra den teoretiske værdi, hvilket er forventet af reelle komponenter. Det er en acceptabel afvigelse, så modstandene kan derfor anvendes til implementering}
