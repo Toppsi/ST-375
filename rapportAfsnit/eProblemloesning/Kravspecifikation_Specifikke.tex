@@ -43,7 +43,7 @@ Forstærkningen skal gøre det nemmere at adskille det ønskede signal fra støj
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Filter}\label{FilterAfs}
 Blokken indeholdende et filter anvendes til at frasortere uønskede signaler, der kan forekomme under målinger med accelerometret. Filtreringsblokken inddrages i systemet jævnfør afsnit\ref{Filterafsnit} på side \pageref{Filterafsnit}. Frekvensområdet for kropshældning er ikke klart defineret, men studier anvender et frekvensområde liggende mellem $0.02-10Hz$ \cite{Martinez-Mendez2011}. Alle signaler, der ligger udenfor dette spektrum, ønskes derfor fjernet. I pilotforsøget blev der påvist, at signalet i dette tilfælde ligger mellem $0-25Hz$. Alt signal uden for dette spektrum ønskes derfor frafiltreret. Dette gøres ved at benytte et lavpasfilter, der har en knækfrekvens ved $25$Hz. \\
-Den maksimale variation i pasbåndstransmissionen ($A_{max}$) sættes til $3$dB. For fjerne $50Hz$ støj, sættes stopbåndsfrekvensen til $45$Hz. Der beregnes en faktor ud fra LSB, som udregnes i afsnit \ref{ADCafsnit} på side \pageref{ADCafsnit} samt den maksimale amplitude af signalet. Den maksimale amplitude beregnes ved en Root Mean Square (RMS) analyse ud fra rotationerne foretaget i afsnit \ref{Sec:Pilotforsoeg} på side \pageref{Sec:Pilotforsoeg} for hhv. højre og venstre side. Dæmpningsfaktoren udregnes ved følgende ligning:
+Den maksimale variation i pasbåndstransmissionen ($A_{max}$) sættes til $3$dB. For fjerne $50Hz$ støj, sættes stopbåndsfrekvensen til $45$Hz. Der beregnes en faktor ud fra LSB, som udregnes i afsnit \ref{ADCafsnit} på side \pageref{ADCafsnit} samt den maksimale amplitude af signalet. Den maksimale amplitude beregnes ved en Root Mean Square (RMS) analyse ud fra rotationerne foretaget i afsnit \ref{Bilag:Pilotforsoeg} på side \pageref{Bilag:Pilotforsoeg} for hhv. højre og venstre side. Dæmpningsfaktoren udregnes ved følgende ligning:
 \begin{equation}
 \dfrac{0.00244\text{V}}{0.0162\text{V}} = 0.1506 \approx 0.2 
 \end{equation}
@@ -70,7 +70,7 @@ A_{min}=20 \cdot log_{10} \cdot (\frac{1}{5}) = -13,98 \approx -14\text{dB}
 	\item Der accepteres ingen afvigelse ift. hvor stort et inputsignal filtret skal kunne modtage.
 	\item Der accepteres en afvigelse fra knækfrekvensen på $\pm10\%$.
 	\item Der accepteres en afvigelse fra stopbåndsfrekvensen på $\pm5\%$.
-	\item Der accepteres kun en maksimal fladhed på pasbåndet og stopbåndet.\item{Hvordan tjekker man, at det man har fået er det maksimale?}
+	\item Der accepteres kun en maksimal fladhed på pasbåndet og stopbåndet.\fxnote{Hvordan tjekker man, at det man har fået er det maksimale?}
 	\item Der accepteres minimal dæmpning på $14$dB af stopbåndet eller en afvigelse på $+15\%$.
 	\item Der accepteres maksimal dæmpning på $3$dB af pasbåndet eller en afvigelse på $-15\%$.
 \end{itemize}
