@@ -41,6 +41,27 @@ Forstærkningen skal gøre det nemmere at adskille det ønskede signal fra støj
 	\item Der accepteres en afvigelse ift. maksimum og minimum output fra blokken på $\pm5\%$.
 \end{itemize}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Referencespænding til offset}\label{Ref_Offset_Afs}
+Denne blok skal forsyne offsetjusteringen med en konstant spænding, som skal anvendes til sammenligning imellem et inputsignal og denne spændingsværdi. Der skal benyttes både en referencespænding og en spændingsdeler til denne blok, da outputtet fra referencespændingen er for høj og upræcis til at kunne anvendes som sammenligningsgrundlag. \\
+Blokken skal levere $1.6325$V, da offsettet i accelerometret ved $0$g påvirkning er dette, jævnført afsnit \ref{Sec_Pilot_Data} på side \pageref{Sec_Pilot_Data}. Outputimpedansen må maks være $1$K$\Omega$, da inputimpedansen i den inverterende kanal er $100$K$\Omega$.
+
+\textbf{Krav:}
+\begin{itemize}
+	\item Referencespændingsblokken til offsettet skal have en spændingsforsyning på $5.5$V.
+	\item Spændingsreferencen skal levere en strøm på $2.5$V.
+	\item Blokken skal samlet levere en referencespænding på $1.6325$V.
+	\item De benyttede modstande til designet af forstærkeren skal besidde den navngivne værdi.
+	\item Outputimpedansen skal være maks $1$K$\Omega$.
+\end{itemize}
+\noindent \textbf{Tolerance:}
+\begin{itemize}
+	\item Der accepteres en afvigelse i spændingsforsyning på $\pm1\%$.
+	\item Der accepteres en afvigelse i outputtet fra spændingsreferencen på $\pm1\%$.
+	\item Der accepteres en afvigelse i den leverede referencespænding på $\pm1\%$. 
+	\item Der accepteres en afvigelse i de benyttede modstandes reelle værdi på $\pm1\%$.
+	\item Der accepteres ikke en outputimpedans på over $1$K$\Omega$.
+\end{itemize}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Filter}\label{FilterAfs}
 Blokken indeholdende et filter anvendes til at frasortere uønskede signaler, der kan forekomme under målinger med accelerometret. Filtreringsblokken inddrages i systemet jævnfør afsnit\ref{Filterafsnit} på side \pageref{Filterafsnit}. Frekvensområdet for kropshældning er ikke klart defineret, men studier anvender et frekvensområde liggende mellem $0.02-10Hz$ \cite{Martinez-Mendez2011}. Alle signaler, der ligger udenfor dette spektrum, ønskes derfor fjernet. I pilotforsøget blev der påvist, at signalet i dette tilfælde ligger mellem $0-25Hz$. Alt signal uden for dette spektrum ønskes derfor frafiltreret. Dette gøres ved at benytte et lavpasfilter, der har en knækfrekvens ved $25$Hz. \\
 Den maksimale variation i pasbåndstransmissionen ($A_{max}$) sættes til $3$dB. For fjerne $50Hz$ støj, sættes stopbåndsfrekvensen til $45$Hz. Der beregnes en faktor ud fra LSB, som udregnes i afsnit \ref{ADCafsnit} på side \pageref{ADCafsnit} samt den maksimale amplitude af signalet. Den maksimale amplitude beregnes ved en Root Mean Square (RMS) analyse ud fra rotationerne foretaget i afsnit \ref{Bilag:Pilotforsoeg} på side \pageref{Bilag:Pilotforsoeg} for hhv. højre og venstre side. Dæmpningsfaktoren udregnes ved følgende ligning:
@@ -64,7 +85,7 @@ A_{min}=20 \cdot log_{10} \cdot (\frac{1}{5}) = -13,98 \approx -14\text{dB}
 	\item Der ønskes en minimum dæmpning af stopbåndet på $14$dB.
 	\item Der ønskes en maksimal dæmpnning i pasbåndet på $3$dB.
 \end{itemize}
-\textbf{Tolerance:}
+\noindent \textbf{Tolerance:}
 \begin{itemize}
 	\item Der accepteres en afvigelse i spændingsforsyning på $\pm9\%$.
 	\item Der accepteres ingen afvigelse ift. hvor stort et inputsignal filtret skal kunne modtage.

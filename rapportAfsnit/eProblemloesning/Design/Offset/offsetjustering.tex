@@ -8,20 +8,13 @@ Det analoge signal fra accelerometeret har et indbygget offset, som gør, at out
 \caption{På figuren ses et generisk differens forstærker kredsløb illustreret.\textit{(Revideret)} \cite{Nilsson2011}}
 \label{fig:Differensforstaerker_generisk}
 \end{figure}
-Den ikke-inverterende kanal ($+V_{in}$) har en høj indgangsimpedans på $10^{12}\Omega$, og derfor er outputimpedansen for den forrige blok ikke relevant. \cite{Corporation1995} Men inputimpedansen i den inverterende kanal (-$V_{in}$) afhænger af modstanden $R_{a}$ på \figref{fig:Differensforstaerker_generisk} grundet det ikke-inverterende design. Derfor designes en buffer imellem signalet $V_{a}$ og modstanden $R_{a}$, hvorfor indgangsimpedansen i -$V_{in}$ ikke vil have en betydning. Dette skyldes, at outputimpedansen fra bufferen vil være meget lav. Der benyttes en operationsforstærker TL081 i en ikke konverterende konfiguration og med et gain på $1$. Dette ses på \figref{fig:Buffer}. \fxnote{Kilde på buffer}
-\begin{figure}[H]
-	\centering
-	\includegraphics[scale=0.4]{figures/cProblemloesning/Buffer_LT.png}
-	\caption{På figuren ses en buffer, som fungerer som en forstærker med et gain på kator 1.}
-	\label{fig:Buffer}
-\end{figure}
+Den ikke-inverterende kanal ($+V_{in}$) har en høj indgangsimpedans på $10^{12}\Omega$, og derfor er outputimpedansen for den forrige blok ikke relevant. \cite{Corporation1995} Men inputimpedansen i den inverterende kanal (-$V_{in}$) afhænger af modstanden $R_{a}$ på \figref{fig:Differensforstaerker_generisk} grundet det ikke-inverterende design, hvorfor der indsættes en buffer, jævnfør afsnit \ref{spaendingsref_resultat} på side \pageref{spaendingsref_resultat}. \\
 \noindent I \eqref{eq:Diff1} ses den simplificerede formel for differensforstærker kredsløbet, hvor $\frac{R_a}{R_b} = \frac{R_c}{R_d}$;
 \begin{equation}\label{eq:Diff1}
 V_o = \frac{R_b}{R_a} \cdot (v_b - v_a)
 \end{equation}
-
 \noindent Der kan heraf ses, at forstærkningen på signalet kan bestemmes ved at vælge modstandene $R_a\text{ og }R_b$, og at det er spændingen $V_{a}$, der trækkes fra spændingen $V_{b}$. \\
-I dette tilfælde kræves der ikke en forstærkning, hvorfor modstandene $R_{a}$ og $R_{b}$ skal være det samme. Da signalet ikke skal inverteres, sendes accelerometerets output ind i den ikke-inverterende kanal. Offsettet, som i dette tilfælde er en referenceværdi på $1.6325$V jævnført \ref{Mean_tid_0g} på side \pageref{Mean_tid_0g}, sendes ind i den inverterende kanal. Dette illustreres på figur \ref{fig:Offset_generisk}:
+I dette tilfælde kræves der ikke en forstærkning, hvorfor modstandene $R_{a}$ og $R_{b}$ skal være det samme. Da signalet ikke skal inverteres, sendes accelerometerets output ind i den ikke-inverterende kanal. Offsettet, som i dette tilfælde er en referenceværdi på $1.6325$V jævnført \ref{Sec_Pilot_Data} på side \pageref{Sec_Pilot_Data}, sendes ind i den inverterende kanal. Dette illustreres på figur \ref{fig:Offset_generisk}:
 \begin{figure}[H]
 \centering
 \includegraphics[scale=0.4]{figures/cProblemloesning/Offset_generisk.png}
