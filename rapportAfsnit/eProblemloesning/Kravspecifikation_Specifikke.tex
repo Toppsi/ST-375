@@ -128,6 +128,23 @@ I \eqref{TilpasEq1}, \eqref{TilpasEq2} og \eqref{TilpasEq3} er de $3V$ grænsen 
 	\item Der accepteres en outputimpedans under $32K\Omega$.
 \end{itemize}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Referencespænding til komparatoren}\label{Ref_Kompar_Afs}
+Denne blok skal forsyne komparatoren med en konstant spænding, som skal anvendes til sammenligning imellem et inputsignal og denne spændingsværdi.
+Blokken skal levere $2.5$V, da spændingsdelingen er implementeret i komparatorblokken for at give individuelle tærskelværdier til feedbackblokken. \\ \textbf{Krav:}
+\begin{itemize}
+	\item Referencespændingsblokken til offsettet skal have en spændingsforsyning på $5.5$V.
+	\item Spændingsreferencen skal levere en strøm på $2.5$V.
+	\item De benyttede modstande til designet af forstærkeren skal besidde den navngivne værdi.
+	\item Outputimpedansen skal være maks $1$K$\Omega$.
+\end{itemize}
+\noindent \textbf{Tolerance:}
+\begin{itemize}
+	\item Der accepteres en afvigelse i spændingsforsyning på $\pm1\%$.
+	\item Der accepteres en afvigelse i outputtet fra spændingsreferencen på $\pm1\%$. 
+	\item Der accepteres en afvigelse i de benyttede modstandes reelle værdi på $\pm1\%$.
+	\item Der accepteres ikke en outputimpedans på over $1$K$\Omega$.
+\end{itemize}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Komparator}\label{KomparatorAfs} 
 Blokken indeholdende komparatorer skal kunne sammenligne et inputsignal på maks $\pm3$V med referencespændinger. Komparatorerne skal vha. definerede tærskelværdier bestemme, hvilken hældningsgrad patienten har, og i hvilken retning vedkommende hælder mod. Der skal være flere tærskelværdier, så feedbacken kan gives i flere niveauer. Tærskelværdierne er bestemt på baggrund af pilotforsøg, hvor værdierne er beregnet ved først at finde spændingen for $90^{\circ}$, som jævnført \ref{Sec_Pilot_Data} på side \pageref{Sec_Pilot_Data} er $0.3313$V for positiv retning og -$0.3233$V i negativ retning efter forstærkning på hhv. en faktor $9.1$ og derefter en faktor $3.6$. Denne værdi divideres med $90$ for at bestemme spændingen ved $\pm1^{\circ}$ og ganges herefter med hhv. $2^{\circ}$,  $8^{\circ}$ og $13^{\circ}$ for at bestemme spændingen ved de enkelte hældninger og derved definere tærskelværdierne.\\
 \textbf{Krav:} 
