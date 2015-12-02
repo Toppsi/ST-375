@@ -29,18 +29,16 @@ R$2$ i \eqref{eq:Spaendingsdeler} bliver valgt til at være $10$K$\Omega$. Derud
 1.6325V = 2.5 \cdot \dfrac{R3}{10000\Omega + R3} \\
 R3 = 18818.4438\Omega \approx 18820\Omega
 \end{equation}
-
-\subsubsection{Simulering}
-Der foretages en simulering i LTspice af spændingsreferencen og spændingsdeleren for at undersøge, om de opfylder de opstillede krav. På \figref{fig:Spaendingsreference_offset} ses simuleringen af spændingsreferencen med spændingsdeler. 
-
+\noindent På \figref{fig:Spaendingsreference_offset} ses designet af spændingsreferencen med spændingsdeler. 
 \begin{figure}[H]
 	\centering
 	\includegraphics[scale=.5]{figures/cProblemloesning/OffsetSpaendingsRef2.PNG}
-	\caption{Opsætning af kredsløbet for en spændingsreference til offsettet. Hvor der først er en spændingsreference efterfølgt at en spændingsdeler, som gør at outputtet fra spændingsreferencen på $2.5$V bliver til $1.6325$V. }
+	\caption{På figuren ses opsætning af kredsløbet for en spændingsreference til offsettet. Hvor der først er en spændingsreference efterfølgt at en spændingsdeler, som gør at outputtet fra spændingsreferencen på $2.5$V bliver til $1.6325$V. }
 	\label{fig:Spaendingsreference_offset}
 \end{figure}
 
-\noindent Resultatet af simuleringen kan ses i \tableref{Tab:SpaendigsRef_offset}:
+\subsubsection{Simulering}
+Der foretages en simulering i LTspice af spændingsreferencen og spændingsdeleren for at undersøge, om de opfylder de opstillede krav. Resultatet af simuleringen kan ses i \tableref{Tab:SpaendigsRef_offset}:
 \begin{table}[H]
 \centering
 \begin{tabular}{|l|l|l|l|}\hline
@@ -52,7 +50,14 @@ Der foretages en simulering i LTspice af spændingsreferencen og spændingsdeler
 \caption{I tabellen ses resultaterne fra simuleringen i LTspice af spændingsreferencen med spændingsdeleren.}
 \label{Tab:SpaendigsRef_offset}
 \end{table}
-\noindent I \tableref{Tab:SpaendigsRef_offset} fremgår det, at der er en lav afvigelse mellem det forventede output og det simulerede output. Dette forventes, da der benyttes ideelle komponenter i LTspice. Derved fungerer kredsløbet teoretisk og kan implementeres.
+\noindent I \tableref{Tab:SpaendigsRef_offset} fremgår det, at der er en lav afvigelse mellem det forventede output og det simulerede output. Dette forventes, da der benyttes ideelle komponenter i LTspice. Derved fungerer kredsløbet teoretisk og kan implementeres. På \figref{fig:Spaendingsreference_offset_sim} ses simuleringen af spændingsreferencen og spændingsdeleren.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=.3]{figures/cProblemloesning/Reference_sim_off.PNG}
+	\caption{På figuren ses, at inputtet er $5.5$V, outputtet fra spændingsreferencen er $2.5$V og outputtet fra spændingsdeleren er ca. $1.65$V.}
+	\label{fig:Spaendingsreference_offset_sim}
+\end{figure}
 
 \subsubsection{Implementering og test}\label{spaendingsref_resultat}
 I implementeringen arbejdes der med reelle komponenter. Derfor antages det, at der kan være afvigelser fra resultaterne imellem testen med ideelle komponenter i dette afsnit og testen med reelle komponenter i simuleringen. \\
