@@ -143,8 +143,10 @@ Blokken skal levere $2.5$V, da spændingsdelingen er implementeret i komparatorb
 	\item Der accepteres en afvigelse i de benyttede modstandes reelle værdi på $\pm1\%$.
 \end{itemize}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Komparator}\label{KomparatorAfs} 
+\subsection{Feedback}\label{KomparatorAfs}
 Blokken indeholdende komparatorer skal kunne sammenligne et inputsignal på maks $\pm3$V med referencespændinger. Komparatorerne skal vha. definerede tærskelværdier bestemme, hvilken hældningsgrad patienten har, og i hvilken retning vedkommende hælder mod. Der skal være flere tærskelværdier, så feedbacken kan gives i flere niveauer. Tærskelværdierne er bestemt på baggrund af pilotforsøg, hvor værdierne er beregnet ved først at finde spændingen for $90^{\circ}$, som jævnført \ref{Sec_Pilot_Data} på side \pageref{Sec_Pilot_Data} er $0.3313$V for positiv retning og -$0.3233$V i negativ retning efter forstærkning på hhv. en faktor $9.1$ og derefter en faktor $3.6$. Denne værdi divideres med $90$ for at bestemme spændingen ved $\pm1^{\circ}$ og ganges herefter med hhv. $2^{\circ}$,  $8^{\circ}$ og $13^{\circ}$ for at bestemme spændingen ved de enkelte hældninger og derved definere tærskelværdierne.\\
+Visuel og somatosensorisk feedback omfatter den del af systemet, der giver feedback til patienten vha. LED-dioder og vibration. Der skal i alt være fem LED-dioder: En grøn, der placeres i midten, en gul på hver side af den grønne diode og en rød diode på hver side af de gule dioder. Derudover skal der være to vibratorer, som placeres medialt på hver underarm af patienten.\\
+Den grønne LED-diode skal lyse, når accelerometret er placeret korrekt på patienten, hvorved der er sikret den rette udgangsposition for hældningen. Dette gør, at den grønne LED-diode er aktiveret fra $0^{\circ}$-$\pm2^{\circ}$. I intervallet $\pm2^{\circ}$-$\pm8^{\circ}$ lyser ingen LED-dioder. Den gule LED samt en vibrator aktiveres, når patienten skal være opmærksom på sin kropshældning ved en hældning på $\pm8^{\circ}$. Den røde LED-diode aktiveres, når patienten er over $\pm13^{\circ}$ og derfor er i fare for at falde. Vibratoren for den pågældende side vil da stadig være aktiveret. Retningen af patientens kropshældning bestemmes vha. placeringen af LED. Hvis aktiveringen af LEDerne går mod højre indikerer dette, at patienten er ved at falde til højre. Det samme gør sig gældende for fald til venstre. \\
 \textbf{Krav:} 
 \begin{itemize}
 	\item Komparatorblokken skal have en spændingsforsyningen på $\pm5.5$V.
@@ -152,53 +154,18 @@ Blokken indeholdende komparatorer skal kunne sammenligne et inputsignal på maks
 	\item Komparatoren skal ved et bestemt spændingsniveauer aktivere en diode og vibrator:
 	\begin{itemize}
 		\item Grøn diode og ingen vibration: I intervallet indenfor $0.1808$V til -$0.1773$V. Svarende til $\pm2^{\circ}$.
-		\item Gul diode og let vibration: Fra niveauet $0.9648$V og -$0.9413$V. Svarende til $\pm 8^{\circ}$ eller over.
-		\item Rød diode og moderat vibration: Fra nivauet $1.5679$V og -$1.5297$V. Svarende til $\pm13^{\circ}$ eller over.
+		\item Gul diode og vibration: Fra niveauet $0.9648$V og -$0.9413$V. Svarende til $\pm 8^{\circ}$ eller over.
+		\item Rød diode og vibration: Fra nivauet $1.5679$V og -$1.5297$V. Svarende til $\pm13^{\circ}$ eller over.
 		%\item Ingen feedback: Over $2.2602$V og under -$2.2168$V. 
 	\end{itemize}
+	\item LEDerne og vibratorerne skal aktiveres ved angivet tærskelværdier i komparatoren.
 \end{itemize}
 \textbf{Tolerance:}
 \begin{itemize}
 	\item Der accepteres en afvigelse i spændingsforsyningen på $\pm5\%$.
 	\item Der accepteres ingen afvigelse ift. hvor stort et inputsignal komparatoren skal kunne modtage.
 	\item Der accepteres en afvigelse i tærskelværdierne på $\pm1\%$.
-\end{itemize}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Feedback}
-\subsubsection{Visuel feedback}\label{visuel_feedback_krav}
-Blokken med visuel feedback omfatter den del af systemet, der giver feedback til patienten vha. LED-dioder. Der skal i alt være fem LED-dioder: En grøn, der placeres i midten, en gul på hver side af den grønne diode og en rød diode på hver side af de gule dioder. Den grønne LED-diode skal lyse, når accelerometret er placeret korrekt på patienten, hvorved der er sikret den rette udgangsposition for hældningen. Dette gør, at den grønne LED-diode er aktiveret fra $0^{\circ}$-$\pm2^{\circ}$. I intervallet $\pm2^{\circ}$-$\pm8^{\circ}$ lyser ingen LED-dioder. Den gule LED-diode aktiveres, når patienten skal være opmærksom på sin kropshældning ved en hældning på $\pm8^{\circ}$. Den røde LED-diode aktiveres, når patienten er over $\pm13^{\circ}$ og derfor er i fare for at falde. Retningen af patientens kropshældning bestemmes vha. placeringen af LED-dioderne. LED-dioderne til højre for den grønne LED-diode indikerer at patienten er ved at falde til højre. Det samme gør sig gældende for fald til venstre. 
-\\
-\textbf{Krav:}
-\begin{itemize}
-	\item Den visuelle feedbackblok skal have en spændingsforsyning på  $5.5$V.
-	\item LED-dioderne skal aktiveres ved angivet tærskelværdier i komparatoren.
-	%\item LED-dioderne skal informere patienten om hvilken retning kropshældningen sker i.
-	%\item LED-dioderne skal kunne informere patienten omkring accelerometerets placering.
-	%\item LED-dioderne skal informere patienten om risikoen for fald.
-	\item LED-dioderne skal kunne give et tydeligt lys.
-\end{itemize}
-\textbf{Tolerance:}
-\begin{itemize}
-	\item Der accepteres en afvigelse i spændingsforsyningen på $\pm5\%$.
-	\item Der accepteres ingen afvigelse ift. aktivering af LED-dioder, hvis tærskelværdierne for den bestemte LED-diode er opnået i komparatorblokken.
-	\item Der accepteres kun tydeligt lys fra LED-dioderne.
-\end{itemize}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsubsection{Somatosensorisk feedback} 
-Blokken med somatosensorisk feedback omfatter også den del af systemet, der giver feedback til patienten. Her vha. vibratorer. Der skal i alt være to vibratorer, som placeres i medialt på hver underarm. Vibrationen skal ske i modsatte side af hældning, så patienterne kan rette sig mod siden, hvor vibrationen gives. Vibratorerne skal give en bestemt vibrationshastighed ved bestemte hældningsgrader hhv. den gule og røde LED-diode. Hvis den gule LED-diode lyser, skal vibrationen være let og hvis den røde LED-diode lyser skal vibrationen være moderat.
-\\
-\textbf{Krav:}
-\begin{itemize}
-	\item Skal have en spændingsforsyningen på $5.5$V.
-	\item Vibratorerne skal aktiveres ved angivet tærskelværdier i komparatoren.
-	%\item Vibratorerne skal informere patienten om hvilken retning kropshældningen sker i.
-	%\item Vibratorerne skal informere patienten om risikoen for fald.
-	%\item Vibratorerne skal have to vibrationshastigheder\fxnote{Find evt. konkrete værdier - vi skal desuden måske kun have én hastighed}.
-\end{itemize}
-\textbf{Tolerance:}
-\begin{itemize}
-	\item Der accepteres en afvigelse i spændingsforsyningen på $\pm5\%$.
-	\item Der accepteres ingen afvigelse ift. aktivering af vibratorerne, hvis tærskelværdierne for den bestemte vibrator er opnået i komparatorblokken.
+	\item Der accepteres ingen afvigelse ift. aktivering af LED og vibratorerne, hvis tærskelværdierne for den bestemte LED-diode er opnået i komparatorblokken.
 \end{itemize}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Spændingsforsyning}\label{Krav_spaending_spicifikt}
