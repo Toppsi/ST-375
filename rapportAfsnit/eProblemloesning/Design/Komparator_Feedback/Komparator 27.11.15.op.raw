@@ -1,0 +1,1070 @@
+Title: * C:\Users\Mathias\Desktop\ST-375\rapportAfsnit\eProblemloesning\Design\Komparator_Feedback\Komparator 27.11.15.asc
+Date: Fri Dec 04 14:53:45 2015
+Plotname: Operating Point
+Flags: real
+No. Variables: 168
+No. Points:            1
+Offset:   0.0000000000000000e+000
+Command: Linear Technology Corporation LTspice IV
+Backannotation: i21 1 4 8 2
+Backannotation: i24 1 4 8 2
+Backannotation: i23 1 4 8 2
+Backannotation: i22 1 4 8 2
+Backannotation: i20 1 2 3 4 8 5
+Backannotation: i18 1 2 3 4 8 5
+Backannotation: i19 1 2 3 4 8 5
+Backannotation: i17 1 2 4 8 3
+Backannotation: i16 1 2 4 8 3
+Backannotation: i15 1 2 4 8 3
+Backannotation: i14 1 2 4 8 3
+Backannotation: i13 1 2 4 8 3
+Backannotation: i53 1 2 11 12 25
+Backannotation: i54b 1 2 11 12 25
+Backannotation: i91 1 2 3
+Backannotation: i90 1 2 3
+Backannotation: i89 1 2 3
+Backannotation: i21:sn 1 2 3
+Backannotation: i21:sp 1 2 3
+Backannotation: i24:sn 1 2 3
+Backannotation: i24:sp 1 2 3
+Backannotation: i23:sn 1 2 3
+Backannotation: i23:sp 1 2 3
+Backannotation: i22:sn 1 2 3
+Backannotation: i22:sp 1 2 3
+Backannotation: i20:i6 1 2 3
+Backannotation: i20:i5 1 2 3
+Backannotation: i20:i4 1 2 3
+Backannotation: i20:i3 1 2 3
+Backannotation: i20:i2 1 2 3
+Backannotation: i20:i1 1 2 3
+Backannotation: i18:i6 1 2 3
+Backannotation: i18:i5 1 2 3
+Backannotation: i18:i4 1 2 3
+Backannotation: i18:i3 1 2 3
+Backannotation: i18:i2 1 2 3
+Backannotation: i18:i1 1 2 3
+Backannotation: i19:i6 1 2 3
+Backannotation: i19:i5 1 2 3
+Backannotation: i19:i4 1 2 3
+Backannotation: i19:i3 1 2 3
+Backannotation: i19:i2 1 2 3
+Backannotation: i19:i1 1 2 3
+Backannotation: i17:i4 1 2 3
+Backannotation: i17:i3 1 2 3
+Backannotation: i17:i2 1 2 3
+Backannotation: i17:i1 1 2 3
+Backannotation: i16:i4 1 2 3
+Backannotation: i16:i3 1 2 3
+Backannotation: i16:i2 1 2 3
+Backannotation: i16:i1 1 2 3
+Backannotation: i15:i4 1 2 3
+Backannotation: i15:i3 1 2 3
+Backannotation: i15:i2 1 2 3
+Backannotation: i15:i1 1 2 3
+Backannotation: i14:i4 1 2 3
+Backannotation: i14:i3 1 2 3
+Backannotation: i14:i2 1 2 3
+Backannotation: i14:i1 1 2 3
+Backannotation: i13:i4 1 2 3
+Backannotation: i13:i3 1 2 3
+Backannotation: i13:i2 1 2 3
+Backannotation: i13:i1 1 2 3
+Backannotation: i24 1 4 8 2
+Backannotation: i23 1 4 8 2
+Backannotation: i21 1 4 8 2
+Backannotation: i22 1 4 8 2
+Backannotation: i20 1 2 3 4 8 5
+Backannotation: i52 1 2 4 8 3
+Backannotation: i63 1 2 4 8 3
+Backannotation: i64 1 2 11 12 25
+Backannotation: i67 1 2 3
+Backannotation: i66 1 2 3
+Backannotation: i65 1 2 3
+Backannotation: i24:sn 1 2 3
+Backannotation: i24:sp 1 2 3
+Backannotation: i23:sn 1 2 3
+Backannotation: i23:sp 1 2 3
+Backannotation: i21:sn 1 2 3
+Backannotation: i21:sp 1 2 3
+Backannotation: i22:sn 1 2 3
+Backannotation: i22:sp 1 2 3
+Backannotation: i20:i6 1 2 3
+Backannotation: i20:i5 1 2 3
+Backannotation: i20:i4 1 2 3
+Backannotation: i20:i3 1 2 3
+Backannotation: i20:i2 1 2 3
+Backannotation: i20:i1 1 2 3
+Backannotation: i52:i4 1 2 3
+Backannotation: i52:i3 1 2 3
+Backannotation: i52:i2 1 2 3
+Backannotation: i52:i1 1 2 3
+Backannotation: i63:i4 1 2 3
+Backannotation: i63:i3 1 2 3
+Backannotation: i63:i2 1 2 3
+Backannotation: i63:i1 1 2 3
+Backannotation: i21 1 4 8 2
+Backannotation: i24 1 4 8 2
+Backannotation: i23 1 4 8 2
+Backannotation: i22 1 4 8 2
+Backannotation: i18 1 2 3 4 8 5
+Backannotation: i19 1 2 3 4 8 5
+Backannotation: i20 1 2 3 4 8 5
+Backannotation: i17 1 2 4 8 3
+Backannotation: i16 1 2 4 8 3
+Backannotation: i15 1 2 4 8 3
+Backannotation: i14 1 2 4 8 3
+Backannotation: i13 1 2 4 8 3
+Backannotation: i64 1 2 11 12 25
+Backannotation: i67 1 2 3
+Backannotation: i66 1 2 3
+Backannotation: i65 1 2 3
+Backannotation: i21:sn 1 2 3
+Backannotation: i21:sp 1 2 3
+Backannotation: i24:sn 1 2 3
+Backannotation: i24:sp 1 2 3
+Backannotation: i23:sn 1 2 3
+Backannotation: i23:sp 1 2 3
+Backannotation: i22:sn 1 2 3
+Backannotation: i22:sp 1 2 3
+Backannotation: i18:i6 1 2 3
+Backannotation: i18:i5 1 2 3
+Backannotation: i18:i4 1 2 3
+Backannotation: i18:i3 1 2 3
+Backannotation: i18:i2 1 2 3
+Backannotation: i18:i1 1 2 3
+Backannotation: i19:i6 1 2 3
+Backannotation: i19:i5 1 2 3
+Backannotation: i19:i4 1 2 3
+Backannotation: i19:i3 1 2 3
+Backannotation: i19:i2 1 2 3
+Backannotation: i19:i1 1 2 3
+Backannotation: i20:i6 1 2 3
+Backannotation: i20:i5 1 2 3
+Backannotation: i20:i4 1 2 3
+Backannotation: i20:i3 1 2 3
+Backannotation: i20:i2 1 2 3
+Backannotation: i20:i1 1 2 3
+Backannotation: i17:i4 1 2 3
+Backannotation: i17:i3 1 2 3
+Backannotation: i17:i2 1 2 3
+Backannotation: i17:i1 1 2 3
+Backannotation: i16:i4 1 2 3
+Backannotation: i16:i3 1 2 3
+Backannotation: i16:i2 1 2 3
+Backannotation: i16:i1 1 2 3
+Backannotation: i15:i4 1 2 3
+Backannotation: i15:i3 1 2 3
+Backannotation: i15:i2 1 2 3
+Backannotation: i15:i1 1 2 3
+Backannotation: i14:i4 1 2 3
+Backannotation: i14:i3 1 2 3
+Backannotation: i14:i2 1 2 3
+Backannotation: i14:i1 1 2 3
+Backannotation: i13:i4 1 2 3
+Backannotation: i13:i3 1 2 3
+Backannotation: i13:i2 1 2 3
+Backannotation: i13:i1 1 2 3
+Backannotation: i21 1 4 8 2
+Backannotation: i22 1 4 8 2
+Backannotation: i23 1 4 8 2
+Backannotation: i24 1 4 8 2
+Backannotation: i18 1 2 3 4 8 5
+Backannotation: i19 1 2 3 4 8 5
+Backannotation: i20 1 2 3 4 8 5
+Backannotation: i17 1 2 4 8 3
+Backannotation: i16 1 2 4 8 3
+Backannotation: i15 1 2 4 8 3
+Backannotation: i14 1 2 4 8 3
+Backannotation: i13 1 2 4 8 3
+Backannotation: i53 1 2 11 12 25
+Backannotation: i76 1 2 3
+Backannotation: i75 1 2 3
+Backannotation: i74 1 2 3
+Backannotation: i21:sn 1 2 3
+Backannotation: i21:sp 1 2 3
+Backannotation: i22:sn 1 2 3
+Backannotation: i22:sp 1 2 3
+Backannotation: i23:sn 1 2 3
+Backannotation: i23:sp 1 2 3
+Backannotation: i24:sn 1 2 3
+Backannotation: i24:sp 1 2 3
+Backannotation: i18:i6 1 2 3
+Backannotation: i18:i5 1 2 3
+Backannotation: i18:i4 1 2 3
+Backannotation: i18:i3 1 2 3
+Backannotation: i18:i2 1 2 3
+Backannotation: i18:i1 1 2 3
+Backannotation: i19:i6 1 2 3
+Backannotation: i19:i5 1 2 3
+Backannotation: i19:i4 1 2 3
+Backannotation: i19:i3 1 2 3
+Backannotation: i19:i2 1 2 3
+Backannotation: i19:i1 1 2 3
+Backannotation: i20:i6 1 2 3
+Backannotation: i20:i5 1 2 3
+Backannotation: i20:i4 1 2 3
+Backannotation: i20:i3 1 2 3
+Backannotation: i20:i2 1 2 3
+Backannotation: i20:i1 1 2 3
+Backannotation: i17:i4 1 2 3
+Backannotation: i17:i3 1 2 3
+Backannotation: i17:i2 1 2 3
+Backannotation: i17:i1 1 2 3
+Backannotation: i16:i4 1 2 3
+Backannotation: i16:i3 1 2 3
+Backannotation: i16:i2 1 2 3
+Backannotation: i16:i1 1 2 3
+Backannotation: i15:i4 1 2 3
+Backannotation: i15:i3 1 2 3
+Backannotation: i15:i2 1 2 3
+Backannotation: i15:i1 1 2 3
+Backannotation: i14:i4 1 2 3
+Backannotation: i14:i3 1 2 3
+Backannotation: i14:i2 1 2 3
+Backannotation: i14:i1 1 2 3
+Backannotation: i13:i4 1 2 3
+Backannotation: i13:i3 1 2 3
+Backannotation: i13:i2 1 2 3
+Backannotation: i13:i1 1 2 3
+Backannotation: i26 1 2 11 12 25 100 9
+Backannotation: i25 1 2 11 12 25 100 9
+Backannotation: i24 1 2 11 12 25 100 9
+Backannotation: i23 1 2 11 12 25 100 9
+Backannotation: s2 1 2 3
+Backannotation: s1 1 2 3
+Backannotation: i26:sw1 1 2 3
+Backannotation: i26:sw2 1 2 3
+Backannotation: i26:sw3 1 2 3
+Backannotation: i26:sw4 1 2 3
+Backannotation: i26:sw5 1 2 3
+Backannotation: i26:sw6 1 2 3
+Backannotation: i26:sw7 1 2 3
+Backannotation: i26:sw8 1 2 3
+Backannotation: i26:sw9 1 2 3
+Backannotation: i26:sw10 1 2 3
+Backannotation: i26:s11 1 2 3
+Backannotation: i26:s12 1 2 3
+Backannotation: i26:i10 9 100 11 12 3a
+Backannotation: i26:i8 1 2 3
+Backannotation: i26:i9 1 2 3
+Backannotation: i26:sw11 1 2 3
+Backannotation: i26:sw12 1 2 3
+Backannotation: i26:sw13 1 2 3
+Backannotation: i26:sw14 1 2 3
+Backannotation: i26:sw15 1 2 3
+Backannotation: i26:sw16 1 2 3
+Backannotation: i26:sw17 1 2 3
+Backannotation: i26:sw18 1 2 3
+Backannotation: i26:sw19 1 2 3
+Backannotation: i26:sw20 1 2 3
+Backannotation: i26:s21 1 2 3
+Backannotation: i26:s22 1 2 3
+Backannotation: i26:sw21 1 2 3
+Backannotation: i26:sw22 1 2 3
+Backannotation: i26:sw23 1 2 3
+Backannotation: i26:sw24 1 2 3
+Backannotation: i26:sw25 1 2 3
+Backannotation: i26:sw26 1 2 3
+Backannotation: i26:sw27 1 2 3
+Backannotation: i26:sw28 1 2 3
+Backannotation: i26:s29 1 2 3
+Backannotation: i26:s30 1 2 3
+Backannotation: i26:s31 1 2 3
+Backannotation: i26:s32 1 2 3
+Backannotation: i26:s33 1 2 3
+Backannotation: i26:s34 1 2 3
+Backannotation: i26:s35 1 2 3
+Backannotation: i26:s36 1 2 3
+Backannotation: i26:sw29 1 2 3
+Backannotation: i26:sw30 1 2 3
+Backannotation: i26:sw31 1 2 3
+Backannotation: i26:sw32 1 2 3
+Backannotation: i26:sw33 1 2 3
+Backannotation: i26:sw34 1 2 3
+Backannotation: i26:sw35 1 2 3
+Backannotation: i26:sw36 1 2 3
+Backannotation: i26:sw37 1 2 3
+Backannotation: i26:sw38 1 2 3
+Backannotation: i26:sw39 1 2 3
+Backannotation: i26:sw40 1 2 3
+Backannotation: i26:sw41 1 2 3
+Backannotation: i26:sw42 1 2 3
+Backannotation: i26:sw43 1 2 3
+Backannotation: i26:sw44 1 2 3
+Backannotation: i26:sw45 1 2 3
+Backannotation: i26:sw46 1 2 3
+Backannotation: i26:s47 1 2 3
+Backannotation: i26:s48 1 2 3
+Backannotation: i26:sw47 1 2 3
+Backannotation: i26:sw48 1 2 3
+Backannotation: i26:sw49 1 2 3
+Backannotation: i26:sw50 1 2 3
+Backannotation: i26:sw51 1 2 3
+Backannotation: i26:sw52 1 2 3
+Backannotation: i26:sw53 1 2 3
+Backannotation: i26:sw54 1 2 3
+Backannotation: i26:s55 1 2 3
+Backannotation: i26:s56 1 2 3
+Backannotation: i26:s57 1 2 3
+Backannotation: i26:s58 1 2 3
+Backannotation: i25:sw1 1 2 3
+Backannotation: i25:sw2 1 2 3
+Backannotation: i25:sw3 1 2 3
+Backannotation: i25:sw4 1 2 3
+Backannotation: i25:sw5 1 2 3
+Backannotation: i25:sw6 1 2 3
+Backannotation: i25:sw7 1 2 3
+Backannotation: i25:sw8 1 2 3
+Backannotation: i25:sw9 1 2 3
+Backannotation: i25:sw10 1 2 3
+Backannotation: i25:s11 1 2 3
+Backannotation: i25:s12 1 2 3
+Backannotation: i25:i10 9 100 11 12 3a
+Backannotation: i25:i8 1 2 3
+Backannotation: i25:i9 1 2 3
+Backannotation: i25:sw11 1 2 3
+Backannotation: i25:sw12 1 2 3
+Backannotation: i25:sw13 1 2 3
+Backannotation: i25:sw14 1 2 3
+Backannotation: i25:sw15 1 2 3
+Backannotation: i25:sw16 1 2 3
+Backannotation: i25:sw17 1 2 3
+Backannotation: i25:sw18 1 2 3
+Backannotation: i25:sw19 1 2 3
+Backannotation: i25:sw20 1 2 3
+Backannotation: i25:s21 1 2 3
+Backannotation: i25:s22 1 2 3
+Backannotation: i25:sw21 1 2 3
+Backannotation: i25:sw22 1 2 3
+Backannotation: i25:sw23 1 2 3
+Backannotation: i25:sw24 1 2 3
+Backannotation: i25:sw25 1 2 3
+Backannotation: i25:sw26 1 2 3
+Backannotation: i25:sw27 1 2 3
+Backannotation: i25:sw28 1 2 3
+Backannotation: i25:s29 1 2 3
+Backannotation: i25:s30 1 2 3
+Backannotation: i25:s31 1 2 3
+Backannotation: i25:s32 1 2 3
+Backannotation: i25:s33 1 2 3
+Backannotation: i25:s34 1 2 3
+Backannotation: i25:s35 1 2 3
+Backannotation: i25:s36 1 2 3
+Backannotation: i25:sw29 1 2 3
+Backannotation: i25:sw30 1 2 3
+Backannotation: i25:sw31 1 2 3
+Backannotation: i25:sw32 1 2 3
+Backannotation: i25:sw33 1 2 3
+Backannotation: i25:sw34 1 2 3
+Backannotation: i25:sw35 1 2 3
+Backannotation: i25:sw36 1 2 3
+Backannotation: i25:sw37 1 2 3
+Backannotation: i25:sw38 1 2 3
+Backannotation: i25:sw39 1 2 3
+Backannotation: i25:sw40 1 2 3
+Backannotation: i25:sw41 1 2 3
+Backannotation: i25:sw42 1 2 3
+Backannotation: i25:sw43 1 2 3
+Backannotation: i25:sw44 1 2 3
+Backannotation: i25:sw45 1 2 3
+Backannotation: i25:sw46 1 2 3
+Backannotation: i25:s47 1 2 3
+Backannotation: i25:s48 1 2 3
+Backannotation: i25:sw47 1 2 3
+Backannotation: i25:sw48 1 2 3
+Backannotation: i25:sw49 1 2 3
+Backannotation: i25:sw50 1 2 3
+Backannotation: i25:sw51 1 2 3
+Backannotation: i25:sw52 1 2 3
+Backannotation: i25:sw53 1 2 3
+Backannotation: i25:sw54 1 2 3
+Backannotation: i25:s55 1 2 3
+Backannotation: i25:s56 1 2 3
+Backannotation: i25:s57 1 2 3
+Backannotation: i25:s58 1 2 3
+Backannotation: i24:sw1 1 2 3
+Backannotation: i24:sw2 1 2 3
+Backannotation: i24:sw3 1 2 3
+Backannotation: i24:sw4 1 2 3
+Backannotation: i24:sw5 1 2 3
+Backannotation: i24:sw6 1 2 3
+Backannotation: i24:sw7 1 2 3
+Backannotation: i24:sw8 1 2 3
+Backannotation: i24:sw9 1 2 3
+Backannotation: i24:sw10 1 2 3
+Backannotation: i24:s11 1 2 3
+Backannotation: i24:s12 1 2 3
+Backannotation: i24:i10 9 100 11 12 3a
+Backannotation: i24:i8 1 2 3
+Backannotation: i24:i9 1 2 3
+Backannotation: i24:sw11 1 2 3
+Backannotation: i24:sw12 1 2 3
+Backannotation: i24:sw13 1 2 3
+Backannotation: i24:sw14 1 2 3
+Backannotation: i24:sw15 1 2 3
+Backannotation: i24:sw16 1 2 3
+Backannotation: i24:sw17 1 2 3
+Backannotation: i24:sw18 1 2 3
+Backannotation: i24:sw19 1 2 3
+Backannotation: i24:sw20 1 2 3
+Backannotation: i24:s21 1 2 3
+Backannotation: i24:s22 1 2 3
+Backannotation: i24:sw21 1 2 3
+Backannotation: i24:sw22 1 2 3
+Backannotation: i24:sw23 1 2 3
+Backannotation: i24:sw24 1 2 3
+Backannotation: i24:sw25 1 2 3
+Backannotation: i24:sw26 1 2 3
+Backannotation: i24:sw27 1 2 3
+Backannotation: i24:sw28 1 2 3
+Backannotation: i24:s29 1 2 3
+Backannotation: i24:s30 1 2 3
+Backannotation: i24:s31 1 2 3
+Backannotation: i24:s32 1 2 3
+Backannotation: i24:s33 1 2 3
+Backannotation: i24:s34 1 2 3
+Backannotation: i24:s35 1 2 3
+Backannotation: i24:s36 1 2 3
+Backannotation: i24:sw29 1 2 3
+Backannotation: i24:sw30 1 2 3
+Backannotation: i24:sw31 1 2 3
+Backannotation: i24:sw32 1 2 3
+Backannotation: i24:sw33 1 2 3
+Backannotation: i24:sw34 1 2 3
+Backannotation: i24:sw35 1 2 3
+Backannotation: i24:sw36 1 2 3
+Backannotation: i24:sw37 1 2 3
+Backannotation: i24:sw38 1 2 3
+Backannotation: i24:sw39 1 2 3
+Backannotation: i24:sw40 1 2 3
+Backannotation: i24:sw41 1 2 3
+Backannotation: i24:sw42 1 2 3
+Backannotation: i24:sw43 1 2 3
+Backannotation: i24:sw44 1 2 3
+Backannotation: i24:sw45 1 2 3
+Backannotation: i24:sw46 1 2 3
+Backannotation: i24:s47 1 2 3
+Backannotation: i24:s48 1 2 3
+Backannotation: i24:sw47 1 2 3
+Backannotation: i24:sw48 1 2 3
+Backannotation: i24:sw49 1 2 3
+Backannotation: i24:sw50 1 2 3
+Backannotation: i24:sw51 1 2 3
+Backannotation: i24:sw52 1 2 3
+Backannotation: i24:sw53 1 2 3
+Backannotation: i24:sw54 1 2 3
+Backannotation: i24:s55 1 2 3
+Backannotation: i24:s56 1 2 3
+Backannotation: i24:s57 1 2 3
+Backannotation: i24:s58 1 2 3
+Backannotation: i23:sw1 1 2 3
+Backannotation: i23:sw2 1 2 3
+Backannotation: i23:sw3 1 2 3
+Backannotation: i23:sw4 1 2 3
+Backannotation: i23:sw5 1 2 3
+Backannotation: i23:sw6 1 2 3
+Backannotation: i23:sw7 1 2 3
+Backannotation: i23:sw8 1 2 3
+Backannotation: i23:sw9 1 2 3
+Backannotation: i23:sw10 1 2 3
+Backannotation: i23:s11 1 2 3
+Backannotation: i23:s12 1 2 3
+Backannotation: i23:i10 9 100 11 12 3a
+Backannotation: i23:i8 1 2 3
+Backannotation: i23:i9 1 2 3
+Backannotation: i23:sw11 1 2 3
+Backannotation: i23:sw12 1 2 3
+Backannotation: i23:sw13 1 2 3
+Backannotation: i23:sw14 1 2 3
+Backannotation: i23:sw15 1 2 3
+Backannotation: i23:sw16 1 2 3
+Backannotation: i23:sw17 1 2 3
+Backannotation: i23:sw18 1 2 3
+Backannotation: i23:sw19 1 2 3
+Backannotation: i23:sw20 1 2 3
+Backannotation: i23:s21 1 2 3
+Backannotation: i23:s22 1 2 3
+Backannotation: i23:sw21 1 2 3
+Backannotation: i23:sw22 1 2 3
+Backannotation: i23:sw23 1 2 3
+Backannotation: i23:sw24 1 2 3
+Backannotation: i23:sw25 1 2 3
+Backannotation: i23:sw26 1 2 3
+Backannotation: i23:sw27 1 2 3
+Backannotation: i23:sw28 1 2 3
+Backannotation: i23:s29 1 2 3
+Backannotation: i23:s30 1 2 3
+Backannotation: i23:s31 1 2 3
+Backannotation: i23:s32 1 2 3
+Backannotation: i23:s33 1 2 3
+Backannotation: i23:s34 1 2 3
+Backannotation: i23:s35 1 2 3
+Backannotation: i23:s36 1 2 3
+Backannotation: i23:sw29 1 2 3
+Backannotation: i23:sw30 1 2 3
+Backannotation: i23:sw31 1 2 3
+Backannotation: i23:sw32 1 2 3
+Backannotation: i23:sw33 1 2 3
+Backannotation: i23:sw34 1 2 3
+Backannotation: i23:sw35 1 2 3
+Backannotation: i23:sw36 1 2 3
+Backannotation: i23:sw37 1 2 3
+Backannotation: i23:sw38 1 2 3
+Backannotation: i23:sw39 1 2 3
+Backannotation: i23:sw40 1 2 3
+Backannotation: i23:sw41 1 2 3
+Backannotation: i23:sw42 1 2 3
+Backannotation: i23:sw43 1 2 3
+Backannotation: i23:sw44 1 2 3
+Backannotation: i23:sw45 1 2 3
+Backannotation: i23:sw46 1 2 3
+Backannotation: i23:s47 1 2 3
+Backannotation: i23:s48 1 2 3
+Backannotation: i23:sw47 1 2 3
+Backannotation: i23:sw48 1 2 3
+Backannotation: i23:sw49 1 2 3
+Backannotation: i23:sw50 1 2 3
+Backannotation: i23:sw51 1 2 3
+Backannotation: i23:sw52 1 2 3
+Backannotation: i23:sw53 1 2 3
+Backannotation: i23:sw54 1 2 3
+Backannotation: i23:s55 1 2 3
+Backannotation: i23:s56 1 2 3
+Backannotation: i23:s57 1 2 3
+Backannotation: i23:s58 1 2 3
+Backannotation: i26:i10:i25 1 2 3
+Backannotation: i26:i10:i27 1 2 3
+Backannotation: i26:i10:i26 1 2 3
+Backannotation: i26:i10:i24 1 2 3
+Backannotation: i26:i10:i23 1 2 3
+Backannotation: i26:i10:i22 1 2 3
+Backannotation: i25:i10:i25 1 2 3
+Backannotation: i25:i10:i27 1 2 3
+Backannotation: i25:i10:i26 1 2 3
+Backannotation: i25:i10:i24 1 2 3
+Backannotation: i25:i10:i23 1 2 3
+Backannotation: i25:i10:i22 1 2 3
+Backannotation: i24:i10:i25 1 2 3
+Backannotation: i24:i10:i27 1 2 3
+Backannotation: i24:i10:i26 1 2 3
+Backannotation: i24:i10:i24 1 2 3
+Backannotation: i24:i10:i23 1 2 3
+Backannotation: i24:i10:i22 1 2 3
+Backannotation: i23:i10:i25 1 2 3
+Backannotation: i23:i10:i27 1 2 3
+Backannotation: i23:i10:i26 1 2 3
+Backannotation: i23:i10:i24 1 2 3
+Backannotation: i23:i10:i23 1 2 3
+Backannotation: i23:i10:i22 1 2 3
+Backannotation: i26 1 2 11 12 25 100 9
+Backannotation: i25 1 2 11 12 25 100 9
+Backannotation: i24 1 2 11 12 25 100 9
+Backannotation: i23 1 2 11 12 25 100 9
+Backannotation: s2 1 2 3
+Backannotation: s1 1 2 3
+Backannotation: i26:sw1 1 2 3
+Backannotation: i26:sw2 1 2 3
+Backannotation: i26:sw3 1 2 3
+Backannotation: i26:sw4 1 2 3
+Backannotation: i26:sw5 1 2 3
+Backannotation: i26:sw6 1 2 3
+Backannotation: i26:sw7 1 2 3
+Backannotation: i26:sw8 1 2 3
+Backannotation: i26:sw9 1 2 3
+Backannotation: i26:sw10 1 2 3
+Backannotation: i26:s11 1 2 3
+Backannotation: i26:s12 1 2 3
+Backannotation: i26:i10 9 100 11 12 3a
+Backannotation: i26:i8 1 2 3
+Backannotation: i26:i9 1 2 3
+Backannotation: i26:sw11 1 2 3
+Backannotation: i26:sw12 1 2 3
+Backannotation: i26:sw13 1 2 3
+Backannotation: i26:sw14 1 2 3
+Backannotation: i26:sw15 1 2 3
+Backannotation: i26:sw16 1 2 3
+Backannotation: i26:sw17 1 2 3
+Backannotation: i26:sw18 1 2 3
+Backannotation: i26:sw19 1 2 3
+Backannotation: i26:sw20 1 2 3
+Backannotation: i26:s21 1 2 3
+Backannotation: i26:s22 1 2 3
+Backannotation: i26:sw21 1 2 3
+Backannotation: i26:sw22 1 2 3
+Backannotation: i26:sw23 1 2 3
+Backannotation: i26:sw24 1 2 3
+Backannotation: i26:sw25 1 2 3
+Backannotation: i26:sw26 1 2 3
+Backannotation: i26:sw27 1 2 3
+Backannotation: i26:sw28 1 2 3
+Backannotation: i26:s29 1 2 3
+Backannotation: i26:s30 1 2 3
+Backannotation: i26:s31 1 2 3
+Backannotation: i26:s32 1 2 3
+Backannotation: i26:s33 1 2 3
+Backannotation: i26:s34 1 2 3
+Backannotation: i26:s35 1 2 3
+Backannotation: i26:s36 1 2 3
+Backannotation: i26:sw29 1 2 3
+Backannotation: i26:sw30 1 2 3
+Backannotation: i26:sw31 1 2 3
+Backannotation: i26:sw32 1 2 3
+Backannotation: i26:sw33 1 2 3
+Backannotation: i26:sw34 1 2 3
+Backannotation: i26:sw35 1 2 3
+Backannotation: i26:sw36 1 2 3
+Backannotation: i26:sw37 1 2 3
+Backannotation: i26:sw38 1 2 3
+Backannotation: i26:sw39 1 2 3
+Backannotation: i26:sw40 1 2 3
+Backannotation: i26:sw41 1 2 3
+Backannotation: i26:sw42 1 2 3
+Backannotation: i26:sw43 1 2 3
+Backannotation: i26:sw44 1 2 3
+Backannotation: i26:sw45 1 2 3
+Backannotation: i26:sw46 1 2 3
+Backannotation: i26:s47 1 2 3
+Backannotation: i26:s48 1 2 3
+Backannotation: i26:sw47 1 2 3
+Backannotation: i26:sw48 1 2 3
+Backannotation: i26:sw49 1 2 3
+Backannotation: i26:sw50 1 2 3
+Backannotation: i26:sw51 1 2 3
+Backannotation: i26:sw52 1 2 3
+Backannotation: i26:sw53 1 2 3
+Backannotation: i26:sw54 1 2 3
+Backannotation: i26:s55 1 2 3
+Backannotation: i26:s56 1 2 3
+Backannotation: i26:s57 1 2 3
+Backannotation: i26:s58 1 2 3
+Backannotation: i25:sw1 1 2 3
+Backannotation: i25:sw2 1 2 3
+Backannotation: i25:sw3 1 2 3
+Backannotation: i25:sw4 1 2 3
+Backannotation: i25:sw5 1 2 3
+Backannotation: i25:sw6 1 2 3
+Backannotation: i25:sw7 1 2 3
+Backannotation: i25:sw8 1 2 3
+Backannotation: i25:sw9 1 2 3
+Backannotation: i25:sw10 1 2 3
+Backannotation: i25:s11 1 2 3
+Backannotation: i25:s12 1 2 3
+Backannotation: i25:i10 9 100 11 12 3a
+Backannotation: i25:i8 1 2 3
+Backannotation: i25:i9 1 2 3
+Backannotation: i25:sw11 1 2 3
+Backannotation: i25:sw12 1 2 3
+Backannotation: i25:sw13 1 2 3
+Backannotation: i25:sw14 1 2 3
+Backannotation: i25:sw15 1 2 3
+Backannotation: i25:sw16 1 2 3
+Backannotation: i25:sw17 1 2 3
+Backannotation: i25:sw18 1 2 3
+Backannotation: i25:sw19 1 2 3
+Backannotation: i25:sw20 1 2 3
+Backannotation: i25:s21 1 2 3
+Backannotation: i25:s22 1 2 3
+Backannotation: i25:sw21 1 2 3
+Backannotation: i25:sw22 1 2 3
+Backannotation: i25:sw23 1 2 3
+Backannotation: i25:sw24 1 2 3
+Backannotation: i25:sw25 1 2 3
+Backannotation: i25:sw26 1 2 3
+Backannotation: i25:sw27 1 2 3
+Backannotation: i25:sw28 1 2 3
+Backannotation: i25:s29 1 2 3
+Backannotation: i25:s30 1 2 3
+Backannotation: i25:s31 1 2 3
+Backannotation: i25:s32 1 2 3
+Backannotation: i25:s33 1 2 3
+Backannotation: i25:s34 1 2 3
+Backannotation: i25:s35 1 2 3
+Backannotation: i25:s36 1 2 3
+Backannotation: i25:sw29 1 2 3
+Backannotation: i25:sw30 1 2 3
+Backannotation: i25:sw31 1 2 3
+Backannotation: i25:sw32 1 2 3
+Backannotation: i25:sw33 1 2 3
+Backannotation: i25:sw34 1 2 3
+Backannotation: i25:sw35 1 2 3
+Backannotation: i25:sw36 1 2 3
+Backannotation: i25:sw37 1 2 3
+Backannotation: i25:sw38 1 2 3
+Backannotation: i25:sw39 1 2 3
+Backannotation: i25:sw40 1 2 3
+Backannotation: i25:sw41 1 2 3
+Backannotation: i25:sw42 1 2 3
+Backannotation: i25:sw43 1 2 3
+Backannotation: i25:sw44 1 2 3
+Backannotation: i25:sw45 1 2 3
+Backannotation: i25:sw46 1 2 3
+Backannotation: i25:s47 1 2 3
+Backannotation: i25:s48 1 2 3
+Backannotation: i25:sw47 1 2 3
+Backannotation: i25:sw48 1 2 3
+Backannotation: i25:sw49 1 2 3
+Backannotation: i25:sw50 1 2 3
+Backannotation: i25:sw51 1 2 3
+Backannotation: i25:sw52 1 2 3
+Backannotation: i25:sw53 1 2 3
+Backannotation: i25:sw54 1 2 3
+Backannotation: i25:s55 1 2 3
+Backannotation: i25:s56 1 2 3
+Backannotation: i25:s57 1 2 3
+Backannotation: i25:s58 1 2 3
+Backannotation: i24:sw1 1 2 3
+Backannotation: i24:sw2 1 2 3
+Backannotation: i24:sw3 1 2 3
+Backannotation: i24:sw4 1 2 3
+Backannotation: i24:sw5 1 2 3
+Backannotation: i24:sw6 1 2 3
+Backannotation: i24:sw7 1 2 3
+Backannotation: i24:sw8 1 2 3
+Backannotation: i24:sw9 1 2 3
+Backannotation: i24:sw10 1 2 3
+Backannotation: i24:s11 1 2 3
+Backannotation: i24:s12 1 2 3
+Backannotation: i24:i10 9 100 11 12 3a
+Backannotation: i24:i8 1 2 3
+Backannotation: i24:i9 1 2 3
+Backannotation: i24:sw11 1 2 3
+Backannotation: i24:sw12 1 2 3
+Backannotation: i24:sw13 1 2 3
+Backannotation: i24:sw14 1 2 3
+Backannotation: i24:sw15 1 2 3
+Backannotation: i24:sw16 1 2 3
+Backannotation: i24:sw17 1 2 3
+Backannotation: i24:sw18 1 2 3
+Backannotation: i24:sw19 1 2 3
+Backannotation: i24:sw20 1 2 3
+Backannotation: i24:s21 1 2 3
+Backannotation: i24:s22 1 2 3
+Backannotation: i24:sw21 1 2 3
+Backannotation: i24:sw22 1 2 3
+Backannotation: i24:sw23 1 2 3
+Backannotation: i24:sw24 1 2 3
+Backannotation: i24:sw25 1 2 3
+Backannotation: i24:sw26 1 2 3
+Backannotation: i24:sw27 1 2 3
+Backannotation: i24:sw28 1 2 3
+Backannotation: i24:s29 1 2 3
+Backannotation: i24:s30 1 2 3
+Backannotation: i24:s31 1 2 3
+Backannotation: i24:s32 1 2 3
+Backannotation: i24:s33 1 2 3
+Backannotation: i24:s34 1 2 3
+Backannotation: i24:s35 1 2 3
+Backannotation: i24:s36 1 2 3
+Backannotation: i24:sw29 1 2 3
+Backannotation: i24:sw30 1 2 3
+Backannotation: i24:sw31 1 2 3
+Backannotation: i24:sw32 1 2 3
+Backannotation: i24:sw33 1 2 3
+Backannotation: i24:sw34 1 2 3
+Backannotation: i24:sw35 1 2 3
+Backannotation: i24:sw36 1 2 3
+Backannotation: i24:sw37 1 2 3
+Backannotation: i24:sw38 1 2 3
+Backannotation: i24:sw39 1 2 3
+Backannotation: i24:sw40 1 2 3
+Backannotation: i24:sw41 1 2 3
+Backannotation: i24:sw42 1 2 3
+Backannotation: i24:sw43 1 2 3
+Backannotation: i24:sw44 1 2 3
+Backannotation: i24:sw45 1 2 3
+Backannotation: i24:sw46 1 2 3
+Backannotation: i24:s47 1 2 3
+Backannotation: i24:s48 1 2 3
+Backannotation: i24:sw47 1 2 3
+Backannotation: i24:sw48 1 2 3
+Backannotation: i24:sw49 1 2 3
+Backannotation: i24:sw50 1 2 3
+Backannotation: i24:sw51 1 2 3
+Backannotation: i24:sw52 1 2 3
+Backannotation: i24:sw53 1 2 3
+Backannotation: i24:sw54 1 2 3
+Backannotation: i24:s55 1 2 3
+Backannotation: i24:s56 1 2 3
+Backannotation: i24:s57 1 2 3
+Backannotation: i24:s58 1 2 3
+Backannotation: i23:sw1 1 2 3
+Backannotation: i23:sw2 1 2 3
+Backannotation: i23:sw3 1 2 3
+Backannotation: i23:sw4 1 2 3
+Backannotation: i23:sw5 1 2 3
+Backannotation: i23:sw6 1 2 3
+Backannotation: i23:sw7 1 2 3
+Backannotation: i23:sw8 1 2 3
+Backannotation: i23:sw9 1 2 3
+Backannotation: i23:sw10 1 2 3
+Backannotation: i23:s11 1 2 3
+Backannotation: i23:s12 1 2 3
+Backannotation: i23:i10 9 100 11 12 3a
+Backannotation: i23:i8 1 2 3
+Backannotation: i23:i9 1 2 3
+Backannotation: i23:sw11 1 2 3
+Backannotation: i23:sw12 1 2 3
+Backannotation: i23:sw13 1 2 3
+Backannotation: i23:sw14 1 2 3
+Backannotation: i23:sw15 1 2 3
+Backannotation: i23:sw16 1 2 3
+Backannotation: i23:sw17 1 2 3
+Backannotation: i23:sw18 1 2 3
+Backannotation: i23:sw19 1 2 3
+Backannotation: i23:sw20 1 2 3
+Backannotation: i23:s21 1 2 3
+Backannotation: i23:s22 1 2 3
+Backannotation: i23:sw21 1 2 3
+Backannotation: i23:sw22 1 2 3
+Backannotation: i23:sw23 1 2 3
+Backannotation: i23:sw24 1 2 3
+Backannotation: i23:sw25 1 2 3
+Backannotation: i23:sw26 1 2 3
+Backannotation: i23:sw27 1 2 3
+Backannotation: i23:sw28 1 2 3
+Backannotation: i23:s29 1 2 3
+Backannotation: i23:s30 1 2 3
+Backannotation: i23:s31 1 2 3
+Backannotation: i23:s32 1 2 3
+Backannotation: i23:s33 1 2 3
+Backannotation: i23:s34 1 2 3
+Backannotation: i23:s35 1 2 3
+Backannotation: i23:s36 1 2 3
+Backannotation: i23:sw29 1 2 3
+Backannotation: i23:sw30 1 2 3
+Backannotation: i23:sw31 1 2 3
+Backannotation: i23:sw32 1 2 3
+Backannotation: i23:sw33 1 2 3
+Backannotation: i23:sw34 1 2 3
+Backannotation: i23:sw35 1 2 3
+Backannotation: i23:sw36 1 2 3
+Backannotation: i23:sw37 1 2 3
+Backannotation: i23:sw38 1 2 3
+Backannotation: i23:sw39 1 2 3
+Backannotation: i23:sw40 1 2 3
+Backannotation: i23:sw41 1 2 3
+Backannotation: i23:sw42 1 2 3
+Backannotation: i23:sw43 1 2 3
+Backannotation: i23:sw44 1 2 3
+Backannotation: i23:sw45 1 2 3
+Backannotation: i23:sw46 1 2 3
+Backannotation: i23:s47 1 2 3
+Backannotation: i23:s48 1 2 3
+Backannotation: i23:sw47 1 2 3
+Backannotation: i23:sw48 1 2 3
+Backannotation: i23:sw49 1 2 3
+Backannotation: i23:sw50 1 2 3
+Backannotation: i23:sw51 1 2 3
+Backannotation: i23:sw52 1 2 3
+Backannotation: i23:sw53 1 2 3
+Backannotation: i23:sw54 1 2 3
+Backannotation: i23:s55 1 2 3
+Backannotation: i23:s56 1 2 3
+Backannotation: i23:s57 1 2 3
+Backannotation: i23:s58 1 2 3
+Backannotation: i26:i10:i25 1 2 3
+Backannotation: i26:i10:i27 1 2 3
+Backannotation: i26:i10:i26 1 2 3
+Backannotation: i26:i10:i24 1 2 3
+Backannotation: i26:i10:i23 1 2 3
+Backannotation: i26:i10:i22 1 2 3
+Backannotation: i25:i10:i25 1 2 3
+Backannotation: i25:i10:i27 1 2 3
+Backannotation: i25:i10:i26 1 2 3
+Backannotation: i25:i10:i24 1 2 3
+Backannotation: i25:i10:i23 1 2 3
+Backannotation: i25:i10:i22 1 2 3
+Backannotation: i24:i10:i25 1 2 3
+Backannotation: i24:i10:i27 1 2 3
+Backannotation: i24:i10:i26 1 2 3
+Backannotation: i24:i10:i24 1 2 3
+Backannotation: i24:i10:i23 1 2 3
+Backannotation: i24:i10:i22 1 2 3
+Backannotation: i23:i10:i25 1 2 3
+Backannotation: i23:i10:i27 1 2 3
+Backannotation: i23:i10:i26 1 2 3
+Backannotation: i23:i10:i24 1 2 3
+Backannotation: i23:i10:i23 1 2 3
+Backannotation: i23:i10:i22 1 2 3
+Backannotation: u3 1 2 3 4 5 6 7 8
+Backannotation: u4 1 2 3 4 5 6 7 8
+Backannotation: u9 1 2 3 4 5
+Backannotation: u7 3 2 7 4 6
+Backannotation: u1 1 2 3 4 5 6 7 8
+Backannotation: u2 1 2 3 4 5 6 7 8
+Backannotation: u5 1 2 3 4 5 6 7 8
+Backannotation: u6 1 2 3 4 5 6 7 8
+Backannotation: u8 1 2 3 4 5
+Backannotation: u10 1 2 3 4 5 6 7 8
+Backannotation: u11 1 2 3 4 5 6 7 8
+Variables:
+	0	V(n005)	voltage
+	1	V(n004)	voltage
+	2	V(n003)	voltage
+	3	V(n006)	voltage
+	4	V(n001)	voltage
+	5	V(vcc)	voltage
+	6	V(n007)	voltage
+	7	V(n009)	voltage
+	8	V(vdd)	voltage
+	9	V(n013)	voltage
+	10	V(n002)	voltage
+	11	V(n015)	voltage
+	12	V(nc_01)	voltage
+	13	V(nc_02)	voltage
+	14	V(n019)	voltage
+	15	V(n018)	voltage
+	16	V(nc_03)	voltage
+	17	V(nc_04)	voltage
+	18	V(n017)	voltage
+	19	V(n020)	voltage
+	20	V(n021)	voltage
+	21	V(n027)	voltage
+	22	V(n023)	voltage
+	23	V(n022)	voltage
+	24	V(n029)	voltage
+	25	V(n028)	voltage
+	26	V(n014)	voltage
+	27	V(n016)	voltage
+	28	V(nc_05)	voltage
+	29	V(nc_06)	voltage
+	30	V(n008)	voltage
+	31	V(nc_07)	voltage
+	32	V(nc_08)	voltage
+	33	V(nc_09)	voltage
+	34	V(nc_10)	voltage
+	35	V(nc_11)	voltage
+	36	V(nc_12)	voltage
+	37	V(n024)	voltage
+	38	V(nc_13)	voltage
+	39	V(nc_14)	voltage
+	40	V(n025)	voltage
+	41	V(n026)	voltage
+	42	V(v+)	voltage
+	43	V(n010)	voltage
+	44	V(nc_15)	voltage
+	45	V(nc_16)	voltage
+	46	V(n011)	voltage
+	47	V(n012)	voltage
+	48	Id(M2)	device_current
+	49	Ig(M2)	device_current
+	50	Is(M2)	device_current
+	51	Id(M1)	device_current
+	52	Ig(M1)	device_current
+	53	Is(M1)	device_current
+	54	I(D9)	device_current
+	55	I(D7)	device_current
+	56	I(D8)	device_current
+	57	I(D6)	device_current
+	58	I(D2)	device_current
+	59	I(D3)	device_current
+	60	I(D5)	device_current
+	61	I(D4)	device_current
+	62	I(D1)	device_current
+	63	I(R15)	device_current
+	64	I(R18)	device_current
+	65	I(R10)	device_current
+	66	I(R4)	device_current
+	67	I(R16)	device_current
+	68	I(R19)	device_current
+	69	I(R17)	device_current
+	70	I(R12)	device_current
+	71	I(R6)	device_current
+	72	I(R11)	device_current
+	73	I(R5)	device_current
+	74	I(R21)	device_current
+	75	I(R20)	device_current
+	76	I(R9)	device_current
+	77	I(R3)	device_current
+	78	I(R14)	device_current
+	79	I(R2)	device_current
+	80	I(R8)	device_current
+	81	I(R13)	device_current
+	82	I(R1)	device_current
+	83	I(R7)	device_current
+	84	I(V3)	device_current
+	85	I(V1)	device_current
+	86	I(V2)	device_current
+	87	I(Vref)	device_current
+	88	I(Input)	device_current
+	89	Ix(u3:1)	subckt_current
+	90	Ix(u3:2)	subckt_current
+	91	Ix(u3:3)	subckt_current
+	92	Ix(u3:4)	subckt_current
+	93	Ix(u3:5)	subckt_current
+	94	Ix(u3:6)	subckt_current
+	95	Ix(u3:7)	subckt_current
+	96	Ix(u3:8)	subckt_current
+	97	Ix(u4:1)	subckt_current
+	98	Ix(u4:2)	subckt_current
+	99	Ix(u4:3)	subckt_current
+	100	Ix(u4:4)	subckt_current
+	101	Ix(u4:5)	subckt_current
+	102	Ix(u4:6)	subckt_current
+	103	Ix(u4:7)	subckt_current
+	104	Ix(u4:8)	subckt_current
+	105	Ix(u9:1)	subckt_current
+	106	Ix(u9:2)	subckt_current
+	107	Ix(u9:3)	subckt_current
+	108	Ix(u9:4)	subckt_current
+	109	Ix(u9:5)	subckt_current
+	110	Ix(u7:3)	subckt_current
+	111	Ix(u7:2)	subckt_current
+	112	Ix(u7:7)	subckt_current
+	113	Ix(u7:4)	subckt_current
+	114	Ix(u7:6)	subckt_current
+	115	Ix(u1:1)	subckt_current
+	116	Ix(u1:2)	subckt_current
+	117	Ix(u1:3)	subckt_current
+	118	Ix(u1:4)	subckt_current
+	119	Ix(u1:5)	subckt_current
+	120	Ix(u1:6)	subckt_current
+	121	Ix(u1:7)	subckt_current
+	122	Ix(u1:8)	subckt_current
+	123	Ix(u2:1)	subckt_current
+	124	Ix(u2:2)	subckt_current
+	125	Ix(u2:3)	subckt_current
+	126	Ix(u2:4)	subckt_current
+	127	Ix(u2:5)	subckt_current
+	128	Ix(u2:6)	subckt_current
+	129	Ix(u2:7)	subckt_current
+	130	Ix(u2:8)	subckt_current
+	131	Ix(u5:1)	subckt_current
+	132	Ix(u5:2)	subckt_current
+	133	Ix(u5:3)	subckt_current
+	134	Ix(u5:4)	subckt_current
+	135	Ix(u5:5)	subckt_current
+	136	Ix(u5:6)	subckt_current
+	137	Ix(u5:7)	subckt_current
+	138	Ix(u5:8)	subckt_current
+	139	Ix(u6:1)	subckt_current
+	140	Ix(u6:2)	subckt_current
+	141	Ix(u6:3)	subckt_current
+	142	Ix(u6:4)	subckt_current
+	143	Ix(u6:5)	subckt_current
+	144	Ix(u6:6)	subckt_current
+	145	Ix(u6:7)	subckt_current
+	146	Ix(u6:8)	subckt_current
+	147	Ix(u8:1)	subckt_current
+	148	Ix(u8:2)	subckt_current
+	149	Ix(u8:3)	subckt_current
+	150	Ix(u8:4)	subckt_current
+	151	Ix(u8:5)	subckt_current
+	152	Ix(u10:1)	subckt_current
+	153	Ix(u10:2)	subckt_current
+	154	Ix(u10:3)	subckt_current
+	155	Ix(u10:4)	subckt_current
+	156	Ix(u10:5)	subckt_current
+	157	Ix(u10:6)	subckt_current
+	158	Ix(u10:7)	subckt_current
+	159	Ix(u10:8)	subckt_current
+	160	Ix(u11:1)	subckt_current
+	161	Ix(u11:2)	subckt_current
+	162	Ix(u11:3)	subckt_current
+	163	Ix(u11:4)	subckt_current
+	164	Ix(u11:5)	subckt_current
+	165	Ix(u11:6)	subckt_current
+	166	Ix(u11:7)	subckt_current
+	167	Ix(u11:8)	subckt_current
+Binary:
+úó.Òÿÿ@ù‰@8³È?Üþ@      °@w?ÿÿ¯@  °ÀÚ	w>[Ü¡/3öN@g<«@g<«@`Œq¾t3¯>g<«@g<«@˜û¼7þÀÃëp¿FÆÃ¿ÿÿ¯@ù‰@ÿÿ¯@ù‰@   @ÈW@g<«@g<«@ù‰@g<«@g<«@g<«@g<«@g<«@g<«@Û3>g<«@g<«@ÈÁL@Š™Y@š™Y@Û3>g<«@g<«@ÑÁL@Š™Y@ n³-     n³­ n³-     n³­±‘Ï-Š•Ï-;“Ï-}—Ï-—+Ž1ó <—+Ž1—+Ž1—+Ž1ß^`8ß^`8/`m9¥em9ó ¼—+Ž1—+Ž1 vË8™Ë8h#9Ls#9	µÑ7µÑ7bÜl¹×l¹—+Ž1Øó ¹>þ ¹—+Ž1GrÃ¸j|Ã¸ ”O®lK½Xëà<.e'®Å,.±‰!¼n­²}X«²Ç«Þº  À  Àh×‚<ë¢Q;j›¼ì ®²n­²°ªÞº  À  Àó <ì¢Q;?].T].n–®;°™®»4:Å,.1ß,.1oR;…qR»ºH*43·”7¢²n­²¶ªÞº  À  À—+Ž1äà:3·¸]¦²n­²´ªÞº  À  À—+Ž1æà:3·n­²{³²­ªÞº  À  À—+Ž1ìà:3·n­²‡·²«ªÞº  À  À—+Ž1îà:.e'.ïd'.n–®;H…®»ªnºÄœËº{³²n­²­ªÞº  À  Àß^`8î¢Q;ÄœËºn­²¸]¦²´ªÞº  À  Àß^`8ê¢Q;
