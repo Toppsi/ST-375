@@ -493,7 +493,7 @@
   Timestamp                = {2015.11.08}
 }
 
-@Manual{,
+@Manual{Instruments2005,
   Title                    = {LM285-2.5, LM385-2.5, LM385B-2.5 Micropower Voltage References},
   Author                   = {Texas Instruments},
   Year                     = {2005},
