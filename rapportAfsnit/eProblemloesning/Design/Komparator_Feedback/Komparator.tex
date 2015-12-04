@@ -91,3 +91,55 @@ Det kan udfra \ref{Tab:Maalingtearskelvaerdier} konkluderes at afvigelsen fra de
 \noindent\textbf{Simulering af somasensorisk komparator kredsløb} \\
 
 \subsubsection{Implementering og test}
+Ifølge det valgte design skal der benyttes X antal modstande - mål, forklar parallel forbindelser ovs.
+\begin{table}[H]
+	\centering
+	\begin{tabular}{|l|l|l|}
+		\hline
+		\textit{Teoretisk} & \textit{Ved måling} & \textit{\% afvigelse} \\ \hline
+		$..$K$\Omega$      & $..$K$\Omega$    & $..$\%           \\ \hline
+		$..$K$\Omega$      & $..$K$\Omega$    & $..$\%           \\ \hline
+		$..$K$\Omega$      & $..$K$\Omega$    & $..$\%           \\ \hline
+		$..$K$\Omega$      & $..$K$\Omega$    & $..$\%           \\ \hline
+		$..$K$\Omega$      & $..$K$\Omega$    & $..$\%           \\ \hline
+		$..$K$\Omega$      & $..$K$\Omega$    & $..$\%           \\ \hline
+	\end{tabular}
+	\caption{..}
+	\label{..}
+\end{table}
+\noindent Herefter blev kredsløbet implementeret. Test.
+
+\begin{table}[H]
+	\centering
+	\begin{tabular}{llll}
+		& \textit{\begin{tabular}[c]{@{}l@{}}Teoretisk\\ reference\\ input\end{tabular}} & \textit{\begin{tabular}[c]{@{}l@{}}Målte\\ reference\\ input\end{tabular}} & \textit{\% afvigelse} \\
+		\textit{$13^{\circ}$}  & $1.5758$V                                                                      & $1.5748$V                                                                  & $0.06\%$              \\
+		\textit{$8^{\circ}$}   & $0.9697$V                                                                      & $0.9700$V                                                                  & $0.31\%$              \\
+		\textit{$2^{\circ}$}   & $0.2424$V                                                                      & $0.2427$V                                                                  & $0.12\%$              \\
+		\textit{-$2^{\circ}$}  & -$0.2359$V                                                                     & -$0.2373$V                                                                 & $0.59\%$              \\
+		\textit{-$8^{\circ}$}  & -$0.9495$V                                                                     & -$0.9492$V                                                                 & $0.03\%$              \\
+		\textit{-$13^{\circ}$} & -$1.5332$V                                                                     & -$1.5418$V                                                                 & $0.56\%$             
+	\end{tabular}
+	\caption{Referencespænding}
+	\label{my-label}
+\end{table}
+
+\begin{itemize}
+	\item Komparatorblokken skal have en spændingsforsyningen på $\pm5.5$V.
+	\item Komparatoren skal kunne modtage et inputsignal på $\pm3$V $+5\%$.
+	\item Komparatoren skal ved et bestemt spændingsniveauer aktivere en diode og vibrator:
+	\begin{itemize}
+		\item Grøn diode og ingen vibration: I intervallet indenfor $0.2424$V til -$0.2359$V. Svarende til $\pm2^{\circ}$.
+		\item Gul diode og vibration: Fra niveauet $0.9697$V og -$0.9495$V. Svarende til $\pm 8^{\circ}$ eller over.
+		\item Rød diode og vibration: Fra nivauet $1.5758$V og -$1.5332$V. Svarende til $\pm13^{\circ}$ eller over.
+		%\item Ingen feedback: Over $2.2602$V og under -$2.2168$V. 
+	\end{itemize}
+	\item LEDerne og vibratorerne skal aktiveres ved angivet tærskelværdier i komparatoren.
+\end{itemize}
+\textbf{Tolerance:}
+\begin{itemize}
+	\item Der accepteres en afvigelse i spændingsforsyningen på $\pm5\%$.
+	\item Der accepteres ingen afvigelse ift. hvor stort et inputsignal komparatoren skal kunne modtage.
+	\item Der accepteres en afvigelse i tærskelværdierne på $\pm1\%$.
+	\item Der accepteres ingen afvigelse ift. aktivering af LED og vibratorerne, hvis tærskelværdierne for den bestemte LED-diode er opnået i komparatorblokken.
+\end{itemize}
