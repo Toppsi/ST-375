@@ -13,17 +13,17 @@ Der kan ikke laves en simulering af et accelerometer i programmet LTspice, da de
 
 \subsubsection{Implementering og test}
 I pilotforsøget blev der arbejdet med reelle komponenter, hvilket også blev benyttet til implementeringen. Derfor antages det, at der vil være en mindre afvigelse imellem resultaterne fra testen og pilotforsøget end imellem resultaterne fra testen og en eventuel simulering, da der i simuleringer arbejdes med ideelle komponenter.\\
-Accelerometerets båndbredde bestemmes af to $0.1\mu$F kapacitorer i parallelforbindelse, disse blev målt med et multimeter for at måle den reeele kapacitans. Denne ses i \tableref{Tab:Acc_kondensator}. Derudover blev der benyttet en $0.1\mu$F kapacitor til power supply decoupling af accelerometeret, dennes reele værdi ses også i \tabelref{Tab:Acc_kondensator}.
-\begin{table}[]
-\centering
-\caption{My caption}
-\label{Tab:Acc_kondensator}
-\begin{tabular}{|l|l|l|}
-\hline
-Teoretisk & Målt        & Afvigelse \\ \hline
-$0.2\mu$F & $0.211\mu$F & $5.5 %$  \\ \hline
-$0.1\mu$F & $0.1017\mu$F & $1.7 %$ \\ \hline
-\end{tabular}
+Accelerometerets båndbredde bestemmes af to $0.1\mu$F kapacitorer i parallelforbindelse, som derved vil give en samlet kapacitans på  $0.2\mu$F. De to kapacitorer blev målt inden implementering samt den samlede kapacitans. Resultaterne fremgår i  \tableref{Tab:Acc_kondensator}:
+\begin{table}[H]
+	\centering
+	\begin{tabular}{llll}
+		& \textit{Teoretisk} & \textit{Målt} & \textit{\% afvigelse} \\
+		\textit{C1}       & \textit{$0.1\mu$F} & $0.1009\mu$F  & $0.9\%$               \\
+		\textit{C2}       & \textit{$0.1\mu$F} & $0.0989\mu$F  & $1.1\%$               \\
+		\textit{C1 || C2} & \textit{$0.2\mu$F} & $0.2002\mu$F  & $1\%$                
+	\end{tabular}
+		\caption{I tabellen ses det, at de to kondensatorer afviger lidt fra deres teoretiske værdi, hvilket er forventet af reelle komponenter.}
+		\label{Tab:Acc_kondensator}
 \end{table}
 Til opsamling af data fra accelerometret blev der benyttet et multimeter. I testen blev der foretaget en aflæsning med multimetret for $\pm8^\circ$ og $\pm13^\circ$. Disse fire værdier ses i \tableref{Tab:Acc_test_procent}. Den teoretiske stigning af volt pr. grad for henholdsvis negativ og positiv hældning er udregnet i bilag \ref{Bilag:Pilotforsoeg} på side \pageref{Bilag:Pilotforsoeg}. De teoretiske værdier for $8^\circ$ og $13^\circ$ udregnet derfor ud fra disse værdier. Dette gøres i følgende ligninger:
 \begin{align}
