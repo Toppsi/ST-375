@@ -6,7 +6,7 @@ Kredsløbet består af en operationsforstærker kaldet TL081, som sidder i et cl
 \begin{figure}[H]
 \centering
 \includegraphics[scale=0.75]{figures/cProblemloesning/Forstaerker.PNG}
-\caption{Kredsløbet for en ikke-inverterende forstærker i en closed-loop konfiguration.}
+\caption{På figuren ses designet for en ikke-inverterende forstærker i en closed-loop konfiguration.}
 \label{fig:Forstaerker}
 \end{figure} 
 
@@ -20,7 +20,7 @@ R1 = 81\text{K}\Omega
 \begin{figure}[H]
 \centering
 \includegraphics[scale=0.3]{figures/cProblemloesning/Forstaerker_faktor18.PNG}
-\caption{Kredsløbet for en ikke-inverterende forstærker med to modstande, R$1$ og R$2$, som med værdierne $81$K$\Omega$ og $10$K$\Omega$ giver en forstærkning med en faktor $9.1$.}
+\caption{På figuren ses designet at kredsløbet for en ikke-inverterende forstærker med to modstande. R$1$ og R$2$ har værdierne $81$K$\Omega$ og $10$K$\Omega$, hvilket giver en forstærkning med en faktor $9.1$.}
 \label{fig:Forstaerker_faktor18}
 \end{figure} 
 
@@ -45,7 +45,7 @@ Resultaterne af de to simuleringer ses i \tableref{tab:forstarker18_sim}
 %		$0$V           & 10       & $0$V          & $0.000206$V         & $0.0206$\%       \\ \hline
 		-$0.3233$V     & $9.1$   & -$2.9417$V   &  $9.10$  &   $0\%$  \\ \hline
 	\end{tabular}
-	\caption{Her ses resultaterne for simuleringerne med det laveste- og højeste input.}
+	\caption{I tabellen ses resultaterne for simuleringerne med det laveste- og højeste input.}
 	\label{tab:forstarker18_sim}
 \end{table}
 \noindent Der ses på afvigelserne, at der arbejdes med ideelle komponenter, da der er en meget lav afvigelse i outputtet ift. det forventede output. Derved fungerer kredsløbet teoretisk og kan implementeres.
@@ -60,7 +60,7 @@ Ifølge det valgte design skal der benyttes to modstande på $10$K$\Omega$ og $8
 		$10$K$\Omega$      & $10.0236$K$\Omega$    & $0.24$\%           \\ \hline
 		$81$K$\Omega$      & $81.724$K$\Omega$     & $0.89$\%           \\ \hline
 	\end{tabular}
-	\caption{I tabellen ses det, at de tre modstande afviger lidt fra deres teoretiske værdi, hvilket er forventet af reelle komponenter. Det er en acceptabel afvigelse ifølge tolerancerne i afsnit \ref{OpsamlingsAfs}, side \pageref{OpsamlingsAfs}. Modstandene kan derfor anvendes til implementeringen.}
+	\caption{I tabellen ses det, at de to modstande afviger lidt fra deres teoretiske værdi, hvilket er forventet af reelle komponenter. Det er en acceptabel afvigelse ifølge tolerancerne i afsnit \ref{OpsamlingsAfs}, side \pageref{OpsamlingsAfs}. Modstandene kan derfor anvendes til implementeringen.}
 	\label{Tab:modstand_faktor18}
 \end{table}
 \noindent Den $81$K$\Omega$ modstand har en $0.89\%$ afvigelse, men i dette tilfælde betragtes afvigelsen som positiv, da der ønskes en $82$K$\Omega$ modstand. Herefter blev kredsløbet implementeret. Til afbildning af signalet blev der benyttet et multimeter, som viste det forstærkede signal for de to spændingsniveauer. De aflæste resultater er angivet under "Output" i \tableref{Tab:faktor18_test}.\

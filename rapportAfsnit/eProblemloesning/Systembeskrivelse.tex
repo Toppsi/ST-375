@@ -23,7 +23,7 @@ Der er valgt et accelerometer til måling af det biologiske signal, som der skal
 \begin{figure}[H]
 	\centering 
 	\includegraphics[scale=0.5]{figures/cProblemloesning/ADXL335_2.JPG}
-	\caption{På figuren ses accelerometeret af typen ADXL335 i forskellige stillinger. Til venstre på figuren ses accelerometerets pin konfiguration og funktions beskrivelse. Til højre ses, hvordan accelerometret skal placeres for forskellig g påvirkning. \textit{(Revideret)} \cite{Devices2009}}
+	\caption{På figuren ses accelerometeret af typen ADXL335 i forskellige stillinger. Til venstre på figuren ses accelerometerets pin konfiguration og funktions beskrivelse. Til højre ses hvordan accelerometret skal placeres for forskellig g påvirkning. \textit{(Revideret)} \cite{Devices2009}}
 	\label{ADXL335}
 \end{figure}
 
@@ -54,8 +54,8 @@ Systemets opbygning fremgår af \figref{kravblok}.
 
 \begin{figure}[H]
 	\centering
-	\includegraphics[scale=0.5]{figures/cProblemloesning/blokdiagram.PNG}
-	\caption{På figuren ses de enkelte blokke, som systemet skal indeholde.}
+	\includegraphics[scale=0.7]{figures/cProblemloesning/blokdiagram.PNG}
+	\caption{På figuren ses et flowdiagram med de enkelte blokke, som systemet skal indeholde.}
 	\label{kravblok}
 \end{figure}
 Det biologiske signal, der opsamles med accelerometeret, skal som det første centreres omkring $0$V ved en offsetjustering og efterfølgende forstærkes. Herefter skal signalet filtreres for at frasortere uønskede frekvenser, der ligger uden for det ønskede signals spektrum. Herefter deler systemet sig i en analog og digital del. I den analoge del følger en tilpasning af signalet i form af en forstærkning. Herefter kommer signalet over i en komparatordel, hvor det bliver sammenlignet med nogle definerede tærskelværdier, der hver især er koblet til en bestemt type feedback, der skal udløses hvis tærskelværdien overskrides. \\

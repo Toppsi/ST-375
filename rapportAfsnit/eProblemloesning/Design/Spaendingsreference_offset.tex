@@ -6,7 +6,7 @@ Der skal forsynes med en konstant spænding til offsetjusteringen, da denne skal
 \begin{figure}[H]
 	\centering
 	\includegraphics[scale=0.7]{figures/cProblemloesning/ReferenceEksempel.PNG}
-	\caption{På figuren ses et eksempel på en opsætning af et kredsløb for en spændingsreference med LM$385$. \textit{(Revideret)} \cite{Instruments2005}}
+	\caption{På figuren ses et eksempel på en opsætning af et kredsløb for en spændingsreference med referencedioden LM$385$. Modstanden $R1$ afhænger af $V_in$, $V_out$ samt strømforbruget fra LM$385$. \textit{(Revideret)} \cite{Instruments2005}}
 	\label{fig:Spaendingsreference}
 \end{figure}
 
@@ -33,7 +33,7 @@ R3 = 18818.4438\Omega \approx 18820\Omega
 \begin{figure}[H]
 	\centering
 	\includegraphics[scale=.5]{figures/cProblemloesning/OffsetSpaendingsRef2.PNG}
-	\caption{På figuren ses opsætning af kredsløbet for en spændingsreference til offsettet. Hvor der først er en spændingsreference efterfølgt at en spændingsdeler, som gør at outputtet fra spændingsreferencen på $2.5$V bliver til $1.6325$V. }
+	\caption{På figuren ses designet af kredsløbet for en spændingsreference til offsettet. Først ses opbygningen af en spændingsreference efterfulgt at en spændingsdeler, som gør, at outputtet fra spændingsreferencen på $2.5$V bliver til $1.6325$V.}
 	\label{fig:Spaendingsreference_offset}
 \end{figure}
 
@@ -47,7 +47,7 @@ Der foretages en simulering i LTspice af spændingsreferencen og spændingsdeler
 \textit{\begin{tabular}[c]{@{}l@{}}Output fra\\spændingsreference\end{tabular}}     & $2.5$V             &  $2.5007$V    &   $0.03 \%$    \\ \hline
 \textit{\begin{tabular}[c]{@{}l@{}}Output fra\\spændingsdeler\end{tabular}}         & $1.6325$V          &  $1.6330$V    &   $0.03 \%$     \\ \hline
 \end{tabular}
-\caption{I tabellen ses resultaterne fra simuleringen i LTspice af spændingsreferencen med spændingsdeleren.}
+\caption{I tabellen ses resultaterne fra simuleringen i LTspice af spændingsreferencen med spændingsdeleren til offsettet.}
 \label{Tab:SpaendigsRef_offset}
 \end{table}
 \noindent I \tableref{Tab:SpaendigsRef_offset} fremgår det, at der er en lav afvigelse mellem det forventede output og det simulerede output. Dette forventes, da der benyttes ideelle komponenter i LTspice. Derved fungerer kredsløbet teoretisk og kan implementeres. På \figref{fig:Spaendingsreference_offset_sim} ses simuleringen af spændingsreferencen og spændingsdeleren.
@@ -55,7 +55,7 @@ Der foretages en simulering i LTspice af spændingsreferencen og spændingsdeler
 \begin{figure}[H]
 	\centering
 	\includegraphics[scale=.3]{figures/cProblemloesning/Reference_sim_off.PNG}
-	\caption{På figuren ses, at inputtet er $5.5$V, outputtet fra spændingsreferencen er $2.5$V og outputtet fra spændingsdeleren er ca. $1.65$V.}
+	\caption{På figuren ses en simulering af referencespændingen med spændingsdeleren. Der ses, at inputtet er $5.5$V, outputtet fra spændingsreferencen er $2.5$V og outputtet fra spændingsdeleren er ca. $1.65$V.}
 	\label{fig:Spaendingsreference_offset_sim}
 \end{figure}
 
@@ -74,7 +74,7 @@ Der ses på \figref{fig:Spaendingsreference_offset}, at der skal benyttes tre mo
 		$820\Omega$         & $818.08\Omega$     & $0.23$\%               \\ \hline
 		$R_{eq}$ af $18$K$\Omega$ + $820\Omega$ = $18.82$K$\Omega$ & $18.8734$K$\Omega$ & $0.28\%$ \\ \hline
 	\end{tabular}
-	\caption{I tabellen ses der, at alle fire modstande afviger lidt fra deres teoretiske værdi, hvilket er forventet af reelle komponenter. Kravet til disse fire modstande var dog, at de maks må afvige fra deres teoretiske værdi med $\pm1\%$ jævnfør afsnit \ref{Ref_Offset_Afs} på side \pageref{Ref_Offset_Afs}. Disse modstande accepteres derfor.}
+	\caption{I tabellen ses, at alle fire modstande afviger lidt fra deres teoretiske værdi, hvilket er forventet af reelle komponenter, hvilket også vil have en effekt på afvigelsen af den ækvivalente værdi for $18$K$\Omega$ + $820\Omega$. Kravet til disse fire modstande var dog, at de maks må afvige fra deres teoretiske værdi med $\pm1\%$ jævnfør afsnit \ref{Ref_Offset_Afs} på side \pageref{Ref_Offset_Afs}. Disse modstande accepteres derfor.}
 	\label{Tab:modstand_offset}
 \end{table}
 \noindent Herefter implementeres kredsløbet. Til aflæsning af spændingsniveauerne anvendes et multimeter. De aflæste resultater står i \tableref{Tab:SpaendingsRef_offset_test}.
@@ -84,7 +84,7 @@ Der ses på \figref{fig:Spaendingsreference_offset}, at der skal benyttes tre mo
                               & \textit{\begin{tabular}[c]{@{}l@{}}Forventet\\outputsignal\end{tabular}} & \textit{\begin{tabular}[c]{@{}l@{}}Målte\\outputsignal\end{tabular}} & \textit{Afvigelse} \\ \hline
 \textit{\begin{tabular}[c]{@{}l@{}}Input fra\\spændingsforsyning\end{tabular}}       & $5.5$V    & $5.550$V  & $0.91 \%$ \\ \hline
 \textit{\begin{tabular}[c]{@{}l@{}}Output fra\\spændingsreference\end{tabular}}      & $2.5$V    & $2.499$V  & $0.04 \%$ \\ \hline
-\textit{\begin{tabular}[c]{@{}l@{}}Output fra\\spændingsdeler\end{tabular}}          & $1.6325$V & $1.6296$V & $0.18 \%$ \\ \hline
+\textit{\begin{tabular}[c]{@{}l@{}}Output fra\\spændingsdeler\end{tabular}}          & $1.6325$V & $1.6307$V & $0.11 \%$ \\ \hline
 \end{tabular}
 \caption{I tabellen ses en oversigt over de forventede og målte outputsignaler fra testen for spændingsreferencen og spændingsdeleren til offsetjustering.}
 \label{Tab:SpaendingsRef_offset_test}

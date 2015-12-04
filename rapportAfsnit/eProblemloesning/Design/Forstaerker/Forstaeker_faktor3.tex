@@ -12,7 +12,7 @@ R1 = 26\text{K}\Omega
 \begin{figure}[H]
 	\centering
 	\includegraphics[scale=0.35]{figures/cProblemloesning/Forstaerker_faktor3.PNG}
-	\caption{På figuren ses opbygningen af den ikke-inverterende forstærker, der forstærker med en faktor $3.6$.}
+	\caption{På figuren ses designet af den ikke-inverterende forstærker, der forstærker med en faktor $3.6$.}
 	\label{fig:Forstaerker_faktor3}
 \end{figure}
 
@@ -23,11 +23,11 @@ Forstærkeren testes i fire simuleringer for at undersøge, om den opfylder de o
 	\begin{tabular}{|l|l|l|l|l|l|}
 		\hline
 		\multicolumn{1}{|c|}{\textit{Inputsignalet}} & \textit{\begin{tabular}[c]{@{}l@{}}For-\\stærkning\end{tabular}} & \textit{\begin{tabular}[c]{@{}l@{}}Forventet\\outputsignal\end{tabular}} & \multicolumn{1}{c|}{\textit{Outputsignalet}} & \textit{\begin{tabular}[c]{@{}l@{}}For-\\stærkning\end{tabular}}  & \multicolumn{1}{c|}{\textit{Afvigelse}} \\ \hline
-		$3.0148$V     & $3.6$   & \begin{tabular}[c]{@{}l@{}}Forventer mætning\\ $10.8533$V\end{tabular} & $3.9765$V  & $\times$ & $\times$     \\ \hline
+		$3.0148$V     & $3.6$   & \begin{tabular}[c]{@{}l@{}}Forventer mætning\\ ($10.8533$V)\end{tabular} & $3.9765$V  & $\times$ & $\times$     \\ \hline
 		$0.8418$V    & $3.6$   & $3.0305$V                                                              & $3.0304$V  & $3.6$ & $0\%$     \\ \hline
 %		$0$V          & 3   & $0$V                                                                   & $33.6527\mu $V        & $\approx 0\%$     \\ \hline
 	   -$0.8190$V     & $3.6$   & -$2.9484$V                                                             & -$2.9482$V  & $3.6$ & $0\%$     \\ \hline
-	   -$2.9420$V     & $3.6$   & \begin{tabular}[c]{@{}l@{}}Forventer mætning\\ -$10.5912$V\end{tabular}& -$3.97703$V  & $\times$ & $\times$     \\ \hline
+	   -$2.9420$V     & $3.6$   & \begin{tabular}[c]{@{}l@{}}Forventer mætning\\ (-$10.5912$V)\end{tabular}& -$3.97703$V  & $\times$ & $\times$     \\ \hline
 	\end{tabular}
 		\caption{I tabellen ses resultaterne af de fire simuleringer.}
 		\label{tab:forstarker3_simT}
@@ -52,9 +52,9 @@ På \figref{fig:Forstaerker_faktor3} kan der ses, at der skal benyttes to modsta
 		$10$K$\Omega$       & $9.98$K$\Omega$     & $0.20$\%               \\ \hline
 		$26$K$\Omega$      &  $25.964$K$\Omega$   & $0.14$\% \\ \hline
 		$680$K$\Omega$      & $684.53$K$\Omega$   & $0.67$\%               \\ \hline
-$26$K$\Omega$ || $680$K$\Omega$ = $27$K$\Omega$       & $26.99$K$\Omega$    & $0.40$\%               \\ \hline
+$R_{eq} = 26$K$\Omega$ || $680$K$\Omega$ = $27$K$\Omega$       & $26.99$K$\Omega$    & $0.40$\%               \\ \hline
 	\end{tabular}
-	\caption{I tabellen ses det, at de tre modstande har en lille afvigelse fra deres teoretiske værdi, hvilket er forventet af reelle komponenter. Det er en acceptabel afvigelse, og modstandene kan derfor anvendes i implementeringen.}
+	\caption{I tabellen ses det, at de tre modstande har en lille afvigelse fra deres teoretiske værdi, hvilket er forventet af reelle komponenter. Dette har derved også en effekt på afvigelsen for $R_{eq}$. Det er en acceptabel afvigelse, og modstandene kan derfor anvendes i implementeringen.}
 	\label{Tab:modstand_faktor18}
 \end{table}
 

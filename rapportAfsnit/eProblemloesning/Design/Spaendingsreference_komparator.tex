@@ -2,7 +2,7 @@
 \subsection{Referencespænding til Komparator}\label{subsec:Spaendingsref_Komparator}
 \subsubsection{Teori og design}
 Der skal til komparatorblokken forsynes med en konstant spænding, da denne skal anvendes som sammenligningsgrundlag ift. inputsignalet. Her anvendes igen en referencespænding, som er beskrevet i afsnit \ref{subsec:Spaendingsref} på side \pageref{subsec:Spaendingsref}. Der anvendes samme referencediode til denne referencespænding, som kan ses på \figref{fig:Spaendingsreference} på side \pageref{subsec:Spaendingsref}. \\
-For at udregne modstanden R1 for referencespændingen til komparatoren benyttes \eqref{eq:udregning_modstand}. Den ønskede referenceværdi er $2.5$V, så der skal i dette tilfælde ikke benyttes en spændingsdeler. I starten af kredsløbet indsættes en operations forstærker (TL$082$), som har to input og output. Derved kan denne fungere som buffer, beskrevet i afsnit \ref{Bilag:Pilotforsoeg} på side \pageref{Bilag:Pilotforsoeg}, til komparator kredsløbet og en inverterende forstærker.\cite{Schaumann2014} Da spændingen går direkte ind i bufferen, er den maksimale biasstrøm på $50nA$. Biasstrømmen for referencedioden er igen sat til $200\mu$A. Dermed kan værdierne indsættes i formlen og R1 kan beregnes:
+For at udregne modstanden R1 for referencespændingen til komparatoren benyttes \eqref{eq:udregning_modstand}. Den ønskede referenceværdi er $2.5$V, så der skal i dette tilfælde ikke benyttes en spændingsdeler. I starten af kredsløbet indsættes en operations forstærker (TL$082$), som har to input og output. \cite{Corporation2013} Derved kan denne fungere som buffer, beskrevet i afsnit \ref{Bilag:Pilotforsoeg} på side \pageref{Bilag:Pilotforsoeg}, til komparator kredsløbet og en inverterende forstærker.\cite{Schaumann2014} Da spændingen går direkte ind i bufferen, er den maksimale biasstrøm på $50nA$. Biasstrømmen for referencedioden er igen sat til $200\mu$A. Dermed kan værdierne indsættes i formlen og R1 kan beregnes:
 \begin{equation}
 R_komparator = \frac{5.5V-2.5V}{50nA + 200\mu\text{A}} = 14999.62501\Omega \approx 15K\Omega 
 \end{equation} 
@@ -10,7 +10,7 @@ Operationsforstærkeren TL$082$ benyttes som nævnt som en buffer og inverterend
 \begin{figure}[H]
 	\centering
 	\includegraphics[scale=0.65]{figures/cProblemloesning/TL082.PNG}
-	\caption{På figuren ses pinkonfigurationen af operationsforstærkeren TL$081$. Det positive output til komparatorblokken vil komme fra pin $1$ altså output A, og det negative output til komparatorblokken vil komme fra pin $7$ altså output B.}
+	\caption{På figuren ses pinkonfigurationen af operationsforstærkeren TL$082$. Det positive output til komparatorblokken vil komme fra pin $1$ altså output A, og det negative output til komparatorblokken vil komme fra pin $7$ altså output B. \cite{Corporation2013}}
 	\label{fig:TL082}
 \end{figure}
 \noindent Der vides fra teorien, at der skal benyttes to modstande til designet af en inverterende forstærker. Da der ønskes et gain på 1, skal disse to modstande have samme værdi. \cite{Nilsson2011} Designet af referencespændingen med operationsforstærkeren TL$082$ ses på \figref{fig:ref_komparator}.
@@ -18,7 +18,7 @@ Operationsforstærkeren TL$082$ benyttes som nævnt som en buffer og inverterend
 \begin{figure}[H]
 	\centering
 	\includegraphics[scale=0.4]{figures/cProblemloesning/Reference_komparator.PNG}
-	\caption{På figuren ses designet af referencespændingen til komparatorblokken med operationsforstærkeren TL$082$, som fungerer som to TL$081$'ere, og derfor er simuleringen opbygget således.}
+	\caption{På figuren ses designet af referencespændingsblokken, der skal levere en referencespænding til komparatorblokken. Operationsforstærkeren TL$082$ fungerer som to TL$081$'ere, og derfor er simuleringen opbygget således. \cite{Corporation2013}}
 	\label{fig:ref_komparator}
 \end{figure}
 
@@ -57,7 +57,7 @@ Der ses på \figref{fig:ref_komparator}, at der skal benyttes tre modstande på 
 		$100$K$\Omega$      & $99.631$K$\Omega$    & $0.37$\%               \\ \hline
 		$100$K$\Omega$      & $99.681$K$\Omega$    & $0.32$\%               \\ \hline
 	\end{tabular}
-	\caption{I tabellen ses der, at alle fire modstande afviger lidt fra deres teoretiske værdi, hvilket er forventet af reelle komponenter. Kravet til disse fire modstande var dog, at de maks må afvige fra deres teoretiske værdi med $\pm1\%$ jævnfør afsnit \ref{Ref_Offset_Afs} på side \pageref{Ref_Offset_Afs}. Disse modstande accepteres derfor.}
+	\caption{I tabellen ses der, at alle tre modstande afviger lidt fra deres teoretiske værdi, hvilket er forventet af reelle komponenter. Kravet til disse fire modstande var dog, at de maks må afvige fra deres teoretiske værdi med $\pm1\%$ jævnfør afsnit \ref{Ref_Offset_Afs} på side \pageref{Ref_Offset_Afs}. Disse modstande accepteres derfor.}
 	\label{Tab:modstand_Kompar}
 \end{table}
 \noindent Herefter implementeres kredsløbet. Til aflæsning af spændingsniveauerne anvendes et multimeter. De aflæste resultater står i \tableref{Tab:SpaendingsRef_kompar_test}.
