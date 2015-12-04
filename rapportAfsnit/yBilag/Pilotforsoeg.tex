@@ -36,10 +36,19 @@ Det er nødvendigt at kunne skelne det reelle signal fra støjkomponenter, før 
 %For at simulere den påvirkning, accelerometeret udsættes for og identificere den mulige støj ved en rotation, roteres accelerometret i en langsom rotation fra $0^{\circ}$ til $90^{\circ}$ til både højre og venstre. Disse målinger vil identificere minimum og maksimum outputsignal, som accelerometeret kan afgive i dette tilfælde, samt kontrollere om offset og sensitivitet informationerne fra accelerometerets datablad stemmer overens med det målte data. \\
 %Inden, under og efter forsøget måles temperaturen i lokalet, da denne kan have en effekt på accelerometerets sensitivitet. \cite{Devices2009}
 
-\subsection{Forsøgsopsætning på breadboard}
-\textbf{Opsætning}\\
-Der ses et billede af forsøgsopsætningen på breadboardet på \figref{pforsoeg1}.
-\begin{itemize}
+\subsection{Forsøgsopsætning}
+Opsætningen er udarbejdet både i LTspice og på breadbord \ref{pforsoeg1}. Opsætningen af pilotforsøget i LTspice  er illustreret i et billede \ref{pLTspice} og er udarbejdet på baggrund fra målte værdier udregnet i pilotforsøget. Opsætningen på breadbord er udarbejdet ud fra protokolen under \ref{Opsaetning}.  
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=0.15]{figures/cProblemloesning/Accelerometer.PNG}
+	\caption{På billedet ses opsætningen i LTspice. Accerometeret er symboliseret med en sinuskurve med et DC offset svarende til offsettet for accelerometeret og en amplitude svarende til den maksimale sensitetet for acceleoroeteret}
+	\label{pLTspice}
+\end{figure}
+
+\textbf{Opsætning}
+\begin{itemize} 
+\label{Opsaetning}
 \item Accelerometeret tilkobles breadboardet.
 \item To kondensatorer på $0.1\mu$F tilkobles breadboardet. Kondensatorererne er valgt på baggrund af databladet for acceleorometeret ift. power supply decoupling og båndbredde.\fxnote{Den som sidder på pin $1$ og $2$ i accelerometeret fjerner støj fra strømforsygningen, mens kondensatoren fra pin $3$ giver en båndbredde på $50Hz$.}
 \item Accelerometeret tilnyttes en forsyningsspænding på $7V$ - en regulator sikrer at det kun forsynes med en spænding indenfor dets arbejdsområde.
@@ -54,6 +63,7 @@ Der ses et billede af forsøgsopsætningen på breadboardet på \figref{pforsoeg
 	\caption{På billedet ses opsætningen på breadboardet. De røde ledninger symboliserer inputtet fra den $5V$ spændingsforsyning. De sorte ledninger leder til ground. Den gule ledning fungerer som en leder for outputtet fra accelerometerets pågældende akse (kan skiftes imellem række $15$, $16$ og $17$ alt efter hvilken akse, der skal måles på). Den grønne ledning symboliserer outputtet fra kredsløbet, som sendes til NI USB-6009.}
 	\label{pforsoeg1}
 \end{figure}
+Der ses et billede af forsøgsopsætningen på breadboardet på \figref{pforsoeg1}.
 
 \subsection{Fremgangsmåde}
 \subsubsection{Forsøgets udførelse}
