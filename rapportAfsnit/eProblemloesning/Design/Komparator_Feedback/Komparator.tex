@@ -124,6 +124,21 @@ Ifølge det valgte design skal der benyttes X antal modstande - mål, forklar pa
 	\label{my-label}
 \end{table}
 
+\begin{table}[]
+\centering
+\caption{My caption}
+\label{my-label}
+\begin{tabular}{|l|l|l|l|l|l|l|}
+\hline
+                    & \textit{Teoretisk Tænd} & \textit{Målt Tænd}     & \textit{Afvigelse}      & \textit{Teoretisk sluk}              & \textit{Målt sluk}  & \textit{Afvigelse}      \\ \hline
+\textit{$13\circ$}  & $<1.5758$V              & $1.6000$V              & $1.5357%$               & $>1.5758$                            & $1.6000$V           & $1.5357$                \\ \hline
+\textit{$8\circ$}   & $<0.9697$V              & $1.0000$V              & $3.1246%$               & $>0.9697$V                           & $0.9600$V           & $1.0000%$               \\ \hline
+\textit{$0\circ$}   & -$0.2359 - 0.2424$      & -$0.2400$ og $0.2800$V & $1.7380%$ og $15.5115%$ & $<-$0.2359$ og $\textgreater0.2424\$ & -$0.240$ og $0.280$ & $1.7380%$ og $15.5115%$ \\ \hline
+\textit{-$8\circ$}  & $<$-$0.9495$V           & -$0.9200$V             & $3.1069%$               & $>$-$0.9495$V                        & -$0.9200$V          & $3.1069%$               \\ \hline
+\textit{-$13\circ$} & $<$-$1.5332$V           & -$1.5300$V             & $0.2087%$               & $>$-$1.5332$V                        & -$1.5400$V          & $0.4435%$               \\ \hline
+\end{tabular}
+\end{table}
+
 \begin{itemize}
 	\item Komparatorblokken skal have en spændingsforsyningen på $\pm5.5$V.
 	\item Komparatoren skal kunne modtage et inputsignal på $\pm3$V $+5\%$.
