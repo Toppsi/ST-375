@@ -61,17 +61,18 @@ Der foretages en simulering i LTspice af spændingsreferencen og spændingsdeler
 
 \subsubsection{Implementering og test}\label{spaendingsref_resultat}
 I implementeringen arbejdes der med reelle komponenter. Derfor antages det, at der kan være afvigelser fra resultaterne imellem testen med ideelle komponenter i dette afsnit og testen med reelle komponenter i simuleringen. \\
-Der ses på \figref{fig:Spaendingsreference_offset}, at der skal benyttes tre modstande på hhv. $15$K$\Omega$, $10$K$\Omega$ og $18820 \Omega$ til opbygningen af spændingsreferencen og spændingsdeleren til offsettet. Der findes ikke en $18.820$K$\Omega$, hvorfor en $18$K$\Omega$ modstand i serie med en $820\Omega$ modstand benyttes. Disse blev målt inden testen, hvilket fremgår i \tableref{Tab:modstand_offset}.
+Der ses på \figref{fig:Spaendingsreference_offset}, at der skal benyttes tre modstande på hhv. $15$K$\Omega$, $10$K$\Omega$ og $18.82$K$\Omega$ til opbygningen af spændingsreferencen og spændingsdeleren til offsettet. Der findes ikke en $18.82$K$\Omega$, hvorfor en $18$K$\Omega$ modstand i serie med en $820\Omega$ modstand benyttes. Disse blev målt inden testen, hvilket fremgår i \tableref{Tab:modstand_offset}.
 
 \begin{table}[H]
 	\centering
 	\begin{tabular}{|l|l|l|}
 		\hline
 		\textit{Teoretisk} & \textit{Ved måling} & \textit{\% afvigelse} \\ \hline
-		$15$K$\Omega$       & $15002\Omega$      & $0.013$\%               \\ \hline
-		$10$K$\Omega$       & $10003.6\Omega$    & $0.036$\%               \\ \hline
-		$18$K$\Omega$       & $17966.3\Omega$    & $0.187$\%               \\ \hline
-		$820\Omega$         & $818.08\Omega$     & $0.234$\%               \\ \hline
+		$15$K$\Omega$       & $15002\Omega$      & $0.01$\%               \\ \hline
+		$10$K$\Omega$       & $10.0036$K$\Omega$ & $0.04$\%               \\ \hline
+		$18$K$\Omega$       & $17.9653$K$\Omega$ & $0.19$\%               \\ \hline		
+		$820\Omega$         & $818.08\Omega$     & $0.23$\%               \\ \hline
+		$R_{eq}$ af $18$K$\Omega$ + $820\Omega$ = $18.82$K$\Omega$ & $18.8734$K$\Omega$ & $0.28\%$ \\ \hline
 	\end{tabular}
 	\caption{I tabellen ses der, at alle fire modstande afviger lidt fra deres teoretiske værdi, hvilket er forventet af reelle komponenter. Kravet til disse fire modstande var dog, at de maks må afvige fra deres teoretiske værdi med $\pm1\%$ jævnfør afsnit \ref{Ref_Offset_Afs} på side \pageref{Ref_Offset_Afs}. Disse modstande accepteres derfor.}
 	\label{Tab:modstand_offset}

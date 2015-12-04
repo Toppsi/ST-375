@@ -16,11 +16,11 @@ I pilotforsøget blev der arbejdet med reelle komponenter, hvilket også blev be
 Accelerometerets båndbredde bestemmes af to $0.1\mu$F kapacitorer i parallelforbindelse, som derved vil give en samlet kapacitans på  $0.2\mu$F. De to kapacitorer blev målt inden implementering samt den samlede kapacitans. Resultaterne fremgår i  \tableref{Tab:Acc_kondensator}:
 \begin{table}[H]
 	\centering
-	\begin{tabular}{llll}
-		& \textit{Teoretisk} & \textit{Målt} & \textit{\% afvigelse} \\
-		\textit{C1}       & \textit{$0.1\mu$F} & $0.1009\mu$F  & $0.9\%$               \\
-		\textit{C2}       & \textit{$0.1\mu$F} & $0.0989\mu$F  & $1.1\%$               \\
-		\textit{C1 || C2} & \textit{$0.2\mu$F} & $0.2002\mu$F  & $1\%$                
+	\begin{tabular}{|l|l|l|l|}\hline
+		& \textit{Teoretisk} & \textit{Målt} & \textit{\% afvigelse} \\ \hline
+		\textit{C1}       & \textit{$0.1\mu$F} & $0.1009\mu$F  & $0.9\%$               \\ \hline
+		\textit{C2}       & \textit{$0.1\mu$F} & $0.0989\mu$F  & $1.1\%$               \\ \hline
+		\textit{C1 || C2} & \textit{$0.2\mu$F} & $0.2002\mu$F  & $1\%$                \\ \hline
 	\end{tabular}
 		\caption{I tabellen ses det, at de to kondensatorer afviger lidt fra deres teoretiske værdi, hvilket er forventet af reelle komponenter.}
 		\label{Tab:Acc_kondensator}
