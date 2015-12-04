@@ -8,7 +8,7 @@ Til den visuelle del af komparatorkredsløbet anvendes LED-dioder. LED-diodernes
 \begin{figure}[H]
 	\centering
 	\includegraphics[scale=0.7]{figures/cProblemloesning/komparator_visuel1.PNG}
-	\caption{På figuren ses komparatorkonfigurationen for den visuelle del. Kredsløbet består af to dele; en for hældning i positiv retning og en for hældning i negativ retning. Der er en vindues-komparator dannet af  U$3$ og U$4$, som bruger en tærskelværdi fra både den negative og positive del af kredsløbet. Der er implementeret en buffer samt en inverterende forstærker for at gøre referencespændingen negativ, så hældning i den negative retning kan dedekteres og gør kredsløbet mere stabilt\fxnote{præcis argument for buffer}. Derudover er en buffer placeret i toppen af kredsløbet, hvor inputtet fra forrige blok skal igennem. \fxnote{igen præcis argument for buffer og valgt af OpAmp} Kredsløbet er udarbejdet i LTspice og derved er der brugt LT1011 som komparator i stedet for LM311.}
+	\caption{På figuren ses komparatorkonfigurationen for den visuelle del. Kredsløbet består af to dele; en for hældning i positiv retning og en for hældning i negativ retning. Der er en vindues-komparator dannet af  U$3$ og U$4$, som bruger en tærskelværdi fra både den negative og positive del af kredsløbet. Der er implementeret en buffer samt en inverterende forstærker for at sikre en lav outputimpedans samt give en negativ referencespændingen, så hældning i den negative retning kan detekteres og gør kredsløbet mere stabilt. Kredsløbet er udarbejdet i LTspice og derved er der brugt LT1011 som komparator i stedet for LM311.}
 	\label{fig:komparator_visuel}
 \end{figure}
 
