@@ -1,5 +1,5 @@
 % !TeX spellcheck = da_DK
-\subsection{Forstærker i tilpasningsblok}
+\subsection{Forstærker i tilpasningsblok}\label{Forstaerker_faktor3_afs}
 \subsubsection{Teori og design}
 I afsnit \ref{Subsec:Forstaerker}, side \pageref{Subsec:Forstaerker} er teorien samt designet af en forstærker forklaret. Da blokken tilpasning skal tilpasse det filtrerede signal til komparatoren, afgrænses måleintervallet til $\pm25^{\circ}$. Et range på $\pm90^{\circ}$ er unødvendigt ift. at vurdere hvorvidt patienten er faldet. Derfor ønskes det, at $V_{out}$ fra denne blok er $\pm3$V, når accelerometret måler $\pm25^{\circ}$. Der skal dermed ske en forstærkning med en faktor $3.6$, hvilket svarer til $11.1261$dB, som beskrevet i afsnit \ref{Tilpasningsblok} på side \pageref{Tilpasningsblok}. \\
 For at udregne modstandene er R$2$ blevet valgt til $10$K$\Omega$. Ud fra dette er R$1$ blevet bestemt ved følgende udregning:
@@ -24,7 +24,7 @@ Forstærkeren testes i fire simuleringer for at undersøge, om den opfylder de o
 		\hline
 		\multicolumn{1}{|c|}{\textit{Inputsignalet}} & \textit{\begin{tabular}[c]{@{}l@{}}For-\\stærkning\end{tabular}} & \textit{\begin{tabular}[c]{@{}l@{}}Forventet\\outputsignal\end{tabular}} & \multicolumn{1}{c|}{\textit{Outputsignalet}} & \textit{\begin{tabular}[c]{@{}l@{}}For-\\stærkning\end{tabular}}  & \multicolumn{1}{c|}{\textit{Afvigelse}} \\ \hline
 		$3.0148$V     & $3.6$   & \begin{tabular}[c]{@{}l@{}}Forventer mætning\\ $10.8533$V\end{tabular} & $3.9765$V  & $\times$ & $\times$     \\ \hline
-		$0.8418V$V    & $3.6$   & $3.0305$V                                                              & $3.0304$V  & $3.6$ & $0\%$     \\ \hline
+		$0.8418$V    & $3.6$   & $3.0305$V                                                              & $3.0304$V  & $3.6$ & $0\%$     \\ \hline
 %		$0$V          & 3   & $0$V                                                                   & $33.6527\mu $V        & $\approx 0\%$     \\ \hline
 	   -$0.8190$V     & $3.6$   & -$2.9484$V                                                             & -$2.9482$V  & $3.6$ & $0\%$     \\ \hline
 	   -$2.9420$V     & $3.6$   & \begin{tabular}[c]{@{}l@{}}Forventer mætning\\ -$10.5912$V\end{tabular}& -$3.97703$V  & $\times$ & $\times$     \\ \hline
