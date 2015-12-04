@@ -91,23 +91,39 @@ Det kan udfra \ref{Tab:Maalingtearskelvaerdier} konkluderes at afvigelsen fra de
 \noindent\textbf{Simulering af somasensorisk komparator kredsløb} \\
 
 \subsubsection{Implementering og test}
-Ifølge det valgte design skal der benyttes X antal modstande - mål, forklar parallel forbindelser ovs.
+Ifølge det valgte design skal der benyttes i alt 21 modstande antal modstande. Ved reelle komponenter vil der være en afvigelse, hvilket fremgår af tabel \ref{Tab:komparator_modstande}. Derudover er det ikke muligt at anvende alle beregnede komponenter, hvorfor der anvendes modstande i serie- og parallelforbindelser. I tabellen vil alle modstandene fremgå, samt den afvigelsen mellem den teoretiske og målte modstand. 
 \begin{table}[H]
-	\centering
-	\begin{tabular}{|l|l|l|}
-		\hline
-		\textit{Teoretisk} & \textit{Ved måling} & \textit{\% afvigelse} \\ \hline
-		$..$K$\Omega$      & $..$K$\Omega$    & $..$\%           \\ \hline
-		$..$K$\Omega$      & $..$K$\Omega$    & $..$\%           \\ \hline
-		$..$K$\Omega$      & $..$K$\Omega$    & $..$\%           \\ \hline
-		$..$K$\Omega$      & $..$K$\Omega$    & $..$\%           \\ \hline
-		$..$K$\Omega$      & $..$K$\Omega$    & $..$\%           \\ \hline
-		$..$K$\Omega$      & $..$K$\Omega$    & $..$\%           \\ \hline
-	\end{tabular}
-	\caption{..}
-	\label{..}
+\centering
+\begin{tabular}{|l|l|l|l|}
+\hline
+\textit{}               & \textit{Teoretisk værdi} & \textit{Målt værdi} & \textit{Afvigelse} \\ \hline
+\textit{R1}             & $10$K$\Omega$            & $9.973$K$\Omega$    & $0.27\%$           \\ \hline
+\textit{R2}             & $10$K$\Omega$            & $9.992$K$\Omega$    & $0.08\%$           \\ \hline
+\textit{R3}             & $10$K$\Omega$            & $9.976$K$\Omega$    & $0.24\%$           \\ \hline
+\textit{R4}             & $10$K$\Omega$            & $9.950$K$\Omega$    & $0.50\%$           \\ \hline
+\textit{R5}             & $10$K$\Omega$            & $9.985$K$\Omega$    & $0.15\%$           \\ \hline
+\textit{R6}             & $10$K$\Omega$            & $9.950$K$\Omega$    & $0.50\%$           \\ \hline
+\textit{R7 (Serie)}     & $16.821$K$\Omega$        & $16.758$K$\Omega$   & $0.37\%$           \\ \hline
+\textit{R8 (Parallel)}  & $6.285$K$\Omega$         & $6.280$K$\Omega$    & $0.08\%$           \\ \hline
+\textit{R9 (Serie)}     & $1068\Omega$             & $1065\Omega$        & $0.28\%$           \\ \hline
+\textit{R10 (Serie)}    & $1042\Omega$             & $1036\Omega$        & $0.58\%$           \\ \hline
+\textit{R11 (Parallel)} & $6.039$K$\Omega$         & $6.044$K$\Omega$    & $0.08\%$           \\ \hline
+\textit{R12 (Parallel)} & $15.765$K$\Omega$        & $15.718$K$\Omega$   & $0.30\%$           \\ \hline
+\textit{R13 (Serie)}    & $165\Omega$              & $164.59\Omega$      & $0.25\%$           \\ \hline
+\textit{R14 (Serie)}    & $165\Omega$              & $164.54\Omega$      & $0.28\%$           \\ \hline
+\textit{R15}            & $100$K$\Omega$           & $99.660$K$\Omega$   & $0.34\%$           \\ \hline
+\textit{R16}            & $56\Omega$               & $56.04\Omega$       & $0.07\%$           \\ \hline
+\textit{R17 (Serie)}    & $165\Omega$              & $165.07\Omega$      & $0.04\%$           \\ \hline
+\textit{R18}            & $100$K$\Omega$           & $99.722$K$\Omega$   & $0.28\%$           \\ \hline
+\textit{R19 (Serie)}    & $165\Omega$              & $163.90\Omega$      & $0.67\%$           \\ \hline
+\textit{R20}            & $100$K$\Omega$           & $99.628$K$\Omega$   & $0.37\%$           \\ \hline
+\textit{R21}            & $100$K$\Omega$           & $99.676$K$\Omega$   & $0.32\%$           \\ \hline
+\end{tabular}
+\caption{Komparatormodstande}
+\label{Tab:komparator_modstande}
 \end{table}
-\noindent Herefter blev kredsløbet implementeret. Test.
+\noindent Komparatorkonfigurationen testes ved en spændingsforsyning på $5.5$V med et sinussignal som input. Af \ref{Tab: test_reference} fremgår de beregnede og målte tærskelværdier, samt afvigelsen af disse tærskelværdier. 
+
 
 \begin{table}[H]
 	\centering
@@ -121,23 +137,25 @@ Ifølge det valgte design skal der benyttes X antal modstande - mål, forklar pa
 		\textit{-$13^{\circ}$} & -$1.5332$V                                                                     & -$1.5418$V                                                                 & $0.56\%$             
 	\end{tabular}
 	\caption{Referencespænding}
-	\label{my-label}
+	\label{Tab:test_reference}
 \end{table}
+Jævnfør kravspecifikationerne afsnit \ref{KomparatorAfs}, side \pageref{KomparatorAfs} overholder de målte tærskelværdier tolerancekravet på $\pm1\%$. For at undersøge, hvornår LEDerne og vibratorerne tænder og slukker måles på input- og outputsignalet vha. et osciolloskop. Af tabel \ref{Tab:test_taendsluk} fremgår de teoretiske og målte tærskelværdier for hvornår LEDen og vibratorerne tænder og slukker, samt afvigelsen mellem disse tærskelværdier. 
 
-\begin{table}[]
+\begin{table}[H]
 \centering
-\caption{My caption}
-\label{my-label}
 \begin{tabular}{|l|l|l|l|l|l|l|}
 \hline
                     & \textit{Teoretisk Tænd} & \textit{Målt Tænd}     & \textit{Afvigelse}      & \textit{Teoretisk sluk}              & \textit{Målt sluk}  & \textit{Afvigelse}      \\ \hline
-\textit{$13\circ$}  & $<1.5758$V              & $1.6000$V              & $1.5357%$               & $>1.5758$                            & $1.6000$V           & $1.5357$                \\ \hline
-\textit{$8\circ$}   & $<0.9697$V              & $1.0000$V              & $3.1246%$               & $>0.9697$V                           & $0.9600$V           & $1.0000%$               \\ \hline
-\textit{$0\circ$}   & -$0.2359 - 0.2424$      & -$0.2400$ og $0.2800$V & $1.7380%$ og $15.5115%$ & $<-$0.2359$ og $\textgreater0.2424\$ & -$0.240$ og $0.280$ & $1.7380%$ og $15.5115%$ \\ \hline
-\textit{-$8\circ$}  & $<$-$0.9495$V           & -$0.9200$V             & $3.1069%$               & $>$-$0.9495$V                        & -$0.9200$V          & $3.1069%$               \\ \hline
-\textit{-$13\circ$} & $<$-$1.5332$V           & -$1.5300$V             & $0.2087%$               & $>$-$1.5332$V                        & -$1.5400$V          & $0.4435%$               \\ \hline
+\textit{$13\circ$}  & $<1.5758$V              & $1.6000$V              & $1.5357\%$               & $>1.5758$                            & $1.6000$V           & $1.5357$                \\ \hline
+\textit{$8\circ$}   & $<0.9697$V              & $1.0000$V              & $3.1246\%$               & $>0.9697$V                           & $0.9600$V           & $1.0000\%$               \\ \hline
+\textit{$0\circ$}   & -$0.2359 - 0.2424$      & -$0.2400$ og $0.2800$V & $1.7380\%$ og $15.5115\%$ & $<-$0.2359$ og $\textgreater0.2424\$ & -$0.240$ og $0.280$ & $1.7380\%$ og $15.5115\%$ \\ \hline
+\textit{-$8\circ$}  & $<$-$0.9495$V           & -$0.9200$V             & $3.1069\%$               & $>$-$0.9495$V                        & -$0.9200$V          & $3.1069\%$               \\ \hline
+\textit{-$13\circ$} & $<$-$1.5332$V           & -$1.5300$V             & $0.2087\%$               & $>$-$1.5332$V                        & -$1.5400$V          & $0.4435\%$               \\ \hline
 \end{tabular}
+\caption{taend_sluk}
+\label{Tab:test_taendsluk}
 \end{table}
+ingen kommatal / dårlig opløsning
 
 \begin{itemize}
 	\item Komparatorblokken skal have en spændingsforsyningen på $\pm5.5$V.
