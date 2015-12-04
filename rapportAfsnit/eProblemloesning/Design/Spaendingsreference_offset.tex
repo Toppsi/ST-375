@@ -25,10 +25,10 @@ V_{out} = V_{in} \cdot \dfrac{R3}{R2 + R3}
 \end{equation}
 
 R$2$ i \eqref{eq:Spaendingsdeler} bliver valgt til at være $10$K$\Omega$. Derudover er $V_{out}$ $1.6325$V, $V_{in}$ er $2.5$V. Ligningen kommer altså til at være således: 
-\begin{equation}
+\begin{eqnarray}
 1.6325V = 2.5 \cdot \dfrac{R3}{10000\Omega + R3} \\
 R3 = 18818.4438\Omega \approx 18820\Omega
-\end{equation}
+\end{eqnarray}
 \noindent På \figref{fig:Spaendingsreference_offset} ses designet af spændingsreferencen med spændingsdeler. 
 \begin{figure}[H]
 	\centering
@@ -95,11 +95,4 @@ Outputimpedansen overholder dog ikke kravet, da den er:
 \begin{equation}
 R_{eq} = \dfrac{(R2 \cdot R3)}{R2 + R3} \Longrightarrow \dfrac{10000 \cdot 18820}{10000 + 18820} = 6530.19\Omega \approx 6.53K\Omega
 \end{equation}
-Da inputimpedansen i den inverterende kanal i operationsforstærkeren i offsetjusteringen har en indgangsimpedans på $100$K$\Omega$, vil forholdet imellem output- og inputimpedans i koblingen være problematisk. Der vil dannes en spændingsdeling imellem R$3$ og den pågældende modstand, som sidder inden den inverterende kanal. Dermed vil signalet variere alt efter inputsignalet til operationsforstærkeren i offsetjusteringens ikke-inverterende kanal. Løsningen på problematikken i denne kobling er, at indsætte en buffer. Signalet fra spændingsdeleren sendes ind i bufferens ikke-inverterende kanal, hvorfor outputimpedansen ikke er relevant, da denne kanal har en indgangsimpedans på $10^{12}\Omega$. Outputimpedansen fra bufferen vil være meget lav, og derfor vil koblingen imellem denne blok og offsetjusteringen være mulig. Der benyttes en operationsforstærker TL081 i en ikke konverterende konfiguration og med et gain på $1$. Dette ses på \figref{fig:Buffer}. \fxnote{Kilde på buffer}
-\begin{figure}[H]
-	\centering
-	\includegraphics[scale=0.4]{figures/cProblemloesning/Buffer_LT.png}
-	\caption{På figuren ses en buffer, som fungerer som en forstærker med et gain på faktor 1.}
-	\label{fig:Buffer}
-\end{figure}
-Herved kan blokken accepteres og benyttes til videre implementering.
+Da inputimpedansen i den inverterende kanal i operationsforstærkeren i offsetjusteringen har en indgangsimpedans på $100$K$\Omega$, vil forholdet imellem output- og inputimpedans i koblingen være problematisk. Der vil dannes en spændingsdeling imellem R$3$ og den pågældende modstand, som sidder inden den inverterende kanal. Dermed vil signalet variere alt efter inputsignalet til operationsforstærkeren i offsetjusteringens ikke-inverterende kanal. Løsningen på problematikken i denne kobling er, at indsætte en buffer, som er beskrevet i afsnit \ref{Bilag:Pilotforsoeg} på side \pageref{Bilag:Pilotforsoeg}. Signalet fra spændingsdeleren sendes ind i bufferens ikke-inverterende kanal, hvorfor outputimpedansen ikke er relevant, da denne kanal har en indgangsimpedans på $10^{12}\Omega$. Herved kan blokken accepteres og benyttes til videre implementering.
