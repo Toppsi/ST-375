@@ -8,7 +8,7 @@ Det analoge signal fra accelerometeret har et indbygget offset, som gør, at out
 \caption{På figuren ses et generisk differens forstærker kredsløb illustreret.\textit{(Revideret)} \cite{Nilsson2011}}
 \label{fig:Differensforstaerker_generisk}
 \end{figure}
-Den ikke-inverterende kanal ($+V_{in}$) har en høj indgangsimpedans på $10^{12}\Omega$, og derfor er outputimpedansen for den forrige blok ikke relevant. \cite{Corporation1995} Men inputimpedansen i den inverterende kanal (-$V_{in}$) afhænger af modstanden $R_{a}$ på \figref{fig:Differensforstaerker_generisk} grundet det ikke-inverterende design, hvorfor der indsættes en buffer, jævnfør afsnit \ref{spaendingsref_resultat} på side \pageref{spaendingsref_resultat}. \\
+Den ikke-inverterende kanals ($+V_{in}$) indgangsimpedans afhænger af $R_{c}$, derfor indsættes der en buffer mellem outputsignalet fra forrige blok, som er accelerometeret. Inputimpedansen i den inverterende kanal (-$V_{in}$) afhænger af modstanden $R_{a}$ på \figref{fig:Differensforstaerker_generisk} grundet det ikke-inverterende design, hvorfor der også indsættes en buffer, jævnfør afsnit \ref{spaendingsref_resultat} på side \pageref{spaendingsref_resultat}. \\
 \noindent I \eqref{eq:Diff1} ses den simplificerede formel for differensforstærker kredsløbet, hvor $\frac{R_a}{R_b} = \frac{R_c}{R_d}$;
 \begin{equation}\label{eq:Diff1}
 V_o = \frac{R_b}{R_a} \cdot (v_b - v_a)
