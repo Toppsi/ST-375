@@ -237,6 +237,18 @@
   Timestamp                = {2015.10.08}
 }
 
+@Manual{Corporation2013,
+  Title                    = {TL082 Wide Bandwidth Dual JFET Input Operational Amplifier},
+
+  Address                  = {http://www.ti.com/lit/ds/symlink/tl082-n.pdf},
+  Author                   = {National Semiconductor Corporation},
+  Organization             = {Texas Instruments},
+  Year                     = {2013},
+
+  Owner                    = {Cecilie},
+  Timestamp                = {2015.11.25}
+}
+
 @Manual{Corporation1995,
   Title                    = {TL081 Wide Bandwidth JFET Input Operational Amplifier},
 
