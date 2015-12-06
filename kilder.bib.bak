@@ -806,6 +806,17 @@
   Url                      = {https://www.ncbi.nlm.nih.gov/pmc/articles/PMC1544093/}
 }
 
+@Electronic{Redaktionen2009,
+  Title                    = {Vibrator},
+  Author                   = {Redaktionen},
+  Organization             = {Den Store Danske, Gyldendal},
+  Url                      = {http://denstoredanske.dk/It,_teknik_og_naturvidenskab/Elektronik,_teletrafik_og_kommunikation/Kommunikationsteori_og_teletrafikteori/vibrator},
+  Year                     = {2009},
+
+  Owner                    = {Mads},
+  Timestamp                = {2015.12.05}
+}
+
 @Electronic{Redaktionen2015,
   Title                    = {Agnosi},
   Author                   = {Redaktionen, Den store danske},
