@@ -1,22 +1,30 @@
 % !TeX spellcheck = da_DK
-\subsection{Feedback}
+\subsection{Feedbackkonfiguration}
 \subsubsection{Teori og design}
-Som nævnt i afsnit \ref{Komparatorafsnit} på side \pageref{Komparatorafsnit} anvendes en komparator til at sammenligne to inputspændinger. Der vil blive anvendt flere komparatorer og i dette tilfælde vil komparatorernes output blive tilkoblet en LED-diode, en modstand, den positive spændingsforsyning ($+V_{cc}$) og muligvis en vibrator. I komparatorernes ikke-inverterende terminaler skal outputtet fra forrige blok tilsluttes. Inputtet til de inverterende terminaler skal fungere som referencespænding, hvilket anvendes til at forsyne med de beregnede tærskelværdier. Komparatorerne kan derfor have to forskellige outputs afhængig af inputspændingen. Hvis inputsignalet ligger udenfor de beregnede tærskelværdier, vil outputtet være $0V$, og dioderne og vibratoren vil ikke aktiveres. Er inputtet indenfor de beregnede tærskelværdier, vil outputtet svare til jord, da strømmen fra $+V_{cc}$ vil løbe igennem komparatorerne og derefter til jord. Derved opnås et spændingsfald over den positive (anode) og negative (katode) pol for LED-dioden og vibratoren på en værdi, der ligger over det minimale spændingsfald, som der kræves for en aktivering. LED-dioderne og vibratorerne vil derved blive aktiveret og fungere som feedback til patienten. \\
+Jævnfør \ref{Komparatorafsnit} på side \pageref{Komparatorafsnit} anvendes en komparator til at sammenligne to inputspændinger. Komparatoren der anvendes er af typen LN311. Ved denne type placeres en xx kondensator ved inputtet for at gøre komparatoren mere præcis og undgå svingninger. Der vil blive anvendt flere komparatorer og i dette tilfælde tilkobles komparatorernes output en LED, en vibrator, en modstand og den positive spændingsforsyning ($+V_{cc}$). I komparatorernes ikke-inverterende terminaler tilsluttes outputtet fra forrige blok, hvor inputtet i de inverterende terminaler fungerer som referencespænding, der forsyner med de beregnede tærskelværdier. Komparatorerne kan derfor have to forskellige outputs afhængig af inputspændingen. Hvis inputsignalet ligger udenfor de beregnede tærskelværdier vil outputtet være $0V$ og LEDerne samt de to vibratorer vil ikke blive aktiveret. Er inputtet derimod indenfor de beregnede tærskelværdier, vil outputtet svare til jord, da strømmen fra $+V_{cc}$ vil løbe igennem komparatorerne og derefter til jord. Derved opnås et spændingsfald over den positive (anode) og negative (katode) pol for LEDerne og vibratorerne på en værdi, der ligger over det minimale spændingsfald, der kræves for en aktivering. LEDerne og vibratorerne vil derved blive aktiveret og fungere som feedback til patienten. \\
+
+En LED har to terminaler; en anode og en katode. Når en ideel LED tændes skyldes det, at der løber strøm fra anoden til katoden og der vil her være et spændingsfald over LEDen på 0V. Når strømmen løber fra katoden til anoden vil LEDen være slukket, da der ideelt ikke løber strøm igennem kredsløbet... \fxnote{mere burde tilføjes.} 
 
 \noindent\textbf{Visuel komparator kredsløb} \\
-Til den visuelle del af komparatorkredsløbet anvendes LED-dioder. LED-diodernes katode tilkobles komparatorens output, imens anoden tilkobles $+V_{cc}$. Jævnfør kravspecifikationerne i afsnit \ref{KomparatorAfs} på side \pageref{KomparatorAfs} er der valgt fem forskellige stadier for aktivering af LED-dioderne. For denne aktivering vil der blive anvendt otte komparatorer, da det første stadie, indeholdende den grønne LED-diode, både har en positiv og negativ tærskelværdi og derfor kræver to komparatorer. Tærskelværdierne kan både implementeres som to spændingstræer eller som otte spændingsdelere, hvoraf der er fordele og ulemper ved begge metoder. I dette tilfælde anvendes otte spændingsdelere, hvor to indgår i en vindueskomparatorkonfiguration for den grønne diode, og de seks andre fungerer som almindelige komparatorer, der aktiveres over en bestemt tærskelværdi. Dette design vælges til fordel for to spændingstræer, da modstandene i et spændingstræ påvirker hinanden, hvilket kan ændre tærskelværdierne, hvis én af modstandene ikke fungerer reelt. For at modvirke dette, anvendes en spændingsdeler for hver tærskelværdi, der fremgår af \figref{fig:komparator_visuel}. {\color{red}Teksten her efter passer ikke med billedet - ret til, når simuleringen er færdig. Det samme gælder figurteksten.} Figurationen indeholder en spændingsreference $+V_{ref}$ på $2.5$V og fire modstande (R$13$-R$17$) mellem LED-dioderne og $+V_{cc}$ for at beskytte LED-dioderne mod for høj strømstyrke og at batteriet ikke drænes. Der udarbejdes en vindues-konfigurationen, hvor LED-dioden D$3$) er placeret mellem ground-terminalen på den ene komparatorer og output-terminalen på en anden komparator, som kan ses på \figref{fig:komparator_visuel}, hvor komparatorerne er U$3$ og U$4$. 
-\begin{figure}[H]
+Til den visuelle del af feedbackkonfigurationen anvendes LEDer. LEDernes katode tilkobles komparatorens output, imens anoden tilkobles $+V_{cc}$. Jævnfør kravspecifikationerne i afsnit \ref{KomparatorAfs} på side \pageref{KomparatorAfs} skal LEDerne aktiveres på fem forskellige stadier. Til denne aktiveren anvendes otte komparatorer, da det første stadie, indeholdende den grønne LED, både har en positiv og negativ tærskelværdi og derfor kræver to komparatorer. De valgte tærskelværdier kan designes på forskellige måder hhv. som to spændingstræer eller otte spændingsdelere, hvoraf der er fordele og ulemper ved begge metoder. I dette projekt anvendes otte spændingsdelere, hvormed to indgår i en vindues-komparatorkonfiguration for den grønne LED, og de seks resterende fungerer som almindelige komparatorer, der aktiveres over en bestemt tærskelværdi. Fordelen ved at vælge dette design er, at modstandene i et spændingstræ påvirker hinanden, hvilket kan ændre tærskelværdierne, hvis én af modstandene ikke fungerer optimalt \fxnote{hvilke ulemper er der ved at anvende otte spændingsdeler, hvorfor påvirker modstandene ikke hinanden ved denne konfiguration}. Feedbackkonfigurationen kan inddeles i to dele; en for hældning i hhv. positiv og negativ retning. De otte spændingsdelere udgøres af i alt $12$ modstande (R$1$-R$12$). Derudover består kredsløbet af en spændingsreference ($+V_{ref}$) på $2.5$V og seks modstande (R$xx$-R$xx$) mellem LEDerne og $+V_{cc}$. Dette er for at sikre at batteriet ikke drænes og beskytte LEDerne mod høj spænding. Vindues-komparatorkonfigurationen designes ved at placere en LED (D$3$-D$4$) mellem ground-terminalen på komparatorerne (U$x$-U$x$) og output-terminalen komparatorerne (U$x$-U$x$).  Den visuelle del af feedbackkonfigurationen fremgår af \figref{fig:komparator_visuel} {\color{red} Jeg kunne ikke lige finde ud af, hvor mange modstande komparatorer og hvilke navne, da billedet ikke giver mening ift. teksten og tabel 3.22 i implementering og test???????} 
+
+\begin{figure}[H] \fxnote{Man kunne her have et billede uden værdierne, for de er ikke beregnet endnu}
 	\centering
 	\includegraphics[scale=0.7]{figures/cProblemloesning/komparator_visuel1.PNG}
-	\caption{På figuren ses komparatorkonfigurationen for den visuelle del. Kredsløbet består af to dele; en for hældning i positiv retning og en for hældning i negativ retning. Der er en vindues-komparator dannet af  U$3$ og U$4$, som bruger en tærskelværdi fra både den negative og positive del af kredsløbet. Der er implementeret en buffer samt en inverterende forstærker for at sikre en lav outputimpedans samt give en negativ referencespændingen, så hældning i den negative retning kan detekteres og gør kredsløbet mere stabilt. Kredsløbet er udarbejdet i LTspice og derved er der brugt LT1011 som komparator i stedet for LM311.}
+	\caption{På figuren ses komparatorkonfigurationen for den visuelle del af feedbackkonfigurationen. Kredsløbet består af to dele; en for hældning i positiv og negativ retning. Der er konstrueret en vindues-komparator designet vha. komparatorerne (U$3$-U$5$ og U$5$-U$6$) for den grønne LED, der anvender en tærskelværdi fra hhv. den negative og positive del af kredsløbet. Kredsløbet er konstrueret i LTspice.}
 	\label{fig:komparator_visuel}
 \end{figure}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\noindent\textbf{Beregning af tærskelværdier og tilhørende R$1$-R$12$ modstande for aktivering af LED-dioder} \\
-Inputsignalet fra forrige blok, tilpasningsblokken, ligger mellem -$2.9484$V og $3.0305$V jævnfør afsnit \ref{Forstaerker_faktor3_afs} på side\pageref{Forstaerker_faktor3_afs}. Jævnfør systemets funktionelle krav afsnit \ref{FunkKrav} på side \pageref{FunkKrav} ønskes det, at de enkelte LED-dioder skal lyse ved bestemte kropshældninger, dvs. ved en bestemt tærskelværdi. 
-Tærskelværdierne er udregnet til at være:
+\noindent\textbf{Beregning af tærskelværdier og tilhørende R$1$-R$12$ modstande for aktivering af LED} \\
+Det ønskes, at LEDerne skal lyse ved bestemte kropshældninger, dvs. ved bestemte tærskelværdier. Inputsignalet afhænger af den pågældende hældningsgrad, hvilket for komparatoren vil være en bestemt spænding. Komparatorens tærskelværdierne kan beregnes, da værdien i volt pr. grad i hhv. positiv og negativ retning, jævnfør \eqref{...} i pilotforsøget i bilag \ref{Pilotforsoeg} på side \pageref{Sec_Pilot_Data}, samt forstærkningsværdien af signalet fra forrige blokke, opsamlings- og tilpasningsblokken, er kendte værdier. Jævnfør tærskelværdierne i afsnit \ref{Komparatorafsnit} på side \pageref{Komparatorafsnit} beregnet ud fra følgende formel:
+\begin{equation}\label{Mean_tid_0g}
+\text{Tærskelværdi i positiv retning} = \frac{0.0037\text{V}*9.1*3.6*\text{hældningsgrad}} = tærskelværdi
+\text{Tærskelværdi i negativ retning} = \frac{0.0036\text{V}*9.1*3.6*\text{hældningsgrad}} = tærskelværdi
+\end{equation}
+
+De udregnede tærskelværdier fremgår af \figref{taerskelvaerdier}. 
 \begin{figure}[H]
 	\centering
 	\includegraphics[scale=1.]{figures/cProblemloesning/Taerskelvaerdier.PNG}
@@ -24,14 +32,11 @@ Tærskelværdierne er udregnet til at være:
 	\label{fig:taerskelvaerdier}
 \end{figure}
 
-Der vælges en  spændingsreference, som består af en regulator så den kan levere $2.5$V til komparatorkredsløbet jævnført \ref{subsec:Spaendingsref_Komparator} på side \pageref{subsec:Spaendingsref_Komparator}. Spændingsreferencen indgår som del af en spændingsdeler og benyttes for at holde en fast referencespænding, da spændingen ved anvendelse af et batteri vil falde som funktion af tid. For at muliggøre anvendelsen af spændingsforsyningen på $2.5$V til negative tærskelværdier benyttes en inverterende forstærker med et gain på $1$, der fremgår af figur \figref{fig:komparator_visuel}. Ved denne konfiguration vendes signalet uden at blive forstærket og kan på denne måde benyttes som referencespænding til negative inputspændinger. Når referencespændingen er kendt, kan modstandene i spændingsdeleren bestemmes. Da kredsløbet trækker strøm, har modstandene (R$13$-R$17$) til formål at sikre, at spændingsforsyningen ikke drænes. Hvis modstanden er høj, vil strømmen til kredsløbet være lav, og batterierne i spændingsreferencen vil derved holde længere, men hvis modstanden er høj kan det do også påvirke LED-diodernes lysstyrke.
+Der anvendes en spændingsreference, bestående af en regulator, der kan levere en konstant spænding på $2.5$V til komparatorkredsløbet jævnført \ref{subsec:Spaendingsref_Komparator} på side \pageref{subsec:Spaendingsref_Komparator}. Eftersom spændingen ved anvendelse af et batteri vil falde som funktion af tiden benyttes spændingsreferencen, så denne kan holde en fast referencespænding i komparatorkonfigurationen. Hvis spændingsreferencen også skal anvendes til de negative tærskelværdier benyttes en inverterende forstærker med et gain på $1$ i designet af feedbackkonfigurationen, hvilket fremgår af figur \figref{fig:komparator_visuel}. Ved denne konfiguration vendes signalet, uden at blive forstærket, og kan på denne måde benyttes som referencespænding til negative inputspændinger. Når referencespændingen er kendt, kan modstandene i spændingsdeleren bestemmes. Da kredsløbet trækker strøm, har modstandene (R$13$-R$17$) \fxnote{er det de rigtige modstande} til formål at sikre, at spændingsforsyningen ikke drænes. Hvis modstanden er høj, vil strømmen til kredsløbet være lav, og batterierne i spændingsreferencen vil derved holde længere, men hvis modstanden er for høj, kan det have indflydelse på LEDernes lysstyrke. \fxnote{Der er implementeret en buffer samt en inverterende forstærker for at sikre en lav outputimpedans samt give en negativ referencespændingen, så hældning i den negative retning kan detekteres og gør kredsløbet mere stabilt. - hvordan skal jeg lige skrive dette ind i teksten?}
 
-For at opstille spændingsdelerne skal R$1$-R$12$ bestemmes, så LED-dioderne lyser ved de ønskede tærskelværdier. For at modstandene kan bestemmes defineres R$1$ til en bestemt værdi, der her fastsættes til at være $10$K$\Omega$. Den samme værdi er gældende for R$2$-R$6$, eftersom der anvendes en spændingsdeler for hver tærskelværdi. Herefter kan R$7$-R$12$ udregnes vha. den generelle formel for en spændingsdeler jævnført \eqref{eq:Spaendingsdeler}. Hvor følgende er kendt:
-\begin{itemize}
-\item $V_out$ = Den ønskede tærskelværdi.
-\item $V_in$ = Spændingsreferencen.
-\item R$1$-R$6$ = $10$K$\Omega$.
-\end{itemize}
+For at bestemme R$1$-R$12$ i spændingsdelerne, så LED-dioderne lyser ved de ønskede tærskelværdier defineres R$1$ til en bestemt værdi. I dette tilfælde fastsættes R$1$ til at være $10$K$\Omega$. Denne værdi er også gældende for R$2$-R$6$, da der benyttes en spændingsdeler for hver tærskelværdi. Derudover er de ønskede tærskelværdier ($V_out$) og spændingsreferencen ($V_in$) også kendte værdier og R$7$-R$12$ kan dermed udregnes vha. den generelle formel for en spændingsdeler jævnført \eqref{eq:Spaendingsdeler}. 
+
+\fxnote{eksempel på udregning og formel}
 
 Dette medfører at R$7$-R$12$ giver følgende resultater:\\
 R$7$ = $16821\Omega$ \\
@@ -43,22 +48,24 @@ R$12$ = $15765\Omega$ \\
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\noindent\textbf{Beregning af R$13$-R$17$ modstande for aktivering af LED-dioder} \\
-Jænvfør kravspecifikationerne i afsnit \ref{KomparatorAfs} på side \pageref{KomparatorAfs} for komparatoren skal forsyningsspændingen være $5.5$V. De anvendte LED-dioder i systemet er: en grønne L-$53$LG $5$mm (D$3$), to røde L-$53$LI $5$mm (D$1$ og D$5$) og to gule L-$53$LY $5$mm (D$2$ og D$4$). Disse LED-dioder kræver en minimum spænding på $2$mA for at lyse, men det vurderes, at der skal benyttes ca. $20$mA for tydeligt lys.  Spændingsfaldet over LED-dioderne ligger maksimalt i intervallet $2.0$V til $2.2$ V (rød: $2.0$, gul: $2.1$ og grøn: $2.2$), men typisk mellem $1.7$V-$1.9$V. LED-dioderne skal derudover forsynes med $2$mA for at fungere, men kan forsynes med op til \fxnote{Tjek og 150mA er rigtigt}$150$mA, før de brændes af. LED-dioderne forsynes af en $5.5$V spændingsforsyning og tilkobles, som sagt, tilhørende modstande for bla. at undgå at LED-dioderne brænder af. Spændingsfaldet over dioderne samt den spænding LED-dioderne som minimum skal bruge for at lyse er kendte værdier, dvs. modstandene R$12$-R$17$ kan derfor findes vha. Ohms lov. Nedenstående udregning giver en værdi af modstandene, hvis spændingsforsyningen giver $5.5$V til kredsløbet og hvor der tages udgangspunkt i den minimale strøm for LED-dioderne:
+\noindent\textbf{Beregning af R$13$-R$17$ modstande for aktivering af LED} \\
+Jænvfør kravspecifikationerne i afsnit \ref{KomparatorAfs} på side \pageref{KomparatorAfs} for komparatoren skal forsyningsspændingen være $5.5$V. De anvendte LEDer i systemet er: en grøn L-$53$LG $5$mm (D$3$), to røde L-$53$LI $5$mm (D$1$ og D$5$) og to gule L-$53$LY $5$mm (D$2$ og D$4$) \fxnote{rettes til efter billedet}. Lederne kræver en minimum spænding på $2$mA for at lyse, men det vurderes, at der skal benyttes ca. $20$mA for tydeligt lys \fxnote{på baggrund af hvilken vurdering - ud fra hvad?}.  Spændingsfaldet over LED-dioderne ligger maksimalt i intervallet $2.0$V til $2.2$ V (rød: $2.0$, gul: $2.1$ og grøn: $2.2$), men typisk mellem $1.7$V-$1.9$V. LED-dioderne skal derudover forsynes med $2$mA for at fungere, men kan forsynes op til \fxnote{Tjek og 150mA er rigtigt}$150$mA, før de brændes af. LEDerne forsynes af en $5.5$V spændingsforsyning og tilkobles, som sagt, tilhørende modstande for bla. at undgå at LED-dioderne brænder af. Spændingsfaldet over dioderne samt den spænding LEDerne som minimum skal bruge for at lyse er kendte værdier, dvs. modstandene R$12$-R$17$ kan derfor findes vha. Ohms lov. Nedenstående udregning beregnet en værdi af modstandene, hvis spændingsforsyningen forsynerkredsløbet med $5.5$V og LEDernes minimale spænding for at aktiveres:
 
 \begin{equation}
 R = \dfrac{5.5V - 2.2V}{0.02A} = 165\Omega
 \end{equation}
-\noindent Dermed sættes modstandene R$12$-R$17$ alle til $165\Omega$ for at sikre, at der er tilstrækkeligt med strøm i kredsløbet til at dioderne kan lyse, uden at de brændes af eller at batterierne drænes. Opsætningen af LED-dioderne fremgår af figur \figref{fig:komparator_visuel}.
+\noindent Dermed sættes modstandene R$12$-R$17$ alle til $165\Omega$ for at sikre, at der er tilstrækkeligt med strøm i kredsløbet til at dioderne kan lyse, uden at de brændes af eller at batterierne drænes. Opsætningen af LED-dioderne fremgår af figur \figref{fig:komparator_visuel}. \fxnote{Jeg ved ikke om modstandene R$13$-R$17$ passer til billedet, da det ikke passer ift. tabel 3.22}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\noindent\textbf{Beregning af tærskelværdier og tilhørende R1-R5 modstande for aktivering af  vibratorerne} \\
-Jævnfør kravsspecifikationerne i afsnit \ref{KomparatorAfs}, side \pageref{KomparatorAfs} skal vibratorerne have to tærskelværdier. For aktivering af vibratorerne anvendes derfor to komparatorer. Vibratorernes tærskelværdier konstrueres ligeledes vha. to parallelforbundede modstande og spændingsreferencer, samt de resterende modstande mellem vibratorerne og $+V_{cc}$. På figur X vises konstruktionen af kredsløbet med de to vibratorer og tilhørende modstande. \\
+%\noindent\textbf{Beregning af tærskelværdier og tilhørende R1-R5 modstande for aktivering af  vibratorerne} \\
+%Jævnfør kravsspecifikationerne i afsnit \ref{KomparatorAfs}, side \pageref{KomparatorAfs} skal vibratorerne have to tærskelværdier. For aktivering af vibratorerne anvendes derfor to komparatorer. Vibratorernes tærskelværdier konstrueres ligeledes vha. to parallelforbundede modstande og spændingsreferencer, samt de resterende modstande mellem vibratorerne og $+V_{cc}$. På figur X vises konstruktionen af kredsløbet med de to vibratorer og tilhørende modstande. \\
 
-indsæt billede og word dokument \\
+%indsæt billede og word dokument \\
 
-\noindent\textbf{Beregning af R6-R10 modstande for aktivering af vibratorerne} \\
-Vibratorerne der anvendes i systemet er af typen XX... Afsnit skal skrives, når vi har information om vibratorer.  \\
+%\noindent\textbf{Beregning af R6-R10 modstande for aktivering af vibratorerne} \\
+%Vibratorerne der anvendes i systemet er af typen XX... Afsnit skal skrives, når vi har information om vibratorer.  \\
+
+Mads' lektie ind her
 
 \subsubsection{Simulering}
 \noindent\textbf{Simulering af visuel komparatorkonfiguration} \\
@@ -119,9 +126,10 @@ Ifølge det valgte design skal der benyttes i alt 21 modstande antal modstande. 
 \textit{R20}            & $100$K$\Omega$           & $99.628$K$\Omega$   & $0.37\%$           \\ \hline
 \textit{R21}            & $100$K$\Omega$           & $99.676$K$\Omega$   & $0.32\%$           \\ \hline
 \end{tabular}
-\caption{.....}
+\caption{Af tabellen fremgår de teoretiske og reelle værdier for modstandene benyttet i feedbackkonfigurationen for den visuelle del.}
 \label{Tab:komparator_modstande}
 \end{table}
+
 \noindent Komparatorkonfigurationen testes ved en spændingsforsyning på $5.5$V med et sinussignal som input. Af \ref{Tab: test_reference} fremgår de beregnede og målte tærskelværdier, samt afvigelsen af disse tærskelværdier. 
 \begin{table}[H]
 	\centering
@@ -134,10 +142,10 @@ Ifølge det valgte design skal der benyttes i alt 21 modstande antal modstande. 
 		\textit{-$8^{\circ}$}  & -$0.9495$V                                                                     & -$0.9492$V                                                                 & $0.03\%$              \\ \hline
 		\textit{-$13^{\circ}$} & -$1.5332$V                                                                     & -$1.5418$V                                                                 & $0.56\%$        \\ \hline     
 	\end{tabular}
-	\caption{....}
+	\caption{Af tabelle fremgår de teoretiske og målte tærskelværdier ved de enkelte hældningsgrader. Derudover er der beregnet afvigelsen af den teoretiske og målte tærskelværdi.}
 	\label{Tab:test_reference}
 \end{table}
-Jævnfør kravspecifikationerne afsnit \ref{KomparatorAfs}, side \pageref{KomparatorAfs} overholder de målte tærskelværdier tolerancekravet på $\pm1\%$. For at undersøge, hvornår LEDerne og vibratorerne tænder og slukker måles på input- og outputsignalet vha. et osciolloskop. I \tableref{Tab:test-taendsluk} fremgår de teoretiske og målte tærskelværdier for hvornår LEDen og vibratorerne tænder og slukker, samt afvigelsen mellem disse tærskelværdier. 
+Jævnfør kravspecifikationerne afsnit \ref{KomparatorAfs} på side \pageref{KomparatorAfs} overholder de målte tærskelværdier tolerancekravet på $\pm1\%$. For at undersøge, hvornår LEDerne og vibratorerne tænder og slukker måles på input- og outputsignalet vha. et osciolloskop. I \tableref{Tab:test-taendsluk} fremgår de teoretiske og målte tærskelværdier for hvornår LEDen og vibratorerne tænder og slukker, samt afvigelsen mellem disse tærskelværdier. 
 
 \begin{table}[H]
 \centering
@@ -150,27 +158,8 @@ Jævnfør kravspecifikationerne afsnit \ref{KomparatorAfs}, side \pageref{Kompar
 \textit{-$8\circ$}  & $<$-$0.9495$V           & -$0.9200$V             & $3.1069\%$               & $>$-$0.9495$V                        & -$0.9200$V          & $3.1069\%$               \\ \hline
 \textit{-$13\circ$} & $<$-$1.5332$V           & -$1.5300$V             & $0.2087\%$               & $>$-$1.5332$V                        & -$1.5400$V          & $0.4435\%$               \\ \hline
 \end{tabular}
-\caption{....}
+\caption{Af tabellen fremgår det, hvornår LEDerne teoretisk bør slukke og tænde og hvornår de blev målt til at tænde og slukke.}
 \label{Tab:test-taendsluk}
 \end{table}
-ingen kommatal / dårlig opløsning
 
-\begin{itemize}
-	\item Komparatorblokken skal have en spændingsforsyningen på $\pm5.5$V.
-	\item Komparatoren skal kunne modtage et inputsignal på $\pm3$V $+5\%$.
-	\item Komparatoren skal ved et bestemt spændingsniveauer aktivere en diode og vibrator:
-	\begin{itemize}
-		\item Grøn diode og ingen vibration: I intervallet indenfor $0.2424$V til -$0.2359$V. Svarende til $\pm2^{\circ}$.
-		\item Gul diode og vibration: Fra niveauet $0.9697$V og -$0.9495$V. Svarende til $\pm 8^{\circ}$ eller over.
-		\item Rød diode og vibration: Fra nivauet $1.5758$V og -$1.5332$V. Svarende til $\pm13^{\circ}$ eller over.
-		%\item Ingen feedback: Over $2.2602$V og under -$2.2168$V. 
-	\end{itemize}
-	\item LEDerne og vibratorerne skal aktiveres ved angivet tærskelværdier i komparatoren.
-\end{itemize}
-\textbf{Tolerance:}
-\begin{itemize}
-	\item Der accepteres en afvigelse i spændingsforsyningen på $\pm5\%$.
-	\item Der accepteres ingen afvigelse ift. hvor stort et inputsignal komparatoren skal kunne modtage.
-	\item Der accepteres en afvigelse i tærskelværdierne på $\pm1\%$.
-	\item Der accepteres ingen afvigelse ift. aktivering af LED og vibratorerne, hvis tærskelværdierne for den bestemte LED-diode er opnået i komparatorblokken.
-\end{itemize}
+De teoretiske værdier for, hvornår LED bør slukke og tænde afviger fra de målte værdier. Under testen blev der anvendt et osciolloskop til at måle, hvornår der sker et spændingsfald over LEDerne og gruppen observerede, at osciolloskopet havde en dårlig opløsning og derudover afrundede værdierne, så disse ikke blev særlig præcise. Eftersom der ses så stor en afvigelse mellem de teoretiske og målte værdier anvendes en computer til at teste feedbackkonfigurationen.????? 
