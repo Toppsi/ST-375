@@ -1,5 +1,5 @@
 Title: * C:\Users\Mathias\Desktop\ST-375\rapportAfsnit\eProblemloesning\Design\Komparator_Feedback\Komparator 27.11.15.asc
-Date: Fri Dec 04 14:53:45 2015
+Date: Mon Dec 07 09:43:11 2015
 Plotname: Operating Point
 Flags: real
 No. Variables: 168
@@ -939,8 +939,8 @@ Variables:
 	38	V(nc_13)	voltage
 	39	V(nc_14)	voltage
 	40	V(n025)	voltage
-	41	V(n026)	voltage
-	42	V(v+)	voltage
+	41	V(v+)	voltage
+	42	V(n026)	voltage
 	43	V(n010)	voltage
 	44	V(nc_15)	voltage
 	45	V(nc_16)	voltage
@@ -954,13 +954,13 @@ Variables:
 	53	Is(M1)	device_current
 	54	I(D9)	device_current
 	55	I(D7)	device_current
-	56	I(D8)	device_current
-	57	I(D6)	device_current
-	58	I(D2)	device_current
-	59	I(D3)	device_current
-	60	I(D5)	device_current
-	61	I(D4)	device_current
-	62	I(D1)	device_current
+	56	I(D2)	device_current
+	57	I(D3)	device_current
+	58	I(D5)	device_current
+	59	I(D4)	device_current
+	60	I(D1)	device_current
+	61	I(Vibrator2)	device_current
+	62	I(Vibrator1)	device_current
 	63	I(R15)	device_current
 	64	I(R18)	device_current
 	65	I(R10)	device_current
@@ -1067,4 +1067,4 @@ Variables:
 	166	Ix(u11:7)	subckt_current
 	167	Ix(u11:8)	subckt_current
 Binary:
-úó.Òÿÿ@ù‰@8³È?Üþ@      °@w?ÿÿ¯@  °ÀÚ	w>[Ü¡/3öN@g<«@g<«@`Œq¾t3¯>g<«@g<«@˜û¼7þÀÃëp¿FÆÃ¿ÿÿ¯@ù‰@ÿÿ¯@ù‰@   @ÈW@g<«@g<«@ù‰@g<«@g<«@g<«@g<«@g<«@g<«@Û3>g<«@g<«@ÈÁL@Š™Y@š™Y@Û3>g<«@g<«@ÑÁL@Š™Y@ n³-     n³­ n³-     n³­±‘Ï-Š•Ï-;“Ï-}—Ï-—+Ž1ó <—+Ž1—+Ž1—+Ž1ß^`8ß^`8/`m9¥em9ó ¼—+Ž1—+Ž1 vË8™Ë8h#9Ls#9	µÑ7µÑ7bÜl¹×l¹—+Ž1Øó ¹>þ ¹—+Ž1GrÃ¸j|Ã¸ ”O®lK½Xëà<.e'®Å,.±‰!¼n­²}X«²Ç«Þº  À  Àh×‚<ë¢Q;j›¼ì ®²n­²°ªÞº  À  Àó <ì¢Q;?].T].n–®;°™®»4:Å,.1ß,.1oR;…qR»ºH*43·”7¢²n­²¶ªÞº  À  À—+Ž1äà:3·¸]¦²n­²´ªÞº  À  À—+Ž1æà:3·n­²{³²­ªÞº  À  À—+Ž1ìà:3·n­²‡·²«ªÞº  À  À—+Ž1îà:.e'.ïd'.n–®;H…®»ªnºÄœËº{³²n­²­ªÞº  À  Àß^`8î¢Q;ÄœËºn­²¸]¦²´ªÞº  À  Àß^`8ê¢Q;
+úó.Òÿÿ@ù‰@8³È?Üþ@      °@w?ÿÿ¯@  °ÀÚ	w>€Ü¡/3öN@g<«@g<«@`Œq¾t3¯>g<«@g<«@˜û¼7þÀÃëp¿FÆÃ¿ÿÿ¯@ù‰@ÿÿ¯@ù‰@   @ÈW@g<«@g<«@ù‰@g<«@g<«@g<«@g<«@g<«@g<«@Û3>g<«@g<«@‰™Y@š™Y@‰™Y@Û3>g<«@g<«@‰™Y@‰™Y@ 2µ-     2µ­ 2µ-     2µ­bÓ-OÓ-—+Ž1ó <—+Ž1—+Ž1—+Ž1 Ó-éÓ-ß^`8ß^`8/`m9¥em9ó ¼—+Ž1—+Ž1 vË8™Ë8h#9Ls#9	µÑ7µÑ7bÜl¹×l¹—+Ž1Øó ¹>þ ¹—+Ž1GrÃ¸j|Ã¸€S®lK½Xëà<.e'®Å,.±‰!¼n­²}X«²Ç«Þº  À  Àh×‚<ë¢Q;j›¼ì ®²n­²°ªÞº  À  Àó <ì¢Q;?].T].n–®;°™®»4:Å,.1ß,.1oR;…qR»ºH*43·”7¢²n­²¶ªÞº  À  À—+Ž1äà:3·¸]¦²n­²´ªÞº  À  À—+Ž1æà:3·n­²{³²­ªÞº  À  À—+Ž1ìà:3·n­²‡·²«ªÞº  À  À—+Ž1îà:.e'.ïd'.n–®;H…®»ªnºÄœËº{³²n­²­ªÞº  À  Àß^`8î¢Q;ÄœËºn­²¸]¦²´ªÞº  À  Àß^`8ê¢Q;
