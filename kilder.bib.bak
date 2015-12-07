@@ -100,6 +100,16 @@
   Timestamp                = {2015.10.09}
 }
 
+@Electronic{Axivity2015,
+  Title                    = {WAX9},
+  Author                   = {Axivity},
+  Url                      = {http://axivity.com/product/wax9},
+  Year                     = {2015},
+
+  Owner                    = {Mathias},
+  Timestamp                = {2015.12.07}
+}
+
 @Article{Badke2009,
   Title                    = {Tongue-Based Biofeedback for Balance in Stroke: Results of an 8-Week Pilot Study},
   Author                   = {Badke, Mary Beth and others},
@@ -118,6 +128,16 @@
 
   Owner                    = {Mathias},
   Timestamp                = {2015.09.29}
+}
+
+@Electronic{Bioradio2015,
+  Title                    = {Wireless Motion Sensor},
+  Author                   = {Bioradio},
+  Url                      = {https://glneurotech.com/bioradio/physiological-signal-monitoring/wireless-motion-sensor/},
+  Year                     = {2015},
+
+  Owner                    = {Mathias},
+  Timestamp                = {2015.12.07}
 }
 
 @Article{Blanchard1972,
