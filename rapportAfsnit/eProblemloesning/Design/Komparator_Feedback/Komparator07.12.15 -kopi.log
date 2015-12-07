@@ -1,0 +1,50 @@
+Circuit: * C:\Users\User\Desktop\ST-375\rapportAfsnit\eProblemloesning\Design\Komparator_Feedback\Komparator07.12.15 -kopi.asc
+
+Early termination of direct N-R iteration.
+Direct Newton iteration failed to find .op point.  (Use ".option noopiter" to skip.)
+Starting Gmin stepping
+Gmin = 10
+vernier = 0.5
+vernier = 0.25
+vernier = 0.125
+Gmin = 5.5165
+vernier = 0.0625
+vernier = 0.03125
+vernier = 0.015625
+vernier = 0.0078125
+Gmin = 5.49501
+vernier = 0.00390625
+vernier = 0.00195313
+vernier = 0.000976563
+vernier = 0.000488281
+Gmin = 5.50104
+Gmin = 0
+Gmin stepping failed
+
+Starting source stepping with srcstepmethod=0
+Source Step = 3.0303%
+Source Step = 33.3333%
+Source Step = 63.6364%
+Source Step = 93.9394%
+Source stepping succeeded in finding the operating point.
+
+
+Date: Mon Dec 07 17:57:15 2015
+Total elapsed time: 5.246 seconds.
+
+tnom = 27
+temp = 27
+method = modified trap
+totiter = 8583
+traniter = 6781
+tranpoints = 2012
+accept = 1753
+rejected = 259
+matrix size = 253
+fillins = 2863
+solver = Normal
+Thread vector: 113.5/77.7[2] 42.4/29.5[2] 18.3/21.1[1] 5.5/613.9[1]  2592/500
+Matrix Compiler1: 751.54 KB object code size  267.5/164.3/[121.6]
+Matrix Compiler2: 68.16 KB object code size  16.3/14.4/[5.8]
+
+
