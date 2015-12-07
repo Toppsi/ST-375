@@ -1,5 +1,5 @@
 % !TeX spellcheck = da_DK
-\subsection{ADC}
+\subsection{ADC}\label{ADC_afsnit}
 \subsubsection{Teori og design}
 I dette projekt anvendes en ADC af typen NI USB-6009 til at konvertere det analoge signal til digital som beskrevet i afsnit \ref{ADCafsnit} på side \pageref{ADCafsnit}. %Signalet skal konverteres, for at kunne sendes ind i den digitale del af systemet, så plejepersonalet kan aflæse og behandle målingerne. 
 Med denne ADC kan der samples med $13$ bits single-ended\fxnote{Hvad betyder det?}. ADC'en kan dermed inddeles i $2^{13} = 8192 \text{niveauer}$. Den maksimale sampling rate er på $48$kS/s, hvormed det er muligt at sample med minimum det tidobbbelte af båndbredden. Arbejdsområdet for ADC'en ift. spænding ligger på $10Vpp$ og har en typisk præcision på $14.7$mV ved $25^{\circ}$C. \cite{Instruments2014} Ud fra oplysningerne er det muligt at udregne LSB ud fra ligningen i afsnit \ref{ADCafsnit} på side \pageref{ADCafsnit}. Udregningen ser således ud: \\
