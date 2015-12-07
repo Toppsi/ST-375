@@ -1,30 +1,56 @@
 % !TeX spellcheck = da_DK
 \subsection{Spændingsforsyning} \label{Spaendingsforsying}
 \subsubsection{Teori og design}
-Til systemet anvendes to $1.5$V batterier som spændingsforsyning, der sidder i en spændingsregulator. Denne kan leverer en spænding på $\pm5.5$V og $\pm3.3$V fra to forskellige terminaler. Derudover besidder spændingsregulatoren en jordkobling, som øvrige komponenter i systemet kan kobles til. I dette projekt benyttes begge terminaler - $\pm3.3$V terminalen forsyner med et input til referencespændingen til komparatoren, og $\pm5.5$V forsyner og benyttes til resten af systemet. Spændingsregulatoren er designet således, at den leverer en spænding koblet i et splitsupply. Spændingsregulatorens negative spændingsforsyning kaldes $-V_{cc}$ og den positive kaldes $+V_{cc}$. \\%Den positive pol fra det ene batteri tilkobles den negative pol på det andet batteri i. Derudover dannes en fælles jordforbindelse for øvrige komponenter i systemet, som kræver en forbindelse til jord. Den negative pol i det første batteri i det første batteri anvendes som systemets negative forsyningsspænding og indikeres med $-V_{cc}$, mens det andet batteri anvendes som den positive spændingsforsyning og indikeres med $+V_{cc}$.
+Til systemet anvendes to $1.5$V batterier som spændingsforsyning, der sidder i en spændingsregulator. Denne kan leverer en spænding på $\pm5.5$V og $\pm3.3$V fra to forskellige terminaler. Derudover besidder spændingsregulatoren en jordkobling, som øvrige komponenter i systemet kan kobles til. I dette projekt benyttes begge terminaler - $\pm3.3$V terminalen forsyner med et input til referencespændingen til komparatoren, og $\pm5.5$V forsyner og benyttes til resten af systemet. Spændingsregulatoren er designet således, at den leverer en spænding koblet i et splitsupply. Spændingsregulatorens negative spændingsforsyninger kaldes $-V_{cc}$ og den positive kaldes $+V_{cc}$. \\%Den positive pol fra det ene batteri tilkobles den negative pol på det andet batteri i. Derudover dannes en fælles jordforbindelse for øvrige komponenter i systemet, som kræver en forbindelse til jord. Den negative pol i det første batteri i det første batteri anvendes som systemets negative forsyningsspænding og indikeres med $-V_{cc}$, mens det andet batteri anvendes som den positive spændingsforsyning og indikeres med $+V_{cc}$.
 Da batterierne ikke leverer den samme spænding over hele batteriernes levetid, skal batteriet skiftes ud, når de ikke leverer den nødvendige spænding til systemet. Batteriernes levetid afhænger af, hvor meget strøm systemet trækker. %Da komparatorkonfigurationen kræver den højeste spænding iblandt blokkene, skal spændingsregulatoren minimum leverer en spænding på xx V. Derfor kræver systemt en minimal spænding på xx V.
 
 \subsubsection{Simulering}
-Ved simulering af spændingsforsyningen anvendes LTspice, hvor der simuleres en spænding igennem en buffer, som også er beskrevet og benyttet i afsnit \ref{Bilag:Pilotforsoeg} på side \pageref{Bilag:Pilotforsoeg}. Herved kan konsekvensen af et faldende input simuleres. Der undersøges flere forskellige spændinger ved at ændre på spændingsforsyningen, hvilket er illustreret på \figref{fig:spaendingsforsyning_graf}. Der undersøges for hhv. $5$V, $4.5$V og $4.3$V.
+Ved simulering af spændingsforsyningen anvendes LTspice, hvor der simuleres en spænding igennem en buffer, som også er beskrevet og benyttet i afsnit \ref{Bilag:Pilotforsoeg} på side \pageref{Bilag:Pilotforsoeg}. Herved kan konsekvensen af et faldende input simuleres, således at kravet om spændingsregulatorens forsyning må ikke forårsage klipning af signalet kan undersøges. Det maksimale input, som vil blive indsendt igennem systemet uden der ønskes klipning af signalet, er $0.0037 \cdot 9.1 \cdot 3.6 25 = 3.030$V jævnfør bilag \ref{Bilag:Pilotforsoeg} på side \pageref{Bilag:Pilotforsoeg}, hvorfor denne spænding benyttes i simuleringen som amplituden på et sinussignal. Der undersøges konsekvensen af en faldende spændingsforsyning, hvilket er illustreret på \figref{fig:spaendingsforsyning_graf}. Der undersøges for hhv. $5.5$V, $5$V, $4.5$V og $4.0$V.
 \begin{figure}[H]
 	\centering
-	\includegraphics[scale=0.4]{figures/cProblemloesning/Spaendingsforsyning.PNG}
-	\caption{På figuren ses simuleringen af spændingsforsyningen ved hhv. $5$V, $4.5$V og $4$V. Det fremgår at figuren at spændingen går i klippet ved ved $4.5$V og går i mætning ved $4$V}
-	\label{fig:spaendingsforsyning_graf}
-\end{figure}
-\begin{figure}[H]
-	\centering
-	\includegraphics[scale=0.5]{figures/cProblemloesning/Spaendingsforsyning_LTspice.PNG}
-	\caption{På figuren ses designet af spændingsforsyningen med en buffer. Inputsignalet er en sinuskurve. Spændingsforsyningen til operationsforstærkereren er på billedet $\pm5.5$V, hvilket er den spænding der anvendes i systemet.}
+	\includegraphics[scale=0.4]{figures/cProblemloesning/Spaendingsforsyning_LTspice2.PNG}
+	\caption{På figuren ses designet af spændingsforsyningen med en buffer. Inputsignalet er en sinuskurve med en amplitude på det maksimale ønskede signal i systemet. Spændingsforsyningen til operationsforstærkeren er på billedet $\pm5.5$V, hvilket er den spænding, som anvendes til at forsyne systemet.}
 	\label{fig:spaendingsforsyning}
 \end{figure}
-Det fremgår ud fra  at spændingen ved $4.3$V bliver klippet, hvor spændingen går i mætning ved $4$V. 
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=0.2]{figures/cProblemloesning/Spaendingsforsyning2.PNG}
+	\caption{På figuren ses simuleringen af en spændingsforsyning på hhv. $5.5$V, $5$V, $4.5$V og $4.0$V for et inputsignal. Det fremgår af figuren, at signalet bliver klippet ved $4.5$V, hvilket ses tydeligere, når spændingsforsyningen bliver $4.0$V. Simulering er foretaget i LTspice.}
+	\label{fig:spaendingsforsyning_graf}
+\end{figure}
+På \figref{fig:spaendingsforsyning_graf} ses simuleringen af systemet ved fire forskellige spændingsforsyninger. Der ses, at signalet ideelt vil blive klippet, hvis spændingsforsyningen leverer under $5.0$V til operationsforstærkerne.
 
 \subsubsection{Implementering og test}
-Der undersøges hvorvidt spændingsregulatoren leverer en spænding på $5.5$V, jævnfør afsnit \ref{Krav_spaending_spicifikt} på side \ref{Krav_spaending_spicifikt}. Derudover skal der testes for hvornår spændingen går i mætning, for at undgå klipning af signalet.
-
-%%%%%%%%%%%%5 SKRIV AFSNIT FÆRDIGT.
-
-Batteriernes levetid undersøges ved at teste, hvor mange ampere systemet bruger. På baggrund af dette vil informationen omkring batteriernes levetid give en estimering af, hvornår de skal udskiftes. Testningen foregår ved en serieforbindelse mellem den negative spændingsforsyning $-V_{cc}$ eller positive spændingsforsyning $+V_{cc}$ og systemet. Selve opsætningen af testen illustreres på %\figref{spaendingsforsyning}.
-
-%%%%%%%%%% TJEK ERIKAS RETTELSER TIL AFSNITTET EFTERFØLGENDE
+Der undersøges hvorvidt spændingsregulatoren leverer en spænding på hhv. mindst $5.5$V samt $3.3$V fra hver terminal jævnfør afsnit \ref{Krav_spaending_spicifikt} på side \ref{Krav_spaending_spicifikt}. Derudover testes der for, om spændingsregulatoren kan forsyne samtlige blokke i systemet med den minimale krævede spænding samt forsyner operationsforstærkerne med mindst $5.0$V for at undgå klipning af signalet. \\
+\begin{table}[H]
+	\centering
+	\begin{tabular}{|l|l|l|}
+		\hline
+		\textit{Teoretisk} & \textit{Målt} & \textit{\% afvigelse} \\ \hline
+		$5.5$V             &               &                       \\ \hline
+		$3.4$V             &               &                       \\ \hline
+	\end{tabular}
+	\caption{I tabellen ses outputtet fra spændingsregulatoren. }
+	\label{tab:spaending_resultat}
+\end{table}
+ 
+\begin{table}[H]
+	\centering
+ 	\begin{tabular}{l|l|l|l|}
+ 		\cline{2-4}
+ 		& \textit{Teoretisk} & \textit{Målt} & \textit{\% afvigelse} \\ \hline
+ 		\multicolumn{1}{|l|}{\textit{\begin{tabular}[c]{@{}l@{}}Spændingsforsyning\\ til offsetjustering\end{tabular}}}                        &                    &               &                       \\ \hline
+ 		\multicolumn{1}{|l|}{\textit{\begin{tabular}[c]{@{}l@{}}Spændingsforsyning til \\ referencespænding til offsetjustering\end{tabular}}} &                    &               &                       \\ \hline
+ 		\multicolumn{1}{|l|}{\textit{\begin{tabular}[c]{@{}l@{}}Inputspænding til \\ referencespænding til offsetjustering\end{tabular}}}      &                    &               &                       \\ \hline
+ 		\multicolumn{1}{|l|}{\textit{\begin{tabular}[c]{@{}l@{}}Spændingsforsyning\\ til faktor $9.1$ forstærker\end{tabular}}}                &                    &               &                       \\ \hline
+ 		\multicolumn{1}{|l|}{\textit{\begin{tabular}[c]{@{}l@{}}Spændingsforsyning\\ til filter\end{tabular}}}                                 &                    &               &                       \\ \hline
+ 		\multicolumn{1}{|l|}{\textit{\begin{tabular}[c]{@{}l@{}}Spændingsforsyning\\ til faktor $3.6$ forstærker\end{tabular}}}                &                    &               &                       \\ \hline
+ 		\multicolumn{1}{|l|}{\textit{\begin{tabular}[c]{@{}l@{}}Spændingsforsyning til\\ komparatorblokken\end{tabular}}}                      &                    &               &                       \\ \hline
+ 		\multicolumn{1}{|l|}{\textit{\begin{tabular}[c]{@{}l@{}}Spændingsforsyning til \\ referencespænding til offsetjustering\end{tabular}}} &                    &               &                       \\ \hline
+ 		\multicolumn{1}{|l|}{\textit{\begin{tabular}[c]{@{}l@{}}Inputspænding til \\ referencespænding til komparatorblokken\end{tabular}}}    &                    &               &                       \\ \hline
+ 	\end{tabular}
+  	\caption{I tabellen ses forsyningen (samt inputspænding) til samtlige blokke i systemet.}
+  	\label{tab:spaending_systemet}
+\end{table}
+I \tableref{tab:spaending_resultat} ses det, at spændingsregulatoren kan levere mindst $3.3$V og $5.5$V, når den ikke er tilkoblet systemet. Efter tilkobling ses det i \tableref{tab:spaending_systemet}, at spændingsregulatoren forsyner blokkene i systemet med den minimale spænding, som er krævet for korrekt funktion. Det vides fra teorien og kan ses i simuleringen, at så længe spændingsforsyningen leverer mindst $5$V, vil den ikke forsage klipning af signalet. Hvis spændingen på teoretisk $3.4$V leverer under dette, vil det have en effekt på vibratorerne, da det kun er dem, som denne spænding benyttes til at forsyne. \\
+Spændingsforsyningen accep
