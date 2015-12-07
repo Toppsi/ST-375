@@ -584,6 +584,14 @@
   Timestamp                = {2015.11.10}
 }
 
+@Manual{Kingbright,
+  Title                    = {T-1 3/4 (5mm) LOW CURRENT LED LAMPS},
+  Author                   = {Kingbright},
+
+  Owner                    = {Mads},
+  Timestamp                = {2015.12.07}
+}
+
 @Electronic{Kjaergaard2015,
   Title                    = {Antikoagulationsbehandling (blodfortyndende medicin)},
   Author                   = {Kjærgaard, Jesper},
@@ -689,6 +697,15 @@
 
   Owner                    = {Mathias},
   Timestamp                = {2015.09.29}
+}
+
+@Manual{Machinery2009,
+  Title                    = {C1026B002F},
+  Author                   = {Jinlong Machinery},
+  Year                     = {2009},
+
+  Owner                    = {Mads},
+  Timestamp                = {2015.12.07}
 }
 
 @Article{Mao2014,
