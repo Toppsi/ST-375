@@ -9,7 +9,10 @@ Ydermere kan pilotforsøgets metode have væsentlig betydning ift. afvigelser i 
 De målte data kan desuden være påvirket af afvigelser i de anvendte måleapparater, herunder oscilloskop, multimeter og optagelse med ADC. De forskellige apparater kan kun måle et begrænset antal decimaler og værdierne kan således variere ift. teorien. Derudover vil der være afvigelse ift. de anvendte komponenter under implementeringen, da der her arbejdes med reelle komponenter. Visse komponenter, herunder operationsforstærkere og komparatorer, har i forvejen oplyst en afvigelse fra de ideelle værdier i deres datablade, som er blevet accepteret. Andre komponenter, herunder modstande og kondensatorer, er blevet målt og tilpasset til systemet for at minimere afvigelserne, så vidt det var muligt. 
 
 \subsection{Problemløsning}
-Ved design, simulering, implementering og test af blokkene ses det, at alle overholder de fastsatte krav og tolerancer. Der er imidlertid nogle områder indenfor de enkelte blokke, hvor det kan overvejes, om der kunne have været anvendt andre metoder.
+Ved design, simulering, implementering og test af systemets enkelte kredsløb ses det, at alle overholder de fastsatte krav og tolerancer. Der er imidlertid nogle områder indenfor de enkelte blokke og spændingsforsyninger, hvor det kan overvejes, om der kunne have været anvendt andre metoder.
+
+\subsubsection{Referencespænding til offset}
+Implementeringen af en referencespænding til at forsyne offsetkredsløbet medfører tilføjelse af ekstra komponenter til det samlede system, og dermed også flere kilder til støj. Dette vurderes imidlertid til at være den mest optimale løsning sammenlignet med at anvende eksempelvis et batteri, da dette ikke kan anvendes som reference pga. det konstante spændingsfald. Der er stadig en uløst problematik ift. referencespændingen, da det stadig, jævnfør afsnit \ref{subsec:Spaendingsref} på side \pageref{subsec:Spaendingsref}, er batterier der fungerer som spændingsforsyning til referencespændingen. Dermed sker der stadig et gradvist fald i den spænding som batterierne kan yde, hvormed der med tiden heller ikke kan leveres en tilstrækkelig spænding fra referencen. Dette kan have konsekvenser ift. at få justeret offsettet korrekt. Det kan derfor være hensigtsmæssigt at tilføje en funktion, der oplyser brugeren om, når referencen ikke længere kan udsende den forventede spænding pga. batterierne i spændingsforsyningen.  
 
 \subsubsection{Opsamling}
 I opsamlingblokken bliver offsettet fra accelerometret ved $0$g påvirkning justeret til $0$V jævnfør afsnit \ref{Offset_Teori_Design} på side \pageref{Offset_Teori_Design}. Da formålet med blokken i denne sammenhæng er at fjerne offsettet helt, kan det være en mulighed at anvende et højpasfilter, som dæmper frekvenserne fra offsettet.\fxnote{NTK: Når accelerometeret detekterer offsetværdien er påvirkningen $0$g, hvilket udgør de laveste frekvenser i signalet. Disse kan identificeres og dermed dæmpes med et højpasfilter, således at offsettets frekvenser er dæmpede på det samlede signal.} Ved denne løsning skal det imidlertid overvejes, at frekvenserne ikke fjernes helt, og det kræver derfor, at de er dæmpet tilstrækkeligt til, at de ikke har indflydelse på det samlede signal. Det kan desuden overvejes, om det vil være mere optimalt at sammenlægge offsetjusteringen og forstærkningen i opsamlingsblokken til ét kredsløb, hvilket kan forsimple blokken og dermed begrænse visse afvigelser, da der indgår færre komponenter. Denne løsning er imidlertid ikke valgt, da der i dette projekt ønskes en tydelig afgrænsning imellem de enkelte kredsløb for at gøre systemet mere overskueligt og sikre, at det muligt at identificere eventuelle fejl. 
@@ -21,6 +24,9 @@ Ved simulering af filteret med de beregnede modstande opstod nogle afvigelser i 
 
 \subsubsection{Tilpasning}
 I tilpasningsblokken bliver signalet i det nuværende system tilpasset til være $\pm3$V ved $\pm25^{\circ}$. Jævnfør afsnit \ref{Forstaerker_faktor3_afs} på side \pageref{Forstaerker_faktor3_afs} vurderes det, at en hældning over denne værdi ikke vil være relevant ift. at vurdere, hvorvidt patienten er faldet eller ej. Dette kunne imidlertid være blevet undersøgt nærmere, for at underbygge denne vurdering yderligere. En eventuel variation fra denne fastsatte værdi vil betyde, at forstærkningsfaktoren skal ændres.  
+
+\subsubsection{Spændingsreference til komparator}
+Spændingsreferencen til komparatorkonfigurationen er opbygget efter de samme principper som referencen til offsettet. Forskellen er, at der ved udregningen af modstandene er taget højde for at flere komponenter kræver forsyning. Der er derfor her samme problematik som for spændingsreferencen til offsettet; Da spændingsforsyningen til referencen er udgjort af batterier, vil referenceværdien med tiden ikke kunne opretholdes. For komparatorenkonfigurationen vil dette det betyde en afvigelse i tærskelværdierne i de enkelte komparatorer, hvorfor der ikke længere vil udløses feedback ved de rigtige hældningsgrader. Det vil derfor også her være essentielt med en indikation til brugeren om at referencespændingen ikke længere ligger på den krævede værdi. 
 
 \subsubsection{Feedback}
 KOMPARATOR HER!!
@@ -37,6 +43,10 @@ Da der ikke er udført en decideret test af USB-isolatoren og den opfylder de op
 
 \subsubsection{Computer}
 SKRIVES HER NÅR AFSNITTET ER FÆRDIGT
+
+\subsubsection{Spændingsforsyning}
+Jævnfør afsnit \ref{Spaendingsforsying} på side \pageref{Spaendingsforsying}, anvendes spændingsforsyningen til at forsyne hhv. spændingsreferencerne samt de øvrige blokke i systemet. På baggrund af teori og tests fremgår det, at det er essentielt at spændingsforsyningen leverer den forventede spænding, da det ellers vil påvirke hele systemets funktion. Det kan dermed også være en fordel at tilføje en funktion til systemet der informerer brugeren, når spændingsforsyningen ligger under den forventede værdi. 
+
  
 \subsection{Det samlede system}
 Vurdering af testen generelt - dette afhænger af hvordan vi gør det om det er muligt at lave ændringer ved denne som kan give mindre afvigelser. Eller hvorvidt det er afvigelsen af de enkelte blokke. Der er flere faktorer som kan have indflydelse på dette bl.a. de enkelte komponenters afvigelse fra de teoretiske værdier osv....
