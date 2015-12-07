@@ -1,15 +1,20 @@
 % !TeX spellcheck = da_DK
 \subsection{Software}
-Efter det digitale signal er sendt igennem USB-isolatoren, indsendes de opsamlede data til en computer. Jævnfør afsnit \ref{subsec:software}, side \pageref{subsec:software} skal patienternes data behandles i form af grafisk visualisering af deres hældningsresultater, samt gemmes til senere brug og analyse. For at imødekomme disse krav, anvendes en computer med programmerne Scopelogger og Matlab, hvor Scopelogger anvendes til at optage det digitale signal fra NIDAQ'en og Matlab benyttes til at behandle signalet. Der udarbejdes en manual til det fagkyndige personale, som omhandler anvendelsen af programmet, for at optimere brugervenligheden. 
-For at programmet skal kunne fungere med en switch knap, jævnfør afsnit \ref{formål_anvendelse}, side \pageref{formål_anvendelse} skal patienternes øvelsesresultater gemmes alt efter pågældende udførte øvelse hhv. 'anatomisk_dato' og 'SRT_dato'. 
-Det fagkyndige personale skal åbne scriptet 'Patient_Oevelse' i Matlab for at kunne køre programmet, der skal behandle apopleksipatienternes data fra Scopelogger. Indsamlede data navngives efter den pågældende øvelse og dato og hentes ind i Matlab. Af \figref{Flow_manual} fremgår computerprogrammets manual som et flowdiagram.
-
+Efter det digitale signal er sendt igennem USB-isolatoren, indsendes de opsamlede data til en computer. Jævnfør afsnit \ref{subsec:software}, side \pageref{subsec:software} skal patienternes data behandles i form af grafisk visualisering af deres hældningsresultater, samt gemmes til senere brug og analyse. For at imødekomme disse krav, anvendes en computer med programmet Matlab. I Matlab designes en GUI (Graphical User Interface), hvor signalet fra accelerometeret visualiseres. Signalet optages i Matlab via NIDAQ'en. Grunden til der designes en GUI er for at optimere brugervenligheden. I GUI'en ses en graf, samt fire knapper og en toolbar, dette er illustretet på \figref{Fig:GUI_generisk}. 
 \begin{figure}[H] 
 	\centering 
-	\includegraphics[scale=0.5]{figures/cProblemloesning/Flow_manual.PNG}
-	\caption{Af figuren fremgår computerprogrammets manual som et flowdiagram.}
-	\label{Flow_manual}
+	\includegraphics[scale=0.5]{figures/cProblemloesning/GUI_generisk.PNG}
+	\caption{Af figuren fremgår GUI'ens standardvindue.}
+	\label{Fig:GUI_generisk}
 \end{figure} 
+Y-aksen er defineret i grader, mens x-aksen er defineret i tid. Dette vil gøre at det bliver let at se i hvilken position patienten har befundet sig, samt i hvor langt tid.
+De fire blå linjer på tværs af koordinatsystemet er de tærskelværdier vi har opstillet, som befindes sig i $\pm 8\circ$ og $\pm 13\circ$. Derved er det hurtigt for personalet at se hvor grænserne er for patienten.
+Knappen start vil starte optagelsen af signalet. Knappen stop vil stoppe optagelsen af signalet. Knappen slet vil slette plottet af signalet. Knappen gem vil gemme figuren til senere analyse.
+I toolbaren er der flere knapper, disse har til opgave at gøre det muligt at manipulere med grafen. Forstørrelsesglasset med plusset gør det muligt at zoome ind på grafen, men forstørrelsesglasset med minusset gør det muligt at zoome ud igen. Knappen med et papir og et plus gør det muligt at aflæse det præcise punkt på grafen som man vælger. Mappen der åbner gør det muligt at åbne en fil i GUI'en og hånden gør det muligt at panorere i grafen.
+For at benytte GUI'en skal det fagkyndige personale åbne sciptet
+Det fagkyndige personale skal åbne scriptet 'Patient_Oevelse' i Matlab for at kunne køre programmet, der skal behandle apopleksipatienternes data fra Scopelogger. Indsamlede data navngives efter den pågældende øvelse og dato og hentes ind i Matlab. Af \figref{Flow_manual} fremgår computerprogrammets manual som et flowdiagram.
+
+
 
 \subsubsection{Test}
 %Her skal det testes, hvorvidt systemet kan hvad vi beskriver det skal kunne.
