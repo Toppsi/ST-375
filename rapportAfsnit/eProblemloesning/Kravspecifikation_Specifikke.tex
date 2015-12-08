@@ -155,9 +155,9 @@ Den grønne LED skal lyse, når accelerometret er placeret korrekt på patienten
 	\item Komparatoren skal kunne modtage et inputsignal på $\pm3$V $+5\%$.
 	\item Komparatoren skal ved et bestemt spændingsniveauer aktivere en LED og vibrator:
 	\begin{itemize}
-		\item Grøn diode og ingen vibration: I intervallet indenfor $0.2424$V til -$0.2359$V. Svarende til $\pm2^{\circ}$.
-		\item Gul diode og vibration: Fra niveauet $0.9697$V og -$0.9495$V. Svarende til $\pm 8^{\circ}$ eller over.
-		\item Rød diode og vibration: Fra nivauet $1.5758$V og -$1.5332$V. Svarende til $\pm13^{\circ}$ eller over.
+		\item Grøn LED og ingen vibration: I intervallet indenfor $0.2424$V til -$0.2359$V. Svarende til $\pm2^{\circ}$.
+		\item Gul LED og vibration: Fra niveauet $0.9697$V og -$0.9495$V. Svarende til $\pm 8^{\circ}$ eller over.
+		\item Rød LED og vibration: Fra nivauet $1.5758$V og -$1.5332$V. Svarende til $\pm13^{\circ}$ eller over.
 		%\item Ingen feedback: Over $2.2602$V og under -$2.2168$V. 
 	\end{itemize}
 	\item LEDerne og vibratorerne skal aktiveres ved angivet tærskelværdier i komparatoren.
@@ -166,8 +166,9 @@ Den grønne LED skal lyse, når accelerometret er placeret korrekt på patienten
 \begin{itemize}
 	\item Der accepteres en afvigelse i spændingsforsyningen på $\pm5\%$.
 	\item Der accepteres ingen afvigelse ift. hvor stort et inputsignal komparatoren skal kunne modtage.
-	\item Der accepteres en afvigelse i tærskelværdierne på $\pm1\%$.
-	\item Der accepteres ingen afvigelse ift. aktivering af LED og vibratorerne, hvis tærskelværdierne for den bestemte LED-diode er opnået i komparatorblokken.
+	\item Der accepteres en afvigelse i tærskelværdierne på $\pm5\%$ for den gule LED og vibrator samt den røde LED og vibrator.
+	\item Der accepteres en afvigelse i tærskelværdierne på $\pm20\%$ for den grønne LED. 
+	%\item Der accepteres ingen afvigelse ift. aktivering af LED og vibratorerne, hvis tærskelværdierne for den bestemte LED er opnået i komparatorblokken.
 \end{itemize}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Spændingsforsyning}\label{Krav_spaending_spicifikt}
