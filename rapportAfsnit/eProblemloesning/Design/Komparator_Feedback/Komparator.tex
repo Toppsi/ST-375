@@ -1,6 +1,6 @@
 % !TeX spellcheck = da_DK
 \subsection{Feedbackkonfiguration}
-\subsubsection{Teori og design}
+\subsubsection{Teori og design} \label{Afs_Komparator}
 Jævnfør \ref{Komparatorafsnit} på side \pageref{Komparatorafsnit} anvendes en komparator til at sammenligne to inputspændinger. Komparatoren der anvendes er af typen LM311. Ved denne type placeres en 100n kondensator ved inputtet for at gøre komparatoren mere præcis og undgå svingninger \cite{Instruments2015}. Der vil blive anvendt flere komparatorer og i dette tilfælde tilkobles komparatorernes output en LED, en vibrator, en modstand og den positive spændingsforsyning ($+V_{cc}$). I komparatorernes ikke-inverterende terminaler tilsluttes outputtet fra forrige blok, hvor inputtet i de inverterende terminaler fungerer som referencespænding, der forsyner med de beregnede tærskelværdier. Komparatorerne kan derfor have to forskellige outputs afhængig af inputspændingen. Hvis inputsignalet ligger udenfor de beregnede tærskelværdier vil outputtet være $0V$ og LEDerne samt de to vibratorer vil ikke blive aktiveret. Er inputtet derimod indenfor de beregnede tærskelværdier, vil outputtet svare til ground, da strømmen fra $+V_{cc}$ vil løbe igennem komparatorerne og derefter til ground\fxnote{det vil vel løbe til komparatorens emitter terminal }. Derved opnås et spændingsfald over den positive (anode) og negative (katode) pol for LEDerne og vibratorerne på en værdi, der ligger over det minimale spændingsfald, der kræves for en aktivering. LEDerne og vibratorerne vil derved blive aktiveret og fungere som feedback til patienten. \\
 
 \noindent\textbf{Design af feedbackkonfiguration} \\
@@ -9,7 +9,7 @@ Der er placeret en buffer inden feedbackkonfigurationen for at stabilisere signa
 \begin{figure}[H] 
 	\centering
 	\includegraphics[scale=0.9]{figures/cProblemloesning/komparator_uden_vaerdi.PNG}
-	\caption{På figuren ses feedbackkonfigurationen, hvor kredsløbet består af to dele; en for hældning i positiv og negativ retning. Der er konstrueret en vindues-komparatorkonfigurationen designet vha. komparatorerne (U$3$-U$4$) for den grønne LED, der anvender en tærskelværdi fra hhv. den negative og positive del af kredsløbet. Kredsløbet er konstrueret i LTspice.}
+	\caption{På figuren ses feedbackkonfigurationen, hvor kredsløbet består af to dele; en for hældning i positiv og negativ retning. Konfigurationen består af otte spændingsdelere bestående af $12$ modstande (R$1$-R$12$) og en spændingsreference. Dertil fem LEDer og vibratorer (i LTspice en modstand) samt tilhørende modstande. For den grønne led, er en vindues-komparatorkonfigurationen  konstrueret vha. komparatorerne (U$3$-U$4$), der anvender en tærskelværdi fra hhv. den negative og positive del af kredsløbet. Kredsløbet er konstrueret i LTspice.}
 	\label{fig:komparator_uden_vaerdi}
 \end{figure}
 
@@ -26,7 +26,7 @@ De udregnede tærskelværdier fremgår af \figref{fig:taerskelvaerdier}.
 \begin{figure}[H]
 	\centering
 	\includegraphics[scale=1.]{figures/cProblemloesning/Taerskelvaerdier.PNG}
-	\caption{På figuren fremgår de beregnede tærskelværdier og hvilket LED, der lyser ved de de enkelte tærskler.}
+	\caption{Af figuren fremgår de beregnede tærskelværdier og hvilket LED, der lyser ved de de enkelte tærskelværdier.}
 	\label{fig:taerskelvaerdier}
 \end{figure}
 
@@ -62,12 +62,12 @@ Til den somasensoriske del af feedbackkonfigurationen benyttes vibratorer, jævn
 For at opnå et tilstrækkeligt strømniveau anvendes en transistor af typen; BS$170$ for at generere en større mængde strøm i kredsløbet. Transistoren placeres mellem vibratoren og komparatoren. Det er designet således, at transistoren tændes og vibratoren aktiveres, når komparatoren er slukket, modsat komparatorerne, der benyttes i forbindelse med LEDerne. Dette skyldes, at når komparatoren er tændt vil den trække spænding tilkoblet et knudepunkt mellem komparatorens collector-terminal og trasistorens gain-terminal. Modstandene R$15$ og R$18$ er placeret ved spændingsforsyningen på $5.5$V ($+V_{cc}$) og bestemmes til at være $100$K. Disse skal sørge for at kredsløbet ikke bruger for meget strøm, hvorfor der er valgt modstande med en høj værdi. Når komparatoren slukker vil spændingen aktivere transistoren og der dannes forbindelse mellem transistorens drain- og source-terminal. Dette vil aktivere vibratorerne. Spændingsforsyningen til vibratorerne er på $3.4$V ($V+$) og forsynes af spændingsregulatoren. Eftersom vibratoren kun skal forsynes med $3$V benyttes en schottky-diode (BAT$41$), der nedsætter spændingen til under $3$V. Schottky-dioden fungerer således, at der sker et spændingsfald afhængig af strømmen, der løber igennem dioden. Spændingsforsyningen på $3.4$V aktiveres, når komparatoren slukker og der er forbindelse mellem transistorens drain- og source-terminal, da strømmen kan løbe til ground i source-terminalen. Den somasensoriske del af feedbackkonfigurationen fremgår af \figref{$fig:komparator_uden_vaerdi$}.
  
 \subsubsection{Simulering}
-Den visuelle og somasensoriske del af feedbackkonfigurationen simuleres med et sinus-signal, der svinger mellem $\pm3$V. Dette gøres for at simulere signalet, der kommer fra den forrige blok med et arbejdsområdet på $\pm3$V.I simuleringen testen, hvorvidt tærskelværdierne kan accepteres ift. kravspecifikationer. Kredsløbet simuleres ikke med en spændingsreference, men derimod en spændingsforsyning på $2.5$V, der indikerer spændingsreferencen. Af figur \figref{fig:komparator_samlet} fremgår hele feedbackkonfigurationen, der simuleres i LTspice ved at sende et DC signal ind.   
+Den visuelle og somasensoriske del af feedbackkonfigurationen simuleres med et sinus-signal, der svinger mellem $\pm3$V. Dette gøres for at simulere signalet, der kommer fra den forrige blok med et arbejdsområdet på $\pm3$V.I simuleringen testen, hvorvidt tærskelværdierne kan accepteres ift. kravspecifikationer. Kredsløbet simuleres ikke med en spændingsreference, men derimod en spændingsforsyning på $2.5$V, der indikerer spændingsreferencen. Af figur \figref{fig:komparator_samlet} fremgår hele feedbackkonfigurationen, der simuleres i LTspice.
 
 \begin{figure}[H]
 	\centering
 	\includegraphics[scale=0.9]{figures/cProblemloesning/komparator_samlet.PNG}
-	\caption{Figuren illustrerer feedbackkonfigurationen, der simuleres i LTspice med beregnede modstande.}
+	\caption{Af figuren fremgår feedbackkonfigurationen med beregnede modstande. Kredsløbet simuleres i LTspice vha. et sinus-signal, der svinger mellem $\pm3$V.}
 	\label{fig:komparator_samlet}
 \end{figure}
  
@@ -77,7 +77,7 @@ Til simulering af den visuelle den af feedbackkonfiguration anvendes komparatore
 \begin{figure}[H]
 	\centering
 	\includegraphics[scale=0.3]{figures/cProblemloesning/komparator_visuel_simulering_samlet1.PNG}
-	\caption{På figuren ses simuleringen af den visuelle del af feedbackkonfiguration. Den sorte kurve er sinus-signalet, der illustrerer blokkens inputsignal. Den røde kurve illustrerer de røde dioder, den gule kurve de gule dioder og den grønne kurve den grønne diode. Når inputsignalet når de definerede tærskelværdier, vil kurverne gå i negativ mætning og LED-dioderne vil lyse. Kredsløbet er simuleret i LTspice.}
+	\caption{På figuren ses simuleringen af den visuelle del af feedbackkonfiguration. V(n$002$) er sinus-signalet, der illustrerer blokkens inputsignal, V(n$004$) viser spændingsfaldet for de røde LEDer, V(n$008$) for de gule LEDer og V(n$015$) for den grønne LED. Når inputsignalet når de definerede tærskelværdier, vil kurverne gå i negativ mætning og LED-dioderne vil lyse. Kredsløbet er simuleret i LTspice.}
 	\label{fig:komparator_visuel_simulering_samlet1}
 \end{figure}
 
@@ -127,10 +127,10 @@ R = \dfrac{3V}{0.9A} = 33\Omega
 \begin{figure}[H]
 	\centering
 	\includegraphics[scale=0.3]{figures/cProblemloesning/vibration_graf.PNG}
-	\caption{På figuren ses simuleringen af den somasensoriske del af feedbackkonfiguration. Den sorte kurve er sinus-signalet, der illustrerer blokkens inputsignal. Den blå kurve viser tærskelværdien for den højre vibrator og den pinke kurve viser tærskelværdier for den vesntre vibrator. Kredsløbet er simuleret i LTspice.}
+	\caption{På figuren ses simuleringen af den somasensoriske del af feedbackkonfiguration. V(n$002$ er sinus-signalet, der illustrerer blokkens inputsignal. I(D$6$) og I(D$7$) er tærskelværdien for hhv. den højre og venstre vibrator. Kredsløbet er simuleret i LTspice.}
 	\label{fig:vibration_graf}
 \end{figure}
-\noindent På \figref{fig:vibration_graf} fremgår det, at ved de enkelte tærskelværdier går signalet i negativ mætning, hvilket aktiverer vibratorerne. Derudover fremgår det af figuren, at tærskelværdier for de to vibratorer er de samme tærskelværdier for den gule LED, hvilket gør, at den samme afvigelse vil gøre sig gældende, hvorfor den somasensoriske del af feedbackkonfigurationen accepteres. \fxnote{fremgår ikke af figuren, at tærskelværdierne er de samme som ved den gule LED, hvorfor der skal label på med tærskelværdier som ved simuleringen ved LEDerne}
+\noindent På \figref{fig:vibration_graf} fremgår det, at ved de enkelte tærskelværdier går signalet i negativ mætning, hvilket aktiverer vibratorerne. Derudover fremgår det af figuren, at tærskelværdier for de to vibratorer er de samme tærskelværdier for den gule LED, hvilket gør, at den samme afvigelse vil gøre sig gældende, hvorfor den somasensoriske del af feedbackkonfigurationen accepteres. 
 
 \subsubsection{Implementering og test}
 Ifølge det valgte design benyttes i alt 21 modstande antal modstande. Ved reelle komponenter vil der være en afvigelse, hvilket fremgår af tabel \ref{Tab:komparator_modstande}. Derudover er det ikke muligt at anvende alle beregnede komponenter, hvorfor der anvendes modstande i serie- og parallelforbindelser. I tabellen vil alle modstandene fremgå, samt den afvigelsen mellem den teoretiske og målte modstand. 
@@ -161,7 +161,7 @@ Ifølge det valgte design benyttes i alt 21 modstande antal modstande. Ved reell
 \textit{R20}            & $100$K$\Omega$           & $99.628$K$\Omega$   & $0.37\%$           \\ \hline
 \textit{R21}            & $100$K$\Omega$           & $99.676$K$\Omega$   & $0.32\%$           \\ \hline
 \end{tabular}
-\caption{Af tabellen fremgår de teoretiske og reelle værdier for modstandene benyttet i feedbackkonfigurationen for den visuelle del.}
+\caption{Af tabellen fremgår de teoretiske og reelle værdier for modstandene benyttet i feedbackkonfigurationen.}
 \label{Tab:komparator_modstande}
 \end{table}
 \noindent Komparatorkonfigurationen testes ved en spændingsforsyning på $5.5$V med et sinussignal som input. Af \ref{Tab: test_reference} fremgår de beregnede og målte tærskelværdier, samt afvigelsen af disse tærskelværdier. 
@@ -177,7 +177,7 @@ Ifølge det valgte design benyttes i alt 21 modstande antal modstande. Ved reell
 		\textit{-$8^{\circ}$}  & -$0.9495$V                                                                     & -$0.9492$V                                                                 & $0.03\%$              \\ \hline
 		\textit{-$13^{\circ}$} & -$1.5332$V                                                                     & -$1.5418$V                                                                 & $0.56\%$        \\ \hline     
 	\end{tabular}
-	\caption{Af tabelle fremgår de teoretiske og målte tærskelværdier ved de enkelte hældningsgrader. Derudover er der beregnet afvigelsen af den teoretiske og målte tærskelværdi.}
+	\caption{Af tabelle fremgår de teoretiske og målte tærskelværdier ved de enkelte hældningsgrader, samt afvigelsen mellem disse tærskelværdier.}
 	\label{Tab:test_reference}
 \end{table}
 \noindent Jævnfør kravspecifikationerne afsnit \ref{KomparatorAfs} på side \pageref{KomparatorAfs} overholder de målte tærskelværdier tolerancekravet på $\pm1\%$. For at undersøge, hvornår LEDerne og vibratorerne tænder og slukker måles på input- og outputsignalet vha. et osciolloskop. I \tableref{Tab:test-taendsluk} fremgår de teoretiske og målte tærskelværdier for hvornår LEDen og vibratorerne tænder og slukker, samt afvigelsen mellem disse tærskelværdier. 
@@ -209,7 +209,7 @@ $2\circ$   & $0.2427$V                      & $0.2400$V                      & $
 -$8\circ$  & -$0.9492$V                     & -$0.9200$V                     & $3.18$ \%             & $0.25\circ$                        \\ \hline
 -$13\circ$ & -$1.5418$V                     & $1.5200$V                      & $1.44$ \%             & $0.18\circ$                        \\ \hline
 \end{tabular}
-\caption{Af tabellen fremgår det, hvornår LEDerne teoretisk bør slukke og tænde og hvornår de blev målt til at tænde og slukke}
+\caption{Af tabellen fremgår de målte reference input og output, samt afvigelsen af disse værdier. Derudover er afvigelsen regnet ud i grader.}
 \label{Tab:test-taendsluk}
 \end{table}
 
