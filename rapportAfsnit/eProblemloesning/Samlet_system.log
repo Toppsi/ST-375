@@ -1,0 +1,116 @@
+Circuit: * C:\Users\Mathias\Desktop\ST-375\rapportAfsnit\eProblemloesning\Samlet_system.asc
+
+Early termination of direct N-R iteration.
+Direct Newton iteration failed to find .op point.  (Use ".option noopiter" to skip.)
+Starting Gmin stepping
+Gmin = 10
+vernier = 0.5
+vernier = 0.25
+vernier = 0.125
+Gmin = 5.49741
+vernier = 0.0625
+vernier = 0.03125
+vernier = 0.015625
+vernier = 0.0078125
+Gmin = 5.51716
+vernier = 0.00390625
+vernier = 0.00195313
+vernier = 0.000976563
+vernier = 0.000488281
+Gmin = 5.50104
+Gmin = 0
+Gmin stepping failed
+
+Starting source stepping with srcstepmethod=0
+Source Step = 3.0303%
+Source Step = 33.3333%
+Source Step = 40.5303%
+vernier = 0.015625
+Source Step = 40.409%
+Source Step = 40.4386%
+Source Step = 40.4682%
+Source Step = 40.4978%
+Source Step = 40.5273%
+vernier = 0.00146484
+Source Step = 40.5643%
+Source Step = 40.6087%
+Source Step = 40.6531%
+Source Step = 40.6975%
+Source Step = 40.7419%
+vernier = 0.00219727
+Source Step = 40.7952%
+Source Step = 40.8617%
+Source Step = 40.9283%
+Source Step = 40.9949%
+Source Step = 41.0615%
+vernier = 0.0032959
+Source Step = 41.1381%
+Source Step = 41.2379%
+Source Step = 41.3378%
+Source Step = 41.4377%
+Source Step = 41.5376%
+vernier = 0.00494385
+Source Step = 41.6474%
+Source Step = 41.7972%
+Source Step = 41.9471%
+Source Step = 42.0969%
+Source Step = 42.2467%
+vernier = 0.00741577
+Source Step = 42.404%
+Source Step = 42.6287%
+Source Step = 42.8534%
+Source Step = 43.0782%
+Source Step = 43.3029%
+Source Step = 43.5276%
+vernier = 0.0111237
+Source Step = 43.8647%
+Source Step = 44.2018%
+Source Step = 44.5388%
+Source Step = 44.8759%
+Source Step = 45.213%
+vernier = 0.0166855
+Source Step = 45.7018%
+Source Step = 46.2074%
+Source Step = 46.713%
+Source Step = 47.2186%
+Source Step = 47.7242%
+vernier = 0.0250282
+Source Step = 48.4321%
+Source Step = 49.1905%
+Source Step = 49.949%
+Source Step = 50.7074%
+Source Step = 51.4658%
+vernier = 0.0375423
+Source Step = 52.4897%
+Source Step = 53.6274%
+Source Step = 54.765%
+Source Step = 55.9027%
+Source Step = 57.0403%
+vernier = 0.0563135
+Source Step = 58.5192%
+Source Step = 60.2257%
+Source Step = 61.9322%
+Source Step = 63.6387%
+Source Step = 65.3451%
+vernier = 0.0844703
+Source Step = 67.4782%
+Source Step = 70.0379%
+Source Step = 72.5976%
+Source Step = 75.1573%
+Source Step = 77.717%
+vernier = 0.126705
+Source Step = 80.7887%
+Source Step = 84.6282%
+Source Step = 88.4678%
+Source Step = 92.3074%
+Source Step = 93.8612%
+Source Step = 93.9212%
+Starting source stepping with srcstepmethod=1
+Source Step = 3.0303%
+vernier = 0.25
+Source Step = 0.722064%
+Source stepping failed
+
+Pseudo Transient succeeded in finding the operating point.
+Heightened Def Con from 0.0904727 ++++++++++++++++++++++++++++++++++++++++++++++++++Fatal Error: Analysis:  Time step too small; time = 0.0904727, timestep = 1.28488e-017: trouble with u1:jx-instance j:u1:2
+
