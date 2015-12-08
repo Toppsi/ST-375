@@ -1,6 +1,6 @@
 % !TeX spellcheck = da_DK
 \section{Samlet systemtest}
-Efter de enkelte blokke blev testet og godkendt hver for sig, skal det samlede system testes. Formålet med den samlede systemtest er at kontrollere, hvorvidt systemet overholder de overordnede funktionelle krav jævnfør afsnit \ref{FunkKrav} på side \pageref{FunkKrav}. Der anvendes samme fremgangsmåde for test af det samlede system, som af de øvrige blokke; Først simuleres systemet i LTspice, hvorefter det implementeres og testes. Det samlede system vil blive testet på to forskellige måder - først en test efter samme principper som i testen af accelerometeret og efterfølgende en test, hvor accelerometeret er placeret på en person jævnfør afsnit \ref{formaal_anvendelse} på side \pageref{formaal_anvendelse}.
+Efter de enkelte blokke blev testet og godkendt hver for sig, skal det samlede system testes. Formålet med den samlede systemtest er at kontrollere, hvorvidt systemet overholder de overordnede funktionelle krav jævnfør afsnit \ref{FunkKrav} på side \pageref{FunkKrav}. Der anvendes samme fremgangsmåde for test af det samlede system, som af de øvrige blokke; Først simuleres systemet i LTspice, hvorefter det implementeres og testes.
 
 \subsection{Simulering}
 I simuleringen af det samlede system kontrolleres det, som i de øvrige simuleringer, om systemet fungerer med ideelle komponenter. Denne kontrol udføres ved at indsende en sinus som inputspænding igennem systemet, som teoretisk skal aktivere hhv. de enkelte dioder og vibratorerne. Designet af det samlede system ses på \figref{fig:samlet_system}:
@@ -23,11 +23,78 @@ I simuleringen af dette system måles inputtet fra accelerometret og outputtet f
 	\label{fig:samlet_system_simulering}
 \end{figure}
 
-\subsection{Implementering}
+\subsection{Implementering og test}
+Det samlede system implementeres på to breadboards. Opsætningen kan ses på \figref{fig:samlet_system_real}
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=.3]{figures/cProblemloesning/Samlet_system2.PNG}
+	\caption{På figuren ses implementeringen af systemet på to breadboards. Ledningernes farve symboliserer forskellige ting: De hvide leder signalet fra accelerometret igennem systemet og de røde og blå symboliserer hhv. den positive og negative strømforsyningen til de forskellige komponenter i systemet. De sorte ledninger leder til ground, og de gule ledninger fungerer som forbindelsesveje. De grønne og brune ledninger leder hhv. en positiv og negativ referencespænding til offsettet og komparatorerne.}
+	\label{fig:samlet_system_real}
+\end{figure}
+\noindent Herefter er det samlede system klar til at blive testet. Det samlede system vil blive testet på to forskellige måder - først en test efter samme principper som i testen af accelerometeret og efterfølgende en test, hvor accelerometeret er placeret på en person jævnfør afsnit \ref{formaal_anvendelse} på side \pageref{formaal_anvendelse}. De to overordnede tests inddeles yderligere i to, da der for hver test kontrolleres, om den analoge samt digitale del fungerer efter hensigten.
 
-\subsection{Test 1}
-I den første test af det samlede system tages udgangspunkt i principperne fra testen af accelerometeret beskrevet i afsnit \ref{Acc_afsnit} på side \pageref{Acc_afsnit}. Det måles således, hvorvidt systemet opfylder de overordnede funktionelle krav jævnfør afsnit \ref{FunkKrav} på side \pageref{FunkKrav}, ved at placere accelerometeret i de definerede hældningsgrader, og herudfra vurdere om den korrekte feedback udløses.  
+\subsubsection{Test 1}
+I den første test af det samlede system tages udgangspunkt i principperne fra testen af accelerometeret beskrevet i afsnit \ref{Acc_afsnit} på side \pageref{Acc_afsnit}. Det måles således, hvorvidt systemet opfylder de overordnede funktionelle krav jævnfør afsnit \ref{FunkKrav} på side \pageref{FunkKrav}, ved at placere accelerometeret i de definerede hældningsgrader, og herudfra vurdere om den korrekte feedback udløses.\\ 
 
-\subsection{Test 2}
-I den anden test af det samlede system placeres accelerometeret i stedet på en forsøgsperson, der skal afprøve træningsforløbet med systemet. Formålet med denne test er igen at kontrollere om den korrekte feedback udløses, samt at vurdere, hvorvidt de definerede hældningsgrader er passende under træning med systemet. 
- 
+\noindent\textbf{Test 1.a - analog}\\  
+Ved den første test af den analoge del af systemet måles spændingsfaldet over LED'erne og vibratorerne før og efter aktivering. Derudover måles outputtet fra accelerometret lige ved aktivering af de forskellige komponenter. Disse målinger foretages med et multimeter. Resultatet fremgår af \tableref{Tab:resultat:test1a}:
+\begin{table}[H]
+	\centering
+	\begin{tabular}{l|l|l|l|}
+		\cline{2-4}
+		\textit{}                                                                                 & \textit{\begin{tabular}[c]{@{}l@{}}Spændingsfald over \\ komponent før\\ udløst feedback\end{tabular}} & \textit{\begin{tabular}[c]{@{}l@{}}Output fra\\ accelerometer\\ ved udløst feedback\end{tabular}} & \textit{\begin{tabular}[c]{@{}l@{}}Spændingsfald over\\ komponent efter \\ udløst feedback\end{tabular}} \\ \hline
+		\multicolumn{1}{|l|}{\textit{\begin{tabular}[c]{@{}l@{}}Rød LED\\ negativ\end{tabular}}}  & $1.3296$V                                                                                         & $1.5822$V                                                                                    & $2.0324$V                                                                                           \\ \hline
+		\multicolumn{1}{|l|}{\textit{\begin{tabular}[c]{@{}l@{}}Vibrator\\ negativ\end{tabular}}} & $0.6$mV                                                                                           & $1.6005$V                                                                                    & $2.9995$V                                                                                           \\ \hline
+		\multicolumn{1}{|l|}{\textit{\begin{tabular}[c]{@{}l@{}}Gul LED\\ negativ\end{tabular}}}  & $1.4310$V                                                                                         & $1.6005$V                                                                                    & $2.0700$V                                                                                           \\ \hline
+		\multicolumn{1}{|l|}{\multirow{2}{*}{\textit{Grøn LED}}}                                  & \multirow{2}{*}{$1.4611$V}                                                                        & $1.6243$V                                                                                    & \multirow{2}{*}{$2.0196$V}                                                                          \\ \cline{3-3}
+		\multicolumn{1}{|l|}{}                                                                    &                                                                                                   & $1.6377$V                                                                                    &                                                                                                     \\ \hline
+		\multicolumn{1}{|l|}{\textit{\begin{tabular}[c]{@{}l@{}}Gul LED\\ positiv\end{tabular}}}  & $1.4247$V                                                                                         & $1.6562$V                                                                                    & $2.1187$V                                                                                           \\ \hline
+		\multicolumn{1}{|l|}{\textit{\begin{tabular}[c]{@{}l@{}}Vibrator\\ positiv\end{tabular}}} & $0.1$mV                                                                                           & $1.6562$V                                                                                    & $3.1029$V                                                                                           \\ \hline
+		\multicolumn{1}{|l|}{\textit{\begin{tabular}[c]{@{}l@{}}Rød LED\\ negativ\end{tabular}}}  & $1.3311$V                                                                                         & $1.6740$V                                                                                    & $2.0605$V                                                                                           \\ \hline
+	\end{tabular}
+	\caption{I tabellen ses resultatet fra målingerne af systemet.}
+	\label{Tab:resultat:test1a}
+\end{table}
+\noindent Der ses i \tableref{Tab:resultat:test1a}, at der forekommer et spændingsfald over LED'erne, selvom de ikke afgiver synligt lys. Dette skyldes, at der løber en lækstrøm igennem dem, men denne er ikke tilstrækkelig for aktivering af synligt lys. På \figref{fig:samlet_system_LED} ses graferne for forholdet imellem spændingsfaldet over LED'erne og strømmen, der løber igennem, for de enkelte dioder. \cite{Kingbright}
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=.3]{figures/cProblemloesning/Samlet_system_LED.PNG}
+	\caption{På figuren ses der tre grafer for hhv. den røde, gule og grønne LED. Graferne viser forholdet imellem spændingsfaldet over LED'erne og strømmen, der løber igennem, for de enkelte dioder. \textit{(Revideret)} \cite{Kingbright}}
+	\label{fig:samlet_system_LED}
+\end{figure}
+\noindent Ifølge databladet for LED'erne vil de aktiveres ved $0.8$mA. Da der ikke er et lineært forhold imellem spændingsfaldet og strømmen på \figref{fig:samlet_system_LED}, er det ikke muligt at vurdere, om LED'erne faktisk er aktiverede ved målingerne i anden kolonne i \tableref{Tab:resultat:test1a}. Jævnfør afsnit \ref{Afs_Komparator} på side \pageref{Afs_Komparator} skal en LED modtage $20$mA for at afgive tydeligt lys. Da komparatorkonfigurationen er tilpasset til, at denne strøm skal løbe over LED'erne, kan det forventede spændingsfald aflæses på grafernes x-akse for de enkelte LED'er. Ud fra disse værdier beregnes afvigelsen for de målte spændingsfald. \\
+I \tableref{Tab:resultat:test1a}'s fjerde kolonne ses det målte spændingsfald, når der teoretisk løber $20$mA over LED'en. De beregnede afvigelse ses i \tableref{tab:samlet_procent1a}. De teoretiske værdier for spændingsfaldet er aflæst på x aksen ud fra $20$mA på y aksen på \figref{fig:samlet_system_LED}.
+\begin{table}[H]
+	\centering
+	\begin{tabular}{l|l|l|l|}
+		\cline{2-4}
+		\textit{} & \textit{\begin{tabular}[c]{@{}l@{}}Teoretisk\\ spændingsfald\end{tabular}} & \textit{\begin{tabular}[c]{@{}l@{}}Målte\\ spændingsfald\end{tabular}} & \textit{\% afvigelse} \\ \hline
+		\multicolumn{1}{|l|}{\textit{\begin{tabular}[c]{@{}l@{}}Rød LED\\ negativ\end{tabular}}} & $2.14$V                                                                    & $2.0324$V                                                              & $5.03\%$              \\ \hline
+		\multicolumn{1}{|l|}{\textit{\begin{tabular}[c]{@{}l@{}}Gul LED\\ negativ\end{tabular}}} & $2.15$V                                                                    & $2.0700$V                                                              & $3.73\%$              \\ \hline
+		\multicolumn{1}{|l|}{\textit{Grøn LED}}                                                  & $2.14$V                                                                    & $2.0196$V                                                              & $5.63\%$              \\ \hline
+		\multicolumn{1}{|l|}{\textit{\begin{tabular}[c]{@{}l@{}}Gul LED\\ positiv\end{tabular}}} & $2.15$V                                                                    & $2.1187$V                                                              & $1.46\%$              \\ \hline
+		\multicolumn{1}{|l|}{\textit{\begin{tabular}[c]{@{}l@{}}Rød LED\\ negativ\end{tabular}}} & $2.14$V                                                                    & $2.0605$V                                                              & $3.71\%$              \\ \hline
+	\end{tabular}
+	\caption{I tabellen ses procentafvigelsen fra det forventede spændingsfald ved aktivering af LED'erne.}
+	\label{tab:samlet_procent1a}
+\end{table}
+Det fremgår af \tableref{tab:samlet_procent1a}, at der forekommer afvigelser imellem det målte og det forventede spændingsfald for alle LED'erne. Alle de målte værdier ligger under de forventede værdier, hvorfor det må forventes, at LED'ernes lys er svagere end forventet. Da det typiske interval for spændingsfaldet ved synligt lys ligger på $1.7$-$1.9$V og maksimalt på $2.0$-$2.2$V jævnfør afsnit \ref{Afs_Komparator} på side \pageref{Afs_Komparator}, vurderes det imidlertid, at LED'erne udløser deres feedback efter hensigten.\\
+De benyttede vibratorer aktiverer, når der sker et spændingsfald over dem på $2.3$V. \cite{Machinery2009} Teoretisk bør der ikke forekømme spændingsfald over vibratorerne, når disse er slukkede. Ud fra målingerne i \tableref{Tab:resultat:test1a} vurderes det, at dette er gældende. Ved udløst feedback sker der et spændingsfald for begge vibratorer på ca. $3$V. Dermed er spændingsfaldet over grænsen for aktivering, og det vurderes derfor, at vibratorerne udløser deres feedback efter hensigten. \\
+Ud fra de målte outputværdier fra accelerometeret kan det beregnes, om feedbackmekanismerne aktiveres ved de definerede hældningsgrader jævnfør afsnit \ref{KomparatorAfs} på side \pageref{KomparatorAfs}. Dette gøres ved at tage outputværdien, trække offsettet i accelerometret fra og derefter dividere dette med hhv. -$0.0036$V og $0.0037$V for output i negativ og positiv retning.
+\begin{eqnarray}
+\dfrac{(1.5822 - 1.6325)}{-0.0036} = 13.97^{\circ}\text{ for aktivering af rød LED i negativ retning} \\
+\dfrac{(1.6005 - 1.6325)}{-0.0036} = 8.89^{\circ}\text{ for aktivering af gul LED samt vibrator i negativ retning} \\
+\dfrac{(1.6243 - 1.6325)}{-0.0036} = 2.28^{\circ}\text{ for deaktivering af grøn LED i negativ retning} \\
+\dfrac{(1.6377 - 1.6325)}{0.0037} = 1.41^{\circ}\text{ for deaktivering af grøn LED i positiv retning} \\
+\dfrac{(1.6562 - 1.6325)}{0.0037} = 6.41^{\circ}\text{ for aktivering af gul LED samt vibrator i positiv retning} \\
+\dfrac{(1.6740 - 1.6325)}{0.0037} = 11.22^{\circ}\text{ for aktivering af rød LED i positiv retning}
+\end{eqnarray}
+\noindent Der ses i overstående ligninger, at der er en afvigelse i accelerometerets hældning ift. de definerede grader for aktivering af feedbacken. Grunden til dette kan være, at referencespændingen til offsettet måles til $1.6302$V, hvilket er -$0.0023$V fra det teoretiske offset i accelerometret. Derved forskydes offsettet, og graderne for hældning af accelerometret i negativ retning vil blive større, mens graderne vil blive mindre i positiv retning.\\
+På baggrund af målingerne og de vurderede fejlkilder godkendes systemet og det vurderes, at det virker efter hensigten.\\
+
+\noindent\textbf{Test 1.b -  digital}\\ 
+
+\subsubsection{Test 2}
+I den anden test af det samlede system placeres accelerometeret på en forsøgsperson, der skal afprøve træningsforløbet med systemet. Formålet med denne test er at kontrollere, om den korrekte feedback udløses samt at vurdere, hvorvidt de definerede hældningsgrader er passende under træning med systemet. \\ 
+\textbf{Test 2.a - analog}\\  
+\textbf{Test 2.b - digital}\\ 
