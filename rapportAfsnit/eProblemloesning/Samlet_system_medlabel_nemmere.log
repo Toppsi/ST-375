@@ -7,21 +7,17 @@ Gmin = 10
 vernier = 0.5
 vernier = 0.25
 vernier = 0.125
+Gmin = 5.49741
 vernier = 0.0625
 vernier = 0.03125
-Gmin = 6.30116
-vernier = 0.0416667
-vernier = 0.0555555
-Gmin = 5.70542
-vernier = 0.0277778
-vernier = 0.0138889
-vernier = 0.00694444
-Gmin = 5.50235
-vernier = 0.00347222
-vernier = 0.00173611
-vernier = 0.000868055
-vernier = 0.000434028
-Gmin = 5.50056
+vernier = 0.015625
+vernier = 0.0078125
+Gmin = 5.51716
+vernier = 0.00390625
+vernier = 0.00195313
+vernier = 0.000976563
+vernier = 0.000488281
+Gmin = 5.50104
 Gmin = 0
 Gmin stepping failed
 
@@ -32,104 +28,413 @@ Source Step = 0.0177557%
 Starting source stepping with srcstepmethod=1
 Source Step = 3.0303%
 vernier = 0.25
-Source stepping failed
-
+Source stepping aborted.
 Pseudo Transient failed in finding the operating point.
 Trouble finding operating point....skipping operating point for Transient analysis.
-Changing Tseed to 9.76562e-008
 Changing Tseed to 9.76562e-010
-Changing Tseed to 9.76562e-007
-Changing Tseed to 9.76562e-011
-Changing Tseed to 9.76562e-006
 Changing Tseed to 9.76562e-012
-Changing Tseed to 9.76562e-005
+Changing Tseed to 9.76562e-009
 Changing Tseed to 9.76562e-013
-Changing Tseed to 0.000976563
-Changing Tseed to 9.76562e-014
-Changing Tseed to 0.00976563
+Changing Tseed to 9.76563e-008
+Changing Tseed to 9.76563e-014
+Changing Tseed to 9.76563e-007
 Changing Tseed to 9.76562e-015
-Heightened Def Con from 0 Changing Tseed to 1e-008
-Changing Tseed to 1e-010
-Changing Tseed to 1e-007
+Changing Tseed to 9.76562e-006
+Changing Tseed to 9.76562e-016
+Changing Tseed to 9.76563e-005
+Changing Tseed to 9.76562e-017
+Heightened Def Con from 0 Changing Tseed to 1e-009
 Changing Tseed to 1e-011
-Changing Tseed to 1e-006
+Changing Tseed to 1e-008
 Changing Tseed to 1e-012
-Changing Tseed to 1e-005
-Changing Tseed to 1e-013
-Changing Tseed to 0.0001
-Changing Tseed to 1e-014
-Changing Tseed to 0.001
-Changing Tseed to 1e-015
-+Changing Tseed to 1e-008
-Changing Tseed to 1e-010
 Changing Tseed to 1e-007
-Changing Tseed to 1e-011
-Changing Tseed to 1e-006
-Changing Tseed to 1e-012
-Changing Tseed to 1e-005
 Changing Tseed to 1e-013
-Changing Tseed to 0.0001
+Changing Tseed to 1e-006
 Changing Tseed to 1e-014
-Changing Tseed to 0.001
+Changing Tseed to 1e-005
 Changing Tseed to 1e-015
-+Changing Tseed to 1e-008
-Changing Tseed to 1e-010
+Changing Tseed to 0.0001
+Changing Tseed to 1e-016
++Changing Tseed to 1e-009
+Changing Tseed to 1e-011
+Changing Tseed to 1e-008
+Changing Tseed to 1e-012
 Changing Tseed to 1e-007
-Changing Tseed to 1e-011
-Changing Tseed to 1e-006
-Changing Tseed to 1e-012
-Changing Tseed to 1e-005
 Changing Tseed to 1e-013
-Changing Tseed to 0.0001
+Changing Tseed to 1e-006
 Changing Tseed to 1e-014
-Changing Tseed to 0.001
+Changing Tseed to 1e-005
 Changing Tseed to 1e-015
-+Changing Tseed to 1e-008
-Changing Tseed to 1e-010
+Changing Tseed to 0.0001
+Changing Tseed to 1e-016
++Changing Tseed to 1e-009
+Changing Tseed to 1e-011
+Changing Tseed to 1e-008
+Changing Tseed to 1e-012
 Changing Tseed to 1e-007
-Changing Tseed to 1e-011
-Changing Tseed to 1e-006
-Changing Tseed to 1e-012
-Changing Tseed to 1e-005
 Changing Tseed to 1e-013
-Changing Tseed to 0.0001
+Changing Tseed to 1e-006
 Changing Tseed to 1e-014
-Changing Tseed to 0.001
+Changing Tseed to 1e-005
 Changing Tseed to 1e-015
-+Changing Tseed to 1e-008
-Changing Tseed to 1e-010
+Changing Tseed to 0.0001
+Changing Tseed to 1e-016
++Changing Tseed to 1e-009
+Changing Tseed to 1e-011
+Changing Tseed to 1e-008
+Changing Tseed to 1e-012
 Changing Tseed to 1e-007
-Changing Tseed to 1e-011
-Changing Tseed to 1e-006
-Changing Tseed to 1e-012
-Changing Tseed to 1e-005
 Changing Tseed to 1e-013
-Changing Tseed to 0.0001
+Changing Tseed to 1e-006
 Changing Tseed to 1e-014
-Changing Tseed to 0.001
+Changing Tseed to 1e-005
 Changing Tseed to 1e-015
-+Changing Tseed to 1e-008
-Changing Tseed to 1e-010
+Changing Tseed to 0.0001
+Changing Tseed to 1e-016
++Changing Tseed to 1e-009
+Changing Tseed to 1e-011
+Changing Tseed to 1e-008
+Changing Tseed to 1e-012
 Changing Tseed to 1e-007
-Changing Tseed to 1e-011
-Changing Tseed to 1e-006
-Changing Tseed to 1e-012
-Changing Tseed to 1e-005
 Changing Tseed to 1e-013
-Changing Tseed to 0.0001
+Changing Tseed to 1e-006
 Changing Tseed to 1e-014
-Changing Tseed to 0.001
+Changing Tseed to 1e-005
 Changing Tseed to 1e-015
-+Changing Tseed to 1e-008
-Changing Tseed to 1e-010
+Changing Tseed to 0.0001
+Changing Tseed to 1e-016
++Changing Tseed to 1e-009
+Changing Tseed to 1e-011
+Changing Tseed to 1e-008
+Changing Tseed to 1e-012
 Changing Tseed to 1e-007
-Changing Tseed to 1e-011
-Changing Tseed to 1e-006
-Changing Tseed to 1e-012
-Changing Tseed to 1e-005
 Changing Tseed to 1e-013
-Changing Tseed to 0.0001
+Changing Tseed to 1e-006
 Changing Tseed to 1e-014
-Changing Tseed to 0.001
+Changing Tseed to 1e-005
 Changing Tseed to 1e-015
-+
+Changing Tseed to 0.0001
+Changing Tseed to 1e-016
++Changing Tseed to 1e-009
+Changing Tseed to 1e-011
+Changing Tseed to 1e-008
+Changing Tseed to 1e-012
+Changing Tseed to 1e-007
+Changing Tseed to 1e-013
+Changing Tseed to 1e-006
+Changing Tseed to 1e-014
+Changing Tseed to 1e-005
+Changing Tseed to 1e-015
+Changing Tseed to 0.0001
+Changing Tseed to 1e-016
++Changing Tseed to 1e-009
+Changing Tseed to 1e-011
+Changing Tseed to 1e-008
+Changing Tseed to 1e-012
+Changing Tseed to 1e-007
+Changing Tseed to 1e-013
+Changing Tseed to 1e-006
+Changing Tseed to 1e-014
+Changing Tseed to 1e-005
+Changing Tseed to 1e-015
+Changing Tseed to 0.0001
+Changing Tseed to 1e-016
++Changing Tseed to 1e-009
+Changing Tseed to 1e-011
+Changing Tseed to 1e-008
+Changing Tseed to 1e-012
+Changing Tseed to 1e-007
+Changing Tseed to 1e-013
+Changing Tseed to 1e-006
+Changing Tseed to 1e-014
+Changing Tseed to 1e-005
+Changing Tseed to 1e-015
+Changing Tseed to 0.0001
+Changing Tseed to 1e-016
++Changing Tseed to 1e-009
+Changing Tseed to 1e-011
+Changing Tseed to 1e-008
+Changing Tseed to 1e-012
+Changing Tseed to 1e-007
+Changing Tseed to 1e-013
+Changing Tseed to 1e-006
+Changing Tseed to 1e-014
+Changing Tseed to 1e-005
+Changing Tseed to 1e-015
+Changing Tseed to 0.0001
+Changing Tseed to 1e-016
++Changing Tseed to 1e-009
+Changing Tseed to 1e-011
+Changing Tseed to 1e-008
+Changing Tseed to 1e-012
+Changing Tseed to 1e-007
+Changing Tseed to 1e-013
+Changing Tseed to 1e-006
+Changing Tseed to 1e-014
+Changing Tseed to 1e-005
+Changing Tseed to 1e-015
+Changing Tseed to 0.0001
+Changing Tseed to 1e-016
++Changing Tseed to 1e-009
+Changing Tseed to 1e-011
+Changing Tseed to 1e-008
+Changing Tseed to 1e-012
+Changing Tseed to 1e-007
+Changing Tseed to 1e-013
+Changing Tseed to 1e-006
+Changing Tseed to 1e-014
+Changing Tseed to 1e-005
+Changing Tseed to 1e-015
+Changing Tseed to 0.0001
+Changing Tseed to 1e-016
++Changing Tseed to 1e-009
+Changing Tseed to 1e-011
+Changing Tseed to 1e-008
+Changing Tseed to 1e-012
+Changing Tseed to 1e-007
+Changing Tseed to 1e-013
+Changing Tseed to 1e-006
+Changing Tseed to 1e-014
+Changing Tseed to 1e-005
+Changing Tseed to 1e-015
+Changing Tseed to 0.0001
+Changing Tseed to 1e-016
++Changing Tseed to 1e-009
+Changing Tseed to 1e-011
+Changing Tseed to 1e-008
+Changing Tseed to 1e-012
+Changing Tseed to 1e-007
+Changing Tseed to 1e-013
+Changing Tseed to 1e-006
+Changing Tseed to 1e-014
+Changing Tseed to 1e-005
+Changing Tseed to 1e-015
+Changing Tseed to 0.0001
+Changing Tseed to 1e-016
++Changing Tseed to 1e-009
+Changing Tseed to 1e-011
+Changing Tseed to 1e-008
+Changing Tseed to 1e-012
+Changing Tseed to 1e-007
+Changing Tseed to 1e-013
+Changing Tseed to 1e-006
+Changing Tseed to 1e-014
+Changing Tseed to 1e-005
+Changing Tseed to 1e-015
+Changing Tseed to 0.0001
+Changing Tseed to 1e-016
++Changing Tseed to 1e-009
+Changing Tseed to 1e-011
+Changing Tseed to 1e-008
+Changing Tseed to 1e-012
+Changing Tseed to 1e-007
+Changing Tseed to 1e-013
+Changing Tseed to 1e-006
+Changing Tseed to 1e-014
+Changing Tseed to 1e-005
+Changing Tseed to 1e-015
+Changing Tseed to 0.0001
+Changing Tseed to 1e-016
++Changing Tseed to 1e-009
+Changing Tseed to 1e-011
+Changing Tseed to 1e-008
+Changing Tseed to 1e-012
+Changing Tseed to 1e-007
+Changing Tseed to 1e-013
+Changing Tseed to 1e-006
+Changing Tseed to 1e-014
+Changing Tseed to 1e-005
+Changing Tseed to 1e-015
+Changing Tseed to 0.0001
+Changing Tseed to 1e-016
++Changing Tseed to 1e-009
+Changing Tseed to 1e-011
+Changing Tseed to 1e-008
+Changing Tseed to 1e-012
+Changing Tseed to 1e-007
+Changing Tseed to 1e-013
+Changing Tseed to 1e-006
+Changing Tseed to 1e-014
+Changing Tseed to 1e-005
+Changing Tseed to 1e-015
+Changing Tseed to 0.0001
+Changing Tseed to 1e-016
++Changing Tseed to 1e-009
+Changing Tseed to 1e-011
+Changing Tseed to 1e-008
+Changing Tseed to 1e-012
+Changing Tseed to 1e-007
+Changing Tseed to 1e-013
+Changing Tseed to 1e-006
+Changing Tseed to 1e-014
+Changing Tseed to 1e-005
+Changing Tseed to 1e-015
+Changing Tseed to 0.0001
+Changing Tseed to 1e-016
++Changing Tseed to 1e-009
+Changing Tseed to 1e-011
+Changing Tseed to 1e-008
+Changing Tseed to 1e-012
+Changing Tseed to 1e-007
+Changing Tseed to 1e-013
+Changing Tseed to 1e-006
+Changing Tseed to 1e-014
+Changing Tseed to 1e-005
+Changing Tseed to 1e-015
+Changing Tseed to 0.0001
+Changing Tseed to 1e-016
++Changing Tseed to 1e-009
+Changing Tseed to 1e-011
+Changing Tseed to 1e-008
+Changing Tseed to 1e-012
+Changing Tseed to 1e-007
+Changing Tseed to 1e-013
+Changing Tseed to 1e-006
+Changing Tseed to 1e-014
+Changing Tseed to 1e-005
+Changing Tseed to 1e-015
+Changing Tseed to 0.0001
+Changing Tseed to 1e-016
++Changing Tseed to 1e-009
+Changing Tseed to 1e-011
+Changing Tseed to 1e-008
+Changing Tseed to 1e-012
+Changing Tseed to 1e-007
+Changing Tseed to 1e-013
+Changing Tseed to 1e-006
+Changing Tseed to 1e-014
+Changing Tseed to 1e-005
+Changing Tseed to 1e-015
+Changing Tseed to 0.0001
+Changing Tseed to 1e-016
++Changing Tseed to 1e-009
+Changing Tseed to 1e-011
+Changing Tseed to 1e-008
+Changing Tseed to 1e-012
+Changing Tseed to 1e-007
+Changing Tseed to 1e-013
+Changing Tseed to 1e-006
+Changing Tseed to 1e-014
+Changing Tseed to 1e-005
+Changing Tseed to 1e-015
+Changing Tseed to 0.0001
+Changing Tseed to 1e-016
++Changing Tseed to 1e-009
+Changing Tseed to 1e-011
+Changing Tseed to 1e-008
+Changing Tseed to 1e-012
+Changing Tseed to 1e-007
+Changing Tseed to 1e-013
+Changing Tseed to 1e-006
+Changing Tseed to 1e-014
+Changing Tseed to 1e-005
+Changing Tseed to 1e-015
+Changing Tseed to 0.0001
+Changing Tseed to 1e-016
++Changing Tseed to 1e-009
+Changing Tseed to 1e-011
+Changing Tseed to 1e-008
+Changing Tseed to 1e-012
+Changing Tseed to 1e-007
+Changing Tseed to 1e-013
+Changing Tseed to 1e-006
+Changing Tseed to 1e-014
+Changing Tseed to 1e-005
+Changing Tseed to 1e-015
+Changing Tseed to 0.0001
+Changing Tseed to 1e-016
++Changing Tseed to 1e-009
+Changing Tseed to 1e-011
+Changing Tseed to 1e-008
+Changing Tseed to 1e-012
+Changing Tseed to 1e-007
+Changing Tseed to 1e-013
+Changing Tseed to 1e-006
+Changing Tseed to 1e-014
+Changing Tseed to 1e-005
+Changing Tseed to 1e-015
+Changing Tseed to 0.0001
+Changing Tseed to 1e-016
++Changing Tseed to 1e-009
+Changing Tseed to 1e-011
+Changing Tseed to 1e-008
+Changing Tseed to 1e-012
+Changing Tseed to 1e-007
+Changing Tseed to 1e-013
+Changing Tseed to 1e-006
+Changing Tseed to 1e-014
+Changing Tseed to 1e-005
+Changing Tseed to 1e-015
+Changing Tseed to 0.0001
+Changing Tseed to 1e-016
++Changing Tseed to 1e-009
+Changing Tseed to 1e-011
+Changing Tseed to 1e-008
+Changing Tseed to 1e-012
+Changing Tseed to 1e-007
+Changing Tseed to 1e-013
+Changing Tseed to 1e-006
+Changing Tseed to 1e-014
+Changing Tseed to 1e-005
+Changing Tseed to 1e-015
+Changing Tseed to 0.0001
+Changing Tseed to 1e-016
++Changing Tseed to 1e-009
+Changing Tseed to 1e-011
+Changing Tseed to 1e-008
+Changing Tseed to 1e-012
+Changing Tseed to 1e-007
+Changing Tseed to 1e-013
+Changing Tseed to 1e-006
+Changing Tseed to 1e-014
+Changing Tseed to 1e-005
+Changing Tseed to 1e-015
+Changing Tseed to 0.0001
+Changing Tseed to 1e-016
++Changing Tseed to 1e-009
+Changing Tseed to 1e-011
+Changing Tseed to 1e-008
+Changing Tseed to 1e-012
+Changing Tseed to 1e-007
+Changing Tseed to 1e-013
+Changing Tseed to 1e-006
+Changing Tseed to 1e-014
+Changing Tseed to 1e-005
+Changing Tseed to 1e-015
+Changing Tseed to 0.0001
+Changing Tseed to 1e-016
++Changing Tseed to 1e-009
+Changing Tseed to 1e-011
+Changing Tseed to 1e-008
+Changing Tseed to 1e-012
+Changing Tseed to 1e-007
+Changing Tseed to 1e-013
+Changing Tseed to 1e-006
+Changing Tseed to 1e-014
+Changing Tseed to 1e-005
+Changing Tseed to 1e-015
+Changing Tseed to 0.0001
+Changing Tseed to 1e-016
++to 1.125e-010
+Heightened Def Con from 1.125e-010 ++++++++++++++++++++++++++to 2.53125e-010
+Heightened Def Con from 2.53125e-010 ++++++++++++++++++++++++to 3.9375e-010
+
+Date: Wed Dec 09 13:39:16 2015
+Total elapsed time: 81.548 seconds.
+
+tnom = 27
+temp = 27
+method = modified trap
+totiter = 21787
+traniter = 15306
+tranpoints = 2422
+accept = 1371
+rejected = 751
+matrix size = 375
+fillins = 8434
+solver = Normal
+Thread vector: 109.0/69.2[4] 39.0/30.9[4] 47.5/34.4[4] 5.1/4.7[2]  2592/500
+Matrix Compiler1:  171473 opcodes  978.8/[451.4]/735.5
+Matrix Compiler2: 175.17 KB object code size  25.9/20.1/[13.7]
+
+
