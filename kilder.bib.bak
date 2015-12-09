@@ -143,6 +143,7 @@
 @Article{Blanchard1972,
   Title                    = {The Relative Efficacy of Visual and Auditory Feedback for Self-Control of Heart Rate},
   Author                   = {Blanchard, Edward B. and Young, Larry D.},
+  Journal                  = {The Journal of General Psychology},
   Year                     = {1972},
 
   Owner                    = {Mads},
@@ -239,6 +240,7 @@
 @Article{Christensen&Zielke2008,
   Title                    = {Klinisk retningslinie for akut indlagte, voksne patienter med apopleksia cerebri},
   Author                   = {Christensen, Doris; Zielke, Susanne S.},
+  Journal                  = {Dansk Selskab for Apopleksi},
   Year                     = {2008},
 
   Owner                    = {Mads},
@@ -292,7 +294,7 @@
   Timestamp                = {2015.10.12}
 }
 
-@Article{Devices2009,
+@Manual{Devices2009,
   Title                    = {Accelerometer ADXL335},
   Author                   = {Analog Devices},
   Year                     = {2009},
@@ -367,6 +369,7 @@
 @Article{Glanz1997,
   Title                    = {Biofeedback therapy in stroke rehabilitation: a review},
   Author                   = {Glanz, Morton and others},
+  Journal                  = {Journal of the Royal Society of Medicine},
   Year                     = {1997},
 
   Owner                    = {Mads},
@@ -556,6 +559,7 @@
 @Article{Joergensen2004,
   Title                    = {Vestibulær rehabilitering},
   Author                   = {Jørgensen, Tom},
+  Journal                  = {Danske Fysioterapeuter},
   Year                     = {2004},
 
   Owner                    = {Cecilie},
@@ -938,6 +942,7 @@
 @Article{Schulmann1987,
   Title                    = {Effect of Eye Movements on Dynamic Equilibrium},
   Author                   = {Schulmann, Diana L. and others},
+  Journal                  = {Physical Therapy. Volume 67. Number 7. Page 1054-1057},
   Year                     = {1987},
 
   Owner                    = {Mads},
@@ -1091,6 +1096,7 @@
 @Article{Wang2010,
   Title                    = {Body Sway Measurement for Fall Risk Assessment Using Inexpensive Webcams},
   Author                   = {Fang Wang AND Marjorie Skubic and others},
+  Journal                  = {IEEE Engineering in medicine and biology society conference proceedings},
   Year                     = {2010},
 
   Owner                    = {sofiehelenebjrsrudjensen},
