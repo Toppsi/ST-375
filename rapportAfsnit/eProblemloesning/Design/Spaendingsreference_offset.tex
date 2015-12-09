@@ -1,7 +1,7 @@
 % !TeX spellcheck = da_DK
 \subsection{Referencespænding til offset}\label{subsec:Spaendingsref}
 \subsubsection{Teori og design}
-Der skal forsynes med en konstant spænding til offsetjusteringen, da denne skal anvendes som sammenligningsgrundlag ift. inputsignalet. Denne konstante spænding kaldes en referencespænding og består af en spændingsforsyning, en modstand og en spændingsreferencediode. Der anvendes en referencediode (LM385), som både findes som $1.2$V og $2.5$V. Et eksempel på en opsætning af en spændingsreference kan ses på \figref{fig:Spaendingsreference}.
+Offsetjusteringen skal forsynes med en konstant spænding, da denne er sammenligningsgrundlag ift. inputsignalet. Den konstante spænding kaldes en referencespænding og består af en spændingsforsyning, en modstand og en spændingsreferencediode. Der anvendes en referencediode (LM385), der både findes som $1.2$V og $2.5$V. Et eksempel på en opsætning af en spændingsreference kan ses på \figref{fig:Spaendingsreference}.
 
 \begin{figure}[H]
 	\centering
@@ -14,17 +14,17 @@ Der skal forsynes med en konstant spænding til offsetjusteringen, da denne skal
 \begin{equation}\label{eq:udregning_modstand}
 R1 = \dfrac{V_{forsyning} - V_{Reference}}{I_{Z}}
 \end{equation}
-\noindent Hvor $V_{forsyning}$ er forsyningsspændingen, som sendes ind i kredsløbet, $V_{Reference}$ er den referencespænding, der skal sendes ud af systemet, og $I_{Z}$ er strømforbruget fra de komponenter, som er i referencespændingskredsløbet. \\
+\noindent Hvor $V_{forsyning}$ er forsyningsspændingen, der sendes ind i kredsløbet, $V_{Reference}$ er den referencespænding, der skal sendes ud af systemet, og $I_{Z}$ er strømforbruget fra de komponenter, som er i referencespændingskredsløbet. \\
 Først udregnes R$1$ for referencespændingen. $V_{forsyning}$ er de $5.5$V, der forsynes med fra spændingsforsyningen, og $V_{Reference}$ er $2.5$V. I kredsløbet for offsettet indgår en operationsforstærker (TL$081$), der har en maksimal biasstrøm på $10$nA \cite{Corporation1995}. Referencedioden har et arbejdsområde mellem $20\mu$A til $20m$A og for at sikre, at der er strøm nok til referencedioden, er den sat til at bruge $200\mu$A \cite{Instruments2005}. Dermed kan strømforbruget $I_{Z}$ udregnes som summen af de to biasstrømme. Alle de kendte værdier indsættes i formlen:
 \begin{equation}
 R1 = \frac{5.5V - 2.5V}{0.0002 + (1 \cdot 10^{-8A})} = 14999.2500\Omega \approx 15K\Omega
 \end{equation}  
-Da offsettet i accelerometeret er på $1.6325$V, jævnfør bilag \ref{Sec_Pilot_Data} på side \pageref{Sec_Pilot_Data}, skal referenceværdien ligeledes være $1.6325$V. For at opnå denne referenceværdi bruges indsættes en spændingsdeler efter referencedioden, som vil levere $2.5$V. Den generelle formel for en spændingsdeler er: 
+Da offsettet i accelerometeret er på $1.6325$V, jævnfør bilag \ref{Sec_Pilot_Data} på side \pageref{Sec_Pilot_Data}, skal referenceværdien ligeledes være $1.6325$V. For at opnå denne referenceværdi benyttes en spændingsdeler efter referencedioden, der vil levere $2.5$V. Den generelle formel for en spændingsdeler er: 
 \begin{equation} \label{eq:Spaendingsdeler}
 V_{out} = V_{in} \cdot \dfrac{R3}{R2 + R3}
 \end{equation}
 
-R$2$ i \eqref{eq:Spaendingsdeler} bliver valgt til at være $10$K$\Omega$. Derudover er $V_{out}$ $1.6325$V, $V_{in}$ er $2.5$V. Ligningen kommer altså til at være således: 
+R$2$ i \eqref{eq:Spaendingsdeler} bliver valgt til at være $10$K$\Omega$. Derudover er $V_{out}$ $1.6325$V, $V_{in}$ er $2.5$V. Ligningen kommer til at se således ud: 
 \begin{eqnarray}
 1.6325V = 2.5 \cdot \dfrac{R3}{10000\Omega + R3} \\
 R3 = 18818.4438\Omega \approx 18820\Omega
@@ -33,12 +33,12 @@ R3 = 18818.4438\Omega \approx 18820\Omega
 \begin{figure}[H]
 	\centering
 	\includegraphics[scale=.5]{figures/cProblemloesning/OffsetSpaendingsRef2.PNG}
-	\caption{På figuren ses designet af kredsløbet for en spændingsreference til offsettet. Først ses opbygningen af en spændingsreference efterfulgt at en spændingsdeler, som gør, at outputtet fra spændingsreferencen på $2.5$V bliver til $1.6325$V.}
+	\caption{På figuren ses designet af kredsløbet for en spændingsreference til offsettet. Først ses opbygningen af en spændingsreference efterfulgt af en spændingsdeler, som gør, at outputtet fra spændingsreferencen på $2.5$V bliver til $1.6325$V.}
 	\label{fig:Spaendingsreference_offset}
 \end{figure}
 
 \subsubsection{Simulering}
-Der foretages en simulering i LTspice af spændingsreferencen og spændingsdeleren for at undersøge, om de opfylder de opstillede krav. Resultatet af simuleringen kan ses i \tableref{Tab:SpaendigsRef_offset}:
+Der foretages en simulering i LTspice af spændingsreferencen og spændingsdeleren for at undersøge, om opstillede krav opfyldes. Resultatet af simuleringen kan ses i \tableref{Tab:SpaendigsRef_offset}:
 \begin{table}[H]
 \centering
 \begin{tabular}{|l|l|l|l|}\hline
@@ -74,7 +74,7 @@ Der ses på \figref{fig:Spaendingsreference_offset}, at der skal benyttes tre mo
 		$820\Omega$         & $818.08\Omega$     & $0.23$\%               \\ \hline
 		$R_{eq}$ af $18$K$\Omega$ + $820\Omega$ = $18.82$K$\Omega$ & $18.8734$K$\Omega$ & $0.28\%$ \\ \hline
 	\end{tabular}
-	\caption{I tabellen ses, at alle fire modstande afviger lidt fra deres teoretiske værdi, hvilket er forventet af reelle komponenter, hvilket også vil have en effekt på afvigelsen af den ækvivalente værdi for $18$K$\Omega$ + $820\Omega$. Kravet til disse fire modstande var dog, at de maks må afvige fra deres teoretiske værdi med $\pm1\%$ jævnfør afsnit \ref{Ref_Offset_Afs} på side \pageref{Ref_Offset_Afs}. Disse modstande accepteres derfor.}
+	\caption{I tabellen ses, at alle fire modstande afviger lidt fra deres teoretiske værdi, hvilket er forventet af reelle komponenter, hvilket også vil have en effekt på afvigelsen af den ækvivalente værdi for $18$K$\Omega$ + $820\Omega$. Kravet til disse fire modstande var dog, at de maksimum må afvige fra deres teoretiske værdi med $\pm1\%$, jævnfør afsnit \ref{Ref_Offset_Afs} på side \pageref{Ref_Offset_Afs}. Disse modstande accepteres derfor.}
 	\label{Tab:modstand_offset}
 \end{table}
 \noindent Herefter implementeres kredsløbet. Til aflæsning af spændingsniveauerne anvendes et multimeter. De aflæste resultater står i \tableref{Tab:SpaendingsRef_offset_test}.
