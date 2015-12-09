@@ -106,9 +106,9 @@ global s %Definerer vores s til at være global så den kan kaldes fra andre funkt
 s = daq.createSession('ni');%Starter en session s
 addAnalogInputChannel(s, 'Dev1', 'ai0', 'Voltage');%Tilføjer vores kanal på
 %nidaqen til matlab, så der vides hvorfra der skal hentes data.
-%s.Channels(1).TerminalConfig = 'SingleEnded'; %Definerer vores måling til at være singleended
+s.Channels(1).TerminalConfig = 'SingleEnded'; %Definerer vores måling til at være singleended
 s.IsContinuous = true; %Specificerer en kontinuer måling
-s.Rate = 500; % fs = samplerate 
+s.Rate = 500 % fs = samplerate 
 s.NotifyWhenDataAvailableExceeds = 25; %Indstiller hvor meget signal der skal optages før listener kaldes
 lh = addlistener(s, 'DataAvailable',@plotData); %Listener der aktiveres når 
 %NotifyWhenDataAvailableExceeds kommer over vores specificerede længde. Kalder funktionen plotdata
