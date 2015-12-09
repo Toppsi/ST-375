@@ -1,11 +1,3 @@
-% Skal kunne modtage data fra Ni-DAQ'en
-% Skal kunne afbillede data'en i en graf
-% Spændingen skal udtrykkes som grader
-% Målingen skal kunne startes ved tryk på en knap og stoppes ved tryk på en anden knap
-% Skal kunne gemme de målte data ved tryk på en knap
-% Det skal være muligt at zoome ind/ud på grafen og at markere specifikke
-% punkter på målingen
-
 function varargout = SoftwareForsoeg(varargin)
 % SOFTWAREFORSOEG MATLAB code for SoftwareForsoeg.fig
 %      SOFTWAREFORSOEG, by itself, creates a new SOFTWAREFORSOEG or raises the existing
@@ -49,29 +41,18 @@ if nargout
 else
     gui_mainfcn(gui_State, varargin{:});
 end
-% End initialization code - DO NOT EDIT
-
-
-% --- Executes just before SoftwareForsoeg is made visible.
+% --- Køres lige før Patient_Oevelse gøres synlig.
 function SoftwareForsoeg_OpeningFcn(hObject, eventdata, handles, varargin)
 % This function has no output args, see OutputFcn.
 % hObject    handle to figure
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
 % varargin   command line arguments to SoftwareForsoeg (see VARARGIN)
-
 % Choose default command line output for SoftwareForsoeg
 handles.output = hObject;
-
-
 % Update handles structure
 guidata(hObject, handles);
-
-% UIWAIT makes SoftwareForsoeg wait for user response (see UIRESUME)
-% uiwait(handles.figure1);
-
-
-% --- Outputs from this function are returned to the command line.
+% --- Outputs fra denne funktion returneres til kommando linjen.
 function varargout = SoftwareForsoeg_OutputFcn(hObject, eventdata, handles) 
 % varargout  cell array for returning output args (see VARARGOUT);
 % hObject    handle to figure
@@ -88,14 +69,7 @@ refline(0,-13)
 hold on
 % Get default command line output from handles structure
 varargout{1} = handles.output;
-
-
-
-
-
-
-
-% --- Executes on button press in StartKnap.
+% --- Ved tryk på StartKnap køres denne funktion.
 function StartKnap_Callback(hObject, eventdata, handles)
 % hObject    handle to StartKnap (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
@@ -114,9 +88,6 @@ s.NotifyWhenDataAvailableExceeds = 25; %Indstiller hvor meget signal der skal op
 lh = addlistener(s, 'DataAvailable',@plotData); %Listener der aktiveres når 
 %NotifyWhenDataAvailableExceeds kommer over vores specificerede længde. Kalder funktionen plotdata
 s.startBackground;%Starter optagelsen af signaler i baggrunden
-
-
-
 function plotData(src,event) %Funktion der kaldes fra vores listener
     ax = gca; %Finder det koordinatsystemet der er i GUI'en og gemmer det i ax
     refline(ax, 0,13) %Indstiller en refline i vores koordinatsystem i GUI'en
@@ -135,14 +106,7 @@ function plotData(src,event) %Funktion der kaldes fra vores listener
          data = data*(90/2.9417)
      end
     plot(ax, event.TimeStamps, data, 'r'); %Plotter vores data som kommer
-    
     %fra listeneren, i vores koordinatsystem
-     
-
-% datany = data-1.6325; % minusser dataen med offsettet så vi både får + og - værdier
-% datany(datany>0)*271.657108361; %ganger alle dem over 0 med så det passer med at 1g er lig 90 grader
-% datany(datany<0)*278.379214352;%ganger alle dem over 0 med så det passer med at 1g er lig -90 grader
-
 % --- Executes on button press in StopKnap.
 function StopKnap_Callback(hObject, eventdata, handles)
 % hObject    handle to StopKnap (see GCBO)
@@ -151,21 +115,14 @@ function StopKnap_Callback(hObject, eventdata, handles)
 global s %Finder vores globale variabel s
 stop(s); %Stopper vores session s
 release(s);
-
-
-
-
-% --- Executes on button press in SletKnap.
+% --- Ved tryk på SletKnap køres denne funktion.
 function SletKnap_Callback(hObject, eventdata, handles)
 % hObject    handle to SletKnap (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
 h = findobj(gca, 'color', 'red'); %Finder et objekt der er rødt i vores koordinatsystem og gemmer det i h
 delete(h); %Sletter h, som er det røde i vores koordinatsystem
-
-
-
-% --- Executes on button press in GemKnap.
+% --- Ved tryk på GemKnap køres denne funktion.
 function GemKnap_Callback(hObject, eventdata, handles)
 % hObject    handle to GemKnap (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
@@ -174,7 +131,7 @@ function GemKnap_Callback(hObject, eventdata, handles)
           '*.*','All Files' },'Save Image',...
           'C:\Work\newfile.jpg') %Gør at der kommer en popup, der beder om navn, 
       %typen som filen kan gemmes som er også defineret her
-
+name=fullfile(pathname, filename);
 fig = gcf; %Henter vores figur som den ser ud i GUI'en
 fig.PaperPositionMode = 'auto'; %Auto skalarer vores fig så den ser ud som den gør i vores GUI
-print(filename,'-dpng','-r0') %Gemmer grafer. 
+print(name,'-dpng','-r0') %Gemmer grafer. 
