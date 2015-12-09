@@ -1,11 +1,11 @@
 % !TeX spellcheck = da_DK
 \subsection{Filtrering}\label{Filterafsnit}
-Filtrering er et værktøj indenfor databehandling, som anvendes i det biologiske signals frekvensdomæne. Formålet med at filtrere et målt signal er at fjerne uønskede frekvenser, også kaldet støj, der ikke tilhører det signal, der ønskes undersøgt. Filtret kan opdele signalet i såkaldte bånd: Pasbånd, hvor frekvenserne frit passerer igennem filteret uden påvirkning, samt stopbånd, hvor frekvenserne dæmpes, så de ikke har indflydelse på signalet. Dette gøres ved en knækfrekvens.
+Filtrering er et værktøj indenfor databehandling, som anvendes i det biologiske signals frekvensdomæne. Formålet med at filtrere et målt signal er at fjerne uønskede frekvenser, der ikke tilhører det signal, der ønskes undersøgt. Filtret kan opdele signalet i såkaldte bånd: Pasbånd, hvor frekvenserne frit passerer igennem filteret uden påvirkning, samt stopbånd, hvor frekvenserne dæmpes, så de ikke har indflydelse på signalet. Dette gøres ved en knækfrekvens.
 Der findes flere forskellige typer af filtre, der afhænger af, hvilke frekvenser der skal fjernes fra det målte signal \cite{Devasahayam2000}:
 
 \begin{itemize}
 	\item Lavpasfiltret: Anvendes til at dæmpe frekvenser over den valgte knækfrekvens. Dette gøres ved at dæmpe de frekvenser, som ligger over knækfrekvensen.
-	\item Højpasfilteret: Anvendes, modsat lavpasfiltret, til at dæmpe frekvenser under den valgte knækfrekvens ved at dæmpe signalet under knækfrekvensen.
+	\item Højpasfilteret: Anvendes, modsat lavpasfiltret, til at dæmpe frekvenser under den valgte knækfrekvens. Dette gøres ved at dæmpe signalet under knækfrekvensen.
 	\item Båndpasfilteret: Er en kombination af et lav- og højpasfilter.  Her defineres et interval, hvormed de frekvenser der ligger udenfor intervallet vil blive dæmpet.
 	\item Båndstopfilteret: Fungerer, modsat båndpasfilteret, ved at dæmpe specifikt definerede frekvensområder. Frekvenserne udenfor det definerede område påvirkes ikke. 
 \end{itemize}
@@ -17,14 +17,14 @@ I forbindelse med databehandling kan flere af filtrene anvendes samtidig \cite{D
 \caption{På figuren ses de fire nævnte filtertyper. \cite{Sedra2010}}
 \label{filtertyper}
 \end{figure}
-Filtrene kan desuden inddeles i forskellige grader eller ordener, afhængigt af hvor stejl filtreringskurven er, dvs. hvor meget signalet dæmpes pr. dekade\cite{Sedra2010}.
+Filtrene kan desuden inddeles i forskellige grader eller ordener, afhængigt af hvor stejl filtreringskurven er, dvs. hvor meget signalet skal dæmpes pr. dekade\cite{Sedra2010}.
 
 \subsection{Støj}\label{StoejAfsnit}
 Støj er den uønskede del af et opsamlet signal, der ikke har nogen relation til det ønskede signal. Signaler, der er fordelt udover et frekvensspektrum, kan filtreres for støj vha. de tidligere beskrevne filtre. \cite{Devasahayam2000,Wolf2004}
 Støj kan inddeles i flere forskellige generelle typer, som typisk vil forekomme:
 
 \begin{itemize}
-\item Elektriske signaler: Dette er bl.a. $50$ Hz støj, som er en frekvens fra elnettet. Denne $50$ Hz frekvens kan gå ind og påvirke de biologiske signaler, der måles på. Hvis der er flere $50$ Hz kilder, der interagerer, kan det give ekko ved eksempelvis $100$ Hz og $150$ Hz. Det er denne form for støj, der skal undgås, når signalet analyseres.
-\item Ledninger: Kan fungere som antenner, der opfanger $50$ Hz støj og andre former for støj. Problemet bliver større jo længere ledningen er. Derudover kan der forekommer støj fra ledninger, hvis de bevæges under optagelse af signalet. Denne form for støj er dog meget lavfrekvent. \cite{webster2009}
-\item Magnetfelt: Kan komme i kontakt med ledningerne og derved inducere strømmen, der skaber støj i signalet. Jordens magnetfelt kan f.eks. påvirke ledningerne. For at mindske støjen kan ledningerne snoes / flettes sammen. \cite{Wolf2004}
+\item Elektriske signaler: Dette er bl.a. $50$Hz støj, som er en frekvens fra elnettet. Denne frekvens kan gå ind og påvirke de biologiske signaler, der måles på. Hvis der er flere $50$Hz kilder, der interagerer, kan det give ekko ved eksempelvis $100$Hz og $150$Hz. Det er denne form for støj, der skal undgås, når signalet analyseres.
+\item Ledninger: Kan fungere som antenner, der opfanger $50$Hz støj og andre former for støj. Problemet bliver større jo længere ledningen er. Derudover kan der forekommer støj, hvis ledningerne bevæges under optagelse af signalet. Denne form for støj er lavfrekvent. \cite{webster2009}
+\item Magnetfelt: Kan komme i kontakt med ledningerne og derved inducere strømmen, der skaber støj i signalet. Jordens magnetfelt kan f.eks. påvirke ledningerne. For at mindske støjen kan ledningerne snoes eller flettes sammen. \cite{Wolf2004}
 \end{itemize} 
