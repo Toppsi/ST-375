@@ -81,15 +81,15 @@ I \tableref{Tab:resultat:test1a}'s fjerde kolonne ses det målte spændingsfald,
 Det fremgår af \tableref{tab:samlet_procent1a}, at der forekommer afvigelser imellem det målte og det forventede spændingsfald for alle LED'erne. Alle de målte værdier ligger under de forventede værdier, hvorfor det må forventes, at LED'ernes lys er svagere end forventet. Da det typiske interval for spændingsfaldet ved synligt lys ligger på $1.7$-$1.9$V og maksimalt på $2.0$-$2.2$V jævnfør afsnit \ref{Afs_Komparator} på side \pageref{Afs_Komparator}, vurderes det imidlertid, at LED'erne udløser deres feedback efter hensigten.\\
 De benyttede vibratorer aktiverer, når der sker et spændingsfald over dem på $2.3$V. \cite{Machinery2009} Teoretisk bør der ikke forekømme spændingsfald over vibratorerne, når disse er slukkede. Ud fra målingerne i \tableref{Tab:resultat:test1a} vurderes det, at dette er gældende. Ved udløst feedback sker der et spændingsfald for begge vibratorer på ca. $3$V. Dermed er spændingsfaldet over grænsen for aktivering, og det vurderes derfor, at vibratorerne udløser deres feedback efter hensigten. \\
 Ud fra de målte outputværdier fra accelerometeret kan det beregnes, om feedbackmekanismerne aktiveres ved de definerede hældningsgrader jævnfør afsnit \ref{KomparatorAfs} på side \pageref{KomparatorAfs}. Dette gøres ved at tage outputværdien, trække offsettet i accelerometret fra og derefter dividere dette med hhv. -$0.0036$V og $0.0037$V for output i negativ og positiv retning.
-\begin{align}
+\begin{align}\label{eq:graderLED_1}
 \dfrac{(1.5822 - 1.6325)}{-0.0036} = 13.97^{\circ}\text{ for aktivering af rød LED i negativ retning} \\
 \dfrac{(1.6005 - 1.6325)}{-0.0036} = 8.89^{\circ}\text{ for aktivering af gul LED samt vibrator i negativ retning} \\
 \dfrac{(1.6243 - 1.6325)}{-0.0036} = 2.28^{\circ}\text{ for deaktivering af grøn LED i negativ retning} \\
 \dfrac{(1.6377 - 1.6325)}{0.0037} = 1.41^{\circ}\text{ for deaktivering af grøn LED i positiv retning} \\
-\dfrac{(1.6562 - 1.6325)}{0.0037} = 6.41^{\circ}\text{ for aktivering af gul LED samt vibrator i positiv retning} \\
+\dfrac{(1.6562 - 1.6325)}{0.0037} = 6.41^{\circ}\text{ for aktivering af gul LED samt vibrator i positiv retning} \\ \label{eq:graderLED_2}
 \dfrac{(1.6740 - 1.6325)}{0.0037} = 11.22^{\circ}\text{ for aktivering af rød LED i positiv retning}
 \end{align}
-\noindent Der ses i overstående ligninger, at der er en afvigelse i accelerometerets hældning ift. de definerede grader for aktivering af feedbacken. Grunden til dette kan være, at referencespændingen til offsettet måles til $1.6302$V, hvilket er -$0.0023$V fra det teoretiske offset i accelerometret. Derved forskydes offsettet, og graderne for hældning af accelerometret i negativ retning vil blive større, mens graderne vil blive mindre i positiv retning.\\
+\noindent Der ses i overstående ligninger, at der er en afvigelse i accelerometerets hældning ift. de definerede grader for aktivering af feedbacken. Grunden til dette kan være, at referencespændingen til offsettet måles til $1.6302$V, hvilket er -$0.0023$V fra det teoretiske offset i accelerometret. Derved forskydes offsettet, og graderne for hældning af accelerometret i negativ retning vil blive større, mens graderne vil blive mindre i positiv retning. Derudover skal der tages højde for afvigelserne for de enkelte blokke i systemet, som undervejs er blevet accepteret. Disse vil tilsammen kunne skabe en større afvigelse for det samlede system. \\
 På baggrund af målingerne og de vurderede fejlkilder godkendes systemet og det vurderes, at det virker efter hensigten.\\
 
 \noindent\textbf{Test 1.b -  digital}\\ 
