@@ -126,10 +126,12 @@ function plotData(src,event) %Funktion der kaldes fra vores listener
     hold on %Gør at vores reflines ikke forsvinder
 
     data = event.Data+1.3988; %Plussser med offsettet fra nidaqen
-     if data>0
+     if 0<=data
          data = data*(90/3.0147)
-     end
-     if data<0
+     
+     elseif data<=0
+         data = data*(90/2.9417)
+     else
          data = data*(90/2.9417)
      end
     plot(ax, event.TimeStamps, data, 'r'); %Plotter vores data som kommer

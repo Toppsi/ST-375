@@ -287,3 +287,15 @@ ToGraderNT1 = (-0.0036*2)*3.6*9.1
 
 (1.6740-1.6325)/EnGradP
 3/B1gPUdenOffset
+
+%% Beregner spændingen for 8 og 13 grader i positv og negativ retning
+ToGraderPT = (EnGradP*2)*9.1
+ToGraderNT = (EnGradN*2)*9.1
+
+OtteGraderPositiv = (EnGradP*8)*9.1
+OtteGraderNegativ = (EnGradN*8)*9.1
+
+TrettenGraderPositiv = (EnGradP*13)*9.1
+TrettenGraderNegativ = (EnGradN*13)*9.1
+
+EnGradN*90*9.1*2
