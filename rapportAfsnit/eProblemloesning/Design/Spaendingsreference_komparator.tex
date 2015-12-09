@@ -1,29 +1,29 @@
 % !TeX spellcheck = da_DK
 \subsection{Referencespænding til Komparator}\label{subsec:Spaendingsref_Komparator}
 \subsubsection{Teori og design}
-Der skal til komparatorblokken forsynes med en konstant spænding, da denne skal anvendes som sammenligningsgrundlag ift. inputsignalet. Her anvendes igen en referencespænding, som er beskrevet i afsnit \ref{subsec:Spaendingsref} på side \pageref{subsec:Spaendingsref}. Der anvendes samme referencediode til denne referencespænding, som kan ses på \figref{fig:Spaendingsreference} på side \pageref{subsec:Spaendingsref}. \\
-For at udregne modstanden R1 for referencespændingen til komparatoren benyttes \eqref{eq:udregning_modstand}. Den ønskede referenceværdi er $2.5$V, så der skal i dette tilfælde ikke benyttes en spændingsdeler. I starten af kredsløbet indsættes en operations forstærker (TL$082$), som har to input og output. \cite{Corporation2013} Derved kan denne fungere som buffer, beskrevet i bilag \ref{Bilag:Pilotforsoeg} på side \pageref{Bilag:Pilotforsoeg}, til komparator kredsløbet og en inverterende forstærker.\cite{Schaumann2014} Da spændingen går direkte ind i bufferen, er den maksimale biasstrøm på $50nA$. Biasstrømmen for referencedioden er igen sat til $200\mu$A. Dermed kan værdierne indsættes i formlen og R1 kan beregnes:
+Der skal til feedbackkonfigurationen forsynes med en konstant spænding, da denne skal anvendes som sammenligningsgrundlag ift. inputsignalet. Her anvendes igen en referencespænding, jævnfør afsnit \ref{subsec:Spaendingsref} på side \pageref{subsec:Spaendingsref}. Der anvendes samme referencediode til denne referencespænding, som kan ses på \figref{fig:Spaendingsreference} på side \pageref{subsec:Spaendingsref}. \\
+For at udregne modstanden R1 for referencespændingen til komparatoren benyttes \eqref{eq:udregning_modstand}. Den ønskede referenceværdi er $2.5$V, så der skal i dette tilfælde ikke benyttes en spændingsdeler. I starten af kredsløbet indsættes operationsforstærkeren af typen, TL$082$ som har to input og output. \cite{Corporation2013} Derved kan denne fungere som buffer, jævnfør bilag \ref{Bilag:Pilotforsoeg} på side \pageref{Bilag:Pilotforsoeg}, til komparator kredsløbet og en inverterende forstærker.\cite{Schaumann2014} Da spændingen går direkte ind i bufferen, er den maksimale biasstrøm på $50nA$. Biasstrømmen for referencedioden er igen sat til $200\mu$A. Dermed kan værdierne indsættes i formlen og R1 kan beregnes:
 \begin{equation}
 R_komparator = \frac{5.5V-2.5V}{50nA + 200\mu\text{A}} = 14999.62501\Omega \approx 15K\Omega 
 \end{equation} 
-Operationsforstærkeren TL$082$ benyttes som nævnt som en buffer og inverterende forstærker, da der både ønskes et positivt og negativt output til tærskelværdierne i komparatorblokken.
+Operationsforstærkeren benyttes, som nævnt, som en buffer og inverterende forstærker, da der både ønskes et positivt og negativt output til tærskelværdierne i feedbackkonfigurationen.
 \begin{figure}[H]
 	\centering
 	\includegraphics[scale=0.65]{figures/cProblemloesning/TL082.PNG}
-	\caption{På figuren ses pinkonfigurationen af operationsforstærkeren TL$082$. Det positive output til komparatorblokken vil komme fra pin $1$ altså output A, og det negative output til komparatorblokken vil komme fra pin $7$ altså output B. \cite{Corporation2013}}
+	\caption{På figuren ses pinkonfigurationen af operationsforstærkeren, TL$082$. Det positive output til feedbackkonfigurationen vil komme fra pin $1$ altså output A, og det negative output til komparatorblokken vil komme fra pin $7$ altså output B. \cite{Corporation2013}}
 	\label{fig:TL082}
 \end{figure}
-\noindent Der vides fra teorien, at der skal benyttes to modstande til designet af en inverterende forstærker. Da der ønskes et gain på 1, skal disse to modstande have samme værdi. \cite{Nilsson2011} Designet af referencespændingen med operationsforstærkeren TL$082$ ses på \figref{fig:ref_komparator}.
+\noindent Der vides fra teorien, at der skal benyttes to modstande til designet af en inverterende forstærker. Da der ønskes et gain på 1, skal disse to modstande have samme værdi. \cite{Nilsson2011} Designet af referencespændingen med operationsforstærkeren fremgår af \figref{fig:ref_komparator}.
 
 \begin{figure}[H]
 	\centering
 	\includegraphics[scale=0.4]{figures/cProblemloesning/Reference_komparator.PNG}
-	\caption{På figuren ses designet af referencespændingsblokken, der skal levere en referencespænding til komparatorblokken. Operationsforstærkeren TL$082$ fungerer som to TL$081$'ere, og derfor er simuleringen opbygget således. \cite{Corporation2013}}
+	\caption{På figuren ses designet af referencespændingsblokken, der skal levere en referencespænding til feedbackkonfigurationen. Operationsforstærkeren TL$082$ fungerer som to TL$081$'ere, og derfor er simuleringen opbygget således. \cite{Corporation2013}}
 	\label{fig:ref_komparator}
 \end{figure}
 
 \subsubsection{Simulering}
-Der foretages en simulering i LTspice, for at se, om designet fungerer ideelt og hvor præcis spændingsreferencen er. Resultatet af simuleringen ses i \tableref{Tab:SpaendigsRef_komparator}
+Der foretages en simulering i LTspice, for at undersøge, hvorvidt designet fungerer ideelt og præcisionen af spændingsreferencen. Simuleringens resultatet fremgår af \tableref{Tab:SpaendigsRef_komparator}
 
 \begin{table}[H]
 \centering
@@ -37,7 +37,7 @@ Der foretages en simulering i LTspice, for at se, om designet fungerer ideelt og
 \caption{I tabellen ses resultaterne fra simuleringen i LTspice af spændingsreferencen med operationsforstærkeren til komparatoren.}
 \label{Tab:SpaendigsRef_komparator}
 \end{table}
-\noindent I \tableref{Tab:SpaendigsRef_komparator} ses det, at der er en lav afvigelse mellem det forventede output og det simulerede output. Dette forventes, da der benyttes ideelle komponenter i LTspice. Derved fungerer kredsløbet teoretisk og kan implementeres. På \figref{fig:Spaendingsreference_komparator_sim} ses simuleringen af spændingsreferencen og operationsforstærkeren.
+\noindent I \tableref{Tab:SpaendigsRef_komparator} fremgår det, at der er en lav afvigelse mellem det forventede output og det simulerede output, hvorfor referencespændingen til feedbackkonfigurationen accepteres ift. kravspecifikationerne. En lav afvigelse mellem de teoretiske værdier og simuleringen forventes, da der benyttes ideelle komponenter i LTspice. Derved fungerer kredsløbet teoretisk og kan implementeres. På \figref{fig:Spaendingsreference_komparator_sim} ses simuleringen af spændingsreferencen og operationsforstærkeren.
 \begin{figure}[H]
 	\centering
 	\includegraphics[scale=.3]{figures/cProblemloesning/Reference_sim_kompar.PNG}
@@ -57,7 +57,7 @@ Der ses på \figref{fig:ref_komparator}, at der skal benyttes tre modstande på 
 		$100$K$\Omega$      & $99.631$K$\Omega$    & $0.37$\%               \\ \hline
 		$100$K$\Omega$      & $99.681$K$\Omega$    & $0.32$\%               \\ \hline
 	\end{tabular}
-	\caption{I tabellen ses der, at alle tre modstande afviger lidt fra deres teoretiske værdi, hvilket er forventet af reelle komponenter. Kravet til disse fire modstande var dog, at de maks må afvige fra deres teoretiske værdi med $\pm1\%$ jævnfør afsnit \ref{Ref_Offset_Afs} på side \pageref{Ref_Offset_Afs}. Disse modstande accepteres derfor.}
+	\caption{I tabellen ses der, at alle tre modstande afviger lidt fra deres teoretiske værdi, hvilket er forventet af reelle komponenter. Kravet til disse fire modstande var, at de maksimalt må afvige fra deres teoretiske værdi med $\pm1\%$, jævnfør afsnit \ref{Ref_Offset_Afs} på side \pageref{Ref_Offset_Afs}. Disse modstande accepteres derfor.}
 	\label{Tab:modstand_Kompar}
 \end{table}
 \noindent Herefter implementeres kredsløbet. Til aflæsning af spændingsniveauerne anvendes et multimeter. De aflæste resultater står i \tableref{Tab:SpaendingsRef_kompar_test}.
@@ -70,8 +70,8 @@ Der ses på \figref{fig:ref_komparator}, at der skal benyttes tre modstande på 
 		\textit{Output A fra TL081}                 & $2.5$V    & $2.5157$V  & $0.63\%$ \\ \hline
 		\textit{Output B fra TL081}                 & -$2.5$V   & -$2.5245$V & $0.98\%$ \\ \hline
 	\end{tabular}
-	\caption{I tabellen ses en oversigt over de forventede og målte outputsignaler fra testen for spændingsreferencen og operationsforstærkeren TL$082$ til komparatorblokken.}
+	\caption{I tabellen ses en oversigt over de forventede og målte outputsignaler fra testen for spændingsreferencen og operationsforstærkeren TL$082$ til feedbackkonfigurationen.}
 	\label{Tab:SpaendingsRef_kompar_test}
 \end{table}
-\noindent Der ses ud fra resultaterne i \tableref{Tab:SpaendingsRef_offset_test}, at blokken overholder kravene fra afsnit \ref{Ref_Kompar_Afs} på side \pageref{Ref_Kompar_Afs}. Derudover ligger afvigelserne indenfor tolerancerne. \\
-Der tages ikke hensyn til outputimpedansen fra denne blok, da operationsforstærkeren, som fungerer som en buffer, sørger for, at outputimpedansen bliver tilstrækkelig lav til ikke at have en betydning.
+\noindent Der ses ud fra resultaterne i \tableref{Tab:SpaendingsRef_offset_test}, at blokken overholder kravspecifikationerne, jævnfør afsnit \ref{Ref_Kompar_Afs} på side \pageref{Ref_Kompar_Afs}. %Derudover ligger afvigelserne indenfor tolerancerne. \\
+Der tages ikke hensyn til outputimpedansen fra denne blok, da operationsforstærkeren, der fungerer som en buffer, sørger for, at outputimpedansen bliver tilstrækkelig lav til ikke at have en betydning.
