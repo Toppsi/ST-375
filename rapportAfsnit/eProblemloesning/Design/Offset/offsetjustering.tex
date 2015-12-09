@@ -5,25 +5,25 @@ Det analoge signal fra accelerometeret har et indbygget offset, som gør, at out
 \begin{figure}[H]
 \centering
 \includegraphics[scale=1.3]{figures/cProblemloesning/Differensforstaerker_generisk1.png}
-\caption{På figuren ses et generisk differens forstærker kredsløb illustreret. Operationsforstærkeren vil trække inputtet $V_{b}$ fra inputtet $V_{a}$ og sende denne spænding ud i $V_{out}$. Hvorledes signalet skal forstærkes eller ej afhænger af værdierne for $R_{a}$, $R_{b}$, $R_{c}$ og $R_{d}$. \textit{(Revideret)} \cite{Nilsson2011}}
+\caption{På figuren ses et generisk differensforstærker kredsløb illustreret. Operationsforstærkeren vil trække inputtet $V_{b}$ fra inputtet $V_{a}$ og sende denne spænding ud i $V_{out}$. Hvorledes signalet skal forstærkes eller ej afhænger af værdierne for $R_{a}$, $R_{b}$, $R_{c}$ og $R_{d}$. \textit{(Revideret)} \cite{Nilsson2011}}
 \label{fig:Differensforstaerker_generisk}
 \end{figure}
-Den ikke-inverterende kanals ($+V_{in}$) indgangsimpedans afhænger af $R_{c}$, derfor indsættes der en buffer mellem outputsignalet fra forrige blok, som er accelerometeret. Inputimpedansen i den inverterende kanal (-$V_{in}$) afhænger af modstanden $R_{a}$ på \figref{fig:Differensforstaerker_generisk} grundet det ikke-inverterende design, hvorfor der også indsættes en buffer, jævnfør afsnit \ref{spaendingsref_resultat} på side \pageref{spaendingsref_resultat}. \\
+Den ikke-inverterende terminal ($+V_{in}$) indgangsimpedans afhænger af $R_{c}$, derfor indsættes der en buffer mellem outputsignalet fra forrige blok, som er accelerometeret. Inputimpedansen i den inverterende terminal (-$V_{in}$) afhænger af modstanden $R_{a}$ på \figref{fig:Differensforstaerker_generisk} grundet det ikke-inverterende design, hvorfor der også indsættes en buffer, jævnfør afsnit \ref{spaendingsref_resultat} på side \pageref{spaendingsref_resultat}. \\
 \noindent I \eqref{eq:Diff1} ses den simplificerede formel for differensforstærker kredsløbet, hvor $\frac{R_a}{R_b} = \frac{R_c}{R_d}$;
 \begin{equation}\label{eq:Diff1}
 V_o = \frac{R_b}{R_a} \cdot (v_b - v_a)
 \end{equation}
 \noindent Der kan heraf ses, at forstærkningen på signalet kan bestemmes ved at vælge modstandene $R_a\text{ og }R_b$, og at det er spændingen $V_{a}$, der trækkes fra spændingen $V_{b}$. \\
-I dette tilfælde kræves der ikke en forstærkning, hvorfor modstandene $R_{a}$ og $R_{b}$ skal være det samme. Da signalet ikke skal inverteres, sendes accelerometerets output ind i den ikke-inverterende kanal. Offsettet, som i dette tilfælde er en referenceværdi på $1.6325$V jævnført \ref{Sec_Pilot_Data} på side \pageref{Sec_Pilot_Data}, sendes ind i den inverterende kanal. Dette illustreres på figur \ref{fig:Offset_generisk}:
+I dette tilfælde kræves der ikke en forstærkning, hvorfor modstandene $R_{a}$ og $R_{b}$ skal være det samme. Da signalet ikke skal inverteres, sendes accelerometerets output ind i den ikke-inverterende terminal. Offsettet, som i dette tilfælde er en referenceværdi på $1.6325$V jævnført \ref{Sec_Pilot_Data} på side \pageref{Sec_Pilot_Data}, sendes ind i den inverterende terminal. Dette illustreres på \ref{fig:Offset_generisk}:
 \begin{figure}[H]
 \centering
 \includegraphics[scale=0.4]{figures/cProblemloesning/Offset_generisk.png}
-\caption{På figuren ses offsetjusteringens opbygning. $Va$ er referenceværdien, som sættes til $1.6325$V, og $Vb$ er outputtet fra accelerometeret, som vil skabe inputtet til operationsforstærkerens ikke-inverterende kanal. Modstandene i kredsløbet er ens, hvilket medfører at signalet ikke forstærkes, og spændingsforsyningen til operationsforstærkeren er $\pm5.5$V.}
+\caption{På figuren ses offsetjusteringens opbygning. $V_{a}$ er referenceværdien, som sættes til $1.6325$V, og $V_{b}$ er outputtet fra accelerometeret, som vil skabe inputtet til operationsforstærkerens ikke-inverterende terminal. Modstandene i kredsløbet er ens, hvilket medfører at signalet ikke forstærkes, og spændingsforsyningen til operationsforstærkeren er $\pm5.5$V.}
 \label{fig:Offset_generisk}
 \end{figure}
 
 \subsubsection{Simulering}
-Der foretages tre simuleringer i LTspice - en for hhv. det højeste- og laveste output, som accelerometret kan give for øvelserne. Dette vil svare til 1g påvirkning af accelerometerets x akse - altså $90^{\circ}$ rotation. Derudover foretages der en simulering for 0g påvirkning, hvilket svarer til $0^{\circ}$ rotation. Resultaterne ses i \tableref{Tab:offset_sim}.
+Der foretages tre simuleringer i LTspice - en for hhv. det højeste- og laveste output, fra accelerometret. Dette vil svare til $1$g påvirkning af accelerometerets x -akse, hvilket svare til $90^{\circ}$ rotation. Derudover foretages der en simulering for $0$g påvirkning, hvilket svarer til $0^{\circ}$ rotation. Resultaterne ses i \tableref{Tab:offset_sim}.
 \begin{table}[H]
 	\centering
 	\begin{tabular}{|l|l|l|l|l|}
@@ -46,7 +46,7 @@ Der foretages tre simuleringer i LTspice - en for hhv. det højeste- og laveste 
 \end{figure}
 
 \subsubsection{Implementering og test}
-I implementeringen arbejdes der med reelle komponenter. Derfor antages der, at der kan være afvigelser fra resultaterne imellem testen med ideelle komponenter i dette afsnit og testen med reelle komponenter i simuleringen. \\
+I implementeringen bruges er reelle komponenter. Derfor antages der, at der kan være afvigelser fra resultaterne imellem simuleringen med ideelle komponenter og testen med reelle komponenter i implementeringen. \\
 Der ses på \figref{fig:Offset_generisk}, at der skal benyttes fire modstande på $100$K$\Omega$ til opbygningen af offsettet. Disse blev målt inden testen, hvilket fremgår i \tableref{Tab:modstand_offset}.
 \begin{table}[H]
 	\centering
@@ -58,7 +58,7 @@ Der ses på \figref{fig:Offset_generisk}, at der skal benyttes fire modstande p�
 		$100$K$\Omega$       & $99.7$K$\Omega$       & $0.3$\%               \\ \hline
 		$100$K$\Omega$       & $99.7$K$\Omega$       & $0.3$\%               \\ \hline
 	\end{tabular}
-	\caption{I tabellen ses, at alle fire modstande afviger lidt fra deres teoretiske værdi, hvilket er forventet af reelle komponenter. Kravet til disse fire modstande var dog, at de skulle være ens således at der ikke sker en forstærkning. Disse modstande accepteres derfor.}
+	\caption{I tabellen ses, at alle fire modstande afviger lidt fra deres teoretiske værdi, hvilket er forventet af reelle komponenter. Kravet til disse fire modstande var, at de skulle være ens således at der ikke sker en forstærkning. Disse modstande accepteres derfor.}
 	\label{Tab:modstand_offset}
 \end{table}
 \noindent Herefter implementeres kredsløbet. Til afbildning af signalet for de tre spændingsniveauer benyttes et oscilloskop. De aflæste resultater står under "Output" i \tableref{Tab:Offset_test}.
@@ -75,5 +75,5 @@ Der ses på \figref{fig:Offset_generisk}, at der skal benyttes fire modstande p�
 	\caption{I tabellen ses en oversigt over de målte resultater for de tre spændingsniveauer.}
 	\label{Tab:Offset_test}
 \end{table}
-\noindent I \tableref{Tab:Offset_test} betegner "$V1$ / ref." referencespændingen, som sendes ind i den inverterende kanal. "$V2$ / signal." betegner det mindste og største output, som accelerometret kan give ved $\pm90^{\circ}$. Derudover indsendes en spænding, som svarer til reference spændingen. Disse tre spændinger bliver sendt ind i den ikke-inverterende kanal. Det "Ønskede input" er beregnet i afsnit \ref{Sec_Pilot_Data} på side \pageref{Sec_Pilot_Data} og burde være det, som sendes ind i $V2$. "Input" er den spænding, som sendes ind fra en spændingsforsyningen og er målt med et multimeter. "Forventet output" udregnes ved at trække inputtet fra reference spændingen fra inputtet fra det indsendte signal. "Output" er den afmålte værdi fra multimetret og "\% afvigelsen" kan derved beregnes. \\
+\noindent I \tableref{Tab:Offset_test} betegner "$V1$ / ref." referencespændingen, som sendes ind i den inverterende terminal. "$V2$ / signal." betegner det mindste og største output, som accelerometret kan give ved $\pm90^{\circ}$. Derudover indsendes en spænding, som svarer til reference spændingen. Disse tre spændinger bliver sendt ind i den ikke-inverterende terminal. Det "Ønskede input" er beregnet i afsnit \ref{Sec_Pilot_Data} på side \pageref{Sec_Pilot_Data} og burde være det, som sendes ind i $V2$. "Input" er den spænding, som sendes ind fra en spændingsforsyningen og er målt med et multimeter. "Forventet output" udregnes ved at trække inputtet fra reference spændingen fra inputtet fra det indsendte signal. "Output" er den afmålte værdi fra multimetret og "\% afvigelsen" kan derved beregnes. \\
 Der ses i \tableref{Tab:Offset_test}, at afvigelserne ligger inde for tolerancen for offsettet beskrevet i afsnit \ref{OpsamlingsAfs} på side \pageref{OpsamlingsAfs}. Derfor anses disse afvigelser som acceptable.

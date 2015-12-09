@@ -1,8 +1,8 @@
 % !TeX spellcheck = da_DK
 \subsection{Forstærker i opsamlingsblok}\label{Subsec:Forstaerker}
 \subsubsection{Teori og design}
-Til forstærkningen i opsamlingsblokken på \figref{kravblok} skal der benyttes en ikke-inverterende forstærker, da der ønskes, at inputtet og outputtet har samme polaritet. Ved en ikke-inverterende forstærker bliver inputtet tilkoblet direkte til den ikke-inverterende inputterminal, som har en impedans på $10^{12}\Omega$ indbygget i operationsforstærkeren. Hvis der var en lav indgangsimpedans, hvilket der kan være i den inverterende kanal grundet designet, ville denne blok trække spænding fra inputsignalet, hvilket vil give store afvigelser i de efterfølgende blokke. \\
-Kredsløbet består af en operationsforstærker kaldet TL081, som sidder i et closed-loop med modstandene R$1$ og R$2$, der udgør en spændingsdeler. Dette ses på \figref{fig:Forstaerker}.
+Til forstærkningen i opsamlingsblokken på \figref{kravblok} skal der benyttes en ikke-inverterende forstærker, da der ønskes, at inputtet og outputtet har samme polaritet. Ved en ikke-inverterende forstærker bliver inputtet tilkoblet direkte til den ikke-inverterende inputterminal, som har en impedans på $10^{12}\Omega$ indbygget i operationsforstærkeren\cite{Corporation1995}. Hvis der var en lav indgangsimpedans, hvilket der kan være i den inverterende terminal grundet designet, ville denne blok trække strøm fra inputsignalet, hvilket kan give  afvigelser i de efterfølgende blokke. \\
+Kredsløbet består af en operationsforstærker kaldet TL$081$, som sidder i et closed-loop med modstandene R$1$ og R$2$, der udgør en spændingsdeler. Dette ses på \figref{fig:Forstaerker}.
 \begin{figure}[H]
 \centering
 \includegraphics[scale=0.75]{figures/cProblemloesning/Forstaerker.PNG}
@@ -16,7 +16,7 @@ Kredsløbet består af en operationsforstærker kaldet TL081, som sidder i et cl
 R1 = 81\text{K}\Omega
 \end{align}
 
-\noindent R$1$ og R$2$ bliver brugt til at designe kredsløbet for en ikke-inverterende operations forstærker. Dette kredsløb designes i LT-spice, som ses på \figref{fig:Forstaerker_faktor18}. 
+\noindent R$1$ og R$2$ bliver brugt til at designe kredsløbet for en ikke-inverterende operationsforstærker. Dette kredsløb designes i LT-spice, som ses på \figref{fig:Forstaerker_faktor18}. 
 \begin{figure}[H]
 \centering
 \includegraphics[scale=0.3]{figures/cProblemloesning/Forstaerker_faktor18.PNG}
@@ -25,7 +25,7 @@ R1 = 81\text{K}\Omega
 \end{figure} 
 
 \subsubsection{Simulering}\label{Subsec:Forstaerker_simu}
-Der undersøges i to simuleringer, om forstærkeren virker ved det laveste input på -$0.3233$V og højeste input på $0.3313$V, som er blevet udregnet igennem pilotforsøget. På \figref{fig:Forstaerker_faktor18_simulering} ses en simulering af dette.
+Der undersøges i to simuleringer, om forstærkeren virker ved det laveste input på $0.3233$V og højeste input på $0.3313$V, som er blevet udregnet igennem pilotforsøget. På \figref{fig:Forstaerker_faktor18_simulering} ses en simulering af dette.
 
 \begin{figure}[H]
 \centering
@@ -48,7 +48,7 @@ Resultaterne af de to simuleringer ses i \tableref{tab:forstarker18_sim}
 	\caption{I tabellen ses resultaterne for simuleringerne med det laveste- og højeste input.}
 	\label{tab:forstarker18_sim}
 \end{table}
-\noindent Der ses på afvigelserne, at der arbejdes med ideelle komponenter, da der er en meget lav afvigelse i outputtet ift. det forventede output. Derved fungerer kredsløbet teoretisk og kan implementeres.
+\noindent Der ses på afvigelserne, at der arbejdes med ideelle komponenter, da der er en lav afvigelse i outputtet ift. det forventede output. Derved fungerer kredsløbet teoretisk og kan implementeres.
 
 \subsubsection{Implementering og test}
 Ifølge det valgte design skal der benyttes to modstande på $10$K$\Omega$ og $81$K$\Omega$ til opbygningen af forstærkeren. Reelt findes der ikke en modstand på $81$K$\Omega$, hvorfor der istedet benyttes $82$K$\Omega$. Dette giver teoretisk en forskel på $1.235$\% i modstanden. Dette er det tætteste man kan komme på $81$K$\Omega$. Der kunne også benyttes en $150$K$\Omega$- og $180$K$\Omega$ modstand i parallel forbindelse, hvilket vil give $1.01$\% afvigelse. Disse komponenter vil også have afvigelser, hvorved den samlede procentvise afvigelse vil forøges. De to modstande blev målt inden testen, hvilket fremgår i \tableref{Tab:modstand_faktor18}.
@@ -58,12 +58,12 @@ Ifølge det valgte design skal der benyttes to modstande på $10$K$\Omega$ og $8
 		\hline
 		\textit{Teoretisk} & \textit{Ved måling} & \textit{\% afvigelse} \\ \hline
 		$10$K$\Omega$      & $10.0236$K$\Omega$    & $0.24$\%           \\ \hline
-		$81$K$\Omega$      & $81.724$K$\Omega$     & $0.89$\%           \\ \hline
+		$82$K$\Omega$      & $81.724$K$\Omega$     & $0.89$\%           \\ \hline
 	\end{tabular}
 	\caption{I tabellen ses det, at de to modstande afviger lidt fra deres teoretiske værdi, hvilket er forventet af reelle komponenter. Det er en acceptabel afvigelse ifølge tolerancerne i afsnit \ref{OpsamlingsAfs}, side \pageref{OpsamlingsAfs}. Modstandene kan derfor anvendes til implementeringen.}
 	\label{Tab:modstand_faktor18}
 \end{table}
-\noindent Den $81$K$\Omega$ modstand har en $0.89\%$ afvigelse, men i dette tilfælde betragtes afvigelsen som positiv, da der ønskes en $82$K$\Omega$ modstand. Herefter blev kredsløbet implementeret. Til afbildning af signalet blev der benyttet et multimeter, som viste det forstærkede signal for de to spændingsniveauer. De aflæste resultater er angivet under "Output" i \tableref{Tab:faktor18_test}.\
+\noindent Den $82$K$\Omega$ modstand har en $0.89\%$ afvigelse, men i dette tilfælde betragtes afvigelsen som positiv, da der ønskes en $81$K$\Omega$ modstand. Herefter blev kredsløbet implementeret. Til afbildning af signalet blev der benyttet et multimeter, som viste det forstærkede signal for de to spændingsniveauer. De aflæste resultater er angivet under "Output" i \tableref{Tab:faktor18_test}.\
 \begin{table}[H]
 	\centering
 	\begin{tabular}{|l|l|l|l|l|}
@@ -73,7 +73,7 @@ Ifølge det valgte design skal der benyttes to modstande på $10$K$\Omega$ og $8
 %		$0$V        & $0.3523$mV   & $3.5230$mV    & -$10$mV         & $38.49\%$      \\ \hline
 		-$0.3233$V  & -$0.3231$V   & -$2.9612$V      &    $9.16$   & $0.66\%$     \\ \hline
 	\end{tabular}
-	\caption{I tabellen ses resultaterne fra testen med forstærkeren, der har en faktor 9.1. Det maksimale og minimale input fra offsetjusteringen er forsøgt at blive sendt ind.}
+	\caption{I tabellen ses resultaterne fra testen med forstærkeren, der har en faktor $9.1$. Det maksimale og minimale input fra offsetjusteringen er blevet testet med.}
 	\label{Tab:faktor18_test}
 \end{table}
 % Det "målte input" er her blevet målt med et multimeter. %For $0.3313$V er spændingen kommet direkte fra en strømforsyning, men for at undersøge forstærkningen af $-0.3233$V er det nødsaget at benytte offsettet, da spændingsforsyningen ikke kan levere en negativ spænding. Det var derfor forventet, at der kunne være en større afvigelse på målingerne med $-0.3233$V spænding, da denne spænding skulle igennem flere kredsløb. Inputtet i offsettet (som kan ses på \figref{fig:Offset_generisk}) var $1.3092$V og referencen var $1.6325$V. Derved skabes den negative spænding, som sendes videre til forstærkeren. Afvigelsen, som ville opstå grundet et ekstra kredsløb, ville være præsentabel for afvigelsen, som der også burde have været for de to andre signalers tests. Der ses i \tableref{Tab:faktor18_test}, at der ikke opstod større forstyrrelser, som gav ekstra afvigelse i det målte signal ift. det forventede signal. \\

@@ -1,14 +1,14 @@
 % !TeX spellcheck = da_DK
 \subsection{Accelerometer}\label{Acc_afsnit}
 \subsubsection{Teori og design}
-Teorien bag accelerometret ADXL335 læses i afsnit \ref{Subsec:AccTeori} på side \pageref{Subsec:AccTeori}. Designet kan ses i bilag \ref{Bilag:Pilotforsoeg} på side \pageref{Bilag:Pilotforsoeg}, dog med en ændring af den ene kondensator. I pilotforsøget blev det påvist, at signalet i dette tilfælde ligger mellem $0-25Hz$, og derfor skal der nu benyttes en ny kondensator.\cite{Devices2009}:
+Teorien og specifikationer vedrørende accelerometret ADXL$335$ er i afsnit \ref{Subsec:AccTeori} på side \pageref{Subsec:AccTeori}. Designet af opsætningen kan ses i bilag \ref{Bilag:Pilotforsoeg} på side \pageref{Bilag:Pilotforsoeg}, dog med en ændring af den ene kondensator. I pilotforsøget blev det påvist, at signalet i dette tilfælde ligger mellem $0-25Hz$, og derfor skal der nu benyttes en ny kondensator fremfor den kondensator der blev brugt i pilotforsøget til at haven båndbredde på $50$Hz.\cite{Devices2009}:
 \begin{equation}
 \text{Båndbredde} = \dfrac{5\mu F}{C} \Rightarrow  C = \dfrac{5\mu F}{\text{Båndbredde}}
 \end{equation}
 Der vælges en båndbredde på $25$Hz, hvilket gør, at C bliver $0.2\mu$F.  
 
 \subsubsection{Simulering}
-Jævnfør tolerancerne for accelerometret beskrevet i afsnit \ref{OpsamlingsAfs} på side \pageref{OpsamlingsAfs} skal der testes for, hvorledes accelerometret overholder kravet om, at der maksimum må være en $5\%$ afvigelse i detektionen af hældningsgrad. \\
+Jævnfør tolerancekravene for accelerometret beskrevet i afsnit \ref{OpsamlingsAfs} på side \pageref{OpsamlingsAfs} skal der testes for, hvorledes accelerometret overholder kravet om, at der maksimum må være en $5\%$ afvigelse i detektionen af hældningsgrad. \\
 Der findes ikke et accelerometer i programmet LTspice, hvorfor accelerometeret er symboliseret med en sinuskurve. Dets DC svarer til strømforsyningen $5.5$V fratrukket offsettet for accelerometeret ved $0$g påvirkning, som er $1.6325$V. Derudover angives en amplitude svarende til den maksimale sensitivitet på $0.3313$V. Simuleringen ses på \figref{fig:acc_simulering} og resultatet ses på \figref{fig:acc_simulering_resultat}.
 \begin{figure}[H]
 	\centering
@@ -24,7 +24,7 @@ Der findes ikke et accelerometer i programmet LTspice, hvorfor accelerometeret e
 \end{figure}
 
 \subsubsection{Implementering og test}
-I pilotforsøget blev der arbejdet med reelle komponenter, hvilket også blev benyttet til implementeringen. Derfor antages det, at der vil være en mindre afvigelse imellem resultaterne fra testen og pilotforsøget end imellem resultaterne fra testen og en eventuel simulering, da der i simuleringer arbejdes med ideelle komponenter. Accelerometerets båndbredde bestemmes af to $0.1\mu$F kondensatorer i parallelforbindelse, som derved vil give en samlet kapacitans på  $0.2\mu$F. De tre kapacitorer blev målt inden implementering samt den samlede kapacitans. Resultaterne fremgår i  \tableref{Tab:Acc_kondensator}:
+I pilotforsøget blev der arbejdet med reelle komponenter, hvilket også blev benyttet til implementeringen. Derfor antages det, at der vil være en mindre afvigelse imellem resultaterne fra testen og pilotforsøget end imellem resultaterne fra testen og en eventuel simulering, da der i simuleringer arbejdes med ideelle komponenter. Accelerometerets båndbredde bestemmes af to $0.1\mu$F kondensatorer i parallelforbindelse, som derved vil give en samlet kapacitans på  $0.2\mu$F. De trekondensatore blev målt inden implementering samt den samlede kapacitans. Resultaterne fremgår i  \tableref{Tab:Acc_kondensator}:
 \begin{table}[H]
 	\centering
 	\begin{tabular}{|l|l|l|l|}\hline
