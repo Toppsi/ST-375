@@ -71,13 +71,11 @@ Det samlede system implementeres på to breadboards. Opsætningen kan ses på \f
 	\caption{På figuren ses implementeringen af systemet på to breadboards. Ledningernes farve symboliserer forskellige ting: De hvide leder signalet fra accelerometret igennem systemet og de røde og blå symboliserer hhv. den positive og negative strømforsyningen til de forskellige komponenter i systemet. De sorte ledninger leder til ground, og de gule ledninger fungerer som forbindelsesveje. De grønne og brune ledninger leder hhv. en positiv og negativ referencespænding til offsettet og komparatorerne.}
 	\label{fig:samlet_system_real}
 \end{figure}
-\noindent Herefter er det samlede system klar til at blive testet. Det samlede system vil blive testet på to forskellige måder - først en test efter samme principper som i testen af accelerometeret og efterfølgende en test, hvor accelerometeret er placeret på en person jævnfør afsnit \ref{formaal_anvendelse} på side \pageref{formaal_anvendelse}. De to overordnede tests inddeles yderligere i to, da der for hver test kontrolleres, om den analoge samt digitale del fungerer efter hensigten.
+\noindent Herefter er det samlede system klar til at blive testet. Det samlede system vil blive testet på to forskellige måder - først en test efter samme principper som i testen af accelerometeret og efterfølgende en test af det digitale output. \\
 
+\noindent I testen af det samlede system tages der udgangspunkt i principperne fra testen af accelerometeret beskrevet i afsnit \ref{Acc_afsnit} på side \pageref{Acc_afsnit}. Det måles således, hvorvidt systemet opfylder de overordnede funktionelle krav jævnfør afsnit \ref{FunkKrav} på side \pageref{FunkKrav}, ved at hælde accelerometeret i positiv og negativ retning indtil udløst feedback.
 \subsubsection{Test 1}
-I den første test af det samlede system tages udgangspunkt i principperne fra testen af accelerometeret beskrevet i afsnit \ref{Acc_afsnit} på side \pageref{Acc_afsnit}. Det måles således, hvorvidt systemet opfylder de overordnede funktionelle krav jævnfør afsnit \ref{FunkKrav} på side \pageref{FunkKrav}, ved at placere accelerometeret i de definerede hældningsgrader, og herudfra vurdere om den korrekte feedback udløses.\\ 
-
-\noindent\textbf{Test 1.a - analog}\\  
-Ved den første test af den analoge del af systemet måles spændingsfaldet over LED'erne og vibratorerne før og efter aktivering. Derudover måles outputtet fra accelerometret lige ved aktivering af de forskellige komponenter. Disse målinger foretages med et multimeter. Resultatet fremgår af \tableref{Tab:resultat:test1a}:
+Ved test af den analoge del af systemet måles spændingsfaldet over LED'erne og vibratorerne før og efter aktivering. Derudover måles outputtet fra accelerometret lige ved aktivering af de forskellige komponenter. Disse målinger foretages med et multimeter. Resultatet fremgår af \tableref{Tab:resultat:test1a}:
 \begin{table}[H]
 	\centering
 	\begin{tabular}{l|l|l|l|}
@@ -130,11 +128,16 @@ Ud fra de målte outputværdier fra accelerometeret kan det beregnes, om feedbac
 \dfrac{(1.6740 - 1.6325)}{0.0037} = 11.22^{\circ}\text{ for aktivering af rød LED i positiv retning}
 \end{align}
 \noindent Der ses i overstående ligninger, at der er en afvigelse i accelerometerets hældning ift. de definerede grader for aktivering af feedbacken. Grunden til dette kan være, at referencespændingen til offsettet måles til $1.6302$V, hvilket er -$0.0023$V fra det teoretiske offset i accelerometret. Derved forskydes offsettet, og graderne for hældning af accelerometret i negativ retning vil blive større, mens graderne vil blive mindre i positiv retning. Derudover skal der tages højde for afvigelserne for de enkelte blokke i systemet, som undervejs er blevet accepteret. Disse vil tilsammen kunne skabe en større afvigelse for det samlede system. \\
-På baggrund af målingerne og de vurderede fejlkilder godkendes systemet og det vurderes, at det virker efter hensigten.\\
-
-\noindent\textbf{Test 1.b -  digital}\\ 
+På baggrund af målingerne og de vurderede fejlkilder godkendes den analoge del og det vurderes, at det virker efter hensigten.\\
 
 \subsubsection{Test 2}
-I den anden test af det samlede system placeres accelerometeret på en forsøgsperson, der skal afprøve træningsforløbet med systemet. Formålet med denne test er at kontrollere, om den korrekte feedback udløses samt at vurdere, hvorvidt de definerede hældningsgrader er passende under træning med systemet. \\ 
-\textbf{Test 2.a - analog}\\  
-\textbf{Test 2.b - digital}\\ 
+Ved test af den digitale del af systemet undersøges der, hvorvidt systemet kan give et digitalt output, som kan aflæses og gemmes jævnfør afsnit \ref{FunkKrav} på side \pageref{FunkKrav}. \\
+Ved testen roteres accelerometret i positiv og negativ retning, hvilket er afbilledet på \figref{fig:samlet_system_digital}:
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=.38]{figures/cProblemloesning/Software.jpg}
+	\caption{På figuren ses brugerfladen for programmet. De blå streger repræsenterer de definerede hældningsgrader, hvor der gives feedback i den analoge del. Den røde graf repræsenterer en måling foretaget med accelerometret. På x-aksen ses tiden og på y-aksen ses hældningsgrader af accelerometret.}
+	\label{fig:samlet_system_digital}
+\end{figure}
+\noindent Det fremgår af \figref{fig:samlet_system_digital}, at det er muligt at aflæse den målte hældning af accelerometret på en graf samt at gemme målingen.\\
+På baggrund af testen og \figref{fig:samlet_system_digital}  godkendes den digitale del og det vurderes, at det virker efter hensigten.
