@@ -22,11 +22,9 @@ For at benytte GUI'en skal det fagkyndige personale følge fremgangsmåden på \
 For at teste om softwaren viser information om patientens hældning i de bestemte tærskelværdier indsendes et input så tæt på det teoretiske som muligt. Dette gør at inputsignalet svarende til de forskellige tærskelværdier vil vise sig som hhv. $\pm 8^{\circ}$ og $\pm 13^{\circ}$ i softwarens display. Der foretages målinger for de nævnte tærskelværdier, hvorefter de enkelte optagelser gemmes.
 Derudover undersøges softwaren ved at indsende en sinuskurve med en amplitude på $5.8834$V og en frekvens på $500$mHz, for at illustrere en svajning på $\pm 90{\circ}$. Optagelsen af signalet sker ved fremgangsmåden på \figref{Fig:fremgangsmåde_software}. I forhold til det indsendte signal afviger dette fra det teoretiske input, hvilket fremgår af \ref{Tab:afvigelse_software}. Denne afvigelse er forventet da spændingen ikke er konstant og vil ændre sig over tid. 
 
-\begin{table}[]
+\begin{table}[H]
 \centering
-\caption{Af tabellen fremgår afvigelsen fra det teoretiske input til det målte input.}
-\label{Tab:afvigelse_software}
-\begin{tabular}{llll}
+\begin{tabular}{l|l|l|l|} \hline
              & Teoretisk input & Målt 	& Afvigelse \\ \hline
 %$2^\circ$   & 0.0670          & 0.0672  & 0.3  \% \\ \hline
 %-$2^\circ$  & -0.0654         & -0.0658 & 0.6  \% \\ \hline
@@ -35,6 +33,8 @@ $8^{\circ}$   & $0.2680$          & $0.2681$  & $0.04$ \% \\ \hline
 $13^{\circ}$  & $0.4355$          & $0.4357$  & $0.05$ \% \\ \hline
 -$13^{\circ}$ & -$0.4249$         & -$0.4247$ & $0.05$ \% \\ \hline    
 \end{tabular}
+\caption{Af tabellen fremgår afvigelsen fra det teoretiske input til det målte input.}
+\label{Tab:afvigelse_software}
 \end{table}
 
 De gemte optagelserne foretaget for de forskellige tærskelværdier er illustreret på \figref{fig:software_grafer}. Det ses ud fra graferne at ved at indsende et input svarende til tærskelværdierne fås en linje som følger referenceværdierne. På figuren er der zoomet ind på de forskellige grafer, det fremgår heraf, at der kommer støj på signalet. Grunden til dette kan være at spændingen ikke er konstant og derved vil afvige under optagelsen. 
