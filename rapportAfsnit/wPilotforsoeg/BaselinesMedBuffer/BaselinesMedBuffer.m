@@ -272,12 +272,18 @@ A = max(fftB1gN3)
 %% Beregning af tærskelværdier:
 ToGraderPT = (EnGradP*2)*3.6*9.1
 ToGraderNT = (EnGradN*2)*3.6*9.1
- 
+
 OtteGraderPT = (EnGradP*8)*3.6*9.1
 OtteGraderNT = (EnGradN*8)*3.6*9.1
- 
+
 TrettenGraderPT = (EnGradP*13)*3.6*9.1
 TrettenGraderNT = (EnGradN*13)*3.6*9.1
  
 FemogtyveGraderPT = (EnGradP*25)*3.6*9.1
 FemogtyveGraderNT = (EnGradN*25)*3.6*9.1
+
+ToGraderPT1 = (0.0037*2)*3.6*9.1
+ToGraderNT1 = (-0.0036*2)*3.6*9.1
+
+(1.6740-1.6325)/EnGradP
+3/B1gPUdenOffset

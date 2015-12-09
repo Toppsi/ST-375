@@ -124,12 +124,12 @@ function plotData(src,event) %Funktion der kaldes fra vores listener
     refline(ax, 0,-13)%Indstiller en refline i vores koordinatsystem i GUI'en
     hold on %Gør at vores reflines ikke forsvinder
     data = event.Data
-     if data>0
-         data = data*(90/3.0147)
-     end
-     if data<0
-         data = data*(90/2.9417)
-     end
+%      if data>0
+%          data = data*(90/3.0147)
+%      end
+%      if data<0
+%          data = data*(90/2.9417)
+%      end
     plot(ax, event.TimeStamps, data, 'r'); %Plotter vores data som kommer
     %fra listeneren, i vores koordinatsystem
      
