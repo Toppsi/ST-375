@@ -17,10 +17,10 @@ Der er placeret en buffer inden feedbackkonfigurationen for at stabilisere signa
 
 \noindent\textbf{Beregning af tærskelværdier og modstandene R$1$-R$12$ i spændingsdelerne} \\
 Det ønskes, at LEDerne skal lyse ved bestemte kropshældninger, dvs. ved bestemte tærskelværdier. Inputsignalet afhænger af den pågældende hældningsgrad, hvilket for komparatoren vil være en bestemt spænding. Komparatorens tærskelværdierne kan beregnes, da værdien i volt pr. grad i hhv. positiv og negativ retning, jævnfør \eqref{taerskelvaerdi_pr_grad} i pilotforsøget i bilag \ref{Pilotforsoeg} på side \pageref{Sec_Pilot_Data}, samt forstærkningsværdien af signalet fra forrige blokke, opsamlings- og tilpasningsblokken, er kendte værdier. Jævnfør tærskelværdierne i afsnit \ref{Komparatorafsnit} på side \pageref{Komparatorafsnit} beregnet ud fra følgende formel:
-\begin{equation} \label{pr_grad} 
-\text{Tærskelværdi i positiv retning} = {0.0037\text{V}*9.1*3.6*\text{hældningsgrad}} = tærskelværdi
+\begin{eqnarray} \label{pr_grad} 
+\text{Tærskelværdi i positiv retning} = {0.0037\text{V}*9.1*3.6*\text{hældningsgrad}} = tærskelværdi \\
 \text{Tærskelværdi i negativ retning} = {0.0036\text{V}*9.1*3.6*\text{hældningsgrad}} = tærskelværdi
-\end{equation}
+\end{eqnarray}
 
 De udregnede tærskelværdier fremgår af \figref{fig:taerskelvaerdier}. 
 \begin{figure}[H]
