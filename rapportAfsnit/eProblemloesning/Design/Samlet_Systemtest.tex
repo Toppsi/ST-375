@@ -6,8 +6,8 @@ Efter de enkelte blokke blev testet og godkendt hver for sig, skal det samlede s
 I simuleringen af det samlede system kontrolleres det, som i de øvrige simuleringer, om systemet fungerer med ideelle komponenter. Denne kontrol udføres ved at indsende en sinus som inputspænding igennem systemet, som teoretisk skal aktivere hhv. de enkelte dioder og vibratorerne. Designet af det samlede system ses på \figref{fig:samlet_system}:
 \begin{figure}[H]
 	\centering
-	\includegraphics[scale=.38]{figures/cProblemloesning/Samlet_system2.PNG}
-	\caption{På figuren ses designet af det samlede system med labels, der indikerer målepunkterne for de følgende simuleringer. Derved kan blokkenes påvirkning af signalet følges undervejs i systemet.}
+	\includegraphics[scale=.38]{figures/cProblemloesning/Samlet_systemUL.PNG}
+	\caption{På figuren ses designet af det samlede system.}
 	\label{fig:samlet_system}
 \end{figure}
 \noindent Sinussignalets amplitude udregnes til at være:
@@ -19,7 +19,7 @@ For at simulere systemet, som ses \figref{fig:samlet_system}, var det nødsaget 
 \begin{figure}[H]
 	\centering
 	\includegraphics[scale=.38]{figures/cProblemloesning/Samlet_system2_sim.PNG}
-	\caption{På figuren ses designet af det forenklede samlede system. Referencespændingen til offsetjusteringsblokken er erstattet med en spændingsforsyning på $1.6325$V, hvilket konfigurationen, som før var forbundet her, teroretisk burde levere. Derudover er hele konfigurationen, som skulle skabe tærskelværdier til komparatorerne, udskiftet med spændingsforsynerer, som leverer den simulerede tærskelværdi i volt til hver komparatorkonfiguration, som er målt i \tableref{Tab:test_reference1} på side \pageref{Tab:test_reference1}.}
+	\caption{På figuren ses designet af det forenklede samlede system med labels, der indikerer målepunkterne for de følgende simuleringer. Derved kan blokkenes påvirkning af signalet følges undervejs i systemet. Referencespændingen til offsetjusteringsblokken er erstattet med en spændingsforsyning på $1.6325$V, hvilket konfigurationen, som før var forbundet her, teroretisk burde levere. Derudover er hele konfigurationen, som skulle skabe tærskelværdier til komparatorerne, udskiftet med spændingsforsynerer, som leverer den simulerede tærskelværdi i volt til hver komparatorkonfiguration, som er målt i \tableref{Tab:test_reference1} på side \pageref{Tab:test_reference1}.}
 	\label{fig:samlet_system}
 \end{figure}
 \noindent Simuleringen er derved mulig. Resultatet fra simuleringen ses på nedenstående figurer.
