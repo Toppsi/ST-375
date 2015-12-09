@@ -1,7 +1,7 @@
 % !TeX spellcheck = da_DK
 \subsection{Feedbackkonfiguration}
 \subsubsection{Teori og design} \label{Afs_Komparator}
-Jævnfør \ref{Komparatorafsnit} på side \pageref{Komparatorafsnit} anvendes en komparator til at sammenligne to inputspændinger. Komparatoren der anvendes er af typen LM311. Ved denne type placeres en $100$nF kondensator i en sammenkobling af komparatorens balanceben, for at gøre komparatoren mere præcis og undgå svingninger \cite{Instruments2015}. Der anvendes flere komparatorer, disse tilkobles ved outputtet enten en LED eller en vibrator, samt en modstand og den positive spændingsforsyning ($+V_{cc}$). I komparatorernes ikke-inverterende terminaler tilsluttes outputtet fra forrige blok, hvor inputtet i de inverterende terminaler fungerer som referencespænding, der forsynes med de beregnede tærskelværdier. Komparatorerne kan derfor have to forskellige outputs afhængig af inputspændingen. Hvis inputsignalet ligger under de beregnede tærskelværdier vil outputtet være $0V$ og LEDerne samt de to vibratorer vil ikke blive aktiveret. Er inputtet derimod over de beregnede tærskelværdier, vil outputtet svare til ground, da strømmen fra $+V_{cc}$ vil løbe igennem komparatorerne og derefter til ground\fxnote{det vil vel løbe til komparatorens emitter terminal }. Derved opnås et spændingsfald over den positive (anode) og negative (katode) pol for LEDerne og vibratorerne på en værdi, der ligger over det minimale spændingsfald, der kræves for en aktivering. LEDerne og vibratorerne vil derved blive aktiveret og fungere som feedback til patienten. \\
+Jævnfør \ref{Komparatorafsnit} på side \pageref{Komparatorafsnit} anvendes en komparator til at sammenligne to inputsspændinger. Komparatoren der anvendes er af typen LM311. Ved denne type placeres en $100$nF kondensator i en sammenkobling af komparatorens balanceben, for at gøre komparatoren mere præcis og undgå svingninger \cite{Instruments2015}. Der anvendes flere komparatorer, disse tilkobles ved outputtet enten en LED eller en vibrator, samt en modstand og den positive spændingsforsyning ($+V_{cc}$). I komparatorernes ikke-inverterende terminaler tilsluttes outputtet fra forrige blok, hvor inputtet i de inverterende terminaler fungerer som referencespænding, der forsynes med de beregnede tærskelværdier. Komparatorerne kan derfor have to forskellige outputs afhængig af inputspændingen. Hvis inputsignalet ligger under de beregnede tærskelværdier vil outputtet være $0V$ og LEDerne samt de to vibratorer vil ikke blive aktiveret. Er inputtet derimod over de beregnede tærskelværdier, vil outputtet svare til ground, da strømmen fra $+V_{cc}$ vil løbe igennem komparatorerne og derefter til ground\fxnote{det vil vel løbe til komparatorens emitter terminal }. Derved opnås et spændingsfald over den positive (anode) og negative (katode) pol for LEDerne og vibratorerne på en værdi, der ligger over det minimale spændingsfald, der kræves for en aktivering. LEDerne og vibratorerne vil derved blive aktiveret og fungere som feedback til patienten. \\
 
 \noindent\textbf{Design af feedbackkonfiguration} \\
 Der er placeret en buffer inden feedbackkonfigurationen for at stabilisere signalet fra forrige blok, samt adskille blokkene fra hinanden, eftersom komparatoren, LM$311$ har en lav indgangsimpedans \cite{Instruments2015}. LEDernes katode tilkobles komparatorens output, imens anoden tilkobles $+V_{cc}$. Jævnfør kravspecifikationerne i afsnit \ref{KomparatorAfs} på side \pageref{KomparatorAfs} skal LEDerne aktiveres på fem forskellige stadier. Til denne aktivering anvendes otte komparatorer, da det første stadie, indeholdende den grønne LED, både har en positiv og negativ tærskelværdi og derfor kræver to komparatorer. De valgte tærskelværdier kan designes på forskellige måder hhv. som to spændingstræer eller otte spændingsdelere, hvoraf der er fordele og ulemper ved begge metoder. I dette projekt anvendes otte spændingsdelere, hvormed to indgår i en vindues-komparatorkonfiguration for den grønne LED, og de seks resterende fungerer som almindelige komparatorer, der aktiveres over en bestemt tærskelværdi. Fordelen ved at vælge dette design er, at modstandene i et spændingstræ påvirker hinanden, hvilket kan ændre tærskelværdierne, hvis én af modstandene ikke fungerer optimalt. Ulempen ved at anvende spændingsdelere er, at der benyttes flere modstande ved denne konfiguration. Feedbackkonfigurationen kan inddeles i to dele; en for hældning i hhv. positiv og negativ retning. De otte spændingsdelere udgøres af i alt $12$ modstande (R$1$-R$12$). Derudover består kredsløbet af en spændingsreference ($+V_{ref}$) på $2.5$V og syv modstande (R$13$-R$19$) mellem LEDerne samt vibratorerne og $+V_{cc}$. Modstandene (R$13$-R$14$, R$16$-R$17$ og R$19$) sikre at batteriet ikke drænes og bestemmer mængden af strøm til LEDerne. Vindues-komparatorkonfigurationen designes ved at placere en LED (D$3$) i emitter-terminalen på komparatorerne (U$3$) og collector-terminalen komparatorerne (U$4$). Feedbackkonfigurationen fremgår af \figref{fig:komparator_uden_vaerdi}. 
@@ -33,12 +33,17 @@ De udregnede tærskelværdier fremgår af \figref{fig:taerskelvaerdier}.
 \noindent Der anvendes en spændingsreference, bestående af en regulator, der kan levere en konstant spænding på $2.5$V til feedbackkonfigurationen jævnført \ref{subsec:Spaendingsref_Komparator} på side \pageref{subsec:Spaendingsref_Komparator}. Eftersom spændingen ved anvendelse af et batteri vil falde som funktion af tiden benyttes spændingsreferencen, så denne kan holde en fast referencespænding i kredsløbet. Eftersom spændingsreferencen også skal anvendes til de negative tærskelværdier benyttes en inverterende forstærker med et gain på $1$ i designet af feedbackkonfigurationen, hvilket fremgår af figur \figref{fig:komparator_uden_vaerdi}. Ved denne konfiguration vendes signalet, uden at blive forstærket, og kan på denne måde benyttes som referencespænding til negative inputspændinger. For at bestemme R$1$-R$12$ i spændingsdelerne, så LEDerne lyser ved de ønskede tærskelværdier defineres R$1$ til en bestemt værdi. I dette tilfælde fastsættes R$1$ til at være $10$K$\Omega$. Denne værdi er også gældende for R$2$-R$6$, da der benyttes en spændingsdeler for hver tærskelværdi. Derudover er de ønskede tærskelværdier ($V_{out}$) og spændingsreferencen ($V_{in}$) også kendte værdier og R$7$-R$12$ kan dermed udregnes vha. den generelle formel for en spændingsdeler jævnført \eqref{eq:Spaendingsdeler} i afsnit \ref{subsec:Spaendingsref} på side \pageref{subsec:Spaendingsref}. 
 
 \noindent Dette medfører at R$7$-R$12$ giver følgende resultater:\\
-R$7$ = $16821\Omega$ \\
-R$8$ = $6285\Omega$ \\
-R$9$ = $1068\Omega$ \\
-R$10$ = $1042\Omega$ \\
-R$11$ = $6039\Omega$ \\
-R$12$ = $15765\Omega$ \\
+\begin{table}[H]
+	\centering
+	\begin{tabular}{|l|l|l|l|} \hline
+	R$7$: & $16821\Omega$ \\ \hline
+	R$8$: & $6285\Omega$ \\ \hline
+	R$9$: & $1068\Omega$ \\ \hline
+	R$10$: & $1042\Omega$ \\ \hline
+	R$11$: & $6039\Omega$ \\ \hline
+	R$12$: & $15765\Omega$ \\ \hline    
+	\end{tabular}
+\end{table}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -201,12 +206,12 @@ Ifølge det valgte design benyttes i alt 21 modstande antal modstande. Ved reell
 \begin{tabular}{|l|l|l|l|}
 \hline
            & \textit{Målte reference input} & \textit{Målt reference output} & \textit{\% afvigelse} \\ \hline
-$13\circ$  & $1.5748$V                      & $1.5600$V                      & $1.14$ \%              \\ \hline
-$8\circ$   & $0.9700$V                      & $1.000$V                       & $3.09$ \%              \\ \hline
-$2\circ$   & $0.2427$V                      & $0.2400$V                      & $1.11$ \%                                    \\ \hline
--$2\circ$  & -$0.2373$V                     & -$0.2000$V                     & $15.72$ \%                                \\ \hline
--$8\circ$  & -$0.9492$V                     & -$0.9200$V                     & $3.18$ \%              \\ \hline
--$13\circ$ & -$1.5418$V                     & $1.5200$V                      & $1.44$ \%              \\ \hline
+$13^\circ$  & $1.5748$V                      & $1.5600$V                      & $1.14$ \%              \\ \hline
+$8^\circ$   & $0.9700$V                      & $1.000$V                       & $3.09$ \%              \\ \hline
+$2^\circ$   & $0.2427$V                      & $0.2400$V                      & $1.11$ \%                                    \\ \hline
+-$2^\circ$  & -$0.2373$V                     & -$0.2000$V                     & $15.72$ \%                                \\ \hline
+-$8^\circ$  & -$0.9492$V                     & -$0.9200$V                     & $3.18$ \%              \\ \hline
+-$13^\circ$ & -$1.5418$V                     & $1.5200$V                      & $1.44$ \%              \\ \hline
 \end{tabular}
 \caption{Af tabellen fremgår de målte reference input og output, samt afvigelsen af disse værdier. Derudover er afvigelsen regnet ud i grader.}
 \label{Tab:test-taendsluk}
