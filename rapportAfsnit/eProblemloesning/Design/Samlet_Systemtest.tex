@@ -15,7 +15,7 @@ I simuleringen af det samlede system kontrolleres det, som i de øvrige simuleri
 0.0037 \cdot (\dfrac{(25-13)}{2} + 13) = 0.0703V
 \end{eqnarray}
 \noindent $0.0037$V er den maksimale spænding fra accelerometret ved $1^{\circ}$ hældning. Dette ganges med $19$, hvilket er midterpunktet for aktivering af en rød diode ($13^{\circ}$ hældning) og mætning af den sidste forstærker ($25^{\circ}$ hældning). Der opnås en amplitude på $0.0703$V. Det kan derved måles, om systemet teoretisk opfylder de overordnede funktionelle krav jævnfør afsnit \ref{FunkKrav} på side \pageref{FunkKrav}.\\
-For at simulere systemet, som ses \figref{fig:samlet_system}, er det nødvendigt at foretage nogle basale ændringer i det opstillede system i LTspice, for at en computeren kan køre det. Ændringerne omfatter, at blokke, som leverer en uændret spænding, udskiftes med en spændingsforsyning, som leverer denne spændingsværdi. Dermed fjernes nogle operationsforstærkere fra det teoretisk opstillede system, hvorefter computeren kan konfigurere en simulering. Designet med basale ændringer kan ses på \figref{fig:samlet_system2}
+For at simulere systemet, som ses \figref{fig:samlet_system}, er det nødvendigt at foretage nogle basale ændringer i det opstillede system i LTspice, for at en computer kan køre det. Ændringerne omfatter, at blokke, som leverer en uændret spænding, udskiftes med en spændingsforsyning, som leverer denne spændingsværdi. Dermed fjernes nogle operationsforstærkere fra det teoretisk opstillede system, hvorefter computeren kan konfigurere en simulering. Designet med basale ændringer kan ses på \figref{fig:samlet_system}
 \begin{figure}[H]
 	\centering
 	\includegraphics[scale=.38]{figures/cProblemloesning/Samlet_system2_sim.PNG}
