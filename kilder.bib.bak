@@ -268,7 +268,8 @@
   Year                     = {2013},
 
   Owner                    = {Cecilie},
-  Timestamp                = {2015.11.25}
+  Timestamp                = {2015.11.25},
+  Url                      = {http://www.ti.com/lit/ds/symlink/tl082-n.pdf}
 }
 
 @Manual{Corporation1995,
@@ -280,7 +281,8 @@
   Year                     = {1995},
 
   Owner                    = {Cecilie},
-  Timestamp                = {2015.11.25}
+  Timestamp                = {2015.11.25},
+  Url                      = {http://www.ti.com/lit/ds/snosbw6a/snosbw6a.pdf}
 }
 
 @Book{Devasahayam2000,
@@ -535,7 +537,8 @@
   Year                     = {2014},
 
   Owner                    = {Nikolineeeee},
-  Timestamp                = {2015.11.08}
+  Timestamp                = {2015.11.08},
+  Url                      = {http://www.ni.com/datasheet/pdf/en/ds-218}
 }
 
 @Manual{Instruments2015,
@@ -544,7 +547,8 @@
   Year                     = {2015},
 
   Owner                    = {Mads},
-  Timestamp                = {2015.12.06}
+  Timestamp                = {2015.12.06},
+  Url                      = {http://www.ti.com/lit/ds/symlink/lm311.pdf}
 }
 
 @Manual{Instruments2005,
@@ -553,7 +557,8 @@
   Year                     = {2005},
 
   Owner                    = {Nikolineeeee},
-  Timestamp                = {2015.11.25}
+  Timestamp                = {2015.11.25},
+  Url                      = {http://www.ti.com.cn/cn/lit/ds/symlink/lm385-2.5-n.pdf}
 }
 
 @Article{Joergensen2004,
@@ -593,7 +598,8 @@
   Author                   = {Kingbright},
 
   Owner                    = {Mads},
-  Timestamp                = {2015.12.07}
+  Timestamp                = {2015.12.07},
+  Url                      = {http://cdn-reichelt.de/documents/datenblatt/A500/LED5MM2MAGE_LED5MM2MAGN_LED5MM2MART%23KIN.pdf}
 }
 
 @Electronic{Kjaergaard2015,
@@ -709,7 +715,8 @@
   Year                     = {2009},
 
   Owner                    = {Mads},
-  Timestamp                = {2015.12.07}
+  Timestamp                = {2015.12.07},
+  Url                      = {https://www.parallax.com/sites/default/files/downloads/28821-Flat-Coin-Vibration-Motor-Documentation.pdf}
 }
 
 @Article{Mao2014,
@@ -792,6 +799,17 @@
 
   Owner                    = {Mads},
   Timestamp                = {2015.09.15}
+}
+
+@Manual{National2005,
+  Title                    = {LM185-2.5/LM285-2.5/LM385-2.5 Micropower Voltage Reference Diode},
+  Author                   = {National},
+  Organization             = {National Semiconductor},
+  Year                     = {2005},
+
+  Owner                    = {Mads},
+  Timestamp                = {2015.12.13},
+  Url                      = {https://www.jameco.com/Jameco/Products/ProdDS/839762.pdf}
 }
 
 @Article{Nichols1997,
@@ -893,7 +911,8 @@
   Year                     = {2010},
 
   Owner                    = {Mads},
-  Timestamp                = {2015.12.08}
+  Timestamp                = {2015.12.08},
+  Url                      = {http://www.colorado.edu/physics/phys4430/phys4430_fa15/manuals_and_datasheets/Rigol_DS1052E_Oscilloscope_Datasheet.PDF}
 }
 
 @Electronic{Ritter2015,
@@ -979,6 +998,17 @@
 
   Owner                    = {Cecilie},
   Timestamp                = {2015.10.01}
+}
+
+@Electronic{Storr2015,
+  Title                    = {The Op-amp Comparator},
+  Author                   = {Storr, Wayne},
+  Organization             = {Basic Electronics Tutorials.},
+  Url                      = {http://www.electronics-tutorials.ws/opamp/op-amp-comparator.html},
+  Year                     = {2015},
+
+  Owner                    = {Mads},
+  Timestamp                = {2015.12.13}
 }
 
 @Electronic{Sundhed.dk2014,
