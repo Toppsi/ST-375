@@ -1,75 +1,75 @@
 % !TeX spellcheck = da_DK
 \section{Specifikke kravspecifikationer}
-I praksis er det ikke muligt at have ideelle komponenter \cite{Nilsson2011}. Der vurderes derfor ud fra pilotforsøget, litteratur samt relevante datablade, hvilke krav blokkene i blokdiagrammet i afsnit \ref{kravblok} på side \pageref{kravblok} skal opfylde og den tolerance, der accepteres ift. forskellige parametre.
+I praksis er det ikke muligt at anvende ideelle komponenter \cite{Nilsson2011}. Der vurderes derfor ud fra pilotforsøget, litteratur samt relevante datablade, hvilke krav blokkene i blokdiagrammet i afsnit \ref{kravblok}, side \pageref{kravblok} skal opfylde og den tolerance, der accepteres ift. forskellige parametre.
 
 \subsection{Opsamling}\label{OpsamlingsAfs}
-Blokken opsamling omfatter accelerometeret, offsetjustering og forstærkning. Accelerometeret skal have en sådan størrelse, at det kan påsættes en patient uden at give fysiske begrænsninger. Accelerometeret skal kunne måle en statisk acceleration i mindst to retninger, da der måles i det frontale plan til hhv. højre og venstre side. Herved kan det bestemmes, hvilken retning patienterne hælder mod i stående position. Det skal kunne detektere en hældningsgrad op til $\pm90^{\circ}$, da en forsøgsperson ikke kan komme over denne hældningsgrad. \\
-Offsetjusteringen skal centrere det målte signal omkring $0$V, da accelerometeret typisk måler $1.6325$V ved $0$g påvirkning af den pågældende akse ifølge pilotforsøget. Derfor skal der trækkes $1.6325$V fra alle inputs fra accelerometret. Justeringen af offset skal forekomme inden forstærkning således, at der ikke sker en forstærkning og dermed forskydning af offsetværdien, når accelerometret måler i positiv og negativ retning, hvorved g påvirkningen ændres. Ved justering af offsettet må der ikke ske en ændring af amplitudens peak-to-peak og frekvensen. \\
-Forstærkningen skal gøre det nemmere at adskille det ønskede signal fra støj i den efterfølgende filtreringsblok. For at forstærkningskredsløbet ikke dræner strømforsyningen, skal inputimpedansen til forstærkeren være mindst $100$ gange større end outputimpedansen i accelerometeret, jævnfør afsnit \ref{Subsec:AccTeori} på side \pageref{Subsec:AccTeori}. Signalet skal efter forstærkningen ligge indenfor arbejdsområdet $\pm3$V og der ønskes derfor størst mulige forstærkning. Den højeste måling ved $\pm90^{\circ}$ var ifølge pilotforsøget efter offsetjusteringen $0.3313$V. Derfor kan forstærkningen udregnes således:
+Blokken opsamling omfatter accelerometeret, offsetjustering og forstærkning. Accelerometeret skal have en sådan størrelse, at det kan påsættes en patient uden at give fysiske begrænsninger. Accelerometeret skal måle en statisk acceleration i mindst en retning, da der måles i det frontale plan til hhv. højre og venstre side. Herved kan det bestemmes, hvilken retning patienterne hælder mod i stående position. Det skal detektere en hældningsgrad op til $\pm90^{\circ}$. \\
+Offsetjusteringen skal centrere det målte signal omkring $0$V, da accelerometeret typisk måler $1.6325$V ved $0$g påvirkning af x-aksen jævnfør bilag \ref{Bilag:Pilotforsoeg}, side \pageref{Bilag:Pilotforsoeg}. Derfor skal et offset på $1.6325$V trækkes fra outputsignalet fra accelerometret. Offsetjusteringen skal forekomme inden forstærkning således, at der ikke sker en forstærkning og dermed en forskydning af offsetværdien. Ved justering af offsettet må der ikke ske en ændring af amplitudens peak-to-peak. \\
+Forstærkningen skal gøre det nemmere at adskille det ønskede signal fra støj i den efterfølgende filtreringsblok. For at inputsignalet til forstærkeren ikke påvirkes, skal inputimpedansen være mindst $100$ gange større end outputimpedansen i accelerometeret, jævnfør afsnit \ref{Subsec:AccTeori}, side \pageref{Subsec:AccTeori}. Signalet skal efter forstærkningen ligge indenfor arbejdsområdet $\pm3$V og der ønskes derfor størst mulige forstærkning. Den største spænding ved $\pm90^{\circ}$ var ifølge pilotforsøget efter offsetjusteringen $0.3313$V. Derfor kan forstærkningen udregnes således:
 \begin{equation}
 \dfrac{3\text{V}}{0.3313\text{V}} =  9.05 \approx 9.1
 \end{equation}
-\noindent Der ønskes en forstærkning på faktor $9.1$. Derved vil den maksimale spænding efter denne forstærkning være $3.0148$V, hvilket accepteres, da der vides fra databladet for operationsforstærkeren TL081 og teori, at når TL081 forsynes med en spænding på $5.5$V, vil den maksimalt give ca. $4$V ud. \cite{Corporation1995} Derfor vil en lille afvigelse i outputsignalet ift. arbejdsområdet ikke få systemet til at gå i mætning. Forstærkningens gain i dB udregnes ud fra følgende formel: 
+\noindent Der ønskes en forstærkning på faktor $9.1$. Derved vil den maksimale spænding efter denne forstærkning være $3.0148$V, hvilket accepteres, da der vides fra databladet for operationsforstærkeren TL081, at når TL081 forsynes med en spænding på $5.5$V, vil arbejdsområdet være ca. $\pm4$V. \cite{Corporation1995} Derfor vil en lille afvigelse i outputsignalet ift. arbejdsområdet ikke få systemet til at gå i mætning. Forstærkningens gain i dB udregnes ud fra følgende formel: 
 \begin{equation}
 20 \cdot log_{10} (9.1) = 19.1808\text{dB}
 \end{equation} 
 
 \noindent\textbf{Krav:}
 \begin{itemize}
-	\item Opsamlingsblokken skal have en spændingsforsyning på $5.5$V.
+	\item Opsamlingsblokken skal have en spændingsforsyning på $\pm5.5$V.
 	\item Accelerometeret skal minimum have en output akse.%, da der udelukkende måles i det frontale plan.
-	\item Accelerometeret skal være under $5x5$ cm i dimensionerne.%, da dette gør implementeringen på patienten nemmere.
-	\item Accelerometeret skal kunne måle statisk acceleration i mindst to retninger.
+	\item Accelerometeret skal være under $5x5x1$cm i dimensionerne.%, da dette gør implementeringen på patienten nemmere.
+	\item Accelerometeret skal kunne måle statisk acceleration i mindst en retning.
 	\item Accelerometeret skal kunne detektere en hældning fra $0^{\circ}$ til $\pm90^{\circ}$.
-	\item Offsetjusteringen skal centrere det målte signal omkring $0V$.
-	\item Offsetjusteringen skal modtage en referencespænding på $1.6325$V.
+	\item Offsetjusteringen skal centrere det målte signal omkring $0$V.
+%	\item Offsetjusteringen skal modtage en referencespænding på $1.6325$V.
 	\item Forstærkeren skal have en indgangsimpedans på mindst $3.68M\Omega$\fxnote{NTK: Da man ikke vil dræne blokken før for strøm. Udregnet ved $32K\Omega$, da indputimpedans skal være mindst $100$ gange større end den forrige bloks outputimpedans. Accelerometrets indgangsimpedans har en afvigelse på +$15$\%}.
-	\item Forstærkningen skal være på $9.1$, hvilket svarer til $19.1808$dB.
-	\item De benyttede modstande til designet af forstærkeren skal besidde den navngivne værdi.
-	\item Outputtet fra denne blok skal ligge mellem $2.9817$V og -$2.9097$V.
+	\item Forstærkningen skal være en faktor $9.1$, hv$i$lket svarer til $19.1808$dB.
+%	\item De benyttede modstande til designet af forstærkeren skal besidde den navngivne værdi.
+	\item Outputtet fra denne blok skal ligge mellem $3.0148$V og -$2.9420$V.
 \end{itemize}
 \textbf{Tolerance:}
 \begin{itemize}
-	\item Der accepteres en afvigelse i spændingsforsyning på $\pm9\%$.
+	\item Der accepteres en afvigelse i spændingsforsyning på $\pm9\%$.\fxnote{Hvis den bliver $10\%$, så kommer den under $5$V, og så vil den tage $1.5$V og komme tæt på signalet og muligvis klippe.}\fxnote{NTK: Den må gerne være +9\%, bare den ikke kommer under 5V. Kan tage maks 15V.}
 	\item Der accepteres ingen afvigelse ift. krav for accelerometerets dimension og minimum for antal akser.
 	\item Der accepteres en afvigelse i detektionen af hældningsgrad på $\pm5\%$.
 	\item Der accepteres en afvigelse af offsetjusteringen på $\pm2\%$.
-	\item Der accepteres en afvigelse i referencespændingen på $\pm0.003$V.
+%	\item Der accepteres en afvigelse i referencespændingen på $\pm0.003$V.
 	\item Der accepteres kun en indgangsimpedans i forstærkeren på mindst $3.68M\Omega$.
 	\item Der accepteres en afvigelse i forstærkningen på $\pm2\%$.
-	\item Der accepteres en afvigelse i de benyttede modstandes reelle værdi på $\pm1\%$.
+%	\item Der accepteres en afvigelse i de benyttede modstandes reelle værdi på $\pm1\%$.
 	\item Der accepteres en afvigelse ift. maksimum og minimum output fra blokken på $\pm5\%$.
 \end{itemize}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Referencespænding til offset}\label{Ref_Offset_Afs}
-Denne blok skal forsyne offsetjusteringen med en konstant spænding, der anvendes til sammenligning imellem et inputsignal og denne spændingsværdi. Der skal benyttes både en referencespænding og en spændingsdeler til blokken, da outputtet fra referencespændingen er for høj og upræcis til at kunne anvendes som sammenligningsgrundlag. \\
-Blokken skal levere $1.6325$V, da offsettet i accelerometret ved $0$g påvirkning er dette, jævnført bilag \ref{Sec_Pilot_Data} på side \pageref{Sec_Pilot_Data}. Outputimpedansen må maks være $1$K$\Omega$, da inputimpedansen i den inverterende kanal er $100$K$\Omega$.
+Denne blok skal forsyne offsetjusteringen med en konstant spænding, der anvendes til sammenligning imellem et inputsignal og denne spændingsværdi. Der skal benyttes både en referencespænding og en spændingsdeler til blokken, da outputtet fra referencespændingen er for højt\fxnote{NTK: vi havde en for lav og for høj til rådighed - 1.2 og 2.5V. Hvis den lave skulle bruges, skulle der anvendes en forstærker osv - flere komponenter til støj} til at kunne anvendes som sammenligningsgrundlag. \\
+Blokken skal levere $1.6325$V. Outputimpedansen må maksimalt være $1$K$\Omega$, da inputimpedansen i den inverterende terminal i offsetjusteringsblokken er $100$K$\Omega$.
 
-\textbf{Krav:}
+\noindent\textbf{Krav:}
 \begin{itemize}
 	\item Referencespændingsblokken til offsettet skal have en spændingsforsyning på $5.5$V.
-	\item Spændingsreferencen skal levere en strøm på $2.5$V.
+	\item Spændingsreferencen skal levere en spænding på $2.5$V.
 	\item Blokken skal samlet levere en referencespænding på $1.6325$V.
-	\item De benyttede modstande til designet af forstærkeren skal besidde den navngivne værdi.
+%	\item De benyttede modstande til designet af referencespændingen skal beside den navngivne værdi.
 	\item Outputimpedansen skal være maksimum $1$K$\Omega$.
 \end{itemize}
 \noindent \textbf{Tolerance:}
 \begin{itemize}
 	\item Der accepteres en afvigelse i spændingsforsyning på $\pm1\%$.
-	\item Der accepteres en afvigelse i outputtet fra spændingsreferencen på $\pm1\%$.
-	\item Der accepteres en afvigelse i den leverede referencespænding på $\pm1\%$. 
-	\item Der accepteres en afvigelse i de benyttede modstandes reelle værdi på $\pm1\%$.
+	\item Der accepteres en afvigelse i outputtet fra spændingsreferencen på $\pm0.8\%$.\fxnote{NTK: Står i databladet, at LM385 har en maksimal afvigelse på det}
+	\item Der accepteres en afvigelse i outputtet fra blokken på $\pm1\%$. 
+%	\item Der accepteres en afvigelse i de benyttede modstandes reelle værdi på $\pm1\%$.
 	\item Der accepteres ikke en outputimpedans på over $1$K$\Omega$.
 \end{itemize}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Filter}\label{FilterAfs}
-Blokken indeholdende et filter anvendes til at frasortere uønskede signaler, der kan forekomme under målinger med accelerometret. Filtreringsblokken inddrages i systemet jævnfør afsnit\ref{Filterafsnit} på side \pageref{Filterafsnit}. Frekvensområdet for kropshældning er ikke klart defineret, men studier anvender et frekvensområde liggende mellem $0.02-10Hz$ \cite{Martinez-Mendez2011}. Alle signaler, der ligger udenfor dette spektrum, ønskes derfor fjernet. I pilotforsøget blev der påvist, at signalet i dette tilfælde ligger mellem $0-25Hz$. Alt signal uden for dette spektrum ønskes derfor frafiltreret. Dette gøres ved at benytte et lavpasfilter med en pasbåndsfrekvens på $25$Hz. \\
-Den maksimale variation i pasbåndstransmissionen ($A_{max}$) sættes til $3$dB. For at fjerne $50Hz$ støj, sættes stopbåndsfrekvensen til $45$Hz. Dæmpningsfaktoren af filteret udregnes ved LSB omtalt i afsnit \ref{ADCafsnit} på side \pageref{ADCafsnit} over den maksimale amplitude af signalet. LSB beregnes ud fra følgende ligning: \\
+Blokken indeholdende et filter anvendes til at dæmpe uønskede signaler, der kan forekomme under målinger med accelerometret.\fxnote{NTK: Frekvensområdet for kropshældning er ikke klart defineret, men studier anvender et frekvensområde liggende mellem $0.02-10$Hz \cite{Martinez-Mendez2011}. Alle signaler, der ligger udenfor dette spektrum, ønskes derfor fjernet.} Frekvensområdet for kropshældning er ikke klart defineret, men i pilotforsøget blev der påvist, at signalet i dette tilfælde ligger mellem $0-25$Hz \cite{Martinez-Mendez2011}. Alle signaler uden for dette spektrum ønskes derfor dæmpet. Dette gøres ved at benytte et lavpasfilter med en pasbåndsfrekvens på $25$Hz. \\
+Den maksimale variation i pasbåndet ($A_{max}$) sættes til $3$dB. For at dæmpe $50$Hz støj, sættes stopbåndsfrekvensen til $45$Hz. Dæmpningsfaktoren af filteret udregnes ved LSB omtalt i afsnit \ref{ADC_afsnit}, side \pageref{ADC_afsnit} over den maksimale amplitude af signalet. LSB beregnes ud fra følgende ligninger: \\
 \begin{align}
 	LSB = \frac{20V}{2^{13}}
 	LSB = 0.00244V = 2.44\text{mV}
 \end{align}
-FSR er arbejdsområdet, dvs. $10Vpp$, som indsættes i formlen som $20V$, imens n er antallet af bits, der kan samples med, dvs. $13$. Den maksimale amplide beregnes ved en RMS-analyse på baggrund af rotationmålingerne foretaget i pilotforsøget, jævnfør bilag \ref{Bilag:Pilotforsoeg} på side \pageref{Bilag:Pilotforsoeg} for hhv. højre og venstre side. Dæmpningsfaktoren udregnes ved følgende ligninger:
+FSR er arbejdsområdet, dvs. $\pm10$V, imens n er antallet af bits, der kan samples med, dvs. $13$. Den maksimale amplitude beregnes ved en RMS-analyse på baggrund af rotationsmålingerne foretaget i pilotforsøget, jævnfør bilag \ref{Bilag:Pilotforsoeg}, side \pageref{Bilag:Pilotforsoeg}, for hhv. højre og venstre side. Dæmpningsfaktoren udregnes ved følgende ligninger:
 
 %Den udregnede LSB, jævnfør afsnit \ref{ADCafsnit} på side \pageref{ADCafsnit} samt den maksimale amplitude af signalet anvendes til beregning af dæmpningsfaktoren. Den maksimale amplitude beregnes ved en RMS-analyse på baggrund af rotationmålingerne foretaget i pilotforsøget, jævnfør bilag \ref{Bilag:Pilotforsoeg} på side \pageref{Bilag:Pilotforsoeg} for hhv. højre og venstre side. Dæmpningsfaktoren udregnes ved følgende ligning:
 \begin{equation}
@@ -79,137 +79,140 @@ FSR er arbejdsområdet, dvs. $10Vpp$, som indsættes i formlen som $20V$, imens 
 \begin{equation}
 \dfrac{0.00244\text{V}}{0.0131\text{V}} = 0.1863  \approx 0.2
 \end{equation}
-Der ønskes en dæmpning på faktor $\dfrac{1}{5}$, da der tages forbehold for et tolerance område. Dæmpningens gain i $dB(A_{min})$ udregnes ud fra følgende formel:   
+Der ønskes en dæmpning på faktor $0.2$, da der tages forbehold for et tolerance område. Dæmpningens gain i $dB(A_{min})$ udregnes ud fra følgende formel:   
 \begin{equation}
 \label{eq:daempningsfaktoridB}
-A_{min}=20 \cdot log_{10} \cdot (\frac{1}{5}) = -13,98 \approx -14\text{dB}
+A_{min}=20 \cdot log_{10} \cdot (0.2) = -13,98 \approx -14\text{dB}
 \end{equation}
 \textbf{Krav:}
 \begin{itemize}
-	\item Filteret skal have en spændingsforsyning på $5.5$V.
+	\item Filteret skal have en spændingsforsyning på $\pm5.5$V.
 	\item Filteret skal kunne modtage et inputsignal på $\pm3$V.
-	\item Der ønskes en knækfrekvens i pasbåndet på $25$Hz.
+	\item Der ønskes en pasbåndsfrekvens på $25$Hz.
 	\item Der ønskes en stopbåndsfrekvens på $45$Hz.
-	\item Der ønskes en minimum dæmpning af stopbåndet på $14$dB.
+	\item Der ønskes en minimum dæmpning i stopbåndet på $14$dB.
 	\item Der ønskes en maksimal dæmpnning i pasbåndet på $3$dB.
-	\item De benyttede modstande til designet af forstærkeren skal besidde den navngivne værdi.
+%	\item De benyttede modstande til designet af forstærkeren skal besidde den navngivne værdi.
 \end{itemize}
 \noindent \textbf{Tolerance:}
 \begin{itemize}
-	\item Der accepteres en afvigelse i spændingsforsyning på $\pm9\%$.
-	\item Der accepteres at inputsignalet er minimum $\pm3$V
-	\item Der accepteres ikke en knækfrekvens i pasbåndes på over $25$Hz.
-	\item Der accepteres ikke en stopbåndsfrekvens på under $45$Hz eller over $50$Hz.
-	\item Der accepteres minimal dæmpning på $14$dB af stopbåndet eller en afvigelse på $+15\%$.
-	\item Der accepteres maksimal dæmpning på $3$dB af pasbåndet eller en afvigelse på $-15\%$.
-	\item Der accepteres en afvigelse i de benyttede modstandes reelle værdi på $\pm1\%$.
+	\item Der accepteres en afvigelse i spændingsforsyning på $\pm9\%$.\fxnote{NTK: Den må gerne være +9\%, bare den ikke kommer under 5V. Kan tage maks 15V.}
+	\item Der accepteres et inputsignal over $\pm3$V.
+	\item Der accepteres ikke en pasbåndsfrekvens på over $25$Hz.
+	\item Der accepteres ikke en stopbåndsfrekvens på over $49$Hz.
+	\item Der accepteres en minimal dæmpning på $14$dB af stopbåndet.
+	\item Der accepteres en maksimal dæmpning på $3$dB af pasbåndet.
+%	\item Der accepteres en afvigelse i de benyttede modstandes reelle værdi på $\pm1\%$.
 \end{itemize}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Tilpasning}\label{Tilpasningsblok}
-Blokken tilpasning har til formål at tilpasse det filtrerede signal til komparatoren. Dette gøres med en forstærker, således at spektret, der skal reguleres indenfor, øges. Derudover afgrænses måleintervallet til $\pm25^{\circ}$, da et range på $\pm90^{\circ}$ er unødvendigt ift. at vurdere hvorvidt patienten er faldet. Det vurderes, at en hældning på over $25^{\circ}$ medfører fald, da denne hældning ligger væsentligt ud over den naturlige hældningsgrad, jævnfør afsnit \ref{BalanceAfsnit} på side \pageref{BalanceAfsnit}. Der ønskes størst mulig forstærkning indenfor det fastsatte arbejdsområde på $\pm3$V. Indgangsimpedansen bestemmes ud fra samme kriterier som for forstærkeren i opsamlingsblokken. I bilag \ref{Bilag:Pilotforsoeg} på side \pageref{Bilag:Pilotforsoeg} er den størst mulige spænding efter justering af offsettet udregnet, hvilket er $0.3313V$. Derudover er den maksimale volt pr. grad er $0.0037$V beregnet. Ved $\pm25^{\circ}$ vil outputtet være:
+Blokken tilpasning har til formål at tilpasse det filtrerede signal til komparatoren. Dette gøres med en forstærker, således at området, der arbejdes indenfor, øges. Derudover afgrænses måleintervallet til $\pm25^{\circ}$, da et range på $\pm90^{\circ}$ er unødvendigt ift. at vurdere hvorvidt patienten er faldet. Det vurderes, at en hældning på over $25^{\circ}$ medfører fald, da denne hældning ligger væsentligt udenfor den naturlige hældningsgrad, jævnfør afsnit \ref{BalanceAfsnit}, side \pageref{BalanceAfsnit}. Der ønskes størst mulig forstærkning indenfor det fastsatte arbejdsområde på $\pm3$V. Indgangsimpedansen bestemmes ud fra samme kriterier som for forstærkeren i opsamlingsblokken. I bilag \ref{Bilag:Pilotforsoeg}, side \pageref{Bilag:Pilotforsoeg} er den maksimale volt pr. grad beregnet til $0.0037$V. Ved $\pm25^{\circ}$ vil outputtet være:
 \begin{align}
 \label{Udreg3} 0.0037 \cdot 25 = 0.0925V
 \end{align}
-Forstærkerens faktor samt gain i dB udregnes i \eqref{TilpasEq2} og \eqref{TilpasEq3}.
+\noindent For at beregne forstærkningen i tilpasningsblokken, skal outputtet ganges med forstærkningen fra den tidligere blok med en faktor $9.1$. Forstærkerens faktor samt gain i dB udregnes i \eqref{TilpasEq2} og \textbf{\ref{TilpasEq3}}.
 \begin{align}
 \label{TilpasEq1} 0.0925V \cdot 9.1 = 0.8418V \\
 \label{TilpasEq2} \dfrac{3V}{0.8418V} = 3.5638 \approx 3.6 \\
 \label{TilpasEq3} 20 \cdot log_{10} (3.6) = 11.1261\text{dB}
 \end{align} 
-I \eqref{TilpasEq1}, \eqref{TilpasEq2} og \eqref{TilpasEq3} er de $3V$ grænsen for arbejdsområdet. Der forstærkes med en faktor $3.6$. \\
+\noindent I \eqref{TilpasEq1}, \textbf{\ref{TilpasEq2}} og \textbf{\ref{TilpasEq3}} er de $3V$ grænsen for arbejdsområdet. Dette giver en forstærkning med faktor $3.6$. \\
 
 \noindent\textbf{Krav:}
 \begin{itemize}
-	\item Forstærkeren skal modtage en spændingsforsyning på $5.5$V.
+	\item Forstærkeren skal modtage en spændingsforsyning på $\pm5.5$V.
 	\item Forstærkeren skal kunne modtage et inputsignal på $\pm3$V.
 	\item Forstærkeren skal forstærke med en faktor $3.6$, svarende til $11.1261$dB.
-	\item De benyttede modstande til designet af forstærkeren skal besidde den navngivne værdi.
-	\item Indgangsimpedansen skal være over $3.2M\Omega$.
-	\item Outputimpedansen skal være under $32K\Omega$.
+%	\item De benyttede modstande til designet af forstærkeren skal besidde den navngivne værdi.
+	\item Indgangsimpedansen skal være minimum $3.2M\Omega$.
+	\item Outputimpedansen skal være maksimum $32K\Omega$.
 \end{itemize}
 \noindent\textbf{Tolerance:}
 \begin{itemize}
-	\item Der accepteres en afvigelse i spændingsforsyningen på $\pm9\%$.
-	\item Der accepteres ingen afvigelse ift. hvor stort et inputsignal forstærkeren skal kunne modtage.
+	\item Der accepteres en afvigelse i spændingsforsyningen på $\pm9\%$.\fxnote{NTK: Den må gerne være +9\%, bare den ikke kommer under 5V. Kan tage maks 15V.}
+	\item Der accepteres et inputsignal over $\pm3$V.
 	\item Der accepteres en afvigelse i forstærkningen på $\pm2\%$.
-	\item Der accepteres en afvigelse i de benyttede modstandes reelle værdi på $\pm1\%$.
-	\item Der accepteres en indgangsimpedans på mindst $3.2M\Omega$.
-	\item Der accepteres en outputimpedans under $32K\Omega$.
+%	\item Der accepteres en afvigelse i de benyttede modstandes reelle værdi på $\pm1\%$.
+	\item Der accepteres en indgangsimpedans på minimum $3.2M\Omega$.
+	\item Der accepteres en outputimpedans maksimum $32K\Omega$.
 \end{itemize}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Referencespænding til komparatoren}\label{Ref_Kompar_Afs}
+\subsection{Referencespænding til feedbackkonfigurationen}\label{Ref_Kompar_Afs}
 Denne blok skal forsyne komparatoren med en konstant spænding, der skal anvendes til sammenligning imellem et inputsignal og denne spændingsværdi.
-Blokken skal levere $2.5$V, da spændingsdelingen er implementeret i komparatorblokken for at give individuelle tærskelværdier til feedbackblokken. \\ 
+Blokken skal levere $\pm2.5$V, da spændingsdelingen er implementeret i komparatorblokken for at give individuelle tærskelværdier til feedbackblokken. \\ 
 \noindent\textbf{Krav:}
 \begin{itemize}
-	\item Referencespændingsblokken til offsettet skal have en spændingsforsyning på $5.5$V.
-	\item Spændingsreferencen skal levere en strøm på $2.5$V.
+	\item Referencespændingsblokken til feedbackkonfigurationen skal have en spændingsforsyning på $\pm5.5$V.
+	\item Spændingsreferencen skal levere en spænding på $2.5$V.
 	\item Blokken skal samlet levere to outputs: $2.5$V og -$2.5$V.
-	\item De benyttede modstande til designet af forstærkeren skal besidde den navngivne værdi.
+%	\item De benyttede modstande til designet af forstærkeren skal besidde den navngivne værdi.
 \end{itemize}
 \noindent \textbf{Tolerance:}
 \begin{itemize}
 	\item Der accepteres en afvigelse i spændingsforsyning på $\pm1\%$.
 	\item Der accepteres en afvigelse i outputtet fra blokken på $\pm1\%$.
-	\item Der accepteres en afvigelse i outputtet fra spændingsreferencen på $\pm1\%$. 
-	\item Der accepteres en afvigelse i de benyttede modstandes reelle værdi på $\pm1\%$.
+	\item Der accepteres en afvigelse i outputtet fra spændingsreferencen på $\pm0.8\%$. 
+%	\item Der accepteres en afvigelse i de benyttede modstandes reelle værdi på $\pm1\%$.
 \end{itemize}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Feedbackkonfiguration}\label{KomparatorAfs}
-Blokken indeholdende komparatorer skal kunne sammenligne et inputsignal på maksimum $\pm3$V med referencespændinger. Komparatorerne skal vha. definerede tærskelværdier bestemme, hvilken hældningsgrad patienten har, og i hvilken retning vedkommende hælder mod. Der skal være flere tærskelværdier, så feedbacken kan gives i flere niveauer. Tærskelværdierne er bestemt på baggrund af pilotforsøg, hvor værdierne er beregnet ved først at finde spændingen for $90^{\circ}$, jævnført \ref{Sec_Pilot_Data} på side \pageref{Sec_Pilot_Data} er $0.3313$V for positiv retning og -$0.3233$V i negativ retning efter forstærkning på hhv. en faktor $9.1$ og derefter en faktor $3.6$. Denne værdi divideres med $90$ for at bestemme spændingen ved $\pm1^{\circ}$ og ganges herefter med hhv. $2^{\circ}$,  $8^{\circ}$ og $13^{\circ}$ for at bestemme spændingen ved de enkelte hældninger og derved definere tærskelværdierne.\\
-Visuel og somatosensorisk feedback omfatter den del af systemet, der giver feedback til patienten vha. lys fra LEDer og vibration ved vibratorer . Der skal i alt være fem LEDer: En grøn, der placeres i midten, en gul på hver side af den grønne diode og en rød diode på hver side af de gule dioder. Derudover skal der være to vibratorer, der placeres medialt på hver underarm af patienten.\\
-Den grønne LED skal lyse, når accelerometret er placeret korrekt på patienten, hvorved der er sikret den rette udgangsposition for hældningen. Dette gør, at den grønne LED er aktiveret fra $0^{\circ}$-$\pm2^{\circ}$. I intervallet $\pm2^{\circ}$-$\pm8^{\circ}$ lyser ingen LEDer. Den gule LED samt en vibrator aktiveres, når patienten skal være opmærksom på sin kropshældning ved en hældning på $\pm8^{\circ}$. Den røde LED aktiveres, når patienten er over $\pm13^{\circ}$ og derfor er i fare for at falde. Vibratoren for den pågældende side vil da stadig være aktiveret. Retningen af patientens kropshældning bestemmes vha. placeringen af LED. Hvis aktiveringen af LEDerne går mod højre indikerer dette, at patienten er ved at falde til højre. Det samme gør sig gældende for fald til venstre. \\
+Blokken indeholdende komparatorer og feedbackkomponenter skal kunne sammenligne et inputsignal på $\pm3$V med referencespændinger. Komparatorerne skal vha. definerede tærskelværdier bestemme, hvilken hældningsgrad patienten har, og i hvilken retning vedkommende hælder mod. Der skal være flere tærskelværdier, så feedbacken kan gives i flere niveauer.\\
+Jævnfør afsnit \ref{BalanceAfsnit}, side \pageref{BalanceAfsnit} er balancefunktionen individuel, hvorfor det vurderes, at hvis en patient hælder over $8^{\circ}$ i positiv eller negativ retning, er vedkommende i den første risikozone. Desuden vurderes det, at hvis hældningen er over $13^{\circ}$ i positiv eller negativ retning, er vedkommende i anden risikozone og er i risiko for fald. Hvis accelerometret er placeret korrekt, skal accelerometret have en maksimum hældning på $\pm2^{\circ}$. \\
+%Tærskelværdierne er bestemt på baggrund af pilotforsøget, hvor værdierne er beregnet ved først at finde spændingen for $90^{\circ}$, jævnfør bilag \ref{Sec_Pilot_Data}, side \pageref{Sec_Pilot_Data}. Disse er $0.3313$V for positiv retning og -$0.3233$V i negativ retning efter forstærkning på hhv. en faktor $9.1$ og en faktor $3.6$. Denne værdi divideres med $90$ for at bestemme spændingen ved $\pm1^{\circ}$ og ganges herefter med hhv. $2^{\circ}$,  $8^{\circ}$ og $13^{\circ}$ for at bestemme spændingen ved de enkelte hældninger og derved definere tærskelværdierne.\\
+Visuel og somatosensorisk feedback omfatter den del af systemet, der giver feedback til patienten vha. lys fra LED'er og vibration fra vibratorer. Der skal i alt være fem LED'er: En grøn, der placeres i midten, en gul på hver side af den grønne LED og en rød LED på hver side af de gule LED'er. Derudover skal der være to vibratorer, der kan placeres på patientens krop.\\
+Den grønne LED skal lyse, når accelerometret er placeret korrekt på patienten, hvorved der er sikret den rette udgangsposition for hældningen. Dette gør, at den grønne LED er aktiveret i intervallet $\pm2^{\circ}$. I intervallet $\pm2^{\circ}-\pm8^{\circ}$ lyser ingen LED'er. Den gule LED samt en vibrator aktiveres, når patienten er i den første risikozone, hvilket er $\pm8^{\circ}$. Den røde LED aktiveres, når patienten er over $13^{\circ}$ i positiv eller negativ retning og derfor er i risikozone to. Vibratoren for den pågældende side vil da stadig være aktiveret ved både den gule og røde LED. Retningen af patientens kropshældning bestemmes vha. placeringen af LED. Hvis aktiveringen af LED'erne går mod højre indikerer dette, at patienten hælder til højre. Det samme gør sig gældende for hældning til venstre. \\
 \textbf{Krav:} 
 \begin{itemize}
-	\item feedbackblokken skal have en spændingsforsyning på $\pm5.5$V.
-	\item Komparatoren skal kunne modtage et inputsignal på $\pm3$V $+5\%$.
+	\item Feedbackblokken skal have en spændingsforsyning på $\pm5.5$V.
+	\item Komparatoren skal kunne modtage et inputsignal på $\pm3$V.
 	\item Komparatoren skal ved et bestemt spændingsniveau aktivere en LED og/eller vibrator:
 	\begin{itemize}
-		\item Grøn LED og ingen vibration: I intervallet indenfor $0.2424$V til -$0.2359$V. Svarende til $\pm2^{\circ}$.
-		\item Gul LED og vibration: Fra niveauet $0.9697$V og -$0.9495$V. Svarende til $\pm 8^{\circ}$ eller over.
-		\item Rød LED og vibration: Fra nivauet $1.5758$V og -$1.5332$V. Svarende til $\pm13^{\circ}$ eller over.
+		\item Grøn LED og ingen vibration: $\pm2^{\circ}$.
+		\item Gul LED og vibration: $8^{\circ}$ i positiv eller negativ retning eller over.
+		\item Rød LED og vibration: $13^{\circ}$ i positiv eller negativ retning eller over.
 		%\item Ingen feedback: Over $2.2602$V og under -$2.2168$V. 
 	\end{itemize}
-	\item LEDerne og vibratorerne skal aktiveres ved angivet tærskelværdier i komparatoren.
+	\item LED'erne og vibratorerne skal aktiveres ved angivende tærskelværdier i komparatoren.
 \end{itemize}
 \textbf{Tolerance:}
 \begin{itemize}
 	\item Der accepteres en afvigelse i spændingsforsyningen på $\pm5\%$.
-	\item Der accepteres ingen afvigelse ift. hvor stort et inputsignal komparatoren skal kunne modtage.
+	\item Der accepteres et inputsignal over $\pm3$V.
 	\item Der accepteres en afvigelse af tærskelværdierne på $\pm1\%$
-	\item Der accepteres en afvigelse af påbegyndt spændingsfald over den gule og røde LEDen på $\pm5\%$.
+	\item Der accepteres en afvigelse af påbegyndt spændingsfald over de gule og røde LED'er på $\pm5\%$.
 	\item Der accepteres en afvigelse af påbegyndt spændingsfald over den grønne LED på $\pm20\%$.
 	%\item Der accepteres ingen afvigelse ift. aktivering af LED og vibratorerne, hvis tærskelværdierne for den bestemte LED er opnået i komparatorblokken.
 \end{itemize}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Spændingsforsyning}\label{Krav_spaending_spicifikt}
-I systemet anvendes en spændingsforsyning af to $1.5$V batterier placeret i en spændingsregulator, der skal levere en konstant spænding til hele kredsløbet. Der anvendes batterier for at undgå tilslutning til elnettet, hvilket gør systemet sikkert og anvendeligt for patienten. Spændingsforsyningen kan havde indflydelse på, hvilket outputsignal der opnås, og det er derfor vigtigt, at blokkene i systemet designes efter den fastsatte spænding. \\
+I systemet anvendes en spændingsforsyning af to $1.5$V batterier placeret i en spændingsregulator, der skal levere en konstant spænding til hele kredsløbet. Denne har flere outputterminaler. Der anvendes batterier for at undgå tilslutning til elnettet, hvilket gør systemet sikkert og anvendeligt for patienten. Spændingsforsyningen kan havde indflydelse på, hvilket outputsignal der opnås, og det er derfor vigtigt, at blokkene i systemet designes efter den fastsatte spænding. \\
 \noindent\textbf{Krav:}
 \begin{itemize}
-	\item Spændingsregulatoren skal levere en spænding på mindst $3.4$V og $5.5$V fra hver terminal.
+	\item Spændingsregulatoren skal levere en spænding på mindst $3.4$V og $\pm5.5$V fra hver terminal.
 	\item Spændingsregulatoren skal forsyne samtlige blokke i systemet med den minimale krævede spænding.
-	\item Spændingsregulatorens forsyning må ikke forårsage klipning af signalet.
+%	\item Spændingsregulatorens forsyning må ikke forårsage klipning af signalet.
 \end{itemize}
 \noindent\textbf{Tolerance:}
 \begin{itemize}
-	\item Der accepteres ikke en spænding under $5.5$V.
-	\item Der accepteres afvigelse i $3.4$V spændingsleveringen på $\pm10\%$.
-	\item Der accepteres ingen afvigelse for spændingsregulatorens tilkobling eller klipning af signalet.
+	\item Der accepteres ikke en spænding under $\pm5.5$V.
+	\item Der accepteres afvigelse i $3.4$V spændingsleveringen på $\pm5\%$.\fxnote{NTK: ellers tager shot-key for meget spænding, så vibratorerne ikke vil aktiveres.}
+%	\item Der accepteres ingen afvigelse for spændingsregulatorens tilkobling eller klipning af signalet.
 	%\item Der accepteres ingen spænding højere end dioderne kan tåle \fxnote{måske en anden måde det kan skrives på}
 \end{itemize}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{ADC}
-Blokken med en ADC anvendes i systemet, for at konvertere det analoge signal til digitalt. %Den skal kunne sample det forstærkede signal. 
-ADC'ens inputsignal vil ligge i området $\pm3V$, men der skal tages højde for afvigelser. Båndbredden på accelerometeret bestemmer, hvilken samplingsfrekvens der skal benyttes. I følge Nyquists sætning skal der samples med minimun det dobbelte af det biologiske signals frekvens. I praksis samples der med minimum det tidobbelte, jævnfør afsnit \ref{ADCafsnit} på side \pageref{ADCafsnit}. I dette tilfælde er båndbredden $25Hz$, dvs. at der som minimum skal samples med $50Hz$, og i praksis vil det være hensigtsmæssigt at sample med minimum $250Hz$. \\
+Blokken med en ADC anvendes i systemet, for at konvertere det analoge signal til et digitalt signal. %Den skal kunne sample det forstærkede signal. 
+ADC'ens inputsignal vil ligge i området $\pm3$V. Accelerometrets båndbredde bestemmer, hvilken samplingsfrekvens der skal benyttes. Ifølge Nyquists lov, jævnfør afsnit \ref{ADCafsnit}, side \pageref{ADCafsnit}, samples der med minimum det tidobbelte af båndbredden. Jævnfør pilotforsøget i bilag \ref{Bilag:Pilotforsoeg}, side \pageref{Bilag:Pilotforsoeg} er båndbredden $25$Hz, dvs. at der som minimum skal samples med $50$Hz, og i praksis vil det være hensigtsmæssigt at sample med minimum $250$Hz. \\
 \textbf{Krav:}
 \begin{itemize}
-	\item ADCen skal kunne modtage et inputsignal på $\pm4$V \fxnote{NTK: for at tage højde for tolerancer}.
-	\item Skal have en samplingsfrekvens på minimum $250$Hz.
-	\item Skal ikke ændre på det signalet, som den optager.
+	\item ADC'en skal mindst kunne modtage et signal på $\pm4$V.\fxnote{NTK: for at tage højde for tolerancer}
+	\item ADC'en skal have en samplingsfrekvens på minimum $250$Hz.
+%	\item ADC'en skal ikke ændre på det signal, som den optager.
 \end{itemize}
 \textbf{Tolerance:}
 \begin{itemize}
-	\item Der accepteres ingen afvigelse ift. kravene om inputsignal og samplingsfrekvens.
+	\item Der accepteres ingen afvigelse ift. kravet om inputsignal.
+	\item Der accepteres en samplingsfrekvens på over det tidobbelte af båndbredden.
 	\item Der accepteres en afvigelse på $\pm1\%$ af ADC'ens målinger af signalet sammenlignet med det indsendte signal.
 \end{itemize}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -217,15 +220,15 @@ ADC'ens inputsignal vil ligge i området $\pm3V$, men der skal tages højde for 
 Blokken med USB-isolatoren anvendes i systemet for at øge patientens sikkerhed. USB-isolatoren isolerer patienten fra kredsløbet og sørger for, at der ikke løber lækstrømme fra computeren ind i systemet.\\
 \textbf{Krav:}
 \begin{itemize}
-	\item USB-isolatoren skal være i stand til at kunne modtage et signal på $\pm4$V. \fxnote{for at tage højde for tolerancer} 
+	\item USB-isolatoren skal mindst kunne modtage et signal på $\pm4$V. \fxnote{for at tage højde for tolerancer} 
 \end{itemize}
 \textbf{Tolerance:} 
 \begin{itemize}
-	\item Der accepteres ingen afvigelse ift. USB-isolatoren. 
+	\item Der accepteres ingen afvigelse ift. kravet om inputsignal. 
 \end{itemize}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%55
 \subsection{Software}\label{subsec:software}
-Blokken indeholdende softwaren implementeres i systemet for at kunne behandle og gemme patienternes øvelsesresultater. Denne del af systemet er brugerfladen for det fagkyndige personale og skal derfor kunne fremvise information omkring patienternes balance i form af grafer eller lignende. Det fagkyndige personale skal vha. af softwaren kunne følge med i patienternes udvikling ift. balancen. \\
+Blokken indeholdende softwaren implementeres i systemet for at kunne behandle og gemme patienternes øvelsesresultater. Denne del af systemet er brugerfladen for det fagkyndige personale og skal derfor kunne fremvise information omkring patienternes balance i form af grafer eller lignende. Det fagkyndige personale skal vha. softwaren kunne følge med i patienternes udvikling ift. rehabilitering af balancen. \\
 \textbf{Krav:}
 \begin{itemize}
 	\item Skal kunne fremvise data med information om patientens hældning, herunder hvor ofte patienten har bevæget sig ud i risikozonerne. 
@@ -234,5 +237,5 @@ Blokken indeholdende softwaren implementeres i systemet for at kunne behandle og
 \end{itemize}
 \textbf{Tolerance:}
 \begin{itemize}
-	\item Der accepteres ingen afvigelse ift. software. 
+	\item Der accepteres ingen afvigelse ift. krav til software. 
 \end{itemize}
