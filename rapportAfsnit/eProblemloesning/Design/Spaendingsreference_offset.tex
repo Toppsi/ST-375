@@ -6,7 +6,7 @@ Offsetjusteringen skal forsynes med en konstant spænding, da denne er sammenlig
 \begin{figure}[H]
 	\centering
 	\includegraphics[scale=0.7]{figures/cProblemloesning/ReferenceEksempel.PNG}
-	\caption{På figuren ses et eksempel på en opsætning af et kredsløb for en spændingsreference med referencedioden LM$385$. Modstanden $R1$ afhænger af $V_{in}$, $V_{out}$ samt strømforbruget fra LM$385$. \textit{(Revideret)} \cite{Instruments2005}}
+	\caption{På figuren ses et eksempel på en opsætning af et kredsløb for en spændingsreference med referencedioden LM$385$. Modstanden $R1$ afhænger af $V_{in}$, $V_{out}$ samt strømforbruget fra LM$385$. \textit{(Revideret)} \cite{National2005}}
 	\label{fig:Spaendingsreference}
 \end{figure}
 
@@ -15,7 +15,7 @@ Offsetjusteringen skal forsynes med en konstant spænding, da denne er sammenlig
 R1 = \dfrac{V_{forsyning} - V_{Reference}}{I_{Z}}
 \end{equation}
 \noindent Hvor $V_{forsyning}$ er forsyningsspændingen, der sendes ind i kredsløbet, $V_{Reference}$ er den referencespænding, der skal sendes ud af systemet, og $I_{Z}$ er strømforbruget fra de komponenter, som er i referencespændingskredsløbet. \\
-Først udregnes R$1$ for referencespændingen. $V_{forsyning}$ er de $5.5$V, der forsynes med fra spændingsforsyningen, og $V_{Reference}$ er $2.5$V. I kredsløbet for offsettet indgår en operationsforstærker (TL$081$), der har en maksimal biasstrøm på $10$nA \cite{Corporation1995}. Referencedioden har et arbejdsområde mellem $20\mu$A til $20m$A og for at sikre, at der er strøm nok til referencedioden, er den sat til at bruge $200\mu$A \cite{Instruments2005}. Dermed kan strømforbruget $I_{Z}$ udregnes som summen af de to biasstrømme. Alle de kendte værdier indsættes i formlen:
+Først udregnes R$1$ for referencespændingen. $V_{forsyning}$ er de $5.5$V, der forsynes med fra spændingsforsyningen, og $V_{Reference}$ er $2.5$V. I kredsløbet for offsettet indgår en operationsforstærker (TL$081$), der har en maksimal biasstrøm på $10$nA \cite{Corporation1995}. Referencedioden har et arbejdsområde mellem $20\mu$A til $20m$A og for at sikre, at der er strøm nok til referencedioden, er den sat til at bruge $200\mu$A \cite{National2005}. Dermed kan strømforbruget $I_{Z}$ udregnes som summen af de to biasstrømme. Alle de kendte værdier indsættes i formlen:
 \begin{equation}
 R1 = \frac{5.5V - 2.5V}{0.2mA + 10nA} = 14999.2500\Omega \approx 15K\Omega
 \end{equation}  
