@@ -64,13 +64,12 @@ Blokken skal levere $1.6325$V. Outputimpedansen må maksimalt være $1$K$\Omega$
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Filter}\label{FilterAfs}
 Blokken indeholdende et filter anvendes til at dæmpe uønskede signaler, der kan forekomme under målinger med accelerometret.\fxnote{NTK: Frekvensområdet for kropshældning er ikke klart defineret, men studier anvender et frekvensområde liggende mellem $0.02-10$Hz \cite{Martinez-Mendez2011}. Alle signaler, der ligger udenfor dette spektrum, ønskes derfor fjernet.} Frekvensområdet for kropshældning er ikke klart defineret, men i pilotforsøget blev der påvist, at signalet i dette tilfælde ligger mellem $0-25$Hz \cite{Martinez-Mendez2011}. Alle signaler uden for dette spektrum ønskes derfor dæmpet. Dette gøres ved at benytte et lavpasfilter med en pasbåndsfrekvens på $25$Hz. \\
-Den maksimale variation i pasbåndet ($A_{max}$) sættes til $3$dB. For at dæmpe $50$Hz støj, sættes stopbåndsfrekvensen til $45$Hz. Dæmpningsfaktoren af filteret udregnes ved LSB omtalt i afsnit \ref{ADC_afsnit}, side \pageref{ADC_afsnit} over den maksimale amplitude af signalet. LSB beregnes ud fra følgende ligninger: \\
-\begin{align}
-	LSB = \frac{20V}{2^{13}} = 0.00244V = 2.44\text{mV}
-\end{align}
-FSR er arbejdsområdet, dvs. $\pm10$V, imens n er antallet af bits, der kan samples med, dvs. $13$. Den maksimale amplitude beregnes ved en RMS-analyse på baggrund af rotationsmålingerne foretaget i pilotforsøget, jævnfør bilag \ref{Bilag:Pilotforsoeg}, side \pageref{Bilag:Pilotforsoeg}, for hhv. højre og venstre side. Dæmpningsfaktoren udregnes ved følgende ligninger:
-
-%Den udregnede LSB, jævnfør afsnit \ref{ADCafsnit} på side \pageref{ADCafsnit} samt den maksimale amplitude af signalet anvendes til beregning af dæmpningsfaktoren. Den maksimale amplitude beregnes ved en RMS-analyse på baggrund af rotationmålingerne foretaget i pilotforsøget, jævnfør bilag \ref{Bilag:Pilotforsoeg} på side \pageref{Bilag:Pilotforsoeg} for hhv. højre og venstre side. Dæmpningsfaktoren udregnes ved følgende ligning:
+Den maksimale variation i pasbåndet ($A_{max}$) sættes til $3$dB. For at dæmpe $50$Hz støj, sættes stopbåndsfrekvensen til $45$Hz. Dæmpningsfaktoren af filteret udregnes ved LSB over den maksimale amplitude af signalet. %LSB beregnes ud fra følgende ligninger: \\
+%\begin{align}
+%	LSB = \frac{20V}{2^{13}} = 0.00244V = 2.44\text{mV}
+%\end{align}
+%FSR er arbejdsområdet, dvs. $\pm10$V, imens n er antallet af bits, der kan samples med, dvs. $13$. Den maksimale amplitude beregnes ved en RMS-analyse på baggrund af rotationsmålingerne foretaget i pilotforsøget, jævnfør bilag \ref{Bilag:Pilotforsoeg}, side \pageref{Bilag:Pilotforsoeg}, for hhv. højre og venstre side. Dæmpningsfaktoren udregnes ved følgende ligninger:
+Den udregnede LSB, se afsnit \ref{ADC_afsnit}, side \pageref{ADC_afsnit}, og den maksimale amplitude af signalet anvendes til beregning af dæmpningsfaktoren. Den maksimale amplitude beregnes ved en RMS-analyse på baggrund af rotationmålingerne foretaget i pilotforsøget, jævnfør bilag \ref{Bilag:Pilotforsoeg}, side \pageref{Bilag:Pilotforsoeg}, for hhv. højre og venstre side. Dæmpningsfaktoren udregnes ved følgende ligning:
 \begin{equation}
 \label{eq:daempningsfaktor}
 \dfrac{0.00244\text{V}}{0.0141\text{V}} = 0.1730 \approx 0.2 
@@ -199,7 +198,7 @@ I systemet anvendes en spændingsforsyning af to $1.5$V batterier placeret i en 
 	%\item Der accepteres ingen spænding højere end dioderne kan tåle \fxnote{måske en anden måde det kan skrives på}
 \end{itemize}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{ADC}
+\subsection{ADC}\label{ADC_kravspecifikation}
 Blokken med en ADC anvendes i systemet, for at konvertere det analoge signal til et digitalt signal. %Den skal kunne sample det forstærkede signal. 
 ADC'ens inputsignal vil ligge i området $\pm3$V. Accelerometrets båndbredde bestemmer, hvilken samplingsfrekvens der skal benyttes. Ifølge Nyquists lov, jævnfør afsnit \ref{ADCafsnit}, side \pageref{ADCafsnit}, samples der med minimum det tidobbelte af båndbredden. Jævnfør pilotforsøget i bilag \ref{Bilag:Pilotforsoeg}, side \pageref{Bilag:Pilotforsoeg} er båndbredden $25$Hz, dvs. at der som minimum skal samples med $50$Hz, og i praksis vil det være hensigtsmæssigt at sample med minimum $250$Hz. \\
 \textbf{Krav:}
