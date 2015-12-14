@@ -71,6 +71,10 @@ Den maksimale variation i pasbåndet ($A_{max}$) sættes til $3$dB. For at dæmp
 %FSR er arbejdsområdet, dvs. $\pm10$V, imens n er antallet af bits, der kan samples med, dvs. $13$. Den maksimale amplitude beregnes ved en RMS-analyse på baggrund af rotationsmålingerne foretaget i pilotforsøget, jævnfør bilag \ref{Bilag:Pilotforsoeg}, side \pageref{Bilag:Pilotforsoeg}, for hhv. højre og venstre side. Dæmpningsfaktoren udregnes ved følgende ligninger:
 Den udregnede LSB, se afsnit \ref{ADC_afsnit}, side \pageref{ADC_afsnit}, og den maksimale amplitude af signalet anvendes til beregning af dæmpningsfaktoren. Den maksimale amplitude beregnes ved en RMS-analyse på baggrund af rotationmålingerne foretaget i pilotforsøget, jævnfør bilag \ref{Bilag:Pilotforsoeg}, side \pageref{Bilag:Pilotforsoeg}, for hhv. højre og venstre side. Dæmpningsfaktoren udregnes ved følgende ligning:
 \begin{equation}
+\dfrac{\text{LSB}}{\text{RMS}} = \text{dæmpningsfaktor}
+\end{equation}
+Hvor RMS enten kan være RMS for positiv rotation eller negativ rotation.
+\begin{equation}
 \label{eq:daempningsfaktor}
 \dfrac{0.00244\text{V}}{0.0141\text{V}} = 0.1730 \approx 0.2 
 \end{equation}

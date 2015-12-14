@@ -35,16 +35,14 @@ Der foretages tre simuleringer i LTspice - en for hhv. det højeste, middel og l
 	\end{tabular}
 	\caption{I tabellen ses resultaterne fra simuleringerne af offsettet for hhv. det højeste, middel og laveste input, som blokken kan modtage fra accelerometeret.}
 	\label{Tab:offset_sim}
-\end{table}
-\noindent I tabellen fremgår det, at der er en lav afvigelse imellem de forventede og simulerede outputsignaler. Dette betyder, at kredsløbet fungerer rent teoretisk med ideelle komponenter. På \figref{fig:Offset_simulering} ses simuleringen af $1.6325$V input fra accelerometret.
- 
+\end{table} 
 \begin{figure}[H]
 \centering
 \includegraphics[scale=0.38]{figures/cProblemloesning/Offset_simulering.png}
 \caption{På figuren ses en simulering af $1.6325$V input, hvilket giver et output på $\approx 0$V.}
 \label{fig:Offset_simulering}
 \end{figure}
-
+\noindent I tabel \tableref{Tab:offset_sim} fremgår det, at der er en lav afvigelse imellem de forventede og simulerede outputsignaler. Dette betyder, at kredsløbet fungerer rent teoretisk med ideelle komponenter. På \figref{fig:Offset_simulering} ses simuleringen af $1.6325$V input fra accelerometret.
 \subsubsection{Implementering og test}
 %I implementeringen bruges er reelle komponenter. Derfor antages der, at der kan være afvigelser fra resultaterne imellem simuleringen med ideelle komponenter og testen med reelle komponenter i implementeringen. \\
 Der ses på \figref{fig:Offset_generisk}, at der skal benyttes fire modstande på $100$K$\Omega$ til opbygningen af offsettet. Resultatet af testen fremgår i \tableref{Tab:modstand_offset}.
