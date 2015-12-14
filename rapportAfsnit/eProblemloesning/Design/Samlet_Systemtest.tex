@@ -1,9 +1,9 @@
 % !TeX spellcheck = da_DK
 \section{Samlet systemtest}
-Efter de enkelte blokke er blevet testet og godkendt hver for sig, skal det samlede system testes. Formålet med den samlede systemtest er at kontrollere, hvorvidt systemet overholder de overordnede funktionelle krav jævnfør afsnit \ref{FunkKrav} på side \pageref{FunkKrav}. Der anvendes samme fremgangsmåde for test af det samlede system, som af de øvrige blokke; Først simuleres systemet i LTspice, hvorefter det implementeres og testes.
+Efter de enkelte blokke er blevet testet og godkendt hver for sig, skal det samlede system testes. Formålet med den samlede systemtest er at kontrollere, hvorvidt systemet overholder de overordnede funktionelle krav jævnfør afsnit \ref{FunkKrav}, side \pageref{FunkKrav}. Der anvendes samme fremgangsmåde for test af det samlede system, som af de øvrige blokke; Først simuleres systemet i LTspice, hvorefter det implementeres og testes.
 
 \subsection{Simulering}
-I simuleringen af det samlede system kontrolleres det, som i de øvrige simuleringer, om systemet fungerer med ideelle komponenter. Denne kontrol udføres ved at indsende et sinussignal som inputspænding til systemet, som teoretisk skal aktivere hhv. de enkelte dioder og vibratorerne. Designet af det samlede system ses på \figref{fig:samlet_system}:
+I simuleringen af det samlede system kontrolleres det, som i de øvrige simuleringer, om systemet fungerer ideelt. I simuleringen undersøges der, hvorvidt feedbackkomponenterne aktiverer ved de angivende hældningsgrader. Denne kontrol udføres ved at indsende et sinussignal som inputspænding til systemet, der teoretisk skal aktivere hhv. de enkelte LED'er og vibratorer. Simuleringen udføres efter samme principper, som simuleringen af feedbackkonfigurationen, jævnfør afsnit \ref{feedback_simulering}, side \pageref{feedback_simulering}. Designet af det samlede system ses på \figref{fig:samlet_system}:
 \begin{figure}[H]
 	\centering
 	\includegraphics[scale=.38]{figures/cProblemloesning/Samlet_systemUL.PNG}
@@ -12,10 +12,10 @@ I simuleringen af det samlede system kontrolleres det, som i de øvrige simuleri
 \end{figure}
 \noindent Sinussignalets amplitude udregnes til at være:
 \begin{eqnarray}
-0.0037 \cdot (\dfrac{(25-13)}{2} + 13) = 0.0703V
+0.0037\text{V} \cdot 19^{\circ} = 0.0703V
 \end{eqnarray}
-\noindent $0.0037$V er den maksimale spænding fra accelerometret ved $1^{\circ}$ hældning. Dette ganges med $19$, hvilket er midterpunktet for aktivering af en rød diode ($13^{\circ}$ hældning) og mætning af den sidste forstærker ($25^{\circ}$ hældning). Der opnås en amplitude på $0.0703$V. Det kan derved måles, om systemet teoretisk opfylder de overordnede funktionelle krav jævnfør afsnit \ref{FunkKrav} på side \pageref{FunkKrav}.\\
-For at simulere systemet, som ses \figref{fig:samlet_system}, er det nødvendigt at foretage nogle basale ændringer i det opstillede system i LTspice, for at en computer kan køre det. Ændringerne omfatter, at blokke, som leverer en uændret spænding, udskiftes med en spændingsforsyning, som leverer denne spændingsværdi. Dermed fjernes nogle operationsforstærkere fra det teoretisk opstillede system, hvorefter computeren kan konfigurere en simulering. Designet med basale ændringer kan ses på \figref{fig:samlet_system}
+\noindent Den maksimale spænding fra accelerometret ved $1^{\circ}$ hældning er $0.0037$V. Dette ganges med $19$, da den røde LED teoretisk aktiveres ved $13^{\circ}$ og arbejdsområdet for forstærkeren i tilpasningsblokken er $\pm25^{\circ}$. Dermed er midtpunktet mellem disse to grænser $19^{\circ}$. Det kan derved måles igennem simuleringen, om systemet teoretisk opfylder de overordnede funktionelle krav jævnfør afsnit \ref{FunkKrav} på side \pageref{FunkKrav}.\\
+For at simulere systemet, som ses \figref{fig:samlet_system}, er det nødvendigt at foretage nogle basale ændringer i det opstillede system i LTspice, for at en computer kan køre det. Ændringerne omfatter, at blokke, som leverer en uændret spænding, udskiftes med en spændingsforsyning, der leverer denne spændingsværdi. Dermed fjernes nogle operationsforstærkere fra det teoretisk opstillede system, hvorefter computeren kan konfigurere en simulering. Designet med basale ændringer kan ses på \figref{fig:samlet_system}
 \begin{figure}[H]
 	\centering
 	\includegraphics[scale=.38]{figures/cProblemloesning/Samlet_system2_sim.PNG}
