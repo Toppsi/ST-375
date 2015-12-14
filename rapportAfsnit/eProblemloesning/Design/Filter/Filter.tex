@@ -79,7 +79,7 @@ C_3 \geq 100\text{nF} \frac{4\cdot 1}{1^2} \Rightarrow C_3 \geq 400\text{nF}
 
 \noindent Ud fra ovenstående ligning vælges $C_3$ til at være $470$nF for at opfylde \eqref{eq:kondensator} og er derudover til rådighed i laboratoriet. Når værdierne for C er bestemt, kan modstandene for filteret bestemmes. For et $1$. ordens lavpasfilter benyttes \eqref{eq:Lavpas1Modstande} til at beregne $R_1$ og for et $2$. ordens lavpasfilter anvendes \eqref{eq:2ordenmodstand} for at beregne $R_2$ og $R_3$. 
 \begin{equation} \label{eq:1ordenmodstand}
-R_{1} = \frac{1}{2 \cdot \pi \cdot 25 \cdot 100nF} R_{1} = 63661.9772 \Omega
+R_{1} = \frac{1}{2 \cdot \pi \cdot 25 \cdot 100nF} = 63661.9772 \Omega
 \end{equation}
 \begin{equation}
 \label{eq:2ordenmodstand}R_{2,3} = \frac{1 \cdot 470\text{nF} \pm \sqrt{1^2 \cdot 470\text{nF}^2 - 4 \cdot 1 \cdot 100\text{nF} \cdot 470\text{nF}}}{4 \pi \cdot 25\text{Hz} \cdot 100\text{nF} \cdot 470\text{nF}} = \begin{cases} R_{2} = 19546.69414 \Omega \\ R_{3} =  44115.28306 \Omega \end{cases}
@@ -94,58 +94,59 @@ R_{1} = \frac{1}{2 \cdot \pi \cdot 25 \cdot 100nF} R_{1} = 63661.9772 \Omega
 \end{figure}
 
 \subsubsection{Simulering}
-For at udføre en simulering af $3$. ordens lavpasfilteret, foretages en AC-analyse, der beskriver forholdet mellem frekvensindholdet og filterets dæmpning. Kredsløbet simuleres med et inputsignal, der har en amplitude på $1$V. Der foretages en simulering i LTspice ud fra kravspecifikationerne i afsnit \ref{FilterAfs} på side \pageref{FilterAfs}. I simuleringen vil der blive undersøgt, hvorledes kravene stemmer overens med kravspecifikationerne, ved at betragte et bodeplot over det simulerede $3$. ordens filter.
+For at udføre en simulering af $3$. ordens lavpasfilteret foretages en AC-analyse, der beskriver forholdet mellem frekvensindholdet og filterets dæmpning. Kredsløbet simuleres med et inputsignal, der har en amplitude på $1$V. I simuleringen undersøges det, hvorvidt filtret overholder kravspecifikationerne, jævnfør afsnit \ref{FilterAfs}, side \pageref{FilterAfs}, ved at betragte et bodeplot over det simulerede $3$. ordens filter.
 \begin{figure}[H]
 	\centering
 	\includegraphics[scale=0.35]{figures/cProblemloesning/Lavpasfilter_LTspice.PNG}
-	\caption{På figuren ses designet af $3$. ordens lavpasfilteret. Filteret simuleres i LTspice vha. en AC-analyse med et inputsignal, der har en amplitude på $1$V.}
+	\caption{På figuren ses designet af $3$. ordens lavpasfilteret. Filteret simuleres vha. en AC-analyse med et inputsignal, der har en amplitude på $1$V.}
 	\label{fig:lavpasfilter_LTspice}
 \end{figure}
 \begin{figure}[H]
 	\centering
 	\includegraphics[scale=0.38]{figures/cProblemloesning/Lavpasfiltergraf_LTspice2.PNG}
-	\caption{På figuren ses en illustration af et bodeplot, der viser $3$. ordens filterets frekvensindhold målt i Hz over dæmpningen målt i dB. Lavpasfilteret er simuleret i LTspice.}
+	\caption{På figuren ses en illustration af et bodeplot, der viser $3$. ordens filterets frekvensindhold målt i Hz over dæmpningen målt i dB.}
 	\label{fig:lavpasfiltergraf_LTspice1}
 \end{figure}
-\noindent Af bodeplottet fremgår det, at det simulerede filter har en maksimal amplitude i db på $-3.012$ ved en pasbånsfrekvensfrekvens på $25$Hz, hvilket ikke overholder kravspecifikationerne i afsnit \ref{FilterAfs}, side \pageref{FilterAfs}. Grundet den lave afvigelse accepteres afvigelsen i midlertid og der udføres derfor endnu en simulering af filteret med de reelle modstande, der kan benyttes under implementeringen. \\
-Der ses på \figref{fig:lavpasfiltergraf_LTspice1}, at der skal benyttes tre modstande på hhv. $63661.9772\Omega$, $44115.2831\Omega$ og $19546.694\Omega$ til opbygningen af filtret. Ingen af disse modstande findes reelt, hvorfor de nærmeste alternativer er udregnet. For at få $63661.9772\Omega$ skal en $1$M$\Omega$  sættes parallelt med $68$K$\Omega$, hvilket teoretisk giver en afvigelse på $0.013\%$. For at få $44115.2831\Omega$ skal $680$K$\Omega$ sættes parallelt med $47$K$\Omega$, hvilket teoretisk giver en afvigelse på $0.349\%$. For at få en $19546.694\Omega$ sættes $39$K$\Omega$ parallelt med $39$K$\Omega$, hvilket teoretisk giver en afvigelse på $0.239\%$. Disse blev målt, hvilket kan ses i \tableref{Tab:Maalingafmodstande_filter}.
+\noindent Af \figref{fig:lavpasfiltergraf_LTspice1} fremgår det, at det simulerede filter har en maksimal dæmpning i dB på $3.012$ ved en pasbåndfrekvens på $25$Hz, hvilket ikke overholder kravspecifikationerne i afsnit \ref{FilterAfs}, side \pageref{FilterAfs}. Grundet den lave afvigelse accepteres lavpasfiltret i midlertid og der udføres derfor endnu en simulering af filteret med de reelle modstande, der benyttes under implementeringen. Der ses yderligere, at der ved en stopbåndsfrekvens på $45$Hz ses en dæmpning i dB på $15.443$. Dette overholder projektets opstillede krav for filterkonfigurationen ved en minimum dæmpning på $14$ dB i stopbåndfrekvensen.
+
+Der ses på \figref{fig:lavpasfilter_LTspice}, at der skal benyttes tre modstande på hhv. $63661.9772\Omega$, $44115.2831\Omega$ og $19546.694\Omega$ til opbygningen af filtret. Ingen af disse modstande findes reelt, hvorfor de nærmeste alternativer er udregnet. For at få $63661.9772\Omega$ skal en $1$M$\Omega$  sættes parallelt med $68$K$\Omega$, hvilket teoretisk giver en afvigelse på $0.013\%$. For at få $44115.2831\Omega$ skal $680$K$\Omega$ sættes parallelt med $47$K$\Omega$, hvilket teoretisk giver en afvigelse på $0.349\%$. For at få en $19546.694\Omega$ sættes $39$K$\Omega$ parallelt med $39$K$\Omega$, hvilket teoretisk giver en afvigelse på $0.239\%$. Disse blev målt, hvilket ses i \tableref{Tab:Maalingafmodstande_filter}.
 \begin{table}[H]
 	\centering
 	\begin{tabular}{|l|l|l|l|}
 		\hline
 		\textit{}                                     & \textit{Teoretisk} & \textit{Måling}    & \textit{Afvigelse} \\ \hline
-		\multirow{2}{*}{\textit{$R_{1}$(Parallel) :}} & $1$M$\Omega$       & $1.000006$M$\Omega$  & $\approx 0\%$           \\ \cline{2-4} 
-		& $68$K$\Omega$      & $68.079$K$\Omega$ & $0.011\%$           \\ \cline{2-4}
+		\multirow{2}{*}{\textit{$R_{1}$ || :}} & $1$M$\Omega$       & $1$M$\Omega$  & $0\%$           \\ \cline{2-4} 
+		& $68$K$\Omega$      & $68.079$K$\Omega$ & $0.011\%$           \\ \hline
 		$R1_{eq}$: & $63661.9772\Omega$ & $63633\Omega$ &  $0.046\%$ \\ \hline
-		\multirow{2}{*}{\textit{$R_{2}$(Parallel) :}} & $680$K$\Omega$     & $682.840$K$\Omega$  & $0.418\%$        \\ \cline{2-4} 
-		& $47$K$\Omega$      & $47.004$K$\Omega$ & $0.010\%$           \\ \cline{2-4}
+		\multirow{2}{*}{\textit{$R_{2}$ || :}} & $680$K$\Omega$     & $682.840$K$\Omega$  & $0.418\%$        \\ \cline{2-4} 
+		& $47$K$\Omega$      & $47.004$K$\Omega$ & $0.010\%$           \\ \hline
 		$R2_{eq}$: & $44115.2831\Omega$ & $43976\Omega$ & $0.316\%$ \\ \hline
-		\multirow{2}{*}{\textit{$R_{3}$(Parallel) :}} & $39$K$\Omega$      & $38.888$K$\Omega$    & $0.287\%$           \\ \cline{2-4} 
-		& $39$K$\Omega$     & $39.043$K$\Omega$        & $0.108\%$           \\ \cline{2-4}
+		\multirow{2}{*}{\textit{$R_{3}$ || :}} & $39$K$\Omega$      & $38.888$K$\Omega$    & $0.287\%$           \\ \cline{2-4} 
+		& $39$K$\Omega$     & $39.043$K$\Omega$        & $0.108\%$           \\ \hline
 		$R3_{eq}$: & $19546.694\Omega$ & $19482\Omega$  & $0.3310\%$ \\ \hline
 	\end{tabular}
-	\caption{I tabellen ses, at de anvendte modstande afviger fra den teoretiske værdi, hvilket er forventet af reelle komponenter. Disse afvigelser kommer derved også til at have en effekt på $R_{eq}$. Det er de teoretiske værdier, som bliver benyttet i en ny simulering.}
+	\caption{I tabellen ses at de anvendte modstande afviger fra den teoretiske værdi, hvilket er forventet af reelle komponenter. Disse afvigelser kommer derved også til at have en effekt på $R_{eq}$. Det er de teoretiske værdier, som bliver benyttet i en ny simulering.}
 	\label{Tab:Maalingafmodstande_filter}
 \end{table}
-Der ses på \figref{fig:lavpasfiltergraf_LTspice1}, at der ved en stopbåndsfrekvens på $45$Hz er amplituden i db på $-15.443$. Dette overholder projektets opstillede krav for filterkonfigurationen ved en minimum dæmpning på $14$ dB i stopbåndsfrekvensen. Filterkonfigurationen med reelle modstande fremgår af \figref{fig:Sim_reel_modstande}.
+\noindent Filterkonfigurationen med reelle modstande fremgår af \figref{fig:Sim_reel_modstande}.
 \begin{figure}[H]
 	\centering
 	\includegraphics[scale=0.4]{figures/cProblemloesning/Sim_reel_modstande.PNG}
-	\caption{På figuren ses et 3. ordens filter med modstande, som har de teoretiske $\ref{fig:Sim_reel_modstande}_{eq}$ værdier - dvs. R$1$ består af en parallelforbindelse mellem $68$K $\Omega$ og $1$M $\Omega$, R$2$ består af en parallelforbindelse mellem $47$K $\Omega$ og $680$K $\Omega$ og R$3$ består af en parallelforbindelse mellem to modstande på $32$K $\Omega$.}
+	\caption{På figuren ses et 3. ordens filter med modstande, som har de teoretiske $R_{eq}$ værdier - dvs. R$1$ består af en parallelforbindelse mellem $68$K $\Omega$ og $1$M $\Omega$, R$2$ består af en parallelforbindelse mellem $47$K $\Omega$ og $680$K $\Omega$ og R$3$ består af en parallelforbindelse mellem to modstande på $32$K $\Omega$.}
 	\label{fig:Sim_reel_modstande}
 \end{figure}
 
 \begin{figure}[H]
 	\centering
 	\includegraphics[scale=0.35]{figures/cProblemloesning/Sim_reel_graf.PNG}
-	\caption{På figuren ses en illustration af et bodeplot, der viser 3. ordens filterets frekvensindhold målt i Hz over dæmpningen målt i dB med den teoretiske værdi for de reelle modstande. Lavpasfilteret er simuleret i LTspice.}
+	\caption{På figuren ses en illustration af et bodeplot, der viser 3. orden lavpasfilterets frekvensindhold målt i Hz over dæmpningen målt i dB med den teoretiske værdi for de reelle modstande.}
 	\label{fig:Sim_reel_graf}
 \end{figure}
 
 \noindent Ud fra bodeplottet ses det, at det simulerede filter med reelle værdier har en maksimal amplitude på $-2.985$dB ved en pasbåndsfrekvens på $25$Hz, hvilket overholder kravspecifikationerne i afsnit \ref{FilterAfs}, side \pageref{FilterAfs}. Der aflæses, at ved stopbåndsfrekvensen på $45$Hz er amplituden $-15.389$dB, hvilket fortsat er acceptabelt ift. kravspecifikationerne for filterkonfigurationen. 
 
 \subsubsection{Implementering og test} 
-Der ses på \figref{fig:lavpasfilter_LTspice} at der benyttes 3 kondensatorer til at designe kredsløbet. I \tableref{Tab:Maalingafmodstande_filter} ses målingerne af de benyttede modstande. I \tableref{Tab:Maalingfilter} ses de reelle værdier for de benyttede kondensatorer.
+Der ses på \figref{fig:Sim_reel_modstande} at der benyttes 3 kondensatorer til at designe kredsløbet. I \tableref{Tab:Maalingafmodstande_filter} ses målingerne af de benyttede modstande. I \tableref{Tab:Maalingfilter} ses de reelle værdier for de benyttede kondensatorer.
 \begin{table}[H]
 	\centering
 	\begin{tabular}{|l|l|l|l|}
@@ -157,12 +158,12 @@ Der ses på \figref{fig:lavpasfilter_LTspice} at der benyttes 3 kondensatorer ti
 	\caption{I tabellen ses, at de anvendte kondensatorer afviger fra den teoretiske værdi, hvilket er forventet af reelle komponenter. Det er en acceptabel afvigelse, hvorfor disse kan anvendes til implementering}
 	\label{Tab:Maalingfilter}
 \end{table}
-\noindent Herefter implementeres kredsløbet. I testen anvendes spændingsforsyningen, der leverer $5.5530$V og dermed har en afvigelse på $0.96\%$, og en funktionsgenerator som inputsignal, samt et multimeter til aflæsning af dæmpningen. Funktionsgeneratoren sættes til de ønskede frekvenser i intervaller af $1$Hz fra $10$Hz til $50$Hz. Multimeteret måler dæmpningen af signalet ved at indstille et referencepunkt ved inputspændingen. Referencepunktet sættes hvor spændingen ændre sig mindst, dette sker ved $10$Hz. Referencen opfattes som signalets input. Herefter beregner multimeteret forskellen mellem input- og outputspændingen ved ligning \ref{eq:daempningsfaktor} og beregner dæmpningen i dB ved ligning \ref{eq:daempningsfaktoridB}. Outputtet fra multimeteret måles for hvert frekvens og noteres. Ud fra disse målinger plottes en graf af dæmpningen i MatLab, hvilket er illustreret på \figref{fig:Lavpas_Matlab}.  
+\noindent Herefter implementeres kredsløbet. I testen anvendes en funktionsgenerator som inputsignal, og et multimeter til aflæsning af dæmpningen. Funktionsgeneratoren sættes til de ønskede frekvenser i intervaller af $1$Hz fra $10$Hz til $50$Hz. Multimeteret måler dæmpningen af signalet ved at indstille et referencepunkt ved inputspændingen. Referencepunktet sættes det sted på signalet, hvor spændingen ændrer sig mindst, hvilket sker ved $10$Hz. Referencen opfattes som signalets input. Herefter beregner multimeteret forskellen mellem input- og outputspændingen og beregner dæmpningen i dB ved samme princip som i \eqref{eq:daempningsfaktoridB}, side \pageref{eq:daempningsfaktoridB}. Outputtet fra multimetret måles for hver frekvens og noteres. Ud fra disse målinger plottes en graf af dæmpningen i MATLAB, hvilket er illustreret på \figref{fig:Lavpas_Matlab}.  
 
 \begin{figure}[H]
 	\centering
-	\includegraphics[scale=0.45]{figures/cProblemloesning/Lavpas_Matlab.PNG}
-	\caption{På figuren ses dæmpningen som en graf over de målte frekvenser i Hz som funktion af outputtet i dB. På grafen er der angivet knækfrekvens og stopbåndfrekvens.}
+	\includegraphics[scale=0.5]{figures/cProblemloesning/Lavpas_Matlab.PNG}
+	\caption{På figuren ses dæmpningen som en graf over de målte frekvenser i Hz som funktion af outputtet i dB. På grafen er der angivet pasbåndfrekvens og stopbåndfrekvens.}
 	\label{fig:Lavpas_Matlab}
 \end{figure}
 
@@ -171,21 +172,21 @@ Der ses på \figref{fig:lavpasfilter_LTspice} at der benyttes 3 kondensatorer ti
 	\begin{tabular}{|l|l|l|l|}
 		\hline
 		& \textit{Krav for dæmpning i dB} 	& \textit{Test af dæmpning i dB}  &\textit{Afvigelse} \\ \hline
-		Pasbåndsfrekvens & $3$	& $2.7360$	    & $8.8\%$ \\ \hline
-		Stopbåndsfrekvens & $14$    & $14.8480$    & $6.1\%$  \\ \hline
+		\textit{Pasbåndsfrekvens} & $3$	& $2.7360$	    & $8.8\%$ \\ \hline
+		\textit{Stopbåndsfrekvens} & $14$    & $14.8480$    & $6.1\%$  \\ \hline
 	\end{tabular}
-	\caption{I tabellen ses afvigelserne for dæmpningen i pasbånds- og stopbåndsfrekvensen ift. kravspecifikationerne og den foretaget test.}
+	\caption{I tabellen ses afvigelserne for dæmpningen i pasbånds- og stopbåndsfrekvensen ift. kravspecifikationerne og den fortagede test.}
 	\label{Tab:Tolerance}
 \end{table}
-\noindent Ud fra de testede værdier i \tableref{Tab:Tolerance} og kravspecifikationer i afsnit \ref{FilterAfs} på side \pageref{FilterAfs} ses ingen afvigelse på pasbånds- og stopbåndsfrekvensen, men en variation i dæmpningen for både pasbånds- og stopbåndsfrekvensen på hhv. $8.8\%$ og $6.1$\% ift. kravspecifikationerne. Dæmpningen i pasbåndsfrekvensen skal maksimal være $3$dB med en acceptabel afvigelse på -$15\%$, dvs. i intervallet $2.55$-$3$dB. Dette betyder, at testen ligger indenfor tolerancekravet med en dæmpning i pasbåndet på $2.7$dB. Derudover skal lavpasfilteret dæmpe med minimum $14$dB i stopbåndsfrekvensen med en acceptabel afvigelse på +$15\%$. Denne tolerance overholdes i testen med en dæmpning på $14.8480$dB, da de acceptable dæmpningsværdier ligger i intervallet $14$-$16.10$dB.\\
+\noindent Ud fra de testede værdier i \tableref{Tab:Tolerance} ses en afvigelse på pasbånds- og stopbåndsfrekvensen ift. kravet for dæmpning kravspecifikationer i afsnit \ref{FilterAfs}, side \pageref{FilterAfs}. Dæmpningen i pasbåndsfrekvensen skal maksimalt være $3$dB, hvilket betyder, at testen ligger indenfor tolerancekravet med en dæmpning i pasbåndet på $2.7$dB. Derudover skal lavpasfilteret dæmpe med minimum $14$dB i stopbåndsfrekvensen. Denne tolerance overholdes i testen med en dæmpning på $14.8480$dB, hvorfor filterblokken accepteres.\\
 
-\noindent \textbf{Sammenligning af det simulerede og implementerede lavpasfilter} \\
-På \figref{fig:sammenligning_sim_imp} er afvigelsen for det simulerede lavpasfilter ift. det implementerede lavpasfilter visualiseret vha. et bodeplot. 
+\noindent\textbf{Sammenligning mellem det simulerede og implementerede lavpasfilter} \\
+\noindent På \figref{fig:sammenligning_sim_imp} er afvigelsen for det simulerede lavpasfilter ift. det implementerede lavpasfilter visualiseret vha. et bodeplot. 
 \begin{figure}[H]
 	\centering
 	\includegraphics[scale=0.4]{figures/cProblemloesning/sammenligning_sim_imp.PNG}
-	\caption{På figuren ses to bodeplots for det simulerede lavpasfilter, markeret med rød, og det implementerede lavpasfilter, markeret med blå. Filternes fase fremgår ikke i bodeplottet men kan ses på de to tidligere figurer. Bodeplottet er udarbejdet i Matlab.}
+	\caption{På figuren ses et bodeplots for det simulerede lavpasfilter, markeret med rød, og et bodeplot for det implementerede lavpasfilter, markeret med blå.}
 	\label{fig:sammenligning_sim_imp}
-\end{figure} 
-Bodeplottet for det simulerede lavpasfilter er udarbejdet ud fra $20$ punkter og det implementerede er udarbejdet ud fra $40$ punkter, i intervallet $10$ til $50$. Det fremgår af grafen, at der er forskel fra at konstruere et teoretisk lavpasfilter ift. at til implementere et. Det er ikke muligt at implementere et lavpasfilter, der er ens med det simulerede, grundet reelle komponenters afvigelse. Det fremgår, at det simulerede lavpasfilter ligger under det implementerede lavpasfilter, hvilket stemmer overens med at dæmpningsværdien er højere i det simulerede ift. det implementerede. \\
-Der ses ud fra testen og sammenligningen, at lavpasfilteret overholder kravspecifikationerne afsnit \ref{FilterAfs}, side \pageref{FilterAfs}. Derudover ligger afvigelserne indenfor tolerancekravene og derfor accepteres lavpasfilteret. 
+\end{figure}
+\noindent Bodeplottet for det simulerede lavpasfilter er udarbejdet ud fra $20$ målepunkter og det implementerede er udarbejdet ud fra $40$ målepunkter i intervallet $10$ til $50$Hz. Det fremgår af \figref{fig:sammenligning_sim_imp}, at der er forskel mellem at konstruere et teoretisk lavpasfilter og implementere et. Det er ikke muligt at implementere et lavpasfilter, der er ens med det simulerede grundet reelle komponenters afvigelse. Det fremgår, at det simulerede lavpasfilter ligger under det implementerede lavpasfilter, hvilket stemmer overens med at dæmpningsværdien er højere i det simulerede ift. det implementerede. \\
+Der ses ud fra testen og sammenligningen, at lavpasfilteret overholder kravspecifikationerne i afsnit \ref{FilterAfs}, side \pageref{FilterAfs}. Derudover ligger afvigelserne indenfor tolerancekravene og derfor accepteres lavpasfilteret. 
