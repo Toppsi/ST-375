@@ -66,8 +66,7 @@ Blokken skal levere $1.6325$V. Outputimpedansen må maksimalt være $1$K$\Omega$
 Blokken indeholdende et filter anvendes til at dæmpe uønskede signaler, der kan forekomme under målinger med accelerometret.\fxnote{NTK: Frekvensområdet for kropshældning er ikke klart defineret, men studier anvender et frekvensområde liggende mellem $0.02-10$Hz \cite{Martinez-Mendez2011}. Alle signaler, der ligger udenfor dette spektrum, ønskes derfor fjernet.} Frekvensområdet for kropshældning er ikke klart defineret, men i pilotforsøget blev der påvist, at signalet i dette tilfælde ligger mellem $0-25$Hz \cite{Martinez-Mendez2011}. Alle signaler uden for dette spektrum ønskes derfor dæmpet. Dette gøres ved at benytte et lavpasfilter med en pasbåndsfrekvens på $25$Hz. \\
 Den maksimale variation i pasbåndet ($A_{max}$) sættes til $3$dB. For at dæmpe $50$Hz støj, sættes stopbåndsfrekvensen til $45$Hz. Dæmpningsfaktoren af filteret udregnes ved LSB omtalt i afsnit \ref{ADC_afsnit}, side \pageref{ADC_afsnit} over den maksimale amplitude af signalet. LSB beregnes ud fra følgende ligninger: \\
 \begin{align}
-	LSB = \frac{20V}{2^{13}}
-	LSB = 0.00244V = 2.44\text{mV}
+	LSB = \frac{20V}{2^{13}} = 0.00244V = 2.44\text{mV}
 \end{align}
 FSR er arbejdsområdet, dvs. $\pm10$V, imens n er antallet af bits, der kan samples med, dvs. $13$. Den maksimale amplitude beregnes ved en RMS-analyse på baggrund af rotationsmålingerne foretaget i pilotforsøget, jævnfør bilag \ref{Bilag:Pilotforsoeg}, side \pageref{Bilag:Pilotforsoeg}, for hhv. højre og venstre side. Dæmpningsfaktoren udregnes ved følgende ligninger:
 
