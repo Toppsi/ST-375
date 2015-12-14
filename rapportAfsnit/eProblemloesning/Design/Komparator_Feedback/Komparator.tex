@@ -1,5 +1,5 @@
 % !TeX spellcheck = da_DK
-\subsection{Feedbackblok}
+\subsection{Feedback}
 \subsubsection{Teori og design} \label{Afs_Komparator}
 Jævnfør \ref{Komparatorafsnit} på side \pageref{Komparatorafsnit} anvendes en komparator til at sammenligne to inputsspændinger. Komparatoren der anvendes er af typen LM$311$, hvis pinkonfiguration ses på \figref{fig:LM311}. LM$311$ har et arbejdsområde på $\pm15$V og skal forsynes med minimum $3.5$V. 
 \begin{figure}[H] 
@@ -24,8 +24,8 @@ På \figref{fig:komparator_forstaeelse} kan det ses at LED'ens aktivering afhæn
 Der er placeret en buffer inden feedbackblokken for at signalet fra forrige blok ikke påvirkes, samt adskille blokkene fra hinanden, eftersom komparatoren, LM$311$ har en lav indgangsimpedans \cite{Instruments2015}. LED'ernes katode tilkobles komparatorens output, imens anoden tilkobles $V_{cc}$. Jævnfør afsnit \ref{KomparatorAfs}, side \pageref{KomparatorAfs} skal LED'erne aktiveres i fem forskellige stadier. Til denne aktivering anvendes otte komparatorer, da det første stadie, indeholdende den grønne LED, både har en positiv og negativ tærskelværdi og derfor kræver to komparatorer i en vindueskonfiguration. De valgte tærskelværdier kan designes på forskellige måder hhv. som to spændingstræer eller otte spændingsdelere, hvoraf der er fordele og ulemper ved begge metoder. Et eksempel på et spændingstræ og en spændingsdeler kan ses på \figref{fig:spaendingstrae}. 
 \begin{figure}[H] 
 	\centering
-	\includegraphics[scale=0.9]{figures/cProblemloesning/eksempel_spaendingstrae.PNG}
-	\caption{På figuren ses et eksempel på hhv. et spændingstræ og individuelle spændingsdelere.
+	\includegraphics[scale=0.9]{figures/cProblemloesning/eksempel_speadingstrae.PNG}
+	\caption{På figuren ses et eksempel på hhv. et spændingstræ og individuelle spændingsdelere.}
 	\label{fig:spaendingstrae}
 \end{figure}
 I dette projekt anvendes otte spændingsdelere, hvor to indgår i en vindues-komparatorkonfiguration for den grønne LED. De resterende seks fungerer som almindelige komparatorer, der aktiveres over en bestemt tærskelværdi. Fordelen ved at vælge dette design er, at modstandene ikke kan påvirke hinanden, som i et spændingstræ. Ulempen ved at anvende spændingsdelere er, at der benyttes flere modstande ved denne konfiguration. Feedbackblokken kan inddeles i to dele; en for hældning i hhv. positiv og negativ retning. De otte spændingsdelere udgøres af $12$ modstande (R$1$-R$12$). Derudover består kredsløbet af en spændingsreference ($+V_{ref}$) på $2.5$V og syv modstande (R$13$-R$19$) mellem LED'erne samt vibratorerne og $V_{cc}$. Modstandene (R$13$-R$14$, R$16$-R$17$ og R$19$) bestemmer mængden af strøm til LED'erne. Vindues-komparatorkonfigurationen designes ved at placere en LED (D$3$) i emitterterminalen på komparatoren (U$3$) og collectorterminalen på komparatoren (U$4$). Feedbackblokken fremgår af \figref{fig:komparator_uden_vaerdi}. 
@@ -42,8 +42,8 @@ I dette projekt anvendes otte spændingsdelere, hvor to indgår i en vindues-kom
 \noindent\textbf{Beregning af tærskelværdier og modstandene R$1$-R$12$ i spændingsdelerne} \\
 Det ønskes, at LED'erne skal lyse ved bestemte kropshældninger, dvs. ved bestemte tærskelværdier. Inputsignalet afhænger af den pågældende hældningsgrad, hvilket for komparatoren vil være en bestemt spænding. Komparatorens tærskelværdier kan beregnes, da værdien i volt pr. grad i hhv. positiv og negativ retning, jævnfør \eqref{taeskelvaerdi_pr_grad} i pilotforsøget i bilag \ref{Bilag:Pilotforsoeg}, side \pageref{Sec_Pilot_Data}, samt forstærkningsværdien af signalet fra forrige blokke, opsamlings- og tilpasningsblokken, er kendte værdier. Tærskelværdierne for komparatoren beregnes ud fra følgende formler:
 \begin{eqnarray} \label{pr_grad} 
-\text{Positiv retning} : {0.0037\text{V}\cdot 9.1\cdot 3.6\cdot \text{hældningsgrad}} = \text{tærskelværdi} \\
-\text{Negativ retning} : {0.0036\text{V\cdot 9.1\cdot 3.6\cdot \text{hældningsgrad}} = \text{tærskelværdi}
+Positiv retning : 0.0037\text{V} \cdot 9.1 \cdot 3.6 \cdot \text{hældningsgrad} = \text{tærskelværdi} \\
+Negativ retning : 0.0036\text{V} \cdot 9.1 \cdot 3.6 \cdot \text{hældningsgrad} = \text{tærskelværdi}
 \end{eqnarray}
 \noindent Hvor $0.0037$ og $0.0036$ er volten pr. grad i hhv. positiv og negativ retning. $9.14$ og $3.6$ er forstærkningsværdien fra forrig blokke og hældningsgraden er den grad som tærskelværdien skal indstilles efter. 
 De udregnede tærskelværdier fremgår af \figref{fig:taerskelvaerdier}. 
