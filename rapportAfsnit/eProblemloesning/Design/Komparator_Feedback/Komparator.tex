@@ -114,7 +114,7 @@ Af \figref{fig:komparator_visuel_simulering_samlet1} fremgår tærskelværdierne
 \begin{figure}[H]
 	\centering
 	\includegraphics[scale=0.36]{figures/cProblemloesning/komparator_visuel_simulering_samlet1.PNG}
-	\caption{På figuren ses simuleringen af den visuelle del af feedbacken. V(n$002$) er sinus-signalet, der illustrerer blokkens inputsignal. V(n$004$) viser spændingsfaldet for de røde LED'er, V(n$008$) for de gule LED'er og V(n$015$) for den grønne LED. Når inputsignalet når de definerede tærskelværdier, vil kurverne gå i negativ mætning og LED-dioderne vil lyse.}
+	\caption{På figuren ses simuleringen af den visuelle del af feedbacken. Farverne på graferne indikerer den enkelte LED. Derudover angives p for positiv retning, mens n angives for negativ retning. Når inputsignalet når de definerede tærskelværdier, vil kurverne gå i negativ mætning og LED-dioderne vil lyse.}
 	\label{fig:komparator_visuel_simulering_samlet1}
 \end{figure}
 
@@ -138,7 +138,7 @@ Af \figref{fig:komparator_visuel_simulering_samlet1} fremgår tærskelværdierne
 \begin{figure}[H]
 	\centering
 	\includegraphics[scale=0.36]{figures/cProblemloesning/vindues_konfiguration.PNG}
-	\caption{På figuren ses simuleringen af vindueskonfigurationen. V(n$002$) er sinus-signalet, der illustrerer blokkens inputsignal, V(n$016$) og V(n$018$) viser spændingsfaldet for den grønne LED.}
+	\caption{På figuren ses simuleringen af vindueskonfigurationen. $V_{in}$ er inputsignalet, mens V(aktivering_grøn1) og V(aktivering_grøn2) viser spændingsfaldet for den grønne LED.}
 	\label{fig:vindues_konfiguration}
 \end{figure}
 
@@ -170,7 +170,7 @@ R = \dfrac{3V}{0.09A} = 33\Omega
 \begin{figure}[H]
 	\centering
 	\includegraphics[scale=0.36]{figures/cProblemloesning/vibration_graf.PNG}
-	\caption{På figuren ses simuleringen af den somatosensoriske del af feedbacken. V(n$002$) er sinus-signalet, der illustrerer blokkens inputsignal. Tærskelværdierne er der hvor I(D$6$) og I(D$7$) skærer V(n$002$).}
+	\caption{På figuren ses simuleringen af den somatosensoriske del af feedbacken. $V_{in}$ er sinussignalet, der illustrerer blokkens inputsignal. I(vibrator1) viser spændingsfaldet over vibratoren i positiv retning, mens I(vibrator2) viser spændingsfaldet over vibratoren i negativ retning. Desuden ses tærskelværdierne for aktivering af de to vibratorer.}
 	\label{fig:vibration_graf}
 \end{figure}
 \noindent På \figref{fig:vibration_graf} fremgår det, at der ledes en strøm igennem vibratorerene på ca. $90$mA ved de enkelte tærskelværdier, hvilket aktiverer dem. Derudover ses det, at tærskelværdierne for de to vibratorer svarer til tærskelværdierne for aktivering af de gule LED'er, jævnfør \tableref{Tab:test_reference1}. Dette gør, at den samme afvigelse vil gøre sig gældende, hvorfor den somatosensoriske del af feedbacken accepteres. 
