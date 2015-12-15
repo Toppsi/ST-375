@@ -1,5 +1,5 @@
 % !TeX spellcheck = da_DK
-\section{Behandling af biologiske signaler}
+\section{Behandling af krophældnings signal}
 Et biologisk signal skal behandles for at kunne give feedback til patienten samt et digitalt output evt. til plejepersonale. For at kunne behandle et signal fra et accelerometer kræves der bl.a. forstærkning, filtrering, komparator samt ADC. Der kan anvendes andre komponenter til signalbehandling ift. hvad accelerometret skal benyttes til, men de nævnte vil blive benyttet i dette projekt. 
 
 \subsection{Forstærker}\label{forstaerkerafsnit}
@@ -11,14 +11,14 @@ En forstærker kan benyttes til at ændre inputtet i form af et biologisk signal
 \item Differens forstærkningskredsløb: Benyttes til at trække to input signaler fra hinanden, så outputsignalet bliver forskellen på de to inputsignaler \cite{Nilsson2011}. Der findes forskellige typer af differensforstærkning, herunder et kredsløb med en enkelt operationsforstærker eller en instrumenteringsforstærker. I instrumenteringsforstærkeren indgår yderligere to operationsforstærkere for at lave inputbuffere til den oprindelige operationsforstærker. \cite{Sedra2010}  
 \end{itemize} 
 
-\noindent For at forstærke signalet fra et accelerometeret benyttes operationsforstærkeren, der skalerer inputspændingen til en ønsket outputspænding. Dette gøres, hvis den næste komponent skal bruge et specifikt input eller for at forstærke signaler med lav amplitude. Der kan f.eks. bruges en inverterende forstærker, som ses på \figref{invf}, hvor $V_{s}$ er det målte signal, der ønskes forstærket og $V_{o}$ er outputsignalet. Inputtets forstærkning kaldes gain og er en ratio mellem $dfrac{R_{f}}{R_{s}}$, som er de to modstande. \cite{Nilsson2011}
-
-\begin{figure}[H]
-\centering
-\includegraphics[scale=0.6]{figures/bProblemanalyse/inverterendeforstaerker.png}
-\caption{På figuren ses en ideel operationsforstærker, som er inverterende koblet og kan forstærke input signalet $V_{s}$ til et ønsket output signal $V_{o}$ vha. modstandene $R_ {s}$ og $R_{f}$. \cite{Nilsson2011}}
-\label{invf}
-\end{figure}
+%\noindent For at forstærke signalet fra et accelerometeret benyttes operationsforstærkeren, der skalerer inputspændingen til en ønsket outputspænding. Dette gøres, hvis den næste komponent skal bruge et specifikt input eller for at forstærke signaler med lav amplitude. Der kan f.eks. bruges en inverterende forstærker, som ses på \figref{invf}, hvor $V_{s}$ er det målte signal, der ønskes forstærket og $V_{o}$ er outputsignalet. Inputtets forstærkning kaldes gain og er en ratio mellem $dfrac{R_{f}}{R_{s}}$, som er de to modstande. \cite{Nilsson2011}
+%
+%\begin{figure}[H]
+%\centering
+%\includegraphics[scale=0.6]{figures/bProblemanalyse/inverterendeforstaerker.png}
+%\caption{På figuren ses en ideel operationsforstærker, som er inverterende koblet og kan forstærke input signalet $V_{s}$ til et ønsket output signal $V_{o}$ vha. modstandene $R_ {s}$ og $R_{f}$. \cite{Nilsson2011}}
+%\label{invf}
+%\end{figure}
 
 
 %INDLEDE MED KORT FORKLARING PÅ HVAD EN FORSTÆRKER EGENTLIG ER OG HVILKE FORSKELLIGE TYPER DER FINDES
