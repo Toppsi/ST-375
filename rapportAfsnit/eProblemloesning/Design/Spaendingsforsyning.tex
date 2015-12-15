@@ -7,9 +7,9 @@ Da batterierne ikke leverer den samme spænding gennem deres levetid, skal disse
 \subsubsection{Simulering}
 Ved simulering af spændingsforsyningen anvendes LTspice, hvor der sendes en spænding igennem en buffer, som også er beskrevet og benyttet i bilag \ref{Bilag:Pilotforsoeg}, side \pageref{Bilag:Pilotforsoeg}. Herved kan konsekvensen af et faldende input simuleres, således at kravene undersøges, jævnfør afsnit \ref{Krav_spaending_spicifikt}, side \pageref{Krav_spaending_spicifikt}. Det maksimale input, som ledes gennem systemet uden der ønskes klipning af signalet, er:
 \begin{equation}
-0.0037 \cdot 9.1 \cdot 3.6 \cdot 25 = 3.0303
+0.0037\text{V} \cdot 9.1 \cdot 3.6 \cdot 25^{\circ} = 3.0303\text{V}
 \end{equation}
-\indent Denne spænding benyttes i simuleringen som amplituden på et sinussignal. Konsekvensen af en faldende spændingsforsyning undersøges, hvilket er illustreret på \figref{fig:spaendingsforsyning_graf}. Der forsynes med hhv. $\pm5.5$V, $\pm5$V, $\pm4.5$V og $\pm4$V.
+\noindent Denne spænding benyttes i simuleringen som amplituden på et sinussignal. Konsekvensen af en faldende spændingsforsyning undersøges, hvilket er illustreret på \figref{fig:spaendingsforsyning_graf}. Der forsynes med hhv. $\pm5.5$V, $\pm5$V, $\pm4.5$V og $\pm4$V.
 \begin{figure}[H]
 	\centering
 	\includegraphics[scale=0.4]{figures/cProblemloesning/Spaendingsforsyning_LTspice2.PNG}
