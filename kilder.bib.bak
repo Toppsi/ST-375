@@ -17,8 +17,9 @@
 
 @Electronic{Academic2015a,
   Title                    = {Nervous System disease},
-  Author                   = {Academic, Britannica},
+  Author                   = {Britannica Academic},
   Month                    = {September},
+  Organization             = {Encyclopaedia Britannica},
   Url                      = {http://academic.eb.com/EBchecked/topic/1800831/nervous-system-disease/75792/Stroke?anchor=ref606262},
   Year                     = {2015},
 
@@ -30,6 +31,7 @@
   Title                    = {Human nervous system},
   Author                   = {Britannica Academic},
   Month                    = {Oktober},
+  Organization             = {Encyclopaedia Britannica},
   Url                      = {http://academic.eb.com.zorac.aub.aau.dk/EBchecked/topic/409709/human-nervous-system/75529/The-brain},
   Year                     = {2015},
 
@@ -41,6 +43,7 @@
   Title                    = {Accelerometer},
   Author                   = {Britannica Academic},
   Month                    = {Oktober},
+  Organization             = {Encyclopaedia Britannica},
   Url                      = {http://academic.eb.com.zorac.aub.aau.dk/EBchecked/topic/2859/accelerometer},
   Year                     = {2015},
 
@@ -50,7 +53,8 @@
 
 @Book{Aminoff2012,
   Title                    = {Aminoff's Electrodiagnosis in Clinical Neurology},
-  Author                   = {Aminoff, Michael J. and Cadwell, John A. and Villarreal, Richard A.},
+  Author                   = {Aminoff, Michael J. and others},
+  Publisher                = {Elsevier},
   Year                     = {2012},
   Edition                  = {6. udgave},
 
@@ -72,7 +76,7 @@
 
 @Article{Andersen2007,
   Title                    = {Intracerebral Hæmoragi},
-  Author                   = {Andersen, Grethe and Meden, Per and others},
+  Author                   = {Andersen, Grethe and others},
   Journal                  = {Ugeskrift for Laeger},
   Year                     = {2007},
 
@@ -120,6 +124,17 @@
   Timestamp                = {2015.10.08}
 }
 
+@Electronic{Syddanmark,
+  Title                    = {Apopleksi - ratingscales},
+  Author                   = {Bak, Søren},
+  Organization             = {Region Syddanmark},
+  Url                      = {http://ekstern.infonet.regionsyddanmark.dk/Files/dokument90214.htm},
+  Year                     = {2014},
+
+  Owner                    = {Mathias},
+  Timestamp                = {2015.09.24}
+}
+
 @Article{Barclay-Goddard2004,
   Title                    = {Force platform feedback for standing balance training after stroke},
   Author                   = {Barclay-Goddard, Ruth E. and others},
@@ -152,7 +167,7 @@
 
 @Book{Bojsen-Moeller2012,
   Title                    = {Bevægeapparatets Anatomi},
-  Author                   = {Bojsen-Møller, Finn and Simonsen, Erik B. and Tranum-Jensen, Jørgen},
+  Author                   = {Bojsen-Møller, Finn and others},
   Publisher                = {Gyldendal Akademisk},
   Year                     = {2012},
 
@@ -193,9 +208,10 @@
 
 @Book{Carter2013,
   Title                    = {Op Amps for Everyone},
-  Author                   = {Bruce Carter},
-  Publisher                = {Newnes},
-  Year                     = {2013},
+  Author                   = {Carter, Bruce},
+  Editor                   = {Mancini, Ron},
+  Publisher                = {Texas Instruments},
+  Year                     = {2002},
 
   Owner                    = {Cecilie},
   Timestamp                = {2015.11.10}
@@ -239,7 +255,7 @@
 
 @Article{Christensen&Zielke2008,
   Title                    = {Klinisk retningslinie for akut indlagte, voksne patienter med apopleksia cerebri},
-  Author                   = {Christensen, Doris; Zielke, Susanne S.},
+  Author                   = {Christensen, Doris and Zielke, Susanne S.},
   Journal                  = {Dansk Selskab for Apopleksi},
   Year                     = {2008},
 
@@ -272,6 +288,16 @@
   Url                      = {http://www.ti.com/lit/ds/symlink/tl082-n.pdf}
 }
 
+@Manual{National2005,
+  Title                    = {LM185-2.5/LM285-2.5/LM385-2.5 Micropower Voltage Reference Diode},
+  Author                   = {National Semiconductor Corporation},
+  Year                     = {2005},
+
+  Owner                    = {Mads},
+  Timestamp                = {2015.12.13},
+  Url                      = {https://www.jameco.com/Jameco/Products/ProdDS/839762.pdf}
+}
+
 @Manual{Corporation1995,
   Title                    = {TL081 Wide Bandwidth JFET Input Operational Amplifier},
 
@@ -287,8 +313,8 @@
 
 @Book{Devasahayam2000,
   Title                    = {Signals and Systems in Biomedical Engineering: Signal Processing and Physiological Systems Modelling},
-  Author                   = {Suresh R. Devasahayam},
-  Editor                   = {Evangelina Micheli-Tzanakou},
+  Author                   = {Devasahayam, Suresh R.},
+  Editor                   = {Micheli-Tzanakou, Evangelina},
   Publisher                = {Springer Science+Business Media, LLC},
   Year                     = {2000},
 
@@ -299,6 +325,7 @@
 @Manual{Devices2009,
   Title                    = {Accelerometer ADXL335},
   Author                   = {Analog Devices},
+  Organization             = {Analog Devices},
   Year                     = {2009},
 
   Owner                    = {Cecilie},
@@ -339,7 +366,7 @@
 
 @Article{Giggins2013,
   Title                    = {Biofeedback in Rehabilitation},
-  Author                   = {Giggins, Oonagh M and Persson, Ulrik McCarthy and others},
+  Author                   = {Giggins, Oonagh M and others},
   Journal                  = {Journal of Neuroengineering and Rehabilitation},
   Year                     = {2013},
 
@@ -510,7 +537,7 @@
 
 @MastersThesis{Huo1999,
   Title                    = {LIMITS OF STABILITY AND POSTURAL SWAY IN YOUNG AND OLDER PEOPLE},
-  Author                   = {Feng Huo},
+  Author                   = {Huo, Feng},
   School                   = {Queen's University, Kingston, Ontario, Canada},
   Year                     = {1999},
 
@@ -573,7 +600,7 @@
 
 @Article{Karnath2003,
   Title                    = {Understanding and Treating “Pusher Syndrome”},
-  Author                   = {Karnath, Hans-Otto; Broetz, Doris},
+  Author                   = {Karnath, Hans-Otto and Broetz, Doris},
   Journal                  = {Physical Therapy. Volume 83. Number 12},
   Year                     = {2003},
 
@@ -613,7 +640,7 @@
 
 @Book{Konrad2006,
   Title                    = {The ABC of EMG - A Practical Introduction to Kinesiological Electromyography},
-  Author                   = {Peter Konrad},
+  Author                   = {Konrad, Peter},
   Publisher                = {Noraxon INC. USA.},
   Year                     = {2006},
 
@@ -638,6 +665,7 @@
   Author                   = {Kruuse, Christina Rostrup},
   Language                 = {Dansk},
   Month                    = {April},
+  Organization             = {Sundhed.dk},
   Url                      = {https://www.sundhed.dk/borger/sygdomme-a-aa/hjerte-og-blodkar/sygdomme/apopleksi/apopleksi-rehabilitering/},
   Year                     = {2015},
 
@@ -650,6 +678,7 @@
   Author                   = {Christina Rostrup Kruuse},
   Language                 = {Dansk},
   Month                    = {August},
+  Organization             = {Sundhed.dk},
   Url                      = {https://www.sundhed.dk/borger/sygdomme-a-aa/hjerte-og-blodkar/sygdomme/apopleksi/apopleksi-blodprop-eller-bloedning-i-hjernen/},
   Year                     = {2014},
 
@@ -660,6 +689,7 @@
 @Electronic{Kruuse2014a,
   Title                    = {Behandling ved apopleksi},
   Author                   = {Kruuse, Christina Rostrup},
+  Organization             = {Sundhed.dk},
   Url                      = {https://www.sundhed.dk/borger/sygdomme-a-aa/hjerte-og-blodkar/sygdomme/apopleksi/behandling-ved-apopleksi/},
   Year                     = {2014},
 
@@ -669,7 +699,7 @@
 
 @Electronic{Kruuse2015a,
   Title                    = {Apopleksi, kognitive symptomer},
-  Author                   = {Kruuse, Christina Rostrup and Andersen, John Sahl and Witting, Nanna and Klamer, Finn},
+  Author                   = {Kruuse, Christina Rostrup and others},
   Organization             = {Sundhed.dk},
   Url                      = {https://www.sundhed.dk/sundhedsfaglig/laegehaandbogen/hjerte-kar/tilstande-og-sygdomme/apopleksi-og-tia/apopleksi-kognitive-symptomer/},
   Year                     = {2015},
@@ -680,7 +710,7 @@
 
 @Article{Lamontagne2006,
   Title                    = {Physiological evaluation of gait disturbances post stroke},
-  Author                   = {Anouk Lamontagne and Jennifer L. Stephenson and others},
+  Author                   = {Lamontagne, Anouk and others},
   Journal                  = {Clinical Neurophysiology},
   Year                     = {2006},
 
@@ -690,7 +720,7 @@
 
 @Article{Leea2009,
   Title                    = {Cortical activation pattern of compensatory movement in stroke patients},
-  Author                   = {Mi Young Leea and Ji Won Parkb and others},
+  Author                   = {Leea, Mi Young  and others},
   Journal                  = {NeuroRehabilitation},
   Year                     = {2009},
 
@@ -730,7 +760,7 @@
 
 @Article{Martinez-Mendez2011,
   Title                    = {Postural sway parameters using a triaxial accelerometer: comparing elderly and young healthy adults},
-  Author                   = {Rigoberto Martinez-Mendez AND Masaki Sekine and others},
+  Author                   = {Martinez-Mendez, Rigoberto and others},
   Journal                  = {Computer Methods in Biomechanics and Biomedical Engineering},
   Year                     = {2011},
 
@@ -761,8 +791,7 @@
 
 @Book{Michael-Titus2010,
   Title                    = {The nervous system : basic science and clinical conditions},
-  Author                   = {Michael-Titus, Adina; Revest, Patricia; Shortland, Peter},
-  Editor                   = {2. ed.},
+  Author                   = {Michael-Titus, Adina and others},
   Publisher                = {Edinburgh : Churchill Livingstone},
   Year                     = {2010},
 
@@ -792,23 +821,12 @@
 
 @PhdThesis{Muus2008,
   Title                    = {Helbredsrelateret livskvalitet efter apopleks: Validering og anvendelse af SSQOL-DK, et diagnosespecifikt instrument til måling af helbredsrelateret livskvalitet blandt danske apopleksipatienter},
-  Author                   = {Muus, Ingrid and Ringsberg, Karin C and Petzold, Max and Persson, Lars-Olof},
+  Author                   = {Muus, Ingrid and others},
   School                   = {Nordic School of Public Health NHV Göteborg, Sweden},
   Year                     = {2008},
 
   Owner                    = {Mads},
   Timestamp                = {2015.09.15}
-}
-
-@Manual{National2005,
-  Title                    = {LM185-2.5/LM285-2.5/LM385-2.5 Micropower Voltage Reference Diode},
-  Author                   = {National},
-  Organization             = {National Semiconductor},
-  Year                     = {2005},
-
-  Owner                    = {Mads},
-  Timestamp                = {2015.12.13},
-  Url                      = {https://www.jameco.com/Jameco/Products/ProdDS/839762.pdf}
 }
 
 @Article{Nichols1997,
@@ -824,6 +842,7 @@
 @Book{Nilsson2011,
   Title                    = {Electric circuits},
   Author                   = {Nilsson, James W. and Riedel, Susan A.},
+  Editor                   = {Horton, Marcia J.},
   Publisher                = {Pearson Education},
   Year                     = {2011},
 
@@ -843,7 +862,7 @@
 
 @Article{Pedersen1999,
   Title                    = {Kognitive forstyrrelser ved apopleksi - hyppighed, betydning og genoptræning},
-  Author                   = {Pedersen, P. M. og Olsen, S. T.},
+  Author                   = {Pedersen, P. M. and Olsen, S. T.},
   Journal                  = {Munksgaard},
   Year                     = {1999},
 
@@ -863,24 +882,45 @@
 
 @Book{Raine2009,
   Title                    = {Bobath Concept - Theory and Clinical Practice in Neurological Rehabilitation},
-  Author                   = {Raine, Sue and Meadows, Linzi and Lynch-Ellerington, Mary},
+  Author                   = {Raine, Sue and others},
   Publisher                = {Wiley-Blackwell},
   Year                     = {2009},
 
   Owner                    = {Cecilie},
-  Timestamp                = {2015.10.03},
-  Url                      = {http://faculty.mu.edu.sa/public/uploads/1348328471.2341Bobath.Concept.2009.pdf}
+  Timestamp                = {2015.10.03}
 }
 
 @Article{Ramanathan2006,
   Title                    = {A form of motor cortical plasticity that correlates with recovery of function after brain injury},
-  Author                   = {Ramanathan, Dhakshin and Conner, James M. and Tuszynski Mark H.},
+  Author                   = {Ramanathan, Dhakshin and others},
   Journal                  = {Pubmed},
   Year                     = {2006},
 
   Owner                    = {Cecilie},
   Timestamp                = {2015.10.01},
   Url                      = {https://www.ncbi.nlm.nih.gov/pmc/articles/PMC1544093/}
+}
+
+@Electronic{Redaktionen2015,
+  Title                    = {Agnosi},
+  Author                   = {Redaktionen},
+  Organization             = {Den Store Danske, Gyldendal},
+  Url                      = {http://www.denstoredanske.dk/Krop,_psyke_og_sundhed/Psykologi/Psykologiske_termer/agnosi},
+  Year                     = {2015},
+
+  Owner                    = {Maria},
+  Timestamp                = {2015.10.08}
+}
+
+@Electronic{Redaktionen2015a,
+  Title                    = {Ataksi},
+  Author                   = {Redaktionen},
+  Organization             = {Den Store Danske, Gyldendal},
+  Url                      = {http://www.denstoredanske.dk/Krop,_psyke_og_sundhed/Sundhedsvidenskab/Børnesygdomme_og_medfødte_misdannelser/ataksi},
+  Year                     = {2015},
+
+  Owner                    = {Maria},
+  Timestamp                = {2015.10.08}
 }
 
 @Electronic{Redaktionen2009,
@@ -892,26 +932,6 @@
 
   Owner                    = {Mads},
   Timestamp                = {2015.12.05}
-}
-
-@Electronic{Redaktionen2015,
-  Title                    = {Agnosi},
-  Author                   = {Redaktionen, Den store danske},
-  Url                      = {http://www.denstoredanske.dk/Krop,_psyke_og_sundhed/Psykologi/Psykologiske_termer/agnosi},
-  Year                     = {2015},
-
-  Owner                    = {Maria},
-  Timestamp                = {2015.10.08}
-}
-
-@Electronic{Redaktionen2015a,
-  Title                    = {Ataksi},
-  Author                   = {Redaktionen, D. s. d.},
-  Url                      = {http://www.denstoredanske.dk/Krop,_psyke_og_sundhed/Sundhedsvidenskab/Børnesygdomme_og_medfødte_misdannelser/ataksi},
-  Year                     = {2015},
-
-  Owner                    = {Maria},
-  Timestamp                = {2015.10.08}
 }
 
 @Manual{RIGOL2010,
@@ -936,7 +956,7 @@
 
 @Electronic{Rugnett2015,
   Title                    = {Neuroplasticity},
-  Author                   = {Michael Rugnetta},
+  Author                   = {Rugnetta, Michael},
   Month                    = {Oktober},
   Organization             = {Britannica academic},
   Url                      = {http://academic.eb.com.zorac.aub.aau.dk/EBchecked/topic/410552/neuroplasticity},
@@ -984,8 +1004,7 @@
   Year                     = {2011},
 
   Owner                    = {Maria},
-  Timestamp                = {2015.09.23},
-  Url                      = {https://books.google.dk/books?id=vNK8CRu4t9sC&pg=PA444&lpg=PA444&dq=karokklusion&source=bl&ots=jAu__8N4Oz&sig=I4LKVLfRFQVE4NZYjHpUepM6jms&hl=da&sa=X&ved=0CEMQ6AEwB2oVChMI1Lbp_fv4xwIVCANzCh0AmgAV#v=onepage&q=apopleksi&f=false}
+  Timestamp                = {2015.09.23}
 }
 
 @Book{Sedra2010,
@@ -1002,6 +1021,7 @@
 @Book{Stanfield2014,
   Title                    = {Principles of Human Physiology},
   Author                   = {Stanfield, Cindy L.},
+  Editor                   = {Churchman, Kelsey},
   Publisher                = {Pearson Education},
   Year                     = {2014},
 
@@ -1024,6 +1044,7 @@
   Title                    = {Apopleksi og TCI(=TIA)},
   Author                   = {Sundhed.dk},
   Month                    = {September},
+  Organization             = {Sundhed.dk},
   Url                      = {https://www.sundhed.dk/sundhedsfaglig/laegehaandbogen/hjerte-kar/tilstande-og-sygdomme/apopleksi-og-tia/apopleksi-og-tia-tci/#1},
   Year                     = {2014},
 
@@ -1034,6 +1055,7 @@
 @Electronic{Sundhed.dk2014a,
   Title                    = {Parese},
   Author                   = {Sundhed.dk},
+  Organization             = {Sundhed.dk},
   Url                      = {https://www.sundhed.dk/sundhedsfaglig/laegehaandbogen/neurologi/symptomer-og-tegn/parese/},
   Year                     = {2014},
 
@@ -1081,18 +1103,9 @@
   Timestamp                = {2015.09.23}
 }
 
-@Electronic{Syddanmark,
-  Title                    = {Apopleksi - ratingscales},
-  Author                   = {Region Syddanmark},
-  Url                      = {http://ekstern.infonet.regionsyddanmark.dk/Files/dokument90214.htm},
-
-  Owner                    = {Mathias},
-  Timestamp                = {2015.09.24}
-}
-
 @Electronic{Soenderborg2013,
   Title                    = {Hjerneblødninger svære at behandle akut},
-  Author                   = {Birgitte R. Sønderborg},
+  Author                   = {Sønderborg, Birgitte R.},
   Month                    = {April},
   Organization             = {Hjernesagen},
   Url                      = {http://www.hjernesagen.dk/om-hjerneskader/behandling/hjernebloedning},
@@ -1104,7 +1117,7 @@
 
 @Article{Takeuchi2012,
   Title                    = {Maladaptive Plasticity for Motor Recovery after Stroke: Mechanisms and Approaches},
-  Author                   = {Naoyuki Takeuchi and Shin-Ichi Izumi},
+  Author                   = {Takeuchi, Naoyuki  and Izumi, Shin-Ichi},
   Journal                  = {Department of Physical Medicine and Rehabilitation, Tohoku University Graduate School of Medicine},
   Year                     = {2012},
 
@@ -1114,7 +1127,7 @@
 
 @Article{Thieme2012,
   Title                    = {Mirror therapy for improving motor function after stroke},
-  Author                   = {Thieme, Holm and Mehrholz, Jan and others},
+  Author                   = {Thieme, Holm and others},
   Journal                  = {Cochrane Library},
   Year                     = {2012},
 
@@ -1125,6 +1138,7 @@
 @Electronic{Vistrup2015,
   Title                    = {Paralyse},
   Author                   = {Vistrup, Lene},
+  Organization             = {Den Store Danske, Gyldendal},
   Url                      = {http://www.denstoredanske.dk/Krop,_psyke_og_sundhed/Sundhedsvidenskab/Medicinske_nervesygdomme/paralyse},
   Year                     = {2015},
 
@@ -1134,7 +1148,7 @@
 
 @Article{Wang2010,
   Title                    = {Body Sway Measurement for Fall Risk Assessment Using Inexpensive Webcams},
-  Author                   = {Fang Wang AND Marjorie Skubic and others},
+  Author                   = {Wang, F. and others},
   Journal                  = {IEEE Engineering in medicine and biology society conference proceedings},
   Year                     = {2010},
 
@@ -1154,7 +1168,8 @@
 
 @Book{Webster2009,
   Title                    = {Medical Instrumentation Application and Design - Application and Design},
-  Author                   = {Webster, John G and Clark, John W and Olson, Walter H.},
+  Author                   = {Webster, John G and others},
+  Editor                   = {Webster, John G},
   Publisher                = {John Wiley And Sons Ltd},
   Year                     = {2009},
 
@@ -1174,7 +1189,7 @@
 
 @Book{Zouridakis2003,
   Title                    = {Biomedical Technology and Devices Handbook},
-  Author                   = {George Zouridakis and James Moore},
+  Author                   = {Zouridakis, George  and Moore, James},
   Publisher                = {CRC Press},
   Year                     = {2003},
 
