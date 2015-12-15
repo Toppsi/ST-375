@@ -32,17 +32,10 @@ Feedbackblokken kan adskilles i to dele ved den grønne LED; en for hældning i 
 
 \begin{figure}[H] 
 	\centering
-<<<<<<< HEAD
 	\includegraphics[scale=0.35]{figures/cProblemloesning/komparator_uden_vaerdi.PNG}
 	\caption{På figuren ses feedbackblokken, som kan adskilles i to dele ved den grønne LED; en for hældning i hhv. positiv og negativ retning. Der indgår $12$ modstande (R$1$-R$12$) i de fem spændingsdelere, som leverer tærskelværdier til de otte komparatorer. Derudover indgår en spændingsreference på $2.5$V. Der ses yderligere dem LED'er og to vibratorer, hvilket fremgår som to modstande i LTspice, samt tilhørende modstande. For den grønne LED er der en vindueskonfigurationen konstrueret vha. komparatorerne (U$3$-U$4$).}
-=======
-	\includegraphics[scale=0.4]{figures/cProblemloesning/komparator_uden_vaerdi.PNG}
-	\caption{På figuren ses feedbackblokken, som kan adskilles i to dele ved den grønne LED; en for hældning i hhv. positiv og negativ retning. Der indgår $12$ modstande (R$1$-R$12$) i de fem spændingsdelere, som leverer tærskelværdier til de otte komparatorer. Derudover indgår en spændingsreference på $2.5$V. Der ses yderligere fem LED'er og to vibratorer, hvilket fremgår som to modstande i LTspice, samt tilhørende modstande. For den grønne LED er en vindueskonfigurationen konstrueret vha. komparatorerne (U$3$-U$4$).}
->>>>>>> origin/master
 	\label{fig:komparator_uden_vaerdi}
 \end{figure}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \noindent\textbf{Beregning af tærskelværdier og modstandene R$1$-R$12$ i spændingsdelerne} \\
 Der kræves at LED'erne skal lyse ved bestemte tærskelværdier, dvs. bestemte kropshældninger, jævnfør afsnit \ref{KomparatorAfs}, side \pageref{KomparatorAfs}. Inputsignalet afhænger af den pågældende hældningsgrad, da denne bestemmer inputspændingen til komparatorerne. Tærskelværdier kan beregnes, da værdien i volt pr. grad i hhv. positiv og negativ retning er kendt, jævnfør \eqref{taeskelvaerdi_pr_grad}, side \pageref{Sec_Pilot_Data}. Desuden kendes forstærkningsfaktoren fra de tidligere blokke. Tærskelværdierne for komparatoren beregnes ud fra følgende formler:
