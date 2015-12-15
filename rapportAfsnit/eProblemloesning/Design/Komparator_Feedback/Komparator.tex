@@ -40,8 +40,8 @@ Feedbackblokken kan adskilles i to dele ved den grønne LED; en for hældning i 
 \noindent\textbf{Beregning af tærskelværdier og modstandene R$1$-R$12$ i spændingsdelerne} \\
 Der kræves at LED'erne skal lyse ved bestemte tærskelværdier, dvs. bestemte kropshældninger, jævnfør afsnit \ref{KomparatorAfs}, side \pageref{KomparatorAfs}. Inputsignalet afhænger af den pågældende hældningsgrad, da denne bestemmer inputspændingen til komparatorerne. Tærskelværdier kan beregnes, da værdien i volt pr. grad i hhv. positiv og negativ retning er kendt, jævnfør \eqref{taeskelvaerdi_pr_grad}, side \pageref{Sec_Pilot_Data}. Desuden kendes forstærkningsfaktoren fra de tidligere blokke. Tærskelværdierne for komparatoren beregnes ud fra følgende formler:
 \begin{eqnarray} \label{pr_grad} 
-Positiv-retning : 0.0037\text{V} \cdot 9.1 \cdot 3.6 \cdot \text{hældning} = \text{tærskelværdi} \\
-Negativ-retning : 0.0036\text{V} \cdot 9.1 \cdot 3.6 \cdot \text{hældning} = \text{tærskelværdi}
+Positiv\_retning : 0.0037\text{V} \cdot 9.1 \cdot 3.6 \cdot \text{hældning} = \text{tærskelværdi} \\
+Negativ\_retning : 0.0036\text{V} \cdot 9.1 \cdot 3.6 \cdot \text{hældning} = \text{tærskelværdi}
 \end{eqnarray}
 \noindent Hvor $0.0037$ og $0.0036$ er volten pr. grad i hhv. positiv og negativ retning. Værdierne $9.14$ og $3.6$ er forstærkningsfaktoren fra de forrige blokke, og hældningen er den grad, som tærskelværdien skal indstilles efter. 
 De udregnede tærskelværdier fremgår af \figref{fig:taerskelvaerdier}. 
