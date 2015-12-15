@@ -42,13 +42,13 @@ A(\omega_s) = 10 \text{log} \cdot \left[1 + \epsilon^2 \cdot (\frac{\omega _s}{\
 	\centering
 	\begin{minipage}[b]{0.45\textwidth}
 		\includegraphics[width=\textwidth]{figures/cProblemloesning/Lavpasfilter1_teoretisk.PNG}
-		\caption{På figuren ses en illustration af et $1$. ordens unity-gain Sallen-Key lavpasfilter, hvor værdien C er kondensatoren og R$1$ er modstanden. Filterkonfigurationen har en indgangsspænding, $V_{in}$, og udgangsspænding, $V_{out}$. \cite{Carter2013}}
+		\caption{På figuren ses en illustration af et $1$. ordens unity-gain Sallen-Key lavpasfilter, hvor værdien C er kondensatoren og R$1$ er modstanden. Filterblokken har en indgangsspænding, $V_{in}$, og udgangsspænding, $V_{out}$. \cite{Carter2013}}
 		\label{fig:SallenKey1}
 	\end{minipage}
 	\hfill
 	\begin{minipage}[b]{0.45\textwidth}
 		\includegraphics[width=\textwidth]{figures/cProblemloesning/Sallenlavpas.PNG}
-		\caption{På figuren ses en illustration af et $2$. ordens unity-gain Sallen-Key lavpasfilter, hvor værdien C er kondensatoren samt R$1$ og R$2$ er modstandene. Filterkonfigurationen har en indgangsspænding, $V_{in}$, og en udgangsspænding, $V_{out}$. \cite{Carter2013}}
+		\caption{På figuren ses en illustration af et $2$. ordens unity-gain Sallen-Key lavpasfilter, hvor værdien C er kondensatoren samt R$1$ og R$2$ er modstandene. Filterblokken har en indgangsspænding, $V_{in}$, og en udgangsspænding, $V_{out}$. \cite{Carter2013}}
 		\label{fig:SallenKey2}
 	\end{minipage}
 \end{figure}
@@ -84,7 +84,7 @@ R_{1} = \frac{1}{2 \cdot \pi \cdot 25 \cdot 100nF} = 63661.9772 \Omega
 \begin{equation}
 \label{eq:2ordenmodstand}R_{2,3} = \frac{1 \cdot 470\text{nF} \pm \sqrt{1^2 \cdot 470\text{nF}^2 - 4 \cdot 1 \cdot 100\text{nF} \cdot 470\text{nF}}}{4 \pi \cdot 25\text{Hz} \cdot 100\text{nF} \cdot 470\text{nF}} = \begin{cases} R_{2} = 19546.69414 \Omega \\ R_{3} =  44115.28306 \Omega \end{cases}
 \end{equation}
-\noindent Filterets værdier for kondensatorerne og modstandene er nu udregnet for hhv. $1$. og $2$. ordens filter. Filterkonfigurationen kan nu simuleres i LTspice, som ses på \figref{fig:lavpasfilter1_LTspice}, for at bestemme kvaliteten af det $3$. ordens filter, der er blevet designet.
+\noindent Filterets værdier for kondensatorerne og modstandene er nu udregnet for hhv. $1$. og $2$. ordens filter. Filterblokken kan nu simuleres i LTspice, som ses på \figref{fig:lavpasfilter1_LTspice}, for at bestemme kvaliteten af det $3$. ordens filter, der er blevet designet.
 
 \begin{figure}[H]
 	\centering
@@ -107,7 +107,7 @@ For at udføre en simulering af $3$. ordens lavpasfilteret foretages en AC-analy
 	\caption{På figuren ses en illustration af et bodeplot, der viser $3$. ordens filterets frekvensindhold målt i Hz over dæmpningen målt i dB.}
 	\label{fig:lavpasfiltergraf_LTspice1}
 \end{figure}
-\noindent Af \figref{fig:lavpasfiltergraf_LTspice1} fremgår det, at det simulerede filter har en maksimal dæmpning i dB på $3.012$ ved en pasbåndfrekvens på $25$Hz, hvilket ikke overholder kravspecifikationerne i afsnit \ref{FilterAfs}, side \pageref{FilterAfs}. Grundet den lave afvigelse accepteres lavpasfiltret i midlertid og der udføres derfor endnu en simulering af filteret med de reelle modstande, der benyttes under implementeringen. Der ses yderligere, at der ved en stopbåndsfrekvens på $45$Hz ses en dæmpning i dB på $15.443$. Dette overholder projektets opstillede krav for filterkonfigurationen ved en minimum dæmpning på $14$ dB i stopbåndfrekvensen.
+\noindent Af \figref{fig:lavpasfiltergraf_LTspice1} fremgår det, at det simulerede filter har en maksimal dæmpning i dB på $3.012$ ved en pasbåndfrekvens på $25$Hz, hvilket ikke overholder kravspecifikationerne i afsnit \ref{FilterAfs}, side \pageref{FilterAfs}. Grundet den lave afvigelse accepteres lavpasfiltret i midlertid og der udføres derfor endnu en simulering af filteret med de reelle modstande, der benyttes under implementeringen. Der ses yderligere, at der ved en stopbåndsfrekvens på $45$Hz ses en dæmpning i dB på $15.443$. Dette overholder projektets opstillede krav for filterblokken ved en minimum dæmpning på $14$ dB i stopbåndfrekvensen.
 
 Der ses på \figref{fig:lavpasfilter_LTspice}, at der skal benyttes tre modstande på hhv. $63661.9772\Omega$, $44115.2831\Omega$ og $19546.694\Omega$ til opbygningen af filtret. Ingen af disse modstande findes reelt, hvorfor de nærmeste alternativer er udregnet. For at få $63661.9772\Omega$ skal en $1$M$\Omega$  sættes parallelt med $68$K$\Omega$, hvilket teoretisk giver en afvigelse på $0.013\%$. For at få $44115.2831\Omega$ skal $680$K$\Omega$ sættes parallelt med $47$K$\Omega$, hvilket teoretisk giver en afvigelse på $0.349\%$. For at få en $19546.694\Omega$ sættes $39$K$\Omega$ parallelt med $39$K$\Omega$, hvilket teoretisk giver en afvigelse på $0.239\%$. Disse blev målt, hvilket ses i \tableref{Tab:Maalingafmodstande_filter}.
 \begin{table}[H]
@@ -128,7 +128,7 @@ Der ses på \figref{fig:lavpasfilter_LTspice}, at der skal benyttes tre modstand
 	\caption{I tabellen ses at de anvendte modstande afviger fra den teoretiske værdi, hvilket er forventet af reelle komponenter. Disse afvigelser kommer derved også til at have en effekt på $R_{eq}$. Det er de teoretiske værdier, som bliver benyttet i en ny simulering.}
 	\label{Tab:Maalingafmodstande_filter}
 \end{table}
-\noindent Filterkonfigurationen med reelle modstande fremgår af \figref{fig:Sim_reel_modstande}.
+\noindent Filterblokken med reelle modstande fremgår af \figref{fig:Sim_reel_modstande}.
 \begin{figure}[H]
 	\centering
 	\includegraphics[scale=0.4]{figures/cProblemloesning/Sim_reel_modstande.PNG}
@@ -143,7 +143,7 @@ Der ses på \figref{fig:lavpasfilter_LTspice}, at der skal benyttes tre modstand
 	\label{fig:Sim_reel_graf}
 \end{figure}
 
-\noindent Ud fra bodeplottet ses det, at det simulerede filter med reelle værdier har en maksimal amplitude på $-2.985$dB ved en pasbåndsfrekvens på $25$Hz, hvilket overholder kravspecifikationerne i afsnit \ref{FilterAfs}, side \pageref{FilterAfs}. Der aflæses, at ved stopbåndsfrekvensen på $45$Hz er amplituden $-15.389$dB, hvilket fortsat er acceptabelt ift. kravspecifikationerne for filterkonfigurationen. 
+\noindent Ud fra bodeplottet ses det, at det simulerede filter med reelle værdier har en maksimal amplitude på $-2.985$dB ved en pasbåndsfrekvens på $25$Hz, hvilket overholder kravspecifikationerne i afsnit \ref{FilterAfs}, side \pageref{FilterAfs}. Der aflæses, at ved stopbåndsfrekvensen på $45$Hz er amplituden $-15.389$dB, hvilket fortsat er acceptabelt ift. kravspecifikationerne for filterblokken. 
 
 \subsubsection{Implementering og test} 
 Der ses på \figref{fig:Sim_reel_modstande} at der benyttes 3 kondensatorer til at designe kredsløbet. I \tableref{Tab:Maalingafmodstande_filter} ses målingerne af de benyttede modstande. I \tableref{Tab:Maalingfilter} ses de reelle værdier for de benyttede kondensatorer.
