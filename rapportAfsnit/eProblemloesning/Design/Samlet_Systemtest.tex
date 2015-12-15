@@ -63,6 +63,7 @@ Der foretages nogle basale ændringer i det opstillede system i LTspice, som ses
 	\label{tab:samlet_sim}
 \end{table}
 
+
 \subsection{Implementering og test}
 Det samlede system implementeres på to breadboards. Opsætningen kan ses på \figref{fig:samlet_system_real}
 \begin{figure}[H]
@@ -141,12 +142,28 @@ Ved rotation af accelerometret observeres det, at systemet fungerer ift. de over
 På baggrund af målingerne og de vurderede fejlkilder godkendes den analoge del af systemet og det vurderes, at det virker efter hensigten ift. de overordnede funktionelle krav.\\
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%5
-Fra diskussion : På baggrund af den samlede systemtest af den analoge del af systemet ses det, at der er afvigelser for samtlige grader, hvor LED'erne samt vibratorerne aktiveres ift. de definerede grader. Der ses i \eqref{eq:graderLED_1}-\ref{eq:graderLED_2} på side \pageref{eq:graderLED_1}, at den maksimale afvigelse i grader er $13^{\circ} - 11.22^{\circ} = 1.78^{\circ}$, hvilket svarer til $13.69\%$. Der forekommer således en højere procentmæssig afvigelse i denne test sammenlignet med de udregnede afvigelser for test af de enkelte blokke. Det vurderes, at denne afvigelse altså kan forventes grundet afvigelser i de enkelte blokke. Hvis der f.eks. tages udgangspunkt i outputtet fra accelerometret ved aktivering af den røde LED i positiv retning, som var $1.6740$V, kan afvigelserne for dette signal beregnes, hvis der tages højde for afvigelsen i referencespændingen til offsetjusteringsblokken. Dette ses i de følgende ligninger.
-\begin{eqnarray}
-1.6740 - 1.6302 = 0.0438 \\
-\dfrac{0.0438}{0.0037} = 11.84^{\circ}
-\end{eqnarray}
-Der ses i ligningen, at den udregnede vinkel for accelerometret er $11.84$ grader, når der tages højde for referencespændingen. Derved er afvigelsen i grader $13^{\circ} - 11.84^{\circ} = 1.16^{\circ}$, hvilket er $8.92\%$ afvigelse fra $13^{\circ}$. Derved ses en nedsættelse af afvigelsen, når der tages højde for de enkelte blokkes afvigelse i test. Flere af de benyttede komponenter har et indbygget offset, som f.eks. operationsforstærkere, hvormed dette også kan påvirke både de enkelte blokke og det samlede system. Der forventes ikke, at afvigelsen for det samlede system vil forsvinde helt, selvom der tages højde for blokkenes individuelle afvigelse, da der også skal medregnes eventuelle fejl ved målemetoderne ift. aflæsning eller upræcist udstyr. \\
+Der ses af testen afvigelser for samtlige grader, hvor LED'erne samt vibratorerne aktiveres ift. de definerede grader. Der ses i \eqref{eq:graderLED_1}-\ref{eq:graderLED_2} på side \pageref{eq:graderLED_1}, at den maksimale afvigelse i grader er $13^{\circ} - 11.22^{\circ} = 1.78^{\circ}$, hvilket svarer til $13.69\%$. Der forekommer således en højere procentmæssig afvigelse i denne test sammenlignet med de udregnede afvigelser for test af de enkelte blokke. Det vurderes, at denne afvigelse altså kan forventes grundet afvigelser i de enkelte blokke. Hvis der f.eks. tages udgangspunkt i outputtet fra accelerometret ved aktivering af den røde LED i positiv retning, som var $1.6740$V, kan afvigelserne for dette signal beregnes, hvis der tages højde for afvigelsen i referencespændingen til offsetjusteringsblokken. Dette ses i \tableref{tab:nye_afv}.
+
+\begin{table}[H]
+	\centering
+	\begin{tabular}{l|l|l|l|l|}
+		\cline{2-4}
+		\textit{}                                                                                              & \textit{\begin{tabular}[c]{@{}l@{}}Output fra\\ accelerometer\end{tabular}} & \textit{\begin{tabular}[c]{@{}l@{}}Output uden\\ offset\end{tabular}} & \textit{\begin{tabular}[c]{@{}l@{}}Graders\\ hældning\end{tabular}}          & \textit{Afvigelse}                                      \\ \hline
+		\multicolumn{1}{|l|}{\textit{\begin{tabular}[c]{@{}l@{}}Rød LED\\ positiv\end{tabular}}}               & $1.6740$V                      &       $0.0438$V                                        & $11.84^{\circ}$                                                              & $8.92\%$                                                   \\ \hline
+		\multicolumn{1}{|l|}{\textit{\begin{tabular}[c]{@{}l@{}}Gul LED\\og vibrator\\ positiv\end{tabular}}} & $1.6562$V            &             $0.026$V                                             & $7.03^{\circ}$                                                               & $12.13\%$                                                   \\ \hline
+		\multicolumn{1}{|l|}{\textit{Grøn LED}}                                                                & \begin{tabular}[c]{@{}l@{}}$1.6377$V\\ $1.6243$V\end{tabular}   &  \begin{tabular}[c]{@{}l@{}}$0.0075$V\\ -$0.0059$V\end{tabular}            & \begin{tabular}[c]{@{}l@{}}$2.03^{\circ}$ til\\ $1.64^{\circ}$\end{tabular} & \begin{tabular}[c]{@{}l@{}}$1.5\%$\\ $18\%$\end{tabular} \\ \hline
+		\multicolumn{1}{|l|}{\textit{\begin{tabular}[c]{@{}l@{}}Gul LED\\og vibrator\\ negativ\end{tabular}}} & $1.6005$V            & -$0.0297$V                                                       & $8.25^{\circ}$                                                              & $3.13\%$                                                    \\ \hline
+		\multicolumn{1}{|l|}{\textit{\begin{tabular}[c]{@{}l@{}}Rød LED\\ negativ\end{tabular}}}               & $1.5822$V              & -$0.0480$V                                                     & -$13.33^{\circ}$                                                              & $2.56\%$                                                    \\ \hline
+	\end{tabular}
+	\caption{I tabellen ses resultatet af det simulerede samlede system ved aktivering af de enkelte feedbackkomponenter og den procentvise afvigelse fra de definerede hældningsgrader.}
+	\label{tab:nye_afv}
+\end{table}
+
+%\begin{eqnarray}
+%1.6740 - 1.6302 = 0.0438 \\
+%\dfrac{0.0438}{0.0037} = 11.84^{\circ}
+%\end{eqnarray}
+Der ses i tabellen, at den udregnede vinkel for accelerometret er $11.84$ grader, når der tages højde for referencespændingen. Derved er afvigelsen i grader $13^{\circ} - 11.84^{\circ} = 1.16^{\circ}$, hvilket er $8.92\%$ afvigelse fra $13^{\circ}$. Derved ses en nedsættelse af afvigelsen, når der tages højde for de enkelte blokkes afvigelse i test. Flere af de benyttede komponenter har et indbygget offset, som f.eks. operationsforstærkere, hvormed dette også kan påvirke både de enkelte blokke og det samlede system. Der forventes ikke, at afvigelsen for det samlede system vil forsvinde helt, selvom der tages højde for blokkenes individuelle afvigelse, da der også skal medregnes eventuelle fejl ved målemetoderne ift. aflæsning eller upræcist udstyr. \\
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \subsubsection{Test 2}
