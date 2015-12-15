@@ -1,7 +1,7 @@
 % !TeX spellcheck = da_DK
 \subsection{Accelerometer}\label{Acc_afsnit}
 \subsubsection{Teori og design}
-Teorien og specifikationer vedrørende accelerometret ADXL$335$ er i afsnit \ref{Subsec:AccTeori} på side \pageref{Subsec:AccTeori}. Designet af opsætningen kan ses i bilag \ref{Bilag:Pilotforsoeg}, side \pageref{Bilag:Pilotforsoeg} med en ændring af den ene kondensator. I pilotforsøget blev det påvist, at signalet ligger mellem $0-25$Hz, og derfor benyttes en kondensator med en anden kapacitans fremfor den kondensator, der blev brugt i pilotforsøget \cite{Devices2009}:
+Teorien og specifikationer vedrørende accelerometret ADXL$335$ er i afsnit \ref{Subsec:AccTeori}, side \pageref{Subsec:AccTeori}. Designet af opsætningen kan ses i bilag \ref{Bilag:Pilotforsoeg}, side \pageref{Bilag:Pilotforsoeg} med en ændring af den ene kondensator. I pilotforsøget blev det påvist, at signalet ligger mellem $0-25$Hz, og derfor benyttes en kondensator med en anden kapacitans fremfor den kondensator, der blev brugt i pilotforsøget \cite{Devices2009}:
 \begin{equation}
 \text{Båndbredde} = \dfrac{5\mu F}{C} \Rightarrow  C = \dfrac{5\mu F}{\text{25 Hz}} = 0.2\mu F
 \end{equation}
@@ -15,7 +15,7 @@ For at undgå loading fra andre blokke i systemet benyttes en buffer, jævnfør 
 \end{figure}
 
 \subsubsection{Simulering}
-Jævnfør tolerancekravene for accelerometret beskrevet i afsnit \ref{OpsamlingsAfs} på side \pageref{OpsamlingsAfs} skal der testes for, hvorledes accelerometret overholder kravet om, at der maksimum må være en $5\%$ afvigelse i detektionen af hældningsgrad. \\
+Jævnfør tolerancekravene for accelerometret beskrevet i afsnit \ref{OpsamlingsAfs}, side \pageref{OpsamlingsAfs} skal der testes for, hvorledes accelerometret overholder kravet om, at der maksimum må være en $5\%$ afvigelse i detektionen af hældningsgrad. \\
 Der findes ikke et accelerometer i LTspice, hvorfor accelerometeret er symboliseret med en sinuskurve. Dets DC svarer til spændingsforsyning $5.5$V fratrukket offsettet for accelerometeret ved $0$g påvirkning, som er $1.6325$V. Derudover angives en amplitude svarende til den maksimale sensitivitet på $0.3313$V. Simuleringen ses på \figref{fig:acc_simulering} og resultatet ses på \figref{fig:acc_simulering_resultat}.
 \begin{figure}[H]
 	\centering
@@ -44,7 +44,7 @@ Accelerometerets båndbredde bestemmes af to $0.1\mu$F kondensatorer i parallelf
 	\caption{I tabellen ses det, at de tre kondensatorer afviger lidt fra deres teoretiske værdi, hvilket er forventet af reelle komponenter. Disse afvigelser vil derfor have en effekt på parallel forbindelsen imellem $C2$ og $C3$.}
 	\label{Tab:Acc_kondensator}
 \end{table}
-\noindent Til opsamling af data fra accelerometret benyttes et multimeter. I testen foretages en aflæsning med multimetret for $\pm8^\circ$ og $\pm13^\circ$. Disse fire værdier ses i \tableref{Tab:Acc_test_procent}. Den teoretiske stigning af volt pr. grad for hhv. negativ og positiv hældning er udregnet i bilag \ref{Bilag:Pilotforsoeg} på side \pageref{Bilag:Pilotforsoeg}. De teoretiske værdier for $8^\circ$ og $13^\circ$ er udregnet ud fra disse værdier, hvilket fremgår af de følgende ligninger:
+\noindent Til opsamling af data fra accelerometret benyttes et multimeter. I testen foretages en aflæsning med multimetret for $\pm8^\circ$ og $\pm13^\circ$. Disse fire værdier ses i \tableref{Tab:Acc_test_procent}. Den teoretiske stigning af volt pr. grad for hhv. negativ og positiv hældning er udregnet i bilag \ref{Bilag:Pilotforsoeg}, side \pageref{Bilag:Pilotforsoeg}. De teoretiske værdier for $8^\circ$ og $13^\circ$ er udregnet ud fra disse værdier, hvilket fremgår af de følgende ligninger:
 \begin{align}
 (0.0037 \cdot 13) + 1.6325 = 1.6803\text{V} \\
 (0.0037 \cdot 8) + 1.6325 = 1.6619\text{V}  \\

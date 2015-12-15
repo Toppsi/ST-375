@@ -1,7 +1,7 @@
 % !TeX spellcheck = da_DK
 \subsection{Referencespænding til feedback}\label{subsec:Spaendingsref_Komparator}
 \subsubsection{Teori og design}
-Feedbackblokken skal forsynes med en konstant spænding, da denne skal anvendes som sammenligningsgrundlag ift. inputsignalet. Her anvendes igen en referencespænding, jævnfør afsnit \ref{subsec:Spaendingsref} på side \pageref{subsec:Spaendingsref}. Der anvendes en tilsvarende referencediode til denne referencespænding, som kan ses på \figref{fig:Spaendingsreference}, side \pageref{subsec:Spaendingsref}. \\
+Feedbackblokken skal forsynes med en konstant spænding, da denne skal anvendes som sammenligningsgrundlag ift. inputsignalet. Her anvendes igen en referencespænding, jævnfør afsnit \ref{subsec:Spaendingsref}, side \pageref{subsec:Spaendingsref}. Der anvendes en tilsvarende referencediode til denne referencespænding, som kan ses på \figref{fig:Spaendingsreference}, side \pageref{subsec:Spaendingsref}. \\
 For at udregne modstanden R1 for referencespændingen til komparatoren benyttes \eqref{eq:udregning_modstand}, side \pageref{eq:udregning_modstand}. Den ønskede referenceværdi er $2.5$V, så der skal i dette tilfælde ikke benyttes en spændingsdeler, da disse indgår i designet for feedbackblokken. I starten af kredsløbet indsættes operationsforstærkeren af typen TL$082$, som har to inputs og outputs. \cite{Corporation2013} Den kan denne fungere som buffer til feedbackblokken og en inverterende forstærker. \cite{Schaumann2014} Den maksimale biasstrøm er $50$nA, da spændingen går direkte ind i bufferen. Biasstrømmen for referencedioden er sat til $200\mu$A. Dermed kan værdierne indsættes i formlen og R$1$ kan beregnes:
 \begin{equation}
 R1 = \frac{5.5V-2.5V}{50nA + 200\mu\text{A}} = 14999.62501\Omega \approx 15K\Omega 
@@ -73,5 +73,5 @@ Der ses på \figref{fig:ref_komparator}, at der skal benyttes tre modstande på 
 	\caption{I tabellen ses en oversigt over de forventede og målte outputsignaler fra testen for spændingsreferencen og operationsforstærkeren TL$082$ til feedbackblokken.}
 	\label{Tab:SpaendingsRef_kompar_test}
 \end{table}
-\noindent Der ses ud fra resultaterne i \tableref{Tab:SpaendingsRef_offset_test}, at blokken overholder kravspecifikationerne, jævnfør afsnit \ref{Ref_Kompar_Afs} på side \pageref{Ref_Kompar_Afs}. %Derudover ligger afvigelserne indenfor tolerancerne. \\
+\noindent Der ses ud fra resultaterne i \tableref{Tab:SpaendingsRef_offset_test}, at blokken overholder kravspecifikationerne, jævnfør afsnit \ref{Ref_Kompar_Afs}, side \pageref{Ref_Kompar_Afs}. %Derudover ligger afvigelserne indenfor tolerancerne. \\
 Der tages ikke hensyn til outputimpedansen fra denne blok, da operationsforstærkeren, der fungerer som en buffer, sørger for, at outputimpedansen bliver tilstrækkelig lav til ikke at have en betydning.

@@ -64,7 +64,7 @@ Opsæningen af pilotforsøget er opsat i LTspice, som ses på \figref{pLTspice}.
 \item Accelerometeret tilkobles breadboardet.
 \item De to kondensatorer tilkobles breadboardet. Kondensatorererne er valgt på baggrund af databladet for acceleorometeret ift. power supply decoupling og båndbredde. Kondensatoren på $0.1\mu$F, som sidder på pin $1$ og $2$ i accelerometeret, fjerner støj fra strømforsyningen, mens kondensatoren fra pin $3$ på $0.1\mu$F giver en båndbredde på $50Hz$. Målingerne af disse ses i \tableref{Tab:Acc_kondensator}.
 \item Accelerometeret tilknyttes en forsyningsspænding på $5.5V$ - en regulator sikrer at accelerometret kun forsynes med en spænding på $3.3$V. Dette er indenfor accelerometerets arbejdsområde, som er på $1.8$V -  $3.6$V.
-\item En buffer designes med en operationsforstærker TL$081$ og en ledning fra den inverterende kanal til outputkanalen. Derved påvirker indgangsimpedansen fra ADC'en af typen NI USB-$6009$ ikke signalet fra accelerometret.\fxnote{NTK: Modstanden i NI USB-$6009$ er $144$K$\Omega$ er ikke $100$ gange større end den $32$K$\Omega$ fra accelerometret. derfor påvirker det sifnalet.}
+\item En buffer designes med en operationsforstærker TL$081$ og en ledning fra den inverterende terminal til outputterminalen. Derved påvirker indgangsimpedansen fra ADC'en af typen NI USB-$6009$ ikke signalet fra accelerometret.\fxnote{NTK: Modstanden i NI USB-$6009$ er $144$K$\Omega$ er ikke $100$ gange større end den $32$K$\Omega$ fra accelerometret. derfor påvirker det sifnalet.}
 \item Outputtet fra bufferen sendes igennem en ADC af typen NI USB-$6009$.
 \item Signalet fra NI USB-$6009$ sendes igennem en USB-isolator af typen USI-$01$.
 \item Outputsignalet fra USI-$01$ sendes ind i computeren, hvor det optages med ScopeLogger og behandles i MATLAB.
@@ -103,7 +103,7 @@ For at måle $0$g påvirkning på accelerometerets x-akse, lægges det fladt ned
 Til sidst måles g påvirkningen af accelerometeret under rotation fra $0^{\circ}$ til $\pm$ $90^{\circ}$ for både højre og venstre. Her måles $10$ sekunders baseline inden og efter rotationen, som varer $5$ sekunder og foretages langsomt og kontrolleret. Disse to målinger optages og gemmes ligeså i ScopeLogger.
 
 \subsection{Behandling af data}
-Efter udførelse af forsøget vil alt data blive behandlet i MATLAB, hvor der beregnes en gennemsnitsværdi for henholdsvis de tre baselines målt ved $0$ g-påvirkning samt $\pm1$ g-påvirkning i positiv retning og negativ retning. Der foretages desuden en Fast Fourier Transformation (FFT) på de ni målinger (tre målinger ved hver g-påvirkning). FFT foretages for at få en grafisk repræsentation af det målte signal i frekvensdomænet. Baseline optages for at se, hvilken påvirkning omgivelserne har på signalet, da der ikke er nogen bevægelse på disse.
+Efter udførelse af forsøget vil alt data blive behandlet i MATLAB, hvor der beregnes en gennemsnitsværdi for hhv. de tre baselines målt ved $0$ g-påvirkning samt $\pm1$ g-påvirkning i positiv retning og negativ retning. Der foretages desuden en Fast Fourier Transformation (FFT) på de ni målinger (tre målinger ved hver g-påvirkning). FFT foretages for at få en grafisk repræsentation af det målte signal i frekvensdomænet. Baseline optages for at se, hvilken påvirkning omgivelserne har på signalet, da der ikke er nogen bevægelse på disse.
 
 \section{Resultater}\label{Sec_Pilot_Data}
 I dette afsnit vil der grafisk blive vist, hvordan accelerometerets output ændrer sig ift. g-påvirkning. På \figref{Fig:Pilot_Tid} ses accelerometerets output i tidsdomænet. Der udføres herefter en FFT på de tre målinger for hver baseline, hvilket giver ni grafiske illustrationer af, hvorledes accelerometerets egne frekvenser adskiller sig fra støjfrekvenser. Disse ses på \figref{Fig:Pilot_FFT0}-\textbf{(\ref{Fig:Pilot_FFTN})}
@@ -167,11 +167,11 @@ I dette afsnit vil der grafisk blive vist, hvordan accelerometerets output ændr
 	\caption{På graferne ses accelerometerets output ved rotation fra $0$ g-påvirkning til $1$ g-påvirkning. Den orange graf repræsenterer rotation i positiv retning, hvorimod den blå graf repræsenterer rotation i negativ retning.}
 	\label{Fig:Pilot_Rottid}
 \end{figure}
-\noindent På \figref{Fig:Pilot_Rottid} ses der en lineær sammenhæng imellem g-påvirkning af accelerometret og outputtet. Der ses, at de tre baselines ved $0$ g-påvirkning samt $1$ g-påvirkning i henholdsvis positiv og negativ retning, som måles i de første og sidste $10$ sekunder af målingen, stemmer overens med de målte baselines uden rotation.
+\noindent På \figref{Fig:Pilot_Rottid} ses der en lineær sammenhæng imellem g-påvirkning af accelerometret og outputtet. Der ses, at de tre baselines ved $0$ g-påvirkning samt $1$ g-påvirkning i hhv. positiv og negativ retning, som måles i de første og sidste $10$ sekunder af målingen, stemmer overens med de målte baselines uden rotation.
 \begin{figure}[H]
 	\centering
 	\includegraphics[scale=0.5]{figures/cProblemloesning/Pilotforsoeg_RotationFrekvens.png}
-	\caption{På graferne ses en FFT af målinger for rotation i henholdsvis positiv og negativ retning.}
+	\caption{På graferne ses en FFT af målinger for rotation i hhv. positiv og negativ retning.}
 	\label{Fig:Pilot_Rotfrek}
 \end{figure}
 \noindent På \figref{Fig:Pilot_Rotfrek} ses en FFT af rotationsmålingerne. Ud fra dette ses, at der er kommet større udsving i de lavere frekvenser fra $0$ til ca. $25$Hz sammenlignet med de statiske baseline målinger. Signalet regnes altså for at være i frekvensspektrummet $0-25$Hz. Alt uden for dette spektrum regnes derfor som støj. \\
@@ -183,4 +183,4 @@ Der kan også være faktorer, som har betydning for $1$ g-påvirkningen, da vink
 %Accelerometerets output afhænger også af rumtemperaturen, da denne påvirker aksernes offset samt sensitiviteten.\\ %Ved dette forsøg var temperaturen før, under og efter forsøget {\color{red}X, X og X}, hvilket vil gå ind og påvirke målingerne. \\
 Alle disse faktorer, som er udregnet for pilotforsøget, kan have indflydelse på de afvigelser, der fås ift. databladet for accelerometeret. På baggrund af forsøgsresultaterne er der blevet foretaget udregninger af afvigelsen for offset samt sensitivitet.\\
 
-\noindent I outputsignalet fra accelerometret ved den statiske acceleration udgør alt over $0$Hz støj, hvorimod det vurderes, at alt over $25$Hz for rotationsmålingerne er støj. Maksimum og minimum outputsignalet fra accelerometret vil for langsom rotation eller svajning henholdsvis være $1.9638$V og $1.3092$V, hvilket bliver til $0.3313$V og -$0.3233$V efter offsettet er blevet justeret, der udregnes til $0.0037$V og -$0.0036$V pr. grad. \\ \clearpage
+\noindent I outputsignalet fra accelerometret ved den statiske acceleration udgør alt over $0$Hz støj, hvorimod det vurderes, at alt over $25$Hz for rotationsmålingerne er støj. Maksimum og minimum outputsignalet fra accelerometret vil for langsom rotation eller svajning hhv. være $1.9638$V og $1.3092$V, hvilket bliver til $0.3313$V og -$0.3233$V efter offsettet er blevet justeret, der udregnes til $0.0037$V og -$0.0036$V pr. grad. \\ \clearpage

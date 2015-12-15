@@ -19,7 +19,7 @@ Først udregnes R$1$ for referencespændingen. $V_{forsyning}$ er de $5.5$V, der
 \begin{equation}
 R1 = \frac{5.5V - 2.5V}{0.2mA + 10nA} = 14999.2500\Omega \approx 15K\Omega
 \end{equation}  
-Da offsettet i accelerometeret er på $1.6325$V, jævnfør bilag \ref{Sec_Pilot_Data} på side \pageref{Sec_Pilot_Data}, skal referenceværdien ligeledes være $1.6325$V. For at opnå denne referenceværdi benyttes en spændingsdeler efter referencedioden, der leverer $2.5$V. Den generelle formel for en spændingsdeler er: 
+Da offsettet i accelerometeret er på $1.6325$V, jævnfør bilag \ref{Sec_Pilot_Data}, side \pageref{Sec_Pilot_Data}, skal referenceværdien ligeledes være $1.6325$V. For at opnå denne referenceværdi benyttes en spændingsdeler efter referencedioden, der leverer $2.5$V. Den generelle formel for en spændingsdeler er: 
 \begin{equation} \label{eq:Spaendingsdeler}
 V_{out} = V_{in} \cdot \dfrac{R3}{R2 + R3}
 \end{equation}
@@ -91,9 +91,9 @@ Der ses på \figref{fig:Spaendingsreference_offset}, at der skal benyttes tre mo
 \label{Tab:SpaendingsRef_offset_test}
 \end{table}
 %Ud fra \tableref{Tab:SpaendingsRef_offset_test} ses det, at afvigelserne for inputtet fra spændingsreferencen har en lidt større afvigelse end de andre. Dette kan skyldes, at spændingsforsyningen ikke er ideel og derfor kan variere lidt i dens outputspænding. Variationen fra spændingsforsyningen vil ikke have en indflydelse, hvis den ikke varierer mere end det målte. Outputtet fra spændingsreferencen accepteres, da afvigelsen er på $0.04 \%$. Det samme gælder for outputtet af spændingsdeleren, hvor afvigelsen er på $0.18 \%$. 
-\noindent Der ses ud fra resultaterne i \tableref{Tab:SpaendingsRef_offset_test}, at spændingsreferencen samt spændingsdeleren overholder kravene fra afsnit \ref{Ref_Offset_Afs} på side \pageref{Ref_Offset_Afs}. Derudover ligger afvigelserne indenfor tolerancerne. \\
+\noindent Der ses ud fra resultaterne i \tableref{Tab:SpaendingsRef_offset_test}, at spændingsreferencen samt spændingsdeleren overholder kravene fra afsnit \ref{Ref_Offset_Afs}, side \pageref{Ref_Offset_Afs}. Derudover ligger afvigelserne indenfor tolerancerne. \\
 Outputimpedansen overholder ikke kravet, da den er:
 \begin{equation}
 R_{eq} = \dfrac{(R2 \cdot R3)}{R2 + R3} \Longrightarrow \dfrac{10000 \cdot 18820}{10000 + 18820} = 6530.19\Omega \approx 6.53K\Omega
 \end{equation}
-\noindent Da inputimpedansen i den inverterende kanal i operationsforstærkeren i offsetjusteringen har en indgangsimpedans på $100$K$\Omega$, vil forholdet mellem output- og inputimpedans i koblingen være problematisk. Der vil dannes en spændingsdeling imellem R$3$ og den pågældende modstand, som sidder inden den inverterende kanal. Dermed vil signalet variere alt efter inputsignalet til operationsforstærkeren i offsetjusteringens ikke-inverterende kanal. Løsningen på problematikken i denne kobling er, at indsætte en buffer, som er beskrevet i bilag \ref{Bilag:Pilotforsoeg}, side \pageref{Bilag:Pilotforsoeg}. \cite{Schaumann2014} Signalet fra spændingsdeleren sendes ind i bufferens ikke-inverterende kanal, hvorfor outputimpedansen ikke er relevant, da denne kanal har en indgangsimpedans på $10^{12}\Omega$. Herved kan blokken accepteres og benyttes i det samlede kredsløb.
+\noindent Da inputimpedansen i den inverterende terminal i operationsforstærkeren i offsetjusteringen har en indgangsimpedans på $100$K$\Omega$, vil forholdet mellem output- og inputimpedans i koblingen være problematisk. Der vil dannes en spændingsdeling imellem R$3$ og den pågældende modstand, som sidder inden den inverterende terminal. Dermed vil signalet variere alt efter inputsignalet til operationsforstærkeren i offsetjusteringens ikke-inverterende terminal. Løsningen på problematikken i denne kobling er, at indsætte en buffer, som er beskrevet i bilag \ref{Bilag:Pilotforsoeg}, side \pageref{Bilag:Pilotforsoeg}. \cite{Schaumann2014} Signalet fra spændingsdeleren sendes ind i bufferens ikke-inverterende terminal, hvorfor outputimpedansen ikke er relevant, da denne terminal har en indgangsimpedans på $10^{12}\Omega$. Herved kan blokken accepteres og benyttes i det samlede kredsløb.

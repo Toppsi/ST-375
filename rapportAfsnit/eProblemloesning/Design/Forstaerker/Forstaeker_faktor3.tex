@@ -1,7 +1,7 @@
 % !TeX spellcheck = da_DK
 \subsection{Forstærker i tilpasningsblok}\label{Forstaerker_faktor3_afs}
 \subsubsection{Teori og design}
-I afsnit \ref{Subsec:Forstaerker}, side \pageref{Subsec:Forstaerker} er teorien samt designet af en forstærker forklaret. Da blokken tilpasning skal tilpasse det filtrerede signal til komparatoren, afgrænses arbejdsintervallet til $\pm25^{\circ}$. Derfor ønskes det, at $V_{out}$ fra denne blok er $\pm3$V, når accelerometret måler $\pm25^{\circ}$. Der skal dermed ske en forstærkning på en faktor $3.6$, hvilket svarer til $11.1261$dB, som beskrevet i afsnit \ref{Tilpasningsblok} på side \pageref{Tilpasningsblok}. \\
+I afsnit \ref{Subsec:Forstaerker}, side \pageref{Subsec:Forstaerker} er teorien samt designet af en forstærker forklaret. Da blokken tilpasning skal tilpasse det filtrerede signal til komparatoren, afgrænses arbejdsintervallet til $\pm25^{\circ}$. Derfor ønskes det, at $V_{out}$ fra denne blok er $\pm3$V, når accelerometret måler $\pm25^{\circ}$. Der skal dermed ske en forstærkning på en faktor $3.6$, hvilket svarer til $11.1261$dB, som beskrevet i afsnit \ref{Tilpasningsblok}, side \pageref{Tilpasningsblok}. \\
 For at udregne modstandene defineres R$2$ til $10$K$\Omega$. Ud fra dette er R$1$ blevet bestemt ved følgende udregning:
 \begin{eqnarray}
 3.6 = 1 + (\frac{R1}{10\text{K}\Omega}) \\
@@ -40,10 +40,10 @@ Forstærkeren testes i fire simuleringer for at undersøge, om den opfylder de o
 	\caption{I tabellen ses resultaterne af de fire simuleringer.}
 	\label{tab:forstarker3_simT}
 \end{table}
-\noindent Der ses i \tableref{tab:forstarker3_simT} en afvigelse, som ligger inde for tolerancerne, jævnfør afsnit \ref{OpsamlingsAfs}, side \pageref{OpsamlingsAfs}. Det er herved påvist, at kredsløbet fungerer teoretisk med ideelle komponenter og kan derfor implementeres.  
+\noindent Der ses i \tableref{tab:forstarker3_simT} en afvigelse, som ligger inde for tolerancerne, jævnfør afsnit \ref{Tilpasningsblok}, side \pageref{Tilpasningsblok}. Det er herved påvist, at kredsløbet fungerer teoretisk med ideelle komponenter og kan derfor implementeres.  
 
 \subsubsection{Implementering og test}
-Det ses på \figref{fig:Forstaerker_faktor3}, at der skal benyttes to modstande på $10$K$\Omega$ og $26$K$\Omega$ til implementeringen af forstærkeren. Reelt findes der ikke en $26$K$\Omega$, hvorfor der istedet benyttes $27$K$\Omega$- og $680$K$\Omega$ modstande i parallel forbindelse, hvilket teoretisk vil give en $0.12$\% afvigelse fra en ideel $26$K$\Omega$ modstand. De tre modstande blev målt inden implementering, hvilket fremgår i \tableref{Tab:modstand_faktor18}.
+Det ses på \figref{fig:Forstaerker_faktor3}, at der skal benyttes to modstande på $10$K$\Omega$ og $26$K$\Omega$ til implementeringen af forstærkeren. Reelt findes der ikke en $26$K$\Omega$, hvorfor der istedet benyttes $27$K$\Omega$- og $680$K$\Omega$ modstande i parallel forbindelse, hvilket teoretisk vil give en $0.12$\% afvigelse fra en ideel $26$K$\Omega$ modstand. De tre modstande blev målt inden implementering, hvilket fremgår i \tableref{Tab:modstand_faktor3}.
 \begin{table}[H]
 	\centering
 	\begin{tabular}{|l|l|l|}
@@ -55,7 +55,7 @@ Det ses på \figref{fig:Forstaerker_faktor3}, at der skal benyttes to modstande 
 $R_{eq} = 26$K$\Omega$ || $680$K$\Omega$ = $27$K$\Omega$       & $26.99$K$\Omega$    & $0.40$\%               \\ \hline
 	\end{tabular}
 	\caption{I tabellen ses det, at modstandene har en afvigelse fra deres teoretiske værdi, hvilket er forventet af reelle komponenter. Dette har derved også en effekt på afvigelsen for $R_{eq}$. Det er en acceptabel afvigelse, og modstandene kan derfor anvendes i implementeringen.}
-	\label{Tab:modstand_faktor18}
+	\label{Tab:modstand_faktor3}
 \end{table}
 \noindent Herefter implementeres kredsløbet. Til måling af signalet benyttes et multimeter. De aflæste resultater for spændingen efter forstærkningen er angivet under output i \tableref{Tab:faktor3_test}.\
 \begin{table}[H]
@@ -72,4 +72,4 @@ $R_{eq} = 26$K$\Omega$ || $680$K$\Omega$ = $27$K$\Omega$       & $26.99$K$\Omega
 	\label{Tab:faktor3_test}
 \end{table}
 \noindent Det ses i \tableref{Tab:faktor3_test}, at forstærkeren går i mætning, hvis inputsignalet svarer til spændingen fra filtret målt ved $\pm90^{\circ}$ hældning af accelerometeret. Dette sker grundet afgrænsningen af arbejdsområdet. Gruden til at mætningsgrænsen for den negative forsyning er lavere end for den positive forsyning, er at TL$081$ har et input common mode voltage range på hhv. -$12$V og $15$V ved en spændingsforsyning på $\pm 15$V \cite{Corporation1995}. \\
-Der ses, at forstærkeren overholder kravene fra afsnit \ref{OpsamlingsAfs} på side \pageref{OpsamlingsAfs} samt ligger inde for tolerancerne, hvorfor forstærkeren i tilpasningsblokken accepteres.
+Der ses, at forstærkeren overholder kravene fra afsnit \ref{Tilpasningsblok}, side \pageref{Tilpasningsblok} samt ligger inde for tolerancerne, hvorfor forstærkeren i tilpasningsblokken accepteres.

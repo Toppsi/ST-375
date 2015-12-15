@@ -77,7 +77,7 @@ C_3 \geq C_2 \frac{4 \cdot b_2}{a_2^2}
 C_3 \geq 100\text{nF} \frac{4\cdot 1}{1^2} \Rightarrow C_3 \geq 400\text{nF}
 \end{equation}
 
-\noindent Ud fra ovenstående ligning vælges $C_3$ til at være $470$nF for at opfylde \eqref{eq:kondensator} og er derudover til rådighed i laboratoriet. Når værdierne for C er bestemt, kan modstandene for filteret bestemmes. For et $1$. ordens lavpasfilter benyttes \eqref{eq:Lavpas1Modstande} til at beregne $R_1$ og for et $2$. ordens lavpasfilter anvendes \eqref{eq:2ordenmodstand} for at beregne $R_2$ og $R_3$. 
+\noindent Ud fra ovenstående ligning vælges $C_3$ til at være $470$nF for at opfylde \eqref{eq:kondensator} og er derudover til rådighed i laboratoriet. Når værdierne for C er bestemt, kan modstandene for filteret bestemmes. For et $1$. ordens lavpasfilter benyttes \eqref{eq:1ordenmodstand} til at beregne $R_1$ og for et $2$. ordens lavpasfilter anvendes \eqref{eq:2ordenmodstand} for at beregne $R_2$ og $R_3$. 
 \begin{equation} \label{eq:1ordenmodstand}
 R_{1} = \frac{1}{2 \cdot \pi \cdot 25 \cdot 100nF} = 63661.9772 \Omega
 \end{equation}
@@ -135,7 +135,7 @@ Der ses på \figref{fig:lavpasfilter_LTspice}, at der skal benyttes tre modstand
 	\caption{På figuren ses et 3. ordens filter med modstande, som har de teoretiske $R_{eq}$ værdier - dvs. R$1$ består af en parallelforbindelse mellem $68$K $\Omega$ og $1$M $\Omega$, R$2$ består af en parallelforbindelse mellem $47$K $\Omega$ og $680$K $\Omega$ og R$3$ består af en parallelforbindelse mellem to modstande på $32$K $\Omega$.}
 	\label{fig:Sim_reel_modstande}
 \end{figure}
-
+\noindent På \figref{fig:Sim_reel_graf} ses et bodeplot af det simulerede $3$. ordens lavpasfilter.
 \begin{figure}[H]
 	\centering
 	\includegraphics[scale=0.35]{figures/cProblemloesning/Sim_reel_graf.PNG}
