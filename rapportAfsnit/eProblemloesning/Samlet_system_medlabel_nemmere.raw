@@ -1,0 +1,24 @@
+Title: * C:\Users\Mathias\Desktop\ST-375\rapportAfsnit\eProblemloesning\Samlet_system_medlabel_nemmere.asc
+Date: Tue Dec 15 10:14:41 2015
+Plotname: Transient Analysis
+Flags: real forward
+No. Variables: 180
+No. Points:            0
+Offset:   0.0000000000000000e+000
+Command: Linear Technology Corporation LTspice IV
+Backannotation: u1 1 2 3 4 5
+Backannotation: u2 1 2 3 4 5
+Backannotation: u4 1 2 3 4 5
+Backannotation: u5 1 2 3 4 5
+Backannotation: u6 1 2 3 4 5
+Backannotation: u7 1 2 3 4 5
+Backannotation: u9 3 2 7 4 6
+Backannotation: u11 1 2 3 4 5 6
+Backannotation: u12 1 2 3 4 5 6
+Backannotation: u13 1 2 3 4 5 6
+Backannotation: u14 1 2 3 4 5 6
+Backannotation: u15 1 2 3 4 5 6
+Backannotation: u16 1 2 3 4 5 6
+Backannotation: u17 1 2 3 4 5 6
+Backannotation: u18 1 2 3 4 5 6
+Variables:
