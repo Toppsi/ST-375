@@ -5,12 +5,12 @@ Teorien og specifikationer vedrørende accelerometret ADXL$335$ er i afsnit \ref
 \begin{equation}
 \text{Båndbredde} = \dfrac{5\mu F}{C} \Rightarrow  C = \dfrac{5\mu F}{\text{25 Hz}} = 0.2\mu F
 \end{equation}
-For at undgå loading fra andre blokke i systemet benyttes en buffer, jævnfør bilag \ref{Bilag:Pilotforsoeg}, side \pageref{Bilag:Pilotforsoeg}. Til bufferkonfigurationen bruges en operationsforstærker af typen TL$081$, hvis pinkonfiguraion kan ses på \figref{TL081}. 
+For at undgå loading fra andre blokke i systemet benyttes en buffer, jævnfør bilag \ref{Bilag:Pilotforsoeg}, side \pageref{Bilag:Pilotforsoeg}. Til bufferkonfigurationen bruges en operationsforstærker af typen TL$081$, hvis pinkonfiguraion kan ses på \figref{fig:TL081}. 
 
 \begin{figure}[H]
 	\centering
 	\includegraphics[scale=.8]{figures/cProblemloesning/TL081.PNG}
-	\caption{På figuren ses pinkonfigurationen for operationsforstærkeren TL$081$.\cite{Instruments1995}}
+	\caption{På figuren ses pinkonfigurationen for operationsforstærkeren TL$081$.\cite{Corporation1995}}
 	\label{fig:TL081}
 \end{figure}
 
@@ -35,8 +35,7 @@ Der findes ikke et accelerometer i LTspice, hvorfor accelerometeret er symbolise
 Accelerometerets båndbredde bestemmes af to $0.1\mu$F kondensatorer i parallelforbindelse, som derved vil give en samlet kapacitans på  $0.2\mu$F. De tre kondensatorer samt den samlede kapacitans måles inden implementering. Resultaterne fremgår i  \tableref{Tab:Acc_kondensator}:
 \begin{table}[H]
 	\centering
-	\begin{tabular}{|l|l|l|l|}\hline
-		& \textit{Teoretisk} & \textit{Målt} & \textit{\% afvigelse} \\ \hline
+	\begin{tabular}{|l|l|l|l|} \cline{2-4} \multicolumn{1}{l|}{} & \textit{Teoretisk} & \textit{Målt} & \textit{\% afvigelse} \\ \hline
 		\textit{C1}       & \textit{$0.1\mu$F} & $0.1004\mu$F  & $0.4\%$               \\ \hline		
 		\textit{C2}       & \textit{$0.1\mu$F} & $0.1009\mu$F  & $0.9\%$               \\ \hline
 		\textit{C3}       & \textit{$0.1\mu$F} & $0.0989\mu$F  & $1.1\%$               \\ \hline

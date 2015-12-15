@@ -6,7 +6,7 @@ Efter de enkelte blokke er blevet testet og godkendt hver for sig, skal det saml
 I simuleringen af det samlede system kontrolleres det, som i de øvrige simuleringer, om systemet fungerer ideelt. I simuleringen undersøges der, hvorvidt feedbackkomponenterne tænder ved de angivende hældningsgrader. Denne kontrol udføres ved at indsende et sinussignal som inputspænding til systemet, der teoretisk skal tænde hhv. de enkelte LED'er og vibratorer. Simuleringen udføres efter samme principper, som simuleringen af feedbackkonfigurationen, jævnfør afsnit \ref{feedback_simulering}, side \pageref{feedback_simulering}. Designet af det samlede system ses på \figref{fig:samlet_system}:
 \begin{figure}[H]
 	\centering
-	\includegraphics[scale=.38]{figures/cProblemloesning/Samlet_systemUL.PNG}
+	\includegraphics[scale=.4]{figures/cProblemloesning/Samlet_systemUL2.PNG}
 	\caption{På figuren ses designet af det samlede system.}
 	\label{fig:samlet_system}
 \end{figure}
@@ -18,7 +18,7 @@ I simuleringen af det samlede system kontrolleres det, som i de øvrige simuleri
 Der foretages nogle basale ændringer i det opstillede system i LTspice, som ses \figref{fig:samlet_system}, for at en computer kan køre simuleringen. Ændringerne omfatter, at blokke, som leverer en uændret spænding, udskiftes med spændingsforsyninger. Disse leverer den spændingsværdi, som de giver i simuleringen. Dermed fjernes nogle operationsforstærkere fra det teoretisk opstillede system, hvorefter computeren kan konfigurere simuleringen af det samlede system. Designet med basale ændringer kan ses på \figref{fig:samlet_system}
 \begin{figure}[H]
 	\centering
-	\includegraphics[scale=.42]{figures/cProblemloesning/Samlet_system2_sim.PNG}
+	\includegraphics[scale=.42]{figures/cProblemloesning/Samlet_system3_sim.PNG}
 	\caption{På figuren ses designet af det forenklede samlede system med labels, der indikerer målepunkterne for de følgende simuleringer. Derved kan blokkenes effekt på signalet følges undervejs i systemet. Referencespændingen til offsetjusteringsblokken er erstattet med en spændingsforsyning på $1.6325$V, hvilket konfigurationen, som før var forbundet her, teroretisk skulle levere. Derudover er hele konfigurationen, som skal tilføre tærskelværdier til komparatorerne, udskiftet med spændingsforsyninger, der leverer den simulerede tærskelværdi til hver komparator, som er målt i \tableref{Tab:test_reference1}, side \pageref{Tab:test_reference1}.}
 	\label{fig:samlet_system}
 \end{figure}
@@ -147,7 +147,7 @@ Der ses af testen afvigelser for samtlige grader, hvor LED'erne samt vibratorern
 \begin{table}[H]
 	\centering
 	\begin{tabular}{l|l|l|l|l|}
-		\cline{2-4}
+		\cline{2-5}
 		\textit{}                                                                                              & \textit{\begin{tabular}[c]{@{}l@{}}Output fra\\ accelerometer\end{tabular}} & \textit{\begin{tabular}[c]{@{}l@{}}Output uden\\ offset\end{tabular}} & \textit{\begin{tabular}[c]{@{}l@{}}Graders\\ hældning\end{tabular}}          & \textit{Afvigelse}                                      \\ \hline
 		\multicolumn{1}{|l|}{\textit{\begin{tabular}[c]{@{}l@{}}Rød LED\\ positiv\end{tabular}}}               & $1.6740$V                      &       $0.0438$V                                        & $11.84^{\circ}$                                                              & $8.92\%$                                                   \\ \hline
 		\multicolumn{1}{|l|}{\textit{\begin{tabular}[c]{@{}l@{}}Gul LED\\og vibrator\\ positiv\end{tabular}}} & $1.6562$V            &             $0.026$V                                             & $7.03^{\circ}$                                                               & $12.13\%$                                                   \\ \hline
