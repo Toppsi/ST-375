@@ -1,5 +1,5 @@
 % !TeX spellcheck = da_DK
-\subsection{Spændingsforsyning} \label{Spaendingsforsying}
+\subsection{Spændingsforsyning}\label{Spaendingsforsying}
 \subsubsection{Teori og design}
 Til systemet anvendes to $1.5$V batterier som spændingsforsyning, der placeres i en spændingsregulator. Denne kan teoretisk og reelt levere en spænding på hhv. $\pm5.5$V og $3.4$V fra to forskellige terminaler. Derudover besidder spændingsregulatoren en jordkobling, som øvrige komponenter i systemet kan tilkobles. Til dette system benyttes begge terminaler; $3.4$V forsyner vibratorerne, og $\pm5.5$V benyttes til resten af systemet. Spændingsregulatoren er designet således, at den leverer en spænding koblet i en split-supply.\\%Den positive pol fra det ene batteri tilkobles den negative pol på det andet batteri i. Derudover dannes en fælles jordforbindelse for øvrige komponenter i systemet, som kræver en forbindelse til jord. Den negative pol i det første batteri i det første batteri anvendes som systemets negative forsyningsspænding og indikeres med $-V_{cc}$, mens det andet batteri anvendes som den positive spændingsforsyning og indikeres med $+V_{cc}$.
 Da batterierne ikke leverer den samme spænding gennem deres levetid, skal disse skiftes ud, når de ikke leverer den nødvendige spænding til systemet. Batteriernes levetid afhænger af, hvor meget strøm systemet bruger. %Da komparatorkonfigurationen kræver den højeste spænding iblandt blokkene, skal spændingsregulatoren minimum leverer en spænding på xx V. Derfor kræver systemt en minimal spænding på xx V.
@@ -42,7 +42,7 @@ Batterierne blev inden testen målt til henholdsvis $1.5394$V og $1.5373$V. Jæv
 \begin{table}[H]
 	\centering
  	\begin{tabular}{l|l|l|l|}
- 		\cline{2-4}                                                                                                                                      & \textit{Teoretisk} & \textit{Målt}                                                  & \textit{Afvigelse}                                              \\ \hline
+ 		\cline{2-4}                                                                                                 & \textit{Teoretisk} & \textit{Målt} & \textit{Afvigelse}   \\ \hline
  		\multicolumn{1}{|l|}{\textit{\begin{tabular}[c]{@{}l@{}}Spændingsforsyning\\ til accelerometer\end{tabular}}}                          & $\pm5.5$V          & $5.5315$V                                                      & $0.0315$V                                                      \\ \hline
  		\multicolumn{1}{|l|}{\textit{\begin{tabular}[c]{@{}l@{}}Spændingsforsyning\\ til offsetjustering\end{tabular}}}                        & $\pm5.5$V          & \begin{tabular}[c]{@{}l@{}}$5.5386$V\\ -$5.5530$V\end{tabular} & \begin{tabular}[c]{@{}l@{}}$0.0386$V\\ $0.0530$V\end{tabular} \\ \hline
  		\multicolumn{1}{|l|}{\textit{\begin{tabular}[c]{@{}l@{}}Spændingsforsyning til \\ referencespænding til offsetjustering\end{tabular}}} & $\pm5.5$V          & \begin{tabular}[c]{@{}l@{}}$5.5384$V\\ -$5.5528$V\end{tabular} & \begin{tabular}[c]{@{}l@{}}$0.0384$V\\ $0.0528$V\end{tabular} \\ \hline
